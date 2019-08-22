@@ -1,0 +1,1 @@
+<view class="container"><view class="container-title"><text class="container-title-head">评论区</text></view><view class="content"><view><image class="avatar" src="../../static/wxcomponentimg/avatar@2x.png"></image><text>泰勒丝</text><uni-rate vue-id="1" value="2" size="18" bind:__l="__l"></uni-rate></view></view></view>

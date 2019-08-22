@@ -1,0 +1,15 @@
+
+.text-black{
+  color:#333333;
+  font-size: 32rpx;
+}
+.bg-white{
+    background-color: #ffffff !important;
+}
+.text-orange{
+  color:#09BA51 !important;
+}
+.text-center {
+    text-align: center;
+}
+

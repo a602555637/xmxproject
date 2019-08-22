@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "成为会员",
+  "usingComponents": {
+    "wuc-tab": "/components/wuc-tab/wuc-tab"
+  }
+}

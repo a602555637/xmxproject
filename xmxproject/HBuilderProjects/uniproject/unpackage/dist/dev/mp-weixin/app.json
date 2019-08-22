@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/bevip/bevip",
+    "pages/payvip/payvip",
+    "pages/orderlist/orderlist",
+    "pages/mywallet/mywallet",
+    "pages/addresslist/addresslist",
+    "pages/addressadd/addressadd"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小美修",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "定位服务"
+    }
+  },
+  "usingComponents": {}
+}

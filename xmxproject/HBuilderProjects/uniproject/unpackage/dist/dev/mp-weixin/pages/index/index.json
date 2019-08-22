@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "headads": "/wxcomponents/headads/headads",
+    "bw-swiper": "/wxcomponents/bw-swiper/bw-swiper",
+    "testype": "/wxcomponents/testype/testype",
+    "bbutton": "/wxcomponents/bbutton/bbutton",
+    "servebutton": "/wxcomponents/servebutton/servebutton",
+    "vipserve": "/wxcomponents/vipserve/vipserve",
+    "comment": "/wxcomponents/comment/comment"
+  }
+}

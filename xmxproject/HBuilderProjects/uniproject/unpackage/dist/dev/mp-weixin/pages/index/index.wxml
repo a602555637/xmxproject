@@ -1,0 +1,1 @@
+<view><headads vue-id="1" title="今日换屏5折起" bind:__l="__l"></headads><testype vue-id="2" bind:__l="__l"></testype><bbutton vue-id="3" bind:__l="__l"></bbutton><servebutton vue-id="4" bind:__l="__l"></servebutton><vipserve vue-id="5" bind:__l="__l"></vipserve><comment vue-id="6" bind:__l="__l"></comment></view>

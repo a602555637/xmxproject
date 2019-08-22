@@ -1,0 +1,1 @@
+<view><wuc-tabc vue-id="1" tab-list="{{tabList}}" textFlex tabCur="{{TabCur}}" tab-class="text-center text-black bg-white" select-class="text-orange" data-event-opts="{{[['^updateTabCur',[['__set_sync',['$0','TabCur','$event'],['']]]],['^updateTabCur',[['__set_sync',['$0','TabCur','$event'],['']]]]]}}" bind:updateTabCur="__e" bind:__l="__l"></wuc-tabc></view>

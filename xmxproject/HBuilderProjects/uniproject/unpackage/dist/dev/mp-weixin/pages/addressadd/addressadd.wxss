@@ -1,0 +1,21 @@
+
+.container-textarea{
+	margin-top: 40rpx;
+}
+.container-input {
+	height: 120rpx;
+	border-bottom: 1px solid #EEEEEE;
+	font-size: 30rpx;
+	margin-left: 26rpx;
+	margin-right: 26rpx;
+}
+.placeholder-class {
+	color: #888F97;
+	font-size: 24rpx;
+}
+.line{
+	width: 750rpx;
+	height: 20rpx;
+	background: #F3F3F3;
+}
+
