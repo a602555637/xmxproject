@@ -1,4 +1,34 @@
 
+.content-bottom>text{
+	margin-left: 20rpx;
+}
+.rate {
+	position: absolute;
+	right: 26rpx;
+	bottom: -100rpx;
+}
+.comment {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-left: 160rpx;
+	position: relative;
+	bottom: 54rpx;
+}
+.content-date {
+	font-size: 24rpx;
+	color: #888F97;
+}
+.content-note {
+	font-size: 26rpx;
+	margin-top: 20rpx;
+}
 .container {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -36,8 +66,21 @@
 	font-weight: bold;
 	margin-left: 26rpx;
 }
-.avatar{
+.avatar {
 	width: 110rpx;
 	height: 110rpx;
+	margin-left: 26rpx;
+	position: relative;
+	bottom: 10rpx;
+}
+.content-bottom {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 }
 

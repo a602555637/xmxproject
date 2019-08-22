@@ -10,6 +10,31 @@
 		<servebutton></servebutton>
 		<vipserve></vipserve>
 		<comment></comment>
+		<view class="bottom">
+			<view class="left">
+				<view class="left-text">
+					<text>服务用户</text>
+					<image src="../../static/wxcomponentimg/up@2x.png"></image>
+				</view>
+				<text>2465</text>
+			</view>
+			<view class="left">
+				<view class="left-text">
+					<text>维修设备</text>
+					<image src="../../static/wxcomponentimg/up@2x.png"></image>
+				</view>
+				<text>2575</text>
+			</view>
+			<view class="left">
+				<view class="left-text">
+					<text>好评度</text>
+					<image src="../../static/wxcomponentimg/up@2x.png"></image>
+				</view>
+				<text>98%</text>
+			</view>
+		</view>
+		<view class="vachio"></view>
+		<tabbar></tabbar>
 	</view>
 </template>
 
@@ -21,6 +46,7 @@
 	import servebutton from '../../wxcomponents/servebutton/servebutton.vue'
 	import vipserve from '../../wxcomponents/vipserve/vipserve.vue'
 	import comment from '../../wxcomponents/comment/comment.vue'
+	import tabbar from '../../wxcomponents/tabbar/tabbar.vue'
 	
 	export default {
 		data() {
@@ -83,12 +109,53 @@
 			bbutton,
 			servebutton,
 			vipserve,
-			comment
+			comment,
+			tabbar
 		}
 	}
 </script>
 
 <style>
-
-
+	.vachio{
+		display: flex;
+		height: 98upx;
+		width: 750upx;
+		background: #fff;
+	}
+	
+	.bottom{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		background: #F3F3F3;
+		height: 134upx;
+	}
+	
+	.left-text>text{
+		color: #888F97;
+		font-size: 26upx;
+		margin-bottom: 6upx;
+	}
+	
+	.left>text{
+		font-size: 26upx;
+		color:#1BBF61;
+	}
+	
+	.left-text image{
+		width: 18upx;
+		height: 24upx;
+		margin-left: 10upx;
+	}
+	
+	.left{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.left-text{
+		display: flex;
+		flex-direction: row;
+	}
 </style>

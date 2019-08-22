@@ -11,6 +11,8 @@
 	"libVersion": "2.7.0",
 	"appid": "wx5a7e48b2d2c7cc4b",
 	"projectname": "uniproject",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
