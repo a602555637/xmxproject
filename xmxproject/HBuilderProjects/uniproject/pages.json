@@ -41,6 +41,26 @@
 			"style": {
 				"navigationBarTitleText": "添加地址"
 			}
+		},{
+			"path": "pages/selectmodel/selectmodel",
+			"style": {
+				"navigationBarTitleText": "选择机型"
+			}
+		},{
+			"path": "pages/faults/faults",
+			"style": {
+				"navigationBarTitleText": "选择故障"
+			}
+		},{
+			"path": "pages/onsiterepair/onsiterepair",
+			"style": {
+				"navigationBarTitleText": "上门维修"
+			}
+		},{
+			"path": "pages/orderdetail/orderdetail",
+			"style": {
+				"navigationBarTitleText": "上门维修"
+			}
 		}
 	],
 	"globalStyle": {

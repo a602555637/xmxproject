@@ -7,7 +7,11 @@
     "pages/orderlist/orderlist",
     "pages/mywallet/mywallet",
     "pages/addresslist/addresslist",
-    "pages/addressadd/addressadd"
+    "pages/addressadd/addressadd",
+    "pages/selectmodel/selectmodel",
+    "pages/faults/faults",
+    "pages/onsiterepair/onsiterepair",
+    "pages/orderdetail/orderdetail"
   ],
   "subPackages": [],
   "window": {
@@ -21,6 +25,5 @@
       "desc": "定位服务"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap49.json"
+  "usingComponents": {}
 }

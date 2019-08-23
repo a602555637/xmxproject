@@ -5,7 +5,22 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": true
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"enhance": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
@@ -31,12 +46,33 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/addressadd/addressadd",
-					"pathName": "pages/addressadd/addressadd",
+					"name": "pages/faults/faults",
+					"pathName": "pages/faults/faults",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/onsiterepair/onsiterepair",
+					"pathName": "pages/onsiterepair/onsiterepair",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/onsiterepair/onsiterepair",
+					"pathName": "pages/onsiterepair/onsiterepair",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/orderdetail/orderdetail",
+					"pathName": "pages/orderdetail/orderdetail",
 					"scene": null
 				}
 			]

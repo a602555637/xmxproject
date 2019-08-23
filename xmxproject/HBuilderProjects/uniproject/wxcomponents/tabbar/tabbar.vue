@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<view class="container-left">
+		<view @click="onOrder" class="container-left">
 			<image src="../../static/wxcomponentimg/kjxd@2x.png"></image>
 			<text>快捷下单</text>
 		</view>
@@ -13,7 +13,13 @@
 
 <script>
 	export default {
-
+	methods:{
+		onOrder(){
+			uni.navigateTo({
+				url: '../../pages/selectmodel/selectmodel'
+			});
+		}
+	}
 	}
 </script>
 
