@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<view @click="openPopup" class="container-item" v-for="item in faulesList">
+		<view @click="openPopup" class="container-item" v-for="(item,index) in faulesList" :key="index">
 			<image :src="item.imgSrc"></image>
 			<text>{{item.text}}</text>
 		</view>
@@ -10,8 +10,8 @@
 					<text>故障选择</text>
 					<image @click="closePopup" src="../../static/faults/close@2x.png"></image>
 				</view>
-				<view @click="onSelected" :id="index" class="popup-content" v-for="(item, index) in faulesItem">
-					<image v-if="id == isSelectedId" src="../../static/faults/xz@2x.png" class="popup-content-icon"></image>
+				<view @click="onSelected" :id="index" :key="index" class="popup-content" v-for="(item, index) in faulesItem">
+					<image v-if="index == isSelectedId " src="../../static/faults/xz@2x.png" class="popup-content-icon"></image>
 					<image v-else src="../../static/faults/wxz@2x.png" class="popup-content-icon"></image>
 					<view class="popup-content-middle">
 						<text class="item-title">{{item.title}}</text>
@@ -106,8 +106,10 @@
 		},
 		methods: {
 			onSelected(e){
-				let isSelectedId = e.currentTarget.id
-				console.log(isSelectedId)
+				this.isSelectedId = e.currentTarget.id
+				// uni.setStorageSync({
+				// 	
+				// })
 				// console.log(e.currentTarget.id)
 			},
 			openPopup() {

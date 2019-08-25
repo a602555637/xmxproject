@@ -2,12 +2,12 @@
 	<view class="container">
 		<view class="container-title">工作人员30分钟内与您联系</view>
 		<view>
-			<map class="map" :latitude="latitude" :longitude="longitude"></map>
+			<map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" />
 		</view>
 		<view class="order-background">
 			<view class="order-detail">
 				<text>{{phoneType}}</text>
-				<view class="order-repair" v-for="item in repaireList">
+				<view class="order-repair" v-for="(item, index) in repaireList" :key="index">
 					<view class="order-repair-item">
 						<text class="item-title">{{item.title}}</text>
 						<text class="item-price">{{item.price}}</text>
@@ -34,7 +34,7 @@
 		<uniPopup custom="true" ref="popup" type="center">
 			<view class="popup-container">
 				<text>取消订单原因</text>
-				<view class="popup-info" v-for="item in canelInfo">
+				<view class="popup-info" v-for="(item, index) in canelInfo" :key="index">
 					<view class="popup-info-item">
 						<image v-if="isSelected" src="../../static/qx@2x.png"></image>
 						<image v-else src="../../static/qx-h@2x.png"></image>
@@ -52,6 +52,9 @@
 	export default {
 		data() {
 			return {
+				title: 'map',
+				latitude: 39.909,
+				longitude: 116.39742,
 				isSelected:true,
 				canelInfo:[{
 					info:'信息填写错误'
@@ -79,9 +82,7 @@
 					title:'电池不续航',
 					price:'￥599'
 				}],
-				phoneType:'苹果 iPhone7 玫瑰金',
-				latitude: '60.0887',
-				longitude: '30.67'
+				phoneType:'苹果 iPhone7 玫瑰金'
 			}
 		},
 		methods: {
@@ -94,6 +95,12 @@
 			onCancel(){
 				uni.showToast({
 					title: '取消成功'
+				})
+				uni.navigateTo({
+					url: 'order-cancel',
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
 				});
 			}
 		},

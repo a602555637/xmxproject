@@ -8,7 +8,7 @@
 			<text class="address">{{address}}</text>
 		</view>
 		<image class="button" src="../../static/my/bj-btn@2x.png"></image>
-		<view @click="changeSelected" class="radio">
+		<view @click="changeSelected()" class="radio">
 			<image v-if="isSelected" src="../../static/my/swmr-h@2x.png"></image>
 			<image v-else src="../../static/my/swmr@2x.png"></image>
 			<text>设为默认</text>
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-	var _self = this
 	export default {
 		data() {
 			return {
@@ -31,12 +30,7 @@
 		},
 		methods: {
 			changeSelected() {
-				console.log(_self + 'data?')
-				let isSelected = _self.isSelected
-				console.log(isSelected)
-				this.setData({
-					isSelected: !isSelected
-				})
+				this.isSelected = !this.isSelected
 			},
 			addressAdd(){
 				uni.navigateTo({

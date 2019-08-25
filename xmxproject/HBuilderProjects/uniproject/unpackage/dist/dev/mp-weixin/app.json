@@ -11,7 +11,20 @@
     "pages/selectmodel/selectmodel",
     "pages/faults/faults",
     "pages/onsiterepair/onsiterepair",
-    "pages/orderdetail/orderdetail"
+    "pages/orderdetail/orderdetail",
+    "pages/business/business-login/business-login",
+    "pages/business/index/index",
+    "pages/business/business-my/business-my",
+    "pages/business/business-detail/business-detail",
+    "pages/business/business-key/business-key",
+    "pages/business/business-income/business-income",
+    "pages/business/business-order/business-order",
+    "pages/business/business-todo/business-todo",
+    "pages/business/business-repairing/business-repairing",
+    "pages/business/business-finished/business-finished",
+    "pages/business/business-cancel/business-cancel",
+    "pages/business/business-orderstatus/business-orderstatus",
+    "pages/orderdetail/order-cancel"
   ],
   "subPackages": [],
   "window": {

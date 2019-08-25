@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
 
 /***/ 0:
-/*!**************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js ***!
-  \**************************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -756,7 +756,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1608,10 +1608,27 @@ function normalizeComponent (
 
 /***/ }),
 
+/***/ 107:
+/*!*******************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-login%2Fbusiness-login"} ***!
+  \*******************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessLogin = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-login/business-login.vue */ 108));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessLogin.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
 /***/ 11:
-/*!***********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \***********************************************************************************************************/
+/*!**************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \**************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1625,10 +1642,95 @@ createPage(_index.default);
 
 /***/ }),
 
+/***/ 115:
+/*!*************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Findex%2Findex"} ***!
+  \*************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/business/index/index.vue */ 116));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_index.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 123:
+/*!*************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-my%2Fbusiness-my"} ***!
+  \*************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessMy = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-my/business-my.vue */ 124));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessMy.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 131:
+/*!*********************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-detail%2Fbusiness-detail"} ***!
+  \*********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-detail/business-detail.vue */ 132));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessDetail.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 139:
+/*!***************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-key%2Fbusiness-key"} ***!
+  \***************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessKey = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-key/business-key.vue */ 140));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessKey.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 147:
+/*!*********************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-income%2Fbusiness-income"} ***!
+  \*********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessIncome = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-income/business-income.vue */ 148));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessIncome.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
 /***/ 19:
-/*!*****************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
-  \*****************************************************************************************************/
+/*!********************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
+  \********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7110,7 +7212,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7131,14 +7233,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7214,7 +7316,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7591,44 +7693,10 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 230:
-/*!*************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fonsiterepair%2Fonsiterepair"} ***!
-  \*************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _onsiterepair = _interopRequireDefault(__webpack_require__(/*! ./pages/onsiterepair/onsiterepair.vue */ 231));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_onsiterepair.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 239:
-/*!***********************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderdetail%2Forderdetail"} ***!
-  \***********************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _orderdetail = _interopRequireDefault(__webpack_require__(/*! ./pages/orderdetail/orderdetail.vue */ 240));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_orderdetail.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
 /***/ 27:
-/*!***********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbevip%2Fbevip"} ***!
-  \***********************************************************************************************************/
+/*!**************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbevip%2Fbevip"} ***!
+  \**************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7673,10 +7741,78 @@ module.exports = g;
 
 /***/ }),
 
+/***/ 318:
+/*!*******************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-order%2Fbusiness-order"} ***!
+  \*******************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessOrder = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-order/business-order.vue */ 319));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessOrder.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 327:
+/*!*****************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-todo%2Fbusiness-todo"} ***!
+  \*****************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessTodo = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-todo/business-todo.vue */ 328));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessTodo.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 336:
+/*!***************************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-repairing%2Fbusiness-repairing"} ***!
+  \***************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessRepairing = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-repairing/business-repairing.vue */ 337));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessRepairing.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 345:
+/*!*************************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-finished%2Fbusiness-finished"} ***!
+  \*************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessFinished = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-finished/business-finished.vue */ 346));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessFinished.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
 /***/ 35:
-/*!*************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fpayvip%2Fpayvip"} ***!
-  \*************************************************************************************************************/
+/*!****************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fpayvip%2Fpayvip"} ***!
+  \****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7690,10 +7826,61 @@ createPage(_payvip.default);
 
 /***/ }),
 
+/***/ 354:
+/*!*********************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-cancel%2Fbusiness-cancel"} ***!
+  \*********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessCancel = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-cancel/business-cancel.vue */ 355));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessCancel.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 363:
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-orderstatus%2Fbusiness-orderstatus"} ***!
+  \*******************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessOrderstatus = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-orderstatus/business-orderstatus.vue */ 364));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessOrderstatus.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 372:
+/*!***************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderdetail%2Forder-cancel"} ***!
+  \***************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _orderCancel = _interopRequireDefault(__webpack_require__(/*! ./pages/orderdetail/order-cancel.vue */ 373));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_orderCancel.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
 /***/ 4:
-/*!*****************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/pages.json ***!
-  \*****************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/pages.json ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7703,9 +7890,9 @@ createPage(_payvip.default);
 /***/ }),
 
 /***/ 43:
-/*!*******************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderlist%2Forderlist"} ***!
-  \*******************************************************************************************************************/
+/*!**********************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderlist%2Forderlist"} ***!
+  \**********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7720,9 +7907,9 @@ createPage(_orderlist.default);
 /***/ }),
 
 /***/ 51:
-/*!*****************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmywallet%2Fmywallet"} ***!
-  \*****************************************************************************************************************/
+/*!********************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmywallet%2Fmywallet"} ***!
+  \********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7737,9 +7924,9 @@ createPage(_mywallet.default);
 /***/ }),
 
 /***/ 59:
-/*!***********************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Faddresslist%2Faddresslist"} ***!
-  \***********************************************************************************************************************/
+/*!**************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Faddresslist%2Faddresslist"} ***!
+  \**************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7754,9 +7941,9 @@ createPage(_addresslist.default);
 /***/ }),
 
 /***/ 67:
-/*!*********************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Faddressadd%2Faddressadd"} ***!
-  \*********************************************************************************************************************/
+/*!************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Faddressadd%2Faddressadd"} ***!
+  \************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7771,9 +7958,9 @@ createPage(_addressadd.default);
 /***/ }),
 
 /***/ 75:
-/*!***********************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fselectmodel%2Fselectmodel"} ***!
-  \***********************************************************************************************************************/
+/*!**************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fselectmodel%2Fselectmodel"} ***!
+  \**************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7788,9 +7975,9 @@ createPage(_selectmodel.default);
 /***/ }),
 
 /***/ 83:
-/*!*************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/uniproject/main.js?{"page":"pages%2Ffaults%2Ffaults"} ***!
-  \*************************************************************************************************************/
+/*!****************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Ffaults%2Ffaults"} ***!
+  \****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7800,6 +7987,40 @@ createPage(_selectmodel.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _faults = _interopRequireDefault(__webpack_require__(/*! ./pages/faults/faults.vue */ 84));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_faults.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 91:
+/*!****************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fonsiterepair%2Fonsiterepair"} ***!
+  \****************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _onsiterepair = _interopRequireDefault(__webpack_require__(/*! ./pages/onsiterepair/onsiterepair.vue */ 92));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_onsiterepair.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 99:
+/*!**************************************************************************************************************************************************!*\
+  !*** C:/Users/milestien/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderdetail%2Forderdetail"} ***!
+  \**************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _orderdetail = _interopRequireDefault(__webpack_require__(/*! ./pages/orderdetail/orderdetail.vue */ 100));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_orderdetail.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ })

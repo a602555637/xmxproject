@@ -61,6 +61,72 @@
 			"style": {
 				"navigationBarTitleText": "上门维修"
 			}
+		},
+		{
+			"path": "pages/business/business-login/business-login",
+			"style": {
+				"navigationBarTitleText": "商家入驻"
+			}
+		},{
+			"path": "pages/business/index/index",
+			"style": {
+				"navigationBarTitleText": "郫都区总店"
+			}
+		},{
+			"path": "pages/business/business-my/business-my",
+			"style": {
+				"navigationBarTitleText": "我的店铺"
+			}
+		},{
+			"path": "pages/business/business-detail/business-detail",
+			"style": {
+				"navigationBarTitleText": "店铺详情"
+			}
+		},{
+			"path": "pages/business/business-key/business-key",
+			"style": {
+				"navigationBarTitleText": "修改密码"
+			}
+		},{
+			"path": "pages/business/business-income/business-income",
+			"style": {
+				"navigationBarTitleText": "总收益"
+			}
+		},{
+			"path": "pages/business/business-order/business-order",
+			"style": {
+				"navigationBarTitleText": "全部订单"
+			}
+		},{
+			"path": "pages/business/business-todo/business-todo",
+			"style": {
+				"navigationBarTitleText": "待处理"
+			}
+		},{
+			"path": "pages/business/business-repairing/business-repairing",
+			"style": {
+				"navigationBarTitleText": "维修中"
+			}
+		},{
+			"path": "pages/business/business-finished/business-finished",
+			"style": {
+				"navigationBarTitleText": "已完成"
+			}
+		},{
+			"path": "pages/business/business-cancel/business-cancel",
+			"style": {
+				"navigationBarTitleText": "已取消"
+			}
+		},{
+			"path": "pages/business/business-orderstatus/business-orderstatus",
+			"style": {
+				"navigationBarTitleText": "订单详情"
+			}
+		},{
+			"path": "pages/orderdetail/order-cancel",
+			"style": {
+				"navigationBarTitleText": "上门维修"
+			}
 		}
 	],
 	"globalStyle": {

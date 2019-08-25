@@ -6,28 +6,12 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"enhance": true
+		"postcss": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
 	"appid": "wx5a7e48b2d2c7cc4b",
 	"projectname": "uniproject",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -46,26 +30,54 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/faults/faults",
-					"pathName": "pages/faults/faults",
+					"name": "pages/business/business-income/business-income",
+					"pathName": "pages/business/business-income/business-income",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/onsiterepair/onsiterepair",
-					"pathName": "pages/onsiterepair/onsiterepair",
+					"name": "pages/business/business-my/business-my",
+					"pathName": "pages/business/business-my/business-my",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/onsiterepair/onsiterepair",
-					"pathName": "pages/onsiterepair/onsiterepair",
+					"name": "pages/business/index/index",
+					"pathName": "pages/business/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/business/business-order/business-order",
+					"pathName": "pages/business/business-order/business-order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/business/business-todo/business-todo",
+					"pathName": "pages/business/business-todo/business-todo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/business/business-orderstatus/business-orderstatus",
+					"pathName": "pages/business/business-orderstatus/business-orderstatus",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/orderlist/orderlist",
+					"pathName": "pages/orderlist/orderlist",
 					"query": "",
 					"scene": null
 				},
@@ -73,6 +85,41 @@
 					"id": -1,
 					"name": "pages/orderdetail/orderdetail",
 					"pathName": "pages/orderdetail/orderdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/orderdetail/order-cancel",
+					"pathName": "pages/orderdetail/order-cancel",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addressadd/addressadd",
+					"pathName": "pages/addressadd/addressadd",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addresslist/addresslist",
+					"pathName": "pages/addresslist/addresslist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/faults/faults",
+					"pathName": "pages/faults/faults",
 					"scene": null
 				}
 			]

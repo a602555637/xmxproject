@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "郫都区总店",
+  "usingComponents": {
+    "search": "/wxcomponents/common/search"
+  }
+}
