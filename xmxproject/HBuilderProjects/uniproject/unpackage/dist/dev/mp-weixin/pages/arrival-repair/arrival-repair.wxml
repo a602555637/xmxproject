@@ -1,0 +1,1 @@
+<view><text class="title">苹果 iPhone7 玫瑰金</text><xlist vue-id="1" title="屏幕损坏" bind:__l="__l"></xlist></view>

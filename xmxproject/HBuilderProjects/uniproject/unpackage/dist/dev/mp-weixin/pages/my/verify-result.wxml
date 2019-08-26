@@ -1,0 +1,1 @@
+<view class="container"><block wx:if="{{isPass}}"><image src="../../static/my/pass@2x.png" mode></image></block><block wx:else><image src="../../static/my/nopass@2x.png" mode></image></block><text>恭喜您，审核通过</text><view data-event-opts="{{[['tap',[['onNext',['$event']]]]]}}" class="container-button" bindtap="__e">设置密码</view></view>

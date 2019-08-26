@@ -127,6 +127,36 @@
 			"style": {
 				"navigationBarTitleText": "上门维修"
 			}
+		},{
+			"path": "pages/my/business-in",
+			"style": {
+				"navigationBarTitleText": "商家入驻"
+			}
+		},{
+			"path": "pages/my/upload-photo",
+			"style": {
+				"navigationBarTitleText": "商家入驻"
+			}
+		},{
+			"path": "pages/my/business-verify",
+			"style": {
+				"navigationBarTitleText": "商家入驻"
+			}
+		},{
+			"path": "pages/my/verify-result",
+			"style": {
+				"navigationBarTitleText": "商家入驻"
+			}
+		},{
+			"path": "pages/my/setting-key",
+			"style": {
+				"navigationBarTitleText": "设置密码"
+			}
+		},{
+			"path": "pages/arrival-repair/arrival-repair",
+			"style": {
+				"navigationBarTitleText": "到店维修"
+			}
 		}
 	],
 	"globalStyle": {

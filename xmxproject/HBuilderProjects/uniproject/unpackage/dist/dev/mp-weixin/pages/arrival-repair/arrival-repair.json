@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "到店维修",
+  "usingComponents": {
+    "xlist": "/wxcomponents/xlist/xlist"
+  }
+}

@@ -24,7 +24,13 @@
     "pages/business/business-finished/business-finished",
     "pages/business/business-cancel/business-cancel",
     "pages/business/business-orderstatus/business-orderstatus",
-    "pages/orderdetail/order-cancel"
+    "pages/orderdetail/order-cancel",
+    "pages/my/business-in",
+    "pages/my/upload-photo",
+    "pages/my/business-verify",
+    "pages/my/verify-result",
+    "pages/my/setting-key",
+    "pages/arrival-repair/arrival-repair"
   ],
   "subPackages": [],
   "window": {
@@ -38,5 +44,6 @@
       "desc": "定位服务"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap86.json"
 }

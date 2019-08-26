@@ -2,6 +2,7 @@
   "navigationBarTitleText": "上门维修",
   "usingComponents": {
     "uni-list": "/components/uni-list/uni-list",
-    "uni-list-item": "/components/uni-list-item/uni-list-item"
+    "uni-list-item": "/components/uni-list-item/uni-list-item",
+    "rattenking-dtpicker": "/components/rattenking-dtpicker/rattenking-dtpicker"
   }
 }

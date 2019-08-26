@@ -6,12 +6,25 @@
 				<text class="item-title">{{item.title}}</text>
 				<text class="item-price">{{item.price}}</text>
 			</view>
+			<view class="onsite-service">
+				
+			</view>
+			<text class="kiloprice">{{kiloPrice}}</text>
 			<view class="repair-total">
 				<text class="total-price-text">
 					合计：
 					<text class="total-price">{{totalPrice}}</text>
 				</text>
 				<image src="../../static/faults/hymfx@2x.png"></image>
+			</view>
+		</view>
+		<!-- <view class="line"></view> -->
+		<view class="container-timeselect">
+			<text class="timeselect-title">上门时间</text>
+			<text class="timeselect">13:30-14:00</text>
+			<image class="right-arrow" src="../../static/wxcomponentimg/arrow@2x.png"></image>
+			<view class="">
+				<rattenking-dtpicker fields="minute" />
 			</view>
 		</view>
 		<view class="repair-list">
@@ -56,9 +69,11 @@
 <script>
 	import uniList from '../../components/uni-list/uni-list.vue';
 	import uniListItem from '../../components/uni-list-item/uni-list-item.vue';
+	import rattenkingDtpicker from '../../components/rattenking-dtpicker/rattenking-dtpicker.vue'
 	export default{
 		data(){
 			return{
+				kiloPrice:'￥28',
 				isAgreement:true,
 				totalPrice:9827,
 				repairList:[{
@@ -67,12 +82,14 @@
 				},{
 					title:'电池不续航',
 					price:'￥499'
-				}]
+				}
+				]
 			}
 		},
 		components:{
 			uniList,
-			uniListItem
+			uniListItem,
+			rattenkingDtpicker
 		},
 		methods:{
 			onOrderDetail(){
@@ -83,11 +100,30 @@
 				}
 				return
 			}
+		},
+		onLoad() {
+			// console.log(ListItem)
 		}
 	}
 </script>
 
 <style>
+	.kiloprice{
+		font-size: 26upx;
+		position: absolute;
+		top: 0upx;
+		left: 0upx;
+	}
+	
+	.right-arrow{
+		width: 12upx;
+		height: 24upx;
+	}
+	
+	.container-timeselect{
+		
+	}
+	
 	.button-right-text{
 		font-size: 32upx;
 		font-weight: bold;

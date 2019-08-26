@@ -1,9 +1,9 @@
 <template>
 	<view>
 		<headads title="今日换屏5折起"></headads>
-<!-- 		<bwSwiper class="swiper" :swiperList="swiperList" indicatorActiveColor="#ff0000" 
+		<bwSwiper class="swiper" :swiperList="swiperList" indicatorActiveColor="#ff0000" 
 		@clickItem="clickItem" style="width:100%" :textTip="true"
-		:swiperType="true"> </bwSwiper> -->
+		:swiperType="true"> </bwSwiper>
 		<!-- <scareX></scareX> -->
 		<testype></testype>
 		<bbutton></bbutton>
@@ -54,15 +54,19 @@
 				swiperList: [{
 					id: 4,
 					type: 'image',
-					img: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg',
+					img: '../../static/banner/banner1@2x.png',
 				},{
 					id: 4,
 					type: 'image',
-					img: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg',
+					img: '../../static/banner/banner2@2x.png',
 				},{
 					id: 4,
 					type: 'image',
-					img: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg',
+					img: '../../static/banner/banner3@2x.png',
+				},{
+					id: 4,
+					type: 'image',
+					img: '../../static/banner/banner4@2x.png',
 				}],
 				serviceItem1: [{
 					img: '../../static/service-icon/kjwx@2x.png',

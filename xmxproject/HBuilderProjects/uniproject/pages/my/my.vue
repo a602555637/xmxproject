@@ -19,7 +19,7 @@
 			<uniItem @click="onMyWallet" title="钱包" thumb='../../static/my/icon/wallet@2x.png'></uniItem>
 			<uniItem title="卡包" thumb='../../static/my/icon/cards@2x.png'></uniItem>
 			<uniItem @click="onAddressList" title="地址管理" thumb='../../static/my/icon/ad@2x.png'></uniItem>
-			<uniItem title="商家入驻" thumb='../../static/my/icon/join@2x.png'></uniItem>
+			<uniItem @click="onBusinessIn" title="商家入驻" thumb='../../static/my/icon/join@2x.png'></uniItem>
 			<uniItem title="在线客服" thumb='../../static/my/icon/ser@2x.png'></uniItem>
 		</uniList>
 	</view>
@@ -59,6 +59,11 @@
 				uni.navigateTo({
 					url: '../addresslist/addresslist'
 				});
+			},
+			onBusinessIn(){
+				uni.navigateTo({
+					url: 'business-in'
+				})
 			}
 		},
 		components: {

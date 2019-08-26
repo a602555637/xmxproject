@@ -44,6 +44,7 @@
 
 <script>
 	import uniPopup from '../../components/uni-popup/uni-popup.vue'
+	
 	export default {
 		data() {
 			return {
@@ -107,10 +108,6 @@
 		methods: {
 			onSelected(e){
 				this.isSelectedId = e.currentTarget.id
-				// uni.setStorageSync({
-				// 	
-				// })
-				// console.log(e.currentTarget.id)
 			},
 			openPopup() {
 				this.$refs.popup.open()
@@ -124,6 +121,9 @@
 					url: '../onsiterepair/onsiterepair'
 				});
 			}
+		},
+		onLoad() {
+			console.log(this.faultsName)
 		},
 		components: {
 			uniPopup

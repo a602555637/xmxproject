@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="container-title">工作人员30分钟内与您联系</view>
 		<view>
-			<map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" />
+			<!-- <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" /> -->
 		</view>
 		<view class="order-background">
 			<view class="order-detail">
@@ -34,10 +34,10 @@
 		<uniPopup custom="true" ref="popup" type="center">
 			<view class="popup-container">
 				<text>取消订单原因</text>
-				<view class="popup-info" v-for="(item, index) in canelInfo" :key="index">
+				<view @click="onSelectedId" class="popup-info" :id="index" v-for="(item, index) in canelInfo" :key="index">
 					<view class="popup-info-item">
-						<image v-if="isSelected" src="../../static/qx@2x.png"></image>
-						<image v-else src="../../static/qx-h@2x.png"></image>
+						<image v-if=" index == isSelectedId" src="../../static/qx-h@2x.png"></image>
+						<image v-else src="../../static/qx@2x.png"></image>
 						<text>{{item.info}}</text>
 					</view>
 				</view>
@@ -52,10 +52,10 @@
 	export default {
 		data() {
 			return {
-				title: 'map',
-				latitude: 39.909,
-				longitude: 116.39742,
-				isSelected:true,
+				// title: 'map',
+				// latitude: 39.909,
+				// longitude: 116.39742,
+				isSelectedId:0,
 				canelInfo:[{
 					info:'信息填写错误'
 				},{
@@ -97,11 +97,11 @@
 					title: '取消成功'
 				})
 				uni.navigateTo({
-					url: 'order-cancel',
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
-				});
+					url: 'order-cancel'
+				})
+			},
+			onSelectedId(e){
+				this.isSelectedId = e.currentTarget.id
 			}
 		},
 		components:{

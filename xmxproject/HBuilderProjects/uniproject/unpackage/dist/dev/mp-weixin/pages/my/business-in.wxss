@@ -1,0 +1,91 @@
+
+.container-button{
+	margin-top: 80rpx;
+	margin-left: 26rpx;
+	margin-bottom: 56rpx;
+	width: 698rpx;
+	height: 80rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	color: #FFFFFF;
+	background: #09BA51;
+	border-radius: 12rpx;
+}
+.container-input-address text{
+	font-size: 30rpx;
+}
+.container-input-address{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin-left: 26rpx;
+	margin-top: 40rpx;
+	margin-bottom: 120rpx;
+}
+.container-list-item image{
+	position: relative;
+	top: 5rpx;
+}
+.list-item-desc{
+	color: #333333;
+	font-size: 30rpx;
+	margin-right: 18rpx;
+}
+.container-list-item{
+	position: absolute;
+	right: 0rpx;
+}
+.right-arrow{
+		width: 18rpx;
+		height: 30rpx;
+}
+.line-thick{
+	width: 750rpx;
+	height: 20rpx;
+	background: #F3F3F3;
+}
+.container-input>view{
+	font-size: 30rpx;
+	color: #09BA51;
+	position: absolute;
+	right: 26rpx;
+}
+.placeholder-class{
+	font-size: 24rpx;
+	color: #888F97;
+}
+.container-input>text{
+	font-size: 30rpx;
+}
+.container-input{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: 120rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-left: 26rpx;
+	margin-right: 26rpx;
+	border-bottom: 1px solid #F3F3F3;
+}
+
+

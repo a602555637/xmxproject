@@ -15,7 +15,7 @@
 		<view class="line-thin"></view>
 		<view class="container">
 			<view>
-				<view class="left-slide" v-for="(item, index) in sildeList">
+				<view class="left-slide" v-for="(item, index) in sildeList" :id="index" :key="index">
 					<view class="left-slide-item">{{item.title}}</view>
 				</view>
 			</view>

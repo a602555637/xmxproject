@@ -1,0 +1,1 @@
+<view class="container"><text>输入密码</text><input type="text" placeholder="请输入6位密码" placeholder-class="placeholder-class"/><text>确认密码</text><input type="text" placeholder="请再次输入6位密码" placeholder-class="placeholder-class"/><view class="container-button">保存</view></view>

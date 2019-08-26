@@ -4,7 +4,7 @@
 			<image src="../../static/wxcomponentimg/kjxd@2x.png"></image>
 			<text>快捷下单</text>
 		</view>
-		<view class="container-left container-right">
+		<view @click="onNext" class="container-left container-right">
 			<image src="../../static/wxcomponentimg/my@2x.png"></image>
 			<text class="container-left-text">个人中心</text>
 		</view>
@@ -18,6 +18,11 @@
 			uni.navigateTo({
 				url: '../../pages/selectmodel/selectmodel'
 			});
+		},
+		onNext(){
+			uni.navigateTo({
+				url:'../../pages/my/my'
+			})
 		}
 	}
 	}
