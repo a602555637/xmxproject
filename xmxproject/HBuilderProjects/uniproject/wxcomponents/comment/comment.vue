@@ -2,7 +2,7 @@
 	<view>
 		<text class="container-title">评论区</text>
 		<view class="swiper">
-			<swiper indicator-color="#D1D1D1" indicator-active-color="#09BA51"
+			<swiper vertical indicator-color="#D1D1D1" indicator-active-color="#09BA51"
 			circular :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
 				<swiper-item>
 					<view class="container">
