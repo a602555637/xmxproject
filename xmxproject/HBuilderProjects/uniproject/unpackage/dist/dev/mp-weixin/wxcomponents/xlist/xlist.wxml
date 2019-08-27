@@ -1,1 +1,1 @@
-<view class="container"><text class="title">{{title}}</text><view class="container-right"><text class="desc">{{price}}</text><block wx:if="{{showArrow}}"><image class="arrow" src="../../static/wxcomponentimg/arrow@2x.png"></image></block></view></view>
+<view class="container"><text class="title">{{title}}</text><view class="container-right"><text class="desc">{{'￥'+price}}</text></view></view>

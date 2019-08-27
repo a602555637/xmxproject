@@ -30,7 +30,9 @@
     "pages/my/business-verify",
     "pages/my/verify-result",
     "pages/my/setting-key",
-    "pages/arrival-repair/arrival-repair"
+    "pages/arrival-repair/arrival-repair",
+    "pages/my/my-friends",
+    "pages/my/connect-friends"
   ],
   "subPackages": [],
   "window": {
@@ -45,5 +47,5 @@
     }
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap86.json"
+  "sitemapLocation": "sitemap72.json"
 }

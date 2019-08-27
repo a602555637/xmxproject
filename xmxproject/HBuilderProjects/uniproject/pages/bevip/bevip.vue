@@ -2,8 +2,11 @@
 	<view>
 		<image class="banner-img" src="../../static/my/vip-banner@2x.png"></image>
 		<view>
-			<WucTab tab-style="tab-style" tab-class="tab-class" select-class="select-class" :textFlex="true" :tab-list="tabList"
-			 :tabCur.sync="TabCur" @change="tabChange"></WucTab>
+			<!-- 顶部选项卡 -->
+			<view class="top-select">
+				<view class="isSelected ?'active-class':''">手机会员</view>
+				<view @click="onSelected" >平板会员</view>
+			</view>
 			<view class="content">
 				<text class="content-desc">会员特权</text>
 				<text @click="onChangeStatus" class="content-title">
@@ -42,15 +45,11 @@
 </template>
 
 <script>
-	// var vipItem = require('../../util/util.js')
-	// var vipItemList = util.vipList
-	import WucTab from '../../components/wuc-tab/wuc-tab.vue'
+
 	export default {
-		onLoad(){
-			// console.log(this.vipItemList)
-		},
 		data() {
 			return {
+				isSelected:true,
 				isShow:false,
 				aldate: 32,
 				isVip: false,
@@ -88,12 +87,6 @@
 				}],
 			}
 		},
-		components: {
-			WucTab
-		},
-		onLoad(options) {
-			console.log(options)
-		},
 		methods: {
 			tabChange(index) {
 				this.TabCur = index;
@@ -108,12 +101,39 @@
 			},
 			onChangeStatus(){
 				this.isShow = ! this.isShow
+			},
+			onSelected(){
+				this.isSelected = !this.isSelected
 			}
 		}
 	}
 </script>
 
 <style>
+	.active-class{
+		color: #09BA51 !important;
+		background: #FFFFFF !important;
+	}
+	
+	.top-select view{
+		font-size: 32upx;
+		background: #F3F3F3;
+		height: 100upx;
+		width: 375upx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.top-select{
+		width: 750upx;
+		height: 100upx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+	}
+	
 	.line-vertical{
 		width: 1upx;
 		height: 908upx;

@@ -157,6 +157,16 @@
 			"style": {
 				"navigationBarTitleText": "到店维修"
 			}
+		},{
+			"path": "pages/my/my-friends",
+			"style": {
+				"navigationBarTitleText": "我的亲友"
+			}
+		},{
+			"path": "pages/my/connect-friends",
+			"style": {
+				"navigationBarTitleText": "绑定亲友"
+			}
 		}
 	],
 	"globalStyle": {

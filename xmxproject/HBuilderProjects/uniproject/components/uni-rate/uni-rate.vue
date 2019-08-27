@@ -23,7 +23,7 @@
 			},
 			color: { //星星的颜色
 				type: String,
-				default: '#ececec'
+				default: '#fff'
 			},
 			activeColor: { //星星选中状态颜色
 				type: String,

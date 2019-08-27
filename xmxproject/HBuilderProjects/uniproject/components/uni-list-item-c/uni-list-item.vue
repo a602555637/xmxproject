@@ -10,6 +10,7 @@
 			</view>
 			<view class="uni-list-cell__content">
 				<view class="uni-list-cell__content-title">{{title}}</view>
+				<view class="subtitle" v-if="subtitle">{{subtitle}}</view>
 				<view class="uni-list-cell__content-note" v-if="note">{{note}}</view>
 			</view>
 			<view class="uni-list-cell__extra" v-if="showBadge === true || showBadge === 'true' || showArrow === true || showArrow === 'true'||showSwitch === true || showSwitch === 'true'">
@@ -36,6 +37,7 @@
 			};
 		},
 		props: {
+			subtitle:String,
 			title: String, //列表标题
 			note: String, //列表描述
 			disabled: { //是否禁用
@@ -102,12 +104,13 @@
 	$list-cell-pd:$uni-spacing-col-lg $uni-spacing-row-lg;
 
 	.uni-list-cell {
-		font-size: $uni-font-size-lg;
+		font-size: 30upx;
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+		border-top: 1upx solid #FFFFFF !important;
 
 		&--disabled {
 			@include list-disabled;
@@ -148,6 +151,7 @@
 			overflow: hidden;
 			display: flex;
 			flex-direction: column;
+			// border-top: 1upx solid #FFFFFF !important;
 
 			&-title {
 				font-size: $uni-font-size-lg;
@@ -197,5 +201,10 @@
 
 	.uni-list>.uni-list-cell:last-child .uni-list-cell-container:after {
 		height: 0px;
+	}
+	
+	.subtitle{
+		position: absolute;
+		right: 80upx;
 	}
 </style>

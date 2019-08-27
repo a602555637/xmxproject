@@ -2,8 +2,7 @@
 	<view class="container" >
 		<text class="title">{{title}}</text>
 		<view class="container-right">
-			<text class="desc">{{price}}</text>
-			<image v-if="showArrow" class="arrow" src="../../static/wxcomponentimg/arrow@2x.png"></image>
+			<text class="desc">{{'￥' + price}}</text>
 		</view>
 	</view>
 </template>
@@ -13,12 +12,7 @@
 		name:'xlist',
 		props:{
 			title:String,
-			price:String,
-			showArrow:{
-				type:Boolean,
-				default:false
-			},
-			
+			price:String
 		}
 	}
 </script>

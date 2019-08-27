@@ -1,4 +1,24 @@
 
+.container-subtitle{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.container-subtitle image{
+	width: 24rpx;
+	height: 24rpx;
+	margin-right: 10rpx;
+}
 .container {
 	display: -webkit-box;
 	display: -webkit-flex;

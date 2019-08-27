@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniList = function uniList() {return __webpack_require__.e(/*! import() | components/uni-list/uni-list */ "components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! ../../components/uni-list/uni-list.vue */ 313));};var uniListItem = function uniListItem() {return __webpack_require__.e(/*! import() | components/uni-list-item/uni-list-item */ "components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! ../../components/uni-list-item/uni-list-item.vue */ 320));};var rattenkingDtpicker = function rattenkingDtpicker() {return Promise.all(/*! import() | components/rattenking-dtpicker/rattenking-dtpicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/rattenking-dtpicker/rattenking-dtpicker")]).then(__webpack_require__.bind(null, /*! ../../components/rattenking-dtpicker/rattenking-dtpicker.vue */ 355));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniList = function uniList() {return __webpack_require__.e(/*! import() | components/uni-list-c/uni-list */ "components/uni-list-c/uni-list").then(__webpack_require__.bind(null, /*! ../../components/uni-list-c/uni-list.vue */ 373));};var uniListItem = function uniListItem() {return __webpack_require__.e(/*! import() | components/uni-list-item-c/uni-list-item */ "components/uni-list-item-c/uni-list-item").then(__webpack_require__.bind(null, /*! ../../components/uni-list-item-c/uni-list-item.vue */ 380));};var rattenkingDtpicker = function rattenkingDtpicker() {return Promise.all(/*! import() | components/rattenking-dtpicker/rattenking-dtpicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/rattenking-dtpicker/rattenking-dtpicker")]).then(__webpack_require__.bind(null, /*! ../../components/rattenking-dtpicker/rattenking-dtpicker.vue */ 387));};var xlist = function xlist() {return __webpack_require__.e(/*! import() | wxcomponents/xlist/xlist */ "wxcomponents/xlist/xlist").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xlist/xlist.vue */ 395));};var xlistInput = function xlistInput() {return __webpack_require__.e(/*! import() | wxcomponents/xlist/xlist-input */ "wxcomponents/xlist/xlist-input").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xlist/xlist-input.vue */ 402));};var _default =
 
 
 
@@ -180,6 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 {
   data: function data() {
     return {
+      isConfirm: false,
       kiloPrice: '￥28',
       isAgreement: true,
       totalPrice: 9827,
@@ -191,12 +192,13 @@ __webpack_require__.r(__webpack_exports__);
         price: '￥499' }] };
 
 
-
   },
   components: {
     uniList: uniList,
     uniListItem: uniListItem,
-    rattenkingDtpicker: rattenkingDtpicker },
+    rattenkingDtpicker: rattenkingDtpicker,
+    xlist: xlist,
+    xlistInput: xlistInput },
 
   methods: {
     onOrderDetail: function onOrderDetail() {
@@ -206,11 +208,25 @@ __webpack_require__.r(__webpack_exports__);
 
       }
       return;
-    } },
+    },
+    onConfirm: function onConfirm() {
+      this.isConfirm = !this.isConfirm;
+    },
+    onNext: function onNext() {
+      if (this.isConfirm) {
+        uni.navigateTo({
+          url: '../bevip/bevip' });
 
-  onLoad: function onLoad() {
-    // console.log(ListItem)
-  } };exports.default = _default;
+      }
+      return;
+    },
+    onOrder: function onOrder() {
+      if (this.isConfirm) {
+        uni.navigateTo({
+          url: '../orderdetail/orderdetail' });
+
+      }
+    } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

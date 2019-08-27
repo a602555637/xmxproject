@@ -105,10 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniPopup = function uniPopup() {return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 348));};var _default =
-
-
-
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniPopup = function uniPopup() {return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 359));};var xselect = function xselect() {return __webpack_require__.e(/*! import() | wxcomponents/xselect/xselect */ "wxcomponents/xselect/xselect").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xselect/xselect.vue */ 366));};var _default =
 
 
 
@@ -161,6 +158,8 @@ __webpack_require__.r(__webpack_exports__);
 {
   data: function data() {
     return {
+      colorId: null,
+      selectedId: 0,
       popupContent: [{
         imgSrc: '../../wxcomponents/popupcon/gold@2x.png',
         text: '金色' },
@@ -212,11 +211,20 @@ __webpack_require__.r(__webpack_exports__);
     },
     closePopup: function closePopup() {
       this.$refs.popup.close();
+    },
+    onSelectedId: function onSelectedId(e) {
+      this.selectedId = e.currentTarget.id;
+      console.log(e.currentTarget.id);
+    },
+    onSelectedColor: function onSelectedColor(e) {
+      this.colorId = e.currentTarget.id;
+      // console.log(e.currentTarget)
     } },
 
 
   components: {
-    uniPopup: uniPopup } };exports.default = _default;
+    uniPopup: uniPopup,
+    xselect: xselect } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

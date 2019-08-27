@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniPopup = function uniPopup() {return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! ../../components/uni-popup/uni-popup.vue */ 348));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniPopup = function uniPopup() {return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! ../../components/uni-popup/uni-popup.vue */ 359));};var _default =
 
 
 
@@ -159,9 +159,9 @@ __webpack_require__.r(__webpack_exports__);
 {
   data: function data() {
     return {
-      // title: 'map',
-      // latitude: 39.909,
-      // longitude: 116.39742,
+      title: 'map',
+      latitude: 39.909,
+      longitude: 116.39742,
       isSelectedId: 0,
       canelInfo: [{
         info: '信息填写错误' },

@@ -1,0 +1,1 @@
+<view class="container"><text class="item-title">{{title}}</text><text class="item-price">{{price+'元'}}</text><image src="../../static/faults/hymfx@2x.png"></image></view>

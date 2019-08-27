@@ -1,8 +1,8 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
 /* 0 */
-/*!**********************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/带缩放的轮播/main.js ***!
-  \**********************************************************************/
+/*!*****************************************************************************************************!*\
+  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/带缩放的轮播/main.js ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7476,9 +7476,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!*************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/带缩放的轮播/pages.json ***!
-  \*************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/带缩放的轮播/pages.json ***!
+  \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7598,9 +7598,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 11 */
-/*!*******************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/HBuilderProjects/带缩放的轮播/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \*******************************************************************************************************/
+/*!**************************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/带缩放的轮播/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \**************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7610,6 +7610,29 @@ function normalizeComponent (
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_index.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */
+/*!********************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/带缩放的轮播/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _my = _interopRequireDefault(__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module './pages/my/my.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_my.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ })

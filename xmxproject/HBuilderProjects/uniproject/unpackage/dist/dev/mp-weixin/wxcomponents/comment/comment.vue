@@ -1,20 +1,70 @@
 <template name="comment">
-	<view class="container">
-		<view class="container-title">
-			<text class="container-title-head">评论区</text>
-		</view>
-		<view class="content">
-			<view class="content-bottom">
-				<image class="avatar" src="../../static/wxcomponentimg/avatar@2x.png"></image>
-				<text>泰勒丝</text>
-				<uniRate class="rate" value="2" size="18"></uniRate>
-			</view>
-			<view class="comment">
-				<text class="content-date">7月12日</text>
-				<text class="content-note">服务态度很好，处理得很迅速，一天不到就通知我修好了，很满意。</text>
-			</view>
+	<view>
+		<text class="container-title">评论区</text>
+		<view class="swiper">
+			<swiper indicator-color="#D1D1D1" indicator-active-color="#09BA51"
+			circular :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+				<swiper-item>
+					<view class="container">
+
+						<view class="container-info">
+							<image src="../../static/wxcomponentimg/avatar@2x.png"></image>
+							<view class="name-date">
+								<text class="name">泰勒丝</text>
+								<text class="date">7月12日</text>
+							</view>
+							<uniRate class="rate" value="2" size="18"></uniRate>
+						</view>
+						<text class="content">服务态度很好，处理得很迅速，一天不到就通知我修好了，很满意。</text>
+					</view>
+				</swiper-item>
+				<swiper-item>
+					<view class="container">
+
+						<view class="container-info">
+							<image src="../../static/wxcomponentimg/avatar@2x.png"></image>
+							<view class="name-date">
+								<text class="name">泰勒丝</text>
+								<text class="date">7月12日</text>
+							</view>
+							<uniRate class="rate" value="2" size="18"></uniRate>
+						</view>
+						<text class="content">服务态度很好，处理得很迅速，一天不到就通知我修好了，很满意。</text>
+					</view>
+				</swiper-item>
+				<swiper-item>
+					<view class="container">
+
+						<view class="container-info">
+							<image src="../../static/wxcomponentimg/avatar@2x.png"></image>
+							<view class="name-date">
+								<text class="name">泰勒丝</text>
+								<text class="date">7月12日</text>
+							</view>
+							<uniRate class="rate" value="2" size="18"></uniRate>
+						</view>
+						<text class="content">服务态度很好，处理得很迅速，一天不到就通知我修好了，很满意。</text>
+					</view>
+				</swiper-item>
+			</swiper>
 		</view>
 	</view>
+
+
+
+	<!-- 		<view class="container">
+			<text class="container-title">评论区</text>
+			<view class="container-info">
+				<image src="../../static/wxcomponentimg/avatar@2x.png"></image>
+				<view class="name-date">
+					<text class="name">泰勒丝</text>
+					<text class="date">7月12日</text>
+				</view>
+				<uniRate class="rate" value="2" size="18"></uniRate>
+			</view>
+			<text class="content">服务态度很好，处理得很迅速，一天不到就通知我修好了，很满意。</text>
+		</view> -->
+
 </template>
 
 <script>
@@ -23,69 +73,64 @@
 		name: 'comment',
 		components: {
 			uniRate
+		},
+		props: {
+			name: String,
+			date: String
 		}
 	}
 </script>
 
 <style>
-	.content-bottom>text{
-		margin-left: 20upx;
+	.content {
+		font-size: 26upx;
+		margin-left: 134upx;
+		margin-right: 26upx;
+		margin-bottom: 40upx;
 	}
-	
+
 	.rate {
 		position: absolute;
 		right: 26upx;
-		bottom: -100upx;
 	}
 
-	.comment {
-		display: flex;
-		flex-direction: column;
-		margin-left: 160upx;
-		position: relative;
-		bottom: 54upx;
+	.name {
+		font-size: 32upx;
+		margin-bottom: 10upx;
 	}
 
-	.content-date {
+	.date {
 		font-size: 24upx;
 		color: #888F97;
 	}
 
-	.content-note {
-		font-size: 26upx;
-		margin-top: 20upx;
+	.name-date {
+		display: flex;
+		flex-direction: column;
+		margin-left: 20upx;
+	}
+
+	.container-title {
+		font-size: 40upx;
+		font-weight: bold;
+		display: block;
+		margin-bottom: 40upx;
+		margin-left: 26upx;
 	}
 
 	.container {
 		display: flex;
 		flex-direction: column;
-		margin-top: 34upx;
-	}
-
-	.container-title {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-items: center;
-		margin-bottom: 26upx;
-	}
-
-	.container-title-head {
-		font-size: 40upx;
-		font-weight: bold;
 		margin-left: 26upx;
 	}
 
-	.avatar {
+	.container-info image {
 		width: 110upx;
 		height: 110upx;
-		margin-left: 26upx;
-		position: relative;
-		bottom: 10upx;
 	}
 
-	.content-bottom {
+	.container-info {
 		display: flex;
-		align-items: flex-start;
+		flex-direction: row;
 	}
 </style>

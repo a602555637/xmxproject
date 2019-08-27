@@ -105,59 +105,58 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _onLoad$data$componen;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var WucTab = function WucTab() {return __webpack_require__.e(/*! import() | components/wuc-tab/wuc-tab */ "components/wuc-tab/wuc-tab").then(__webpack_require__.bind(null, /*! ../../components/wuc-tab/wuc-tab.vue */ 327));};var _default = (_onLoad$data$componen = {
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default =
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  onLoad: function onLoad() {
-    // console.log(this.vipItemList)
-  },
+{
   data: function data() {
     return {
+      isSelected: true,
       isShow: false,
       aldate: 32,
       isVip: false,
@@ -195,27 +194,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
   },
-  components: {
-    WucTab: WucTab } }, _defineProperty(_onLoad$data$componen, "onLoad", function onLoad(
+  methods: {
+    tabChange: function tabChange(index) {
+      this.TabCur = index;
+    },
+    onPay: function onPay() {
+      uni.navigateTo({
+        url: '../payvip/payvip',
+        success: function success(res) {
+          console.log('success');
+        } });
 
-options) {
-  console.log(options);
-}), _defineProperty(_onLoad$data$componen, "methods",
-{
-  tabChange: function tabChange(index) {
-    this.TabCur = index;
-  },
-  onPay: function onPay() {
-    uni.navigateTo({
-      url: '../payvip/payvip',
-      success: function success(res) {
-        console.log('success');
-      } });
-
-  },
-  onChangeStatus: function onChangeStatus() {
-    this.isShow = !this.isShow;
-  } }), _onLoad$data$componen);exports.default = _default;
+    },
+    onChangeStatus: function onChangeStatus() {
+      this.isShow = !this.isShow;
+    },
+    onSelected: function onSelected() {
+      this.isSelected = !this.isSelected;
+    } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

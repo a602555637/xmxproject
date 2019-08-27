@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="container-title">工作人员30分钟内与您联系</view>
 		<view>
-			<!-- <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" /> -->
+			<map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" />
 		</view>
 		<view class="order-background">
 			<view class="order-detail">
@@ -52,9 +52,9 @@
 	export default {
 		data() {
 			return {
-				// title: 'map',
-				// latitude: 39.909,
-				// longitude: 116.39742,
+				title: 'map',
+				latitude: 39.909,
+				longitude: 116.39742,
 				isSelectedId:0,
 				canelInfo:[{
 					info:'信息填写错误'

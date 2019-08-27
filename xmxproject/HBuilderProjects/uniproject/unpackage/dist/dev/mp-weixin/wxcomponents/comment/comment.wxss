@@ -1,13 +1,23 @@
 
-.content-bottom>text{
-	margin-left: 20rpx;
+.content {
+	font-size: 26rpx;
+	margin-left: 134rpx;
+	margin-right: 26rpx;
+	margin-bottom: 40rpx;
 }
 .rate {
 	position: absolute;
 	right: 26rpx;
-	bottom: -100rpx;
 }
-.comment {
+.name {
+	font-size: 32rpx;
+	margin-bottom: 10rpx;
+}
+.date {
+	font-size: 24rpx;
+	color: #888F97;
+}
+.name-date {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -17,17 +27,14 @@
 	-webkit-flex-direction: column;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
-	margin-left: 160rpx;
-	position: relative;
-	bottom: 54rpx;
+	margin-left: 20rpx;
 }
-.content-date {
-	font-size: 24rpx;
-	color: #888F97;
-}
-.content-note {
-	font-size: 26rpx;
-	margin-top: 20rpx;
+.container-title {
+	font-size: 40rpx;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 40rpx;
+	margin-left: 26rpx;
 }
 .container {
 	display: -webkit-box;
@@ -39,9 +46,13 @@
 	-webkit-flex-direction: column;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
-	margin-top: 34rpx;
+	margin-left: 26rpx;
 }
-.container-title {
+.container-info image {
+	width: 110rpx;
+	height: 110rpx;
+}
+.container-info {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -51,36 +62,5 @@
 	-webkit-flex-direction: row;
 	    -ms-flex-direction: row;
 	        flex-direction: row;
-	-webkit-box-pack: start;
-	-webkit-justify-content: flex-start;
-	    -ms-flex-pack: start;
-	        justify-content: flex-start;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	margin-bottom: 26rpx;
-}
-.container-title-head {
-	font-size: 40rpx;
-	font-weight: bold;
-	margin-left: 26rpx;
-}
-.avatar {
-	width: 110rpx;
-	height: 110rpx;
-	margin-left: 26rpx;
-	position: relative;
-	bottom: 10rpx;
-}
-.content-bottom {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: start;
-	-webkit-align-items: flex-start;
-	    -ms-flex-align: start;
-	        align-items: flex-start;
 }
 

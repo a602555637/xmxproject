@@ -36,8 +36,8 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/arrival-repair/arrival-repair",
-					"pathName": "pages/arrival-repair/arrival-repair",
+					"name": "pages/addressadd/addressadd",
+					"pathName": "pages/addressadd/addressadd",
 					"scene": null
 				}
 			]

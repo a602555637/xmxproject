@@ -7914,6 +7914,40 @@ createPage(_arrivalRepair.default);
 
 /***/ }),
 
+/***/ 259:
+/*!********************************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fmy-friends"} ***!
+  \********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _myFriends = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my-friends.vue */ 260));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_myFriends.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 267:
+/*!*************************************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fconnect-friends"} ***!
+  \*************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _connectFriends = _interopRequireDefault(__webpack_require__(/*! ./pages/my/connect-friends.vue */ 268));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_connectFriends.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
 /***/ 27:
 /*!******************************************************************************************************************************************!*\
   !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbevip%2Fbevip"} ***!
@@ -7979,7 +8013,7 @@ createPage(_payvip.default);
 
 /***/ }),
 
-/***/ 360:
+/***/ 392:
 /*!*******************************************************************************************************************************************!*\
   !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/components/rattenking-dtpicker/GetDate.js ***!
   \*******************************************************************************************************************************************/

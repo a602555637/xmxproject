@@ -1,6 +1,10 @@
 {
   "navigationBarTitleText": "到店维修",
   "usingComponents": {
-    "xlist": "/wxcomponents/xlist/xlist"
+    "xlist": "/wxcomponents/xlist/xlist",
+    "xlist-price": "/wxcomponents/xlist/xlistPrice",
+    "uni-list": "/components/uni-list-c/uni-list",
+    "uni-list-item": "/components/uni-list-item-c/uni-list-item",
+    "xlist-input": "/wxcomponents/xlist/xlist-input"
   }
 }
