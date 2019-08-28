@@ -1,12 +1,31 @@
 
-.vachio{
+.kf-phone-number{
+	font-size: 22rpx;
+	color: #09BA51;
+}
+.kf-phone-text{
+	font-size: 22rpx;
+	color: #BCBCBC;
+	margin-right: 10rpx;
+}
+.kf-phone{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	height: 98rpx;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	height: 218rpx;
 	width: 750rpx;
 	background: #fff;
+	padding-top: 40rpx;
 }
 .bottom{
 	display: -webkit-box;

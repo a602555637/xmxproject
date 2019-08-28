@@ -33,7 +33,10 @@
 				<text>98%</text>
 			</view>
 		</view>
-		<view class="vachio"></view>
+		<view class="kf-phone">
+			<text class="kf-phone-text">客服热线</text>
+			<text class="kf-phone-number">779-2733</text>
+		</view>
 		<tabbar></tabbar>
 	</view>
 </template>
@@ -120,11 +123,25 @@
 </script>
 
 <style>
-	.vachio{
+	.kf-phone-number{
+		font-size: 22upx;
+		color: #09BA51;
+	}
+	
+	.kf-phone-text{
+		font-size: 22upx;
+		color: #BCBCBC;
+		margin-right: 10upx;
+	}
+	
+	.kf-phone{
 		display: flex;
-		height: 98upx;
+		flex-direction: row;
+		justify-content: center;
+		height: 218upx;
 		width: 750upx;
 		background: #fff;
+		padding-top: 40upx;
 	}
 	
 	.bottom{

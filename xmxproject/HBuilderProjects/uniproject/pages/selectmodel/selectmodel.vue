@@ -11,7 +11,7 @@
 			<view class="slide-left">
 				<view @click="onSelectedId" :class="index == selectedId ? 'active' :''" class="left-item" v-for="(item,index) in sildeList"
 				 :key="index" :id="index">
-					<text>{{item.title}}</text>
+					<text>{{item.brand}}</text>
 				</view>
 			</view>
 			<!-- 右侧获取数据 -->
@@ -49,6 +49,30 @@
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 	import xselect from '../../wxcomponents/xselect/xselect.vue'
 	export default {
+		onLoad() {
+			uni.request({
+				url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrand',
+				method: 'GET',
+				data: {},
+				success: res => {
+					this.sildeList = res.data.data
+					console.log(res.data.data)
+				},
+				fail: (err) => {
+					console.log(err)
+				}
+			})
+			uni.request({
+				url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getPhoneType?id=1',
+				method: 'GET',
+				data: {},
+				success: res => {
+					console.log(res.data.data)
+				},
+				fail: () => {},
+				complete: () => {}
+			})
+		},
 		data() {
 			return {
 				colorId:null,
@@ -69,19 +93,7 @@
 				isSelected: false,
 				phone: '手机',
 				pad: '平板',
-				sildeList: [{
-					title: '苹果'
-				}, {
-					title: '华为'
-				}, {
-					title: '小米'
-				}, {
-					title: '苹果'
-				}, {
-					title: '华为'
-				}, {
-					title: '小米'
-				}],
+				sildeList: [],
 				phoneType: [{
 					type: 'iPhone XS Max'
 				}, {
