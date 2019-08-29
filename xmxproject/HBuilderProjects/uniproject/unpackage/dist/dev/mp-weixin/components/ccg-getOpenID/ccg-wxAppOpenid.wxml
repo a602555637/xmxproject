@@ -1,0 +1,1 @@
+<view><button type="primary" data-event-opts="{{[['tap',[['getOpenId']]]]}}" bindtap="__e">获取OpeId</button></view>
