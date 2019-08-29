@@ -3,7 +3,7 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "小美修"
 			}
 		}, {
 			"path": "pages/my/my",
@@ -166,6 +166,11 @@
 			"path": "pages/my/connect-friends",
 			"style": {
 				"navigationBarTitleText": "绑定亲友"
+			}
+		},{
+			"path": "pages/prize/prize",
+			"style": {
+				"navigationBarTitleText": "抽奖页"
 			}
 		}
 	],

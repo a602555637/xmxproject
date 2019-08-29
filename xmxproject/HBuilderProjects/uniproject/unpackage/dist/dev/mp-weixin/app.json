@@ -32,7 +32,8 @@
     "pages/my/setting-key",
     "pages/arrival-repair/arrival-repair",
     "pages/my/my-friends",
-    "pages/my/connect-friends"
+    "pages/my/connect-friends",
+    "pages/prize/prize"
   ],
   "subPackages": [],
   "window": {
@@ -47,5 +48,5 @@
     }
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap3.json"
+  "sitemapLocation": "sitemap42.json"
 }

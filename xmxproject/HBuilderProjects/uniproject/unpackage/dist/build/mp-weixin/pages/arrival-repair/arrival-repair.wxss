@@ -1,0 +1,105 @@
+
+.xbutton-rightprice{
+	font-size: 24rpx;
+	color: #09BA51;
+}
+.xbutton-left,
+.xbutton-right{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-size: 32rpx;
+}
+.xbutton-right{
+	width: 374rpx;
+	border-top: 1px solid #F3F3F3;
+}
+.xbutton-left{
+	background: #F2C900;
+	color: #FFFFFF;
+	width: 376rpx;
+}
+.xbutton{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: 100rpx;
+}
+.container-deal{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-top: 34rpx;
+	margin-bottom: 24rpx;
+}
+.deal{
+	font-size: 26rpx;
+	color: #09BA51;
+}
+.container-deal image{
+	width: 24rpx;
+	height: 24rpx;
+	margin-right: 6rpx;
+}
+.container-deal>text{
+	font-size: 26rpx;
+	color: #888F97;
+}
+textarea{
+	width: 700rpx;
+	height: 200rpx;
+}
+.text-area{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-top: 30rpx;
+	margin-left: 26rpx;
+	margin-right: 26rpx;
+}
+.text-area text{
+	font-size: 30rpx;
+}
+.container-title{
+	font-size: 32rpx;
+	font-weight: bold;
+	margin-top: 38rpx;
+	padding-left: 26rpx;
+	padding-bottom: 42rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	border-bottom: 1px solid #F3F3F3;
+}
+

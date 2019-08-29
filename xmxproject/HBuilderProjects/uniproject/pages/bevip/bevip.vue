@@ -36,7 +36,6 @@
 		<text class="container-deal">小美修《用户协议》</text>
 		
 		<view @click="onPay" v-if="isVip" class="isbutton">
-			<image class="vip-background" src="../../static/my/vip-bg2@2x.png"></image>
 			<view>您已是会员</view>
 			<view class="time-number">享免费修特权等待期倒计时<text class="aldate">{{aldate}}</text>天</view>
 		</view>
@@ -52,7 +51,7 @@
 				isSelected:true,
 				isShow:false,
 				aldate: 32,
-				isVip: false,
+				isVip: true,
 				TabCur: 0,
 				tabList: [{
 					title:'享免费更换外屏',
@@ -239,7 +238,7 @@
 	}
 	
 	.aldate{
-		color:red;
+		font-size: 36upx;
 	}
 	
 	.banner-img {
@@ -266,6 +265,7 @@
 		width: 750upx;
 		height: 100upx;
 		display: flex;
+		background: #09BA51;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -275,7 +275,7 @@
 	
 	.time-number{
 		font-size: 24upx;
-
+		word-spacing: 2upx;
 	}
 	.isbutton view{
 		color: #fff;
@@ -293,8 +293,4 @@
 		display: inline-block;
 	}
 	
-	.vip-background{
-		width: 750upx;
-		height: 100upx;
-	}
 </style>

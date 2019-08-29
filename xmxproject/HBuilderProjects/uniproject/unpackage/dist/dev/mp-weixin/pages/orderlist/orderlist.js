@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var WucTabc = function WucTabc() {return __webpack_require__.e(/*! import() | components/wuc-tab-c/wuc-tabc */ "components/wuc-tab-c/wuc-tabc").then(__webpack_require__.bind(null, /*! ../../components/wuc-tab-c/wuc-tabc.vue */ 345));};var sTabs = function sTabs() {return __webpack_require__.e(/*! import() | components/s-tabs/index */ "components/s-tabs/index").then(__webpack_require__.bind(null, /*! ../../components/s-tabs/index.vue */ 352));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var WucTabc = function WucTabc() {return __webpack_require__.e(/*! import() | components/wuc-tab-c/wuc-tabc */ "components/wuc-tab-c/wuc-tabc").then(__webpack_require__.bind(null, /*! ../../components/wuc-tab-c/wuc-tabc.vue */ 367));};var sTabs = function sTabs() {return __webpack_require__.e(/*! import() | components/s-tabs/index */ "components/s-tabs/index").then(__webpack_require__.bind(null, /*! ../../components/s-tabs/index.vue */ 374));};var _default =
 
 
 

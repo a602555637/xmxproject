@@ -32,7 +32,7 @@
 		align-items: center;
 		margin-top: 36rpx;
 		margin-left: 26rpx;
-		margin-bottom: 20rpx;
+
 	}
 	
 	.hot {

@@ -1,31 +1,21 @@
 
-.kf-phone-number{
+.kf-phone text{
 	font-size: 22rpx;
-	color: #09BA51;
-}
-.kf-phone-text{
-	font-size: 22rpx;
-	color: #BCBCBC;
-	margin-right: 10rpx;
+	color: #888F97;
 }
 .kf-phone{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
-	        flex-direction: row;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	height: 218rpx;
-	width: 750rpx;
-	background: #fff;
-	padding-top: 40rpx;
+	-webkit-justify-content: space-around;
+	    -ms-flex-pack: distribute;
+	        justify-content: space-around;
+	margin-top: 30rpx;
+	margin-bottom: 148rpx;
+}
+.xswiper{
+	margin-top: -20rpx;
 }
 .bottom{
 	display: -webkit-box;

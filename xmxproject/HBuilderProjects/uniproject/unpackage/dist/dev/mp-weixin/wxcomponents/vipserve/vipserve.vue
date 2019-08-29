@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="container-title">
 			<text class="container-title-head">会员特权</text>
-			<view class="container-subtitle">
+			<view @click="onPrize" class="container-subtitle">
 				<image src="../../static/cj@2x.png"></image>
 				<text class="container-title-more">每日一抽</text>
 			</view>
@@ -23,7 +23,14 @@
 
 <script>
 	export default {
-		name: 'vipserve'
+		name: 'vipserve',
+		methods:{
+			onPrize(){
+				uni.navigateTo({
+					url: '../../pages/prize/prize'
+				});
+			}
+		}
 	}
 </script>
 
@@ -54,7 +61,7 @@
 	}
 
 	.container-title-head {
-		font-size: 40upx;
+		font-size: 32upx;
 		font-weight: bold;
 		margin-left: 26upx;
 	}

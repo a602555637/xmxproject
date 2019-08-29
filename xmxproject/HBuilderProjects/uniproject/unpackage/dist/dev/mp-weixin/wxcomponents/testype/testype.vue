@@ -2,7 +2,7 @@
 	<view class="container-repair">
 		<image class="repair-phone" src="../../static/iPhone@2x.png" mode=""></image>
 		<view class="repair-info">
-			<text class="repair-info-phone">iphone X</text>
+			<text class="repair-info-phone">{{phoneType}}</text>
 			<text class="repair-info-test">检测到您的设备</text>
 		</view>
 		<view class="repair-right">
@@ -14,7 +14,19 @@
 
 <script>
 	export default{
-		name:'testype'
+		name:'testype',
+		data() {
+			return {
+				phoneType: '正在检测...'
+			}
+		},
+		created() {
+			uni.getSystemInfo({
+				success: res =>{
+					this.phoneType = res.model
+				}
+			})
+		}
 	}
 </script>
 

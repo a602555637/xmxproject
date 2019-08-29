@@ -14,7 +14,7 @@
 		</view>
 		<uniList>
 			<uniItem @click="onBeVip" title="会员"  thumb='../../static/my/icon/vip@2x.png'></uniItem>
-			<text class="info-text">会员详情</text>
+			<text class="info-text">了解详情</text>
 			<uniItem @click="onOrderList" title="订单" thumb='../../static/my/icon/orders@2x.png'></uniItem>
 			<uniItem @click="onMyWallet" title="钱包" thumb='../../static/my/icon/wallet@2x.png'></uniItem>
 			<uniItem title="卡包" thumb='../../static/my/icon/cards@2x.png'></uniItem>
@@ -22,6 +22,7 @@
 			<uniItem @click="onAddressList" title="地址管理" thumb='../../static/my/icon/ad@2x.png'></uniItem>
 			<uniItem @click="onBusinessIn" title="商家入驻" thumb='../../static/my/icon/join@2x.png'></uniItem>
 			<uniItem title="在线客服" thumb='../../static/my/icon/ser@2x.png'></uniItem>
+			<uniItem title="意见反馈" thumb='../../static/my/icon/yjfk@2x.png'></uniItem>
 		</uniList>
 	</view>
 
@@ -123,7 +124,6 @@
 	
 	.info-text{
 		font-size: 26upx;
-		color: #EB5555;
 		position: absolute;
 		right: 74upx;
 		top: 48upx;

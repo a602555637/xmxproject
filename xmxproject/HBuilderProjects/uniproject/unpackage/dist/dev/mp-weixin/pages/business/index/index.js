@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var search = function search() {return __webpack_require__.e(/*! import() | wxcomponents/common/search */ "wxcomponents/common/search").then(__webpack_require__.bind(null, /*! ../../../wxcomponents/common/search.vue */ 416));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var search = function search() {return __webpack_require__.e(/*! import() | wxcomponents/common/search */ "wxcomponents/common/search").then(__webpack_require__.bind(null, /*! ../../../wxcomponents/common/search.vue */ 438));};var _default =
 
 
 

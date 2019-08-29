@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniList = function uniList() {return __webpack_require__.e(/*! import() | components/uni-list-c/uni-list */ "components/uni-list-c/uni-list").then(__webpack_require__.bind(null, /*! ../../components/uni-list-c/uni-list.vue */ 373));};var uniListItem = function uniListItem() {return __webpack_require__.e(/*! import() | components/uni-list-item-c/uni-list-item */ "components/uni-list-item-c/uni-list-item").then(__webpack_require__.bind(null, /*! ../../components/uni-list-item-c/uni-list-item.vue */ 380));};var rattenkingDtpicker = function rattenkingDtpicker() {return Promise.all(/*! import() | components/rattenking-dtpicker/rattenking-dtpicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/rattenking-dtpicker/rattenking-dtpicker")]).then(__webpack_require__.bind(null, /*! ../../components/rattenking-dtpicker/rattenking-dtpicker.vue */ 387));};var xlist = function xlist() {return __webpack_require__.e(/*! import() | wxcomponents/xlist/xlist */ "wxcomponents/xlist/xlist").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xlist/xlist.vue */ 395));};var xlistInput = function xlistInput() {return __webpack_require__.e(/*! import() | wxcomponents/xlist/xlist-input */ "wxcomponents/xlist/xlist-input").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xlist/xlist-input.vue */ 402));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -177,56 +177,163 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-{
-  data: function data() {
-    return {
-      isConfirm: false,
-      kiloPrice: '￥28',
-      isAgreement: true,
-      totalPrice: 9827,
-      repairList: [{
-        title: '屏幕损坏',
-        price: '￥499' },
-      {
-        title: '电池不续航',
-        price: '￥499' }] };
 
-
-  },
-  components: {
-    uniList: uniList,
-    uniListItem: uniListItem,
-    rattenkingDtpicker: rattenkingDtpicker,
-    xlist: xlist,
-    xlistInput: xlistInput },
-
-  methods: {
-    onOrderDetail: function onOrderDetail() {
-      if (this.isAgreement) {
-        uni.navigateTo({
-          url: '../orderdetail/orderdetail' });
-
-      }
-      return;
+var _amapWx = _interopRequireDefault(__webpack_require__(/*! ../../common/amap-wx.js */ 543));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var uniList = function uniList() {return __webpack_require__.e(/*! import() | components/uni-list-c/uni-list */ "components/uni-list-c/uni-list").then(__webpack_require__.bind(null, /*! ../../components/uni-list-c/uni-list.vue */ 395));};var uniListItem = function uniListItem() {return __webpack_require__.e(/*! import() | components/uni-list-item-c/uni-list-item */ "components/uni-list-item-c/uni-list-item").then(__webpack_require__.bind(null, /*! ../../components/uni-list-item-c/uni-list-item.vue */ 402));};var rattenkingDtpicker = function rattenkingDtpicker() {return Promise.all(/*! import() | components/rattenking-dtpicker/rattenking-dtpicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/rattenking-dtpicker/rattenking-dtpicker")]).then(__webpack_require__.bind(null, /*! ../../components/rattenking-dtpicker/rattenking-dtpicker.vue */ 409));};var xlist = function xlist() {return __webpack_require__.e(/*! import() | wxcomponents/xlist/xlist */ "wxcomponents/xlist/xlist").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xlist/xlist.vue */ 417));};var xlistInput = function xlistInput() {return __webpack_require__.e(/*! import() | wxcomponents/xlist/xlist-input */ "wxcomponents/xlist/xlist-input").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xlist/xlist-input.vue */ 424));};var uniNumberBox = function uniNumberBox() {return __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! ../../components/uni-number-box/uni-number-box.vue */ 535));};var _default = { data: function data() {return { province: '', city: '', district: '', township: '', amapPlugin: null, key: 'f97ec3f47e09d39567de678870baa690', isChange: true, currentMinutes: 10, currentHour: 10, currentDate: 12, dateItem: [['日期', '01', '02', '03', '04', '05', '06', '07', '09', 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], ['小时', '08', '09', 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], ['分钟', 10, 20, 30, 40, 50]], kiloValue: '1', isConfirm: false, kiloPrice: '5', isAgreement: true, totalPrice: 9827, repairList: [{ title: '屏幕损坏', price: '￥499' }, { title: '电池不续航', price: '￥499' }] };}, components: { uniList: uniList, uniListItem: uniListItem, rattenkingDtpicker: rattenkingDtpicker, xlist: xlist, xlistInput: xlistInput, uniNumberBox: uniNumberBox }, methods: { onOrderDetail: function onOrderDetail() {if (this.isAgreement) {uni.navigateTo({ url: '../orderdetail/orderdetail' });}return;}, onConfirm: function onConfirm() {this.isConfirm = !this.isConfirm;}, onNext: function onNext() {if (this.isConfirm) {uni.navigateTo({ url: '../bevip/bevip' });}return;}, onOrder: function onOrder() {if (this.isConfirm) {uni.navigateTo({ url: '../orderdetail/orderdetail' });}
     },
-    onConfirm: function onConfirm() {
-      this.isConfirm = !this.isConfirm;
+    onNumber: function onNumber(kiloValue) {
+      this.kiloValue = kiloValue;
+      this.onPrice(kiloValue);
     },
-    onNext: function onNext() {
-      if (this.isConfirm) {
-        uni.navigateTo({
-          url: '../bevip/bevip' });
-
-      }
-      return;
+    onPrice: function onPrice(kiloValue) {
+      this.kiloPrice = kiloValue * 5;
     },
-    onOrder: function onOrder() {
-      if (this.isConfirm) {
-        uni.navigateTo({
-          url: '../orderdetail/orderdetail' });
-
+    bindPickerChange: function bindPickerChange(e) {
+      console.log(e.detail.value);
+      var nums = e.detail.value;
+      if (nums[0] == 0) {
+        return this.currentDate;
+      } else {
+        var dayItem = this.dateItem[0];
+        this.currentDate = dayItem[nums[0]];
       }
-    } } };exports.default = _default;
+
+      if (nums[1] == 0) {
+        return this.currentHour;
+      } else {
+        var hourItem = this.dateItem[1];
+        this.currentHour = hourItem[nums[1]];
+      }
+
+      if (nums[2] == 0) {
+        return this.currentMinutes;
+      } else {
+        var minutesItem = this.dateItem[2];
+        this.currentMinutes = minutesItem[nums[2]];
+      }
+
+
+      // this.currentDate = e.detail.value[0]
+      // this.currentHour = e.detail.value[1]
+      // this.currentMinutes = e.detail.value[2]
+    },
+    getDate: function getDate() {
+      var date = new Date();
+      var day = date.getDate();
+      var hour = date.getHours();
+      var minutes = date.getMinutes();
+      this.currentDate = day;
+      this.currentHour = hour;
+      this.currentMinutes = minutes;
+    },
+    onDateItem: function onDateItem() {
+      // console.log(this.currentDate)
+      var abRtc = this.dateItem[0].splice(0, 1) + ',' + this.dateItem[0].splice(this.currentDate - 2, 29);
+      // console.log(abRtc.split(','))
+      this.dateItem[0] = abRtc.split(',');
+    },
+    onCancel: function onCancel() {
+      this.getDate();
+    },
+    getRegeo: function getRegeo() {var _this = this;
+      uni.showLoading({
+        title: '获取信息中' });
+
+      this.amapPlugin.getRegeo({
+        success: function success(res) {
+          console.log(res[0].regeocodeData.addressComponent);
+          _this.province = res[0].regeocodeData.addressComponent.province;
+          _this.city = res[0].regeocodeData.addressComponent.city;
+          _this.district = res[0].regeocodeData.addressComponent.district;
+          _this.township = res[0].regeocodeData.addressComponent.township;
+          uni.hideLoading();
+        } });
+
+    },
+    onGetLocation: function onGetLocation() {
+
+    } },
+
+  onLoad: function onLoad() {
+    this.onNumber();
+    this.getDate();
+    this.onDateItem();
+    this.amapPlugin = new _amapWx.default.AMapWX({
+      key: this.key });
+
+    this.getRegeo();
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

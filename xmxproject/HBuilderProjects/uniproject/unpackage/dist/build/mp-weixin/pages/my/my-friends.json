@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的亲友",
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup"
+  }
+}

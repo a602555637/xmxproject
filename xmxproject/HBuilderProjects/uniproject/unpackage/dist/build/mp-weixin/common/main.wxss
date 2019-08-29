@@ -1,0 +1,28 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+/* @import './common/uni.css'; */
+.line-thick {
+	background: #F3F3F3;
+	width: 750rpx;
+	height: 20rpx;
+}
+.line-thin{
+	width: 750rpx;
+	height: 1rpx;
+	border-bottom: 1px solid #F3F3F3;
+}
+

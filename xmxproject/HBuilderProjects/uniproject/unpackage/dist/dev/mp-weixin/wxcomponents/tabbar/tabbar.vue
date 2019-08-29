@@ -2,7 +2,7 @@
 	<view class="container">
 		<view @click="onOrder" class="container-left">
 			<image src="../../static/wxcomponentimg/kjxd@2x.png"></image>
-			<text>快捷下单</text>
+			<text>一键下单</text>
 		</view>
 		<view @click="onNext" class="container-left container-right">
 			<image src="../../static/wxcomponentimg/my@2x.png"></image>

@@ -1,0 +1,1 @@
+<view class="container"><text class="container-text">{{title}}</text><input class="container-item" type="text" placeholder="{{placeHolderText}}" placeholder-class="placeholder-class"/></view>

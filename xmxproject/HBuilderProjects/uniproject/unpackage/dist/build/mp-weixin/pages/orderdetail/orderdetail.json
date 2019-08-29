@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "上门维修",
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup"
+  }
+}

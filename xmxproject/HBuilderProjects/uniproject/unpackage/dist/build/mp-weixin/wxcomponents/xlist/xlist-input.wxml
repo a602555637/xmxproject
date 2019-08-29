@@ -1,0 +1,1 @@
+<view class="container"><text class="item-title">{{title}}</text><input class="item-input" type="text" value="" placeholder="{{placeholder}}"/><block wx:if="{{isShowCode}}"><text class="identify-code">获取验证码</text></block></view>

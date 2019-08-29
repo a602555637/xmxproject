@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/bevip/bevip",
+    "pages/payvip/payvip",
+    "pages/orderlist/orderlist",
+    "pages/mywallet/mywallet",
+    "pages/addresslist/addresslist",
+    "pages/addressadd/addressadd",
+    "pages/selectmodel/selectmodel",
+    "pages/faults/faults",
+    "pages/onsiterepair/onsiterepair",
+    "pages/orderdetail/orderdetail",
+    "pages/business/business-login/business-login",
+    "pages/business/index/index",
+    "pages/business/business-my/business-my",
+    "pages/business/business-detail/business-detail",
+    "pages/business/business-key/business-key",
+    "pages/business/business-income/business-income",
+    "pages/business/business-order/business-order",
+    "pages/business/business-todo/business-todo",
+    "pages/business/business-repairing/business-repairing",
+    "pages/business/business-finished/business-finished",
+    "pages/business/business-cancel/business-cancel",
+    "pages/business/business-orderstatus/business-orderstatus",
+    "pages/orderdetail/order-cancel",
+    "pages/my/business-in",
+    "pages/my/upload-photo",
+    "pages/my/business-verify",
+    "pages/my/verify-result",
+    "pages/my/setting-key",
+    "pages/arrival-repair/arrival-repair",
+    "pages/my/my-friends",
+    "pages/my/connect-friends",
+    "pages/prize/prize"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小美修",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "定位服务"
+    }
+  },
+  "usingComponents": {}
+}

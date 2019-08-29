@@ -63,7 +63,7 @@
 	}
 
 	.container-title-head {
-		font-size: 40upx;
+		font-size: 32upx;
 		font-weight: bold;
 		margin-left: 26upx;
 	}

@@ -150,7 +150,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 var _default =
 
 {
@@ -159,7 +158,7 @@ var _default =
       isSelected: true,
       isShow: false,
       aldate: 32,
-      isVip: false,
+      isVip: true,
       TabCur: 0,
       tabList: [{
         title: '享免费更换外屏',

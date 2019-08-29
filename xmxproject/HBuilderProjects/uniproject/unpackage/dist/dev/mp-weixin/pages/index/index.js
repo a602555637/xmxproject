@@ -112,7 +112,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var headads = function headads() {return __webpack_require__.e(/*! import() | wxcomponents/headads/headads */ "wxcomponents/headads/headads").then(__webpack_require__.bind(null, /*! ../../wxcomponents/headads/headads.vue */ 275));};var bwSwiper = function bwSwiper() {return __webpack_require__.e(/*! import() | wxcomponents/bw-swiper/bw-swiper */ "wxcomponents/bw-swiper/bw-swiper").then(__webpack_require__.bind(null, /*! ../../wxcomponents/bw-swiper/bw-swiper.vue */ 282));};var testype = function testype() {return __webpack_require__.e(/*! import() | wxcomponents/testype/testype */ "wxcomponents/testype/testype").then(__webpack_require__.bind(null, /*! ../../wxcomponents/testype/testype.vue */ 289));};var bbutton = function bbutton() {return __webpack_require__.e(/*! import() | wxcomponents/bbutton/bbutton */ "wxcomponents/bbutton/bbutton").then(__webpack_require__.bind(null, /*! ../../wxcomponents/bbutton/bbutton.vue */ 296));};var servebutton = function servebutton() {return __webpack_require__.e(/*! import() | wxcomponents/servebutton/servebutton */ "wxcomponents/servebutton/servebutton").then(__webpack_require__.bind(null, /*! ../../wxcomponents/servebutton/servebutton.vue */ 303));};var vipserve = function vipserve() {return __webpack_require__.e(/*! import() | wxcomponents/vipserve/vipserve */ "wxcomponents/vipserve/vipserve").then(__webpack_require__.bind(null, /*! ../../wxcomponents/vipserve/vipserve.vue */ 310));};var comment = function comment() {return __webpack_require__.e(/*! import() | wxcomponents/comment/comment */ "wxcomponents/comment/comment").then(__webpack_require__.bind(null, /*! ../../wxcomponents/comment/comment.vue */ 317));};var tabbar = function tabbar() {return __webpack_require__.e(/*! import() | wxcomponents/tabbar/tabbar */ "wxcomponents/tabbar/tabbar").then(__webpack_require__.bind(null, /*! ../../wxcomponents/tabbar/tabbar.vue */ 324));};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var headads = function headads() {return __webpack_require__.e(/*! import() | wxcomponents/headads/headads */ "wxcomponents/headads/headads").then(__webpack_require__.bind(null, /*! ../../wxcomponents/headads/headads.vue */ 283));};var bwSwiper = function bwSwiper() {return __webpack_require__.e(/*! import() | wxcomponents/bw-swiper/bw-swiper */ "wxcomponents/bw-swiper/bw-swiper").then(__webpack_require__.bind(null, /*! ../../wxcomponents/bw-swiper/bw-swiper.vue */ 290));};var testype = function testype() {return __webpack_require__.e(/*! import() | wxcomponents/testype/testype */ "wxcomponents/testype/testype").then(__webpack_require__.bind(null, /*! ../../wxcomponents/testype/testype.vue */ 297));};var bbutton = function bbutton() {return __webpack_require__.e(/*! import() | wxcomponents/bbutton/bbutton */ "wxcomponents/bbutton/bbutton").then(__webpack_require__.bind(null, /*! ../../wxcomponents/bbutton/bbutton.vue */ 304));};var servebutton = function servebutton() {return __webpack_require__.e(/*! import() | wxcomponents/servebutton/servebutton */ "wxcomponents/servebutton/servebutton").then(__webpack_require__.bind(null, /*! ../../wxcomponents/servebutton/servebutton.vue */ 311));};var vipserve = function vipserve() {return __webpack_require__.e(/*! import() | wxcomponents/vipserve/vipserve */ "wxcomponents/vipserve/vipserve").then(__webpack_require__.bind(null, /*! ../../wxcomponents/vipserve/vipserve.vue */ 318));};var comment = function comment() {return __webpack_require__.e(/*! import() | wxcomponents/comment/comment */ "wxcomponents/comment/comment").then(__webpack_require__.bind(null, /*! ../../wxcomponents/comment/comment.vue */ 325));};var tabbar = function tabbar() {return __webpack_require__.e(/*! import() | wxcomponents/tabbar/tabbar */ "wxcomponents/tabbar/tabbar").then(__webpack_require__.bind(null, /*! ../../wxcomponents/tabbar/tabbar.vue */ 332));};var xswiper = function xswiper() {return __webpack_require__.e(/*! import() | wxcomponents/xswiper/xswiper */ "wxcomponents/xswiper/xswiper").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xswiper/xswiper.vue */ 339));};var quickSelect = function quickSelect() {return __webpack_require__.e(/*! import() | wxcomponents/index/quick-select */ "wxcomponents/index/quick-select").then(__webpack_require__.bind(null, /*! ../../wxcomponents/index/quick-select.vue */ 346));};var _default =
+
+
+
+
 
 
 
@@ -217,12 +221,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
   },
-  onLoad: function onLoad() {
-
-  },
-  methods: {},
-
-
   components: {
     headads: headads,
     bwSwiper: bwSwiper,
@@ -231,7 +229,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     servebutton: servebutton,
     vipserve: vipserve,
     comment: comment,
-    tabbar: tabbar } };exports.default = _default;
+    tabbar: tabbar,
+    xswiper: xswiper,
+    quickSelect: quickSelect } };exports.default = _default;
 
 /***/ }),
 /* 17 */

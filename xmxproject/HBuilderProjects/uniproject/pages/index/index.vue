@@ -1,12 +1,12 @@
 <template>
 	<view>
 		<headads title="今日换屏5折起"></headads>
-		<bwSwiper class="swiper" :swiperList="swiperList" indicatorActiveColor="#ff0000" 
-		@clickItem="clickItem" style="width:100%" :textTip="true"
-		:swiperType="true"> </bwSwiper>
-		<!-- <scareX></scareX> -->
+		<view class="xswiper">
+			<xswiper></xswiper>
+		</view>
 		<testype></testype>
 		<bbutton></bbutton>
+		<quick-select></quick-select>
 		<servebutton></servebutton>
 		<vipserve></vipserve>
 		<comment></comment>
@@ -34,8 +34,10 @@
 			</view>
 		</view>
 		<view class="kf-phone">
-			<text class="kf-phone-text">客服热线</text>
-			<text class="kf-phone-number">779-2733</text>
+			<text>客服热线</text>
+			<text>关于我们</text>
+			<text>联系我们</text>
+			<text>服务流程</text>
 		</view>
 		<tabbar></tabbar>
 	</view>
@@ -50,6 +52,8 @@
 	import vipserve from '../../wxcomponents/vipserve/vipserve.vue'
 	import comment from '../../wxcomponents/comment/comment.vue'
 	import tabbar from '../../wxcomponents/tabbar/tabbar.vue'
+	import xswiper from '../../wxcomponents/xswiper/xswiper.vue'
+	import quickSelect from '../../wxcomponents/index/quick-select.vue'
 	
 	export default {
 		data() {
@@ -103,12 +107,6 @@
 			}
 
 		},
-		onLoad() {
-
-		},
-		methods: {
-
-		},
 		components: {
 			headads,
 			bwSwiper,
@@ -117,33 +115,30 @@
 			servebutton,
 			vipserve,
 			comment,
-			tabbar
+			tabbar,
+			xswiper,
+			quickSelect
 		}
 	}
 </script>
 
 <style>
-	.kf-phone-number{
+	.kf-phone text{
 		font-size: 22upx;
-		color: #09BA51;
-	}
-	
-	.kf-phone-text{
-		font-size: 22upx;
-		color: #BCBCBC;
-		margin-right: 10upx;
+		color: #888F97;
 	}
 	
 	.kf-phone{
 		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		height: 218upx;
-		width: 750upx;
-		background: #fff;
-		padding-top: 40upx;
+		justify-content: space-around;
+		margin-top: 30upx;
+		margin-bottom: 148upx;
 	}
 	
+	.xswiper{
+		margin-top: -20upx;
+	}
+		
 	.bottom{
 		display: flex;
 		justify-content: space-around;

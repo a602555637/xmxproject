@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniPopup = function uniPopup() {return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 359));};var xselect = function xselect() {return __webpack_require__.e(/*! import() | wxcomponents/xselect/xselect */ "wxcomponents/xselect/xselect").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xselect/xselect.vue */ 366));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniPopup = function uniPopup() {return __webpack_require__.e(/*! import() | components/uni-popup/uni-popup */ "components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 381));};var xselect = function xselect() {return __webpack_require__.e(/*! import() | wxcomponents/xselect/xselect */ "wxcomponents/xselect/xselect").then(__webpack_require__.bind(null, /*! ../../wxcomponents/xselect/xselect.vue */ 388));};var _default =
 
 
 
@@ -174,7 +174,7 @@ __webpack_require__.r(__webpack_exports__);
       method: 'GET',
       data: {},
       success: function success(res) {
-        // console.log(res.data.data)
+        console.log(res.data.data);
       },
       fail: function fail() {},
       complete: function complete() {} });

@@ -1,18 +1,23 @@
 <template>
 	<view class="container">
-		<text class="container-title"  >苹果 iPhone7 玫瑰金</text>
-		<xlist title="屏幕损坏" price= "499" ></xlist>
-		<xlist title="电池不续航" price= "499" ></xlist>
+		<text class="container-title">苹果 iPhone7 玫瑰金</text>
+		<xlist title="屏幕损坏" price="499"></xlist>
+		<xlist title="电池不续航" price="499"></xlist>
 		<!-- 服务费用计算 -->
 		<view class="service">
 			<text class="service-title">上门服务费：</text>
-			<text class="service-price">90元</text>
-			<text class="service-kilo">约2km</text>
+			<text v-if="kiloPrice == null" class="service-price">5元</text>
+			<text v-else class="service-price">{{kiloPrice}}元</text>
+			<text class="service-kilo">{{kiloValue}} km</text>
 		</view>
 		<view class="line-thick"></view>
 		<view class="onsittime">
 			<text class="onsittime-text">上门时间</text>
-			<text class="onsittime-time">13:30-14:00</text>
+			<!-- <text class="onsittime-time">13:30-14:00</text> -->
+			<picker class="onsittime-time" mode="multiSelector" @cancel="onCancel" @change="bindPickerChange" :range="dateItem">
+				<view v-if="isChange">{{currentDate}} 日 {{currentHour}} : {{currentMinutes}}</view>
+				<!-- <view v-else>{{currentDate}} 日 {{currentHour}} : {{currentMinutes}}</view> -->
+			</picker>
 			<image src="../../static/wxcomponentimg/arrow@2x.png" mode=""></image>
 			<!-- <rattenking-dtpicker /> -->
 		</view>
@@ -21,26 +26,28 @@
 		<xlist-input title="手机号：" placeholder="请输入您的手机号"></xlist-input>
 		<xlist-input title="验证码：" placeholder="请输入验证码" isShowCode></xlist-input>
 		<uni-list>
-			<uni-list-item title="地区" subtitle="郫都区" ></uni-list-item>
-			<uni-list-item title="街道" subtitle="望丛中路"></uni-list-item>
-			<uni-list-item title="详细地址：" ></uni-list-item>
+			<uni-list-item @click="onGetLocation" title="地区" :subtitle="province + city + district"></uni-list-item>
+			<uni-list-item title="街道" :subtitle="township"></uni-list-item>
+			<uni-list-item title="详细地址："></uni-list-item>
 		</uni-list>
 		<view class="order-setting">
 			<text>设置抢单范围</text>
 			<view class="order-setting-right">
-				<text>1</text>
-				<text>-</text>
-				<text class="setting-select">1</text>				
+				<!-- 				<text>1</text>
+				<text>-</text> -->
+				<uni-number-box @change="onNumber" value="1" class="uni-number-box" :min="1" :max="5"></uni-number-box>
+
+				<!-- <text class="setting-select">1</text> -->
 				<text>km</text>
-				<image src="../../static/wxcomponentimg/arrow@2x.png" mode=""></image>
+				<!-- <image src="../../static/wxcomponentimg/arrow@2x.png" mode=""></image> -->
 			</view>
 		</view>
 		<text class="setting-info">系统将自动将您的订单推送给设置范围内的服务人员，以保证您的订单第一时间被接收，同时确保您得到高质量的服务。</text>
 		<view class="line-thick"></view>
 		<view class="text-area">
 			<text>故障详情（选填）：</text>
-			<textarea value=""  />
-		</view>
+			<textarea value="" />
+			</view>
 		<view class="line-thick"></view>
 		<view @click="onConfirm" class="container-deal">
 			<image v-if="isConfirm" src="../../static/repair/xy-h@2x.png" ></image>
@@ -64,17 +71,34 @@
 </template>
 
 <script>
+	import amap from '../../common/amap-wx.js'
+	
 	import uniList from '../../components/uni-list-c/uni-list.vue';
 	import uniListItem from '../../components/uni-list-item-c/uni-list-item.vue';
 	import rattenkingDtpicker from '../../components/rattenking-dtpicker/rattenking-dtpicker.vue';
 	import xlist from '../../wxcomponents/xlist/xlist.vue';
-	import xlistInput from '../../wxcomponents/xlist/xlist-input.vue'
+	import xlistInput from '../../wxcomponents/xlist/xlist-input.vue';
+	import uniNumberBox from '../../components/uni-number-box/uni-number-box.vue'
 	
 	export default {
 		data() {
 			return {
+				province:'',
+				city:'',
+				district:'',
+				township:'',
+				amapPlugin: null,  
+				key: 'f97ec3f47e09d39567de678870baa690' ,
+				isChange:true,
+				currentMinutes:10,
+				currentHour:10,
+				currentDate:12,
+				dateItem:[['日期','01','02','03','04','05','06','07','09',10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+							['小时','08','09',10,11,12,13,14,15,16,17,18,19,20],
+							['分钟',10,20,30,40,50]],
+				kiloValue:'1',
 				isConfirm:false,
-				kiloPrice: '￥28',
+				kiloPrice: '5',
 				isAgreement: true,
 				totalPrice: 9827,
 				repairList: [{
@@ -91,7 +115,8 @@
 			uniListItem,
 			rattenkingDtpicker,
 			xlist,
-			xlistInput
+			xlistInput,
+			uniNumberBox
 		},
 		methods: {
 			onOrderDetail() {
@@ -119,12 +144,99 @@
 						url: '../orderdetail/orderdetail'
 					})
 				}
+			},
+			onNumber(kiloValue){
+				this.kiloValue = kiloValue
+				this.onPrice(kiloValue)
+			},
+			onPrice(kiloValue){
+				this.kiloPrice = kiloValue * 5
+			},
+			bindPickerChange(e){
+				console.log(e.detail.value)
+				let nums = e.detail.value
+				if ( nums[0] == 0 ){
+					return this.currentDate
+				}else{
+					let dayItem = this.dateItem[0]
+					this.currentDate = dayItem[nums[0]]
+				}
+				
+				if( nums[1] == 0){
+					return this.currentHour
+				}else{
+					let hourItem = this.dateItem[1]
+					this.currentHour = hourItem[nums[1]]
+				}
+				
+				if( nums[2] == 0 ){
+					return this.currentMinutes
+				}else{
+					let minutesItem = this.dateItem[2]
+					this.currentMinutes = minutesItem[nums[2]]
+				}
+				
+				
+				// this.currentDate = e.detail.value[0]
+				// this.currentHour = e.detail.value[1]
+				// this.currentMinutes = e.detail.value[2]
+			},
+			getDate(){
+				const date = new Date()
+				let day = date.getDate()
+				let hour = date.getHours()
+				let minutes = date.getMinutes()
+				this.currentDate = day
+				this.currentHour = hour
+				this.currentMinutes = minutes
+			},
+			onDateItem(){
+				// console.log(this.currentDate)
+				let abRtc = this.dateItem[0].splice(0,1) + ',' + this.dateItem[0].splice(this.currentDate - 2,29)
+				// console.log(abRtc.split(','))
+				this.dateItem[0] = abRtc.split(',')
+			},
+			onCancel(){
+				this.getDate()
+			},
+			getRegeo(){
+				uni.showLoading({  
+					title: '获取信息中'  
+				})
+				this.amapPlugin.getRegeo({  
+				    success: res => {  
+				        console.log(res[0].regeocodeData.addressComponent)
+				        this.province = res[0].regeocodeData.addressComponent.province
+						this.city = res[0].regeocodeData.addressComponent.city
+						this.district = res[0].regeocodeData.addressComponent.district
+						this.township = res[0].regeocodeData.addressComponent.township
+				        uni.hideLoading()
+				    }  
+				})
+			},
+			onGetLocation(){
+				
 			}
+		},
+		onLoad() {
+			this.onNumber()
+			this.getDate()
+			this.onDateItem()
+			this.amapPlugin = new amap.AMapWX({  
+			            key: this.key
+			})
+			this.getRegeo()
 		}
 	}
 </script>
 
 <style>
+	.uni-number-box{
+		width: 180upx;
+		height: 44upx;
+		margin-top: -6upx;
+	}
+	
 	
 		.xbutton-rightprice{
 			font-size: 24upx;
@@ -275,6 +387,7 @@
 	.onsittime-time{
 		position: absolute;
 		right: 80upx;
+		font-size: 30upx;
 	}
 	
 	.onsittime text{
