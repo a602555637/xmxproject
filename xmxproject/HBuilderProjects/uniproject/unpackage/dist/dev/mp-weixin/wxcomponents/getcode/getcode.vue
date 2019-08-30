@@ -28,12 +28,12 @@
 			var reg = /^([0-9]{4})-([0-9]{2})-([0-9]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2})$/
 			var res = this.timer
 			if(res == null){
-				console.log('时间格式错误')
+				console.log('时间格式错误1')
 				return false
 			} else{
 				var s = parseInt(res)
 				if(s < 0 || s > 60){
-					console.log('时间格式错误')
+					console.log('时间格式错误2')
 					return false
 				}
 				this.lifeTime = 60

@@ -1,4 +1,9 @@
 {
   "navigationBarTitleText": "商家入驻",
-  "usingComponents": {}
+  "usingComponents": {
+    "getcode": "/wxcomponents/getcode/getcode",
+    "uni-list": "/components/uni-list-c/uni-list",
+    "uni-list-item": "/components/uni-list-item-c/uni-list-item",
+    "xlocation": "/wxcomponents/xlocation/xlocation"
+  }
 }

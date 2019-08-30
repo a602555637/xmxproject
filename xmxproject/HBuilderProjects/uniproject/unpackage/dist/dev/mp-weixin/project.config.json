@@ -7,27 +7,12 @@
 		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"enhance": true
+		"minified": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
 	"appid": "wx5a7e48b2d2c7cc4b",
 	"projectname": "小美修",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -46,26 +31,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/phone-code/index-code",
-					"pathName": "pages/phone-code/index-code",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/selectmodel/selectmodel",
-					"pathName": "pages/selectmodel/selectmodel",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/faults/faults",
-					"pathName": "pages/faults/faults",
+					"name": "pages/my/business-in",
+					"pathName": "pages/my/business-in",
 					"scene": null
 				}
 			]

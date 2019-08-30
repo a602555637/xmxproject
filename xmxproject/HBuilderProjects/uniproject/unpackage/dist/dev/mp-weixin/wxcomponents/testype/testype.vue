@@ -24,7 +24,7 @@
 			uni.getSystemInfo({
 				success: res =>{
 					this.phoneType = res.model
-					console.log(res)
+					// console.log(res)
 				}
 			})
 		},

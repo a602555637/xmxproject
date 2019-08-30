@@ -1,0 +1,1 @@
+<view class="container"><picker mode="region" data-event-opts="{{[['change',[['onChange',['$event']]]],['cancel',[['onCancel',['$event']]]]]}}" bindchange="__e" bindcancel="__e"><view class="picker"><view>地区</view><view class="picker-right"><view>{{address}}</view><image src="../../static/wxcomponentimg/arrow@2x.png"></image></view></view></picker></view>

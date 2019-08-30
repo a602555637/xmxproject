@@ -30,8 +30,8 @@
 	        align-items: center;
 }
 .container-item image{
-	width: 54rpx;
-	height: 54rpx;
+	width: 60rpx;
+	height: 60rpx;
 }
 .container-item text{
 	font-size: 22rpx;

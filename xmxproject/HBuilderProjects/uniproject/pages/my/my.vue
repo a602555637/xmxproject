@@ -36,7 +36,7 @@
 			return{
 				avatarUrl:'',
 				name: '',
-				isVip: true
+				isVip: false
 			}
 		},
 		onLoad() {

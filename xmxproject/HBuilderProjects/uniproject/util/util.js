@@ -1,35 +1,21 @@
-
-var vipList = [{
-		title: '免费维修详情',
-		yearTimes: '每年'
-	}, {
-		title: '享免费更换外屏',
-		yearTimes: '6次'
-	}, {
-		title: '享免费更换内屏',
-		yearTimes: '1次'
-	}, {
-		title: '享免费更换内屏',
-		yearTimes: '1次'
-	}
-]
-
-var faultsList= [
-	screen:{
-		title:'屏幕问题',
-		content:[{
+var formatDateTime = function(inputTime) { //时间戳 转 YY-mm-dd HH:ii:ss 
+				var date = new Date(inputTime);
+				var y = date.getFullYear();
+				var m = date.getMonth() + 1;
+				m = m < 10 ? ('0' + m) : m;
+				var d = date.getDate();
+				d = d < 10 ? ('0' + d) : d;
+				var h = date.getHours();
+				h = h < 10 ? ('0' + h) : h;
+				var minute = date.getMinutes();
+				var second = date.getSeconds();
+				minute = minute < 10 ? ('0' + minute) : minute;
+				second = second < 10 ? ('0' + second) : second;
+				return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
+			}
 			
-		}]
-	},
-	bcreen:{
-		title:'屏幕问题',
-		content:[{
-			
-		}]
-	},
-]
 
 
 module.exports = {
-	vipList
+	formatDateTime
 }

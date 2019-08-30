@@ -2,7 +2,7 @@
 	<view>
 		<headads title="今日换屏5折起"></headads>
 		<view class="xswiper">
-			<xswiper></xswiper>
+		<xswiper></xswiper>
 		</view>
 		<testype></testype>
 		<bbutton></bbutton>
