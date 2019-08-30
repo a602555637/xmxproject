@@ -9,7 +9,7 @@
 		<view class="container">
 			<!-- 左侧本地数据 -->
 			<view class="slide-left">
-				<view @click="onSelectedId" :class="index == selectedId ? 'active' :''" class="left-item" v-for="(item,index) in sildeList"
+				<view @click="onSelectedId" :class="index == selectedId ? 'active' :''" class="left-item" v-for="(item,index) in slideList"
 				 :key="index" :id="index">
 					<text>{{item.brand}}</text>
 				</view>
@@ -55,23 +55,22 @@
 				method: 'GET',
 				data: {},
 				success: res => {
-					this.sildeList = res.data.data
-					console.log(res.data.data)
-				},
-				fail: (err) => {
-					console.log(err)
+					this.slideList = res.data.data
+					// console.log(res.data.data)
 				}
 			})
-			uni.request({
-				url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getPhoneType?id=1',
-				method: 'GET',
-				data: {},
-				success: res => {
-					console.log(res.data.data)
-				},
-				fail: () => {},
-				complete: () => {}
-			})
+			// uni.request({
+			// 	url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getPhoneType',
+			// 	method: 'GET',
+			// 	data: {
+			// 		id:2
+			// 	},
+			// 	success: res => {
+			// 		console.log(res.data.data)
+			// 	},
+			// 	fail: () => {},
+			// 	complete: () => {}
+			// })
 		},
 		data() {
 			return {
@@ -93,7 +92,7 @@
 				isSelected: false,
 				phone: '手机',
 				pad: '平板',
-				sildeList: [],
+				slideList: [],
 				phoneType: [{
 					type: 'iPhone XS Max'
 				}, {
@@ -119,7 +118,13 @@
 			},
 			onSelectedId(e) {
 				this.selectedId = e.currentTarget.id
-				console.log(e.currentTarget.id)
+				// console.log(e.currentTarget.id)
+				let svalueId = e.currentTarget.id
+				let svalue = this.slideList[svalueId].brand
+				uni.setStorage({
+					key:'model',
+					data:svalue
+				})
 			},
 			onSelectedColor(e){
 				this.colorId = e.currentTarget.id

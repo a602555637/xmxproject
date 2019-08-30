@@ -33,7 +33,8 @@
     "pages/arrival-repair/arrival-repair",
     "pages/my/my-friends",
     "pages/my/connect-friends",
-    "pages/prize/prize"
+    "pages/prize/prize",
+    "pages/phone-code/index-code"
   ],
   "subPackages": [],
   "window": {
@@ -48,5 +49,5 @@
     }
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap23.json"
+  "sitemapLocation": "sitemap4.json"
 }

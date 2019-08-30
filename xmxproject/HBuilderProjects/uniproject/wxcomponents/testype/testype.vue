@@ -7,7 +7,7 @@
 		</view>
 		<view class="repair-right">
 			<image class="repair-right-change" src="../../static/ghjx-btn@2x.png" mode=""></image>
-			<image src="../../static/repair-btn@2x.png" mode=""></image>
+			<image @click="onNext" src="../../static/repair-btn@2x.png" mode=""></image>
 		</view>
 	</view>
 </template>
@@ -24,7 +24,13 @@
 			uni.getSystemInfo({
 				success: res =>{
 					this.phoneType = res.model
+					console.log(res)
 				}
+			})
+		},
+		onNext() {
+			uni.navigateTo({
+				url: '../../pages/selectmodel/selectmodel'
 			})
 		}
 	}

@@ -1,7 +1,7 @@
 <template>
 	<view class="">
 		<view class="container">
-			<image class="avatar" src="../../static/wxcomponentimg/avatar@2x.png"></image>
+			<image class="avatar" :src="avatarUrl"></image>
 			<text class="name">{{name}}</text>
 			<view class="waittime" v-if="isVip">等待期还剩45天</view>
 			<view class="content">
@@ -13,7 +13,7 @@
 			<view class="line"></view>
 		</view>
 		<uniList>
-			<uniItem @click="onBeVip" title="会员"  thumb='../../static/my/icon/vip@2x.png'></uniItem>
+			<uniItem title="会员"  thumb='../../static/my/icon/vip@2x.png'></uniItem>
 			<text class="info-text">了解详情</text>
 			<uniItem @click="onOrderList" title="订单" thumb='../../static/my/icon/orders@2x.png'></uniItem>
 			<uniItem @click="onMyWallet" title="钱包" thumb='../../static/my/icon/wallet@2x.png'></uniItem>
@@ -34,9 +34,19 @@
 	export default {
 		data(){
 			return{
-				name: 'silence',
+				avatarUrl:'',
+				name: '',
 				isVip: true
 			}
+		},
+		onLoad() {
+			uni.getUserInfo({
+				success:res=>{
+					this.avatarUrl = res.userInfo.avatarUrl
+					this.name = res.userInfo.nickName
+					console.log(res.userInfo)
+				}
+			})
 		},
 		methods:{
 			onBeVip(){
@@ -76,7 +86,7 @@
 		components: {
 			uniList,
 			uniItem
-		}
+		},
 	}
 </script>
 
@@ -91,6 +101,7 @@
 		width: 160upx;
 		height: 140upx;
 		margin-top: 26upx;
+		border-radius: 100upx;
 	}
 
 	.name {
@@ -103,13 +114,13 @@
 		font-size: 24upx;
 		color: #EB5555;
 		margin-top: 20upx;
-		margin-bottom: 20upx;
 	}
 
 	.content image {
 		width: 128upx;
 		height: 36upx;
 		margin-bottom: 50upx;
+		margin-top: 20upx;
 	}
 
 	.container {

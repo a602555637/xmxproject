@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<view @click="openPopup" class="container-item" v-for="(item,index) in faulesList" :key="index">
+		<view @click="openPopup(index)" class="container-item" v-for="(item,index) in faulesList" :key="index">
 			<image :src="item.imgSrc"></image>
 			<text>{{item.text}}</text>
 		</view>
@@ -15,7 +15,7 @@
 					<image v-else src="../../static/faults/wxz@2x.png" class="popup-content-icon"></image>
 					<view class="popup-content-middle">
 						<text class="item-title">{{item.title}}</text>
-						<text class="item-subtitle">{{item.subtitle}}</text>
+						<text class="item-subtitle">{{item.desc}}</text>
 					</view>
 					<text class="item-price">{{item.price}}</text>
 				</view>
@@ -44,27 +44,35 @@
 
 <script>
 	import uniPopup from '../../components/uni-popup/uni-popup.vue'
-	
+
 	export default {
 		data() {
 			return {
-				totalPrice:652,
-				isSelectedId:'',
-				isSelected:false,
-				unSelectedImg:'../../static/faults/wxz@2x.png',
-				selectedImg:'../../static/faults/wxz@2x.png',
-				faulesItem:[{
-					price:'￥1599',
-					title:'内屏碎（图像不正常）',
-					subtitle:'换屏幕'
-				},{
-					price:'￥1599',
-					title:'外屏碎（无3D，集中爆点）',
-					subtitle:'换屏幕'
-				},{
-					price:'￥1599',
-					title:'外屏碎（无3D，集中爆点）',
-					subtitle:'换屏幕'
+				totalPrice: 652,
+				isSelectedId: '',
+				isSelected: false,
+				unSelectedImg: '../../static/faults/wxz@2x.png',
+				selectedImg: '../../static/faults/wxz@2x.png',
+				faulesItem: [{
+					"title": "内屏碎（图像不正常）",
+					"desc": "更换屏幕，旧屏幕不回收",
+					"price": "2299"
+				}, {
+					"title": "外屏碎（无3D，集中爆点，无触摸）",
+					"desc": "更换屏幕总成(内屏+外屏)，旧屏(内屏+外屏)回收",
+					"price": "2299"
+				}, {
+					"title": "外屏碎(图像正常）",
+					"desc": "更换屏幕总成(内屏+外屏)，旧屏(内屏+外屏)回收",
+					"price": "599"
+				}, {
+					"title": "无法显示(主板问题)",
+					"desc": "维修主板",
+					"price": "999"
+				}, {
+					"title": "屏幕其他问题",
+					"desc": "更换屏幕，旧屏幕不回收",
+					"price": "2299"
 				}],
 				faulesList: [{
 					imgSrc: '../../static/faults/screen@2x.png',
@@ -106,16 +114,18 @@
 			}
 		},
 		methods: {
-			onSelected(e){
+			onSelected(e) {
 				this.isSelectedId = e.currentTarget.id
 			},
-			openPopup() {
+			openPopup(sid) {
 				this.$refs.popup.open()
+				console.log(sid)
+				// let title = this.faulseList[sid].title
 			},
 			closePopup() {
 				this.$refs.popup.close()
 			},
-			onsiteRepair(e){
+			onsiteRepair(e) {
 				console.log(e)
 				uni.navigateTo({
 					url: '../onsiterepair/onsiterepair'
@@ -123,7 +133,8 @@
 			}
 		},
 		onLoad() {
-			console.log(this.faultsName)
+			console.log(this.faulesItem)
+			console.log(this.faulesList)
 		},
 		components: {
 			uniPopup
@@ -132,23 +143,23 @@
 </script>
 
 <style>
-	.line-thin{
+	.line-thin {
 		display: flex;
 		position: absolute;
 		left: 0upx;
 		width: 750upx;
 		border-bottom: 1px solid #eee;
 	}
-	
-	.popup-button{
+
+	.popup-button {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		height: 97upx;
 		margin-top: 42upx;
 	}
-	
-	.popup-button-left{
+
+	.popup-button-left {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -156,8 +167,8 @@
 		border-left: 1px solid #fff !important;
 		width: 375upx;
 	}
-	
-	.popup-button-right{
+
+	.popup-button-right {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -165,70 +176,70 @@
 		border-right: 1px solid #fff !important;
 		width: 375upx;
 	}
-	
-	.popup-button-text{
+
+	.popup-button-text {
 		font-size: 24upx;
 	}
-	
-	.popup-button-left image{
+
+	.popup-button-left image {
 		width: 44upx;
 		height: 40upx;
 		margin-right: 14upx;
 	}
-	
-	.popup-button-right image{
+
+	.popup-button-right image {
 		width: 42upx;
 		height: 42upx;
 		margin-right: 14upx;
 	}
-	
-	.popup-bottom{
+
+	.popup-bottom {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-top: 30upx;
 	}
-	
-	.popup-bottom image{
+
+	.popup-bottom image {
 		width: 130upx;
 		height: 24upx;
 	}
-	
-	.total-price-text{
+
+	.total-price-text {
 		font-size: 26upx;
 		color: #09BA51;
 	}
-	
-	.total-price{
+
+	.total-price {
 		font-size: 32upx;
 		font-weight: bold;
 		font-family: Segoe UI;
 		color: #09BA51;
 	}
-	
-	.item-price{
+
+	.item-price {
 		font-size: 32upx;
 		display: flex;
 		position: absolute;
 		right: 56upx;
 	}
-	
-	.item-title{
-		font-size: 32upx;
+
+	.item-title {
+		font-size: 30upx;
 		margin-bottom: 6upx;
 	}
-	
-	.item-subtitle{
-		font-size: 24upx;
+
+	.item-subtitle {
+		font-size: 22upx;
 		color: #888F97;
 	}
-	
-	.popup-content-middle{
+
+	.popup-content-middle {
 		display: flex;
 		flex-direction: column;
 	}
-	
-	.popup-content{
+
+	.popup-content {
 		display: flex;
 		align-items: center;
 		height: 120upx;
@@ -236,35 +247,35 @@
 		padding-left: 30upx;
 		margin-top: 36upx;
 	}
-	
-	.popup-content>image{
+
+	.popup-content>image {
 		width: 32upx;
 		height: 32upx;
 		margin-right: 24upx;
 	}
-	
-	.popup-title text{
+
+	.popup-title text {
 		font-size: 32upx;
 		font-weight: bold;
 	}
-	
+
 	.popup-title image {
 		width: 42upx;
 		height: 42upx;
 	}
-	
-	.popup-title{
+
+	.popup-title {
 		display: flex;
 		justify-content: space-between;
 	}
-	
-	.container-popup{
+
+	.container-popup {
 		display: flex;
 		flex-direction: column;
 		background: #fff;
 		padding: 30upx 26upx 0upx 26upx;
 	}
-	
+
 	.container {
 		display: flex;
 		flex-direction: column;

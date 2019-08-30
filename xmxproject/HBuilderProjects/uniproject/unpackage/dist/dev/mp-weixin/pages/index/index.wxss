@@ -1,4 +1,8 @@
 
+.vacol{
+	height: 98rpx;
+	background: #FFFFFF;
+}
 .kf-phone text{
 	font-size: 22rpx;
 	color: #888F97;
@@ -12,7 +16,7 @@
 	    -ms-flex-pack: distribute;
 	        justify-content: space-around;
 	margin-top: 30rpx;
-	margin-bottom: 148rpx;
+	margin-bottom: 50rpx;
 }
 .xswiper{
 	margin-top: -20rpx;

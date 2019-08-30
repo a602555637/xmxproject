@@ -51,7 +51,7 @@
 				isSelected:true,
 				isShow:false,
 				aldate: 32,
-				isVip: true,
+				isVip: false,
 				TabCur: 0,
 				tabList: [{
 					title:'享免费更换外屏',

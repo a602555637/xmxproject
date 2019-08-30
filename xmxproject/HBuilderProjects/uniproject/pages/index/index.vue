@@ -33,12 +33,13 @@
 				<text>98%</text>
 			</view>
 		</view>
-		<view class="kf-phone">
+		<view @click="onCode" class="kf-phone">
 			<text>客服热线</text>
 			<text>关于我们</text>
 			<text>联系我们</text>
 			<text>服务流程</text>
 		</view>
+		<view class="vacol"></view>
 		<tabbar></tabbar>
 	</view>
 </template>
@@ -118,11 +119,26 @@
 			tabbar,
 			xswiper,
 			quickSelect
+		},
+		methods:{
+			onCode(){
+				uni.navigateTo({
+					url: '../phone-code/index-code',
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
+			}
 		}
 	}
 </script>
 
 <style>
+	.vacol{
+		height: 98upx;
+		background: #FFFFFF;
+	}
+	
 	.kf-phone text{
 		font-size: 22upx;
 		color: #888F97;
@@ -132,7 +148,7 @@
 		display: flex;
 		justify-content: space-around;
 		margin-top: 30upx;
-		margin-bottom: 148upx;
+		margin-bottom: 50upx;
 	}
 	
 	.xswiper{

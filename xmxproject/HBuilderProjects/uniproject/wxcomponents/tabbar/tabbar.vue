@@ -4,18 +4,30 @@
 			<image src="../../static/wxcomponentimg/kjxd@2x.png"></image>
 			<text>一键下单</text>
 		</view>
-		<button @click="onGetUserInfo" type="primary" open-type="getUserInfo">huoquxinxi</button>
-		<wx-app-openid>openid</wx-app-openid>
-		<view @click="onNext" class="container-left container-right">
+		<view>
+			<button class="button-class" style="background-color: #FFFFFF;border-radius: 0;"
+			@click="onGetUserInfo" type="primary" open-type="getUserInfo">
+				<image src="../../static/wxcomponentimg/my@2x.png"></image>
+				<text>个人中心</text>
+			</button>
+		</view>
+<!-- 		<wx-app-openid>openid</wx-app-openid> -->
+
+<!-- 		<view @click="onNext" class="container-left container-right">
 			<image src="../../static/wxcomponentimg/my@2x.png"></image>
 			<text class="container-left-text">个人中心</text>
-		</view>
+		</view> -->
 	</view>
 </template>
 
 <script>
 	import wxAppOpenid from '../../components/ccg-getOpenID/ccg-wxAppOpenid.vue'
 export default {
+	data(){
+		return{
+			userInfo:{}
+		}
+	},
 	components:{
 		wxAppOpenid
 	},
@@ -34,35 +46,58 @@ export default {
 		onGetUserInfo(){
 			uni.getUserInfo({
 				success: res =>{
-					console.log(res)
-					console.log(res.userInfo)
+					this.userInfo = res.userInfo
+					if(this.userInfo){
+						this.onNext()
+					}
+					return
+					// console.log(this.userInfo.avatarUrl)
 				}
 			})
+			
 		}
 	},
 	created() {
-		uni.login({
-		  provider: 'weixin',
-		  success: res=> {
-		    console.log(res)
-		    // 获取用户信息
-		    uni.getUserInfo({
-		      provider: 'weixin',
-		      success: res=> {
-		        console.log(res)
-		      }
-		    })
-		  }
-		})
+		// uni.login({
+		//   provider: 'weixin',
+		//   success: res=> {
+		//     console.log(res)
+		//     // 获取用户信息
+		//     uni.getUserInfo({
+		//       provider: 'weixin',
+		//       success: res=> {
+		//         console.log(res)
+		//       }
+		//     })
+		//   }
+		// })
 	}
-};
+}
 </script>
 
 <style>
-.container-left {
-	font-size: 24upx;
-}
-
+	.button-class::after{
+		border: none;
+	}
+	
+	.button-class text{
+		font-size: 24upx;
+		color: #000;
+		position: relative;
+		bottom: 14upx;
+	}
+	
+	.button-class image{
+		width: 50upx;
+		height: 50upx;
+	}
+	
+	.button-class{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
 .container-left {
 	font-size: 24upx;
 }
@@ -79,8 +114,8 @@ export default {
 	width: 750upx;
 	height: 98upx;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-around;
+	/* align-items: space-around; */
 	/* 		padding-left: 136upx;
 		padding-right: 134upx; */
 	background: #fff;

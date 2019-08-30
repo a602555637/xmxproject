@@ -65,7 +65,7 @@
 		{
 			"path": "pages/business/business-login/business-login",
 			"style": {
-				"navigationBarTitleText": "商家入驻"
+				"navigationBarTitleText": "商家入口"
 			}
 		},{
 			"path": "pages/business/index/index",
@@ -171,6 +171,11 @@
 			"path": "pages/prize/prize",
 			"style": {
 				"navigationBarTitleText": "抽奖页"
+			}
+		},{
+			"path": "pages/phone-code/index-code",
+			"style": {
+				"navigationBarTitleText": "Code"
 			}
 		}
 	],

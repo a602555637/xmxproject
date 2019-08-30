@@ -8,6 +8,7 @@
 	width: 160rpx;
 	height: 140rpx;
 	margin-top: 26rpx;
+	border-radius: 100rpx;
 }
 .name {
 	font-size: 32rpx;
@@ -18,12 +19,12 @@
 	font-size: 24rpx;
 	color: #EB5555;
 	margin-top: 20rpx;
-	margin-bottom: 20rpx;
 }
 .content image {
 	width: 128rpx;
 	height: 36rpx;
 	margin-bottom: 50rpx;
+	margin-top: 20rpx;
 }
 .container {
 	display: -webkit-box;
