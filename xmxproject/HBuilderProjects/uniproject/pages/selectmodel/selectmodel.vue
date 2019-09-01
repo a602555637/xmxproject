@@ -16,8 +16,8 @@
 			</view>
 			<!-- 右侧获取数据 -->
 			<view class="slide-right">
-				<view @click="openPopup" class="right-item" v-for="(item, index) in phoneType" :key="index">
-					<text>{{item.type}}</text>
+				<view @click="openPopup(index)" class="right-item" v-for="(item, index) in phoneType" :key="index">
+					<text>{{item.model}}</text>
 				</view>
 			</view>
 		</view>
@@ -32,8 +32,8 @@
 					<view class="content-middle" >
 						<view :class="index == colorId ? 'active-text' :''" @click="onSelectedColor" class="content-middle-item" 
 						v-for="(item, index) in popupContent" :key="index" :id="index">
-							<image :src="item.imgSrc"></image>
-							<text>{{item.text}}</text>
+							<view class="colorImg" :style="{background:item.value}"></view>
+							<text>{{item.name}}</text>
 						</view>
 					</view>
 				</view>
@@ -59,49 +59,28 @@
 					// console.log(res.data.data)
 				}
 			})
-			// uni.request({
-			// 	url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getPhoneType',
-			// 	method: 'GET',
-			// 	data: {
-			// 		id:2
-			// 	},
-			// 	success: res => {
-			// 		console.log(res.data.data)
-			// 	},
-			// 	fail: () => {},
-			// 	complete: () => {}
-			// })
+			uni.request({
+				url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrandDetail',
+				method: 'POST',
+				data: {
+					id:1
+				},
+				success: res => {
+					this.phoneType = res.data.data
+				}
+			})
 		},
 		data() {
 			return {
+				valueId:1,
 				colorId:null,
 				selectedId: 0,
-				popupContent: [{
-					imgSrc: '../../wxcomponents/popupcon/gold@2x.png',
-					text: '金色'
-				}, {
-					imgSrc: '../../wxcomponents/popupcon/rose@2x.png',
-					text: '玫瑰金'
-				}, {
-					imgSrc: '../../wxcomponents/popupcon/silver@2x.png',
-					text: '银色'
-				}, {
-					imgSrc: '../../wxcomponents/popupcon/black@2x.png',
-					text: '黑色'
-				}],
+				popupContent: [],
 				isSelected: false,
 				phone: '手机',
 				pad: '平板',
 				slideList: [],
-				phoneType: [{
-					type: 'iPhone XS Max'
-				}, {
-					type: 'iPhone XS'
-				}, {
-					type: 'iPhone XR'
-				}, {
-					type: 'iPhone X'
-				}]
+				phoneType: []
 			}
 		},
 		methods: {
@@ -110,25 +89,68 @@
 					url: '../faults/faults'
 				});
 			},
-			openPopup() {
+			openPopup(e) {
+				let modelSelected = this.phoneType[e].model
+				console.log(e)
+				uni.setStorage({
+					key:'model',
+					data:modelSelected
+				})
 				this.$refs.popup.open()
+				
+				//获取颜色色值
+				uni.request({
+					url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrandColour',
+					method: 'POST',
+					data: {
+						name: modelSelected
+					},
+					success: res => {
+						console.log(res.data.data)
+						this.popupContent = res.data.data
+						// uni.setStorage({
+						// 	key:'color',
+						// 	data:svalue
+						// })
+					}
+				})
 			},
 			closePopup() {
 				this.$refs.popup.close()
 			},
 			onSelectedId(e) {
 				this.selectedId = e.currentTarget.id
-				// console.log(e.currentTarget.id)
+				this.valueId = parseInt(e.currentTarget.id) + 1
 				let svalueId = e.currentTarget.id
 				let svalue = this.slideList[svalueId].brand
 				uni.setStorage({
-					key:'model',
+					key:'brand',
 					data:svalue
+				})
+				uni.request({
+					url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrandDetail',
+					method: 'POST',
+					data: {
+						id:this.valueId
+					},
+					success: res => {
+						this.phoneType = res.data.data
+					}
 				})
 			},
 			onSelectedColor(e){
 				this.colorId = e.currentTarget.id
-				// console.log(e.currentTarget)
+				// console.log(this.colorId)
+				let selectedColorName = this.popupContent[this.colorId].name
+				let selectedColorValue = this.popupContent[this.colorId].value
+				uni.setStorage({
+					key:'colorName',
+					data:selectedColorName
+				})
+				uni.setStorage({
+					key:'colorValue',
+					data:selectedColorValue
+				})
 			}
 
 		},
@@ -197,10 +219,11 @@
 			margin-right: 64upx;
 			margin-bottom: 40upx;
 		}
-		.content-middle-item image {
+		.content-middle-item view {
 			width: 140upx;
 			height: 70upx;
 			margin-bottom: 10upx;
+			border-radius: 12upx;
 		}
 		.content-middle-item text {
 			font-size: 26upx;

@@ -10,7 +10,7 @@
 					<text>故障选择</text>
 					<image @click="closePopup" src="../../static/faults/close@2x.png"></image>
 				</view>
-				<view @click="onSelected" :id="index" :key="index" class="popup-content" v-for="(item, index) in faulesItem">
+<!-- 				<view @click="onSelected" :id="index" :key="index" class="popup-content" v-for="(item, index) in faulesItem">
 					<image v-if="index == isSelectedId " src="../../static/faults/xz@2x.png" class="popup-content-icon"></image>
 					<image v-else src="../../static/faults/wxz@2x.png" class="popup-content-icon"></image>
 					<view class="popup-content-middle">
@@ -18,7 +18,22 @@
 						<text class="item-subtitle">{{item.desc}}</text>
 					</view>
 					<text class="item-price">{{item.price}}</text>
-				</view>
+				</view> -->
+				
+				<scroll-view scroll-y>
+					<checkbox-group>
+						<view v-for="(item, index) in faulesItem" :id="index" :key="index">
+							<label class="checkbox">
+								<checkbox value="123" >
+									<view>{{item.title}}</view>
+									<view>{{item.desc}}</view>
+									<view>{{item.price}}</view>
+								</checkbox>
+							</label>
+						</view>
+					</checkbox-group>
+				</scroll-view>
+				
 				<view class="popup-bottom">
 					<view class="popup-bottom-left">
 						<text class="total-price-text">合计：</text>
@@ -143,6 +158,26 @@
 </script>
 
 <style>
+	/* 默认样式 */
+	.checkbox .wx-checkbox-input {
+			border-radius: 30upx;
+			width: 32upx;
+			height: 32upx;
+			border: 1px solid #eee;
+			background: #FFFFFF;
+	}
+		/* 选中图标样式 */
+	.checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+			width: 32upx;
+			height: 32upx;
+			/* color: #09BA51; */
+			background: #09BA51;
+			border-radius: 30upx;
+	}
+		/* 选中后样式 */
+	.checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+		background: #09BA51;
+	}
 	.line-thin {
 		display: flex;
 		position: absolute;

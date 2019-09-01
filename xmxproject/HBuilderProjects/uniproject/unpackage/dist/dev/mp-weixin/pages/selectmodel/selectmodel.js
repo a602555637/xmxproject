@@ -166,49 +166,28 @@ __webpack_require__.r(__webpack_exports__);
         // console.log(res.data.data)
       } });
 
-    // uni.request({
-    // 	url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getPhoneType',
-    // 	method: 'GET',
-    // 	data: {
-    // 		id:2
-    // 	},
-    // 	success: res => {
-    // 		console.log(res.data.data)
-    // 	},
-    // 	fail: () => {},
-    // 	complete: () => {}
-    // })
+    uni.request({
+      url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrandDetail',
+      method: 'POST',
+      data: {
+        id: 1 },
+
+      success: function success(res) {
+        _this.phoneType = res.data.data;
+      } });
+
   },
   data: function data() {
     return {
+      valueId: 1,
       colorId: null,
       selectedId: 0,
-      popupContent: [{
-        imgSrc: '../../wxcomponents/popupcon/gold@2x.png',
-        text: '金色' },
-      {
-        imgSrc: '../../wxcomponents/popupcon/rose@2x.png',
-        text: '玫瑰金' },
-      {
-        imgSrc: '../../wxcomponents/popupcon/silver@2x.png',
-        text: '银色' },
-      {
-        imgSrc: '../../wxcomponents/popupcon/black@2x.png',
-        text: '黑色' }],
-
+      popupContent: [],
       isSelected: false,
       phone: '手机',
       pad: '平板',
       slideList: [],
-      phoneType: [{
-        type: 'iPhone XS Max' },
-      {
-        type: 'iPhone XS' },
-      {
-        type: 'iPhone XR' },
-      {
-        type: 'iPhone X' }] };
-
+      phoneType: [] };
 
   },
   methods: {
@@ -217,25 +196,68 @@ __webpack_require__.r(__webpack_exports__);
         url: '../faults/faults' });
 
     },
-    openPopup: function openPopup() {
+    openPopup: function openPopup(e) {var _this2 = this;
+      var modelSelected = this.phoneType[e].model;
+      console.log(e);
+      uni.setStorage({
+        key: 'model',
+        data: modelSelected });
+
       this.$refs.popup.open();
+
+      //获取颜色色值
+      uni.request({
+        url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrandColour',
+        method: 'POST',
+        data: {
+          name: modelSelected },
+
+        success: function success(res) {
+          console.log(res.data.data);
+          _this2.popupContent = res.data.data;
+          // uni.setStorage({
+          // 	key:'color',
+          // 	data:svalue
+          // })
+        } });
+
     },
     closePopup: function closePopup() {
       this.$refs.popup.close();
     },
-    onSelectedId: function onSelectedId(e) {
+    onSelectedId: function onSelectedId(e) {var _this3 = this;
       this.selectedId = e.currentTarget.id;
-      // console.log(e.currentTarget.id)
+      this.valueId = parseInt(e.currentTarget.id) + 1;
       var svalueId = e.currentTarget.id;
       var svalue = this.slideList[svalueId].brand;
       uni.setStorage({
-        key: 'model',
+        key: 'brand',
         data: svalue });
+
+      uni.request({
+        url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrandDetail',
+        method: 'POST',
+        data: {
+          id: this.valueId },
+
+        success: function success(res) {
+          _this3.phoneType = res.data.data;
+        } });
 
     },
     onSelectedColor: function onSelectedColor(e) {
       this.colorId = e.currentTarget.id;
-      // console.log(e.currentTarget)
+      // console.log(this.colorId)
+      var selectedColorName = this.popupContent[this.colorId].name;
+      var selectedColorValue = this.popupContent[this.colorId].value;
+      uni.setStorage({
+        key: 'colorName',
+        data: selectedColorName });
+
+      uni.setStorage({
+        key: 'colorValue',
+        data: selectedColorValue });
+
     } },
 
 

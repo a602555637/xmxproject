@@ -1,4 +1,183 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 默认样式 */
+.checkbox .wx-checkbox-input {
+		border-radius: 30rpx;
+		width: 32rpx;
+		height: 32rpx;
+		border: 1px solid #eee;
+		background: #FFFFFF;
+}
+/* 选中图标样式 */
+.checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+		width: 32rpx;
+		height: 32rpx;
+		/* color: #09BA51; */
+		background: #09BA51;
+		border-radius: 30rpx;
+}
+/* 选中后样式 */
+.checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+	background: #09BA51;
+}
 .line-thin {
 	display: -webkit-box;
 	display: -webkit-flex;
