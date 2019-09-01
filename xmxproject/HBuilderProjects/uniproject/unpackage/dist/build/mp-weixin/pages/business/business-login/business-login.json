@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "商家入驻",
+  "navigationBarTitleText": "商家入口",
   "usingComponents": {
     "xinput": "/wxcomponents/common/xinput"
   }

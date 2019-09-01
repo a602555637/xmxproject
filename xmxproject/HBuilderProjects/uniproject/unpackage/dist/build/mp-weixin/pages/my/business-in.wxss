@@ -1,5 +1,25 @@
 
-.container-button{
+.business-item {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	position: absolute;
+	right: 0rpx;
+	top: 0rpx;
+}
+.business-picker {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	width: 750rpx;
+}
+.business-title {
+	font-size: 30rpx;
+}
+.container-button {
 	margin-top: 80rpx;
 	margin-left: 26rpx;
 	margin-bottom: 56rpx;
@@ -26,10 +46,10 @@
 	background: #09BA51;
 	border-radius: 12rpx;
 }
-.container-input-address text{
+.container-input-address text {
 	font-size: 30rpx;
 }
-.container-input-address{
+.container-input-address {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -38,42 +58,40 @@
 	margin-top: 40rpx;
 	margin-bottom: 120rpx;
 }
-.container-list-item image{
+.container-list-item image {
 	position: relative;
 	top: 5rpx;
 }
-.list-item-desc{
+.list-item-desc {
 	color: #333333;
 	font-size: 30rpx;
 	margin-right: 18rpx;
+	position: relative;
+	bottom: 6rpx;
 }
-.container-list-item{
-	position: absolute;
-	right: 0rpx;
+.right-arrow {
+	width: 18rpx;
+	height: 30rpx;
 }
-.right-arrow{
-		width: 18rpx;
-		height: 30rpx;
-}
-.line-thick{
+.line-thick {
 	width: 750rpx;
 	height: 20rpx;
 	background: #F3F3F3;
 }
-.container-input>view{
+.container-input>view {
 	font-size: 30rpx;
 	color: #09BA51;
 	position: absolute;
 	right: 26rpx;
 }
-.placeholder-class{
+.placeholder-class {
 	font-size: 24rpx;
 	color: #888F97;
 }
-.container-input>text{
+.container-input>text {
 	font-size: 30rpx;
 }
-.container-input{
+.container-input {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -87,5 +105,4 @@
 	margin-right: 26rpx;
 	border-bottom: 1px solid #F3F3F3;
 }
-
 

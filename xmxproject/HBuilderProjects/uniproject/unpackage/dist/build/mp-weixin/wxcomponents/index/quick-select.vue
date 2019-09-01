@@ -55,8 +55,8 @@
 	}
 	
 	.container-item image{
-		width: 54upx;
-		height: 54upx;
+		width: 60upx;
+		height: 60upx;
 	}
 	
 	.container-item text{

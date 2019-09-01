@@ -1,5 +1,5 @@
 
-.line-thin{
+.line-thin {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -9,7 +9,7 @@
 	width: 750rpx;
 	border-bottom: 1px solid #eee;
 }
-.popup-button{
+.popup-button {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -26,7 +26,7 @@
 	height: 97rpx;
 	margin-top: 42rpx;
 }
-.popup-button-left{
+.popup-button-left {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -43,7 +43,7 @@
 	border-left: 1px solid #fff !important;
 	width: 375rpx;
 }
-.popup-button-right{
+.popup-button-right {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -60,20 +60,20 @@
 	border-right: 1px solid #fff !important;
 	width: 375rpx;
 }
-.popup-button-text{
+.popup-button-text {
 	font-size: 24rpx;
 }
-.popup-button-left image{
+.popup-button-left image {
 	width: 44rpx;
 	height: 40rpx;
 	margin-right: 14rpx;
 }
-.popup-button-right image{
+.popup-button-right image {
 	width: 42rpx;
 	height: 42rpx;
 	margin-right: 14rpx;
 }
-.popup-bottom{
+.popup-bottom {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -88,21 +88,21 @@
 	        align-items: center;
 	margin-top: 30rpx;
 }
-.popup-bottom image{
+.popup-bottom image {
 	width: 130rpx;
 	height: 24rpx;
 }
-.total-price-text{
+.total-price-text {
 	font-size: 26rpx;
 	color: #09BA51;
 }
-.total-price{
+.total-price {
 	font-size: 32rpx;
 	font-weight: bold;
 	font-family: Segoe UI;
 	color: #09BA51;
 }
-.item-price{
+.item-price {
 	font-size: 32rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -111,15 +111,15 @@
 	position: absolute;
 	right: 56rpx;
 }
-.item-title{
-	font-size: 32rpx;
+.item-title {
+	font-size: 30rpx;
 	margin-bottom: 6rpx;
 }
-.item-subtitle{
-	font-size: 24rpx;
+.item-subtitle {
+	font-size: 22rpx;
 	color: #888F97;
 }
-.popup-content-middle{
+.popup-content-middle {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -130,7 +130,7 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.popup-content{
+.popup-content {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -144,12 +144,12 @@
 	padding-left: 30rpx;
 	margin-top: 36rpx;
 }
-.popup-content>image{
+.popup-content>image {
 	width: 32rpx;
 	height: 32rpx;
 	margin-right: 24rpx;
 }
-.popup-title text{
+.popup-title text {
 	font-size: 32rpx;
 	font-weight: bold;
 }
@@ -157,7 +157,7 @@
 	width: 42rpx;
 	height: 42rpx;
 }
-.popup-title{
+.popup-title {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -167,7 +167,7 @@
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
-.container-popup{
+.container-popup {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
