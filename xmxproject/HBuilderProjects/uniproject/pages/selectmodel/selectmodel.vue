@@ -15,11 +15,13 @@
 				</view>
 			</view>
 			<!-- 右侧获取数据 -->
-			<view class="slide-right">
-				<view @click="openPopup(index)" class="right-item" v-for="(item, index) in phoneType" :key="index">
-					<text>{{item.model}}</text>
+			<scroll-view scroll-y style="height: 1004upx;">
+				<view class="slide-right">
+					<view @click="openPopup(index)" class="right-item" v-for="(item, index) in phoneType" :key="index">
+						<text>{{item.model}}</text>
+					</view>
 				</view>
-			</view>
+			</scroll-view>
 		</view>
 		<!-- 底部弹框 -->
 		<uniPopup custom="true" ref="popup" type="bottom">
@@ -56,7 +58,7 @@
 				data: {},
 				success: res => {
 					this.slideList = res.data.data
-					// console.log(res.data.data)
+					console.log(this.slideList)
 				}
 			})
 			uni.request({
@@ -75,12 +77,37 @@
 				valueId:1,
 				colorId:null,
 				selectedId: 0,
-				popupContent: [],
+				popupContent: [{
+						name: "银色",
+						value: "#E7E3E2"
+					},{
+						name: "金色",
+						value: "#DAC8B4"
+					},{
+						name: "深空灰",
+						value: "#2A2526"
+					}],
 				isSelected: false,
 				phone: '手机',
 				pad: '平板',
-				slideList: [],
-				phoneType: []
+				slideList: [
+					{brand:'苹果'},
+					{brand:'华为'},
+					{brand:'小米'},
+					{brand:'VIVO'},
+					{brand:'OPPO'},
+					{brand:'魅族'},
+					{brand:'三星'}
+				],
+				phoneType: [
+					{model:'iphone XS MAX'},
+					{model:'iphone XS'},
+					{model:'iphone XR'},
+					{model:'iphone X'},
+					{model:'iphone 8 Plus'},
+					{model:'iphone 8'},
+					{model:'iphone 7Plus'}
+				]
 			}
 		},
 		methods: {
@@ -135,6 +162,7 @@
 					},
 					success: res => {
 						this.phoneType = res.data.data
+						console.log(this.phoneType)
 					}
 				})
 			},
@@ -171,31 +199,31 @@
 			justify-content: space-between;
 			margin: 30upx 26upx 60upx 26upx;
 		}
-		.content-button {
+	.content-button {
 			position: absolute;
 			bottom: 30upx;
 			left: 26upx;
-		}
-		.popup-content {
+	}
+	.popup-content {
 			display: flex;
 			flex-direction: column;
 			background: #fff;
 			height: 560upx;
-		}
-		.content-button image {
+	}
+	.content-button image {
 			width: 698upx;
 			height: 80upx;
-		}
-		.content-top image {
+	}
+	.content-top image {
 			width: 42upx;
 			height: 42upx;
-		}
-		.content-top text {
+	}
+	.content-top text {
 			font-size: 32upx;
 			font-weight: bold;
-		}
+	}
 		
-		.middle-con{
+	.middle-con{
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
@@ -224,6 +252,7 @@
 			height: 70upx;
 			margin-bottom: 10upx;
 			border-radius: 12upx;
+			border: 1px solid #EEEEEE;
 		}
 		.content-middle-item text {
 			font-size: 26upx;

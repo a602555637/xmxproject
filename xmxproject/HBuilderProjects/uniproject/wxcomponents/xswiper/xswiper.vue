@@ -8,10 +8,10 @@
 			 :interval="interval" :circular="circular" @change="change" :current="swiperCurrentIndex">
 				<swiper-item class="swiper-container" v-for="(img,index) in imgs" :key="index" 
 				:item-id="index" :data-year="index">
-
-					<view class="swiper-item" :style="{background:img?('url('+ img +') center no-repeat'):'',backgroundSize:'cover'}"
+<!-- 					<view class="swiper-item" :style="{background:img?('url('+ img +') center no-repeat'):'',backgroundSize:'cover'}"
 					 :animation="animationData[index]">
-					</view>
+					</view> -->
+					<image class="swiper-item" :src="img" :animation="animationData[index]"></image>
 				</swiper-item>
 			</swiper>
 		</view>

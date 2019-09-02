@@ -7,7 +7,6 @@
 	position: relative;
 	font-size: 30rpx;
 	color: #09BA51;
-	left: -26rpx;
 }
 .placeholder-class{
 	font-size: 26rpx;

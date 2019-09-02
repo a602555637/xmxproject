@@ -74,7 +74,6 @@
 		position: relative;
 		font-size: 30upx;
 		color: #09BA51;
-		left: -26upx;
 	}
 	
 	.placeholder-class{

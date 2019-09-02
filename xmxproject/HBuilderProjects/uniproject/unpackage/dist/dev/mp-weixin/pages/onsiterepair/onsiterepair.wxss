@@ -9,7 +9,7 @@
 		color: #09BA51;
 }
 .xbutton-left,
-	.xbutton-right{
+.xbutton-right{
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -ms-flexbox;

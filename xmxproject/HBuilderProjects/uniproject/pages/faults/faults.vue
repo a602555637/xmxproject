@@ -20,14 +20,18 @@
 					<text class="item-price">{{item.price}}</text>
 				</view> -->
 				
-				<scroll-view scroll-y>
-					<checkbox-group>
+				<scroll-view scroll-y class="scroll-view">
+					<checkbox-group @change="onEventChange">
 						<view v-for="(item, index) in faulesItem" :id="index" :key="index">
 							<label class="checkbox">
-								<checkbox value="123" >
-									<view>{{item.title}}</view>
-									<view>{{item.desc}}</view>
-									<view>{{item.price}}</view>
+								<checkbox :value="index" >
+									<view class="popup-content">
+										<view class="popup-content-left">
+											<view class="item-title">{{item.title}}</view>
+											<view class="item-desc">{{item.desc}}</view>
+										</view>
+										<view class="item-price">{{item.price}}元</view>
+									</view>
 								</checkbox>
 							</label>
 						</view>
@@ -46,7 +50,7 @@
 						<image src="../../static/faults/door@2x.png"></image>
 						<text class="popup-button-text">上门维修</text>
 					</view>
-					<view class="popup-button-right">
+					<view @click="onsiteArrival" class="popup-button-right">
 						<image src="../../static/faults/tostore@2x.png"></image>
 						<text class="popup-button-text">到店维修</text>
 					</view>
@@ -63,7 +67,9 @@
 	export default {
 		data() {
 			return {
-				totalPrice: 652,
+				faulesItemPrice:[],
+				currentPrice:0,
+				totalPrice: 0,
 				isSelectedId: '',
 				isSelected: false,
 				unSelectedImg: '../../static/faults/wxz@2x.png',
@@ -138,18 +144,34 @@
 				// let title = this.faulseList[sid].title
 			},
 			closePopup() {
+				this.totalPrice = 0
 				this.$refs.popup.close()
 			},
 			onsiteRepair(e) {
 				console.log(e)
 				uni.navigateTo({
 					url: '../onsiterepair/onsiterepair'
-				});
+				})
+			},
+			onsiteArrival(){
+				uni.navigateTo({
+					url:'../arrival-repair/arrival-repair'
+				})
+			},
+			onEventChange(e){
+				let eventChange = e.detail.value
+				let s = 0	
+				for (var i = 0; i < eventChange.length; i++) {
+					let currentPrice = parseInt(this.faulesItem[eventChange[i]].price)
+					s = s+ currentPrice
+					console.log(s)
+					this.totalPrice = s
+					uni.setStorage({
+						key:'totalPrice',
+						data:s
+					})
+				}
 			}
-		},
-		onLoad() {
-			console.log(this.faulesItem)
-			console.log(this.faulesList)
 		},
 		components: {
 			uniPopup
@@ -158,23 +180,63 @@
 </script>
 
 <style>
+	.scroll-view{
+		margin-top: 36upx;
+	}
+	
+	.popup-content-left{
+		margin-left: 92upx;
+	}
+	
+	.popup-content{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 698upx;
+		height: 120upx;
+		background-color: #F3F3F3;
+		margin-bottom: 20upx;
+	}
+	
+	.item-price{
+		font-size: 30upx;
+		position: absolute;
+		right: 20upx;
+	}
+	
+	.item-desc{
+		font-size: 22upx;
+		color: #888F97;
+	}
+	
+	.item-title{
+		font-size: 30upx;
+		margin-bottom: 6upx;
+	}
+	
 	/* 默认样式 */
 	.checkbox .wx-checkbox-input {
 			border-radius: 30upx;
 			width: 32upx;
 			height: 32upx;
-			border: 1px solid #eee;
+			border: 1px solid #888F97;
 			background: #FFFFFF;
+			position: absolute !important;
+			left: 30upx;
 	}
+	
 		/* 选中图标样式 */
+		
 	.checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
-			width: 32upx;
-			height: 32upx;
-			/* color: #09BA51; */
+			width: 38upx;
+			height: 38upx;
+			border: 2px solid #09BA51;
+			color: #09BA51;
 			background: #09BA51;
 			border-radius: 30upx;
 	}
 		/* 选中后样式 */
+		
 	.checkbox .wx-checkbox-input.wx-checkbox-input-checked {
 		background: #09BA51;
 	}
@@ -250,43 +312,6 @@
 		font-weight: bold;
 		font-family: Segoe UI;
 		color: #09BA51;
-	}
-
-	.item-price {
-		font-size: 32upx;
-		display: flex;
-		position: absolute;
-		right: 56upx;
-	}
-
-	.item-title {
-		font-size: 30upx;
-		margin-bottom: 6upx;
-	}
-
-	.item-subtitle {
-		font-size: 22upx;
-		color: #888F97;
-	}
-
-	.popup-content-middle {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.popup-content {
-		display: flex;
-		align-items: center;
-		height: 120upx;
-		background: #F3F3F3;
-		padding-left: 30upx;
-		margin-top: 36upx;
-	}
-
-	.popup-content>image {
-		width: 32upx;
-		height: 32upx;
-		margin-right: 24upx;
 	}
 
 	.popup-title text {

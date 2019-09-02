@@ -173,9 +173,9 @@
 				"navigationBarTitleText": "抽奖页"
 			}
 		},{
-			"path": "pages/phone-code/index-code",
+			"path": "pages/my/cards",
 			"style": {
-				"navigationBarTitleText": "Code"
+				"navigationBarTitleText": "我的卡包"
 			}
 		}
 	],

@@ -11,16 +11,13 @@
 			<text class="service-kilo">{{kiloValue}} km</text>
 		</view>
 		<view class="line-thick"></view>
-		<view class="onsittime">
+		<!-- <view class="onsittime">
 			<text class="onsittime-text">上门时间</text>
-			<!-- <text class="onsittime-time">13:30-14:00</text> -->
 			<picker class="onsittime-time" mode="multiSelector" @cancel="onCancel" @change="bindPickerChange" :range="dateItem">
 				<view v-if="isChange">{{currentDate}} 日 {{currentHour}} : {{currentMinutes}}</view>
-				<!-- <view v-else>{{currentDate}} 日 {{currentHour}} : {{currentMinutes}}</view> -->
 			</picker>
 			<image src="../../static/wxcomponentimg/arrow@2x.png" mode=""></image>
-			<!-- <rattenking-dtpicker /> -->
-		</view>
+		</view> -->
 		<view class="info">上门范围：线下门店5km范围内，收费标准为5元/km</view>
 		<xlist-input title="姓名：" placeholder="请输入您的姓名"></xlist-input>
 		<xlist-input title="手机号：" placeholder="请输入您的手机号"></xlist-input>
@@ -30,16 +27,12 @@
 			<uni-list-item title="街道" :subtitle="township"></uni-list-item>
 			<uni-list-item title="详细地址："></uni-list-item>
 		</uni-list>
+
 		<view class="order-setting">
 			<text>设置抢单范围</text>
 			<view class="order-setting-right">
-				<!-- 				<text>1</text>
-				<text>-</text> -->
 				<uni-number-box @change="onNumber" value="1" class="uni-number-box" :min="1" :max="5"></uni-number-box>
-
-				<!-- <text class="setting-select">1</text> -->
 				<text>km</text>
-				<!-- <image src="../../static/wxcomponentimg/arrow@2x.png" mode=""></image> -->
 			</view>
 		</view>
 		<text class="setting-info">系统将自动将您的订单推送给设置范围内的服务人员，以保证您的订单第一时间被接收，同时确保您得到高质量的服务。</text>
@@ -47,7 +40,7 @@
 		<view class="text-area">
 			<text>故障详情（选填）：</text>
 			<textarea value="" />
-			</view>
+		</view>
 		<view class="line-thick"></view>
 		<view @click="onConfirm" class="container-deal">
 			<image v-if="isConfirm" src="../../static/repair/xy-h@2x.png" ></image>
@@ -237,24 +230,24 @@
 	}
 	
 	
-		.xbutton-rightprice{
+	.xbutton-rightprice{
 			font-size: 24upx;
 			color: #09BA51;
-		}
+	}
 		
-		.xbutton-left,
-		.xbutton-right{
+	.xbutton-left,
+	.xbutton-right{
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			font-size: 32upx;
-		}
+	}
 		
-		.xbutton-right{
+	.xbutton-right{
 			width: 374upx;
 			border-top: 1px solid #F3F3F3;
-		}
+	}
 		
 		.xbutton-left{
 			background: #F2C900;

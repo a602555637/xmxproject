@@ -1,179 +1,64 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.scroll-view{
+	margin-top: 36rpx;
+}
+.popup-content-left{
+	margin-left: 92rpx;
+}
+.popup-content{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	width: 698rpx;
+	height: 120rpx;
+	background-color: #F3F3F3;
+	margin-bottom: 20rpx;
+}
+.item-price{
+	font-size: 30rpx;
+	position: absolute;
+	right: 20rpx;
+}
+.item-desc{
+	font-size: 22rpx;
+	color: #888F97;
+}
+.item-title{
+	font-size: 30rpx;
+	margin-bottom: 6rpx;
+}
 
 /* 默认样式 */
 .checkbox .wx-checkbox-input {
 		border-radius: 30rpx;
 		width: 32rpx;
 		height: 32rpx;
-		border: 1px solid #eee;
+		border: 1px solid #888F97;
 		background: #FFFFFF;
+		position: absolute !important;
+		left: 30rpx;
 }
+
 /* 选中图标样式 */
 .checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
-		width: 32rpx;
-		height: 32rpx;
-		/* color: #09BA51; */
+		width: 38rpx;
+		height: 38rpx;
+		border: 2px solid #09BA51;
+		color: #09BA51;
 		background: #09BA51;
 		border-radius: 30rpx;
 }
+
 /* 选中后样式 */
 .checkbox .wx-checkbox-input.wx-checkbox-input-checked {
 	background: #09BA51;
@@ -280,53 +165,6 @@
 	font-weight: bold;
 	font-family: Segoe UI;
 	color: #09BA51;
-}
-.item-price {
-	font-size: 32rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	position: absolute;
-	right: 56rpx;
-}
-.item-title {
-	font-size: 30rpx;
-	margin-bottom: 6rpx;
-}
-.item-subtitle {
-	font-size: 22rpx;
-	color: #888F97;
-}
-.popup-content-middle {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-}
-.popup-content {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	height: 120rpx;
-	background: #F3F3F3;
-	padding-left: 30rpx;
-	margin-top: 36rpx;
-}
-.popup-content>image {
-	width: 32rpx;
-	height: 32rpx;
-	margin-right: 24rpx;
 }
 .popup-title text {
 	font-size: 32rpx;

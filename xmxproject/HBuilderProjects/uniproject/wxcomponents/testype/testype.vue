@@ -6,8 +6,8 @@
 			<text class="repair-info-test">检测到您的设备</text>
 		</view>
 		<view class="repair-right">
-			<image class="repair-right-change" src="../../static/ghjx-btn@2x.png" mode=""></image>
-			<image @click="onNext" src="../../static/repair-btn@2x.png" mode=""></image>
+			<image @click="onNext" class="repair-right-change" src="../../static/ghjx-btn@2x.png" mode=""></image>
+			<image @click="onNext" src="../../static/repair-btn@2x.png"></image>
 		</view>
 	</view>
 </template>
@@ -23,15 +23,30 @@
 		created() {
 			uni.getSystemInfo({
 				success: res =>{
-					this.phoneType = res.model
+					let s = res.model
+					let num = s.indexOf('(')
+					if(num < 0){
+						num = s.indexOf('<')
+						console.log(num)
+						s = s.substring(0,num)
+						this.phoneType = s
+					}
+					else{
+						console.log(num)
+						s = s.substring(0,num)
+						this.phoneType = s
+					}
+					
 					// console.log(res)
 				}
 			})
 		},
-		onNext() {
-			uni.navigateTo({
-				url: '../../pages/selectmodel/selectmodel'
-			})
+		methods:{
+			onNext() {
+				uni.navigateTo({
+					url: '../../pages/selectmodel/selectmodel'
+				})
+			}
 		}
 	}
 </script>

@@ -20,19 +20,28 @@
 
 		<view class="line-thick"></view>
 		<!-- 地区 -->
-		<uni-list>
+<!-- 		<uni-list>
 			<uni-list-item @click="onGetLocation" title="地区" :subtitle="province + city + district"></uni-list-item>
 			<uni-list-item title="街道" :subtitle="township"></uni-list-item>
 		</uni-list>
-		
+		 -->
+		<xlocation></xlocation>
+		<!-- 街道 -->
+		<view class="content-street">
+			<view class="content-street-left">街道</view>
+			<view class="content-street-right">
+				<input type="text" :value="township" />
+				<image src="../../static/wxcomponentimg/arrow@2x.png"></image>
+			</view>
+		</view>
 		<!-- detail_address -->
 		<view class="container-input-address">
 			<text>详细地址：</text>
 			<input @input="onAddress" type="text" class="input-address" />
 		</view>
-
-		<xlocation></xlocation>
+		
 		<view class="line-thick"></view>
+		
 		<!-- type -->
 		<view class="container-input">
 			<picker class="business-picker" mode="selector" value="index" :range="businessType" @change="onType">
@@ -188,6 +197,35 @@
 </script>
 
 <style>
+	.content-street{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		height: 120upx;
+		width: 698upx;
+		margin-left: 26upx;
+		border-bottom: 2px solid #EEEEEE;
+	}
+	
+	.content-street-right{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		position: absolute;
+		right: 26upx;
+	}
+	
+	.content-street-left,
+	.content-street-right input{
+		font-size: 30upx;
+		width: 160upx;
+	}
+	
+	.content-street-right image{
+		width: 18upx;
+		height: 30upx;
+	}
+	
 	.business-item {
 		display: flex;
 		position: absolute;

@@ -2,33 +2,112 @@
 	<view class="container">
 		<text>身份证照</text>
 		<view class="container-id">
-			<view class="container-id-left">
-				<image src="../../static/my/sfz@2x.png"></image>
+			<view @click="onChooseImg1" class="container-id-left">
+				<image v-if="imgUrl1 == ''" src="../../static/my/sfz@2x.png"></image>
+				<image v-else :src="imgUrl1"></image>
+				
 				<text>正面</text>
 			</view>
-			<view class="container-id-right">
-				<image src="../../static/my/sfz@2x.png"></image>
-				<text>正面</text>
+			<view @click="onChooseImg2" class="container-id-right">
+				<image v-if="imgUrl2 == ''" src="../../static/my/sfz@2x.png"></image>
+				<image v-else :src="imgUrl2"></image>
+				<text>反面</text>
 			</view>
 		</view>
 		<text>营业执照</text>
-		<image src="../../static/my/yyzz@2x.png"></image>
+		<image v-if="imgUrl3 == ''" @click="onChooseImg3" src="../../static/my/yyzz@2x.png"></image>
+		<image v-else @click="onChooseImg3" :src="imgUrl3"></image>
 		<view @click="onSubmit" class="container-button">提交</view>
 	</view>
 </template>
 
 <script>
 	export default {
+		data() {
+			return {
+				imgUrl1: '',
+				imgUrl2: '',
+				imgUrl3: ''
+			}
+		},
 		methods:{
 			onSubmit(){
 				uni.showToast({
 					title: '提交成功'
 				})
-				uni.navigateTo({
-					url:'business-verify'
+				setTimeout(()=>{
+					uni.navigateTo({
+						url:'business-verify'
+					})
+				}, 2000)
+			},
+			onPost(){
+				uni.request({
+					url:'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
+					data:{
+						address:this.imgUrl1
+					},
+					success: res=>{
+						console.log('success')
+					}
+				})
+			},
+			onChooseImg1(){
+				uni.chooseImage({
+					count:1,
+					sizeType:['original'],
+					success: res=>{
+						this.imgUrl1 = res.tempFilePaths[0]
+						uni.request({
+							url:'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
+							data:{
+								address:this.imgUrl1
+							},
+							success: res=>{
+								console.log('success')
+							}
+						})
+					}
+				})
+			},
+			onChooseImg2(){
+				uni.chooseImage({
+					count:1,
+					sizeType:['original'],
+					success: res=>{
+						this.imgUrl2 = res.tempFilePaths[0]
+						uni.request({
+							url:'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
+							data:{
+								address:this.imgUrl2
+							},
+							success: res=>{
+								console.log('success')
+							}
+						})
+					}
+				})
+			},
+			onChooseImg3(){
+				uni.chooseImage({
+					count:1,
+					sizeType:['original'],
+					success: res=>{
+						this.imgUrl3 = res.tempFilePaths[0]
+						uni.request({
+							url:'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
+							data:{
+								address:this.imgUrl3
+							},
+							success: res=>{
+								console.log('success')
+							}
+						})
+					}
 				})
 			}
-		}
+		},
+		
 	}
 </script>
 
