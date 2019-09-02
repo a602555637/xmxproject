@@ -33,19 +33,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
 					"name": "pages/onsiterepair/onsiterepair",
 					"pathName": "pages/onsiterepair/onsiterepair",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/faults/faults",
-					"pathName": "pages/faults/faults",
 					"scene": null
 				}
 			]

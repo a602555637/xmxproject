@@ -11,13 +11,13 @@
 			<text class="service-kilo">{{kiloValue}} km</text>
 		</view>
 		<view class="line-thick"></view>
-		<!-- <view class="onsittime">
+		<view class="onsittime">
 			<text class="onsittime-text">上门时间</text>
 			<picker class="onsittime-time" mode="multiSelector" @cancel="onCancel" @change="bindPickerChange" :range="dateItem">
 				<view v-if="isChange">{{currentDate}} 日 {{currentHour}} : {{currentMinutes}}</view>
 			</picker>
 			<image src="../../static/wxcomponentimg/arrow@2x.png" mode=""></image>
-		</view> -->
+		</view>
 		<view class="info">上门范围：线下门店5km范围内，收费标准为5元/km</view>
 		<xlist-input title="姓名：" placeholder="请输入您的姓名"></xlist-input>
 		<xlist-input title="手机号：" placeholder="请输入您的手机号"></xlist-input>
@@ -356,7 +356,7 @@
 		font-size: 24upx;
 		color: #888F97;
 		background: #F3F3F3;
-		width: 750upx;
+		/* width: 750upx; */
 		height: 52upx;
 		display: flex;
 		align-items: center;

@@ -158,7 +158,7 @@ textarea{
 	font-size: 24rpx;
 	color: #888F97;
 	background: #F3F3F3;
-	width: 750rpx;
+	/* width: 750upx; */
 	height: 52rpx;
 	display: -webkit-box;
 	display: -webkit-flex;

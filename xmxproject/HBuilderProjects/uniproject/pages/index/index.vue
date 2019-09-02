@@ -123,11 +123,8 @@
 		methods:{
 			onCode(){
 				uni.navigateTo({
-					url: '../phone-code/index-code',
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
-				});
+					url: '../phone-code/index-code'
+				})
 			}
 		}
 	}
