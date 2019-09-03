@@ -6,6 +6,9 @@
     "rattenking-dtpicker": "/components/rattenking-dtpicker/rattenking-dtpicker",
     "xlist": "/wxcomponents/xlist/xlist",
     "xlist-input": "/wxcomponents/xlist/xlist-input",
-    "uni-number-box": "/components/uni-number-box/uni-number-box"
+    "uni-number-box": "/components/uni-number-box/uni-number-box",
+    "getcode": "/wxcomponents/getcode/getcode",
+    "xlocation": "/wxcomponents/xlocation/xlocation",
+    "xlist-price": "/wxcomponents/xlist/xlistPrice"
   }
 }

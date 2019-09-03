@@ -53,7 +53,7 @@
 	export default {
 		onLoad() {
 			uni.request({
-				url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrand',
+				url: 'https://120.24.180.246/xmRepair/phoneBrand/getBrand',
 				method: 'GET',
 				data: {},
 				success: res => {
@@ -62,7 +62,7 @@
 				}
 			})
 			uni.request({
-				url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrandDetail',
+				url: 'https://120.24.180.246/xmRepair/phoneBrand/getBrandDetail',
 				method: 'POST',
 				data: {
 					id:1
@@ -112,9 +112,11 @@
 		},
 		methods: {
 			onNext() {
-				uni.navigateTo({
-					url: '../faults/faults'
-				});
+				if(this.colorId !== null){
+					uni.navigateTo({
+						url: '../faults/faults'
+					})
+				}
 			},
 			openPopup(e) {
 				let modelSelected = this.phoneType[e].model
@@ -127,7 +129,7 @@
 				
 				//获取颜色色值
 				uni.request({
-					url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrandColour',
+					url: 'https://120.24.180.246/xmRepair/phoneBrand/getBrandColour',
 					method: 'POST',
 					data: {
 						name: modelSelected
@@ -144,6 +146,7 @@
 			},
 			closePopup() {
 				this.$refs.popup.close()
+				this.colorId = null
 			},
 			onSelectedId(e) {
 				this.selectedId = e.currentTarget.id

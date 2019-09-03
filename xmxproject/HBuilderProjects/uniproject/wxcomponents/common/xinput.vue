@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<text class="container-text">{{ title }}</text>
-		<input class="container-item" type="text" :placeholder="placeHolderText" placeholder-class="placeholder-class" />
+		<input @input="bindInput" class="container-item" type="text" :placeholder="placeHolderText" placeholder-class="placeholder-class" />
 	</view>
 </template>
 
@@ -10,7 +10,16 @@
 		name:'xinput',
 		props:{
 			title:String,
-			placeHolderText:String
+			placeHolderText:String,
+			inputValue:''
+		},
+		methods:{
+			bindInput(e){
+				this.inputValue = e.detail.value
+				this.$emit('inputValue',{
+					
+				})
+			}
 		}
 	}
 	

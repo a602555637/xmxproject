@@ -33,12 +33,54 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 6,
 			"list": [
+				{
+					"id": -1,
+					"name": "pages/my/business-in",
+					"pathName": "pages/my/business-in",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/upload-photo",
+					"pathName": "pages/my/upload-photo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/prize/prize",
+					"pathName": "pages/prize/prize",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/selectmodel/selectmodel",
+					"pathName": "pages/selectmodel/selectmodel",
+					"query": "",
+					"scene": null
+				},
 				{
 					"id": -1,
 					"name": "pages/onsiterepair/onsiterepair",
 					"pathName": "pages/onsiterepair/onsiterepair",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/onsiterepair/onsiterepair",
+					"pathName": "pages/onsiterepair/onsiterepair",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/business/business-login/business-login",
+					"pathName": "pages/business/business-login/business-login",
 					"scene": null
 				}
 			]

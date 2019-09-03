@@ -1,7 +1,7 @@
 <template>
 		<view class="container">
 			<text>{{title}}</text>
-			<input class="input-class" type="number" value="" 
+			<input class="input-class" type="number" value="" @input="onCode"
 			placeholder-class="placeholder-class" :placeholder="placeholder" />
 			<view class="container-code" @click="click" :id="id" >{{text}} {{s}}</view>
 		</view>
@@ -16,6 +16,7 @@
 		},
 		data() {
 			return {
+				codeText:'',
 				placeholder:'请输入验证码',
 				text: '获取验证码',
 				s:'',
@@ -63,6 +64,12 @@
 						self.text = '获取验证码'
 					}
 				}
+			},
+			onCode(e){
+				this.codeText = e.detail.value
+				this.$emit('codeText',{
+					codeText:this.codeText
+				})
 			}
 		}
 	}
@@ -71,7 +78,8 @@
 <style>
 	.container-code{
 		display: flex;
-		position: relative;
+		position: absolute;
+		right: 26upx;
 		font-size: 30upx;
 		color: #09BA51;
 	}
@@ -92,4 +100,7 @@
 		margin-left: 26upx;
 	}
 	
+	.container input{
+		width: 200upx;
+	}
 </style>

@@ -16,33 +16,14 @@
 			<input @input="onPhone" type="text" placeholder="请输入负责人手机号" placeholder-class="placeholder-class" />
 		</view>
 		<!-- getcode -->
-		<getcode timer="timer" :title="title"></getcode>
-
+		<getcode @codeText="bindCode" timer="timer" :title="title"></getcode>
 		<view class="line-thick"></view>
-		<!-- 地区 -->
-<!-- 		<uni-list>
-			<uni-list-item @click="onGetLocation" title="地区" :subtitle="province + city + district"></uni-list-item>
-			<uni-list-item title="街道" :subtitle="township"></uni-list-item>
-		</uni-list>
-		 -->
-		<xlocation></xlocation>
-		<!-- 街道 -->
-		<view class="content-street">
-			<view class="content-street-left">街道</view>
-			<view class="content-street-right">
-				<input type="text" :value="township" />
-				<image src="../../static/wxcomponentimg/arrow@2x.png"></image>
-			</view>
-		</view>
-		<!-- detail_address -->
-		<view class="container-input-address">
-			<text>详细地址：</text>
-			<input @input="onAddress" type="text" class="input-address" />
-		</view>
+		<!-- 地区  街道  detail_address-->
+		<xlocation @district="onArea"></xlocation>
 		
 		<view class="line-thick"></view>
 		
-		<!-- type -->
+		<!-- 企业类型 -->
 		<view class="container-input">
 			<picker class="business-picker" mode="selector" value="index" :range="businessType" @change="onType">
 				<view class="business-title">企业类型</view>
@@ -52,7 +33,7 @@
 				</view>
 			</picker>
 		</view>
-		<!-- repair_type -->
+		<!-- 服务类型 -->
 		<view class="container-input">
 			<picker class="business-picker" mode="selector" value="index" :range="repairType" @change="onRepairType">
 				<view class="business-title">服务类型</view>
@@ -75,16 +56,8 @@
 	import amap from '../../common/amap-wx.js'
 	import getcode from '../../wxcomponents/getcode/getcode.vue'
 	import xlocation from '../../wxcomponents/xlocation/xlocation.vue'
-	
-	
 	const formatDate = require('../../util/util.js')
 	export default {
-		onLoad() {
-			this.amapPlugin = new amap.AMapWX({
-			            key: this.key
-			})
-			this.getRegeo()
-		},
 		data() {
 			var dateObj = new Date()
 			var currentTime = dateObj.getTime()
@@ -94,13 +67,12 @@
 				city:'',
 				district:'',
 				township:'',
-				amapPlugin: null,  
-				key: 'f97ec3f47e09d39567de678870baa690',
 				timer: timer,
 				title: '验证码：',
 				name: '',
 				manager: '',
 				phone: '',
+				getCode:'',
 				area: '',
 				street: '',
 				detail_address: '',
@@ -116,36 +88,46 @@
 			}
 		},
 		methods: {
-			getRegeo(){
-				uni.showLoading({  
-					title: '获取信息中'  
-				})
-				this.amapPlugin.getRegeo({  
-				    success: res => {  
-				        console.log(res[0].regeocodeData.addressComponent)
-				        this.province = res[0].regeocodeData.addressComponent.province
-						this.city = res[0].regeocodeData.addressComponent.city
-						this.district = res[0].regeocodeData.addressComponent.district
-						this.township = res[0].regeocodeData.addressComponent.township
-				        uni.hideLoading()
-				    }  
-				})
-			},
 			onSave() {
-				this.onPost()
-				uni.showToast({
-					title: '保存成功'
-				})
-				setTimeout(() => {
-					uni.hideToast()
-					uni.navigateTo({
-						url: 'upload-photo'
+				if(this.name == ''){
+					uni.showToast({
+						title: '请填写商家名称',
+						icon:'none'
 					})
-				}, 2000)
-
+				}else if (this.manager == '') {
+					uni.showToast({
+						title:'请填写负责人',
+						icon:'none'
+					})
+				}else if (this.phone == ''){
+					uni.showToast({
+						title: '请填写手机号码',
+						icon:'none'
+					})
+				}else if(this.getCode == ''){
+					uni.showToast({
+						title: '请获取验证码',
+						icon:'none'
+					})
+				}else if(this.detail_address == ''){
+					uni.showToast({
+						title: '请填写详细地址',
+						icon:'none'
+					})
+				}else{
+					this.onPost()
+					uni.showToast({
+						title: '保存成功'
+					})
+					setTimeout(() => {
+						uni.hideToast()
+						uni.navigateTo({
+							url: 'upload-photo'
+						})
+					}, 2000)
+				}
 			},
 			onType(e) {
-				// console.log(e.detail.value)
 				let num = e.detail.value
 				this.businessTypeItem = this.businessType[num]
 			},
@@ -163,28 +145,33 @@
 				this.phone = e.detail.value
 			},
 			onArea(e) {
-				this.area = e.detail.value
+				this.area = e.district
+				this.street = e.street,
+				this.detail_address = e.detailAddress
 			},
-			onStreet(e) {
-				this.street = e.detail.value
-			},
-			onAddress(e) {
-				this.detail_address = e.detail.value
+			bindCode(e){
+				console.log(e.codeText)
+				this.getCode = e.codeText
 			},
 			onPost() {
-				// uni.request({
-				// 	url:'https://120.24.180.246:8080/xmRepair/shopInfo/add',
-				// 	data:{
-				// 		name: this.name,
-				// 		manager:this.manager,
-				// 		phone:this.phone,
-				// 		area:this.area,
-				// 		street:this.street,
-				// 		detail_address:this.detail_address,
-				// 		type:this.businessTypeItem,
-				// 		service_mode:this.repairTypeItem
-				// 	}
-				// })
+				uni.request({
+					url:'https://120.24.180.246/xmRepair/shopInfo/add',
+					method:'POST',
+					data:{
+						name: this.name,
+						manager:this.manager,
+						phone:this.phone,
+						area:this.area,
+						street:this.street,
+						detail_address:this.detail_address,
+						type:this.businessTypeItem,
+						service_mode:this.repairTypeItem,
+						stat:0
+					},
+					success: res=>{
+						console.log('success')
+					}
+				})
 			}
 		},
 		components: {
@@ -197,35 +184,8 @@
 </script>
 
 <style>
-	.content-street{
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		height: 120upx;
-		width: 698upx;
-		margin-left: 26upx;
-		border-bottom: 2px solid #EEEEEE;
-	}
 	
-	.content-street-right{
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		position: absolute;
-		right: 26upx;
-	}
-	
-	.content-street-left,
-	.content-street-right input{
-		font-size: 30upx;
-		width: 160upx;
-	}
-	
-	.content-street-right image{
-		width: 18upx;
-		height: 30upx;
-	}
-	
+
 	.business-item {
 		display: flex;
 		position: absolute;
@@ -258,16 +218,7 @@
 		border-radius: 12upx;
 	}
 
-	.container-input-address text {
-		font-size: 30upx;
-	}
-
-	.container-input-address {
-		display: flex;
-		margin-left: 26upx;
-		margin-top: 40upx;
-		margin-bottom: 120upx;
-	}
+	
 
 	.container-list-item image {
 		position: relative;

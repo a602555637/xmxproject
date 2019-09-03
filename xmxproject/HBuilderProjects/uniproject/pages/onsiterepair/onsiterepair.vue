@@ -10,7 +10,12 @@
 			<text v-else class="service-price">{{kiloPrice}}元</text>
 			<text class="service-kilo">{{kiloValue}} km</text>
 		</view>
+		
+		
+		<xlist-price title="合计：" :price="totalPrice"></xlist-price>
 		<view class="line-thick"></view>
+		
+		
 		<view class="onsittime">
 			<text class="onsittime-text">上门时间</text>
 			<picker class="onsittime-time" mode="multiSelector" @cancel="onCancel" @change="bindPickerChange" :range="dateItem">
@@ -19,15 +24,11 @@
 			<image src="../../static/wxcomponentimg/arrow@2x.png" mode=""></image>
 		</view>
 		<view class="info">上门范围：线下门店5km范围内，收费标准为5元/km</view>
-		<xlist-input title="姓名：" placeholder="请输入您的姓名"></xlist-input>
-		<xlist-input title="手机号：" placeholder="请输入您的手机号"></xlist-input>
-		<xlist-input title="验证码：" placeholder="请输入验证码" isShowCode></xlist-input>
-		<uni-list>
-			<uni-list-item @click="onGetLocation" title="地区" :subtitle="province + city + district"></uni-list-item>
-			<uni-list-item title="街道" :subtitle="township"></uni-list-item>
-			<uni-list-item title="详细地址："></uni-list-item>
-		</uni-list>
-
+		<!-- code input -->
+		<xlist-input></xlist-input>
+		<getcode timer="timer" :title="title"></getcode>
+		<!-- 地区 -->
+		<xlocation></xlocation>
 		<view class="order-setting">
 			<text>设置抢单范围</text>
 			<view class="order-setting-right">
@@ -64,23 +65,28 @@
 
 <script>
 	import amap from '../../common/amap-wx.js'
-	
+	import xlocation from '../../wxcomponents/xlocation/xlocation.vue'
 	import uniList from '../../components/uni-list-c/uni-list.vue';
 	import uniListItem from '../../components/uni-list-item-c/uni-list-item.vue';
 	import rattenkingDtpicker from '../../components/rattenking-dtpicker/rattenking-dtpicker.vue';
 	import xlist from '../../wxcomponents/xlist/xlist.vue';
 	import xlistInput from '../../wxcomponents/xlist/xlist-input.vue';
+	import xlistPrice from '../../wxcomponents/xlist/xlistPrice.vue'
 	import uniNumberBox from '../../components/uni-number-box/uni-number-box.vue'
-	
+	import getcode from '../../wxcomponents/getcode/getcode.vue'
+	const formatDate = require('../../util/util.js')
 	export default {
 		data() {
+			var dateObj = new Date()
+			var currentTime = dateObj.getTime()
+			var timer = formatDate.formatDateTime((currentTime + 1000 * 2000))
 			return {
+				timer:timer,
+				title:'验证码：',
 				province:'',
 				city:'',
 				district:'',
 				township:'',
-				amapPlugin: null,  
-				key: 'f97ec3f47e09d39567de678870baa690' ,
 				isChange:true,
 				currentMinutes:10,
 				currentHour:10,
@@ -92,7 +98,7 @@
 				isConfirm:false,
 				kiloPrice: '5',
 				isAgreement: true,
-				totalPrice: 9827,
+				totalPrice: 0,
 				repairList: [{
 					title: '屏幕损坏',
 					price: '￥499'
@@ -108,7 +114,10 @@
 			rattenkingDtpicker,
 			xlist,
 			xlistInput,
-			uniNumberBox
+			uniNumberBox,
+			getcode,
+			xlocation,
+			xlistPrice
 		},
 		methods: {
 			onOrderDetail() {
@@ -143,6 +152,15 @@
 			},
 			onPrice(kiloValue){
 				this.kiloPrice = kiloValue * 5
+				uni.getStorage({
+					key:'totalPrice',
+					success:res=>{
+						this.totalPrice = res.data 
+						this.totalPrice = this.totalPrice + this.kiloPrice
+					}
+				})
+				
+				
 			},
 			bindPickerChange(e){
 				console.log(e.detail.value)
@@ -167,11 +185,6 @@
 					let minutesItem = this.dateItem[2]
 					this.currentMinutes = minutesItem[nums[2]]
 				}
-				
-				
-				// this.currentDate = e.detail.value[0]
-				// this.currentHour = e.detail.value[1]
-				// this.currentMinutes = e.detail.value[2]
 			},
 			getDate(){
 				const date = new Date()
@@ -183,41 +196,27 @@
 				this.currentMinutes = minutes
 			},
 			onDateItem(){
-				// console.log(this.currentDate)
 				let abRtc = this.dateItem[0].splice(0,1) + ',' + this.dateItem[0].splice(this.currentDate - 2,29)
-				// console.log(abRtc.split(','))
 				this.dateItem[0] = abRtc.split(',')
 			},
 			onCancel(){
 				this.getDate()
 			},
-			getRegeo(){
-				uni.showLoading({  
-					title: '获取信息中'  
+			getStorage(){
+				uni.getStorage({
+					key: 'totalPrice',
+					success: res=>{
+						console.log(res.data)
+						this.totalPrice = res.data + 5
+					}
 				})
-				this.amapPlugin.getRegeo({  
-				    success: res => {  
-				        console.log(res[0].regeocodeData.addressComponent)
-				        this.province = res[0].regeocodeData.addressComponent.province
-						this.city = res[0].regeocodeData.addressComponent.city
-						this.district = res[0].regeocodeData.addressComponent.district
-						this.township = res[0].regeocodeData.addressComponent.township
-				        uni.hideLoading()
-				    }  
-				})
-			},
-			onGetLocation(){
-				
 			}
 		},
 		onLoad() {
 			this.onNumber()
 			this.getDate()
 			this.onDateItem()
-			this.amapPlugin = new amap.AMapWX({  
-			            key: this.key
-			})
-			this.getRegeo()
+			this.getStorage()
 		}
 	}
 </script>
@@ -391,6 +390,7 @@
 		display: flex;
 		align-items: center;
 		height: 120upx;
+		border-bottom: 1px solid #EEEEEE;
 	}
 	
 	.service-price{

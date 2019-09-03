@@ -12,15 +12,21 @@
 export default {
 	data() {
 		return {
-			buttonTitle: '登录'
+			buttonTitle: '登录',
+			phonenum:''
 		}
 	},
 	methods:{
-		onIndex(){
-			uni.navigateTo({
-				url: '../index/index'
-			})
-		}
+		// onIndex(){
+		// 	if(!phonenum){
+		// 		
+		// 	}
+		// 	
+		// 	
+		// 	uni.navigateTo({
+		// 		url: '../index/index'
+		// 	})
+		// }
 	},
 	components:{
 		xinput

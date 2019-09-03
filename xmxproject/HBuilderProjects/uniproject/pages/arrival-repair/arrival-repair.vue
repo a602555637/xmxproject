@@ -5,14 +5,23 @@
 		<xlist title="电池不续航" price= "499" ></xlist>
 		<xlist-price title="合计：" price="1024"></xlist-price>
 		<view class="line-thick"></view>
-		<uni-list>
-			<uni-list-item title="地区" subtitle="郫都区" ></uni-list-item>
-			<uni-list-item title="维修中心" subtitle="郫都区总店"></uni-list-item>
-			<uni-list-item title="到店时间" subtitle="13:30-14:00"></uni-list-item>
-		</uni-list>
-		<xlist-input title="姓名：" placeholder="请输入您的姓名"></xlist-input>
-		<xlist-input title="手机号：" placeholder="请输入您的手机号"></xlist-input>
-		<xlist-input title="验证码：" placeholder="请输入验证码" isShowCode></xlist-input>
+		
+		<xlocation :isAddress="isAddress"></xlocation>
+		
+		<picker mode="selector" :value="index" :range="range" @change="bindPickerChange">
+			<view class="picker-class">
+				<text>维修中心</text>
+				<view class="picker-right">
+					<text>{{rangeText}}</text>
+					<image src="../../static/wxcomponentimg/arrow@2x.png"></image>
+				</view>
+			</view>
+		</picker>
+		
+		<!-- 到店时间 -->
+		
+		<xlist-input></xlist-input>
+
 		<view class="line-thick"></view>
 		<view class="text-area">
 			<text>故障详情（选填）：</text>
@@ -45,14 +54,21 @@
 	import uniList from '../../components/uni-list-c/uni-list.vue'
 	import uniListItem from '../../components/uni-list-item-c/uni-list-item.vue'
 	import xlistInput from '../../wxcomponents/xlist/xlist-input.vue'
-	
+	import xlocation from '../../wxcomponents/xlocation/xlocation.vue'
 	export default {
 		data() {
 			return {
+				rangeText:'郫都区总店',
+				range:['郫都区总店','郫都区一分店','郫都区二分店'],
+				isAddress:false,
 				isConfirm:false
 			}
 		},
 		methods: {
+			bindPickerChange(e){
+				// console.log(e.detail.value)
+				this.rangeText = this.range[e.detail.value]
+			},
 			onConfirm() {
 				this.isConfirm = !this.isConfirm
 			},
@@ -77,12 +93,37 @@
 			xlistPrice,
 			uniList,
 			uniListItem,
-			xlistInput
+			xlistInput,
+			xlocation
 		}
 	}
 </script>
 
 <style>
+	.picker-class{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 698upx;
+		height: 120upx;
+		border-bottom: 1px solid #EEEEEE;
+		margin-left: 26upx;
+		font-size: 30upx;
+	}
+	
+	.picker-right{
+		display: flex;
+		position: absolute;
+		align-items: center;
+		right: 26upx;
+	}
+	
+	.picker-right image{
+		width: 18upx;
+		height: 30upx;
+		margin-left: 40upx;
+	}
+	
 	.xbutton-rightprice{
 		font-size: 24upx;
 		color: #09BA51;

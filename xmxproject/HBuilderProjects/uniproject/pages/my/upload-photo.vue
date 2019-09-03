@@ -5,7 +5,6 @@
 			<view @click="onChooseImg1" class="container-id-left">
 				<image v-if="imgUrl1 == ''" src="../../static/my/sfz@2x.png"></image>
 				<image v-else :src="imgUrl1"></image>
-				
 				<text>正面</text>
 			</view>
 			<view @click="onChooseImg2" class="container-id-right">
@@ -32,25 +31,26 @@
 		},
 		methods:{
 			onSubmit(){
-				uni.showToast({
-					title: '提交成功'
-				})
-				setTimeout(()=>{
-					uni.navigateTo({
-						url:'business-verify'
+				if (this.imgUrl1 == '' || this.imgUrl2 == '') {
+					uni.showToast({
+						title: '请上传身份证照片'
 					})
-				}, 2000)
-			},
-			onPost(){
-				uni.request({
-					url:'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
-					data:{
-						address:this.imgUrl1
-					},
-					success: res=>{
-						console.log('success')
-					}
-				})
+				} else if (this.imgUrl3 == ''){
+					uni.showToast({
+						title: '请上传营业执照',
+						icon:'none'
+					})
+				} else{
+					uni.showToast({
+						title: '提交成功'
+					})
+					setTimeout(()=>{
+						uni.navigateTo({
+							url:'business-verify'
+						})
+					}, 2000)
+				}
+				
 			},
 			onChooseImg1(){
 				uni.chooseImage({
@@ -59,7 +59,7 @@
 					success: res=>{
 						this.imgUrl1 = res.tempFilePaths[0]
 						uni.request({
-							url:'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
+							url:'https://120.24.180.246/xmRepair/shopInfo/upload',
 							data:{
 								address:this.imgUrl1
 							},
@@ -116,7 +116,7 @@
 		width: 698upx;
 		height: 80upx;
 		border-radius: 12upx;
-		margin-top: 326upx;
+		margin-top: 308upx;
 		margin-left: 26upx;
 		font-size: 30upx;
 		color: #FFFFFF;

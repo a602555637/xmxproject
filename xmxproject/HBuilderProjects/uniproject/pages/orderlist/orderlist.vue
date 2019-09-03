@@ -14,6 +14,7 @@
 <script>
 	import WucTabc from '../../components/wuc-tab-c/wuc-tabc.vue'
 	import sTabs from '../../components/s-tabs/index.vue'
+	const urlRequest = require('../../common/http.js')
 	export default {
 		data() {
 			return {

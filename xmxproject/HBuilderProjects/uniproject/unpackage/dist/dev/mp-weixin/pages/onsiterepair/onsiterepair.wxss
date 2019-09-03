@@ -207,6 +207,7 @@ textarea{
 	    -ms-flex-align: center;
 	        align-items: center;
 	height: 120rpx;
+	border-bottom: 1px solid #EEEEEE;
 }
 .service-price{
 	font-size: 26rpx;
