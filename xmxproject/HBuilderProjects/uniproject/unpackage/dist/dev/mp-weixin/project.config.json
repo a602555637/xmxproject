@@ -33,54 +33,40 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/my/business-in",
-					"pathName": "pages/my/business-in",
+					"name": "pages/business/business-order/business-order",
+					"pathName": "pages/business/business-order/business-order",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/my/upload-photo",
-					"pathName": "pages/my/upload-photo",
+					"name": "pages/business/index/index",
+					"pathName": "pages/business/index/index",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/prize/prize",
-					"pathName": "pages/prize/prize",
+					"name": "pages/business/business-todo/business-todo",
+					"pathName": "pages/business/business-todo/business-todo",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/selectmodel/selectmodel",
-					"pathName": "pages/selectmodel/selectmodel",
+					"name": "pages/business/business-orderstatus/business-orderstatus",
+					"pathName": "pages/business/business-orderstatus/business-orderstatus",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/onsiterepair/onsiterepair",
-					"pathName": "pages/onsiterepair/onsiterepair",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/onsiterepair/onsiterepair",
-					"pathName": "pages/onsiterepair/onsiterepair",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/business/business-login/business-login",
-					"pathName": "pages/business/business-login/business-login",
+					"name": "pages/business/business-order/business-order",
+					"pathName": "pages/business/business-order/business-order",
 					"scene": null
 				}
 			]

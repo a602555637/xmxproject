@@ -4,7 +4,7 @@
 			<text class="container-top-title">共赚了</text>
 			<view class="container-total">
 				<text class="container-signal">￥</text>
-				<text class="container-price">2848.25</text>
+				<text class="container-price">{{totalIncome}}</text>
 			</view>
 			<image class="container-button" src="../../../static/business/tx-btn@2x.png"></image>
 			<image class="container-bg" src="../../../static/business/qb-bg@2x.png"></image>
@@ -25,6 +25,7 @@
 	export default {
 		data() {
 			return {
+				totalIncome:34534,
 				content: [{
 					title:'华为 P30 Pro',
 					desc:'到店维修',

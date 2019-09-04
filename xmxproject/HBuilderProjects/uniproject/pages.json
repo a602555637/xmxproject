@@ -100,7 +100,7 @@
 		},{
 			"path": "pages/business/business-todo/business-todo",
 			"style": {
-				"navigationBarTitleText": "待处理"
+				"navigationBarTitleText": " "
 			}
 		},{
 			"path": "pages/business/business-repairing/business-repairing",

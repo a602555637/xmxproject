@@ -1,7 +1,13 @@
 <template>
 	<view class="container">
 		<view class="container-top">
-			<text>取消订单</text>
+			<!-- <text>取消订单</text> -->
+			
+			<text v-if="isAleadyTaken">已接单</text>
+			<text v-else-if="isRepairing">维修中</text>
+			<text v-else-if="isCustom">维修中</text>
+			<text v-else>待接单</text>
+			
 		</view>
 		<view class="container-middle">
 			<text>{{phoneType}}</text>
@@ -13,8 +19,17 @@
 				<text class="total-title">合计：</text>
 				<text class="total-price">{{totalPrice}}</text>
 			</view>
-			<view class="container-button">
-				<view class="button-left">取消确认</view>
+			<view v-if="isOnsite" class="container-button">
+				<view v-if="isAleadyTaken" class="button-left">开始维修</view>
+				<view v-else-if="isRepairing" class="button-left">完成确认</view>
+				<view v-else class="button-left">去抢单</view>
+				<view class="button-right">休息一下</view>
+			</view>
+			<view v-else class="container-button">
+				<view v-if="isAleadyTaken" class="button-left" @click="bindRepairing">开始维修</view>
+				<view v-else-if="isRepairing" class="button-left" @click="bindOncustom">完成确认</view>
+				<view v-else-if="isCustom" class="button-left fixed" >等待顾客确认</view>
+				<view v-else class="button-left" @click="bindAleadyTaken">马上接单</view>
 				<view class="button-right">联系顾客</view>
 			</view>
 			<view class="line-thin"></view>
@@ -34,6 +49,10 @@
 	export default {
 		data() {
 			return {
+				isCustom:false,
+				isRepairing:false,
+				isAleadyTaken: false,
+				isOnsite:false,
 				phoneType:'苹果 iPhone7 玫瑰金',
 				totalPrice:'￥'+ 990,
 				repairContent: [{
@@ -45,10 +64,27 @@
 				}]
 			}
 		},
+		methods:{
+			bindAleadyTaken(){
+				this.isAleadyTaken = true
+			},
+			bindRepairing(){
+				this.isAleadyTaken = false
+				this.isRepairing = true
+			},
+			bindOncustom(){
+				this.isCustom = true
+				this.isRepairing = false
+			}
+		}
 	}
 </script>
 
 <style>
+	.fixed{
+		background: #888F97 !important;
+	}
+	
 	.container-bottom{
 		display: flex;
 		flex-direction: column;

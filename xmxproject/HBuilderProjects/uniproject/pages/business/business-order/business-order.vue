@@ -1,40 +1,46 @@
 <template>
 	<view>
-		<view class="container" v-for="(item, index) in content" :key="index">
-			<view class="container-left">
-				<text class="item-title">{{item.title}}</text>
-				<text class="item-desc">{{item.desc}}</text>
-			</view>
-			<view class="container-right">
-				<text class="item-price">{{item.price}}</text>
-				<text class="item-status">{{item.status}}</text>
-			</view>
-		</view>
+		<business-order-list :orderList="content"></business-order-list>
 	</view>
 </template>
 
 <script>
+	import businessOrderList from '../../../wxcomponents/business/business-order-list.vue'
 	export default {
 		data() {
 			return {
-				content:[{
-					title:'苹果 iPhone7 玫瑰金',
-					desc:'到店维修',
-					price:'￥400',
-					status:'已完成'
+				content: [{
+					brand: '苹果',
+					model: 'iPhone 7',
+					color: '玫瑰金',
+					repairType: '到店维修',
+					price: '￥400',
+					status: '待处理'
 				},{
-					title:'vivo X27',
-					desc:'上门维修',
-					price:'￥400',
-					status:'已完成'
+					brand: '1苹果',
+					model: 'iPhone 7',
+					color: '玫瑰金',
+					repairType: '到店维修',
+					price: '￥400',
+					status: '已完成'
+				},{
+					brand: '苹果',
+					model: 'iPhone 7',
+					color: '玫瑰金',
+					repairType: '到店维修',
+					price: '￥400',
+					status: '维修中'
 				}]
 			}
 		},
+		components: {
+			businessOrderList
+		}
 	}
 </script>
 
 <style>
-	.container{
+	.container {
 		display: flex;
 		height: 160upx;
 		width: 750upx;
@@ -42,36 +48,35 @@
 		margin-left: 26upx;
 		border-bottom: 1px solid #F3F3F3;
 	}
-	
-	.container-left{
+
+	.container-left {
 		display: flex;
 		flex-direction: column;
 	}
-	
-	.container-right{
+
+	.container-right {
 		display: flex;
 		flex-direction: column;
 		position: absolute;
 		right: 36upx;
 	}
-	
-	.item-status{
+
+	.item-status {
 		font-size: 26upx;
 		color: #51D587;
 		margin-top: 12upx;
 	}
-	
-	.item-price{
+
+	.item-price {
 		font-size: 30upx;
 	}
-	
-	.item-title{
+
+	.item-title {
 		font-size: 30upx;
 		margin-bottom: 10upx;
 	}
-	
-	.item-desc{
+
+	.item-desc {
 		font-size: 26upx;
 	}
-	
 </style>

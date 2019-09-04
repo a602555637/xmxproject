@@ -1,88 +1,85 @@
 <template>
 	<view>
-		<view class="container" v-for="(item, index) in content" :key="index">
-			<view class="container-left">
-				<text class="item-title">{{ item.title }}</text>
-				<text class="item-desc">{{item.desc}}</text>
-			</view>
-			<view @click="onNext" class="container-right">
-				<image src="../../../static/business/yjqx-btn@2x.png"></image></view>
-		</view>
+		<business-order-list :isButton="isButton" :orderList="content"></business-order-list>
 	</view>
 </template>
 
 <script>
+	import businessOrderList from '../../../wxcomponents/business/business-order-list.vue'
+	
 export default {
+	onLoad(e) {
+		let sid = e.id
+		if(sid == 1){
+			this.onStatus()
+			uni.setNavigationBarTitle({
+				title:'待处理'
+			})
+		} else if(sid == 2){
+			uni.setNavigationBarTitle({
+				title:'维修中'
+			})
+		} else if(sid == 3){
+			uni.setNavigationBarTitle({
+				title:'已完成'
+			})
+		} else if(sid == 4){
+			uni.setNavigationBarTitle({
+				title:'已取消'
+			})
+		} else{
+			uni.setNavigationBarTitle({
+				title:'总收益'
+			})
+		}
+	},
 	data() {
 		return {
+			orderStatusId:'',
+			isButton:'',
 			content: [
 				{
-					title: '苹果 iPhone7 玫瑰金',
-					desc: '到店维修',
-					price: '￥400',
-					status: '已完成'
+					brand: '苹果',
+					model: 'iPhone 7',
+					color: '玫瑰金',
+					repairType: '到店维修',
+					price: '400',
+					status: '待处理'
 				},
 				{
-					title: 'vivo X27',
-					desc: '上门维修',
-					price: '￥400',
-					status: '已完成'
+					brand: 'VIVO',
+					model: 'm30',
+					color: '银金',
+					repairType: '到店维修',
+					price: '700',
+					status: '待处理'
 				}
 			]
-		};
+		}
 	},
 	methods:{
 		onNext(){
 			uni.navigateTo({
 				url: '../business-orderstatus/business-orderstatus'
 			})
+		},
+		onStatus(){
+			console.log(this.content)
+			for (var i = 0; i < this.content.length; i++) {
+				let status = this.content[i].status
+				console.log(status)
+				if(status == '待处理'){
+					this.isButton = 'submit'
+				}
+			}
 		}
+	},
+	components:{
+		businessOrderList
 	}
-};
+}
 </script>
 
 <style>
-.container image {
-	width: 180upx;
-	height: 60upx;
-}
-.container {
-	display: flex;
-	height: 160upx;
-	width: 750upx;
-	align-items: center;
-	margin-left: 26upx;
-	border-bottom: 1px solid #f3f3f3;
-}
 
-.container-left {
-	display: flex;
-	flex-direction: column;
-}
-
-.container-right {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	right: 36upx;
-}
-
-.item-status {
-	font-size: 26upx;
-	color: #51d587;
-	margin-top: 12upx;
-}
-
-.item-price {
-	font-size: 30upx;
-}
-
-.item-title {
-	font-size: 30upx;
-	margin-bottom: 10upx;
-}
-
-.item-desc {
-	font-size: 26upx;
-}
 </style>

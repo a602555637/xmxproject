@@ -1,8 +1,8 @@
 <template>
 	<view class="content">
-		<xinput title="手机号" placeHolderText="请输入手机号" />
-		<xinput title="密码" placeHolderText="请输入密码" />
-		<view @click="onIndex" class="button">{{buttonTitle}}</view>
+		<xinput @inputValue="onNumber" :type="xtype" title="手机号" placeHolderText="请输入手机号" />
+		<xinput @inputValue="onCode" :xpassword="xpassword" title="密码" placeHolderText="请输入密码" />
+		<view @click="onNext" class="button">{{buttonTitle}}</view>
 	</view>
 
 </template>
@@ -13,20 +13,41 @@ export default {
 	data() {
 		return {
 			buttonTitle: '登录',
-			phonenum:''
+			phonenum:'',
+			scode:'',
+			xpassword:true,
+			xtype:'number'
 		}
 	},
 	methods:{
-		// onIndex(){
-		// 	if(!phonenum){
-		// 		
-		// 	}
-		// 	
-		// 	
-		// 	uni.navigateTo({
-		// 		url: '../index/index'
-		// 	})
-		// }
+		onNumber(e){
+			this.phonenum = e.inputValue
+		},
+		onCode(e){
+			this.scode = e.inputValue
+		},
+		onNext(){
+			if(!this.phonenum){
+				uni.showToast({
+					title: '请输入正确的手机号码',
+					icon:'none'
+				})
+			} else if(!this.scode){
+				uni.showToast({
+					title:'请输入密码',
+					icon:'none'
+				})
+			} else{
+				uni.showToast({
+					title: '登陆成功'
+				})
+				setTimeout(()=>{
+					uni.navigateTo({
+						url:'../index/index'
+					})
+				}, 1000)
+			}
+		}
 	},
 	components:{
 		xinput
