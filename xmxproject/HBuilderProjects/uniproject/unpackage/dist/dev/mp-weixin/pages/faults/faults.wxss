@@ -1,6 +1,7 @@
 
 .scroll-view{
 	margin-top: 36rpx;
+	max-height: 540rpx;
 }
 .popup-content-left{
 	margin-left: 92rpx;

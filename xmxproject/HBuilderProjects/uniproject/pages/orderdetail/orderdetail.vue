@@ -18,8 +18,9 @@
 					<text class="total-price">{{totalPrice}}</text>
 				</view>
 				<view class="order-button">
+					<view @click="bindIndex" class="order-button-right">回到首页</view>
+					<view class="order-button-left">在线客服</view>
 					<view @click="openPopup" class="order-button-left">取消订单</view>
-					<view class="order-button-right">在线客服</view>
 				</view>
 				<view class="line"></view>
 				<view class="order-content">
@@ -96,12 +97,19 @@
 				uni.showToast({
 					title: '取消成功'
 				})
-				uni.navigateTo({
-					url: 'order-cancel'
-				})
+				setTimeout(()=>{
+					uni.reLaunch({
+						url: 'order-cancel'
+					})
+				},1000)
 			},
 			onSelectedId(e){
 				this.isSelectedId = e.currentTarget.id
+			},
+			bindIndex(){
+				uni.reLaunch({
+					url:'../index/index'
+				})
 			}
 		},
 		components:{
@@ -192,6 +200,10 @@
 	.order-button-right{
 		background: #09BA51;
 		color: #FFFFFF;
+	}
+	
+	.order-button view{
+		margin-right: 22upx;
 	}
 	
 	.order-button{

@@ -33,40 +33,26 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/business/business-order/business-order",
-					"pathName": "pages/business/business-order/business-order",
+					"name": "pages/selectmodel/selectmodel",
+					"pathName": "pages/selectmodel/selectmodel",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/business/index/index",
-					"pathName": "pages/business/index/index",
+					"name": "pages/faults/faults",
+					"pathName": "pages/faults/faults",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/business/business-todo/business-todo",
-					"pathName": "pages/business/business-todo/business-todo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/business/business-orderstatus/business-orderstatus",
-					"pathName": "pages/business/business-orderstatus/business-orderstatus",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/business/business-order/business-order",
-					"pathName": "pages/business/business-order/business-order",
+					"name": "pages/onsiterepair/onsiterepair",
+					"pathName": "pages/onsiterepair/onsiterepair",
 					"scene": null
 				}
 			]

@@ -16,21 +16,21 @@
 					<text>服务用户</text>
 					<image src="../../static/wxcomponentimg/up@2x.png"></image>
 				</view>
-				<text>2465</text>
+				<text>暂未公布</text>
 			</view>
 			<view class="left">
 				<view class="left-text">
 					<text>维修设备</text>
 					<image src="../../static/wxcomponentimg/up@2x.png"></image>
 				</view>
-				<text>2575</text>
+				<text>暂未公布</text>
 			</view>
 			<view class="left">
 				<view class="left-text">
 					<text>好评度</text>
 					<image src="../../static/wxcomponentimg/up@2x.png"></image>
 				</view>
-				<text>98%</text>
+				<text>暂未公布</text>
 			</view>
 		</view>
 		<view class="kf-phone">
@@ -125,7 +125,9 @@
 				uni.navigateTo({
 					url: '../phone-code/index-code'
 				})
-			}
+			},
+			
+			
 		}
 	}
 </script>

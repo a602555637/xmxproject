@@ -1,16 +1,37 @@
 <template>
 	<view class="container">
 		<text class="container-text">{{ title }}</text>
-		<input class="container-item" type="text" :placeholder="placeHolderText" placeholder-class="placeholder-class" />
+		<input @input="bindInput" class="container-item" :password="xpassword" :type="xtype" :placeholder="placeHolderText" placeholder-class="placeholder-class" />
 	</view>
 </template>
 
 <script>
 	export default {
 		name:'xinput',
+		data() {
+			return {
+				inputValue:''
+			}
+		},
 		props:{
 			title:String,
-			placeHolderText:String
+			placeHolderText:String,
+			xtype:{
+				type:String,
+				default:'text'
+			},
+			xpassword:{
+				type:Boolean,
+				default:false
+			}
+		},
+		methods:{
+			bindInput(e){
+				this.inputValue = e.detail.value
+				this.$emit('inputValue',{
+					inputValue:this.inputValue
+				})
+			}
 		}
 	}
 	

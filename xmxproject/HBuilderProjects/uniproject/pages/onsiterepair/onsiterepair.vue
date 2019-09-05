@@ -57,7 +57,7 @@
 			</view>
 			<view @click="onOrder" class="xbutton-right">
 				<text class="xbutton-right-text">用户特惠修</text>
-				<text class="xbutton-rightprice">￥400</text>
+				<text class="xbutton-right-price">￥400</text>
 			</view>
 		</view>
 	</view>
@@ -81,6 +81,7 @@
 			var currentTime = dateObj.getTime()
 			var timer = formatDate.formatDateTime((currentTime + 1000 * 2000))
 			return {
+				orderInfo:'orderInfo',
 				timer:timer,
 				title:'验证码：',
 				province:'',
@@ -141,10 +142,19 @@
 			},
 			onOrder(){
 				if (this.isConfirm){
-					uni.navigateTo({
-						url: '../orderdetail/orderdetail'
+					uni.reLaunch({
+						url: '../orderdetail/orderdetail',
+						success:res =>{
+							console.log('success')
+						}
 					})
 				}
+				// uni.getProvider({
+				// 	service:'payment',
+				// 	success:res=>{
+				// 		console.log(res)
+				// 	}
+				// })
 			},
 			onNumber(kiloValue){
 				this.kiloValue = kiloValue
@@ -229,7 +239,7 @@
 	}
 	
 	
-	.xbutton-rightprice{
+	.xbutton-right-price{
 			font-size: 24upx;
 			color: #09BA51;
 	}

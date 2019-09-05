@@ -9,6 +9,13 @@
 
 
 
+
+
+
+
+
+
+
 /* components/zhuanpan/zhuanpan.wxss */
 .canvas-container {
    margin: 0 auto;

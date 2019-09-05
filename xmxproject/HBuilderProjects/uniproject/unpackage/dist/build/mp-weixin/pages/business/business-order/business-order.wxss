@@ -1,5 +1,5 @@
 
-.container{
+.container {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -13,7 +13,7 @@
 	margin-left: 26rpx;
 	border-bottom: 1px solid #F3F3F3;
 }
-.container-left{
+.container-left {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -24,7 +24,7 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.container-right{
+.container-right {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -37,20 +37,19 @@
 	position: absolute;
 	right: 36rpx;
 }
-.item-status{
+.item-status {
 	font-size: 26rpx;
 	color: #51D587;
 	margin-top: 12rpx;
 }
-.item-price{
+.item-price {
 	font-size: 30rpx;
 }
-.item-title{
+.item-title {
 	font-size: 30rpx;
 	margin-bottom: 10rpx;
 }
-.item-desc{
+.item-desc {
 	font-size: 26rpx;
 }
-
 

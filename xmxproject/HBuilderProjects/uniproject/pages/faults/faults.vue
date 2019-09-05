@@ -4,22 +4,13 @@
 			<image :src="item.imgSrc"></image>
 			<text>{{item.text}}</text>
 		</view>
+		
 		<uniPopup custom="true" ref="popup" type="bottom">
 			<view class="container-popup">
 				<view class="popup-title">
 					<text>故障选择</text>
 					<image @click="closePopup" src="../../static/faults/close@2x.png"></image>
-				</view>
-<!-- 				<view @click="onSelected" :id="index" :key="index" class="popup-content" v-for="(item, index) in faulesItem">
-					<image v-if="index == isSelectedId " src="../../static/faults/xz@2x.png" class="popup-content-icon"></image>
-					<image v-else src="../../static/faults/wxz@2x.png" class="popup-content-icon"></image>
-					<view class="popup-content-middle">
-						<text class="item-title">{{item.title}}</text>
-						<text class="item-subtitle">{{item.desc}}</text>
-					</view>
-					<text class="item-price">{{item.price}}</text>
-				</view> -->
-				
+				</view>				
 				<scroll-view scroll-y class="scroll-view">
 					<checkbox-group @change="onEventChange">
 						<view v-for="(item, index) in faulesItem" :id="index" :key="index">
@@ -65,8 +56,32 @@
 	import uniPopup from '../../components/uni-popup/uni-popup.vue'
 
 	export default {
+		onLoad(e) {
+			//判断是否快捷维修入口
+			let sid = e.id
+			console.log(e)
+			console.log(e.id)
+			if(sid == ''){
+				return
+			}else{
+				this.$refs.popup.open()
+				let xtypeId = this.faulesList[sid].type
+				uni.request({
+					url:'https://120.24.180.246/xmRepair/faults/getDetail',
+					method:'POST',
+					data:{
+						type:xtypeId
+					},
+					success: res=>{
+						console.log(res.data.data)
+						this.faulesItem = res.data.data
+					}
+				})
+			}
+		},
 		data() {
 			return {
+				ftype:'',
 				faulesItemPrice:[],
 				currentPrice:0,
 				totalPrice: 0,
@@ -74,63 +89,55 @@
 				isSelected: false,
 				unSelectedImg: '../../static/faults/wxz@2x.png',
 				selectedImg: '../../static/faults/wxz@2x.png',
-				faulesItem: [{
-					"title": "内屏碎（图像不正常）",
-					"desc": "更换屏幕，旧屏幕不回收",
-					"price": "2299"
-				}, {
-					"title": "外屏碎（无3D，集中爆点，无触摸）",
-					"desc": "更换屏幕总成(内屏+外屏)，旧屏(内屏+外屏)回收",
-					"price": "2299"
-				}, {
-					"title": "外屏碎(图像正常）",
-					"desc": "更换屏幕总成(内屏+外屏)，旧屏(内屏+外屏)回收",
-					"price": "599"
-				}, {
-					"title": "无法显示(主板问题)",
-					"desc": "维修主板",
-					"price": "999"
-				}, {
-					"title": "屏幕其他问题",
-					"desc": "更换屏幕，旧屏幕不回收",
-					"price": "2299"
-				}],
+				faulesItem: [],
 				faulesList: [{
 					imgSrc: '../../static/faults/screen@2x.png',
-					text: '屏幕问题'
+					text: '屏幕问题',
+					type: "screen"
 				}, {
 					imgSrc: '../../static/faults/battery@2x.png',
-					text: '电池电源问题'
+					text: '电池电源问题',
+					type: "battery"
 				}, {
 					imgSrc: '../../static/faults/signal@2x.png',
-					text: '连接/信号问题'
+					text: '连接/信号问题',
+					type: "signal"
 				}, {
 					imgSrc: '../../static/faults/camare@2x.png',
-					text: '摄像头问题'
+					text: '摄像头问题',
+					type: "camera"
 				}, {
 					imgSrc: '../../static/faults/voice@2x.png',
-					text: '声音问题'
+					text: '声音问题',
+					type: "voice"
 				}, {
 					imgSrc: '../../static/faults/botton@2x.png',
-					text: '按键问题'
+					text: '按键问题',
+					type: "keyboard"
 				}, {
 					imgSrc: '../../static/faults/shield@2x.png',
-					text: '外壳边框问题'
+					text: '外壳边框问题',
+					type: "edging"
 				}, {
 					imgSrc: '../../static/faults/board@2x.png',
-					text: '主板维修'
+					text: '主板维修',
+					type: "mainboard"
 				}, {
 					imgSrc: '../../static/faults/switchoff@2x.png',
-					text: '开关机问题'
+					text: '开关机问题',
+					type: "switch"
 				}, {
 					imgSrc: '../../static/faults/unkeep@2x.png',
-					text: '保养服务'
+					text: '保养服务',
+					type: "maintain"
 				}, {
 					imgSrc: '../../static/faults/install@2x.png',
-					text: '安装服务'
+					text: '安装服务',
+					type: "install"
 				}, {
 					imgSrc: '../../static/faults/other@2x.png',
-					text: '其他故障'
+					text: '其他故障',
+					type: "others"
 				}]
 			}
 		},
@@ -140,8 +147,18 @@
 			},
 			openPopup(sid) {
 				this.$refs.popup.open()
-				console.log(sid)
-				// let title = this.faulseList[sid].title
+				let xtypeId = this.faulesList[sid].type
+				uni.request({
+					url:'https://120.24.180.246/xmRepair/faults/getDetail',
+					method:'POST',
+					data:{
+						type:xtypeId
+					},
+					success: res=>{
+						console.log(res.data.data)
+						this.faulesItem = res.data.data
+					}
+				})
 			},
 			closePopup() {
 				this.totalPrice = 0
@@ -182,6 +199,7 @@
 <style>
 	.scroll-view{
 		margin-top: 36upx;
+		max-height: 540upx;
 	}
 	
 	.popup-content-left{

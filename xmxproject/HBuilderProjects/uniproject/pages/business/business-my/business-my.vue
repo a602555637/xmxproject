@@ -1,9 +1,13 @@
 <template>
 	<view class="container">
 		<view class="">
-			<image class="avatar" src="../../../static/business/avatar@2x.png"></image>
+			<image @click="bindChooseImage" v-show="isDefaultAvatar" class="camera" src="../../../static/wxcomponentimg/htx@2x.png"></image>
+			<image @click="bindChooseImage" class="avatar" :src="avatarUrl"></image>
 			<text class="avatar-text">小美郫都区总店</text>
-			<image class="avatar-bg" src="../../../static/business/avatar@2x.png"></image>
+			<view class="avatar-background">
+				<image class="fixed" src="../../../static/wxcomponentimg/dp-bsbg@2x.png" mode=""></image>
+				<image class="avatar-bg" mode="aspectFill" :src="avatarUrl"></image>
+			</view>
 		</view>
 					<!-- list -->
 		<view class="container-list">
@@ -17,8 +21,17 @@
 
 <script>
 	export default {
+		onLoad() {
+			uni.getSavedFileList({
+			  success: function (res) {
+			    console.log(res.fileList);
+			  }
+			})
+		},
 		data() {
 			return {
+				isDefaultAvatar:true,
+				avatarUrl:'../../../static/wxcomponentimg/avatar@2x.png',
 				listTitle: [{
 						title:'店铺详情'
 				},{
@@ -46,6 +59,17 @@
 						url: '../business-income/business-income'
 					})
 				}
+			},
+			bindChooseImage(){
+				uni.chooseImage({
+					count:1,
+					success:res=>{
+						console.log(res.tempFilePaths[0])
+						let tempFilePaths = res.tempFilePaths[0]
+						this.avatarUrl = tempFilePaths
+						this.isDefaultAvatar = false
+					}
+				})
 			}
 		}
 	}
@@ -53,6 +77,24 @@
 </script>
 
 <style>
+	.camera{
+		width: 150upx;
+		height: 46upx;
+		position: absolute;
+		top: 154upx;
+		left: 302upx;
+		z-index: 999;
+	}
+	
+	.fixed{
+		width: 750upx;
+		height: 58upx;
+		position: absolute;
+		top: 326upx;
+		left: 0;
+		z-index: 99;
+	}
+	
 	.list-item{
 		width: 750upx;
 		height: 120upx;
@@ -90,14 +132,22 @@
 		top: 60upx;
 		left: 296upx;
 		z-index: 99;
+		border-radius: 100upx;
 	}
 	
 	.avatar-bg{
-		width: 750upx;
+		width: 840upx;
 		height: 390upx;
 		filter: blur(2upx);
 		margin-bottom: 60upx;
+		position: absolute;
+		left: -44upx;
+		top: -10upx;
+
 	}
 	
-	
+	.avatar-background{
+		width: 750upx;
+		height: 390upx;
+	}
 </style>

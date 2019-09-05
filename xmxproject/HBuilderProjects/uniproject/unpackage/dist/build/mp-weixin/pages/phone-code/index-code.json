@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "Code",
-  "usingComponents": {
-    "getcode": "/wxcomponents/getcode/getcode"
-  }
-}

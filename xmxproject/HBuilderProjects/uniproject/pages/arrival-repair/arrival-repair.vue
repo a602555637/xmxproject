@@ -37,7 +37,7 @@
 			</text>
 		</view>
 		<view class="xbutton">
-			<view @click="onNext" class="xbutton-left">
+			<view class="xbutton-left">
 				会员免费修
 			</view>
 			<view @click="onOrder" class="xbutton-right">
@@ -82,8 +82,11 @@
 			},
 			onOrder(){
 				if (this.isConfirm){
-					uni.navigateTo({
-						url: '../orderdetail/orderdetail'
+					uni.reLaunch({
+						url: '../orderdetail/orderdetail',
+						success:res =>{
+							console.log('success')
+						}
 					})
 				}
 			}

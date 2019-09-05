@@ -97,10 +97,12 @@
 		margin-right: 64rpx;
 		margin-bottom: 40rpx;
 }
-.content-middle-item image {
+.content-middle-item view {
 		width: 140rpx;
 		height: 70rpx;
 		margin-bottom: 10rpx;
+		border-radius: 12rpx;
+		border: 1px solid #EEEEEE;
 }
 .content-middle-item text {
 		font-size: 26rpx;

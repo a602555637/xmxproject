@@ -34,7 +34,6 @@
 				</swiper-item>
 				<swiper-item>
 					<view class="container">
-
 						<view class="container-info">
 							<image src="../../static/wxcomponentimg/avatar@2x.png"></image>
 							<view class="name-date">
@@ -51,22 +50,6 @@
 		</view>
 		
 	</view>
-
-
-
-	<!-- 		<view class="container">
-			<text class="container-title">评论区</text>
-			<view class="container-info">
-				<image src="../../static/wxcomponentimg/avatar@2x.png"></image>
-				<view class="name-date">
-					<text class="name">泰勒丝</text>
-					<text class="date">7月12日</text>
-				</view>
-				<uniRate class="rate" value="2" size="18"></uniRate>
-			</view>
-			<text class="content">服务态度很好，处理得很迅速，一天不到就通知我修好了，很满意。</text>
-		</view> -->
-
 </template>
 
 <script>
@@ -84,17 +67,16 @@
 </script>
 
 <style>
-/* 	.container{
-		height: ;
-	} */
+	.swiper{
+		height: 300upx;
+		margin-bottom: 30upx;
+	}
 	
 	.container-bg{
 		width: 698upx;
 		height: 260upx;
 		position: absolute;
 		z-index: -99;
-/* 		bottom: 30upx;
-		right: 30upx; */
 	}
 	
 	.content {
@@ -128,15 +110,18 @@
 	.container-title {
 		font-size: 32upx;
 		font-weight: bold;
+		color: #888F97;
 		display: block;
 		margin-bottom: 22upx;
 		margin-left: 26upx;
 	}
-
+	
 	.container {
 		display: flex;
 		flex-direction: column;
 		margin-left: 26upx;
+/* 		margin-bottom: 20upx;
+		margin-top: 20upx; */
 	}
 
 	.container-info image {

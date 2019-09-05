@@ -32,6 +32,7 @@
 .container-title-head {
 		font-size: 32rpx;
 		font-weight: bold;
+		color: #888F97;
 		margin-left: 26rpx;
 }
 .container-title-more {

@@ -27,7 +27,7 @@
 		<!-- 弹窗 -->
 		<view v-if="isShowPopup" class="popup">
 			<view class="popup-content">
-				<image src="../../../static/faults/close@2x.png"></image>
+				<image @click="onShowPopup" src="../../../static/faults/close@2x.png"></image>
 				<text class="order-num">您有{{orderNum}}个新的维修订单</text>
 				<text class="order-type">{{orderType}}</text>
 				<view class="popup-content-button">
@@ -45,22 +45,16 @@
 	
 	export default {
 		onLoad() {
-			// this.onRequest()
-			// this.isShowPopup
-			// getstorage
-			// uni.request({
-			// 	url:'',
-			// 	data:{
-			// 		orderNum:2,
-			// 		订单编号
-			// 		orderType:{'onsite','arrival'}
-			// 	}
-			// })
+			if(this.orderNum >= 1){
+				this.bindShowPopup()
+			}
+			return
 			
 		},
 		data() {
 			return {
-				isShowPopup:true,
+				orderNum:1,
+				isShowPopup:false,
 				orderType:'上门维修',
 				orderNum:1,
 				navId:'',
@@ -125,6 +119,12 @@
 				uni.navigateTo({
 					url: '../business-orderstatus/business-orderstatus'
 				})
+			},
+			bindShowPopup(){
+				this.isShowPopup = true
+			},
+			onShowPopup(){
+				this.isShowPopup = false
 			}
 		},
 		components:{

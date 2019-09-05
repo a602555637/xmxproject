@@ -34,7 +34,7 @@
     "pages/my/my-friends",
     "pages/my/connect-friends",
     "pages/prize/prize",
-    "pages/phone-code/index-code"
+    "pages/my/cards"
   ],
   "subPackages": [],
   "window": {
@@ -48,5 +48,6 @@
       "desc": "定位服务"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,1 +1,0 @@
-<view><getcode vue-id="1" title="验证码：" timer="timer" bind:__l="__l"></getcode></view>

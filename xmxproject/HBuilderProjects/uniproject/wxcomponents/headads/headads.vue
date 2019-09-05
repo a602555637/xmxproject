@@ -3,7 +3,7 @@
 		<view class="container-head">
 			<image class="hot" src="../../static/hot@2x.png"></image>
 			<text class="hot-text">今日换屏5折起</text>
-			<image @click="onBusiness" class="icon" src="../../static/store@2x.png"></image>
+			<image @click="onBusiness" class="icon" src="../../static/index/store@2x.png"></image>
 		</view>
 	</view>
 </template>

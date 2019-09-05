@@ -4,10 +4,10 @@
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	position: relative;
+	position: absolute;
+	right: 26rpx;
 	font-size: 30rpx;
 	color: #09BA51;
-	left: -26rpx;
 }
 .placeholder-class{
 	font-size: 26rpx;
@@ -28,5 +28,7 @@
 	font-size: 30rpx;
 	margin-left: 26rpx;
 }
-
+.container input{
+	width: 200rpx;
+}
 

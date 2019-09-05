@@ -7,7 +7,7 @@
 		</view>
 		<view class="repair-right">
 			<image @click="onNext" class="repair-right-change" src="../../static/ghjx-btn@2x.png" mode=""></image>
-			<image @click="onNext" src="../../static/repair-btn@2x.png"></image>
+			<image @click="bindRepair" src="../../static/repair-btn@2x.png"></image>
 		</view>
 	</view>
 </template>
@@ -17,7 +17,8 @@
 		name:'testype',
 		data() {
 			return {
-				phoneType: '正在检测...'
+				phoneType: '正在检测...',
+				smodel:''
 			}
 		},
 		created() {
@@ -37,7 +38,9 @@
 						this.phoneType = s
 					}
 					
-					// console.log(res)
+					console.log(res)
+					this.smodel = res.model
+					
 				}
 			})
 		},
@@ -45,6 +48,11 @@
 			onNext() {
 				uni.navigateTo({
 					url: '../../pages/selectmodel/selectmodel'
+				})
+			},
+			bindRepair(){
+				uni.navigateTo({
+					url:'../../pages/selectmodel/selectmodel?model=' + this.smodel
 				})
 			}
 		}

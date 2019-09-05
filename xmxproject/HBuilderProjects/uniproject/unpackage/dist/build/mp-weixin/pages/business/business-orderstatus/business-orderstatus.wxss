@@ -1,4 +1,7 @@
 
+.fixed{
+	background: #888F97 !important;
+}
 .container-bottom{
 	display: -webkit-box;
 	display: -webkit-flex;

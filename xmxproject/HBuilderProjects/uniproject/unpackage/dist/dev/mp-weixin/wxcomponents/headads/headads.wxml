@@ -1,1 +1,1 @@
-<view><view class="container-head"><image class="hot" src="../../static/hot@2x.png"></image><text class="hot-text">今日换屏5折起</text><image class="icon" src="../../static/store@2x.png" data-event-opts="{{[['tap',[['onBusiness',['$event']]]]]}}" bindtap="__e"></image></view></view>
+<view><view class="container-head"><image class="hot" src="../../static/hot@2x.png"></image><text class="hot-text">今日换屏5折起</text><image class="icon" src="../../static/index/store@2x.png" data-event-opts="{{[['tap',[['onBusiness',['$event']]]]]}}" bindtap="__e"></image></view></view>

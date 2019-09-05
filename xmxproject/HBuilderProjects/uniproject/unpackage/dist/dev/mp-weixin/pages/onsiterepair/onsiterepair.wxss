@@ -4,7 +4,7 @@
 	height: 44rpx;
 	margin-top: -6rpx;
 }
-.xbutton-rightprice{
+.xbutton-right-price{
 		font-size: 24rpx;
 		color: #09BA51;
 }

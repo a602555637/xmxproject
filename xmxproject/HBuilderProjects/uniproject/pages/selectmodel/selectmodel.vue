@@ -51,14 +51,13 @@
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 	import xselect from '../../wxcomponents/xselect/xselect.vue'
 	export default {
-		onLoad() {
+		onLoad(sid) {
 			uni.request({
 				url: 'https://120.24.180.246/xmRepair/phoneBrand/getBrand',
 				method: 'GET',
 				data: {},
 				success: res => {
 					this.slideList = res.data.data
-					console.log(this.slideList)
 				}
 			})
 			uni.request({
@@ -71,9 +70,39 @@
 					this.phoneType = res.data.data
 				}
 			})
+
+			console.log(sid)
+			
+			if(sid.id){
+				this.quickId = sid.id
+			}else if(sid.model){
+				let smodel = sid.model
+				uni.setStorage({
+					key:'model',
+					data:smodel,
+					success:res=>{
+						uni.request({
+							url:'https://120.24.180.246/xmRepair/phoneBrand/getBrandColour',
+							data:{
+								name:smodel
+							},
+							method:'POST',
+							success:res=>{
+								this.popupContent = res.data.data
+								this.$refs.popup.open()
+							}
+						})
+					}
+				})
+				console.log('本机维修')
+			}else{
+				return
+			}
+			
 		},
 		data() {
 			return {
+				quickId:'',
 				valueId:1,
 				colorId:null,
 				selectedId: 0,
@@ -106,7 +135,8 @@
 					{model:'iphone X'},
 					{model:'iphone 8 Plus'},
 					{model:'iphone 8'},
-					{model:'iphone 7Plus'}
+					{model:'iphone 7Plus'},
+					{model:'iPhone 7'}
 				]
 			}
 		},
@@ -114,13 +144,12 @@
 			onNext() {
 				if(this.colorId !== null){
 					uni.navigateTo({
-						url: '../faults/faults'
+						url: '../faults/faults?id=' + this.quickId
 					})
 				}
 			},
 			openPopup(e) {
 				let modelSelected = this.phoneType[e].model
-				console.log(e)
 				uni.setStorage({
 					key:'model',
 					data:modelSelected
@@ -135,7 +164,6 @@
 						name: modelSelected
 					},
 					success: res => {
-						console.log(res.data.data)
 						this.popupContent = res.data.data
 						// uni.setStorage({
 						// 	key:'color',
@@ -165,7 +193,7 @@
 					},
 					success: res => {
 						this.phoneType = res.data.data
-						console.log(this.phoneType)
+						// console.log(this.phoneType)
 					}
 				})
 			},
@@ -263,7 +291,7 @@
 	
 	
 	.slide-right {
-		margin-left: 194upx;
+		margin-left: 114upx;
 		margin-top: 30upx;
 	}
 

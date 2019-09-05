@@ -102,6 +102,9 @@
 	background: #09BA51;
 	color: #FFFFFF;
 }
+.order-button view{
+	margin-right: 22rpx;
+}
 .order-button{
 	display: -webkit-box;
 	display: -webkit-flex;

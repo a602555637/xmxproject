@@ -1,19 +1,19 @@
 <template>
-	<view class="container">
-		<text class="item-title">{{title}}</text>
-		<input class="item-input" type="text" value="" :placeholder="placeholder" />
-		<text v-if="isShowCode" class="identify-code">获取验证码</text>
+	<view>
+		<view class="container">
+			<text class="item-title">姓名：</text>
+			<input class="item-input" type="text" value="" placeholder="请输入您的姓名" />
+		</view>
+		<view class="container">
+			<text class="item-title">手机号：</text>
+			<input class="item-input" type="number" value="" placeholder="请输入您的手机号" />
+		</view>
 	</view>
 </template>
 
 <script>
 	export default {
-		name:'xlist-input',
-		props:{
-			title:String,
-			placeholder:String,
-			isShowCode:Boolean
-		}
+		name:'xlist-input'
 	}
 </script>
 

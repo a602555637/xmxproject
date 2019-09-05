@@ -47,6 +47,13 @@
 </script>
 
 <style>
+	.container-left,
+	.container-right{
+		display: flex;
+		flex-direction: column;
+		
+	}
+	
 	.finished {
 		color: #51D587;
 	}

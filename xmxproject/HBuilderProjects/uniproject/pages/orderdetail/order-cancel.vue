@@ -14,7 +14,7 @@
 				<text class="total-price">{{totalPrice}}</text>
 			</view>
 			<view class="container-button">
-				<view class="button-left">再去维修</view>
+				<view @click="bindIndex" class="button-left">回到首页</view>
 				<view class="button-right">联系商家</view>
 				<view class="button-right">在线客服</view>
 			</view>
@@ -45,6 +45,13 @@
 				}]
 			}
 		},
+		methods:{
+			bindIndex(){
+				uni.reLaunch({
+					url:'../index/index'
+				})
+			}
+		}
 	}
 </script>
 
