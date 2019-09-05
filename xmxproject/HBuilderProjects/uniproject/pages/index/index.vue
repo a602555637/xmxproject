@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<headads title="今日换屏5折起"></headads>
+		<headads></headads>
 		<view class="xswiper">
 		<xswiper></xswiper>
 		</view>

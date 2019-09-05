@@ -2,7 +2,14 @@
 	<view class="">
 		<view class="container-head">
 			<image class="hot" src="../../static/hot@2x.png"></image>
-			<text class="hot-text">今日换屏5折起</text>
+			<swiper class="swiper" vertical="true" :indicator-dots="false" :autoplay="true" :interval="3000" :duration="1000">
+				<swiper-item >
+					<view class="hot-text">今日换屏5折起</view>
+				</swiper-item>
+				<swiper-item>
+					<view class="hot-text">会员免费修</view>
+				</swiper-item>
+			</swiper>
 			<image @click="onBusiness" class="icon" src="../../static/index/store@2x.png"></image>
 		</view>
 	</view>
@@ -11,9 +18,6 @@
 <script>
 	export default{
 		name:"headads",
-		props:{
-			title:String
-		},
 		methods:{
 			onBusiness(){
 				uni.navigateTo({
@@ -25,6 +29,10 @@
 </script>
 
 <style>
+	.swiper{
+		height:40upx;
+		width:500upx;
+	}
 	
 	.container-head {
 		display: flex;
@@ -32,7 +40,6 @@
 		align-items: center;
 		margin-top: 36rpx;
 		margin-left: 26rpx;
-
 	}
 	
 	.hot {
