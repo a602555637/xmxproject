@@ -1,19 +1,20 @@
 <template>
 	<view>
 		<view class="container" v-for="(item, index) in orderList" :key="index">
-			<view class="container-left">
-				<text class="phone-info">{{item.brand + item.model + item.color}}</text>
-				<text class="repair-type">{{item.repairType}}</text>
+			<view @click="bindDetail(item.orderStatus)" class="container-left">
+				<text class="phone-info">{{item.phone.brand + item.phone.model + item.phone.colour}}</text>
+				<text v-if="item.serviceMode == 0" class="repair-type">上门维修</text>
+				<text v-else class="repair-type">到店维修</text>
 			</view>
-			<view v-if="isButton == 'submit'" class="container-button">{{buttonSubmit}}</view>
-			<view v-else-if="isButton == 'cancel'" class="container-button button-background">{{buttonCancel}}</view>
+			<view v-if="item.orderStatus == 0" class="container-button" @click="bindDetail(item.orderStatus)">{{buttonSubmit}}</view>
+			<view @click="onCancel" v-else-if="item.orderStatus == 4" class="container-button button-background">{{buttonCancel}}</view>
 			<view v-else class="container-right">
 				<text class="price">{{item.price}}元</text>
-				<text :class="{finished : item.status == '已完成',
-					cancel:item.status == '已取消',
-					repairing:item.status == '维修中',
-					todo:item.status == '待处理'}"
-				 class="status">{{item.status}}</text>
+				<text v-if="item.orderStatus == 2" class="status finished">已完成</text>
+				<text v-else-if="item.orderStatus == 3" class="status cancel">已取消</text>
+				<text v-else-if="item.orderStatus == 1" class="status repairing">维修中</text>
+				<text v-else class="status todo">待处理</text>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -21,12 +22,6 @@
 
 <script>
 	export default {
-		created() {
-			let orderList = this.orderList
-			for (var i = 0; i < orderList.length; i++) {
-				let status = this.orderList[i].status
-			}
-		},
 		name: 'business-order-list',
 		props: {
 			orderList: Array,
@@ -41,12 +36,35 @@
 			}
 		},
 		methods: {
-
+			bindDetail(id){
+				console.log(id)
+				if(id == 3){
+					uni.reLaunch({
+						url:'../business-cancel/business-cancel?id' + id
+					})
+				} else{
+					uni.navigateTo({
+						url: '../../business/business-orderstatus/business-orderstatus?id=' + id
+					})
+				}
+			},
+			onCancel(){
+				uni.reLaunch({
+					url:'../../business/business-cancel/business-cancel'
+				})
+			}
 		}
 	}
 </script>
 
 <style>
+	.container-left,
+	.container-right{
+		display: flex;
+		flex-direction: column;
+		
+	}
+	
 	.finished {
 		color: #51D587;
 	}
@@ -75,6 +93,7 @@
 		height: 160upx;
 		width: 689upx;
 		margin-left: 26upx;
+		border-bottom: 1px solid #EEEEEE;
 	}
 
 	.phone-info {

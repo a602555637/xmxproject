@@ -1,4 +1,16 @@
 
+.container-left,
+.container-right{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
 .finished {
 	color: #51D587;
 }
@@ -35,6 +47,7 @@
 	height: 160rpx;
 	width: 689rpx;
 	margin-left: 26rpx;
+	border-bottom: 1px solid #EEEEEE;
 }
 .phone-info {
 	font-size: 30rpx;

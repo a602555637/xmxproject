@@ -25,15 +25,15 @@
 	export default {
 		data() {
 			return {
-				totalIncome:34534,
+				totalIncome:900,
 				content: [{
 					title:'华为 P30 Pro',
 					desc:'到店维修',
-					price:'512'
+					price:'400'
 				},{
 					title:'三星 Galaxy S10 5G版',
 					desc:'上门维修',
-					price:'512'
+					price:'500'
 				}]
 			}
 		},
@@ -73,7 +73,7 @@
 	
 	.container-total{
 		display: flex;
-		margin-left: 228upx;
+		/* margin-left: 228upx; */
 		margin-bottom: 40upx;
 	}
 	
@@ -89,20 +89,18 @@
 	.container-button{
 		width: 220upx;
 		height: 60upx;
-		margin-left: 266upx;
 	}
 	
 	.container-top-title{
 		font-size: 32upx;
 		margin-top: 40upx;
-		margin-left: 344upx;
 		margin-bottom: 20upx;
 	}
 	
 	.container-top{
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		align-items: center;
 	}
 	
 	.container-bg {

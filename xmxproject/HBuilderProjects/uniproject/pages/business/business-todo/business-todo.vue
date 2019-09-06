@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<business-order-list isButton="isButton" :isButton="isButton" :orderList="content"></business-order-list>
+		<business-order-list :isButton="isButton" :orderList="content"></business-order-list>
 	</view>
 </template>
 
@@ -51,17 +51,13 @@ export default {
 				url: '../business-orderstatus/business-orderstatus'
 			})
 		},
-		onStatus(){
-			console.log(this.content)
-			for (var i = 0; i < this.content.length; i++) {
-				let status = this.content[i].orderStatus
-				if(status == 0){
-					this.isButton = 'submit'
-				}else{
-					this.isButton = 'cancel'
-				}
-			}
-		},
+		// onStatus(){
+		// 	console.log(this.content)
+		// 	for (var i = 0; i < this.content.length; i++) {
+		// 		console.log(this.content[i].orderStatus)
+		// 		
+		// 	}
+		// },
 		urlRequest(){
 			uni.request({
 				url:'https://120.24.180.246/xmRepair/order/findShopOrderByStatuss',
@@ -76,7 +72,6 @@ export default {
 				},
 				success:res=>{
 					this.content = res.data.data
-					this.onStatus()
 				}
 			})
 		},

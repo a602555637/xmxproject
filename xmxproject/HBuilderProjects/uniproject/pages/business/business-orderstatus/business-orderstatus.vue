@@ -6,10 +6,11 @@
 			<text v-if="isAleadyTaken">已接单</text>
 			<text v-else-if="isRepairing">维修中</text>
 			<text v-else-if="isCustom">维修中</text>
+			<text v-else-if="!isFinished">已完成</text>
 			<text v-else>待接单</text>
 			
 		</view>
-		<view class="container-middle">
+		<view class="container-middle" >
 			<text>{{phoneType}}</text>
 			<view class="repair-content" v-for="(item, index) in repairContent" :key="index">
 				<text class="item-title">{{item.title}}</text>
@@ -19,18 +20,20 @@
 				<text class="total-title">合计：</text>
 				<text class="total-price">{{totalPrice}}</text>
 			</view>
-			<view v-if="isOnsite" class="container-button">
-				<view v-if="isAleadyTaken" class="button-left">开始维修</view>
-				<view v-else-if="isRepairing" class="button-left">完成确认</view>
-				<view v-else class="button-left">去抢单</view>
-				<view class="button-right">休息一下</view>
-			</view>
-			<view v-else class="container-button">
-				<view v-if="isAleadyTaken" class="button-left" @click="bindRepairing">开始维修</view>
-				<view v-else-if="isRepairing" class="button-left" @click="bindOncustom">完成确认</view>
-				<view v-else-if="isCustom" class="button-left fixed" >等待顾客确认</view>
-				<view v-else class="button-left" @click="bindAleadyTaken">马上接单</view>
-				<view class="button-right">联系顾客</view>
+			<view v-if="isFinished">
+				<view v-if="isOnsite" class="container-button">
+					<view v-if="isAleadyTaken" class="button-left">开始维修</view>
+					<view v-else-if="isRepairing" class="button-left">完成确认</view>
+					<view v-else class="button-left">去抢单</view>
+					<view class="button-right">休息一下</view>
+				</view>
+				<view v-else class="container-button">
+					<view v-if="isAleadyTaken" class="button-left" @click="bindRepairing">开始维修</view>
+					<view v-else-if="isRepairing" class="button-left" @click="bindOncustom">完成确认</view>
+					<view v-else-if="isCustom" class="button-left fixed" >等待顾客确认</view>
+					<view v-else class="button-left" @click="bindAleadyTaken">马上接单</view>
+					<view class="button-right">联系顾客</view>
+				</view>
 			</view>
 			<view class="line-thin"></view>
 		</view>
@@ -47,8 +50,20 @@
 
 <script>
 	export default {
+		onLoad(e) {
+			console.log(e.id)
+			if(e.id == 1){
+				this.bindRepairing()
+			} else if(e.id == 2){
+				this.isFinished = false
+			} 
+			
+			// this.bindRequest(e.id - 1)
+			
+		},
 		data() {
 			return {
+				isFinished:true,
 				isCustom:false,
 				isRepairing:false,
 				isAleadyTaken: false,
@@ -61,7 +76,8 @@
 				},{
 					title:'电池不续航',
 					price:'￥499'
-				}]
+				}],
+				content:{}
 			}
 		},
 		methods:{
@@ -75,6 +91,23 @@
 			bindOncustom(){
 				this.isCustom = true
 				this.isRepairing = false
+			},
+			bindRequest(sid){
+				uni.request({
+					url:'https://120.24.180.246/xmRepair/order/findShopOrderByStatus',
+					method:'POST',
+					header:{
+						'content-type': 'application/x-www-form-urlencoded'
+					},
+					data:{
+						shopId:1,
+						orderStatus1:sid
+					},
+					success:res=>{
+						// this.content = res.data.data
+						console.log(res.data.data)
+					}
+				})
 			}
 		}
 	}

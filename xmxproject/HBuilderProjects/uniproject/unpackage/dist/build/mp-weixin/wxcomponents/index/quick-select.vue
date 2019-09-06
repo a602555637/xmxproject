@@ -1,9 +1,11 @@
 <template>
-	<view class="container">
-		<view @click="onRepair" class="container-item" v-for="(item, index) in repairList" 
-		:key="index" :id="index">
-			<image :src="item.imgUrl"></image>
-			<text>{{item.title}}</text>
+	<view class="">
+		<text class="container-title">选择故障</text>
+		<view class="container">
+			<view @click="onRepair(index)" class="container-item" v-for="(item, index) in repairList" 
+			:key="index" :id="index">
+				<image :src="item.imgUrl"></image>
+			</view>
 		</view>
 	</view>
 </template>
@@ -20,43 +22,53 @@
 					title: '电池问题',
 					imgUrl:'../../static/index/dcwt@2x.png'
 				},{
-					title: '声音问题',
-					imgUrl:'../../static/index/sywt@2x.png'
+					title: '信号问题',
+					imgUrl:'../../static/index/xhwt@2x.png'
 				},{
 					title: '拍摄问题',
 					imgUrl:'../../static/index/pswt@2x.png'
 				},{
-					title: '信号问题',
-					imgUrl:'../../static/index/xhwt@2x.png'
+					title: '声音问题',
+					imgUrl:'../../static/index/sywt@2x.png'
 				}]
 			}
 		},
 		methods:{
-			onRepair(e){
-				console.log(e)
+			onRepair(sid){
+				console.log(sid)
+				uni.navigateTo({
+					url: '../../pages/selectmodel/selectmodel?id=' + sid
+				})
 			}
 		}
 	}
 </script>
 
 <style>
+	.container-title{
+		font-size: 30upx;
+		font-weight: bold;
+		color: #888F97;
+		margin-left: 26upx;
+	}
+	
 	.container{
 		display: flex;
-		justify-content: space-around;
-		margin-top: 30upx;
-		margin-bottom: 60upx;
+		justify-content: space-between;
+		margin: 0upx 0upx 60upx 32upx;
+		width: 698upx;
 	}
 	
 	.container-item {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		flex-direction: row;
+		align-items: space-between;
+		margin-left: -26upx;
 	}
 	
 	.container-item image{
-		width: 60upx;
-		height: 60upx;
+		width: 168upx;
+		height: 168upx;
 	}
 	
 	.container-item text{

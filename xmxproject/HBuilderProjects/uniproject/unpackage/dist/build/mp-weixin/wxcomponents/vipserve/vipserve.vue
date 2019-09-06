@@ -8,7 +8,7 @@
 			</view>
 
 		</view>
-		<scroll-view scroll-x class="content">
+<!-- 		<scroll-view scroll-x class="content">
 			<image src="../../static/vipserve/mfwx@2x.png"></image>
 			<image src="../../static/vipserve/jjhs@2x.png"></image>
 			<image src="../../static/vipserve/mfby@2x.png"></image>
@@ -17,12 +17,38 @@
 			<image src="../../static/vipserve/mfhp@2x.png"></image>
 			<image src="../../static/vipserve/fgjq@2x.png"></image>
 			<image src="../../static/vipserve/mryc@2x.png"></image>
-		</scroll-view>
+		</scroll-view> -->
+		<swiper class="swiper" :indicator-dots="false" :previous-margin="previous" :next-margin="next" :circular="circular">
+			<swiper-item class="swiper-item">
+				<image src="../../static/vipserve/mfwx@2x.png"></image>
+				<image src="../../static/vipserve/jjhs@2x.png"></image>
+			</swiper-item>
+			<swiper-item class="swiper-item">
+				<image src="../../static/vipserve/mfby@2x.png"></image>
+				<image src="../../static/vipserve/mfsj@2x.png"></image>
+			</swiper-item>
+			<swiper-item class="swiper-item">
+				<image src="../../static/vipserve/sjbz@2x.png"></image>
+				<image src="../../static/vipserve/mfhp@2x.png"></image>
+			</swiper-item>
+			<swiper-item class="swiper-item">
+				<image src="../../static/vipserve/fgjq@2x.png"></image>
+				<image src="../../static/vipserve/mryc@2x.png"></image>
+			</swiper-item>
+		</swiper>
+		
 	</view>
 </template>
 
 <script>
 	export default {
+		data() {
+			return {
+				circular: true,
+				previous:54,
+				next:54
+			}
+		},
 		name: 'vipserve',
 		methods:{
 			onPrize(){
@@ -63,6 +89,7 @@
 	.container-title-head {
 		font-size: 32upx;
 		font-weight: bold;
+		color: #888F97;
 		margin-left: 26upx;
 	}
 
@@ -72,11 +99,20 @@
 		margin-right: 26upx;
 	}
 
-	.content image {
-		width: 282upx;
-		height: 204upx;
+	.swiper-item{
+		display: flex;
+		flex-direction: row;
 	}
 
+	.swiper-item image {
+		width: 282upx;
+		height: 216upx;
+	}
+	
+	.swiper{
+		height: 244upx;
+	}
+	
 	.content {
 		display: block;
 		white-space: nowrap;

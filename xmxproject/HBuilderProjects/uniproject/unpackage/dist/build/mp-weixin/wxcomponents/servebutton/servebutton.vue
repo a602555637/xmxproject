@@ -1,5 +1,5 @@
 <template name="servebutton">
-	<view class="container">
+	<view @click="onNext" class="container">
 		<view class="container-title">
 			<text class="container-title-head">服务区</text>
 			<text class="container-title-more">更多服务</text>
@@ -45,7 +45,14 @@
 
 <script>
 	export default {
-		name: 'servebutton'
+		name: 'servebutton',
+		methods:{
+			onNext(){
+				uni.navigateTo({
+					url:'../../pages/selectmodel/selectmodel'
+				})
+			}
+		}
 	}
 </script>
 
@@ -65,6 +72,7 @@
 	.container-title-head {
 		font-size: 32upx;
 		font-weight: bold;
+		color: #888F97;
 		margin-left: 26upx;
 	}
 

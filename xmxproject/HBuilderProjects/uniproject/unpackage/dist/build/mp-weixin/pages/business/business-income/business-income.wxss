@@ -41,7 +41,7 @@
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	margin-left: 228rpx;
+	/* margin-left: 228upx; */
 	margin-bottom: 40rpx;
 }
 .container-price{
@@ -54,12 +54,10 @@
 .container-button{
 	width: 220rpx;
 	height: 60rpx;
-	margin-left: 266rpx;
 }
 .container-top-title{
 	font-size: 32rpx;
 	margin-top: 40rpx;
-	margin-left: 344rpx;
 	margin-bottom: 20rpx;
 }
 .container-top{
@@ -72,10 +70,10 @@
 	-webkit-flex-direction: column;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 .container-bg {
 	position: absolute;

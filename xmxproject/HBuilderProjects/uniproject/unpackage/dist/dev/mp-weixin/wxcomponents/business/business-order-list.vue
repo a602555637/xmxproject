@@ -1,13 +1,13 @@
 <template>
 	<view>
 		<view class="container" v-for="(item, index) in orderList" :key="index">
-			<view class="container-left">
+			<view @click="bindDetail(item.orderStatus)" class="container-left">
 				<text class="phone-info">{{item.phone.brand + item.phone.model + item.phone.colour}}</text>
 				<text v-if="item.serviceMode == 0" class="repair-type">上门维修</text>
 				<text v-else class="repair-type">到店维修</text>
 			</view>
-			<view v-if="isButton == 'submit'" class="container-button">{{buttonSubmit}}</view>
-			<view v-else-if="isButton == 'cancel'" class="container-button button-background">{{buttonCancel}}</view>
+			<view v-if="item.orderStatus == 0" class="container-button" @click="bindDetail(item.orderStatus)">{{buttonSubmit}}</view>
+			<view @click="onCancel" v-else-if="item.orderStatus == 4" class="container-button button-background">{{buttonCancel}}</view>
 			<view v-else class="container-right">
 				<text class="price">{{item.price}}元</text>
 				<text v-if="item.orderStatus == 2" class="status finished">已完成</text>
@@ -22,10 +22,6 @@
 
 <script>
 	export default {
-		created() {
-			
-			
-		},
 		name: 'business-order-list',
 		props: {
 			orderList: Array,
@@ -40,7 +36,23 @@
 			}
 		},
 		methods: {
-
+			bindDetail(id){
+				console.log(id)
+				if(id == 3){
+					uni.reLaunch({
+						url:'../business-cancel/business-cancel?id' + id
+					})
+				} else{
+					uni.navigateTo({
+						url: '../../business/business-orderstatus/business-orderstatus?id=' + id
+					})
+				}
+			},
+			onCancel(){
+				uni.reLaunch({
+					url:'../../business/business-cancel/business-cancel'
+				})
+			}
 		}
 	}
 </script>

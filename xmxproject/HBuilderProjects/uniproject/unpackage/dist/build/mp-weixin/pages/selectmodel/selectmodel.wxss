@@ -108,7 +108,7 @@
 		font-size: 26rpx;
 }
 .slide-right {
-	margin-left: 194rpx;
+	margin-left: 114rpx;
 	margin-top: 30rpx;
 }
 .right-item {

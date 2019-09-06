@@ -54,6 +54,7 @@
 .container-title-head {
 	font-size: 32rpx;
 	font-weight: bold;
+	color: #888F97;
 	margin-left: 26rpx;
 }
 .container-title-more {
@@ -61,9 +62,23 @@
 	color: #888F97;
 	margin-right: 26rpx;
 }
-.content image {
+.swiper-item{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+}
+.swiper-item image {
 	width: 282rpx;
-	height: 204rpx;
+	height: 216rpx;
+}
+.swiper{
+	height: 244rpx;
 }
 .content {
 	display: block;

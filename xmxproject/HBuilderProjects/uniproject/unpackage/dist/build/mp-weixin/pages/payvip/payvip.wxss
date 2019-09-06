@@ -1,4 +1,10 @@
 
+.upload-image{
+	width: 698rpx;
+	height: 98rpx;
+	margin-left: 26rpx;
+	margin-bottom: 40rpx;
+}
 .container-info{
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -69,7 +75,7 @@
 	        justify-content: flex-start;
 	margin-top: 80rpx;
 	margin-left: 26rpx;
-	margin-bottom: 40rpx;
+	margin-bottom: 60rpx;
 }
 .title {
 	font-size: 30rpx;

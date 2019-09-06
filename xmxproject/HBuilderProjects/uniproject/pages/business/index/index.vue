@@ -53,10 +53,9 @@
 		},
 		data() {
 			return {
-				orderNum:1,
+				orderNum:0,
 				isShowPopup:false,
 				orderType:'上门维修',
-				orderNum:1,
 				navId:'',
 				container:[{
 					imgSrc:'../../../static/business/qbdd@2x.png',

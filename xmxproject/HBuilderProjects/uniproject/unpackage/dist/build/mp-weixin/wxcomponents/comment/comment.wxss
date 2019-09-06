@@ -1,99 +1,13 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 	.container{
-		height: ;
-	} */
+.swiper{
+		height: 300rpx;
+		margin-bottom: 30rpx;
+}
 .container-bg{
 		width: 698rpx;
 		height: 260rpx;
 		position: absolute;
 		z-index: -99;
-/* 		bottom: 30upx;
-		right: 30upx; */
 }
 .content {
 		font-size: 26rpx;
@@ -128,6 +42,7 @@
 .container-title {
 		font-size: 32rpx;
 		font-weight: bold;
+		color: #888F97;
 		display: block;
 		margin-bottom: 22rpx;
 		margin-left: 26rpx;
@@ -143,11 +58,14 @@
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 		margin-left: 26rpx;
+/* 		margin-bottom: 20upx;
+		margin-top: 20upx; */
 }
 .container-info image {
 		width: 100rpx;
 		height: 100rpx;
 		margin-left: 30rpx;
+		border-radius: 50rpx;
 }
 .container-info {
 		display: -webkit-box;
