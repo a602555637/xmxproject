@@ -15,6 +15,11 @@
 			"style": {
 				"navigationBarTitleText": "成为会员"
 			}
+		},{
+			"path": "pages/bevip/vip-type",
+			"style": {
+				"navigationBarTitleText": "选择类型"
+			}
 		},
 		{
 			"path": "pages/payvip/payvip",

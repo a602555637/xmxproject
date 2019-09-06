@@ -47,6 +47,7 @@
 	height: 160rpx;
 	width: 689rpx;
 	margin-left: 26rpx;
+	border-bottom: 1px solid #EEEEEE;
 }
 .phone-info {
 	font-size: 30rpx;

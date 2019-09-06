@@ -1,77 +1,61 @@
 <template>
 	<view>
-		<view class="container" v-for="(item, index) in content" :key="index">
-			<view class="container-left">
-				<text class="item-title">{{item.title}}</text>
-				<text class="item-desc">{{item.desc}}</text>
-			</view>
-			<view class="container-right">
-				<text class="item-price">{{item.price}}</text>
-				<text class="item-status">{{item.status}}</text>
+		<view class="page-body">
+			<view class="page-section page-section-gap">
+				<map id="myMap" style="width: 100%; height: 300px;" 
+				:latitude="latitude" :longitude="longitude" :markers="markers"
+				show-location></map>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				content:[{
-					title:'苹果 iPhone7 玫瑰金',
-					desc:'到店维修',
-					price:'￥400',
-					status:'已完成'
-				},{
-					title:'vivo X27',
-					desc:'上门维修',
-					price:'￥512',
-					status:'已完成'
-				}]
-			}
-		},
-	}
+export default {
+    data() {
+        return {
+            title: 'map',
+            latitude: 30.795890000000025,
+            longitude: 103.90256,
+			markers: [{
+				id: 1,
+				latitude: 30.795890000000030,
+				longitude: 103.90260,
+				name: 'ate',
+				iconPath:'../../../static/wxcomponentimg/dw@2x.png',
+				width:60,
+				height:60,
+				label:{
+					content:'小刘手机维修'
+				}
+			},{
+				id: 2,
+				latitude: 30.795890001000020,
+				longitude: 103.90150,
+				name: 'atc',
+				iconPath:'../../../static/wxcomponentimg/dw@2x.png',
+				width:60,
+				height:60,
+				label:{
+					content:'小王手机维修',
+					fontSize:13,
+					color:'#333333',
+				},
+				callout:{
+					content:'小王手机维修',
+					fontSize:13,
+					color:'#ffffff',
+					bgColor:'#51D587'
+				}
+			}],
+        }
+    },
+    methods: {
+
+    }
+}
 </script>
 
 <style>
-	.container{
-		display: flex;
-		height: 160upx;
-		width: 750upx;
-		align-items: center;
-		margin-left: 26upx;
-		border-bottom: 1px solid #F3F3F3;
-	}
-	
-	.container-left{
-		display: flex;
-		flex-direction: column;
-	}
-	
-	.container-right{
-		display: flex;
-		flex-direction: column;
-		position: absolute;
-		right: 36upx;
-	}
-	
-	.item-status{
-		font-size: 26upx;
-		color: #51D587;
-		margin-top: 12upx;
-	}
-	
-	.item-price{
-		font-size: 30upx;
-	}
-	
-	.item-title{
-		font-size: 30upx;
-		margin-bottom: 10upx;
-	}
-	
-	.item-desc{
-		font-size: 26upx;
-	}
-	
+
 </style>

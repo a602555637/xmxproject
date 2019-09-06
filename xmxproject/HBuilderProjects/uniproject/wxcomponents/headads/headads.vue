@@ -7,7 +7,10 @@
 					<view class="hot-text">今日换屏5折起</view>
 				</swiper-item>
 				<swiper-item>
-					<view class="hot-text">会员免费修</view>
+					<view class="hot-text">普通会员八折优惠</view>
+				</swiper-item>
+				<swiper-item>
+					<view class="hot-text">终身会员免费修</view>
 				</swiper-item>
 			</swiper>
 			<image @click="onBusiness" class="icon" src="../../static/index/store@2x.png"></image>

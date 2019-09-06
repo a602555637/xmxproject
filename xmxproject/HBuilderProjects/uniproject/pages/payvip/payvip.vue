@@ -5,6 +5,10 @@
 			<input class="input" type="text" value="test" />
 			<text class="info">手机拨号输入*#06#</text>
 		</view>
+		
+		<!-- chooseimage -->		
+		<image v-if="isSecond" @click="bindChangeImage" class="upload-image" :src="imgUrl[0]" />
+		<image v-else @click="bindImage" class="upload-image" src="../../static/vip/scjt@2x.png" />
 		<view class="line-thick"></view>
 		<view class="content">
 			<view class="content-item" v-for="(item, index) in contentItem" :key="index" >
@@ -17,8 +21,7 @@
 			<text>* IMEI串码将作为本机所享特权的唯一识别码，该识别码仅用于识别会员身份，平台将为用户识别码保密，确认即授权获取您的识别码。</text>
 			<text>* 亲友号非共享特权，仅可用于关联登录，如绑定手机无法开机、触屏失灵等，可使用亲友号进行登录下单，每个会员可添加两个亲友号。</text>
 		</view>
-		
-		
+
 		<view @click="onVipAlready" class="button">确认支付</view>
 	</view>
 </template>
@@ -27,7 +30,9 @@
 	export default {
 		data() {
 			return {
-				test: '1m23t',
+				isSecond:false,
+				imgUrl:[],
+				test: '',
 				isPaySuccess:true,
 				contentItem:[{
 					title:'绑定亲友号（选填）',
@@ -44,28 +49,50 @@
 				let isPaySuccess = this.isPaySuccess
 				uni.redirectTo({
 					url: '../bevip/bevip?={{isPaySuccess}}'
-				});
+				})
+			},
+			bindImage(){
+				uni.chooseImage({
+				    count: 1,
+				    sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+				    sourceType: ['album'], //从相册选择
+				    success: res=> {
+				        console.log(res)
+						this.imgUrl[0] = res.tempFilePaths[0]
+						this.isSecond = true
+				    }
+				})
+			},
+			bindChangeImage(){
+				uni.showActionSheet({
+				    itemList: ['重新上传', '预览图片'],
+				    success: res=> {
+				        // console.log(res.tapIndex)
+						if(res.tapIndex == 0){
+							console.log(this.imgUrl[0])
+							this.imgUrl[0] = ''
+							console.log(this.imgUrl[0])
+							this.bindImage()
+						}else{
+							uni.previewImage({
+								urls:this.imgUrl
+							})
+						}
+				    }
+				})
 			}
 		},
-		// onLoad() {
-		// 	// #ifdef H5 
-		// 	plus.device.getInfo({
-		// 	success:function(e){
-		// 	var imei=e.imei;
-		// 	console.log('imei='+imei);
-		// 	}
-		// 	})
-		// 	console.log(imei);
-		// 	// #endif
-		// 		
-		// 	const accountInfo = uni.getAccountInfoSync();
-		// 	console.log(accountInfo)
-		// 	
-		// }
 	}
 </script>
 
 <style>
+	.upload-image{
+		width: 698upx;
+		height: 98upx;
+		margin-left: 26upx;
+		margin-bottom: 40upx;
+	}
+	
 	.container-info{
 		display: flex;
 		flex-direction: column;
@@ -121,7 +148,7 @@
 		justify-content: flex-start;
 		margin-top: 80upx;
 		margin-left: 26upx;
-		margin-bottom: 40upx;
+		margin-bottom: 60upx;
 	}
 
 	.title {

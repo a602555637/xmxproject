@@ -65,6 +65,7 @@
 		width: 100rpx;
 		height: 100rpx;
 		margin-left: 30rpx;
+		border-radius: 50rpx;
 }
 .container-info {
 		display: -webkit-box;

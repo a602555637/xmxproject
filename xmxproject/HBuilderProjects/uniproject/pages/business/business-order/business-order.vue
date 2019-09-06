@@ -7,30 +7,25 @@
 <script>
 	import businessOrderList from '../../../wxcomponents/business/business-order-list.vue'
 	export default {
+		onLoad() {
+			uni.request({
+				url:'https://120.24.180.246/xmRepair/order/findAllShopOrder',
+				method:'POST',
+				header:{
+					'content-type': 'application/x-www-form-urlencoded'
+				},
+				data:{
+					shopId:1
+				},
+				success:res=>{
+					this.content = res.data.data
+					console.log(this.content)
+				}
+			})
+		},
 		data() {
 			return {
-				content: [{
-					brand: '苹果',
-					model: 'iPhone 7',
-					color: '玫瑰金',
-					repairType: '到店维修',
-					price: '￥400',
-					status: '待处理'
-				},{
-					brand: '1苹果',
-					model: 'iPhone 7',
-					color: '玫瑰金',
-					repairType: '到店维修',
-					price: '￥400',
-					status: '已完成'
-				},{
-					brand: '苹果',
-					model: 'iPhone 7',
-					color: '玫瑰金',
-					repairType: '到店维修',
-					price: '￥400',
-					status: '维修中'
-				}]
+				content: {}
 			}
 		},
 		components: {

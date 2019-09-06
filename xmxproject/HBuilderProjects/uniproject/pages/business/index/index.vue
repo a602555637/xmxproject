@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view class="container-header">
-			<image src="../../../static/baner1@2x.png"></image>
+			<image src="../../../static/banner/banner7@2x.png"></image>
 		</view>
 		<!-- 搜索组件引用 -->
 		<search class="search" title="搜索订单" />

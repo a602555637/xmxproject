@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<business-order-list :isButton="isButton" :orderList="content"></business-order-list>
+		<business-order-list isButton="isButton" :isButton="isButton" :orderList="content"></business-order-list>
 	</view>
 </template>
 
@@ -9,24 +9,29 @@
 	
 export default {
 	onLoad(e) {
+		// 动态显示导航栏
 		let sid = e.id
 		if(sid == 1){
-			this.onStatus()
 			uni.setNavigationBarTitle({
 				title:'待处理'
 			})
+			// 待处理状态request地址
+			this.urlRequest()
 		} else if(sid == 2){
 			uni.setNavigationBarTitle({
 				title:'维修中'
 			})
+			this.orderRequest(sid - 1)
 		} else if(sid == 3){
 			uni.setNavigationBarTitle({
 				title:'已完成'
 			})
+			this.orderRequest(sid - 1)
 		} else if(sid == 4){
 			uni.setNavigationBarTitle({
 				title:'已取消'
 			})
+			this.orderRequest(sid - 1)
 		} else{
 			uni.setNavigationBarTitle({
 				title:'总收益'
@@ -37,24 +42,7 @@ export default {
 		return {
 			orderStatusId:'',
 			isButton:'',
-			content: [
-				{
-					brand: '苹果',
-					model: 'iPhone 7',
-					color: '玫瑰金',
-					repairType: '到店维修',
-					price: '400',
-					status: '待处理'
-				},
-				{
-					brand: 'VIVO',
-					model: 'm30',
-					color: '银金',
-					repairType: '到店维修',
-					price: '700',
-					status: '待处理'
-				}
-			]
+			content: {}
 		}
 	},
 	methods:{
@@ -66,12 +54,50 @@ export default {
 		onStatus(){
 			console.log(this.content)
 			for (var i = 0; i < this.content.length; i++) {
-				let status = this.content[i].status
-				console.log(status)
-				if(status == '待处理'){
+				let status = this.content[i].orderStatus
+				if(status == 0){
 					this.isButton = 'submit'
+				}else{
+					this.isButton = 'cancel'
 				}
 			}
+		},
+		urlRequest(){
+			uni.request({
+				url:'https://120.24.180.246/xmRepair/order/findShopOrderByStatuss',
+				method:'POST',
+				header:{
+					'content-type': 'application/x-www-form-urlencoded'
+				},
+				data:{
+					shopId:1,
+					orderStatus1:0,
+					orderStatus2:4
+				},
+				success:res=>{
+					this.content = res.data.data
+					this.onStatus()
+				}
+			})
+		},
+		
+		orderRequest(sid){
+			console.log(sid)
+			uni.request({
+				url:'https://120.24.180.246/xmRepair/order/findShopOrderByStatus',
+				method:'POST',
+				header:{
+					'content-type': 'application/x-www-form-urlencoded'
+				},
+				data:{
+					shopId:1,
+					orderStatus:sid
+				},
+				success:res=>{
+					this.content = res.data.data
+					console.log(this.content)
+				}
+			})
 		}
 	},
 	components:{

@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/my/my",
     "pages/bevip/bevip",
+    "pages/bevip/vip-type",
     "pages/payvip/payvip",
     "pages/orderlist/orderlist",
     "pages/mywallet/mywallet",
@@ -48,6 +49,5 @@
       "desc": "定位服务"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap25.json"
+  "usingComponents": {}
 }
