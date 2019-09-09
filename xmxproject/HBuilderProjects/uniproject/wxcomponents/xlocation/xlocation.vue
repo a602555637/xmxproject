@@ -18,7 +18,7 @@
 		</view>
 		<view v-if="isAddress" class="container-input-address">
 			<text>详细地址：</text>
-			<input @confirm="onProvince" @input="onAddress" type="text" class="input-address" />
+			<input @input="onAddress" type="text" class="input-address" />
 		</view>
 		<view v-if="isAddress" class="line-thick"></view>
 	</view>

@@ -21,7 +21,7 @@
 			<uniItem @click="onFriends" title="我的亲友" thumb='../../static/my/icon/wdqy@2x.png'></uniItem>
 			<uniItem @click="onAddressList" title="地址管理" thumb='../../static/my/icon/ad@2x.png'></uniItem>
 			<uniItem @click="onBusinessIn" title="商家入驻" thumb='../../static/my/icon/join@2x.png'></uniItem>
-			<uniItem title="在线客服" thumb='../../static/my/icon/ser@2x.png'></uniItem>
+			<uniItem @click="onlineKf" title="在线客服" thumb='../../static/my/icon/ser@2x.png'></uniItem>
 			<uniItem title="意见反馈" thumb='../../static/my/icon/yjfk@2x.png'></uniItem>
 		</uniList>
 	</view>
@@ -85,6 +85,11 @@
 			onCards(){
 				uni.navigateTo({
 					url:'cards'
+				})
+			},
+			onlineKf(){
+				uni.navigateTo({
+					url:'online-kf'
 				})
 			}
 		},

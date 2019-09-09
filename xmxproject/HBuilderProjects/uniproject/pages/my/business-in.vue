@@ -16,7 +16,7 @@
 			<input @input="onPhone" type="text" placeholder="请输入负责人手机号" placeholder-class="placeholder-class" />
 		</view>
 		<!-- getcode -->
-		<getcode @codeText="bindCode" timer="timer" :title="title"></getcode>
+		<!-- <getcode @codeText="bindCode" timer="timer" :title="title"></getcode> -->
 		<view class="line-thick"></view>
 		<!-- 地区  街道  detail_address-->
 		<xlocation @district="onArea"></xlocation>
@@ -104,11 +104,6 @@
 						title: '请填写手机号码',
 						icon:'none'
 					})
-				}else if(this.getCode == ''){
-					uni.showToast({
-						title: '请获取验证码',
-						icon:'none'
-					})
 				}else if(this.detail_address == ''){
 					uni.showToast({
 						title: '请填写详细地址',
@@ -137,17 +132,34 @@
 			},
 			onName(e) {
 				this.name = e.detail.value
+				uni.setStorage({
+					key:'partyTitle',
+					data:this.name
+				})
 			},
 			onManager(e) {
 				this.manager = e.detail.value
+				uni.setStorage({
+					key:'manager',
+					data:this.manager
+				})
 			},
 			onPhone(e) {
 				this.phone = e.detail.value
+				uni.setStorage({
+					key:'managerPhone',
+					data:this.phone
+				})
 			},
 			onArea(e) {
 				this.area = e.district
-				this.street = e.street,
+				this.street = e.township,
 				this.detail_address = e.detailAddress
+				console.log(e)
+				uni.setStorage({
+					key:'partyAddress',
+					data:this.area + this.street + this.detail_address
+				})
 			},
 			bindCode(e){
 				console.log(e.codeText)

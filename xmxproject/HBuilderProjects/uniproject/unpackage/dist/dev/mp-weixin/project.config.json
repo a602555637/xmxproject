@@ -33,19 +33,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/business/business-income/business-income",
-					"pathName": "pages/business/business-income/business-income",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/business/index/index",
-					"pathName": "pages/business/index/index",
+					"name": "pages/prize/my-prize",
+					"pathName": "pages/prize/my-prize",
 					"scene": null
 				}
 			]

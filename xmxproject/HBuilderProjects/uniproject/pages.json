@@ -178,9 +178,31 @@
 				"navigationBarTitleText": "抽奖页"
 			}
 		},{
+			"path": "pages/prize/my-prize",
+			"style": {
+				"navigationBarTitleText": "我的奖品"
+			}
+		},{
 			"path": "pages/my/cards",
 			"style": {
 				"navigationBarTitleText": "我的卡包"
+			}
+		},
+		{
+			"path": "pages/my/online-kf",
+			"style": {
+				"navigationBarTitleText": "在线客服"
+			}
+		},{
+			"path": "pages/my/sign",
+			"style": {
+				"navigationBarTitleText": "签名"
+			}
+		},
+		{
+			"path": "pages/my/contract",
+			"style": {
+				"navigationBarTitleText": "合作协议"
 			}
 		}
 	],

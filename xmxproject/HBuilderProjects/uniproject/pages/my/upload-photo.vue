@@ -45,10 +45,10 @@
 						title: '提交成功'
 					})
 					setTimeout(()=>{
-						uni.reLaunch({
-							url:'business-verify'
+						uni.navigateTo({
+							url:'contract'
 						})
-					}, 2000)
+					}, 1000)
 				}
 				
 			},

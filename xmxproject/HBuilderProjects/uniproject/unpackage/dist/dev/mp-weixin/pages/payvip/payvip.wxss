@@ -92,7 +92,7 @@
 	color: #888F97;
 }
 .button {
-	width: 750rpx;
+	width: 698rpx;
 	height: 100rpx;
 	background: #09BA51;
 	font-size: 40rpx;
@@ -109,7 +109,8 @@
 	-webkit-align-items: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	position: absolute;
-	bottom: 0rpx;
+	margin-top: 122rpx;
+	margin-bottom: 80rpx;
+	margin-left: 26rpx;
 }
 

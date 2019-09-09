@@ -169,7 +169,7 @@
 	}
 
 	.button {
-		width: 750upx;
+		width: 698upx;
 		height: 100upx;
 		background: #09BA51;
 		font-size: 40upx;
@@ -177,7 +177,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		position: absolute;
-		bottom: 0upx;
+		margin-top: 122upx;
+		margin-bottom: 80upx;
+		margin-left: 26upx;
 	}
 </style>
