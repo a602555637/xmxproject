@@ -1,5 +1,5 @@
 
-.button{
+.button {
 	width: 698rpx;
 	height: 80rpx;
 	background: #09BA51;
@@ -21,9 +21,7 @@
 	font-size: 30rpx;
 	margin-top: 172rpx;
 }
-.content{
+.content {
 	margin-top: 80rpx;
 }
-
-
 

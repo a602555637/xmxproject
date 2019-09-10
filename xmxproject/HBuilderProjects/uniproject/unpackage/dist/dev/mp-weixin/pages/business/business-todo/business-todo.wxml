@@ -1,1 +1,1 @@
-<view><business-order-list vue-id="1" isButton="{{isButton}}" orderList="{{content}}" bind:__l="__l"></business-order-list></view>
+<view><block wx:if="{{errMsg==0}}"><view class="default-content"><image src="../../../static/business/order-404@2x.png"></image><text>还没有订单哦</text></view></block><block wx:else><view><business-order-list vue-id="1" isButton="{{isButton}}" orderList="{{content}}" bind:__l="__l"></business-order-list></view></block></view>

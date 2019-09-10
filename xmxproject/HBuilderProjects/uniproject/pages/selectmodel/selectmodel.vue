@@ -15,7 +15,7 @@
 				</view>
 			</view>
 			<!-- 右侧获取数据 -->
-			<scroll-view scroll-y style="height: 1004upx;">
+			<scroll-view scroll-y style="height: 990upx;">
 				<view class="slide-right">
 					<view @click="openPopup(index)" class="right-item" v-for="(item, index) in phoneType" :key="index">
 						<text>{{item.model}}</text>
@@ -30,7 +30,7 @@
 					<text>颜色选择</text>
 					<image @click="closePopup" src="../../wxcomponents/popupcon/close@2x.png"></image>
 				</view>
-				<view class="middle-con">
+				<scroll-view scroll-y class="middle-con">
 					<view class="content-middle" >
 						<view :class="index == colorId ? 'active-text' :''" @click="onSelectedColor" class="content-middle-item" 
 						v-for="(item, index) in popupContent" :key="index" :id="index">
@@ -38,7 +38,7 @@
 							<text>{{item.name}}</text>
 						</view>
 					</view>
-				</view>
+				</scroll-view>
 				<view @click="onNext" class="content-button">
 					<image src="../../wxcomponents/popupcon/next@2x.png"></image>
 				</view>
@@ -50,18 +50,13 @@
 <script>
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 	import xselect from '../../wxcomponents/xselect/xselect.vue'
+	import request from '../../components/pocky-request/index.js'
+	
 	export default {
 		onLoad(sid) {
+			this.requestUrl()
 			uni.request({
-				url: 'https://120.24.180.246/xmRepair/phoneBrand/getBrand',
-				method: 'GET',
-				data: {},
-				success: res => {
-					this.slideList = res.data.data
-				}
-			})
-			uni.request({
-				url: 'https://120.24.180.246/xmRepair/phoneBrand/getBrandDetail',
+				url: 'https://www.finetwm.com/xmRepair/phoneBrand/getBrandDetail',
 				method: 'POST',
 				data: {
 					id:1
@@ -71,7 +66,7 @@
 				}
 			})
 
-			console.log(sid)
+			// console.log(sid)
 			
 			if(sid.id){
 				this.quickId = sid.id
@@ -82,7 +77,7 @@
 					data:smodel,
 					success:res=>{
 						uni.request({
-							url:'https://120.24.180.246/xmRepair/phoneBrand/getBrandColour',
+							url:'https://www.finetwm.com/xmRepair/phoneBrand/getBrandColour',
 							data:{
 								name:smodel
 							},
@@ -119,25 +114,8 @@
 				isSelected: false,
 				phone: '手机',
 				pad: '平板',
-				slideList: [
-					{brand:'苹果'},
-					{brand:'华为'},
-					{brand:'小米'},
-					{brand:'VIVO'},
-					{brand:'OPPO'},
-					{brand:'魅族'},
-					{brand:'三星'}
-				],
-				phoneType: [
-					{model:'iphone XS MAX'},
-					{model:'iphone XS'},
-					{model:'iphone XR'},
-					{model:'iphone X'},
-					{model:'iphone 8 Plus'},
-					{model:'iphone 8'},
-					{model:'iphone 7Plus'},
-					{model:'iPhone 7'}
-				]
+				slideList: [],
+				phoneType: []
 			}
 		},
 		methods: {
@@ -158,7 +136,7 @@
 				
 				//获取颜色色值
 				uni.request({
-					url: 'https://120.24.180.246/xmRepair/phoneBrand/getBrandColour',
+					url: 'https://www.finetwm.com/xmRepair/phoneBrand/getBrandColour',
 					method: 'POST',
 					data: {
 						name: modelSelected
@@ -186,14 +164,13 @@
 					data:svalue
 				})
 				uni.request({
-					url: 'https://120.24.180.246:8080/xmRepair/phoneBrand/getBrandDetail',
+					url: 'https://www.finetwm.com/xmRepair/phoneBrand/getBrandDetail',
 					method: 'POST',
 					data: {
 						id:this.valueId
 					},
 					success: res => {
 						this.phoneType = res.data.data
-						// console.log(this.phoneType)
 					}
 				})
 			},
@@ -209,6 +186,19 @@
 				uni.setStorage({
 					key:'colorValue',
 					data:selectedColorValue
+				})
+			},
+			
+			requestUrl(){
+				const instance = new request()
+				const requestModel = instance.get({
+					url:'/phoneBrand/getBrand',
+					contentType: 'json',
+				}).then(res=>{
+					this.slideList = res.data.data
+					console.log(res)
+				}).catch(err=>{
+					console.log(err)
 				})
 			}
 
@@ -260,13 +250,14 @@
 			justify-content: space-between;
 			flex-wrap: wrap;
 			margin-left: 64upx;
+			height: 300upx;
 			/* margin-right: 64upx; */
 		}
 		
 		.content-middle{
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
+			justify-content: flex-start;
 			width: 630upx;
 		}
 		

@@ -9,54 +9,54 @@
 
 <script>
 	import xinput from '../../../wxcomponents/common/xinput.vue'
-export default {
-	data() {
-		return {
-			buttonTitle: '登录',
-			phonenum:'',
-			scode:'',
-			xpassword:true,
-			xtype:'number'
-		}
-	},
-	methods:{
-		onNumber(e){
-			this.phonenum = e.inputValue
-		},
-		onCode(e){
-			this.scode = e.inputValue
-		},
-		onNext(){
-			if(!this.phonenum){
-				uni.showToast({
-					title: '请输入正确的手机号码',
-					icon:'none'
-				})
-			} else if(!this.scode){
-				uni.showToast({
-					title:'请输入密码',
-					icon:'none'
-				})
-			} else{
-				uni.showToast({
-					title: '登陆成功'
-				})
-				setTimeout(()=>{
-					uni.navigateTo({
-						url:'../index/index'
-					})
-				}, 1000)
+	export default {
+		data() {
+			return {
+				buttonTitle: '登录',
+				phonenum: '',
+				scode: '',
+				xpassword: true,
+				xtype: 'number'
 			}
+		},
+		methods: {
+			onNumber(e) {
+				this.phonenum = e.inputValue
+			},
+			onCode(e) {
+				this.scode = e.inputValue
+			},
+			onNext() {
+				if (!this.phonenum || this.phonenum.length < 11 || this.phonenum.length > 12) {
+					uni.showToast({
+						title: '请输入正确的手机号码',
+						icon: 'none'
+					})
+				} else if (!this.scode || this.scode < 6 || this.scode > 7) {
+					uni.showToast({
+						title: '请输入正确的密码',
+						icon: 'none'
+					})
+				} else {
+					uni.showToast({
+						title: '登陆成功'
+					})
+					setTimeout(() => {
+						uni.navigateTo({
+							url: '../index/index'
+						})
+					}, 1000)
+				}
+			}
+		},
+		components: {
+			xinput
 		}
-	},
-	components:{
-		xinput
-	}
-};
+	};
 </script>
 
 <style>
-	.button{
+	.button {
 		width: 698upx;
 		height: 80upx;
 		background: #09BA51;
@@ -69,10 +69,8 @@ export default {
 		font-size: 30upx;
 		margin-top: 172upx;
 	}
-	
-	.content{
+
+	.content {
 		margin-top: 80upx;
 	}
-
-
 </style>

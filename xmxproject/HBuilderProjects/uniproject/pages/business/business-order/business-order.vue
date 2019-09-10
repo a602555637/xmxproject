@@ -1,31 +1,44 @@
 <template>
 	<view>
-		<business-order-list :orderList="content"></business-order-list>
+		<view v-if="errMsg == 0 " class="default-content">
+			<image src="../../../static/business/order-404@2x.png"></image>
+			<text>还没有订单哦</text>
+		</view>
+		<view v-else>
+			<business-order-list :orderList="content"></business-order-list>
+		</view>
 	</view>
 </template>
 
 <script>
 	import businessOrderList from '../../../wxcomponents/business/business-order-list.vue'
+	import request from '../../../components/pocky-request/index.js'
+
 	export default {
 		onLoad() {
-			uni.request({
-				url:'https://120.24.180.246/xmRepair/order/findAllShopOrder',
-				method:'POST',
-				header:{
-					'content-type': 'application/x-www-form-urlencoded'
-				},
-				data:{
-					shopId:1
-				},
-				success:res=>{
-					this.content = res.data.data
-					console.log(this.content)
-				}
-			})
+			this.requestUrl()
 		},
 		data() {
 			return {
-				content: {}
+				content: {},
+				errMsg: 1
+			}
+		},
+		methods: {
+			requestUrl() {
+				const instance = new request()
+				const requestModel = instance.post({
+					url: 'order/findAllShopOrder',
+					contentType: 'form',
+					data: {
+						shopId: 1
+					},
+				}).then(res => {
+					console.log(res)
+					this.content = res.data.data
+				}).catch(err => {
+					console.log(err)
+				})
 			}
 		},
 		components: {
@@ -35,43 +48,21 @@
 </script>
 
 <style>
-	.container {
+	.default-content image {
+		width: 124upx;
+		height: 122upx;
+		margin-bottom: 40upx;
+	}
+
+	.default-content text {
+		font-size: 40upx;
+	}
+
+	.default-content {
 		display: flex;
-		height: 160upx;
-		width: 750upx;
+		flex-direction: column;
 		align-items: center;
-		margin-left: 26upx;
-		border-bottom: 1px solid #F3F3F3;
-	}
-
-	.container-left {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.container-right {
-		display: flex;
-		flex-direction: column;
-		position: absolute;
-		right: 36upx;
-	}
-
-	.item-status {
-		font-size: 26upx;
-		color: #51D587;
-		margin-top: 12upx;
-	}
-
-	.item-price {
-		font-size: 30upx;
-	}
-
-	.item-title {
-		font-size: 30upx;
-		margin-bottom: 10upx;
-	}
-
-	.item-desc {
-		font-size: 26upx;
+		text-align: center;
+		margin-top: 250upx;
 	}
 </style>

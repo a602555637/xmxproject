@@ -73,14 +73,21 @@
 				})
 			},
 			onSubmit(){
-				uni.showToast({
-					title: '提交成功',
-				})
-				setTimeout(()=>{
-					uni.reLaunch({
-						url:'../index/index'
+				if (this.signUrl == '') {
+					uni.showToast({
+						title:'请签名',
+						icon:'none'
 					})
-				}, 1000);
+				} else{
+					uni.showToast({
+						title: '提交成功',
+					})
+					setTimeout(()=>{
+						uni.navigateTo({
+							url:'setting-key'
+						})
+					}, 1000)
+				}
 			},
 			getStorage(){
 				uni.getStorage({

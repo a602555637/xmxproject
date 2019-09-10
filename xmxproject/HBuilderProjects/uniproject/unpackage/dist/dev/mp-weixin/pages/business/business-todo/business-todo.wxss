@@ -1,13 +1,13 @@
 
-.default-content image {
+.default-content image{
 	width: 124rpx;
 	height: 122rpx;
 	margin-bottom: 40rpx;
 }
-.default-content text {
+.default-content text{
 	font-size: 40rpx;
 }
-.default-content {
+.default-content{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;

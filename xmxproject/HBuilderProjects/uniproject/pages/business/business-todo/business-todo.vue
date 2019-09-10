@@ -1,12 +1,18 @@
 <template>
 	<view>
-		<business-order-list :isButton="isButton" :orderList="content"></business-order-list>
+		<view v-if="errMsg == 0 " class="default-content">
+			<image src="../../../static/business/order-404@2x.png"></image>
+			<text>还没有订单哦</text>
+		</view>
+		<view v-else>
+			<business-order-list :isButton="isButton" :orderList="content"></business-order-list>
+		</view>
 	</view>
 </template>
 
 <script>
 	import businessOrderList from '../../../wxcomponents/business/business-order-list.vue'
-	
+	import request from '../../../components/pocky-request/index.js'
 export default {
 	onLoad(e) {
 		// 动态显示导航栏
@@ -42,7 +48,8 @@ export default {
 		return {
 			orderStatusId:'',
 			isButton:'',
-			content: {}
+			content: {},
+			errMsg:1
 		}
 	},
 	methods:{
@@ -51,47 +58,37 @@ export default {
 				url: '../business-orderstatus/business-orderstatus'
 			})
 		},
-		// onStatus(){
-		// 	console.log(this.content)
-		// 	for (var i = 0; i < this.content.length; i++) {
-		// 		console.log(this.content[i].orderStatus)
-		// 		
-		// 	}
-		// },
 		urlRequest(){
-			uni.request({
-				url:'https://120.24.180.246/xmRepair/order/findShopOrderByStatuss',
-				method:'POST',
-				header:{
-					'content-type': 'application/x-www-form-urlencoded'
-				},
+			const instance = new request()
+			const requestModel = instance.post({
+				url:'order/findShopOrderByStatuss',
+				contentType: 'form',
 				data:{
 					shopId:1,
 					orderStatus1:0,
 					orderStatus2:4
 				},
-				success:res=>{
-					this.content = res.data.data
-				}
+			}).then(res=>{
+				this.content = res.data.data
+				console.log(res)
+			}).catch(err=>{
+				console.log(err)
 			})
 		},
-		
 		orderRequest(sid){
-			console.log(sid)
-			uni.request({
-				url:'https://120.24.180.246/xmRepair/order/findShopOrderByStatus',
-				method:'POST',
-				header:{
-					'content-type': 'application/x-www-form-urlencoded'
-				},
+			const instance = new request()
+			const requestModel = instance.post({
+				url:'order/findShopOrderByStatus',
+				contentType: 'form',
 				data:{
 					shopId:1,
 					orderStatus:sid
 				},
-				success:res=>{
-					this.content = res.data.data
-					console.log(this.content)
-				}
+			}).then(res=>{
+				this.content = res.data.data
+				console.log(res)
+			}).catch(err=>{
+				console.log(err)
 			})
 		}
 	},
@@ -102,5 +99,21 @@ export default {
 </script>
 
 <style>
-
+	.default-content image{
+		width: 124upx;
+		height: 122upx;
+		margin-bottom: 40upx;
+	}
+	
+	.default-content text{
+		font-size: 40upx;
+	}
+	
+	.default-content{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-top: 250upx;
+	}
 </style>
