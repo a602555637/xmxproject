@@ -76,7 +76,6 @@
 	import xlistPrice from '../../wxcomponents/xlist/xlistPrice.vue'
 	import uniNumberBox from '../../components/uni-number-box/uni-number-box.vue'
 	import getcode from '../../wxcomponents/getcode/getcode.vue'
-	import request from '../../components/pocky-request/index.js'
 	
 	const formatDate = require('../../util/util.js')
 	export default {
@@ -124,7 +123,7 @@
 			getcode,
 			xlocation,
 			xlistPrice,
-			request
+
 		},
 		methods: {
 			onOrderDetail() {
@@ -147,44 +146,41 @@
 				return
 			},
 			onOrder(){
-					const instance = new request()
-					const r = instance.post({
-						url:'order/saveUserOrder',
-						data:{
-							distance : this.kiloValue,
-							price: this.totalPrice,
-							userId: openid,
-							userName: this.orderName,
-							userPhone: this.orderNum,
-							userAddress: this.district,
-							serviceMode: 0,
-							serviceTime: this.date,
-							phone:{     
-					            brand: this.brand,
-					            model: this.model,
-					            colour: this.colorName
+				uni.uni.request({
+					url: 'https://www.finetwm.com/xmRepair/order/saveUserOrder',
+					method: 'POST',
+					data:{
+						distance : this.kiloValue,
+						price: this.totalPrice,
+						userId: openid,
+						userName: this.orderName,
+						userPhone: this.orderNum,
+						userAddress: this.district,
+						serviceMode: 0,
+						serviceTime: this.date,
+						phone:{     
+					        brand: this.brand,
+					        model: this.model,
+					        colour: this.colorName
+					    },
+						faults: [
+					        {
+					            faults: this.repairList[0],
+					            price: this.sprice[0]
 					        },
-							faults: [
-					            {
-					                faults: this.repairList[0],
-					                price: this.sprice[0]
-					            },
-					            {
-					                faults: this.repairList[1],
-					                price: this.sprice[1]
-					            }
-					        ]
-						},
-						success:res=>{
-							console.log(res)
-							// uni.reLaunch({
-							// 	url: '../orderdetail/orderdetail',
-							// 	success:res =>{
-							// 		console.log('success')
-							// 	}
-							// })
-						}
-					})
+					        {
+					            faults: this.repairList[1],
+					            price: this.sprice[1]
+					        }
+					    ]
+					},
+					success: res => {
+						console.log(res)
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
 			},
 			onNumber(kiloValue){
 				this.kiloValue = kiloValue

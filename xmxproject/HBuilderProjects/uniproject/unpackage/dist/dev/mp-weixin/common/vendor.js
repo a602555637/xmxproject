@@ -1,216 +1,9195 @@
-(global.webpackJsonp=global.webpackJsonp||[]).push([["common/vendor"],{0:
-/*!*********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js ***!
-  \*********************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);var t=o(n(/*! vue */2)),r=o(n(/*! ./App */5));function o(e){return e&&e.__esModule?e:{default:e}}function i(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}t.default.config.productionTip=!1,r.default.mpType="app",e(new t.default(function(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{},r=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(r=r.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),r.forEach(function(t){i(e,t,n[t])})}return e}({},r.default))).$mount()}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createApp)},1:
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
+
+/***/ 0:
+/*!************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ 4);
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+
+_vue.default.config.productionTip = false;
+
+_App.default.mpType = 'app';
+
+var app = new _vue.default(_objectSpread({},
+_App.default));
+
+createApp(app).$mount();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createApp"]))
+
+/***/ }),
+
+/***/ 1:
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.createApp=Ae,t.createComponent=Me,t.createPage=Se,t.default=void 0;var r,o=(r=n(/*! vue */2))&&r.__esModule?r:{default:r};function i(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=[],r=!0,o=!1,i=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){o=!0,i=e}finally{try{r||null==s.return||s.return()}finally{if(o)throw i}}return n}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}function a(e){return function(e){if(Array.isArray(e)){for(var t=0,n=new Array(e.length);t<e.length;t++)n[t]=e[t];return n}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}var s=Object.prototype.toString,u=Object.prototype.hasOwnProperty;function c(e){return"function"==typeof e}function f(e){return"[object Object]"===s.call(e)}function l(e,t){return u.call(e,t)}function p(){}function d(e){var t=Object.create(null);return function(n){return t[n]||(t[n]=e(n))}}var h=/-(\w)/g,v=d(function(e){return e.replace(h,function(e,t){return t?t.toUpperCase():""})}),y=["invoke","success","fail","complete","returnValue"],g={},m={};function _(e,t){Object.keys(t).forEach(function(n){var r,o,i;-1!==y.indexOf(n)&&c(t[n])&&(e[n]=(r=e[n],o=t[n],(i=o?r?r.concat(o):Array.isArray(o)?o:[o]:r)?function(e){for(var t=[],n=0;n<e.length;n++)-1===t.indexOf(e[n])&&t.push(e[n]);return t}(i):i))})}function b(e,t){e&&t&&Object.keys(t).forEach(function(n){-1!==y.indexOf(n)&&c(t[n])&&function(e,t){var n=e.indexOf(t);-1!==n&&e.splice(n,1)}(e[n],t[n])})}function w(e){return function(t){return e(t)||t}}function $(e){return!!e&&("object"==typeof e||"function"==typeof e)&&"function"==typeof e.then}function k(e,t){for(var n=!1,r=0;r<e.length;r++){var o=e[r];if(n)n=Promise.then(w(o));else{var i=o(t);if($(i)&&(n=Promise.resolve(i)),!1===i)return{then:function(){}}}}return n||{then:function(e){return e(t)}}}function x(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return["success","fail","complete"].forEach(function(n){if(Array.isArray(e[n])){var r=t[n];t[n]=function(t){k(e[n],t).then(function(e){return c(r)&&r(e)||e})}}}),t}function O(e,t){var n=[];Array.isArray(g.returnValue)&&n.push.apply(n,a(g.returnValue));var r=m[e];return r&&Array.isArray(r.returnValue)&&n.push.apply(n,a(r.returnValue)),n.forEach(function(e){t=e(t)||t}),t}function A(e,t,n){for(var r=arguments.length,o=new Array(r>3?r-3:0),i=3;i<r;i++)o[i-3]=arguments[i];var a=function(e){var t=Object.create(null);Object.keys(g).forEach(function(e){"returnValue"!==e&&(t[e]=g[e].slice())});var n=m[e];return n&&Object.keys(n).forEach(function(e){"returnValue"!==e&&(t[e]=(t[e]||[]).concat(n[e]))}),t}(e);return a&&Object.keys(a).length?Array.isArray(a.invoke)?k(a.invoke,n).then(function(e){return t.apply(void 0,[x(a,e)].concat(o))}):t.apply(void 0,[x(a,n)].concat(o)):t.apply(void 0,[n].concat(o))}var j=/^\$|interceptors|Interceptor$|getSubNVueById|requireNativePlugin|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64/,P=/^create|Manager$/,C=/^on/;function E(e){return P.test(e)}function S(e){return j.test(e)}function M(e){return!(E(e)||S(e)||function(e){return C.test(e)}(e))}function T(e,t){return M(e)?function(){for(var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},r=arguments.length,o=new Array(r>1?r-1:0),i=1;i<r;i++)o[i-1]=arguments[i];return c(n.success)||c(n.fail)||c(n.complete)?O(e,A.apply(void 0,[e,t,n].concat(o))):O(e,new Promise(function(r,i){A.apply(void 0,[e,t,Object.assign({},n,{success:r,fail:i})].concat(o)),Promise.prototype.finally||(Promise.prototype.finally=function(e){var t=this.constructor;return this.then(function(n){return t.resolve(e()).then(function(){return n})},function(n){return t.resolve(e()).then(function(){throw n})})})}).then(function(e){return[null,e]}).catch(function(e){return[e]}))}:t}var I=1e-4,D=750,R=!1,N=0,V=0;var F={promiseInterceptor:{returnValue:function(e){return $(e)?e.then(function(e){return e[1]}).catch(function(e){return e[0]}):e}}},q=Object.freeze({upx2px:function(e,t){var n,r,o,i;if(0===N&&(n=wx.getSystemInfoSync(),r=n.platform,o=n.pixelRatio,i=n.windowWidth,N=i,V=o,R="ios"===r),0===(e=Number(e)))return 0;var a=e/D*(t||N);return a<0&&(a=-a),0===(a=Math.floor(a+I))?1!==V&&R?.5:1:e<0?-a:a},interceptors:F,addInterceptor:function(e,t){"string"==typeof e&&f(t)?_(m[e]||(m[e]={}),t):f(e)&&_(g,e)},removeInterceptor:function(e,t){"string"==typeof e?f(t)?b(m[e],t):delete m[e]:f(e)&&b(g,e)}}),L={previewImage:{args:function(e){var t=parseInt(e.current);if(!isNaN(t)){var n=e.urls;if(Array.isArray(n)){var r=n.length;if(r)return t<0?t=0:t>=r&&(t=r-1),t>0?(e.current=n[t],e.urls=n.filter(function(e,r){return!(r<t)||e!==n[t]})):e.current=n[0],{indicator:!1,loop:!1}}}}}},U=["success","fail","cancel","complete"];function B(e,t,n){return function(r){return t(z(e,r,n))}}function H(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},r=arguments.length>3&&void 0!==arguments[3]?arguments[3]:{},o=arguments.length>4&&void 0!==arguments[4]&&arguments[4];if(f(t)){var i=!0===o?t:{};for(var a in c(n)&&(n=n(t,i)||{}),t)if(l(n,a)){var s=n[a];c(s)&&(s=s(t[a],t,i)),s?"string"==typeof s?i[s]=t[a]:f(s)&&(i[s.name?s.name:a]=s.value):console.warn("微信小程序 ".concat(e,"暂不支持").concat(a))}else-1!==U.indexOf(a)?i[a]=B(e,t[a],r):o||(i[a]=t[a]);return i}return c(t)&&(t=B(e,t,r)),t}function z(e,t,n){var r=arguments.length>3&&void 0!==arguments[3]&&arguments[3];return c(L.returnValue)&&(t=L.returnValue(e,t)),H(e,t,n,{},r)}function W(e,t){if(l(L,e)){var n=L[e];return n?function(t,r){var o=n;c(n)&&(o=n(t));var i=[t=H(e,t,o.args,o.returnValue)];void 0!==r&&i.push(r);var a=wx[o.name||e].apply(wx,i);return S(e)?z(e,a,o.returnValue,E(e)):a}:function(){console.error("微信小程序 暂不支持".concat(e))}}return t}var G=Object.create(null);["subscribePush","unsubscribePush","onPush","offPush","share"].forEach(function(e){G[e]=function(e){return function(t){var n=t.fail,r=t.complete,o={errMsg:"".concat(e,":fail:暂不支持 ").concat(e," 方法")};c(n)&&n(o),c(r)&&r(o)}}(e)});var J={oauth:["weixin"],share:["weixin"],payment:["wxpay"],push:["weixin"]};var K,X=Object.freeze({getProvider:function(e){var t=e.service,n=e.success,r=e.fail,o=e.complete,i=!1;J[t]?(i={errMsg:"getProvider:ok",service:t,provider:J[t]},c(n)&&n(i)):(i={errMsg:"getProvider:fail:服务["+t+"]不存在"},c(r)&&r(i)),c(o)&&o(i)}}),Y="function"==typeof getUniEmitter?getUniEmitter:function(){return K||(K=new o.default),K};function Z(e,t,n){return e[t].apply(e,n)}var Q=Object.freeze({$on:function(){return Z(Y(),"$on",Array.prototype.slice.call(arguments))},$off:function(){return Z(Y(),"$off",Array.prototype.slice.call(arguments))},$once:function(){return Z(Y(),"$once",Array.prototype.slice.call(arguments))},$emit:function(){return Z(Y(),"$emit",Array.prototype.slice.call(arguments))}}),ee=Object.freeze({}),te=Page,ne=Component,re=/:/g,oe=d(function(e){return v(e.replace(re,"-"))});function ie(e){if(wx.canIUse("nextTick")){var t=e.triggerEvent;e.triggerEvent=function(n){for(var r=arguments.length,o=new Array(r>1?r-1:0),i=1;i<r;i++)o[i-1]=arguments[i];return t.apply(e,[oe(n)].concat(o))}}}function ae(e,t){var n=t[e];t[e]=n?function(){ie(this);for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return n.apply(this,t)}:function(){ie(this)}}Page=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return ae("onLoad",e),te(e)},Component=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return ae("created",e),ne(e)};function se(e,t,n){t.forEach(function(t){(function e(t,n){if(!n)return!0;if(o.default.options&&Array.isArray(o.default.options[t]))return!0;if(c(n=n.default||n))return!!c(n.extendOptions[t])||!!(n.super&&n.super.options&&Array.isArray(n.super.options[t]));if(c(n[t]))return!0;var r=n.mixins;return Array.isArray(r)?!!r.find(function(n){return e(t,n)}):void 0})(t,n)&&(e[t]=function(e){return this.$vm&&this.$vm.__call_hook(t,e)})})}function ue(e,t){var n=e.data||{},r=e.methods||{};if("function"==typeof n)try{n=n.call(t)}catch(e){Object({VUE_APP_PLATFORM:"mp-weixin",NODE_ENV:"development",BASE_URL:"/"}).VUE_APP_DEBUG&&console.warn("根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。",n)}else try{n=JSON.parse(JSON.stringify(n))}catch(e){}return f(n)||(n={}),Object.keys(r).forEach(function(e){-1!==t.__lifecycle_hooks__.indexOf(e)||l(n,e)||(n[e]=r[e])}),n}var ce=[String,Number,Boolean,Object,Array,null];function fe(e){return function(t,n){this.$vm&&(this.$vm[e]=t)}}function le(e,t){var n=e.behaviors,r=e.extends,o=e.mixins,i=e.props;i||(e.props=i=[]);var a=[];return Array.isArray(n)&&n.forEach(function(e){a.push(e.replace("uni://","wx".concat("://"))),"uni://form-field"===e&&(Array.isArray(i)?(i.push("name"),i.push("value")):(i.name={type:String,default:""},i.value={type:[String,Number,Boolean,Array,Object,Date],default:""}))}),f(r)&&r.props&&a.push(t({properties:de(r.props,!0)})),Array.isArray(o)&&o.forEach(function(e){f(e)&&e.props&&a.push(t({properties:de(e.props,!0)}))}),a}function pe(e,t,n,r){return Array.isArray(t)&&1===t.length?t[0]:t}function de(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=(arguments.length>2&&void 0!==arguments[2]&&arguments[2],{});return t||(n.vueId={type:String,value:""},n.vueSlots={type:null,value:[],observer:function(e,t){var n=Object.create(null);e.forEach(function(e){n[e]=!0}),this.setData({$slots:n})}}),Array.isArray(e)?e.forEach(function(e){n[e]={type:null,observer:fe(e)}}):f(e)&&Object.keys(e).forEach(function(t){var r=e[t];if(f(r)){var o=r.default;c(o)&&(o=o()),r.type=pe(0,r.type),n[t]={type:-1!==ce.indexOf(r.type)?r.type:null,value:o,observer:fe(t)}}else{var i=pe(0,r);n[t]={type:-1!==ce.indexOf(i)?i:null,observer:fe(t)}}}),n}function he(e,t,n){var r={};return Array.isArray(t)&&t.length&&t.forEach(function(t,o){"string"==typeof t?t?"$event"===t?r["$"+o]=n:0===t.indexOf("$event.")?r["$"+o]=e.__get_value(t.replace("$event.",""),n):r["$"+o]=e.__get_value(t):r["$"+o]=e:r["$"+o]=function(e,t){var n=e;return t.forEach(function(t){var r=t[0],o=t[2];if(r||void 0!==o){var i=t[1],a=t[3],s=r?e.__get_value(r,n):n;Number.isInteger(s)?n=o:i?Array.isArray(s)?n=s.find(function(t){return e.__get_value(i,t)===o}):f(s)?n=Object.keys(s).find(function(t){return e.__get_value(i,s[t])===o}):console.error("v-for 暂不支持循环数据：",s):n=s[o],a&&(n=e.__get_value(a,n))}}),n}(e,t)}),r}var ve="~",ye="^";function ge(e){var t=this,n=((e=function(e){try{e.mp=JSON.parse(JSON.stringify(e))}catch(e){}return e.stopPropagation=p,e.preventDefault=p,e.target=e.target||{},l(e,"detail")||(e.detail={}),f(e.detail)&&(e.target=Object.assign({},e.target,e.detail)),e}(e)).currentTarget||e.target).dataset;if(!n)return console.warn("事件信息不存在");var r=n.eventOpts||n["event-opts"];if(!r)return console.warn("事件信息不存在");var o=e.type,i=[];return r.forEach(function(n){var r=n[0],a=n[1],s=r.charAt(0)===ye,u=(r=s?r.slice(1):r).charAt(0)===ve;r=u?r.slice(1):r,a&&function(e,t){return e===t||"regionchange"===t&&("begin"===e||"end"===e)}(o,r)&&a.forEach(function(n){var r=n[0];if(r){var o=t.$vm;o.$options.generic&&o.$parent&&o.$parent.$parent&&(o=o.$parent.$parent);var a=o[r];if(!c(a))throw new Error(" _vm.".concat(r," is not a function"));if(u){if(a.once)return;a.once=!0}i.push(a.apply(o,function(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:[],r=arguments.length>3&&void 0!==arguments[3]?arguments[3]:[],o=arguments.length>4?arguments[4]:void 0,i=arguments.length>5?arguments[5]:void 0,a=!1;if(o&&(a=t.currentTarget&&t.currentTarget.dataset&&"wx"===t.currentTarget.dataset.comType,!n.length))return a?[t]:t.detail.__args__||t.detail;var s=he(e,r,t),u=[];return n.forEach(function(e){"$event"===e?"__set_model"!==i||o?o&&!a?u.push(t.detail.__args__[0]):u.push(t):u.push(t.target.value):Array.isArray(e)&&"o"===e[0]?u.push(function(e){for(var t={},n=1;n<e.length;n++){var r=e[n];t[r[0]]=r[1]}return t}(e)):"string"==typeof e&&l(s,e)?u.push(s[e]):u.push(e)}),u}(t.$vm,e,n[1],n[2],s,r)))}})}),"input"===o&&1===i.length&&void 0!==i[0]?i[0]:void 0}var me=["onShow","onHide","onError","onPageNotFound"];function _e(e,t){var n=t.mocks,r=t.initRefs;o.default.prototype.mpHost="mp-weixin",o.default.mixin({beforeCreate:function(){var e,t,o;this.$options.mpType&&(this.mpType=this.$options.mpType,this.$mp=(e={data:{}},t=this.mpType,o=this.$options.mpInstance,t in e?Object.defineProperty(e,t,{value:o,enumerable:!0,configurable:!0,writable:!0}):e[t]=o,e),this.$scope=this.$options.mpInstance,delete this.$options.mpType,delete this.$options.mpInstance,"app"!==this.mpType&&(r(this),function(e,t){var n=e.$mp[e.mpType];t.forEach(function(t){l(n,t)&&(e[t]=n[t])})}(this,n)))}});var i={onLaunch:function(t){this.$vm||(wx.canIUse("nextTick")||console.error("当前微信基础库版本过低，请将 微信开发者工具-详情-项目设置-调试基础库版本 更换为`2.3.0`以上"),this.$vm=e,this.$vm.$mp={app:this},this.$vm.$scope=this,this.$vm._isMounted=!0,this.$vm.__call_hook("mounted",t),this.$vm.__call_hook("onLaunch",t))}};return i.globalData=e.$options.globalData||{},se(i,me),i}var be=["__route__","__wxExparserNodeId__","__wxWebviewId__"];function we(e){return Behavior(e)}function $e(){return!!this.route}function ke(e){this.triggerEvent("__l",e)}function xe(e){var t=e.$scope;Object.defineProperty(e,"$refs",{get:function(){var e={};return t.selectAllComponents(".vue-ref").forEach(function(t){var n=t.dataset.ref;e[n]=t.$vm||t}),t.selectAllComponents(".vue-ref-in-for").forEach(function(t){var n=t.dataset.ref;e[n]||(e[n]=[]),e[n].push(t.$vm||t)}),e}})}function Oe(e){var t,n=e.detail||e.value,r=n.vuePid,o=n.vueOptions;r&&(t=function e(t,n){var r=t.$children,o=r.find(function(e){return e.$scope._$vueId===n});if(o)return o;for(var i=r.length-1;i>=0;i--)if(o=e(r[i],n))return o}(this.$vm,r)),t||(t=this.$vm),o.parent=t}function Ae(e){return App(function(e){return _e(e,{mocks:be,initRefs:xe})}(e)),e}function je(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=t.isPage,r=t.initRelation,a=i(function(e,t){var n;return c(t=t.default||t)?t=(n=t).extendOptions:n=e.extend(t),[n,t]}(o.default,e),2),s=a[0],u=a[1],f={options:{multipleSlots:!0,addGlobalClass:!0},data:ue(u,o.default.prototype),behaviors:le(u,we),properties:de(u.props,!1,u.__file),lifetimes:{attached:function(){var e,t,o,i=this.properties,a={mpType:n.call(this)?"page":"component",mpInstance:this,propsData:i};e=i.vueId,t=this,1===(o=(e=(e||"").split(",")).length)?t._$vueId=e[0]:2===o&&(t._$vueId=e[0],t._$vuePid=e[1]),r.call(this,{vuePid:this._$vuePid,vueOptions:a}),this.$vm=new s(a),function(e,t){if(Array.isArray(t)&&t.length){var n=Object.create(null);t.forEach(function(e){n[e]=!0}),e.$scopedSlots=e.$slots=n}}(this.$vm,i.vueSlots),this.$vm.$mount()},ready:function(){this.$vm&&(this.$vm._isMounted=!0,this.$vm.__call_hook("mounted"),this.$vm.__call_hook("onReady"))},detached:function(){this.$vm.$destroy()}},pageLifetimes:{show:function(e){this.$vm&&this.$vm.__call_hook("onPageShow",e)},hide:function(){this.$vm&&this.$vm.__call_hook("onPageHide")},resize:function(e){this.$vm&&this.$vm.__call_hook("onPageResize",e)}},methods:{__l:Oe,__e:ge}};return n?f:[f,s]}function Pe(e){return je(e,{isPage:$e,initRelation:ke})}var Ce=["onShow","onHide","onUnload"];function Ee(e){return function(e,t){t.isPage,t.initRelation;var n=Pe(e);return se(n.methods,Ce,e),n.methods.onLoad=function(e){this.$vm.$mp.query=e,this.$vm.__call_hook("onLoad",e)},n}(e,{isPage:$e,initRelation:ke})}function Se(e){return Component(Ee(e))}function Me(e){return Component(Pe(e))}Ce.push.apply(Ce,["onPullDownRefresh","onReachBottom","onShareAppMessage","onPageScroll","onResize","onTabItemTap"]),[].forEach(function(e){L[e]=!1}),[].forEach(function(e){var t=L[e]&&L[e].name?L[e].name:e;wx.canIUse(t)||(L[e]=!1)});var Te={};"undefined"!=typeof Proxy?Te=new Proxy({},{get:function(e,t){return q[t]?q[t]:ee[t]?T(t,ee[t]):X[t]?T(t,X[t]):G[t]?T(t,G[t]):Q[t]?Q[t]:l(wx,t)||l(L,t)?T(t,W(t,wx[t])):void 0}}):(Object.keys(q).forEach(function(e){Te[e]=q[e]}),Object.keys(G).forEach(function(e){Te[e]=T(e,G[e])}),Object.keys(X).forEach(function(e){Te[e]=T(e,G[e])}),Object.keys(Q).forEach(function(e){Te[e]=Q[e]}),Object.keys(ee).forEach(function(e){Te[e]=T(e,ee[e])}),Object.keys(wx).forEach(function(e){(l(wx,e)||l(L,e))&&(Te[e]=T(e,W(e,wx[e])))})),wx.createApp=Ae,wx.createPage=Se,wx.createComponent=Me;var Ie=Te;t.default=Ie},10:
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createComponent = createComponent;exports.createPage = createPage;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}
+
+var _toString = Object.prototype.toString;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+function isFn(fn) {
+  return typeof fn === 'function';
+}
+
+function isStr(str) {
+  return typeof str === 'string';
+}
+
+function isPlainObject(obj) {
+  return _toString.call(obj) === '[object Object]';
+}
+
+function hasOwn(obj, key) {
+  return hasOwnProperty.call(obj, key);
+}
+
+function noop() {}
+
+/**
+                    * Create a cached version of a pure function.
+                    */
+function cached(fn) {
+  var cache = Object.create(null);
+  return function cachedFn(str) {
+    var hit = cache[str];
+    return hit || (cache[str] = fn(str));
+  };
+}
+
+/**
+   * Camelize a hyphen-delimited string.
+   */
+var camelizeRE = /-(\w)/g;
+var camelize = cached(function (str) {
+  return str.replace(camelizeRE, function (_, c) {return c ? c.toUpperCase() : '';});
+});
+
+var HOOKS = [
+'invoke',
+'success',
+'fail',
+'complete',
+'returnValue'];
+
+
+var globalInterceptors = {};
+var scopedInterceptors = {};
+
+function mergeHook(parentVal, childVal) {
+  var res = childVal ?
+  parentVal ?
+  parentVal.concat(childVal) :
+  Array.isArray(childVal) ?
+  childVal : [childVal] :
+  parentVal;
+  return res ?
+  dedupeHooks(res) :
+  res;
+}
+
+function dedupeHooks(hooks) {
+  var res = [];
+  for (var i = 0; i < hooks.length; i++) {
+    if (res.indexOf(hooks[i]) === -1) {
+      res.push(hooks[i]);
+    }
+  }
+  return res;
+}
+
+function removeHook(hooks, hook) {
+  var index = hooks.indexOf(hook);
+  if (index !== -1) {
+    hooks.splice(index, 1);
+  }
+}
+
+function mergeInterceptorHook(interceptor, option) {
+  Object.keys(option).forEach(function (hook) {
+    if (HOOKS.indexOf(hook) !== -1 && isFn(option[hook])) {
+      interceptor[hook] = mergeHook(interceptor[hook], option[hook]);
+    }
+  });
+}
+
+function removeInterceptorHook(interceptor, option) {
+  if (!interceptor || !option) {
+    return;
+  }
+  Object.keys(option).forEach(function (hook) {
+    if (HOOKS.indexOf(hook) !== -1 && isFn(option[hook])) {
+      removeHook(interceptor[hook], option[hook]);
+    }
+  });
+}
+
+function addInterceptor(method, option) {
+  if (typeof method === 'string' && isPlainObject(option)) {
+    mergeInterceptorHook(scopedInterceptors[method] || (scopedInterceptors[method] = {}), option);
+  } else if (isPlainObject(method)) {
+    mergeInterceptorHook(globalInterceptors, method);
+  }
+}
+
+function removeInterceptor(method, option) {
+  if (typeof method === 'string') {
+    if (isPlainObject(option)) {
+      removeInterceptorHook(scopedInterceptors[method], option);
+    } else {
+      delete scopedInterceptors[method];
+    }
+  } else if (isPlainObject(method)) {
+    removeInterceptorHook(globalInterceptors, method);
+  }
+}
+
+function wrapperHook(hook) {
+  return function (data) {
+    return hook(data) || data;
+  };
+}
+
+function isPromise(obj) {
+  return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
+}
+
+function queue(hooks, data) {
+  var promise = false;
+  for (var i = 0; i < hooks.length; i++) {
+    var hook = hooks[i];
+    if (promise) {
+      promise = Promise.then(wrapperHook(hook));
+    } else {
+      var res = hook(data);
+      if (isPromise(res)) {
+        promise = Promise.resolve(res);
+      }
+      if (res === false) {
+        return {
+          then: function then() {} };
+
+      }
+    }
+  }
+  return promise || {
+    then: function then(callback) {
+      return callback(data);
+    } };
+
+}
+
+function wrapperOptions(interceptor) {var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  ['success', 'fail', 'complete'].forEach(function (name) {
+    if (Array.isArray(interceptor[name])) {
+      var oldCallback = options[name];
+      options[name] = function callbackInterceptor(res) {
+        queue(interceptor[name], res).then(function (res) {
+          /* eslint-disable no-mixed-operators */
+          return isFn(oldCallback) && oldCallback(res) || res;
+        });
+      };
+    }
+  });
+  return options;
+}
+
+function wrapperReturnValue(method, returnValue) {
+  var returnValueHooks = [];
+  if (Array.isArray(globalInterceptors.returnValue)) {
+    returnValueHooks.push.apply(returnValueHooks, _toConsumableArray(globalInterceptors.returnValue));
+  }
+  var interceptor = scopedInterceptors[method];
+  if (interceptor && Array.isArray(interceptor.returnValue)) {
+    returnValueHooks.push.apply(returnValueHooks, _toConsumableArray(interceptor.returnValue));
+  }
+  returnValueHooks.forEach(function (hook) {
+    returnValue = hook(returnValue) || returnValue;
+  });
+  return returnValue;
+}
+
+function getApiInterceptorHooks(method) {
+  var interceptor = Object.create(null);
+  Object.keys(globalInterceptors).forEach(function (hook) {
+    if (hook !== 'returnValue') {
+      interceptor[hook] = globalInterceptors[hook].slice();
+    }
+  });
+  var scopedInterceptor = scopedInterceptors[method];
+  if (scopedInterceptor) {
+    Object.keys(scopedInterceptor).forEach(function (hook) {
+      if (hook !== 'returnValue') {
+        interceptor[hook] = (interceptor[hook] || []).concat(scopedInterceptor[hook]);
+      }
+    });
+  }
+  return interceptor;
+}
+
+function invokeApi(method, api, options) {for (var _len = arguments.length, params = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {params[_key - 3] = arguments[_key];}
+  var interceptor = getApiInterceptorHooks(method);
+  if (interceptor && Object.keys(interceptor).length) {
+    if (Array.isArray(interceptor.invoke)) {
+      var res = queue(interceptor.invoke, options);
+      return res.then(function (options) {
+        return api.apply(void 0, [wrapperOptions(interceptor, options)].concat(params));
+      });
+    } else {
+      return api.apply(void 0, [wrapperOptions(interceptor, options)].concat(params));
+    }
+  }
+  return api.apply(void 0, [options].concat(params));
+}
+
+var promiseInterceptor = {
+  returnValue: function returnValue(res) {
+    if (!isPromise(res)) {
+      return res;
+    }
+    return res.then(function (res) {
+      return res[1];
+    }).catch(function (res) {
+      return res[0];
+    });
+  } };
+
+
+var SYNC_API_RE =
+/^\$|interceptors|Interceptor$|getSubNVueById|requireNativePlugin|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64/;
+
+var CONTEXT_API_RE = /^create|Manager$/;
+
+var CALLBACK_API_RE = /^on/;
+
+function isContextApi(name) {
+  return CONTEXT_API_RE.test(name);
+}
+function isSyncApi(name) {
+  return SYNC_API_RE.test(name);
+}
+
+function isCallbackApi(name) {
+  return CALLBACK_API_RE.test(name);
+}
+
+function handlePromise(promise) {
+  return promise.then(function (data) {
+    return [null, data];
+  }).
+  catch(function (err) {return [err];});
+}
+
+function shouldPromise(name) {
+  if (
+  isContextApi(name) ||
+  isSyncApi(name) ||
+  isCallbackApi(name))
+  {
+    return false;
+  }
+  return true;
+}
+
+function promisify(name, api) {
+  if (!shouldPromise(name)) {
+    return api;
+  }
+  return function promiseApi() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};for (var _len2 = arguments.length, params = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {params[_key2 - 1] = arguments[_key2];}
+    if (isFn(options.success) || isFn(options.fail) || isFn(options.complete)) {
+      return wrapperReturnValue(name, invokeApi.apply(void 0, [name, api, options].concat(params)));
+    }
+    return wrapperReturnValue(name, handlePromise(new Promise(function (resolve, reject) {
+      invokeApi.apply(void 0, [name, api, Object.assign({}, options, {
+        success: resolve,
+        fail: reject })].concat(
+      params));
+      /* eslint-disable no-extend-native */
+      if (!Promise.prototype.finally) {
+        Promise.prototype.finally = function (callback) {
+          var promise = this.constructor;
+          return this.then(
+          function (value) {return promise.resolve(callback()).then(function () {return value;});},
+          function (reason) {return promise.resolve(callback()).then(function () {
+              throw reason;
+            });});
+
+        };
+      }
+    })));
+  };
+}
+
+var EPS = 1e-4;
+var BASE_DEVICE_WIDTH = 750;
+var isIOS = false;
+var deviceWidth = 0;
+var deviceDPR = 0;
+
+function checkDeviceWidth() {var _wx$getSystemInfoSync =
+
+
+
+
+  wx.getSystemInfoSync(),platform = _wx$getSystemInfoSync.platform,pixelRatio = _wx$getSystemInfoSync.pixelRatio,windowWidth = _wx$getSystemInfoSync.windowWidth; // uni=>wx runtime 编译目标是 uni 对象，内部不允许直接使用 uni
+
+  deviceWidth = windowWidth;
+  deviceDPR = pixelRatio;
+  isIOS = platform === 'ios';
+}
+
+function upx2px(number, newDeviceWidth) {
+  if (deviceWidth === 0) {
+    checkDeviceWidth();
+  }
+
+  number = Number(number);
+  if (number === 0) {
+    return 0;
+  }
+  var result = number / BASE_DEVICE_WIDTH * (newDeviceWidth || deviceWidth);
+  if (result < 0) {
+    result = -result;
+  }
+  result = Math.floor(result + EPS);
+  if (result === 0) {
+    if (deviceDPR === 1 || !isIOS) {
+      return 1;
+    } else {
+      return 0.5;
+    }
+  }
+  return number < 0 ? -result : result;
+}
+
+var interceptors = {
+  promiseInterceptor: promiseInterceptor };
+
+
+
+
+var baseApi = /*#__PURE__*/Object.freeze({
+  upx2px: upx2px,
+  interceptors: interceptors,
+  addInterceptor: addInterceptor,
+  removeInterceptor: removeInterceptor });
+
+
+var previewImage = {
+  args: function args(fromArgs) {
+    var currentIndex = parseInt(fromArgs.current);
+    if (isNaN(currentIndex)) {
+      return;
+    }
+    var urls = fromArgs.urls;
+    if (!Array.isArray(urls)) {
+      return;
+    }
+    var len = urls.length;
+    if (!len) {
+      return;
+    }
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    } else if (currentIndex >= len) {
+      currentIndex = len - 1;
+    }
+    if (currentIndex > 0) {
+      fromArgs.current = urls[currentIndex];
+      fromArgs.urls = urls.filter(
+      function (item, index) {return index < currentIndex ? item !== urls[currentIndex] : true;});
+
+    } else {
+      fromArgs.current = urls[0];
+    }
+    return {
+      indicator: false,
+      loop: false };
+
+  } };
+
+
+var protocols = {
+  previewImage: previewImage };
+
+var todos = [];
+var canIUses = [];
+
+var CALLBACKS = ['success', 'fail', 'cancel', 'complete'];
+
+function processCallback(methodName, method, returnValue) {
+  return function (res) {
+    return method(processReturnValue(methodName, res, returnValue));
+  };
+}
+
+function processArgs(methodName, fromArgs) {var argsOption = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};var returnValue = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};var keepFromArgs = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+  if (isPlainObject(fromArgs)) {// 一般 api 的参数解析
+    var toArgs = keepFromArgs === true ? fromArgs : {}; // returnValue 为 false 时，说明是格式化返回值，直接在返回值对象上修改赋值
+    if (isFn(argsOption)) {
+      argsOption = argsOption(fromArgs, toArgs) || {};
+    }
+    for (var key in fromArgs) {
+      if (hasOwn(argsOption, key)) {
+        var keyOption = argsOption[key];
+        if (isFn(keyOption)) {
+          keyOption = keyOption(fromArgs[key], fromArgs, toArgs);
+        }
+        if (!keyOption) {// 不支持的参数
+          console.warn("\u5FAE\u4FE1\u5C0F\u7A0B\u5E8F ".concat(methodName, "\u6682\u4E0D\u652F\u6301").concat(key));
+        } else if (isStr(keyOption)) {// 重写参数 key
+          toArgs[keyOption] = fromArgs[key];
+        } else if (isPlainObject(keyOption)) {// {name:newName,value:value}可重新指定参数 key:value
+          toArgs[keyOption.name ? keyOption.name : key] = keyOption.value;
+        }
+      } else if (CALLBACKS.indexOf(key) !== -1) {
+        toArgs[key] = processCallback(methodName, fromArgs[key], returnValue);
+      } else {
+        if (!keepFromArgs) {
+          toArgs[key] = fromArgs[key];
+        }
+      }
+    }
+    return toArgs;
+  } else if (isFn(fromArgs)) {
+    fromArgs = processCallback(methodName, fromArgs, returnValue);
+  }
+  return fromArgs;
+}
+
+function processReturnValue(methodName, res, returnValue) {var keepReturnValue = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  if (isFn(protocols.returnValue)) {// 处理通用 returnValue
+    res = protocols.returnValue(methodName, res);
+  }
+  return processArgs(methodName, res, returnValue, {}, keepReturnValue);
+}
+
+function wrapper(methodName, method) {
+  if (hasOwn(protocols, methodName)) {
+    var protocol = protocols[methodName];
+    if (!protocol) {// 暂不支持的 api
+      return function () {
+        console.error("\u5FAE\u4FE1\u5C0F\u7A0B\u5E8F \u6682\u4E0D\u652F\u6301".concat(methodName));
+      };
+    }
+    return function (arg1, arg2) {// 目前 api 最多两个参数
+      var options = protocol;
+      if (isFn(protocol)) {
+        options = protocol(arg1);
+      }
+
+      arg1 = processArgs(methodName, arg1, options.args, options.returnValue);
+
+      var args = [arg1];
+      if (typeof arg2 !== 'undefined') {
+        args.push(arg2);
+      }
+      var returnValue = wx[options.name || methodName].apply(wx, args);
+      if (isSyncApi(methodName)) {// 同步 api
+        return processReturnValue(methodName, returnValue, options.returnValue, isContextApi(methodName));
+      }
+      return returnValue;
+    };
+  }
+  return method;
+}
+
+var todoApis = Object.create(null);
+
+var TODOS = [
+'subscribePush',
+'unsubscribePush',
+'onPush',
+'offPush',
+'share'];
+
+
+function createTodoApi(name) {
+  return function todoApi(_ref)
+
+
+  {var fail = _ref.fail,complete = _ref.complete;
+    var res = {
+      errMsg: "".concat(name, ":fail:\u6682\u4E0D\u652F\u6301 ").concat(name, " \u65B9\u6CD5") };
+
+    isFn(fail) && fail(res);
+    isFn(complete) && complete(res);
+  };
+}
+
+TODOS.forEach(function (name) {
+  todoApis[name] = createTodoApi(name);
+});
+
+var providers = {
+  oauth: ['weixin'],
+  share: ['weixin'],
+  payment: ['wxpay'],
+  push: ['weixin'] };
+
+
+function getProvider(_ref2)
+
+
+
+
+{var service = _ref2.service,success = _ref2.success,fail = _ref2.fail,complete = _ref2.complete;
+  var res = false;
+  if (providers[service]) {
+    res = {
+      errMsg: 'getProvider:ok',
+      service: service,
+      provider: providers[service] };
+
+    isFn(success) && success(res);
+  } else {
+    res = {
+      errMsg: 'getProvider:fail:服务[' + service + ']不存在' };
+
+    isFn(fail) && fail(res);
+  }
+  isFn(complete) && complete(res);
+}
+
+var extraApi = /*#__PURE__*/Object.freeze({
+  getProvider: getProvider });
+
+
+var getEmitter = function () {
+  if (typeof getUniEmitter === 'function') {
+    /* eslint-disable no-undef */
+    return getUniEmitter;
+  }
+  var Emitter;
+  return function getUniEmitter() {
+    if (!Emitter) {
+      Emitter = new _vue.default();
+    }
+    return Emitter;
+  };
+}();
+
+function apply(ctx, method, args) {
+  return ctx[method].apply(ctx, args);
+}
+
+function $on() {
+  return apply(getEmitter(), '$on', Array.prototype.slice.call(arguments));
+}
+function $off() {
+  return apply(getEmitter(), '$off', Array.prototype.slice.call(arguments));
+}
+function $once() {
+  return apply(getEmitter(), '$once', Array.prototype.slice.call(arguments));
+}
+function $emit() {
+  return apply(getEmitter(), '$emit', Array.prototype.slice.call(arguments));
+}
+
+var eventApi = /*#__PURE__*/Object.freeze({
+  $on: $on,
+  $off: $off,
+  $once: $once,
+  $emit: $emit });
+
+
+
+
+var api = /*#__PURE__*/Object.freeze({});
+
+
+
+var MPPage = Page;
+var MPComponent = Component;
+
+var customizeRE = /:/g;
+
+var customize = cached(function (str) {
+  return camelize(str.replace(customizeRE, '-'));
+});
+
+function initTriggerEvent(mpInstance) {
+  {
+    if (!wx.canIUse('nextTick')) {
+      return;
+    }
+  }
+  var oldTriggerEvent = mpInstance.triggerEvent;
+  mpInstance.triggerEvent = function (event) {for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {args[_key3 - 1] = arguments[_key3];}
+    return oldTriggerEvent.apply(mpInstance, [customize(event)].concat(args));
+  };
+}
+
+function initHook(name, options) {
+  var oldHook = options[name];
+  if (!oldHook) {
+    options[name] = function () {
+      initTriggerEvent(this);
+    };
+  } else {
+    options[name] = function () {
+      initTriggerEvent(this);for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {args[_key4] = arguments[_key4];}
+      return oldHook.apply(this, args);
+    };
+  }
+}
+
+Page = function Page() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  initHook('onLoad', options);
+  return MPPage(options);
+};
+
+Component = function Component() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  initHook('created', options);
+  return MPComponent(options);
+};
+
+var PAGE_EVENT_HOOKS = [
+'onPullDownRefresh',
+'onReachBottom',
+'onShareAppMessage',
+'onPageScroll',
+'onResize',
+'onTabItemTap'];
+
+
+function initMocks(vm, mocks) {
+  var mpInstance = vm.$mp[vm.mpType];
+  mocks.forEach(function (mock) {
+    if (hasOwn(mpInstance, mock)) {
+      vm[mock] = mpInstance[mock];
+    }
+  });
+}
+
+function hasHook(hook, vueOptions) {
+  if (!vueOptions) {
+    return true;
+  }
+
+  if (_vue.default.options && Array.isArray(_vue.default.options[hook])) {
+    return true;
+  }
+
+  vueOptions = vueOptions.default || vueOptions;
+
+  if (isFn(vueOptions)) {
+    if (isFn(vueOptions.extendOptions[hook])) {
+      return true;
+    }
+    if (vueOptions.super &&
+    vueOptions.super.options &&
+    Array.isArray(vueOptions.super.options[hook])) {
+      return true;
+    }
+    return false;
+  }
+
+  if (isFn(vueOptions[hook])) {
+    return true;
+  }
+  var mixins = vueOptions.mixins;
+  if (Array.isArray(mixins)) {
+    return !!mixins.find(function (mixin) {return hasHook(hook, mixin);});
+  }
+}
+
+function initHooks(mpOptions, hooks, vueOptions) {
+  hooks.forEach(function (hook) {
+    if (hasHook(hook, vueOptions)) {
+      mpOptions[hook] = function (args) {
+        return this.$vm && this.$vm.__call_hook(hook, args);
+      };
+    }
+  });
+}
+
+function initVueComponent(Vue, vueOptions) {
+  vueOptions = vueOptions.default || vueOptions;
+  var VueComponent;
+  if (isFn(vueOptions)) {
+    VueComponent = vueOptions;
+    vueOptions = VueComponent.extendOptions;
+  } else {
+    VueComponent = Vue.extend(vueOptions);
+  }
+  return [VueComponent, vueOptions];
+}
+
+function initSlots(vm, vueSlots) {
+  if (Array.isArray(vueSlots) && vueSlots.length) {
+    var $slots = Object.create(null);
+    vueSlots.forEach(function (slotName) {
+      $slots[slotName] = true;
+    });
+    vm.$scopedSlots = vm.$slots = $slots;
+  }
+}
+
+function initVueIds(vueIds, mpInstance) {
+  vueIds = (vueIds || '').split(',');
+  var len = vueIds.length;
+
+  if (len === 1) {
+    mpInstance._$vueId = vueIds[0];
+  } else if (len === 2) {
+    mpInstance._$vueId = vueIds[0];
+    mpInstance._$vuePid = vueIds[1];
+  }
+}
+
+function initData(vueOptions, context) {
+  var data = vueOptions.data || {};
+  var methods = vueOptions.methods || {};
+
+  if (typeof data === 'function') {
+    try {
+      data = data.call(context); // 支持 Vue.prototype 上挂的数据
+    } catch (e) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
+      }
+    }
+  } else {
+    try {
+      // 对 data 格式化
+      data = JSON.parse(JSON.stringify(data));
+    } catch (e) {}
+  }
+
+  if (!isPlainObject(data)) {
+    data = {};
+  }
+
+  Object.keys(methods).forEach(function (methodName) {
+    if (context.__lifecycle_hooks__.indexOf(methodName) === -1 && !hasOwn(data, methodName)) {
+      data[methodName] = methods[methodName];
+    }
+  });
+
+  return data;
+}
+
+var PROP_TYPES = [String, Number, Boolean, Object, Array, null];
+
+function createObserver(name) {
+  return function observer(newVal, oldVal) {
+    if (this.$vm) {
+      this.$vm[name] = newVal; // 为了触发其他非 render watcher
+    }
+  };
+}
+
+function initBehaviors(vueOptions, initBehavior) {
+  var vueBehaviors = vueOptions['behaviors'];
+  var vueExtends = vueOptions['extends'];
+  var vueMixins = vueOptions['mixins'];
+
+  var vueProps = vueOptions['props'];
+
+  if (!vueProps) {
+    vueOptions['props'] = vueProps = [];
+  }
+
+  var behaviors = [];
+  if (Array.isArray(vueBehaviors)) {
+    vueBehaviors.forEach(function (behavior) {
+      behaviors.push(behavior.replace('uni://', "wx".concat("://")));
+      if (behavior === 'uni://form-field') {
+        if (Array.isArray(vueProps)) {
+          vueProps.push('name');
+          vueProps.push('value');
+        } else {
+          vueProps['name'] = {
+            type: String,
+            default: '' };
+
+          vueProps['value'] = {
+            type: [String, Number, Boolean, Array, Object, Date],
+            default: '' };
+
+        }
+      }
+    });
+  }
+  if (isPlainObject(vueExtends) && vueExtends.props) {
+    behaviors.push(
+    initBehavior({
+      properties: initProperties(vueExtends.props, true) }));
+
+
+  }
+  if (Array.isArray(vueMixins)) {
+    vueMixins.forEach(function (vueMixin) {
+      if (isPlainObject(vueMixin) && vueMixin.props) {
+        behaviors.push(
+        initBehavior({
+          properties: initProperties(vueMixin.props, true) }));
+
+
+      }
+    });
+  }
+  return behaviors;
+}
+
+function parsePropType(key, type, defaultValue, file) {
+  // [String]=>String
+  if (Array.isArray(type) && type.length === 1) {
+    return type[0];
+  }
+  return type;
+}
+
+function initProperties(props) {var isBehavior = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;var file = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+  var properties = {};
+  if (!isBehavior) {
+    properties.vueId = {
+      type: String,
+      value: '' };
+
+    properties.vueSlots = { // 小程序不能直接定义 $slots 的 props，所以通过 vueSlots 转换到 $slots
+      type: null,
+      value: [],
+      observer: function observer(newVal, oldVal) {
+        var $slots = Object.create(null);
+        newVal.forEach(function (slotName) {
+          $slots[slotName] = true;
+        });
+        this.setData({
+          $slots: $slots });
+
+      } };
+
+  }
+  if (Array.isArray(props)) {// ['title']
+    props.forEach(function (key) {
+      properties[key] = {
+        type: null,
+        observer: createObserver(key) };
+
+    });
+  } else if (isPlainObject(props)) {// {title:{type:String,default:''},content:String}
+    Object.keys(props).forEach(function (key) {
+      var opts = props[key];
+      if (isPlainObject(opts)) {// title:{type:String,default:''}
+        var value = opts['default'];
+        if (isFn(value)) {
+          value = value();
+        }
+
+        opts.type = parsePropType(key, opts.type);
+
+        properties[key] = {
+          type: PROP_TYPES.indexOf(opts.type) !== -1 ? opts.type : null,
+          value: value,
+          observer: createObserver(key) };
+
+      } else {// content:String
+        var type = parsePropType(key, opts);
+        properties[key] = {
+          type: PROP_TYPES.indexOf(type) !== -1 ? type : null,
+          observer: createObserver(key) };
+
+      }
+    });
+  }
+  return properties;
+}
+
+function wrapper$1(event) {
+  // TODO 又得兼容 mpvue 的 mp 对象
+  try {
+    event.mp = JSON.parse(JSON.stringify(event));
+  } catch (e) {}
+
+  event.stopPropagation = noop;
+  event.preventDefault = noop;
+
+  event.target = event.target || {};
+
+  if (!hasOwn(event, 'detail')) {
+    event.detail = {};
+  }
+
+  if (isPlainObject(event.detail)) {
+    event.target = Object.assign({}, event.target, event.detail);
+  }
+
+  return event;
+}
+
+function getExtraValue(vm, dataPathsArray) {
+  var context = vm;
+  dataPathsArray.forEach(function (dataPathArray) {
+    var dataPath = dataPathArray[0];
+    var value = dataPathArray[2];
+    if (dataPath || typeof value !== 'undefined') {// ['','',index,'disable']
+      var propPath = dataPathArray[1];
+      var valuePath = dataPathArray[3];
+
+      var vFor = dataPath ? vm.__get_value(dataPath, context) : context;
+
+      if (Number.isInteger(vFor)) {
+        context = value;
+      } else if (!propPath) {
+        context = vFor[value];
+      } else {
+        if (Array.isArray(vFor)) {
+          context = vFor.find(function (vForItem) {
+            return vm.__get_value(propPath, vForItem) === value;
+          });
+        } else if (isPlainObject(vFor)) {
+          context = Object.keys(vFor).find(function (vForKey) {
+            return vm.__get_value(propPath, vFor[vForKey]) === value;
+          });
+        } else {
+          console.error('v-for 暂不支持循环数据：', vFor);
+        }
+      }
+
+      if (valuePath) {
+        context = vm.__get_value(valuePath, context);
+      }
+    }
+  });
+  return context;
+}
+
+function processEventExtra(vm, extra, event) {
+  var extraObj = {};
+
+  if (Array.isArray(extra) && extra.length) {
+    /**
+                                              *[
+                                              *    ['data.items', 'data.id', item.data.id],
+                                              *    ['metas', 'id', meta.id]
+                                              *],
+                                              *[
+                                              *    ['data.items', 'data.id', item.data.id],
+                                              *    ['metas', 'id', meta.id]
+                                              *],
+                                              *'test'
+                                              */
+    extra.forEach(function (dataPath, index) {
+      if (typeof dataPath === 'string') {
+        if (!dataPath) {// model,prop.sync
+          extraObj['$' + index] = vm;
+        } else {
+          if (dataPath === '$event') {// $event
+            extraObj['$' + index] = event;
+          } else if (dataPath.indexOf('$event.') === 0) {// $event.target.value
+            extraObj['$' + index] = vm.__get_value(dataPath.replace('$event.', ''), event);
+          } else {
+            extraObj['$' + index] = vm.__get_value(dataPath);
+          }
+        }
+      } else {
+        extraObj['$' + index] = getExtraValue(vm, dataPath);
+      }
+    });
+  }
+
+  return extraObj;
+}
+
+function getObjByArray(arr) {
+  var obj = {};
+  for (var i = 1; i < arr.length; i++) {
+    var element = arr[i];
+    obj[element[0]] = element[1];
+  }
+  return obj;
+}
+
+function processEventArgs(vm, event) {var args = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];var extra = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];var isCustom = arguments.length > 4 ? arguments[4] : undefined;var methodName = arguments.length > 5 ? arguments[5] : undefined;
+  var isCustomMPEvent = false; // wxcomponent 组件，传递原始 event 对象
+  if (isCustom) {// 自定义事件
+    isCustomMPEvent = event.currentTarget &&
+    event.currentTarget.dataset &&
+    event.currentTarget.dataset.comType === 'wx';
+    if (!args.length) {// 无参数，直接传入 event 或 detail 数组
+      if (isCustomMPEvent) {
+        return [event];
+      }
+      return event.detail.__args__ || event.detail;
+    }
+  }
+
+  var extraObj = processEventExtra(vm, extra, event);
+
+  var ret = [];
+  args.forEach(function (arg) {
+    if (arg === '$event') {
+      if (methodName === '__set_model' && !isCustom) {// input v-model value
+        ret.push(event.target.value);
+      } else {
+        if (isCustom && !isCustomMPEvent) {
+          ret.push(event.detail.__args__[0]);
+        } else {// wxcomponent 组件或内置组件
+          ret.push(event);
+        }
+      }
+    } else {
+      if (Array.isArray(arg) && arg[0] === 'o') {
+        ret.push(getObjByArray(arg));
+      } else if (typeof arg === 'string' && hasOwn(extraObj, arg)) {
+        ret.push(extraObj[arg]);
+      } else {
+        ret.push(arg);
+      }
+    }
+  });
+
+  return ret;
+}
+
+var ONCE = '~';
+var CUSTOM = '^';
+
+function isMatchEventType(eventType, optType) {
+  return eventType === optType ||
+
+  optType === 'regionchange' && (
+
+  eventType === 'begin' ||
+  eventType === 'end');
+
+
+}
+
+function handleEvent(event) {var _this = this;
+  event = wrapper$1(event);
+
+  // [['tap',[['handle',[1,2,a]],['handle1',[1,2,a]]]]]
+  var dataset = (event.currentTarget || event.target).dataset;
+  if (!dataset) {
+    return console.warn("\u4E8B\u4EF6\u4FE1\u606F\u4E0D\u5B58\u5728");
+  }
+  var eventOpts = dataset.eventOpts || dataset['event-opts']; // 支付宝 web-view 组件 dataset 非驼峰
+  if (!eventOpts) {
+    return console.warn("\u4E8B\u4EF6\u4FE1\u606F\u4E0D\u5B58\u5728");
+  }
+
+  // [['handle',[1,2,a]],['handle1',[1,2,a]]]
+  var eventType = event.type;
+
+  var ret = [];
+
+  eventOpts.forEach(function (eventOpt) {
+    var type = eventOpt[0];
+    var eventsArray = eventOpt[1];
+
+    var isCustom = type.charAt(0) === CUSTOM;
+    type = isCustom ? type.slice(1) : type;
+    var isOnce = type.charAt(0) === ONCE;
+    type = isOnce ? type.slice(1) : type;
+
+    if (eventsArray && isMatchEventType(eventType, type)) {
+      eventsArray.forEach(function (eventArray) {
+        var methodName = eventArray[0];
+        if (methodName) {
+          var handlerCtx = _this.$vm;
+          if (
+          handlerCtx.$options.generic &&
+          handlerCtx.$parent &&
+          handlerCtx.$parent.$parent)
+          {// mp-weixin,mp-toutiao 抽象节点模拟 scoped slots
+            handlerCtx = handlerCtx.$parent.$parent;
+          }
+          var handler = handlerCtx[methodName];
+          if (!isFn(handler)) {
+            throw new Error(" _vm.".concat(methodName, " is not a function"));
+          }
+          if (isOnce) {
+            if (handler.once) {
+              return;
+            }
+            handler.once = true;
+          }
+          ret.push(handler.apply(handlerCtx, processEventArgs(
+          _this.$vm,
+          event,
+          eventArray[1],
+          eventArray[2],
+          isCustom,
+          methodName)));
+
+        }
+      });
+    }
+  });
+
+  if (
+  eventType === 'input' &&
+  ret.length === 1 &&
+  typeof ret[0] !== 'undefined')
+  {
+    return ret[0];
+  }
+}
+
+var hooks = [
+'onShow',
+'onHide',
+'onError',
+'onPageNotFound'];
+
+
+function parseBaseApp(vm, _ref3)
+
+
+{var mocks = _ref3.mocks,initRefs = _ref3.initRefs;
+  _vue.default.prototype.mpHost = "mp-weixin";
+
+  _vue.default.mixin({
+    beforeCreate: function beforeCreate() {
+      if (!this.$options.mpType) {
+        return;
+      }
+
+      this.mpType = this.$options.mpType;
+
+      this.$mp = _defineProperty({
+        data: {} },
+      this.mpType, this.$options.mpInstance);
+
+
+      this.$scope = this.$options.mpInstance;
+
+      delete this.$options.mpType;
+      delete this.$options.mpInstance;
+
+      if (this.mpType !== 'app') {
+        initRefs(this);
+        initMocks(this, mocks);
+      }
+    } });
+
+
+  var appOptions = {
+    onLaunch: function onLaunch(args) {
+      if (this.$vm) {// 已经初始化过了，主要是为了百度，百度 onShow 在 onLaunch 之前
+        return;
+      }
+      {
+        if (!wx.canIUse('nextTick')) {// 事实 上2.2.3 即可，简单使用 2.3.0 的 nextTick 判断
+          console.error('当前微信基础库版本过低，请将 微信开发者工具-详情-项目设置-调试基础库版本 更换为`2.3.0`以上');
+        }
+      }
+
+      this.$vm = vm;
+
+      this.$vm.$mp = {
+        app: this };
+
+
+      this.$vm.$scope = this;
+
+      this.$vm._isMounted = true;
+      this.$vm.__call_hook('mounted', args);
+
+      this.$vm.__call_hook('onLaunch', args);
+    } };
+
+
+  // 兼容旧版本 globalData
+  appOptions.globalData = vm.$options.globalData || {};
+
+  initHooks(appOptions, hooks);
+
+  return appOptions;
+}
+
+var mocks = ['__route__', '__wxExparserNodeId__', '__wxWebviewId__'];
+
+function findVmByVueId(vm, vuePid) {
+  var $children = vm.$children;
+  // 优先查找直属
+  var parentVm = $children.find(function (childVm) {return childVm.$scope._$vueId === vuePid;});
+  if (parentVm) {
+    return parentVm;
+  }
+  // 反向递归查找
+  for (var i = $children.length - 1; i >= 0; i--) {
+    parentVm = findVmByVueId($children[i], vuePid);
+    if (parentVm) {
+      return parentVm;
+    }
+  }
+}
+
+function initBehavior(options) {
+  return Behavior(options);
+}
+
+function isPage() {
+  return !!this.route;
+}
+
+function initRelation(detail) {
+  this.triggerEvent('__l', detail);
+}
+
+function initRefs(vm) {
+  var mpInstance = vm.$scope;
+  Object.defineProperty(vm, '$refs', {
+    get: function get() {
+      var $refs = {};
+      var components = mpInstance.selectAllComponents('.vue-ref');
+      components.forEach(function (component) {
+        var ref = component.dataset.ref;
+        $refs[ref] = component.$vm || component;
+      });
+      var forComponents = mpInstance.selectAllComponents('.vue-ref-in-for');
+      forComponents.forEach(function (component) {
+        var ref = component.dataset.ref;
+        if (!$refs[ref]) {
+          $refs[ref] = [];
+        }
+        $refs[ref].push(component.$vm || component);
+      });
+      return $refs;
+    } });
+
+}
+
+function handleLink(event) {var _ref4 =
+
+
+
+  event.detail || event.value,vuePid = _ref4.vuePid,vueOptions = _ref4.vueOptions; // detail 是微信,value 是百度(dipatch)
+
+  var parentVm;
+
+  if (vuePid) {
+    parentVm = findVmByVueId(this.$vm, vuePid);
+  }
+
+  if (!parentVm) {
+    parentVm = this.$vm;
+  }
+
+  vueOptions.parent = parentVm;
+}
+
+function parseApp(vm) {
+  return parseBaseApp(vm, {
+    mocks: mocks,
+    initRefs: initRefs });
+
+}
+
+function createApp(vm) {
+  App(parseApp(vm));
+  return vm;
+}
+
+function parseBaseComponent(vueComponentOptions)
+
+
+{var _ref5 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},isPage = _ref5.isPage,initRelation = _ref5.initRelation;var _initVueComponent =
+  initVueComponent(_vue.default, vueComponentOptions),_initVueComponent2 = _slicedToArray(_initVueComponent, 2),VueComponent = _initVueComponent2[0],vueOptions = _initVueComponent2[1];
+
+  var componentOptions = {
+    options: {
+      multipleSlots: true,
+      addGlobalClass: true },
+
+    data: initData(vueOptions, _vue.default.prototype),
+    behaviors: initBehaviors(vueOptions, initBehavior),
+    properties: initProperties(vueOptions.props, false, vueOptions.__file),
+    lifetimes: {
+      attached: function attached() {
+        var properties = this.properties;
+
+        var options = {
+          mpType: isPage.call(this) ? 'page' : 'component',
+          mpInstance: this,
+          propsData: properties };
+
+
+        initVueIds(properties.vueId, this);
+
+        // 处理父子关系
+        initRelation.call(this, {
+          vuePid: this._$vuePid,
+          vueOptions: options });
+
+
+        // 初始化 vue 实例
+        this.$vm = new VueComponent(options);
+
+        // 处理$slots,$scopedSlots（暂不支持动态变化$slots）
+        initSlots(this.$vm, properties.vueSlots);
+
+        // 触发首次 setData
+        this.$vm.$mount();
+      },
+      ready: function ready() {
+        // 当组件 props 默认值为 true，初始化时传入 false 会导致 created,ready 触发, 但 attached 不触发
+        // https://developers.weixin.qq.com/community/develop/doc/00066ae2844cc0f8eb883e2a557800
+        if (this.$vm) {
+          this.$vm._isMounted = true;
+          this.$vm.__call_hook('mounted');
+          this.$vm.__call_hook('onReady');
+        }
+      },
+      detached: function detached() {
+        this.$vm.$destroy();
+      } },
+
+    pageLifetimes: {
+      show: function show(args) {
+        this.$vm && this.$vm.__call_hook('onPageShow', args);
+      },
+      hide: function hide() {
+        this.$vm && this.$vm.__call_hook('onPageHide');
+      },
+      resize: function resize(size) {
+        this.$vm && this.$vm.__call_hook('onPageResize', size);
+      } },
+
+    methods: {
+      __l: handleLink,
+      __e: handleEvent } };
+
+
+
+  if (isPage) {
+    return componentOptions;
+  }
+  return [componentOptions, VueComponent];
+}
+
+function parseComponent(vueComponentOptions) {
+  return parseBaseComponent(vueComponentOptions, {
+    isPage: isPage,
+    initRelation: initRelation });
+
+}
+
+var hooks$1 = [
+'onShow',
+'onHide',
+'onUnload'];
+
+
+hooks$1.push.apply(hooks$1, PAGE_EVENT_HOOKS);
+
+function parseBasePage(vuePageOptions, _ref6)
+
+
+{var isPage = _ref6.isPage,initRelation = _ref6.initRelation;
+  var pageOptions = parseComponent(vuePageOptions);
+
+  initHooks(pageOptions.methods, hooks$1, vuePageOptions);
+
+  pageOptions.methods.onLoad = function (args) {
+    this.$vm.$mp.query = args; // 兼容 mpvue
+    this.$vm.__call_hook('onLoad', args);
+  };
+
+  return pageOptions;
+}
+
+function parsePage(vuePageOptions) {
+  return parseBasePage(vuePageOptions, {
+    isPage: isPage,
+    initRelation: initRelation });
+
+}
+
+function createPage(vuePageOptions) {
+  {
+    return Component(parsePage(vuePageOptions));
+  }
+}
+
+function createComponent(vueOptions) {
+  {
+    return Component(parseComponent(vueOptions));
+  }
+}
+
+todos.forEach(function (todoApi) {
+  protocols[todoApi] = false;
+});
+
+canIUses.forEach(function (canIUseApi) {
+  var apiName = protocols[canIUseApi] && protocols[canIUseApi].name ? protocols[canIUseApi].name :
+  canIUseApi;
+  if (!wx.canIUse(apiName)) {
+    protocols[canIUseApi] = false;
+  }
+});
+
+var uni = {};
+
+if (typeof Proxy !== 'undefined' && "mp-weixin" !== 'app-plus') {
+  uni = new Proxy({}, {
+    get: function get(target, name) {
+      if (baseApi[name]) {
+        return baseApi[name];
+      }
+      if (api[name]) {
+        return promisify(name, api[name]);
+      }
+      {
+        if (extraApi[name]) {
+          return promisify(name, extraApi[name]);
+        }
+        if (todoApis[name]) {
+          return promisify(name, todoApis[name]);
+        }
+      }
+      if (eventApi[name]) {
+        return eventApi[name];
+      }
+      if (!hasOwn(wx, name) && !hasOwn(protocols, name)) {
+        return;
+      }
+      return promisify(name, wrapper(name, wx[name]));
+    } });
+
+} else {
+  Object.keys(baseApi).forEach(function (name) {
+    uni[name] = baseApi[name];
+  });
+
+  {
+    Object.keys(todoApis).forEach(function (name) {
+      uni[name] = promisify(name, todoApis[name]);
+    });
+    Object.keys(extraApi).forEach(function (name) {
+      uni[name] = promisify(name, todoApis[name]);
+    });
+  }
+
+  Object.keys(eventApi).forEach(function (name) {
+    uni[name] = eventApi[name];
+  });
+
+  Object.keys(api).forEach(function (name) {
+    uni[name] = promisify(name, api[name]);
+  });
+
+  Object.keys(wx).forEach(function (name) {
+    if (hasOwn(wx, name) || hasOwn(protocols, name)) {
+      uni[name] = promisify(name, wrapper(name, wx[name]));
+    }
+  });
+}
+
+wx.createApp = createApp;
+wx.createPage = createPage;
+wx.createComponent = createComponent;
+
+var uni$1 = uni;var _default =
+
+uni$1;exports.default = _default;
+
+/***/ }),
+
+/***/ 10:
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
   \********************************************************************/
-/*! exports provided: default */function(e,t,n){"use strict";function r(e,t,n,r,o,i,a,s){var u,c="function"==typeof e?e.options:e;if(t&&(c.render=t,c.staticRenderFns=n,c._compiled=!0),r&&(c.functional=!0),i&&(c._scopeId="data-v-"+i),a?(u=function(e){(e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),o&&o.call(this,e),e&&e._registeredComponents&&e._registeredComponents.add(a)},c._ssrRegister=u):o&&(u=s?function(){o.call(this,this.$root.$options.shadowRoot)}:o),u)if(c.functional){c._injectStyles=u;var f=c.render;c.render=function(e,t){return u.call(t),f(e,t)}}else{var l=c.beforeCreate;c.beforeCreate=l?[].concat(l,u):[u]}return{exports:e,options:c}}n.r(t),n.d(t,"default",function(){return r})},102:
-/*!********************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fonsiterepair%2Fonsiterepair"} ***!
-  \********************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/onsiterepair/onsiterepair.vue */103)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},108:
-/*!*******************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/common/amap-wx.js ***!
-  \*******************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";function r(e){this.key=e.key,this.requestConfig={key:e.key,s:"rsx",platform:"WXJS",appname:e.key,sdkversion:"1.2.0",logversion:"2.0"}}r.prototype.getWxLocation=function(e,t){wx.getLocation({type:"gcj02",success:function(e){var n=e.longitude+","+e.latitude;wx.setStorage({key:"userLocation",data:n}),t(n)},fail:function(n){wx.getStorage({key:"userLocation",success:function(e){e.data&&t(e.data)}}),e.fail({errCode:"0",errMsg:n.errMsg||""})}})},r.prototype.getRegeo=function(e){function t(t){var r=n.requestConfig;wx.request({url:"https://restapi.amap.com/v3/geocode/regeo",data:{key:n.key,location:t,extensions:"all",s:r.s,platform:r.platform,appname:n.key,sdkversion:r.sdkversion,logversion:r.logversion},method:"GET",header:{"content-type":"application/json"},success:function(n){var r,o,i,a,s,u,c,f,l;n.data.status&&"1"==n.data.status?(o=(r=n.data.regeocode).addressComponent,i=[],a="",r&&r.roads[0]&&r.roads[0].name&&(a=r.roads[0].name+"附近"),s=t.split(",")[0],u=t.split(",")[1],r.pois&&r.pois[0]&&(a=r.pois[0].name+"附近",(c=r.pois[0].location)&&(s=parseFloat(c.split(",")[0]),u=parseFloat(c.split(",")[1]))),o.provice&&i.push(o.provice),o.city&&i.push(o.city),o.district&&i.push(o.district),o.streetNumber&&o.streetNumber.street&&o.streetNumber.number?(i.push(o.streetNumber.street),i.push(o.streetNumber.number)):(f="",r&&r.roads[0]&&r.roads[0].name&&(f=r.roads[0].name),i.push(f)),i=i.join(""),l=[{iconPath:e.iconPath,width:e.iconWidth,height:e.iconHeight,name:i,desc:a,longitude:s,latitude:u,id:0,regeocodeData:r}],e.success(l)):e.fail({errCode:n.data.infocode,errMsg:n.data.info})},fail:function(t){e.fail({errCode:"0",errMsg:t.errMsg||""})}})}var n=this;e.location?t(e.location):n.getWxLocation(e,function(e){t(e)})},r.prototype.getWeather=function(e){function t(t){var n="base";e.type&&"forecast"==e.type&&(n="all"),wx.request({url:"https://restapi.amap.com/v3/weather/weatherInfo",data:{key:r.key,city:t,extensions:n,s:o.s,platform:o.platform,appname:r.key,sdkversion:o.sdkversion,logversion:o.logversion},method:"GET",header:{"content-type":"application/json"},success:function(t){var n,r;t.data.status&&"1"==t.data.status?t.data.lives?(n=t.data.lives)&&n.length>0&&((r=function(e){return{city:{text:"城市",data:e.city},weather:{text:"天气",data:e.weather},temperature:{text:"温度",data:e.temperature},winddirection:{text:"风向",data:e.winddirection+"风"},windpower:{text:"风力",data:e.windpower+"级"},humidity:{text:"湿度",data:e.humidity+"%"}}}(n=n[0])).liveData=n,e.success(r)):t.data.forecasts&&t.data.forecasts[0]&&e.success({forecast:t.data.forecasts[0]}):e.fail({errCode:t.data.infocode,errMsg:t.data.info})},fail:function(t){e.fail({errCode:"0",errMsg:t.errMsg||""})}})}function n(n){wx.request({url:"https://restapi.amap.com/v3/geocode/regeo",data:{key:r.key,location:n,extensions:"all",s:o.s,platform:o.platform,appname:r.key,sdkversion:o.sdkversion,logversion:o.logversion},method:"GET",header:{"content-type":"application/json"},success:function(n){var r,o;n.data.status&&"1"==n.data.status?((o=n.data.regeocode).addressComponent?r=o.addressComponent.adcode:o.aois&&o.aois.length>0&&(r=o.aois[0].adcode),t(r)):e.fail({errCode:n.data.infocode,errMsg:n.data.info})},fail:function(t){e.fail({errCode:"0",errMsg:t.errMsg||""})}})}var r=this,o=r.requestConfig;e.city?t(e.city):r.getWxLocation(e,function(e){n(e)})},r.prototype.getPoiAround=function(e){function t(t){var o={key:n.key,location:t,s:r.s,platform:r.platform,appname:n.key,sdkversion:r.sdkversion,logversion:r.logversion};e.querytypes&&(o.types=e.querytypes),e.querykeywords&&(o.keywords=e.querykeywords),wx.request({url:"https://restapi.amap.com/v3/place/around",data:o,method:"GET",header:{"content-type":"application/json"},success:function(t){var n,r,o,i;if(t.data.status&&"1"==t.data.status){if((t=t.data)&&t.pois){for(n=[],r=0;r<t.pois.length;r++)o=0==r?e.iconPathSelected:e.iconPath,n.push({latitude:parseFloat(t.pois[r].location.split(",")[1]),longitude:parseFloat(t.pois[r].location.split(",")[0]),iconPath:o,width:22,height:32,id:r,name:t.pois[r].name,address:t.pois[r].address});i={markers:n,poisData:t.pois},e.success(i)}}else e.fail({errCode:t.data.infocode,errMsg:t.data.info})},fail:function(t){e.fail({errCode:"0",errMsg:t.errMsg||""})}})}var n=this,r=n.requestConfig;e.location?t(e.location):n.getWxLocation(e,function(e){t(e)})},r.prototype.getStaticmap=function(e){function t(t){o.push("location="+t),e.zoom&&o.push("zoom="+e.zoom),e.size&&o.push("size="+e.size),e.scale&&o.push("scale="+e.scale),e.markers&&o.push("markers="+e.markers),e.labels&&o.push("labels="+e.labels),e.paths&&o.push("paths="+e.paths),e.traffic&&o.push("traffic="+e.traffic);var n=i+o.join("&");e.success({url:n})}var n,r=this,o=[],i="https://restapi.amap.com/v3/staticmap?";o.push("key="+r.key),n=r.requestConfig,o.push("s="+n.s),o.push("platform="+n.platform),o.push("appname="+n.appname),o.push("sdkversion="+n.sdkversion),o.push("logversion="+n.logversion),e.location?t(e.location):r.getWxLocation(e,function(e){t(e)})},r.prototype.getInputtips=function(e){var t=this,n=t.requestConfig,r={key:t.key,s:n.s,platform:n.platform,appname:t.key,sdkversion:n.sdkversion,logversion:n.logversion};e.location&&(r.location=e.location),e.keywords&&(r.keywords=e.keywords),e.type&&(r.type=e.type),e.city&&(r.city=e.city),e.citylimit&&(r.citylimit=e.citylimit),wx.request({url:"https://restapi.amap.com/v3/assistant/inputtips",data:r,method:"GET",header:{"content-type":"application/json"},success:function(t){t&&t.data&&t.data.tips&&e.success({tips:t.data.tips})},fail:function(t){e.fail({errCode:"0",errMsg:t.errMsg||""})}})},r.prototype.getDrivingRoute=function(e){var t=this,n=t.requestConfig,r={key:t.key,s:n.s,platform:n.platform,appname:t.key,sdkversion:n.sdkversion,logversion:n.logversion};e.origin&&(r.origin=e.origin),e.destination&&(r.destination=e.destination),e.strategy&&(r.strategy=e.strategy),e.waypoints&&(r.waypoints=e.waypoints),e.avoidpolygons&&(r.avoidpolygons=e.avoidpolygons),e.avoidroad&&(r.avoidroad=e.avoidroad),wx.request({url:"https://restapi.amap.com/v3/direction/driving",data:r,method:"GET",header:{"content-type":"application/json"},success:function(t){t&&t.data&&t.data.route&&e.success({paths:t.data.route.paths,taxi_cost:t.data.route.taxi_cost||""})},fail:function(t){e.fail({errCode:"0",errMsg:t.errMsg||""})}})},r.prototype.getWalkingRoute=function(e){var t=this,n=t.requestConfig,r={key:t.key,s:n.s,platform:n.platform,appname:t.key,sdkversion:n.sdkversion,logversion:n.logversion};e.origin&&(r.origin=e.origin),e.destination&&(r.destination=e.destination),wx.request({url:"https://restapi.amap.com/v3/direction/walking",data:r,method:"GET",header:{"content-type":"application/json"},success:function(t){t&&t.data&&t.data.route&&e.success({paths:t.data.route.paths})},fail:function(t){e.fail({errCode:"0",errMsg:t.errMsg||""})}})},r.prototype.getTransitRoute=function(e){var t=this,n=t.requestConfig,r={key:t.key,s:n.s,platform:n.platform,appname:t.key,sdkversion:n.sdkversion,logversion:n.logversion};e.origin&&(r.origin=e.origin),e.destination&&(r.destination=e.destination),e.strategy&&(r.strategy=e.strategy),e.city&&(r.city=e.city),e.cityd&&(r.cityd=e.cityd),wx.request({url:"https://restapi.amap.com/v3/direction/transit/integrated",data:r,method:"GET",header:{"content-type":"application/json"},success:function(t){if(t&&t.data&&t.data.route){var n=t.data.route;e.success({distance:n.distance||"",taxi_cost:n.taxi_cost||"",transits:n.transits})}},fail:function(t){e.fail({errCode:"0",errMsg:t.errMsg||""})}})},r.prototype.getRidingRoute=function(e){var t=this,n=t.requestConfig,r={key:t.key,s:n.s,platform:n.platform,appname:t.key,sdkversion:n.sdkversion,logversion:n.logversion};e.origin&&(r.origin=e.origin),e.destination&&(r.destination=e.destination),wx.request({url:"https://restapi.amap.com/v4/direction/bicycling",data:r,method:"GET",header:{"content-type":"application/json"},success:function(t){t&&t.data&&t.data.data&&e.success({paths:t.data.data.paths})},fail:function(t){e.fail({errCode:"0",errMsg:t.errMsg||""})}})},e.exports.AMapWX=r},109:
-/*!**************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/util/util.js ***!
-  \**************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";e.exports={formatDateTime:function(e){var t=new Date(e),n=t.getFullYear(),r=t.getMonth()+1;r=r<10?"0"+r:r;var o=t.getDate();o=o<10?"0"+o:o;var i=t.getHours();i=i<10?"0"+i:i;var a=t.getMinutes(),s=t.getSeconds();return n+"-"+r+"-"+o+" "+i+":"+(a=a<10?"0"+a:a)+":"+(s=s<10?"0"+s:s)}}},11:
-/*!******************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \******************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/index/index.vue */12)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},112:
-/*!******************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderdetail%2Forderdetail"} ***!
-  \******************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/orderdetail/orderdetail.vue */113)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},120:
-/*!***********************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-login%2Fbusiness-login"} ***!
-  \***********************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-login/business-login.vue */121)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},128:
-/*!*****************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Findex%2Findex"} ***!
-  \*****************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/index/index.vue */129)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},136:
-/*!*****************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-my%2Fbusiness-my"} ***!
-  \*****************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-my/business-my.vue */137)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},144:
-/*!*************************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-detail%2Fbusiness-detail"} ***!
-  \*************************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-detail/business-detail.vue */145)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},152:
-/*!*******************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-key%2Fbusiness-key"} ***!
-  \*******************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-key/business-key.vue */153)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},160:
-/*!*************************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-income%2Fbusiness-income"} ***!
-  \*************************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-income/business-income.vue */161)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},168:
-/*!***********************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-order%2Fbusiness-order"} ***!
-  \***********************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-order/business-order.vue */169)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},176:
-/*!*********************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-todo%2Fbusiness-todo"} ***!
-  \*********************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-todo/business-todo.vue */177)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},184:
-/*!*******************************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-repairing%2Fbusiness-repairing"} ***!
-  \*******************************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-repairing/business-repairing.vue */185)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},19:
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 102:
+/*!***********************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fonsiterepair%2Fonsiterepair"} ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _onsiterepair = _interopRequireDefault(__webpack_require__(/*! ./pages/onsiterepair/onsiterepair.vue */ 103));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_onsiterepair.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 108:
+/*!**********************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/common/amap-wx.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function AMapWX(a) {this.key = a.key, this.requestConfig = { key: a.key, s: "rsx", platform: "WXJS", appname: a.key, sdkversion: "1.2.0", logversion: "2.0" };}AMapWX.prototype.getWxLocation = function (a, b) {wx.getLocation({ type: "gcj02", success: function success(a) {var c = a.longitude + "," + a.latitude;wx.setStorage({ key: "userLocation", data: c }), b(c);}, fail: function fail(c) {wx.getStorage({ key: "userLocation", success: function success(a) {a.data && b(a.data);} }), a.fail({ errCode: "0", errMsg: c.errMsg || "" });} });}, AMapWX.prototype.getRegeo = function (a) {function c(c) {var d = b.requestConfig;wx.request({ url: "https://restapi.amap.com/v3/geocode/regeo", data: { key: b.key, location: c, extensions: "all", s: d.s, platform: d.platform, appname: b.key, sdkversion: d.sdkversion, logversion: d.logversion }, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {var d, e, f, g, h, i, j, k, l;b.data.status && "1" == b.data.status ? (d = b.data.regeocode, e = d.addressComponent, f = [], g = "", d && d.roads[0] && d.roads[0].name && (g = d.roads[0].name + "附近"), h = c.split(",")[0], i = c.split(",")[1], d.pois && d.pois[0] && (g = d.pois[0].name + "附近", j = d.pois[0].location, j && (h = parseFloat(j.split(",")[0]), i = parseFloat(j.split(",")[1]))), e.provice && f.push(e.provice), e.city && f.push(e.city), e.district && f.push(e.district), e.streetNumber && e.streetNumber.street && e.streetNumber.number ? (f.push(e.streetNumber.street), f.push(e.streetNumber.number)) : (k = "", d && d.roads[0] && d.roads[0].name && (k = d.roads[0].name), f.push(k)), f = f.join(""), l = [{ iconPath: a.iconPath, width: a.iconWidth, height: a.iconHeight, name: f, desc: g, longitude: h, latitude: i, id: 0, regeocodeData: d }], a.success(l)) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}var b = this;a.location ? c(a.location) : b.getWxLocation(a, function (a) {c(a);});}, AMapWX.prototype.getWeather = function (a) {function d(d) {var e = "base";a.type && "forecast" == a.type && (e = "all"), wx.request({ url: "https://restapi.amap.com/v3/weather/weatherInfo", data: { key: b.key, city: d, extensions: e, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion }, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {function c(a) {var b = { city: { text: "城市", data: a.city }, weather: { text: "天气", data: a.weather }, temperature: { text: "温度", data: a.temperature }, winddirection: { text: "风向", data: a.winddirection + "风" }, windpower: { text: "风力", data: a.windpower + "级" }, humidity: { text: "湿度", data: a.humidity + "%" } };return b;}var d, e;b.data.status && "1" == b.data.status ? b.data.lives ? (d = b.data.lives, d && d.length > 0 && (d = d[0], e = c(d), e["liveData"] = d, a.success(e))) : b.data.forecasts && b.data.forecasts[0] && a.success({ forecast: b.data.forecasts[0] }) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}function e(e) {wx.request({ url: "https://restapi.amap.com/v3/geocode/regeo", data: { key: b.key, location: e, extensions: "all", s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion }, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {var c, e;b.data.status && "1" == b.data.status ? (e = b.data.regeocode, e.addressComponent ? c = e.addressComponent.adcode : e.aois && e.aois.length > 0 && (c = e.aois[0].adcode), d(c)) : a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}var b = this,c = b.requestConfig;a.city ? d(a.city) : b.getWxLocation(a, function (a) {e(a);});}, AMapWX.prototype.getPoiAround = function (a) {function d(d) {var e = { key: b.key, location: d, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.querytypes && (e["types"] = a.querytypes), a.querykeywords && (e["keywords"] = a.querykeywords), wx.request({ url: "https://restapi.amap.com/v3/place/around", data: e, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {var c, d, e, f;if (b.data.status && "1" == b.data.status) {if (b = b.data, b && b.pois) {for (c = [], d = 0; d < b.pois.length; d++) {e = 0 == d ? a.iconPathSelected : a.iconPath, c.push({ latitude: parseFloat(b.pois[d].location.split(",")[1]), longitude: parseFloat(b.pois[d].location.split(",")[0]), iconPath: e, width: 22, height: 32, id: d, name: b.pois[d].name, address: b.pois[d].address });}f = { markers: c, poisData: b.pois }, a.success(f);}} else a.fail({ errCode: b.data.infocode, errMsg: b.data.info });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}var b = this,c = b.requestConfig;a.location ? d(a.location) : b.getWxLocation(a, function (a) {d(a);});}, AMapWX.prototype.getStaticmap = function (a) {function f(b) {c.push("location=" + b), a.zoom && c.push("zoom=" + a.zoom), a.size && c.push("size=" + a.size), a.scale && c.push("scale=" + a.scale), a.markers && c.push("markers=" + a.markers), a.labels && c.push("labels=" + a.labels), a.paths && c.push("paths=" + a.paths), a.traffic && c.push("traffic=" + a.traffic);var e = d + c.join("&");a.success({ url: e });}var e,b = this,c = [],d = "https://restapi.amap.com/v3/staticmap?";c.push("key=" + b.key), e = b.requestConfig, c.push("s=" + e.s), c.push("platform=" + e.platform), c.push("appname=" + e.appname), c.push("sdkversion=" + e.sdkversion), c.push("logversion=" + e.logversion), a.location ? f(a.location) : b.getWxLocation(a, function (a) {f(a);});}, AMapWX.prototype.getInputtips = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.location && (d["location"] = a.location), a.keywords && (d["keywords"] = a.keywords), a.type && (d["type"] = a.type), a.city && (d["city"] = a.city), a.citylimit && (d["citylimit"] = a.citylimit), wx.request({ url: "https://restapi.amap.com/v3/assistant/inputtips", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.tips && a.success({ tips: b.data.tips });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getDrivingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), a.strategy && (d["strategy"] = a.strategy), a.waypoints && (d["waypoints"] = a.waypoints), a.avoidpolygons && (d["avoidpolygons"] = a.avoidpolygons), a.avoidroad && (d["avoidroad"] = a.avoidroad), wx.request({ url: "https://restapi.amap.com/v3/direction/driving", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.route && a.success({ paths: b.data.route.paths, taxi_cost: b.data.route.taxi_cost || "" });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getWalkingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), wx.request({ url: "https://restapi.amap.com/v3/direction/walking", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.route && a.success({ paths: b.data.route.paths });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getTransitRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), a.strategy && (d["strategy"] = a.strategy), a.city && (d["city"] = a.city), a.cityd && (d["cityd"] = a.cityd), wx.request({ url: "https://restapi.amap.com/v3/direction/transit/integrated", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {if (b && b.data && b.data.route) {var c = b.data.route;a.success({ distance: c.distance || "", taxi_cost: c.taxi_cost || "", transits: c.transits });}}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, AMapWX.prototype.getRidingRoute = function (a) {var b = this,c = b.requestConfig,d = { key: b.key, s: c.s, platform: c.platform, appname: b.key, sdkversion: c.sdkversion, logversion: c.logversion };a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), wx.request({ url: "https://restapi.amap.com/v4/direction/bicycling", data: d, method: "GET", header: { "content-type": "application/json" }, success: function success(b) {b && b.data && b.data.data && a.success({ paths: b.data.data.paths });}, fail: function fail(b) {a.fail({ errCode: "0", errMsg: b.errMsg || "" });} });}, module.exports.AMapWX = AMapWX;
+
+/***/ }),
+
+/***/ 109:
+/*!*****************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/util/util.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var formatDateTime = function formatDateTime(inputTime) {//时间戳 转 YY-mm-dd HH:ii:ss 
+  var date = new Date(inputTime);
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  m = m < 10 ? '0' + m : m;
+  var d = date.getDate();
+  d = d < 10 ? '0' + d : d;
+  var h = date.getHours();
+  h = h < 10 ? '0' + h : h;
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  minute = minute < 10 ? '0' + minute : minute;
+  second = second < 10 ? '0' + second : second;
+  return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
+};
+
+
+
+module.exports = {
+  formatDateTime: formatDateTime };
+
+/***/ }),
+
+/***/ 11:
+/*!*********************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_index.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 112:
+/*!*********************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderdetail%2Forderdetail"} ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _orderdetail = _interopRequireDefault(__webpack_require__(/*! ./pages/orderdetail/orderdetail.vue */ 113));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_orderdetail.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 120:
+/*!**************************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-login%2Fbusiness-login"} ***!
+  \**************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessLogin = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-login/business-login.vue */ 121));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessLogin.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 128:
+/*!********************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Findex%2Findex"} ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/business/index/index.vue */ 129));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_index.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 136:
+/*!********************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-my%2Fbusiness-my"} ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessMy = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-my/business-my.vue */ 137));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessMy.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 144:
+/*!****************************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-detail%2Fbusiness-detail"} ***!
+  \****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-detail/business-detail.vue */ 145));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessDetail.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 152:
+/*!**********************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-key%2Fbusiness-key"} ***!
+  \**********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessKey = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-key/business-key.vue */ 153));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessKey.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 160:
+/*!****************************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-income%2Fbusiness-income"} ***!
+  \****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessIncome = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-income/business-income.vue */ 161));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessIncome.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 168:
+/*!**************************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-order%2Fbusiness-order"} ***!
+  \**************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessOrder = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-order/business-order.vue */ 169));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessOrder.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 176:
 /*!************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-todo%2Fbusiness-todo"} ***!
   \************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/my.vue */20)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},192:
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-finished%2Fbusiness-finished"} ***!
-  \*****************************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-finished/business-finished.vue */193)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},198:
-/*!*************************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-cancel%2Fbusiness-cancel"} ***!
-  \*************************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-cancel/business-cancel.vue */199)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},2:
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessTodo = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-todo/business-todo.vue */ 177));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessTodo.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 184:
+/*!**********************************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-repairing%2Fbusiness-repairing"} ***!
+  \**********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessRepairing = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-repairing/business-repairing.vue */ 185));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessRepairing.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 19:
+/*!***************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _my = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my.vue */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_my.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 192:
+/*!********************************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-finished%2Fbusiness-finished"} ***!
+  \********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessFinished = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-finished/business-finished.vue */ 193));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessFinished.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 198:
+/*!****************************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-cancel%2Fbusiness-cancel"} ***!
+  \****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessCancel = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-cancel/business-cancel.vue */ 199));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessCancel.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
-/*! exports provided: default */function(e,t,n){"use strict";n.r(t),function(e){
-/*!
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/*!
  * Vue.js v2.6.10
  * (c) 2014-2019 Evan You
  * Released under the MIT License.
  */
-var n=Object.freeze({});function r(e){return null==e}function o(e){return null!=e}function i(e){return!0===e}function a(e){return"string"==typeof e||"number"==typeof e||"symbol"==typeof e||"boolean"==typeof e}function s(e){return null!==e&&"object"==typeof e}var u=Object.prototype.toString;function c(e){return u.call(e).slice(8,-1)}function f(e){return"[object Object]"===u.call(e)}function l(e){var t=parseFloat(String(e));return t>=0&&Math.floor(t)===t&&isFinite(e)}function p(e){return o(e)&&"function"==typeof e.then&&"function"==typeof e.catch}function d(e){return null==e?"":Array.isArray(e)||f(e)&&e.toString===u?JSON.stringify(e,null,2):String(e)}function h(e){var t=parseFloat(e);return isNaN(t)?e:t}function v(e,t){for(var n=Object.create(null),r=e.split(","),o=0;o<r.length;o++)n[r[o]]=!0;return t?function(e){return n[e.toLowerCase()]}:function(e){return n[e]}}var y=v("slot,component",!0),g=v("key,ref,slot,slot-scope,is");function m(e,t){if(e.length){var n=e.indexOf(t);if(n>-1)return e.splice(n,1)}}var _=Object.prototype.hasOwnProperty;function b(e,t){return _.call(e,t)}function w(e){var t=Object.create(null);return function(n){return t[n]||(t[n]=e(n))}}var $=/-(\w)/g,k=w(function(e){return e.replace($,function(e,t){return t?t.toUpperCase():""})}),x=w(function(e){return e.charAt(0).toUpperCase()+e.slice(1)}),O=/\B([A-Z])/g,A=w(function(e){return e.replace(O,"-$1").toLowerCase()});var j=Function.prototype.bind?function(e,t){return e.bind(t)}:function(e,t){function n(n){var r=arguments.length;return r?r>1?e.apply(t,arguments):e.call(t,n):e.call(t)}return n._length=e.length,n};function P(e,t){t=t||0;for(var n=e.length-t,r=new Array(n);n--;)r[n]=e[n+t];return r}function C(e,t){for(var n in t)e[n]=t[n];return e}function E(e){for(var t={},n=0;n<e.length;n++)e[n]&&C(t,e[n]);return t}function S(e,t,n){}var M=function(e,t,n){return!1},T=function(e){return e};function I(e,t){if(e===t)return!0;var n=s(e),r=s(t);if(!n||!r)return!n&&!r&&String(e)===String(t);try{var o=Array.isArray(e),i=Array.isArray(t);if(o&&i)return e.length===t.length&&e.every(function(e,n){return I(e,t[n])});if(e instanceof Date&&t instanceof Date)return e.getTime()===t.getTime();if(o||i)return!1;var a=Object.keys(e),u=Object.keys(t);return a.length===u.length&&a.every(function(n){return I(e[n],t[n])})}catch(e){return!1}}function D(e,t){for(var n=0;n<e.length;n++)if(I(e[n],t))return n;return-1}function R(e){var t=!1;return function(){t||(t=!0,e.apply(this,arguments))}}var N=["component","directive","filter"],V=["beforeCreate","created","beforeMount","mounted","beforeUpdate","updated","beforeDestroy","destroyed","activated","deactivated","errorCaptured","serverPrefetch"],F={optionMergeStrategies:Object.create(null),silent:!1,productionTip:!0,devtools:!0,performance:!1,errorHandler:null,warnHandler:null,ignoredElements:[],keyCodes:Object.create(null),isReservedTag:M,isReservedAttr:M,isUnknownElement:M,getTagNamespace:S,parsePlatformTagName:T,mustUseProp:M,async:!0,_lifecycleHooks:V},q=/a-zA-Z\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C-\u200D\u203F-\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD/;function L(e){var t=(e+"").charCodeAt(0);return 36===t||95===t}function U(e,t,n,r){Object.defineProperty(e,t,{value:n,enumerable:!!r,writable:!0,configurable:!0})}var B=new RegExp("[^"+q.source+".$_\\d]");var H,z="__proto__"in{},W="undefined"!=typeof window,G="undefined"!=typeof WXEnvironment&&!!WXEnvironment.platform,J=G&&WXEnvironment.platform.toLowerCase(),K=W&&window.navigator.userAgent.toLowerCase(),X=K&&/msie|trident/.test(K),Y=(K&&K.indexOf("msie 9.0"),K&&K.indexOf("edge/")>0),Z=(K&&K.indexOf("android"),K&&/iphone|ipad|ipod|ios/.test(K)||"ios"===J),Q=(K&&/chrome\/\d+/.test(K),K&&/phantomjs/.test(K),K&&K.match(/firefox\/(\d+)/),{}.watch);if(W)try{var ee={};Object.defineProperty(ee,"passive",{get:function(){}}),window.addEventListener("test-passive",null,ee)}catch(e){}var te=function(){return void 0===H&&(H=!W&&!G&&void 0!==e&&(e.process&&"server"===e.process.env.VUE_ENV)),H},ne=W&&window.__VUE_DEVTOOLS_GLOBAL_HOOK__;function re(e){return"function"==typeof e&&/native code/.test(e.toString())}var oe,ie="undefined"!=typeof Symbol&&re(Symbol)&&"undefined"!=typeof Reflect&&re(Reflect.ownKeys);oe="undefined"!=typeof Set&&re(Set)?Set:function(){function e(){this.set=Object.create(null)}return e.prototype.has=function(e){return!0===this.set[e]},e.prototype.add=function(e){this.set[e]=!0},e.prototype.clear=function(){this.set=Object.create(null)},e}();var ae=S,se=S,ue=S,ce=S,fe="undefined"!=typeof console,le=/(?:^|[-_])(\w)/g;ae=function(e,t){var n=t?ue(t):"";F.warnHandler?F.warnHandler.call(null,e,t,n):fe&&!F.silent&&console.error("[Vue warn]: "+e+n)},se=function(e,t){fe&&!F.silent&&console.warn("[Vue tip]: "+e+(t?ue(t):""))},ce=function(e,t){if(e.$scope&&e.$scope.is)return e.$scope.is;if(e.$root===e)return"<Root>";var n="function"==typeof e&&null!=e.cid?e.options:e._isVue?e.$options||e.constructor.options:e,r=n.name||n._componentTag,o=n.__file;if(!r&&o){var i=o.match(/([^\/\\]+)\.vue$/);r=i&&i[1]}return(r?"<"+r.replace(le,function(e){return e.toUpperCase()}).replace(/[-_]/g,"")+">":"<Anonymous>")+(o&&!1!==t?" at "+o:"")};ue=function(e){if(e._isVue&&e.$parent){for(var t=[],n=0;e;){if(t.length>0){var r=t[t.length-1];if(r.constructor===e.constructor){n++,e=e.$parent;continue}n>0&&(t[t.length-1]=[r,n],n=0)}t.push(e),e=e.$parent}return"\n\nfound in\n\n"+t.map(function(e,t){return""+(0===t?"---\x3e ":function(e,t){for(var n="";t;)t%2==1&&(n+=e),t>1&&(e+=e),t>>=1;return n}(" ",5+2*t))+(Array.isArray(e)?ce(e[0])+"... ("+e[1]+" recursive calls)":ce(e))}).join("\n")}return"\n\n(found in "+ce(e)+")"};var pe=0,de=function(){this.id=pe++,this.subs=[]};de.prototype.addSub=function(e){this.subs.push(e)},de.prototype.removeSub=function(e){m(this.subs,e)},de.prototype.depend=function(){de.target&&de.target.addDep(this)},de.prototype.notify=function(){var e=this.subs.slice();F.async||e.sort(function(e,t){return e.id-t.id});for(var t=0,n=e.length;t<n;t++)e[t].update()},de.target=null;var he=[];function ve(e){he.push(e),de.target=e}function ye(){he.pop(),de.target=he[he.length-1]}var ge=function(e,t,n,r,o,i,a,s){this.tag=e,this.data=t,this.children=n,this.text=r,this.elm=o,this.ns=void 0,this.context=i,this.fnContext=void 0,this.fnOptions=void 0,this.fnScopeId=void 0,this.key=t&&t.key,this.componentOptions=a,this.componentInstance=void 0,this.parent=void 0,this.raw=!1,this.isStatic=!1,this.isRootInsert=!0,this.isComment=!1,this.isCloned=!1,this.isOnce=!1,this.asyncFactory=s,this.asyncMeta=void 0,this.isAsyncPlaceholder=!1},me={child:{configurable:!0}};me.child.get=function(){return this.componentInstance},Object.defineProperties(ge.prototype,me);var _e=function(e){void 0===e&&(e="");var t=new ge;return t.text=e,t.isComment=!0,t};function be(e){return new ge(void 0,void 0,void 0,String(e))}var we=Array.prototype,$e=Object.create(we);["push","pop","shift","unshift","splice","sort","reverse"].forEach(function(e){var t=we[e];U($e,e,function(){for(var n=[],r=arguments.length;r--;)n[r]=arguments[r];var o,i=t.apply(this,n),a=this.__ob__;switch(e){case"push":case"unshift":o=n;break;case"splice":o=n.slice(2)}return o&&a.observeArray(o),a.dep.notify(),i})});var ke=Object.getOwnPropertyNames($e),xe=!0;function Oe(e){xe=e}var Ae=function(e){var t;this.value=e,this.dep=new de,this.vmCount=0,U(e,"__ob__",this),Array.isArray(e)?(z?(t=$e,e.__proto__=t):function(e,t,n){for(var r=0,o=n.length;r<o;r++){var i=n[r];U(e,i,t[i])}}(e,$e,ke),this.observeArray(e)):this.walk(e)};function je(e,t){var n;if(s(e)&&!(e instanceof ge))return b(e,"__ob__")&&e.__ob__ instanceof Ae?n=e.__ob__:xe&&!te()&&(Array.isArray(e)||f(e))&&Object.isExtensible(e)&&!e._isVue&&(n=new Ae(e)),t&&n&&n.vmCount++,n}function Pe(e,t,n,r,o){var i=new de,a=Object.getOwnPropertyDescriptor(e,t);if(!a||!1!==a.configurable){var s=a&&a.get,u=a&&a.set;s&&!u||2!==arguments.length||(n=e[t]);var c=!o&&je(n);Object.defineProperty(e,t,{enumerable:!0,configurable:!0,get:function(){var t=s?s.call(e):n;return de.target&&(i.depend(),c&&(c.dep.depend(),Array.isArray(t)&&function e(t){for(var n=void 0,r=0,o=t.length;r<o;r++)(n=t[r])&&n.__ob__&&n.__ob__.dep.depend(),Array.isArray(n)&&e(n)}(t))),t},set:function(t){var a=s?s.call(e):n;t===a||t!=t&&a!=a||(r&&r(),s&&!u||(u?u.call(e,t):n=t,c=!o&&je(t),i.notify()))}})}}function Ce(e,t,n){if((r(e)||a(e))&&ae("Cannot set reactive property on undefined, null, or primitive value: "+e),Array.isArray(e)&&l(t))return e.length=Math.max(e.length,t),e.splice(t,1,n),n;if(t in e&&!(t in Object.prototype))return e[t]=n,n;var o=e.__ob__;return e._isVue||o&&o.vmCount?(ae("Avoid adding reactive properties to a Vue instance or its root $data at runtime - declare it upfront in the data option."),n):o?(Pe(o.value,t,n),o.dep.notify(),n):(e[t]=n,n)}function Ee(e,t){if((r(e)||a(e))&&ae("Cannot delete reactive property on undefined, null, or primitive value: "+e),Array.isArray(e)&&l(t))e.splice(t,1);else{var n=e.__ob__;e._isVue||n&&n.vmCount?ae("Avoid deleting properties on a Vue instance or its root $data - just set it to null."):b(e,t)&&(delete e[t],n&&n.dep.notify())}}Ae.prototype.walk=function(e){for(var t=Object.keys(e),n=0;n<t.length;n++)Pe(e,t[n])},Ae.prototype.observeArray=function(e){for(var t=0,n=e.length;t<n;t++)je(e[t])};var Se=F.optionMergeStrategies;function Me(e,t){if(!t)return e;for(var n,r,o,i=ie?Reflect.ownKeys(t):Object.keys(t),a=0;a<i.length;a++)"__ob__"!==(n=i[a])&&(r=e[n],o=t[n],b(e,n)?r!==o&&f(r)&&f(o)&&Me(r,o):Ce(e,n,o));return e}function Te(e,t,n){return n?function(){var r="function"==typeof t?t.call(n,n):t,o="function"==typeof e?e.call(n,n):e;return r?Me(r,o):o}:t?e?function(){return Me("function"==typeof t?t.call(this,this):t,"function"==typeof e?e.call(this,this):e)}:t:e}function Ie(e,t){var n=t?e?e.concat(t):Array.isArray(t)?t:[t]:e;return n?function(e){for(var t=[],n=0;n<e.length;n++)-1===t.indexOf(e[n])&&t.push(e[n]);return t}(n):n}function De(e,t,n,r){var o=Object.create(e||null);return t?(Ve(r,t,n),C(o,t)):o}Se.el=Se.propsData=function(e,t,n,r){return n||ae('option "'+r+'" can only be used during instance creation with the `new` keyword.'),Re(e,t)},Se.data=function(e,t,n){return n?Te(e,t,n):t&&"function"!=typeof t?(ae('The "data" option should be a function that returns a per-instance value in component definitions.',n),e):Te(e,t)},V.forEach(function(e){Se[e]=Ie}),N.forEach(function(e){Se[e+"s"]=De}),Se.watch=function(e,t,n,r){if(e===Q&&(e=void 0),t===Q&&(t=void 0),!t)return Object.create(e||null);if(Ve(r,t,n),!e)return t;var o={};for(var i in C(o,e),t){var a=o[i],s=t[i];a&&!Array.isArray(a)&&(a=[a]),o[i]=a?a.concat(s):Array.isArray(s)?s:[s]}return o},Se.props=Se.methods=Se.inject=Se.computed=function(e,t,n,r){if(t&&Ve(r,t,n),!e)return t;var o=Object.create(null);return C(o,e),t&&C(o,t),o},Se.provide=Te;var Re=function(e,t){return void 0===t?e:t};function Ne(e){new RegExp("^[a-zA-Z][\\-\\.0-9_"+q.source+"]*$").test(e)||ae('Invalid component name: "'+e+'". Component names should conform to valid custom element name in html5 specification.'),(y(e)||F.isReservedTag(e))&&ae("Do not use built-in or reserved HTML elements as component id: "+e)}function Ve(e,t,n){f(t)||ae('Invalid value for option "'+e+'": expected an Object, but got '+c(t)+".",n)}function Fe(e,t,n){if(function(e){for(var t in e.components)Ne(t)}(t),"function"==typeof t&&(t=t.options),function(e,t){var n=e.props;if(n){var r,o,i={};if(Array.isArray(n))for(r=n.length;r--;)"string"==typeof(o=n[r])?i[k(o)]={type:null}:ae("props must be strings when using array syntax.");else if(f(n))for(var a in n)o=n[a],i[k(a)]=f(o)?o:{type:o};else ae('Invalid value for option "props": expected an Array or an Object, but got '+c(n)+".",t);e.props=i}}(t,n),function(e,t){var n=e.inject;if(n){var r=e.inject={};if(Array.isArray(n))for(var o=0;o<n.length;o++)r[n[o]]={from:n[o]};else if(f(n))for(var i in n){var a=n[i];r[i]=f(a)?C({from:i},a):{from:a}}else ae('Invalid value for option "inject": expected an Array or an Object, but got '+c(n)+".",t)}}(t,n),function(e){var t=e.directives;if(t)for(var n in t){var r=t[n];"function"==typeof r&&(t[n]={bind:r,update:r})}}(t),!t._base&&(t.extends&&(e=Fe(e,t.extends,n)),t.mixins))for(var r=0,o=t.mixins.length;r<o;r++)e=Fe(e,t.mixins[r],n);var i,a={};for(i in e)s(i);for(i in t)b(e,i)||s(i);function s(r){var o=Se[r]||Re;a[r]=o(e[r],t[r],n,r)}return a}function qe(e,t,n,r){if("string"==typeof n){var o=e[t];if(b(o,n))return o[n];var i=k(n);if(b(o,i))return o[i];var a=x(i);if(b(o,a))return o[a];var s=o[n]||o[i]||o[a];return r&&!s&&ae("Failed to resolve "+t.slice(0,-1)+": "+n,e),s}}function Le(e,t,n,r){var o=t[e],i=!b(n,e),a=n[e],u=We(Boolean,o.type);if(u>-1)if(i&&!b(o,"default"))a=!1;else if(""===a||a===A(e)){var f=We(String,o.type);(f<0||u<f)&&(a=!0)}if(void 0===a){a=function(e,t,n){if(!b(t,"default"))return;var r=t.default;s(r)&&ae('Invalid default value for prop "'+n+'": Props with type Object/Array must use a factory function to return the default value.',e);if(e&&e.$options.propsData&&void 0===e.$options.propsData[n]&&void 0!==e._props[n])return e._props[n];return"function"==typeof r&&"Function"!==He(t.type)?r.call(e):r}(r,o,e);var l=xe;Oe(!0),je(a),Oe(l)}return function(e,t,n,r,o){if(e.required&&o)return void ae('Missing required prop: "'+t+'"',r);if(null==n&&!e.required)return;var i=e.type,a=!i||!0===i,s=[];if(i){Array.isArray(i)||(i=[i]);for(var u=0;u<i.length&&!a;u++){var f=Be(n,i[u]);s.push(f.expectedType||""),a=f.valid}}if(!a)return void ae(function(e,t,n){var r='Invalid prop: type check failed for prop "'+e+'". Expected '+n.map(x).join(", "),o=n[0],i=c(t),a=Ge(t,o),s=Ge(t,i);1===n.length&&Je(o)&&!function(){var e=[],t=arguments.length;for(;t--;)e[t]=arguments[t];return e.some(function(e){return"boolean"===e.toLowerCase()})}(o,i)&&(r+=" with value "+a);r+=", got "+i+" ",Je(i)&&(r+="with value "+s+".");return r}(t,n,s),r);var l=e.validator;l&&(l(n)||ae('Invalid prop: custom validator check failed for prop "'+t+'".',r))}(o,e,a,r,i),a}var Ue=/^(String|Number|Boolean|Function|Symbol)$/;function Be(e,t){var n,r=He(t);if(Ue.test(r)){var o=typeof e;(n=o===r.toLowerCase())||"object"!==o||(n=e instanceof t)}else n="Object"===r?f(e):"Array"===r?Array.isArray(e):e instanceof t;return{valid:n,expectedType:r}}function He(e){var t=e&&e.toString().match(/^\s*function (\w+)/);return t?t[1]:""}function ze(e,t){return He(e)===He(t)}function We(e,t){if(!Array.isArray(t))return ze(t,e)?0:-1;for(var n=0,r=t.length;n<r;n++)if(ze(t[n],e))return n;return-1}function Ge(e,t){return"String"===t?'"'+e+'"':"Number"===t?""+Number(e):""+e}function Je(e){return["string","number","boolean"].some(function(t){return e.toLowerCase()===t})}function Ke(e,t,n){ve();try{if(t)for(var r=t;r=r.$parent;){var o=r.$options.errorCaptured;if(o)for(var i=0;i<o.length;i++)try{if(!1===o[i].call(r,e,t,n))return}catch(e){Ye(e,r,"errorCaptured hook")}}Ye(e,t,n)}finally{ye()}}function Xe(e,t,n,r,o){var i;try{(i=n?e.apply(t,n):e.call(t))&&!i._isVue&&p(i)&&!i._handled&&(i.catch(function(e){return Ke(e,r,o+" (Promise/async)")}),i._handled=!0)}catch(e){Ke(e,r,o)}return i}function Ye(e,t,n){if(F.errorHandler)try{return F.errorHandler.call(null,e,t,n)}catch(t){t!==e&&Ze(t,null,"config.errorHandler")}Ze(e,t,n)}function Ze(e,t,n){if(ae("Error in "+n+': "'+e.toString()+'"',t),!W&&!G||"undefined"==typeof console)throw e;console.error(e)}var Qe,et,tt=[],nt=!1;function rt(){nt=!1;var e=tt.slice(0);tt.length=0;for(var t=0;t<e.length;t++)e[t]()}if("undefined"!=typeof Promise&&re(Promise)){var ot=Promise.resolve();Qe=function(){ot.then(rt),Z&&setTimeout(S)}}else if(X||"undefined"==typeof MutationObserver||!re(MutationObserver)&&"[object MutationObserverConstructor]"!==MutationObserver.toString())Qe="undefined"!=typeof setImmediate&&re(setImmediate)?function(){setImmediate(rt)}:function(){setTimeout(rt,0)};else{var it=1,at=new MutationObserver(rt),st=document.createTextNode(String(it));at.observe(st,{characterData:!0}),Qe=function(){it=(it+1)%2,st.data=String(it)}}function ut(e,t){var n;if(tt.push(function(){if(e)try{e.call(t)}catch(e){Ke(e,t,"nextTick")}else n&&n(t)}),nt||(nt=!0,Qe()),!e&&"undefined"!=typeof Promise)return new Promise(function(e){n=e})}var ct=v("Infinity,undefined,NaN,isFinite,isNaN,parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,require"),ft=function(e,t){ae('Property or method "'+t+'" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property. See: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.',e)},lt=function(e,t){ae('Property "'+t+'" must be accessed with "$data.'+t+'" because properties starting with "$" or "_" are not proxied in the Vue instance to prevent conflicts with Vue internalsSee: https://vuejs.org/v2/api/#data',e)},pt="undefined"!=typeof Proxy&&re(Proxy);if(pt){var dt=v("stop,prevent,self,ctrl,shift,alt,meta,exact");F.keyCodes=new Proxy(F.keyCodes,{set:function(e,t,n){return dt(t)?(ae("Avoid overwriting built-in modifier in config.keyCodes: ."+t),!1):(e[t]=n,!0)}})}var ht={has:function(e,t){var n=t in e,r=ct(t)||"string"==typeof t&&"_"===t.charAt(0)&&!(t in e.$data);return n||r||(t in e.$data?lt(e,t):ft(e,t)),n||!r}},vt={get:function(e,t){return"string"!=typeof t||t in e||(t in e.$data?lt(e,t):ft(e,t)),e[t]}};et=function(e){if(pt){var t=e.$options,n=t.render&&t.render._withStripped?vt:ht;e._renderProxy=new Proxy(e,n)}else e._renderProxy=e};var yt,gt,mt=new oe;function _t(e){!function e(t,n){var r,o;var i=Array.isArray(t);if(!i&&!s(t)||Object.isFrozen(t)||t instanceof ge)return;if(t.__ob__){var a=t.__ob__.dep.id;if(n.has(a))return;n.add(a)}if(i)for(r=t.length;r--;)e(t[r],n);else for(o=Object.keys(t),r=o.length;r--;)e(t[o[r]],n)}(e,mt),mt.clear()}var bt=W&&window.performance;bt&&bt.mark&&bt.measure&&bt.clearMarks&&bt.clearMeasures&&(yt=function(e){return bt.mark(e)},gt=function(e,t,n){bt.measure(e,t,n),bt.clearMarks(t),bt.clearMarks(n)});var wt=w(function(e){var t="&"===e.charAt(0),n="~"===(e=t?e.slice(1):e).charAt(0),r="!"===(e=n?e.slice(1):e).charAt(0);return{name:e=r?e.slice(1):e,once:n,capture:r,passive:t}});function $t(e,t){function n(){var e=arguments,r=n.fns;if(!Array.isArray(r))return Xe(r,null,arguments,t,"v-on handler");for(var o=r.slice(),i=0;i<o.length;i++)Xe(o[i],null,e,t,"v-on handler")}return n.fns=e,n}function kt(e,t,n,r,i){if(o(t)){if(b(t,n))return e[n]=t[n],i||delete t[n],!0;if(b(t,r))return e[n]=t[r],i||delete t[r],!0}return!1}function xt(e){return a(e)?[be(e)]:Array.isArray(e)?function e(t,n){var s=[];var u,c,f,l;for(u=0;u<t.length;u++)r(c=t[u])||"boolean"==typeof c||(f=s.length-1,l=s[f],Array.isArray(c)?c.length>0&&(Ot((c=e(c,(n||"")+"_"+u))[0])&&Ot(l)&&(s[f]=be(l.text+c[0].text),c.shift()),s.push.apply(s,c)):a(c)?Ot(l)?s[f]=be(l.text+c):""!==c&&s.push(be(c)):Ot(c)&&Ot(l)?s[f]=be(l.text+c.text):(i(t._isVList)&&o(c.tag)&&r(c.key)&&o(n)&&(c.key="__vlist"+n+"_"+u+"__"),s.push(c)));return s}(e):void 0}function Ot(e){return o(e)&&o(e.text)&&!1===e.isComment}function At(e){var t=e.$options.provide;t&&(e._provided="function"==typeof t?t.call(e):t)}function jt(e){var t=Pt(e.$options.inject,e);t&&(Oe(!1),Object.keys(t).forEach(function(n){Pe(e,n,t[n],function(){ae('Avoid mutating an injected value directly since the changes will be overwritten whenever the provided component re-renders. injection being mutated: "'+n+'"',e)})}),Oe(!0))}function Pt(e,t){if(e){for(var n=Object.create(null),r=ie?Reflect.ownKeys(e):Object.keys(e),o=0;o<r.length;o++){var i=r[o];if("__ob__"!==i){for(var a=e[i].from,s=t;s;){if(s._provided&&b(s._provided,a)){n[i]=s._provided[a];break}s=s.$parent}if(!s)if("default"in e[i]){var u=e[i].default;n[i]="function"==typeof u?u.call(t):u}else ae('Injection "'+i+'" not found',t)}}return n}}function Ct(e,t){if(!e||!e.length)return{};for(var n={},r=0,o=e.length;r<o;r++){var i=e[r],a=i.data;if(a&&a.attrs&&a.attrs.slot&&delete a.attrs.slot,i.context!==t&&i.fnContext!==t||!a||null==a.slot)(n.default||(n.default=[])).push(i);else{var s=a.slot,u=n[s]||(n[s]=[]);"template"===i.tag?u.push.apply(u,i.children||[]):u.push(i)}}for(var c in n)n[c].every(Et)&&delete n[c];return n}function Et(e){return e.isComment&&!e.asyncFactory||" "===e.text}function St(e,t,r){var o,i=Object.keys(t).length>0,a=e?!!e.$stable:!i,s=e&&e.$key;if(e){if(e._normalized)return e._normalized;if(a&&r&&r!==n&&s===r.$key&&!i&&!r.$hasNormal)return r;for(var u in o={},e)e[u]&&"$"!==u[0]&&(o[u]=Mt(t,u,e[u]))}else o={};for(var c in t)c in o||(o[c]=Tt(t,c));return e&&Object.isExtensible(e)&&(e._normalized=o),U(o,"$stable",a),U(o,"$key",s),U(o,"$hasNormal",i),o}function Mt(e,t,n){var r=function(){var e=arguments.length?n.apply(null,arguments):n({});return(e=e&&"object"==typeof e&&!Array.isArray(e)?[e]:xt(e))&&(0===e.length||1===e.length&&e[0].isComment)?void 0:e};return n.proxy&&Object.defineProperty(e,t,{get:r,enumerable:!0,configurable:!0}),r}function Tt(e,t){return function(){return e[t]}}function It(e,t){var n,r,i,a,u;if(Array.isArray(e)||"string"==typeof e)for(n=new Array(e.length),r=0,i=e.length;r<i;r++)n[r]=t(e[r],r);else if("number"==typeof e)for(n=new Array(e),r=0;r<e;r++)n[r]=t(r+1,r);else if(s(e))if(ie&&e[Symbol.iterator]){n=[];for(var c=e[Symbol.iterator](),f=c.next();!f.done;)n.push(t(f.value,n.length)),f=c.next()}else for(a=Object.keys(e),n=new Array(a.length),r=0,i=a.length;r<i;r++)u=a[r],n[r]=t(e[u],u,r);return o(n)||(n=[]),n._isVList=!0,n}function Dt(e,t,n,r){var o,i=this.$scopedSlots[e];i?(n=n||{},r&&(s(r)||ae("slot v-bind without argument expects an Object",this),n=C(C({},r),n)),o=i(n)||t):o=this.$slots[e]||t;var a=n&&n.slot;return a?this.$createElement("template",{slot:a},o):o}function Rt(e){return qe(this.$options,"filters",e,!0)||T}function Nt(e,t){return Array.isArray(e)?-1===e.indexOf(t):e!==t}function Vt(e,t,n,r,o){var i=F.keyCodes[t]||n;return o&&r&&!F.keyCodes[t]?Nt(o,r):i?Nt(i,e):r?A(r)!==t:void 0}function Ft(e,t,n,r,o){if(n)if(s(n)){var i;Array.isArray(n)&&(n=E(n));var a=function(a){if("class"===a||"style"===a||g(a))i=e;else{var s=e.attrs&&e.attrs.type;i=r||F.mustUseProp(t,s,a)?e.domProps||(e.domProps={}):e.attrs||(e.attrs={})}var u=k(a),c=A(a);u in i||c in i||(i[a]=n[a],o&&((e.on||(e.on={}))["update:"+a]=function(e){n[a]=e}))};for(var u in n)a(u)}else ae("v-bind without argument expects an Object or Array value",this);return e}function qt(e,t){var n=this._staticTrees||(this._staticTrees=[]),r=n[e];return r&&!t?r:(Ut(r=n[e]=this.$options.staticRenderFns[e].call(this._renderProxy,null,this),"__static__"+e,!1),r)}function Lt(e,t,n){return Ut(e,"__once__"+t+(n?"_"+n:""),!0),e}function Ut(e,t,n){if(Array.isArray(e))for(var r=0;r<e.length;r++)e[r]&&"string"!=typeof e[r]&&Bt(e[r],t+"_"+r,n);else Bt(e,t,n)}function Bt(e,t,n){e.isStatic=!0,e.key=t,e.isOnce=n}function Ht(e,t){if(t)if(f(t)){var n=e.on=e.on?C({},e.on):{};for(var r in t){var o=n[r],i=t[r];n[r]=o?[].concat(o,i):i}}else ae("v-on without argument expects an Object value",this);return e}function zt(e,t,n,r){t=t||{$stable:!n};for(var o=0;o<e.length;o++){var i=e[o];Array.isArray(i)?zt(i,t,n):i&&(i.proxy&&(i.fn.proxy=!0),t[i.key]=i.fn)}return r&&(t.$key=r),t}function Wt(e,t){for(var n=0;n<t.length;n+=2){var r=t[n];"string"==typeof r&&r?e[t[n]]=t[n+1]:""!==r&&null!==r&&ae("Invalid value for dynamic directive argument (expected string or null): "+r,this)}return e}function Gt(e,t){return"string"==typeof e?t+e:e}function Jt(e){e._o=Lt,e._n=h,e._s=d,e._l=It,e._t=Dt,e._q=I,e._i=D,e._m=qt,e._f=Rt,e._k=Vt,e._b=Ft,e._v=be,e._e=_e,e._u=zt,e._g=Ht,e._d=Wt,e._p=Gt}function Kt(e,t,r,o,a){var s,u=this,c=a.options;b(o,"_uid")?(s=Object.create(o))._original=o:(s=o,o=o._original);var f=i(c._compiled),l=!f;this.data=e,this.props=t,this.children=r,this.parent=o,this.listeners=e.on||n,this.injections=Pt(c.inject,o),this.slots=function(){return u.$slots||St(e.scopedSlots,u.$slots=Ct(r,o)),u.$slots},Object.defineProperty(this,"scopedSlots",{enumerable:!0,get:function(){return St(e.scopedSlots,this.slots())}}),f&&(this.$options=c,this.$slots=this.slots(),this.$scopedSlots=St(e.scopedSlots,this.$slots)),c._scopeId?this._c=function(e,t,n,r){var i=on(s,e,t,n,r,l);return i&&!Array.isArray(i)&&(i.fnScopeId=c._scopeId,i.fnContext=o),i}:this._c=function(e,t,n,r){return on(s,e,t,n,r,l)}}function Xt(e,t,n,r,o){var i=function(e){var t=new ge(e.tag,e.data,e.children&&e.children.slice(),e.text,e.elm,e.context,e.componentOptions,e.asyncFactory);return t.ns=e.ns,t.isStatic=e.isStatic,t.key=e.key,t.isComment=e.isComment,t.fnContext=e.fnContext,t.fnOptions=e.fnOptions,t.fnScopeId=e.fnScopeId,t.asyncMeta=e.asyncMeta,t.isCloned=!0,t}(e);return i.fnContext=n,i.fnOptions=r,(i.devtoolsMeta=i.devtoolsMeta||{}).renderContext=o,t.slot&&((i.data||(i.data={})).slot=t.slot),i}function Yt(e,t){for(var n in t)e[k(n)]=t[n]}Jt(Kt.prototype);var Zt={init:function(e,t){if(e.componentInstance&&!e.componentInstance._isDestroyed&&e.data.keepAlive){var n=e;Zt.prepatch(n,n)}else{(e.componentInstance=function(e,t){var n={_isComponent:!0,_parentVnode:e,parent:t},r=e.data.inlineTemplate;o(r)&&(n.render=r.render,n.staticRenderFns=r.staticRenderFns);return new e.componentOptions.Ctor(n)}(e,dn)).$mount(t?e.elm:void 0,t)}},prepatch:function(e,t){var r=t.componentOptions;!function(e,t,r,o,i){hn=!0;var a=o.data.scopedSlots,s=e.$scopedSlots,u=!!(a&&!a.$stable||s!==n&&!s.$stable||a&&e.$scopedSlots.$key!==a.$key),c=!!(i||e.$options._renderChildren||u);e.$options._parentVnode=o,e.$vnode=o,e._vnode&&(e._vnode.parent=o);if(e.$options._renderChildren=i,e.$attrs=o.data.attrs||n,e.$listeners=r||n,t&&e.$options.props){Oe(!1);for(var f=e._props,l=e.$options._propKeys||[],p=0;p<l.length;p++){var d=l[p],h=e.$options.props;f[d]=Le(d,h,t,e)}Oe(!0),e.$options.propsData=t}r=r||n;var v=e.$options._parentListeners;e.$options._parentListeners=r,pn(e,r,v),c&&(e.$slots=Ct(i,o.context),e.$forceUpdate());hn=!1}(t.componentInstance=e.componentInstance,r.propsData,r.listeners,t,r.children)},insert:function(e){var t,n=e.context,r=e.componentInstance;r._isMounted||(r._isMounted=!0,gn(r,"mounted")),e.data.keepAlive&&(n._isMounted?((t=r)._inactive=!1,bn.push(t)):yn(r,!0))},destroy:function(e){var t=e.componentInstance;t._isDestroyed||(e.data.keepAlive?function e(t,n){if(n&&(t._directInactive=!0,vn(t)))return;if(!t._inactive){t._inactive=!0;for(var r=0;r<t.$children.length;r++)e(t.$children[r]);gn(t,"deactivated")}}(t,!0):t.$destroy())}},Qt=Object.keys(Zt);function en(e,t,a,u,c){if(!r(e)){var f=a.$options._base;if(s(e)&&(e=f.extend(e)),"function"==typeof e){var l;if(r(e.cid)&&void 0===(e=function(e,t){if(i(e.error)&&o(e.errorComp))return e.errorComp;if(o(e.resolved))return e.resolved;var n=sn;n&&o(e.owners)&&-1===e.owners.indexOf(n)&&e.owners.push(n);if(i(e.loading)&&o(e.loadingComp))return e.loadingComp;if(n&&!o(e.owners)){var a=e.owners=[n],u=!0,c=null,f=null;n.$on("hook:destroyed",function(){return m(a,n)});var l=function(e){for(var t=0,n=a.length;t<n;t++)a[t].$forceUpdate();e&&(a.length=0,null!==c&&(clearTimeout(c),c=null),null!==f&&(clearTimeout(f),f=null))},d=R(function(n){e.resolved=un(n,t),u?a.length=0:l(!0)}),h=R(function(t){ae("Failed to resolve async component: "+String(e)+(t?"\nReason: "+t:"")),o(e.errorComp)&&(e.error=!0,l(!0))}),v=e(d,h);return s(v)&&(p(v)?r(e.resolved)&&v.then(d,h):p(v.component)&&(v.component.then(d,h),o(v.error)&&(e.errorComp=un(v.error,t)),o(v.loading)&&(e.loadingComp=un(v.loading,t),0===v.delay?e.loading=!0:c=setTimeout(function(){c=null,r(e.resolved)&&r(e.error)&&(e.loading=!0,l(!1))},v.delay||200)),o(v.timeout)&&(f=setTimeout(function(){f=null,r(e.resolved)&&h("timeout ("+v.timeout+"ms)")},v.timeout)))),u=!1,e.loading?e.loadingComp:e.resolved}}(l=e,f)))return function(e,t,n,r,o){var i=_e();return i.asyncFactory=e,i.asyncMeta={data:t,context:n,children:r,tag:o},i}(l,t,a,u,c);t=t||{},qn(e),o(t.model)&&function(e,t){var n=e.model&&e.model.prop||"value",r=e.model&&e.model.event||"input";(t.attrs||(t.attrs={}))[n]=t.model.value;var i=t.on||(t.on={}),a=i[r],s=t.model.callback;o(a)?(Array.isArray(a)?-1===a.indexOf(s):a!==s)&&(i[r]=[s].concat(a)):i[r]=s}(e.options,t);var d=function(e,t,n){var i=t.options.props;if(!r(i)){var a={},s=e.attrs,u=e.props;if(o(s)||o(u))for(var c in i){var f=A(c),l=c.toLowerCase();c!==l&&s&&b(s,l)&&se('Prop "'+l+'" is passed to component '+ce(n||t)+', but the declared prop name is "'+c+'". Note that HTML attributes are case-insensitive and camelCased props need to use their kebab-case equivalents when using in-DOM templates. You should probably use "'+f+'" instead of "'+c+'".'),kt(a,u,c,f,!0)||kt(a,s,c,f,!1)}return a}}(t,e,c);if(i(e.options.functional))return function(e,t,r,i,a){var s=e.options,u={},c=s.props;if(o(c))for(var f in c)u[f]=Le(f,c,t||n);else o(r.attrs)&&Yt(u,r.attrs),o(r.props)&&Yt(u,r.props);var l=new Kt(r,u,a,i,e),p=s.render.call(null,l._c,l);if(p instanceof ge)return Xt(p,r,l.parent,s,l);if(Array.isArray(p)){for(var d=xt(p)||[],h=new Array(d.length),v=0;v<d.length;v++)h[v]=Xt(d[v],r,l.parent,s,l);return h}}(e,d,t,a,u);var h=t.on;if(t.on=t.nativeOn,i(e.options.abstract)){var v=t.slot;t={},v&&(t.slot=v)}!function(e){for(var t=e.hook||(e.hook={}),n=0;n<Qt.length;n++){var r=Qt[n],o=t[r],i=Zt[r];o===i||o&&o._merged||(t[r]=o?tn(i,o):i)}}(t);var y=e.options.name||c;return new ge("vue-component-"+e.cid+(y?"-"+y:""),t,void 0,void 0,void 0,a,{Ctor:e,propsData:d,listeners:h,tag:c,children:u},l)}ae("Invalid Component definition: "+String(e),a)}}function tn(e,t){var n=function(n,r){e(n,r),t(n,r)};return n._merged=!0,n}var nn=1,rn=2;function on(e,t,n,u,c,f){return(Array.isArray(n)||a(n))&&(c=u,u=n,n=void 0),i(f)&&(c=rn),function(e,t,n,u,c){if(o(n)&&o(n.__ob__))return ae("Avoid using observed data object as vnode data: "+JSON.stringify(n)+"\nAlways create fresh vnode data objects in each render!",e),_e();o(n)&&o(n.is)&&(t=n.is);if(!t)return _e();o(n)&&o(n.key)&&!a(n.key)&&ae("Avoid using non-primitive value as key, use string/number value instead.",e);Array.isArray(u)&&"function"==typeof u[0]&&((n=n||{}).scopedSlots={default:u[0]},u.length=0);c===rn?u=xt(u):c===nn&&(u=function(e){for(var t=0;t<e.length;t++)if(Array.isArray(e[t]))return Array.prototype.concat.apply([],e);return e}(u));var f,l;if("string"==typeof t){var p;l=e.$vnode&&e.$vnode.ns||F.getTagNamespace(t),f=F.isReservedTag(t)?new ge(F.parsePlatformTagName(t),n,u,void 0,void 0,e):n&&n.pre||!o(p=qe(e.$options,"components",t))?new ge(t,n,u,void 0,void 0,e):en(p,n,e,u,t)}else f=en(t,n,e,u);return Array.isArray(f)?f:o(f)?(o(l)&&function e(t,n,a){t.ns=n;"foreignObject"===t.tag&&(n=void 0,a=!0);if(o(t.children))for(var s=0,u=t.children.length;s<u;s++){var c=t.children[s];o(c.tag)&&(r(c.ns)||i(a)&&"svg"!==c.tag)&&e(c,n,a)}}(f,l),o(n)&&function(e){s(e.style)&&_t(e.style);s(e.class)&&_t(e.class)}(n),f):_e()}(e,t,n,u,c)}var an,sn=null;function un(e,t){return(e.__esModule||ie&&"Module"===e[Symbol.toStringTag])&&(e=e.default),s(e)?t.extend(e):e}function cn(e,t){an.$on(e,t)}function fn(e,t){an.$off(e,t)}function ln(e,t){var n=an;return function r(){null!==t.apply(null,arguments)&&n.$off(e,r)}}function pn(e,t,n){an=e,function(e,t,n,o,a,s){var u,c,f,l;for(u in e)c=e[u],f=t[u],l=wt(u),r(c)?ae('Invalid handler for event "'+l.name+'": got '+String(c),s):r(f)?(r(c.fns)&&(c=e[u]=$t(c,s)),i(l.once)&&(c=e[u]=a(l.name,c,l.capture)),n(l.name,c,l.capture,l.passive,l.params)):c!==f&&(f.fns=c,e[u]=f);for(u in t)r(e[u])&&o((l=wt(u)).name,t[u],l.capture)}(t,n||{},cn,fn,ln,e),an=void 0}var dn=null,hn=!1;function vn(e){for(;e&&(e=e.$parent);)if(e._inactive)return!0;return!1}function yn(e,t){if(t){if(e._directInactive=!1,vn(e))return}else if(e._directInactive)return;if(e._inactive||null===e._inactive){e._inactive=!1;for(var n=0;n<e.$children.length;n++)yn(e.$children[n]);gn(e,"activated")}}function gn(e,t){ve();var n=e.$options[t],r=t+" hook";if(n)for(var o=0,i=n.length;o<i;o++)Xe(n[o],e,null,e,r);e._hasHookEvent&&e.$emit("hook:"+t),ye()}var mn=100,_n=[],bn=[],wn={},$n={},kn=!1,xn=!1,On=0;var An=Date.now;if(W&&!X){var jn=window.performance;jn&&"function"==typeof jn.now&&An()>document.createEvent("Event").timeStamp&&(An=function(){return jn.now()})}function Pn(){var e,t;for(An(),xn=!0,_n.sort(function(e,t){return e.id-t.id}),On=0;On<_n.length;On++)if((e=_n[On]).before&&e.before(),t=e.id,wn[t]=null,e.run(),null!=wn[t]&&($n[t]=($n[t]||0)+1,$n[t]>mn)){ae("You may have an infinite update loop "+(e.user?'in watcher with expression "'+e.expression+'"':"in a component render function."),e.vm);break}var n=bn.slice(),r=_n.slice();On=_n.length=bn.length=0,wn={},$n={},kn=xn=!1,function(e){for(var t=0;t<e.length;t++)e[t]._inactive=!0,yn(e[t],!0)}(n),function(e){var t=e.length;for(;t--;){var n=e[t],r=n.vm;r._watcher===n&&r._isMounted&&!r._isDestroyed&&gn(r,"updated")}}(r),ne&&F.devtools&&ne.emit("flush")}var Cn=0,En=function(e,t,n,r,o){this.vm=e,o&&(e._watcher=this),e._watchers.push(this),r?(this.deep=!!r.deep,this.user=!!r.user,this.lazy=!!r.lazy,this.sync=!!r.sync,this.before=r.before):this.deep=this.user=this.lazy=this.sync=!1,this.cb=n,this.id=++Cn,this.active=!0,this.dirty=this.lazy,this.deps=[],this.newDeps=[],this.depIds=new oe,this.newDepIds=new oe,this.expression=t.toString(),"function"==typeof t?this.getter=t:(this.getter=function(e){if(!B.test(e)){var t=e.split(".");return function(e){for(var n=0;n<t.length;n++){if(!e)return;e=e[t[n]]}return e}}}(t),this.getter||(this.getter=S,ae('Failed watching path: "'+t+'" Watcher only accepts simple dot-delimited paths. For full control, use a function instead.',e))),this.value=this.lazy?void 0:this.get()};En.prototype.get=function(){var e;ve(this);var t=this.vm;try{e=this.getter.call(t,t)}catch(e){if(!this.user)throw e;Ke(e,t,'getter for watcher "'+this.expression+'"')}finally{this.deep&&_t(e),ye(),this.cleanupDeps()}return e},En.prototype.addDep=function(e){var t=e.id;this.newDepIds.has(t)||(this.newDepIds.add(t),this.newDeps.push(e),this.depIds.has(t)||e.addSub(this))},En.prototype.cleanupDeps=function(){for(var e=this.deps.length;e--;){var t=this.deps[e];this.newDepIds.has(t.id)||t.removeSub(this)}var n=this.depIds;this.depIds=this.newDepIds,this.newDepIds=n,this.newDepIds.clear(),n=this.deps,this.deps=this.newDeps,this.newDeps=n,this.newDeps.length=0},En.prototype.update=function(){this.lazy?this.dirty=!0:this.sync?this.run():function(e){var t=e.id;if(null==wn[t]){if(wn[t]=!0,xn){for(var n=_n.length-1;n>On&&_n[n].id>e.id;)n--;_n.splice(n+1,0,e)}else _n.push(e);if(!kn){if(kn=!0,!F.async)return void Pn();ut(Pn)}}}(this)},En.prototype.run=function(){if(this.active){var e=this.get();if(e!==this.value||s(e)||this.deep){var t=this.value;if(this.value=e,this.user)try{this.cb.call(this.vm,e,t)}catch(e){Ke(e,this.vm,'callback for watcher "'+this.expression+'"')}else this.cb.call(this.vm,e,t)}}},En.prototype.evaluate=function(){this.value=this.get(),this.dirty=!1},En.prototype.depend=function(){for(var e=this.deps.length;e--;)this.deps[e].depend()},En.prototype.teardown=function(){if(this.active){this.vm._isBeingDestroyed||m(this.vm._watchers,this);for(var e=this.deps.length;e--;)this.deps[e].removeSub(this);this.active=!1}};var Sn={enumerable:!0,configurable:!0,get:S,set:S};function Mn(e,t,n){Sn.get=function(){return this[t][n]},Sn.set=function(e){this[t][n]=e},Object.defineProperty(e,n,Sn)}function Tn(e){e._watchers=[];var t=e.$options;t.props&&function(e,t){var n=e.$options.propsData||{},r=e._props={},o=e.$options._propKeys=[],i=!e.$parent;i||Oe(!1);var a=function(a){o.push(a);var s=Le(a,t,n,e),u=A(a);(g(u)||F.isReservedAttr(u))&&ae('"'+u+'" is a reserved attribute and cannot be used as component prop.',e),Pe(r,a,s,function(){if(!i&&!hn){if("mp-baidu"===e.mpHost)return;if("value"===a&&Array.isArray(e.$options.behaviors)&&-1!==e.$options.behaviors.indexOf("uni://form-field"))return;if(e._getFormData)return;for(var t=e.$parent;t;){if(t.__next_tick_pending)return;t=t.$parent}ae("Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: \""+a+'"',e)}}),a in e||Mn(e,"_props",a)};for(var s in t)a(s);Oe(!0)}(e,t.props),t.methods&&function(e,t){var n=e.$options.props;for(var r in t)"function"!=typeof t[r]&&ae('Method "'+r+'" has type "'+typeof t[r]+'" in the component definition. Did you reference the function correctly?',e),n&&b(n,r)&&ae('Method "'+r+'" has already been defined as a prop.',e),r in e&&L(r)&&ae('Method "'+r+'" conflicts with an existing Vue instance method. Avoid defining component methods that start with _ or $.'),e[r]="function"!=typeof t[r]?S:j(t[r],e)}(e,t.methods),t.data?function(e){var t=e.$options.data;f(t=e._data="function"==typeof t?function(e,t){ve();try{return e.call(t,t)}catch(e){return Ke(e,t,"data()"),{}}finally{ye()}}(t,e):t||{})||(t={},ae("data functions should return an object:\nhttps://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function",e));var n=Object.keys(t),r=e.$options.props,o=e.$options.methods,i=n.length;for(;i--;){var a=n[i];o&&b(o,a)&&ae('Method "'+a+'" has already been defined as a data property.',e),r&&b(r,a)?ae('The data property "'+a+'" is already declared as a prop. Use prop default value instead.',e):L(a)||Mn(e,"_data",a)}je(t,!0)}(e):je(e._data={},!0),t.computed&&function(e,t){var n=e._computedWatchers=Object.create(null),r=te();for(var o in t){var i=t[o],a="function"==typeof i?i:i.get;null==a&&ae('Getter is missing for computed property "'+o+'".',e),r||(n[o]=new En(e,a||S,S,In)),o in e?o in e.$data?ae('The computed property "'+o+'" is already defined in data.',e):e.$options.props&&o in e.$options.props&&ae('The computed property "'+o+'" is already defined as a prop.',e):Dn(e,o,i)}}(e,t.computed),t.watch&&t.watch!==Q&&function(e,t){for(var n in t){var r=t[n];if(Array.isArray(r))for(var o=0;o<r.length;o++)Vn(e,n,r[o]);else Vn(e,n,r)}}(e,t.watch)}var In={lazy:!0};function Dn(e,t,n){var r=!te();"function"==typeof n?(Sn.get=r?Rn(t):Nn(n),Sn.set=S):(Sn.get=n.get?r&&!1!==n.cache?Rn(t):Nn(n.get):S,Sn.set=n.set||S),Sn.set===S&&(Sn.set=function(){ae('Computed property "'+t+'" was assigned to but it has no setter.',this)}),Object.defineProperty(e,t,Sn)}function Rn(e){return function(){var t=this._computedWatchers&&this._computedWatchers[e];if(t)return t.dirty&&t.evaluate(),de.target&&t.depend(),t.value}}function Nn(e){return function(){return e.call(this,this)}}function Vn(e,t,n,r){return f(n)&&(r=n,n=n.handler),"string"==typeof n&&(n=e[n]),e.$watch(t,n,r)}var Fn=0;function qn(e){var t=e.options;if(e.super){var n=qn(e.super);if(n!==e.superOptions){e.superOptions=n;var r=function(e){var t,n=e.options,r=e.sealedOptions;for(var o in n)n[o]!==r[o]&&(t||(t={}),t[o]=n[o]);return t}(e);r&&C(e.extendOptions,r),(t=e.options=Fe(n,e.extendOptions)).name&&(t.components[t.name]=e)}}return t}function Ln(e){this instanceof Ln||ae("Vue is a constructor and should be called with the `new` keyword"),this._init(e)}function Un(e){e.cid=0;var t=1;e.extend=function(e){e=e||{};var n=this,r=n.cid,o=e._Ctor||(e._Ctor={});if(o[r])return o[r];var i=e.name||n.options.name;i&&Ne(i);var a=function(e){this._init(e)};return(a.prototype=Object.create(n.prototype)).constructor=a,a.cid=t++,a.options=Fe(n.options,e),a.super=n,a.options.props&&function(e){var t=e.options.props;for(var n in t)Mn(e.prototype,"_props",n)}(a),a.options.computed&&function(e){var t=e.options.computed;for(var n in t)Dn(e.prototype,n,t[n])}(a),a.extend=n.extend,a.mixin=n.mixin,a.use=n.use,N.forEach(function(e){a[e]=n[e]}),i&&(a.options.components[i]=a),a.superOptions=n.options,a.extendOptions=e,a.sealedOptions=C({},a.options),o[r]=a,a}}function Bn(e){return e&&(e.Ctor.options.name||e.tag)}function Hn(e,t){return Array.isArray(e)?e.indexOf(t)>-1:"string"==typeof e?e.split(",").indexOf(t)>-1:(n=e,"[object RegExp]"===u.call(n)&&e.test(t));var n}function zn(e,t){var n=e.cache,r=e.keys,o=e._vnode;for(var i in n){var a=n[i];if(a){var s=Bn(a.componentOptions);s&&!t(s)&&Wn(n,i,r,o)}}}function Wn(e,t,n,r){var o=e[t];!o||r&&o.tag===r.tag||o.componentInstance.$destroy(),e[t]=null,m(n,t)}!function(e){e.prototype._init=function(e){var t,r,o=this;o._uid=Fn++,F.performance&&yt&&(t="vue-perf-start:"+o._uid,r="vue-perf-end:"+o._uid,yt(t)),o._isVue=!0,e&&e._isComponent?function(e,t){var n=e.$options=Object.create(e.constructor.options),r=t._parentVnode;n.parent=t.parent,n._parentVnode=r;var o=r.componentOptions;n.propsData=o.propsData,n._parentListeners=o.listeners,n._renderChildren=o.children,n._componentTag=o.tag,t.render&&(n.render=t.render,n.staticRenderFns=t.staticRenderFns)}(o,e):o.$options=Fe(qn(o.constructor),e||{},o),et(o),o._self=o,function(e){var t=e.$options,n=t.parent;if(n&&!t.abstract){for(;n.$options.abstract&&n.$parent;)n=n.$parent;n.$children.push(e)}e.$parent=n,e.$root=n?n.$root:e,e.$children=[],e.$refs={},e._watcher=null,e._inactive=null,e._directInactive=!1,e._isMounted=!1,e._isDestroyed=!1,e._isBeingDestroyed=!1}(o),function(e){e._events=Object.create(null),e._hasHookEvent=!1;var t=e.$options._parentListeners;t&&pn(e,t)}(o),function(e){e._vnode=null,e._staticTrees=null;var t=e.$options,r=e.$vnode=t._parentVnode,o=r&&r.context;e.$slots=Ct(t._renderChildren,o),e.$scopedSlots=n,e._c=function(t,n,r,o){return on(e,t,n,r,o,!1)},e.$createElement=function(t,n,r,o){return on(e,t,n,r,o,!0)};var i=r&&r.data;Pe(e,"$attrs",i&&i.attrs||n,function(){!hn&&ae("$attrs is readonly.",e)},!0),Pe(e,"$listeners",t._parentListeners||n,function(){!hn&&ae("$listeners is readonly.",e)},!0)}(o),gn(o,"beforeCreate"),"mp-toutiao"!==o.mpHost&&jt(o),Tn(o),"mp-toutiao"!==o.mpHost&&At(o),"mp-toutiao"!==o.mpHost&&gn(o,"created"),F.performance&&yt&&(o._name=ce(o,!1),yt(r),gt("vue "+o._name+" init",t,r)),o.$options.el&&o.$mount(o.$options.el)}}(Ln),function(e){var t={get:function(){return this._data}},n={get:function(){return this._props}};t.set=function(){ae("Avoid replacing instance root $data. Use nested data properties instead.",this)},n.set=function(){ae("$props is readonly.",this)},Object.defineProperty(e.prototype,"$data",t),Object.defineProperty(e.prototype,"$props",n),e.prototype.$set=Ce,e.prototype.$delete=Ee,e.prototype.$watch=function(e,t,n){if(f(t))return Vn(this,e,t,n);(n=n||{}).user=!0;var r=new En(this,e,t,n);if(n.immediate)try{t.call(this,r.value)}catch(e){Ke(e,this,'callback for immediate watcher "'+r.expression+'"')}return function(){r.teardown()}}}(Ln),function(e){var t=/^hook:/;e.prototype.$on=function(e,n){var r=this;if(Array.isArray(e))for(var o=0,i=e.length;o<i;o++)r.$on(e[o],n);else(r._events[e]||(r._events[e]=[])).push(n),t.test(e)&&(r._hasHookEvent=!0);return r},e.prototype.$once=function(e,t){var n=this;function r(){n.$off(e,r),t.apply(n,arguments)}return r.fn=t,n.$on(e,r),n},e.prototype.$off=function(e,t){var n=this;if(!arguments.length)return n._events=Object.create(null),n;if(Array.isArray(e)){for(var r=0,o=e.length;r<o;r++)n.$off(e[r],t);return n}var i,a=n._events[e];if(!a)return n;if(!t)return n._events[e]=null,n;for(var s=a.length;s--;)if((i=a[s])===t||i.fn===t){a.splice(s,1);break}return n},e.prototype.$emit=function(e){var t=this,n=e.toLowerCase();n!==e&&t._events[n]&&se('Event "'+n+'" is emitted in component '+ce(t)+' but the handler is registered for "'+e+'". Note that HTML attributes are case-insensitive and you cannot use v-on to listen to camelCase events when using in-DOM templates. You should probably use "'+A(e)+'" instead of "'+e+'".');var r=t._events[e];if(r){r=r.length>1?P(r):r;for(var o=P(arguments,1),i='event handler for "'+e+'"',a=0,s=r.length;a<s;a++)Xe(r[a],t,o,t,i)}return t}}(Ln),function(e){e.prototype._update=function(e,t){var n=this,r=n.$el,o=n._vnode,i=function(e){var t=dn;return dn=e,function(){dn=t}}(n);n._vnode=e,n.$el=o?n.__patch__(o,e):n.__patch__(n.$el,e,t,!1),i(),r&&(r.__vue__=null),n.$el&&(n.$el.__vue__=n),n.$vnode&&n.$parent&&n.$vnode===n.$parent._vnode&&(n.$parent.$el=n.$el)},e.prototype.$forceUpdate=function(){this._watcher&&this._watcher.update()},e.prototype.$destroy=function(){var e=this;if(!e._isBeingDestroyed){gn(e,"beforeDestroy"),e._isBeingDestroyed=!0;var t=e.$parent;!t||t._isBeingDestroyed||e.$options.abstract||m(t.$children,e),e._watcher&&e._watcher.teardown();for(var n=e._watchers.length;n--;)e._watchers[n].teardown();e._data.__ob__&&e._data.__ob__.vmCount--,e._isDestroyed=!0,e.__patch__(e._vnode,null),gn(e,"destroyed"),e.$off(),e.$el&&(e.$el.__vue__=null),e.$vnode&&(e.$vnode.parent=null)}}}(Ln),function(e){Jt(e.prototype),e.prototype.$nextTick=function(e){return ut(e,this)},e.prototype._render=function(){var e,t=this,n=t.$options,r=n.render,o=n._parentVnode;o&&(t.$scopedSlots=St(o.data.scopedSlots,t.$slots,t.$scopedSlots)),t.$vnode=o;try{sn=t,e=r.call(t._renderProxy,t.$createElement)}catch(n){if(Ke(n,t,"render"),t.$options.renderError)try{e=t.$options.renderError.call(t._renderProxy,t.$createElement,n)}catch(n){Ke(n,t,"renderError"),e=t._vnode}else e=t._vnode}finally{sn=null}return Array.isArray(e)&&1===e.length&&(e=e[0]),e instanceof ge||(Array.isArray(e)&&ae("Multiple root nodes returned from render function. Render function should return a single root node.",t),e=_e()),e.parent=o,e}}(Ln);var Gn=[String,RegExp,Array],Jn={KeepAlive:{name:"keep-alive",abstract:!0,props:{include:Gn,exclude:Gn,max:[String,Number]},created:function(){this.cache=Object.create(null),this.keys=[]},destroyed:function(){for(var e in this.cache)Wn(this.cache,e,this.keys)},mounted:function(){var e=this;this.$watch("include",function(t){zn(e,function(e){return Hn(t,e)})}),this.$watch("exclude",function(t){zn(e,function(e){return!Hn(t,e)})})},render:function(){var e=this.$slots.default,t=function(e){if(Array.isArray(e))for(var t=0;t<e.length;t++){var n=e[t];if(o(n)&&(o(n.componentOptions)||(r=n).isComment&&r.asyncFactory))return n}var r}(e),n=t&&t.componentOptions;if(n){var r=Bn(n),i=this.include,a=this.exclude;if(i&&(!r||!Hn(i,r))||a&&r&&Hn(a,r))return t;var s=this.cache,u=this.keys,c=null==t.key?n.Ctor.cid+(n.tag?"::"+n.tag:""):t.key;s[c]?(t.componentInstance=s[c].componentInstance,m(u,c),u.push(c)):(s[c]=t,u.push(c),this.max&&u.length>parseInt(this.max)&&Wn(s,u[0],u,this._vnode)),t.data.keepAlive=!0}return t||e&&e[0]}}};!function(e){var t={get:function(){return F},set:function(){ae("Do not replace the Vue.config object, set individual fields instead.")}};Object.defineProperty(e,"config",t),e.util={warn:ae,extend:C,mergeOptions:Fe,defineReactive:Pe},e.set=Ce,e.delete=Ee,e.nextTick=ut,e.observable=function(e){return je(e),e},e.options=Object.create(null),N.forEach(function(t){e.options[t+"s"]=Object.create(null)}),e.options._base=e,C(e.options.components,Jn),function(e){e.use=function(e){var t=this._installedPlugins||(this._installedPlugins=[]);if(t.indexOf(e)>-1)return this;var n=P(arguments,1);return n.unshift(this),"function"==typeof e.install?e.install.apply(e,n):"function"==typeof e&&e.apply(null,n),t.push(e),this}}(e),function(e){e.mixin=function(e){return this.options=Fe(this.options,e),this}}(e),Un(e),function(e){N.forEach(function(t){e[t]=function(e,n){return n?("component"===t&&Ne(e),"component"===t&&f(n)&&(n.name=n.name||e,n=this.options._base.extend(n)),"directive"===t&&"function"==typeof n&&(n={bind:n,update:n}),this.options[t+"s"][e]=n,n):this.options[t+"s"][e]}})}(e)}(Ln),Object.defineProperty(Ln.prototype,"$isServer",{get:te}),Object.defineProperty(Ln.prototype,"$ssrContext",{get:function(){return this.$vnode&&this.$vnode.ssrContext}}),Object.defineProperty(Ln,"FunctionalRenderContext",{value:Kt}),Ln.version="2.6.10";var Kn="[object Array]",Xn="[object Object]";function Yn(e,t){var n={};return function e(t,n){if(t===n)return;var r=Qn(t);var o=Qn(n);if(r==Xn&&o==Xn){if(Object.keys(t).length>=Object.keys(n).length)for(var i in n){var a=t[i];void 0===a?t[i]=null:e(a,n[i])}}else r==Kn&&o==Kn&&t.length>=n.length&&n.forEach(function(n,r){e(t[r],n)})}(e,t),function e(t,n,r,o){if(t===n)return;var i=Qn(t);var a=Qn(n);if(i==Xn)if(a!=Xn||Object.keys(t).length<Object.keys(n).length)Zn(o,r,t);else{var s=function(i){var a=t[i],s=n[i],u=Qn(a),c=Qn(s);if(u!=Kn&&u!=Xn)a!=n[i]&&Zn(o,(""==r?"":r+".")+i,a);else if(u==Kn)c!=Kn?Zn(o,(""==r?"":r+".")+i,a):a.length<s.length?Zn(o,(""==r?"":r+".")+i,a):a.forEach(function(t,n){e(t,s[n],(""==r?"":r+".")+i+"["+n+"]",o)});else if(u==Xn)if(c!=Xn||Object.keys(a).length<Object.keys(s).length)Zn(o,(""==r?"":r+".")+i,a);else for(var f in a)e(a[f],s[f],(""==r?"":r+".")+i+"."+f,o)};for(var u in t)s(u)}else i==Kn?a!=Kn?Zn(o,r,t):t.length<n.length?Zn(o,r,t):t.forEach(function(t,i){e(t,n[i],r+"["+i+"]",o)}):Zn(o,r,t)}(e,t,"",n),n}function Zn(e,t,n){e[t]=n}function Qn(e){return Object.prototype.toString.call(e)}function er(e){if(e.__next_tick_callbacks&&e.__next_tick_callbacks.length){if(Object({VUE_APP_PLATFORM:"mp-weixin",NODE_ENV:"development",BASE_URL:"/"}).VUE_APP_DEBUG){var t=e.$scope;console.log("["+ +new Date+"]["+(t.is||t.route)+"]["+e._uid+"]:flushCallbacks["+e.__next_tick_callbacks.length+"]")}var n=e.__next_tick_callbacks.slice(0);e.__next_tick_callbacks.length=0;for(var r=0;r<n.length;r++)n[r]()}}function tr(e,t){if(!e.__next_tick_pending&&!function(e){return _n.find(function(t){return e._watcher===t})}(e)){if(Object({VUE_APP_PLATFORM:"mp-weixin",NODE_ENV:"development",BASE_URL:"/"}).VUE_APP_DEBUG){var n=e.$scope;console.log("["+ +new Date+"]["+(n.is||n.route)+"]["+e._uid+"]:nextVueTick")}return ut(t,e)}if(Object({VUE_APP_PLATFORM:"mp-weixin",NODE_ENV:"development",BASE_URL:"/"}).VUE_APP_DEBUG){var r=e.$scope;console.log("["+ +new Date+"]["+(r.is||r.route)+"]["+e._uid+"]:nextMPTick")}var o;if(e.__next_tick_callbacks||(e.__next_tick_callbacks=[]),e.__next_tick_callbacks.push(function(){if(t)try{t.call(e)}catch(t){Ke(t,e,"nextTick")}else o&&o(e)}),!t&&"undefined"!=typeof Promise)return new Promise(function(e){o=e})}function nr(){}function rr(e){return Array.isArray(e)?function(e){for(var t,n="",r=0,i=e.length;r<i;r++)o(t=rr(e[r]))&&""!==t&&(n&&(n+=" "),n+=t);return n}(e):s(e)?function(e){var t="";for(var n in e)e[n]&&(t&&(t+=" "),t+=n);return t}(e):"string"==typeof e?e:""}var or=w(function(e){var t={},n=/:(.+)/;return e.split(/;(?![^(]*\))/g).forEach(function(e){if(e){var r=e.split(n);r.length>1&&(t[r[0].trim()]=r[1].trim())}}),t});var ir=["createSelectorQuery","createIntersectionObserver","selectAllComponents","selectComponent"];var ar=["onLaunch","onShow","onHide","onUniNViewMessage","onError","onLoad","onReady","onUnload","onPullDownRefresh","onReachBottom","onTabItemTap","onShareAppMessage","onResize","onPageScroll","onNavigationBarButtonTap","onBackPress","onNavigationBarSearchInputChanged","onNavigationBarSearchInputConfirmed","onNavigationBarSearchInputClicked","onPageShow","onPageHide","onPageResize"];Ln.prototype.__patch__=function(e,t){var n,r,o=this;if(null!==t&&("page"===this.mpType||"component"===this.mpType)){var i=this.$scope,a=Object.create(null);try{n=this,r=Object.create(null),[].concat(Object.keys(n._data||{}),Object.keys(n._computedWatchers||{})).reduce(function(e,t){return e[t]=n[t],e},r),Object.assign(r,n.$mp.data||{}),Array.isArray(n.$options.behaviors)&&-1!==n.$options.behaviors.indexOf("uni://form-field")&&(r.name=n.name,r.value=n.value),a=JSON.parse(JSON.stringify(r))}catch(e){console.error(e)}a.__webviewId__=i.data.__webviewId__;var s=Object.create(null);Object.keys(a).forEach(function(e){s[e]=i.data[e]});var u=Yn(a,s);Object.keys(u).length?(Object({VUE_APP_PLATFORM:"mp-weixin",NODE_ENV:"development",BASE_URL:"/"}).VUE_APP_DEBUG&&console.log("["+ +new Date+"]["+(i.is||i.route)+"]["+this._uid+"]差量更新",JSON.stringify(u)),this.__next_tick_pending=!0,i.setData(u,function(){o.__next_tick_pending=!1,er(o)})):er(this)}},Ln.prototype.$mount=function(e,t){return function(e,t,n){return e.mpType?("app"===e.mpType&&(e.$options.render=nr),e.$options.render||(e.$options.render=nr,e.$options.template&&"#"!==e.$options.template.charAt(0)||e.$options.el||t?ae("You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build.",e):ae("Failed to mount component: template or render function not defined.",e)),"mp-toutiao"!==e.mpHost&&gn(e,"beforeMount"),new En(e,function(){e._update(e._render(),n)},S,{before:function(){e._isMounted&&!e._isDestroyed&&gn(e,"beforeUpdate")}},!0),n=!1,e):e}(this,e,t)},function(e){var t=e.extend;e.extend=function(e){var n=(e=e||{}).methods;return n&&Object.keys(n).forEach(function(t){-1!==ar.indexOf(t)&&(e[t]=n[t],delete n[t])}),t.call(this,e)};var n=e.config.optionMergeStrategies,r=n.created;ar.forEach(function(e){n[e]=r}),e.prototype.__lifecycle_hooks__=ar}(Ln),function(e){e.config.errorHandler=function(e){console.error(e)};var t=e.prototype.$emit;e.prototype.$emit=function(e){return this.$scope&&e&&this.$scope.triggerEvent(e,{__args__:P(arguments,1)}),t.apply(this,arguments)},e.prototype.$nextTick=function(e){return tr(this,e)},ir.forEach(function(t){e.prototype[t]=function(e){if(this.$scope)return this.$scope[t](e)}}),e.prototype.__init_provide=At,e.prototype.__init_injections=jt,e.prototype.__call_hook=function(e,t){var n=this;ve();var r,o=n.$options[e],i=e+" hook";if(o)for(var a=0,s=o.length;a<s;a++)r=Xe(o[a],n,t?[t]:null,n,i);return n._hasHookEvent&&n.$emit("hook:"+e),ye(),r},e.prototype.__set_model=function(e,t,n,r){Array.isArray(r)&&(-1!==r.indexOf("trim")&&(n=n.trim()),-1!==r.indexOf("number")&&(n=this._n(n))),e||(e=this),e[t]=n},e.prototype.__set_sync=function(e,t,n){e||(e=this),e[t]=n},e.prototype.__get_orig=function(e){return f(e)&&e.$orig||e},e.prototype.__get_value=function(e,t){return function e(t,n){var r=n.split("."),o=r[0];return 0===o.indexOf("__$n")&&(o=parseInt(o.replace("__$n",""))),1===r.length?t[o]:e(t[o],r.slice(1).join("."))}(t||this,e)},e.prototype.__get_class=function(e,t){return function(e,t){return o(e)||o(t)?(n=e,r=rr(t),n?r?n+" "+r:n:r||""):"";var n,r}(t,e)},e.prototype.__get_style=function(e,t){if(!e&&!t)return"";var n,r=(n=e,Array.isArray(n)?E(n):"string"==typeof n?or(n):n),o=t?C(t,r):r;return Object.keys(o).map(function(e){return A(e)+":"+o[e]}).join(";")},e.prototype.__map=function(e,t){var n,r,o,i,a;if(Array.isArray(e)){for(n=new Array(e.length),r=0,o=e.length;r<o;r++)n[r]=t(e[r],r);return n}if(s(e)){for(i=Object.keys(e),n=Object.create(null),r=0,o=i.length;r<o;r++)n[a=i[r]]=t(e[a],a,r);return n}return[]}}(Ln),t.default=Ln}.call(this,n(/*! ./../../../../../webpack/buildin/global.js */3))},206:
-/*!***********************************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-orderstatus%2Fbusiness-orderstatus"} ***!
-  \***********************************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/business/business-orderstatus/business-orderstatus.vue */207)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},214:
-/*!*******************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderdetail%2Forder-cancel"} ***!
-  \*******************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/orderdetail/order-cancel.vue */215)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},222:
-/*!*********************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fbusiness-in"} ***!
-  \*********************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/business-in.vue */223)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},230:
-/*!**********************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fupload-photo"} ***!
-  \**********************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/upload-photo.vue */231)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},238:
-/*!*************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fbusiness-verify"} ***!
-  \*************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/business-verify.vue */239)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},246:
-/*!***********************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fverify-result"} ***!
-  \***********************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/verify-result.vue */247)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},254:
-/*!*********************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fsetting-key"} ***!
-  \*********************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/setting-key.vue */255)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},262:
-/*!************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Farrival-repair%2Farrival-repair"} ***!
-  \************************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/arrival-repair/arrival-repair.vue */263)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},27:
-/*!******************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbevip%2Fbevip"} ***!
-  \******************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/bevip/bevip.vue */28)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},270:
-/*!********************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fmy-friends"} ***!
-  \********************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/my-friends.vue */271)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},278:
-/*!*************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fconnect-friends"} ***!
-  \*************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/connect-friends.vue */279)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},286:
-/*!******************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fprize%2Fprize"} ***!
-  \******************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/prize/prize.vue */287)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},294:
-/*!*********************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fprize%2Fmy-prize"} ***!
-  \*********************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/prize/my-prize.vue */295)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},3:
+/*  */
+
+var emptyObject = Object.freeze({});
+
+// These helpers produce better VM code in JS engines due to their
+// explicitness and function inlining.
+function isUndef (v) {
+  return v === undefined || v === null
+}
+
+function isDef (v) {
+  return v !== undefined && v !== null
+}
+
+function isTrue (v) {
+  return v === true
+}
+
+function isFalse (v) {
+  return v === false
+}
+
+/**
+ * Check if value is primitive.
+ */
+function isPrimitive (value) {
+  return (
+    typeof value === 'string' ||
+    typeof value === 'number' ||
+    // $flow-disable-line
+    typeof value === 'symbol' ||
+    typeof value === 'boolean'
+  )
+}
+
+/**
+ * Quick object check - this is primarily used to tell
+ * Objects from primitive values when we know the value
+ * is a JSON-compliant type.
+ */
+function isObject (obj) {
+  return obj !== null && typeof obj === 'object'
+}
+
+/**
+ * Get the raw type string of a value, e.g., [object Object].
+ */
+var _toString = Object.prototype.toString;
+
+function toRawType (value) {
+  return _toString.call(value).slice(8, -1)
+}
+
+/**
+ * Strict object type check. Only returns true
+ * for plain JavaScript objects.
+ */
+function isPlainObject (obj) {
+  return _toString.call(obj) === '[object Object]'
+}
+
+function isRegExp (v) {
+  return _toString.call(v) === '[object RegExp]'
+}
+
+/**
+ * Check if val is a valid array index.
+ */
+function isValidArrayIndex (val) {
+  var n = parseFloat(String(val));
+  return n >= 0 && Math.floor(n) === n && isFinite(val)
+}
+
+function isPromise (val) {
+  return (
+    isDef(val) &&
+    typeof val.then === 'function' &&
+    typeof val.catch === 'function'
+  )
+}
+
+/**
+ * Convert a value to a string that is actually rendered.
+ */
+function toString (val) {
+  return val == null
+    ? ''
+    : Array.isArray(val) || (isPlainObject(val) && val.toString === _toString)
+      ? JSON.stringify(val, null, 2)
+      : String(val)
+}
+
+/**
+ * Convert an input value to a number for persistence.
+ * If the conversion fails, return original string.
+ */
+function toNumber (val) {
+  var n = parseFloat(val);
+  return isNaN(n) ? val : n
+}
+
+/**
+ * Make a map and return a function for checking if a key
+ * is in that map.
+ */
+function makeMap (
+  str,
+  expectsLowerCase
+) {
+  var map = Object.create(null);
+  var list = str.split(',');
+  for (var i = 0; i < list.length; i++) {
+    map[list[i]] = true;
+  }
+  return expectsLowerCase
+    ? function (val) { return map[val.toLowerCase()]; }
+    : function (val) { return map[val]; }
+}
+
+/**
+ * Check if a tag is a built-in tag.
+ */
+var isBuiltInTag = makeMap('slot,component', true);
+
+/**
+ * Check if an attribute is a reserved attribute.
+ */
+var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
+
+/**
+ * Remove an item from an array.
+ */
+function remove (arr, item) {
+  if (arr.length) {
+    var index = arr.indexOf(item);
+    if (index > -1) {
+      return arr.splice(index, 1)
+    }
+  }
+}
+
+/**
+ * Check whether an object has the property.
+ */
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+function hasOwn (obj, key) {
+  return hasOwnProperty.call(obj, key)
+}
+
+/**
+ * Create a cached version of a pure function.
+ */
+function cached (fn) {
+  var cache = Object.create(null);
+  return (function cachedFn (str) {
+    var hit = cache[str];
+    return hit || (cache[str] = fn(str))
+  })
+}
+
+/**
+ * Camelize a hyphen-delimited string.
+ */
+var camelizeRE = /-(\w)/g;
+var camelize = cached(function (str) {
+  return str.replace(camelizeRE, function (_, c) { return c ? c.toUpperCase() : ''; })
+});
+
+/**
+ * Capitalize a string.
+ */
+var capitalize = cached(function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+});
+
+/**
+ * Hyphenate a camelCase string.
+ */
+var hyphenateRE = /\B([A-Z])/g;
+var hyphenate = cached(function (str) {
+  return str.replace(hyphenateRE, '-$1').toLowerCase()
+});
+
+/**
+ * Simple bind polyfill for environments that do not support it,
+ * e.g., PhantomJS 1.x. Technically, we don't need this anymore
+ * since native bind is now performant enough in most browsers.
+ * But removing it would mean breaking code that was able to run in
+ * PhantomJS 1.x, so this must be kept for backward compatibility.
+ */
+
+/* istanbul ignore next */
+function polyfillBind (fn, ctx) {
+  function boundFn (a) {
+    var l = arguments.length;
+    return l
+      ? l > 1
+        ? fn.apply(ctx, arguments)
+        : fn.call(ctx, a)
+      : fn.call(ctx)
+  }
+
+  boundFn._length = fn.length;
+  return boundFn
+}
+
+function nativeBind (fn, ctx) {
+  return fn.bind(ctx)
+}
+
+var bind = Function.prototype.bind
+  ? nativeBind
+  : polyfillBind;
+
+/**
+ * Convert an Array-like object to a real Array.
+ */
+function toArray (list, start) {
+  start = start || 0;
+  var i = list.length - start;
+  var ret = new Array(i);
+  while (i--) {
+    ret[i] = list[i + start];
+  }
+  return ret
+}
+
+/**
+ * Mix properties into target object.
+ */
+function extend (to, _from) {
+  for (var key in _from) {
+    to[key] = _from[key];
+  }
+  return to
+}
+
+/**
+ * Merge an Array of Objects into a single Object.
+ */
+function toObject (arr) {
+  var res = {};
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      extend(res, arr[i]);
+    }
+  }
+  return res
+}
+
+/* eslint-disable no-unused-vars */
+
+/**
+ * Perform no operation.
+ * Stubbing args to make Flow happy without leaving useless transpiled code
+ * with ...rest (https://flow.org/blog/2017/05/07/Strict-Function-Call-Arity/).
+ */
+function noop (a, b, c) {}
+
+/**
+ * Always return false.
+ */
+var no = function (a, b, c) { return false; };
+
+/* eslint-enable no-unused-vars */
+
+/**
+ * Return the same value.
+ */
+var identity = function (_) { return _; };
+
+/**
+ * Check if two values are loosely equal - that is,
+ * if they are plain objects, do they have the same shape?
+ */
+function looseEqual (a, b) {
+  if (a === b) { return true }
+  var isObjectA = isObject(a);
+  var isObjectB = isObject(b);
+  if (isObjectA && isObjectB) {
+    try {
+      var isArrayA = Array.isArray(a);
+      var isArrayB = Array.isArray(b);
+      if (isArrayA && isArrayB) {
+        return a.length === b.length && a.every(function (e, i) {
+          return looseEqual(e, b[i])
+        })
+      } else if (a instanceof Date && b instanceof Date) {
+        return a.getTime() === b.getTime()
+      } else if (!isArrayA && !isArrayB) {
+        var keysA = Object.keys(a);
+        var keysB = Object.keys(b);
+        return keysA.length === keysB.length && keysA.every(function (key) {
+          return looseEqual(a[key], b[key])
+        })
+      } else {
+        /* istanbul ignore next */
+        return false
+      }
+    } catch (e) {
+      /* istanbul ignore next */
+      return false
+    }
+  } else if (!isObjectA && !isObjectB) {
+    return String(a) === String(b)
+  } else {
+    return false
+  }
+}
+
+/**
+ * Return the first index at which a loosely equal value can be
+ * found in the array (if value is a plain object, the array must
+ * contain an object of the same shape), or -1 if it is not present.
+ */
+function looseIndexOf (arr, val) {
+  for (var i = 0; i < arr.length; i++) {
+    if (looseEqual(arr[i], val)) { return i }
+  }
+  return -1
+}
+
+/**
+ * Ensure a function is called only once.
+ */
+function once (fn) {
+  var called = false;
+  return function () {
+    if (!called) {
+      called = true;
+      fn.apply(this, arguments);
+    }
+  }
+}
+
+var ASSET_TYPES = [
+  'component',
+  'directive',
+  'filter'
+];
+
+var LIFECYCLE_HOOKS = [
+  'beforeCreate',
+  'created',
+  'beforeMount',
+  'mounted',
+  'beforeUpdate',
+  'updated',
+  'beforeDestroy',
+  'destroyed',
+  'activated',
+  'deactivated',
+  'errorCaptured',
+  'serverPrefetch'
+];
+
+/*  */
+
+
+
+var config = ({
+  /**
+   * Option merge strategies (used in core/util/options)
+   */
+  // $flow-disable-line
+  optionMergeStrategies: Object.create(null),
+
+  /**
+   * Whether to suppress warnings.
+   */
+  silent: false,
+
+  /**
+   * Show production mode tip message on boot?
+   */
+  productionTip: "development" !== 'production',
+
+  /**
+   * Whether to enable devtools
+   */
+  devtools: "development" !== 'production',
+
+  /**
+   * Whether to record perf
+   */
+  performance: false,
+
+  /**
+   * Error handler for watcher errors
+   */
+  errorHandler: null,
+
+  /**
+   * Warn handler for watcher warns
+   */
+  warnHandler: null,
+
+  /**
+   * Ignore certain custom elements
+   */
+  ignoredElements: [],
+
+  /**
+   * Custom user key aliases for v-on
+   */
+  // $flow-disable-line
+  keyCodes: Object.create(null),
+
+  /**
+   * Check if a tag is reserved so that it cannot be registered as a
+   * component. This is platform-dependent and may be overwritten.
+   */
+  isReservedTag: no,
+
+  /**
+   * Check if an attribute is reserved so that it cannot be used as a component
+   * prop. This is platform-dependent and may be overwritten.
+   */
+  isReservedAttr: no,
+
+  /**
+   * Check if a tag is an unknown element.
+   * Platform-dependent.
+   */
+  isUnknownElement: no,
+
+  /**
+   * Get the namespace of an element
+   */
+  getTagNamespace: noop,
+
+  /**
+   * Parse the real tag name for the specific platform.
+   */
+  parsePlatformTagName: identity,
+
+  /**
+   * Check if an attribute must be bound using property, e.g. value
+   * Platform-dependent.
+   */
+  mustUseProp: no,
+
+  /**
+   * Perform updates asynchronously. Intended to be used by Vue Test Utils
+   * This will significantly reduce performance if set to false.
+   */
+  async: true,
+
+  /**
+   * Exposed for legacy reasons
+   */
+  _lifecycleHooks: LIFECYCLE_HOOKS
+});
+
+/*  */
+
+/**
+ * unicode letters used for parsing html tags, component names and property paths.
+ * using https://www.w3.org/TR/html53/semantics-scripting.html#potentialcustomelementname
+ * skipping \u10000-\uEFFFF due to it freezing up PhantomJS
+ */
+var unicodeRegExp = /a-zA-Z\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C-\u200D\u203F-\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD/;
+
+/**
+ * Check if a string starts with $ or _
+ */
+function isReserved (str) {
+  var c = (str + '').charCodeAt(0);
+  return c === 0x24 || c === 0x5F
+}
+
+/**
+ * Define a property.
+ */
+function def (obj, key, val, enumerable) {
+  Object.defineProperty(obj, key, {
+    value: val,
+    enumerable: !!enumerable,
+    writable: true,
+    configurable: true
+  });
+}
+
+/**
+ * Parse simple path.
+ */
+var bailRE = new RegExp(("[^" + (unicodeRegExp.source) + ".$_\\d]"));
+function parsePath (path) {
+  if (bailRE.test(path)) {
+    return
+  }
+  var segments = path.split('.');
+  return function (obj) {
+    for (var i = 0; i < segments.length; i++) {
+      if (!obj) { return }
+      obj = obj[segments[i]];
+    }
+    return obj
+  }
+}
+
+/*  */
+
+// can we use __proto__?
+var hasProto = '__proto__' in {};
+
+// Browser environment sniffing
+var inBrowser = typeof window !== 'undefined';
+var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
+var weexPlatform = inWeex && WXEnvironment.platform.toLowerCase();
+var UA = inBrowser && window.navigator.userAgent.toLowerCase();
+var isIE = UA && /msie|trident/.test(UA);
+var isIE9 = UA && UA.indexOf('msie 9.0') > 0;
+var isEdge = UA && UA.indexOf('edge/') > 0;
+var isAndroid = (UA && UA.indexOf('android') > 0) || (weexPlatform === 'android');
+var isIOS = (UA && /iphone|ipad|ipod|ios/.test(UA)) || (weexPlatform === 'ios');
+var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
+var isPhantomJS = UA && /phantomjs/.test(UA);
+var isFF = UA && UA.match(/firefox\/(\d+)/);
+
+// Firefox has a "watch" function on Object.prototype...
+var nativeWatch = ({}).watch;
+if (inBrowser) {
+  try {
+    var opts = {};
+    Object.defineProperty(opts, 'passive', ({
+      get: function get () {
+      }
+    })); // https://github.com/facebook/flow/issues/285
+    window.addEventListener('test-passive', null, opts);
+  } catch (e) {}
+}
+
+// this needs to be lazy-evaled because vue may be required before
+// vue-server-renderer can set VUE_ENV
+var _isServer;
+var isServerRendering = function () {
+  if (_isServer === undefined) {
+    /* istanbul ignore if */
+    if (!inBrowser && !inWeex && typeof global !== 'undefined') {
+      // detect presence of vue-server-renderer and avoid
+      // Webpack shimming the process
+      _isServer = global['process'] && global['process'].env.VUE_ENV === 'server';
+    } else {
+      _isServer = false;
+    }
+  }
+  return _isServer
+};
+
+// detect devtools
+var devtools = inBrowser && window.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+
+/* istanbul ignore next */
+function isNative (Ctor) {
+  return typeof Ctor === 'function' && /native code/.test(Ctor.toString())
+}
+
+var hasSymbol =
+  typeof Symbol !== 'undefined' && isNative(Symbol) &&
+  typeof Reflect !== 'undefined' && isNative(Reflect.ownKeys);
+
+var _Set;
+/* istanbul ignore if */ // $flow-disable-line
+if (typeof Set !== 'undefined' && isNative(Set)) {
+  // use native Set when available.
+  _Set = Set;
+} else {
+  // a non-standard Set polyfill that only works with primitive keys.
+  _Set = /*@__PURE__*/(function () {
+    function Set () {
+      this.set = Object.create(null);
+    }
+    Set.prototype.has = function has (key) {
+      return this.set[key] === true
+    };
+    Set.prototype.add = function add (key) {
+      this.set[key] = true;
+    };
+    Set.prototype.clear = function clear () {
+      this.set = Object.create(null);
+    };
+
+    return Set;
+  }());
+}
+
+/*  */
+
+var warn = noop;
+var tip = noop;
+var generateComponentTrace = (noop); // work around flow check
+var formatComponentName = (noop);
+
+if (true) {
+  var hasConsole = typeof console !== 'undefined';
+  var classifyRE = /(?:^|[-_])(\w)/g;
+  var classify = function (str) { return str
+    .replace(classifyRE, function (c) { return c.toUpperCase(); })
+    .replace(/[-_]/g, ''); };
+
+  warn = function (msg, vm) {
+    var trace = vm ? generateComponentTrace(vm) : '';
+
+    if (config.warnHandler) {
+      config.warnHandler.call(null, msg, vm, trace);
+    } else if (hasConsole && (!config.silent)) {
+      console.error(("[Vue warn]: " + msg + trace));
+    }
+  };
+
+  tip = function (msg, vm) {
+    if (hasConsole && (!config.silent)) {
+      console.warn("[Vue tip]: " + msg + (
+        vm ? generateComponentTrace(vm) : ''
+      ));
+    }
+  };
+
+  formatComponentName = function (vm, includeFile) {
+    {
+      if(vm.$scope && vm.$scope.is){
+        return vm.$scope.is
+      }
+    }
+    if (vm.$root === vm) {
+      return '<Root>'
+    }
+    var options = typeof vm === 'function' && vm.cid != null
+      ? vm.options
+      : vm._isVue
+        ? vm.$options || vm.constructor.options
+        : vm;
+    var name = options.name || options._componentTag;
+    var file = options.__file;
+    if (!name && file) {
+      var match = file.match(/([^/\\]+)\.vue$/);
+      name = match && match[1];
+    }
+
+    return (
+      (name ? ("<" + (classify(name)) + ">") : "<Anonymous>") +
+      (file && includeFile !== false ? (" at " + file) : '')
+    )
+  };
+
+  var repeat = function (str, n) {
+    var res = '';
+    while (n) {
+      if (n % 2 === 1) { res += str; }
+      if (n > 1) { str += str; }
+      n >>= 1;
+    }
+    return res
+  };
+
+  generateComponentTrace = function (vm) {
+    if (vm._isVue && vm.$parent) {
+      var tree = [];
+      var currentRecursiveSequence = 0;
+      while (vm) {
+        if (tree.length > 0) {
+          var last = tree[tree.length - 1];
+          if (last.constructor === vm.constructor) {
+            currentRecursiveSequence++;
+            vm = vm.$parent;
+            continue
+          } else if (currentRecursiveSequence > 0) {
+            tree[tree.length - 1] = [last, currentRecursiveSequence];
+            currentRecursiveSequence = 0;
+          }
+        }
+        tree.push(vm);
+        vm = vm.$parent;
+      }
+      return '\n\nfound in\n\n' + tree
+        .map(function (vm, i) { return ("" + (i === 0 ? '---> ' : repeat(' ', 5 + i * 2)) + (Array.isArray(vm)
+            ? ((formatComponentName(vm[0])) + "... (" + (vm[1]) + " recursive calls)")
+            : formatComponentName(vm))); })
+        .join('\n')
+    } else {
+      return ("\n\n(found in " + (formatComponentName(vm)) + ")")
+    }
+  };
+}
+
+/*  */
+
+var uid = 0;
+
+/**
+ * A dep is an observable that can have multiple
+ * directives subscribing to it.
+ */
+var Dep = function Dep () {
+  this.id = uid++;
+  this.subs = [];
+};
+
+Dep.prototype.addSub = function addSub (sub) {
+  this.subs.push(sub);
+};
+
+Dep.prototype.removeSub = function removeSub (sub) {
+  remove(this.subs, sub);
+};
+
+Dep.prototype.depend = function depend () {
+  if (Dep.target) {
+    Dep.target.addDep(this);
+  }
+};
+
+Dep.prototype.notify = function notify () {
+  // stabilize the subscriber list first
+  var subs = this.subs.slice();
+  if ( true && !config.async) {
+    // subs aren't sorted in scheduler if not running async
+    // we need to sort them now to make sure they fire in correct
+    // order
+    subs.sort(function (a, b) { return a.id - b.id; });
+  }
+  for (var i = 0, l = subs.length; i < l; i++) {
+    subs[i].update();
+  }
+};
+
+// The current target watcher being evaluated.
+// This is globally unique because only one watcher
+// can be evaluated at a time.
+Dep.target = null;
+var targetStack = [];
+
+function pushTarget (target) {
+  targetStack.push(target);
+  Dep.target = target;
+}
+
+function popTarget () {
+  targetStack.pop();
+  Dep.target = targetStack[targetStack.length - 1];
+}
+
+/*  */
+
+var VNode = function VNode (
+  tag,
+  data,
+  children,
+  text,
+  elm,
+  context,
+  componentOptions,
+  asyncFactory
+) {
+  this.tag = tag;
+  this.data = data;
+  this.children = children;
+  this.text = text;
+  this.elm = elm;
+  this.ns = undefined;
+  this.context = context;
+  this.fnContext = undefined;
+  this.fnOptions = undefined;
+  this.fnScopeId = undefined;
+  this.key = data && data.key;
+  this.componentOptions = componentOptions;
+  this.componentInstance = undefined;
+  this.parent = undefined;
+  this.raw = false;
+  this.isStatic = false;
+  this.isRootInsert = true;
+  this.isComment = false;
+  this.isCloned = false;
+  this.isOnce = false;
+  this.asyncFactory = asyncFactory;
+  this.asyncMeta = undefined;
+  this.isAsyncPlaceholder = false;
+};
+
+var prototypeAccessors = { child: { configurable: true } };
+
+// DEPRECATED: alias for componentInstance for backwards compat.
+/* istanbul ignore next */
+prototypeAccessors.child.get = function () {
+  return this.componentInstance
+};
+
+Object.defineProperties( VNode.prototype, prototypeAccessors );
+
+var createEmptyVNode = function (text) {
+  if ( text === void 0 ) text = '';
+
+  var node = new VNode();
+  node.text = text;
+  node.isComment = true;
+  return node
+};
+
+function createTextVNode (val) {
+  return new VNode(undefined, undefined, undefined, String(val))
+}
+
+// optimized shallow clone
+// used for static nodes and slot nodes because they may be reused across
+// multiple renders, cloning them avoids errors when DOM manipulations rely
+// on their elm reference.
+function cloneVNode (vnode) {
+  var cloned = new VNode(
+    vnode.tag,
+    vnode.data,
+    // #7975
+    // clone children array to avoid mutating original in case of cloning
+    // a child.
+    vnode.children && vnode.children.slice(),
+    vnode.text,
+    vnode.elm,
+    vnode.context,
+    vnode.componentOptions,
+    vnode.asyncFactory
+  );
+  cloned.ns = vnode.ns;
+  cloned.isStatic = vnode.isStatic;
+  cloned.key = vnode.key;
+  cloned.isComment = vnode.isComment;
+  cloned.fnContext = vnode.fnContext;
+  cloned.fnOptions = vnode.fnOptions;
+  cloned.fnScopeId = vnode.fnScopeId;
+  cloned.asyncMeta = vnode.asyncMeta;
+  cloned.isCloned = true;
+  return cloned
+}
+
+/*
+ * not type checking this file because flow doesn't play well with
+ * dynamically accessing methods on Array prototype
+ */
+
+var arrayProto = Array.prototype;
+var arrayMethods = Object.create(arrayProto);
+
+var methodsToPatch = [
+  'push',
+  'pop',
+  'shift',
+  'unshift',
+  'splice',
+  'sort',
+  'reverse'
+];
+
+/**
+ * Intercept mutating methods and emit events
+ */
+methodsToPatch.forEach(function (method) {
+  // cache original method
+  var original = arrayProto[method];
+  def(arrayMethods, method, function mutator () {
+    var args = [], len = arguments.length;
+    while ( len-- ) args[ len ] = arguments[ len ];
+
+    var result = original.apply(this, args);
+    var ob = this.__ob__;
+    var inserted;
+    switch (method) {
+      case 'push':
+      case 'unshift':
+        inserted = args;
+        break
+      case 'splice':
+        inserted = args.slice(2);
+        break
+    }
+    if (inserted) { ob.observeArray(inserted); }
+    // notify change
+    ob.dep.notify();
+    return result
+  });
+});
+
+/*  */
+
+var arrayKeys = Object.getOwnPropertyNames(arrayMethods);
+
+/**
+ * In some cases we may want to disable observation inside a component's
+ * update computation.
+ */
+var shouldObserve = true;
+
+function toggleObserving (value) {
+  shouldObserve = value;
+}
+
+/**
+ * Observer class that is attached to each observed
+ * object. Once attached, the observer converts the target
+ * object's property keys into getter/setters that
+ * collect dependencies and dispatch updates.
+ */
+var Observer = function Observer (value) {
+  this.value = value;
+  this.dep = new Dep();
+  this.vmCount = 0;
+  def(value, '__ob__', this);
+  if (Array.isArray(value)) {
+    if (hasProto) {
+      protoAugment(value, arrayMethods);
+    } else {
+      copyAugment(value, arrayMethods, arrayKeys);
+    }
+    this.observeArray(value);
+  } else {
+    this.walk(value);
+  }
+};
+
+/**
+ * Walk through all properties and convert them into
+ * getter/setters. This method should only be called when
+ * value type is Object.
+ */
+Observer.prototype.walk = function walk (obj) {
+  var keys = Object.keys(obj);
+  for (var i = 0; i < keys.length; i++) {
+    defineReactive$$1(obj, keys[i]);
+  }
+};
+
+/**
+ * Observe a list of Array items.
+ */
+Observer.prototype.observeArray = function observeArray (items) {
+  for (var i = 0, l = items.length; i < l; i++) {
+    observe(items[i]);
+  }
+};
+
+// helpers
+
+/**
+ * Augment a target Object or Array by intercepting
+ * the prototype chain using __proto__
+ */
+function protoAugment (target, src) {
+  /* eslint-disable no-proto */
+  target.__proto__ = src;
+  /* eslint-enable no-proto */
+}
+
+/**
+ * Augment a target Object or Array by defining
+ * hidden properties.
+ */
+/* istanbul ignore next */
+function copyAugment (target, src, keys) {
+  for (var i = 0, l = keys.length; i < l; i++) {
+    var key = keys[i];
+    def(target, key, src[key]);
+  }
+}
+
+/**
+ * Attempt to create an observer instance for a value,
+ * returns the new observer if successfully observed,
+ * or the existing observer if the value already has one.
+ */
+function observe (value, asRootData) {
+  if (!isObject(value) || value instanceof VNode) {
+    return
+  }
+  var ob;
+  if (hasOwn(value, '__ob__') && value.__ob__ instanceof Observer) {
+    ob = value.__ob__;
+  } else if (
+    shouldObserve &&
+    !isServerRendering() &&
+    (Array.isArray(value) || isPlainObject(value)) &&
+    Object.isExtensible(value) &&
+    !value._isVue
+  ) {
+    ob = new Observer(value);
+  }
+  if (asRootData && ob) {
+    ob.vmCount++;
+  }
+  return ob
+}
+
+/**
+ * Define a reactive property on an Object.
+ */
+function defineReactive$$1 (
+  obj,
+  key,
+  val,
+  customSetter,
+  shallow
+) {
+  var dep = new Dep();
+
+  var property = Object.getOwnPropertyDescriptor(obj, key);
+  if (property && property.configurable === false) {
+    return
+  }
+
+  // cater for pre-defined getter/setters
+  var getter = property && property.get;
+  var setter = property && property.set;
+  if ((!getter || setter) && arguments.length === 2) {
+    val = obj[key];
+  }
+
+  var childOb = !shallow && observe(val);
+  Object.defineProperty(obj, key, {
+    enumerable: true,
+    configurable: true,
+    get: function reactiveGetter () {
+      var value = getter ? getter.call(obj) : val;
+      if (Dep.target) {
+        dep.depend();
+        if (childOb) {
+          childOb.dep.depend();
+          if (Array.isArray(value)) {
+            dependArray(value);
+          }
+        }
+      }
+      return value
+    },
+    set: function reactiveSetter (newVal) {
+      var value = getter ? getter.call(obj) : val;
+      /* eslint-disable no-self-compare */
+      if (newVal === value || (newVal !== newVal && value !== value)) {
+        return
+      }
+      /* eslint-enable no-self-compare */
+      if ( true && customSetter) {
+        customSetter();
+      }
+      // #7981: for accessor properties without setter
+      if (getter && !setter) { return }
+      if (setter) {
+        setter.call(obj, newVal);
+      } else {
+        val = newVal;
+      }
+      childOb = !shallow && observe(newVal);
+      dep.notify();
+    }
+  });
+}
+
+/**
+ * Set a property on an object. Adds the new property and
+ * triggers change notification if the property doesn't
+ * already exist.
+ */
+function set (target, key, val) {
+  if ( true &&
+    (isUndef(target) || isPrimitive(target))
+  ) {
+    warn(("Cannot set reactive property on undefined, null, or primitive value: " + ((target))));
+  }
+  if (Array.isArray(target) && isValidArrayIndex(key)) {
+    target.length = Math.max(target.length, key);
+    target.splice(key, 1, val);
+    return val
+  }
+  if (key in target && !(key in Object.prototype)) {
+    target[key] = val;
+    return val
+  }
+  var ob = (target).__ob__;
+  if (target._isVue || (ob && ob.vmCount)) {
+     true && warn(
+      'Avoid adding reactive properties to a Vue instance or its root $data ' +
+      'at runtime - declare it upfront in the data option.'
+    );
+    return val
+  }
+  if (!ob) {
+    target[key] = val;
+    return val
+  }
+  defineReactive$$1(ob.value, key, val);
+  ob.dep.notify();
+  return val
+}
+
+/**
+ * Delete a property and trigger change if necessary.
+ */
+function del (target, key) {
+  if ( true &&
+    (isUndef(target) || isPrimitive(target))
+  ) {
+    warn(("Cannot delete reactive property on undefined, null, or primitive value: " + ((target))));
+  }
+  if (Array.isArray(target) && isValidArrayIndex(key)) {
+    target.splice(key, 1);
+    return
+  }
+  var ob = (target).__ob__;
+  if (target._isVue || (ob && ob.vmCount)) {
+     true && warn(
+      'Avoid deleting properties on a Vue instance or its root $data ' +
+      '- just set it to null.'
+    );
+    return
+  }
+  if (!hasOwn(target, key)) {
+    return
+  }
+  delete target[key];
+  if (!ob) {
+    return
+  }
+  ob.dep.notify();
+}
+
+/**
+ * Collect dependencies on array elements when the array is touched, since
+ * we cannot intercept array element access like property getters.
+ */
+function dependArray (value) {
+  for (var e = (void 0), i = 0, l = value.length; i < l; i++) {
+    e = value[i];
+    e && e.__ob__ && e.__ob__.dep.depend();
+    if (Array.isArray(e)) {
+      dependArray(e);
+    }
+  }
+}
+
+/*  */
+
+/**
+ * Option overwriting strategies are functions that handle
+ * how to merge a parent option value and a child option
+ * value into the final value.
+ */
+var strats = config.optionMergeStrategies;
+
+/**
+ * Options with restrictions
+ */
+if (true) {
+  strats.el = strats.propsData = function (parent, child, vm, key) {
+    if (!vm) {
+      warn(
+        "option \"" + key + "\" can only be used during instance " +
+        'creation with the `new` keyword.'
+      );
+    }
+    return defaultStrat(parent, child)
+  };
+}
+
+/**
+ * Helper that recursively merges two data objects together.
+ */
+function mergeData (to, from) {
+  if (!from) { return to }
+  var key, toVal, fromVal;
+
+  var keys = hasSymbol
+    ? Reflect.ownKeys(from)
+    : Object.keys(from);
+
+  for (var i = 0; i < keys.length; i++) {
+    key = keys[i];
+    // in case the object is already observed...
+    if (key === '__ob__') { continue }
+    toVal = to[key];
+    fromVal = from[key];
+    if (!hasOwn(to, key)) {
+      set(to, key, fromVal);
+    } else if (
+      toVal !== fromVal &&
+      isPlainObject(toVal) &&
+      isPlainObject(fromVal)
+    ) {
+      mergeData(toVal, fromVal);
+    }
+  }
+  return to
+}
+
+/**
+ * Data
+ */
+function mergeDataOrFn (
+  parentVal,
+  childVal,
+  vm
+) {
+  if (!vm) {
+    // in a Vue.extend merge, both should be functions
+    if (!childVal) {
+      return parentVal
+    }
+    if (!parentVal) {
+      return childVal
+    }
+    // when parentVal & childVal are both present,
+    // we need to return a function that returns the
+    // merged result of both functions... no need to
+    // check if parentVal is a function here because
+    // it has to be a function to pass previous merges.
+    return function mergedDataFn () {
+      return mergeData(
+        typeof childVal === 'function' ? childVal.call(this, this) : childVal,
+        typeof parentVal === 'function' ? parentVal.call(this, this) : parentVal
+      )
+    }
+  } else {
+    return function mergedInstanceDataFn () {
+      // instance merge
+      var instanceData = typeof childVal === 'function'
+        ? childVal.call(vm, vm)
+        : childVal;
+      var defaultData = typeof parentVal === 'function'
+        ? parentVal.call(vm, vm)
+        : parentVal;
+      if (instanceData) {
+        return mergeData(instanceData, defaultData)
+      } else {
+        return defaultData
+      }
+    }
+  }
+}
+
+strats.data = function (
+  parentVal,
+  childVal,
+  vm
+) {
+  if (!vm) {
+    if (childVal && typeof childVal !== 'function') {
+       true && warn(
+        'The "data" option should be a function ' +
+        'that returns a per-instance value in component ' +
+        'definitions.',
+        vm
+      );
+
+      return parentVal
+    }
+    return mergeDataOrFn(parentVal, childVal)
+  }
+
+  return mergeDataOrFn(parentVal, childVal, vm)
+};
+
+/**
+ * Hooks and props are merged as arrays.
+ */
+function mergeHook (
+  parentVal,
+  childVal
+) {
+  var res = childVal
+    ? parentVal
+      ? parentVal.concat(childVal)
+      : Array.isArray(childVal)
+        ? childVal
+        : [childVal]
+    : parentVal;
+  return res
+    ? dedupeHooks(res)
+    : res
+}
+
+function dedupeHooks (hooks) {
+  var res = [];
+  for (var i = 0; i < hooks.length; i++) {
+    if (res.indexOf(hooks[i]) === -1) {
+      res.push(hooks[i]);
+    }
+  }
+  return res
+}
+
+LIFECYCLE_HOOKS.forEach(function (hook) {
+  strats[hook] = mergeHook;
+});
+
+/**
+ * Assets
+ *
+ * When a vm is present (instance creation), we need to do
+ * a three-way merge between constructor options, instance
+ * options and parent options.
+ */
+function mergeAssets (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
+  var res = Object.create(parentVal || null);
+  if (childVal) {
+     true && assertObjectType(key, childVal, vm);
+    return extend(res, childVal)
+  } else {
+    return res
+  }
+}
+
+ASSET_TYPES.forEach(function (type) {
+  strats[type + 's'] = mergeAssets;
+});
+
+/**
+ * Watchers.
+ *
+ * Watchers hashes should not overwrite one
+ * another, so we merge them as arrays.
+ */
+strats.watch = function (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
+  // work around Firefox's Object.prototype.watch...
+  if (parentVal === nativeWatch) { parentVal = undefined; }
+  if (childVal === nativeWatch) { childVal = undefined; }
+  /* istanbul ignore if */
+  if (!childVal) { return Object.create(parentVal || null) }
+  if (true) {
+    assertObjectType(key, childVal, vm);
+  }
+  if (!parentVal) { return childVal }
+  var ret = {};
+  extend(ret, parentVal);
+  for (var key$1 in childVal) {
+    var parent = ret[key$1];
+    var child = childVal[key$1];
+    if (parent && !Array.isArray(parent)) {
+      parent = [parent];
+    }
+    ret[key$1] = parent
+      ? parent.concat(child)
+      : Array.isArray(child) ? child : [child];
+  }
+  return ret
+};
+
+/**
+ * Other object hashes.
+ */
+strats.props =
+strats.methods =
+strats.inject =
+strats.computed = function (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
+  if (childVal && "development" !== 'production') {
+    assertObjectType(key, childVal, vm);
+  }
+  if (!parentVal) { return childVal }
+  var ret = Object.create(null);
+  extend(ret, parentVal);
+  if (childVal) { extend(ret, childVal); }
+  return ret
+};
+strats.provide = mergeDataOrFn;
+
+/**
+ * Default strategy.
+ */
+var defaultStrat = function (parentVal, childVal) {
+  return childVal === undefined
+    ? parentVal
+    : childVal
+};
+
+/**
+ * Validate component names
+ */
+function checkComponents (options) {
+  for (var key in options.components) {
+    validateComponentName(key);
+  }
+}
+
+function validateComponentName (name) {
+  if (!new RegExp(("^[a-zA-Z][\\-\\.0-9_" + (unicodeRegExp.source) + "]*$")).test(name)) {
+    warn(
+      'Invalid component name: "' + name + '". Component names ' +
+      'should conform to valid custom element name in html5 specification.'
+    );
+  }
+  if (isBuiltInTag(name) || config.isReservedTag(name)) {
+    warn(
+      'Do not use built-in or reserved HTML elements as component ' +
+      'id: ' + name
+    );
+  }
+}
+
+/**
+ * Ensure all props option syntax are normalized into the
+ * Object-based format.
+ */
+function normalizeProps (options, vm) {
+  var props = options.props;
+  if (!props) { return }
+  var res = {};
+  var i, val, name;
+  if (Array.isArray(props)) {
+    i = props.length;
+    while (i--) {
+      val = props[i];
+      if (typeof val === 'string') {
+        name = camelize(val);
+        res[name] = { type: null };
+      } else if (true) {
+        warn('props must be strings when using array syntax.');
+      }
+    }
+  } else if (isPlainObject(props)) {
+    for (var key in props) {
+      val = props[key];
+      name = camelize(key);
+      res[name] = isPlainObject(val)
+        ? val
+        : { type: val };
+    }
+  } else if (true) {
+    warn(
+      "Invalid value for option \"props\": expected an Array or an Object, " +
+      "but got " + (toRawType(props)) + ".",
+      vm
+    );
+  }
+  options.props = res;
+}
+
+/**
+ * Normalize all injections into Object-based format
+ */
+function normalizeInject (options, vm) {
+  var inject = options.inject;
+  if (!inject) { return }
+  var normalized = options.inject = {};
+  if (Array.isArray(inject)) {
+    for (var i = 0; i < inject.length; i++) {
+      normalized[inject[i]] = { from: inject[i] };
+    }
+  } else if (isPlainObject(inject)) {
+    for (var key in inject) {
+      var val = inject[key];
+      normalized[key] = isPlainObject(val)
+        ? extend({ from: key }, val)
+        : { from: val };
+    }
+  } else if (true) {
+    warn(
+      "Invalid value for option \"inject\": expected an Array or an Object, " +
+      "but got " + (toRawType(inject)) + ".",
+      vm
+    );
+  }
+}
+
+/**
+ * Normalize raw function directives into object format.
+ */
+function normalizeDirectives (options) {
+  var dirs = options.directives;
+  if (dirs) {
+    for (var key in dirs) {
+      var def$$1 = dirs[key];
+      if (typeof def$$1 === 'function') {
+        dirs[key] = { bind: def$$1, update: def$$1 };
+      }
+    }
+  }
+}
+
+function assertObjectType (name, value, vm) {
+  if (!isPlainObject(value)) {
+    warn(
+      "Invalid value for option \"" + name + "\": expected an Object, " +
+      "but got " + (toRawType(value)) + ".",
+      vm
+    );
+  }
+}
+
+/**
+ * Merge two option objects into a new one.
+ * Core utility used in both instantiation and inheritance.
+ */
+function mergeOptions (
+  parent,
+  child,
+  vm
+) {
+  if (true) {
+    checkComponents(child);
+  }
+
+  if (typeof child === 'function') {
+    child = child.options;
+  }
+
+  normalizeProps(child, vm);
+  normalizeInject(child, vm);
+  normalizeDirectives(child);
+
+  // Apply extends and mixins on the child options,
+  // but only if it is a raw options object that isn't
+  // the result of another mergeOptions call.
+  // Only merged options has the _base property.
+  if (!child._base) {
+    if (child.extends) {
+      parent = mergeOptions(parent, child.extends, vm);
+    }
+    if (child.mixins) {
+      for (var i = 0, l = child.mixins.length; i < l; i++) {
+        parent = mergeOptions(parent, child.mixins[i], vm);
+      }
+    }
+  }
+
+  var options = {};
+  var key;
+  for (key in parent) {
+    mergeField(key);
+  }
+  for (key in child) {
+    if (!hasOwn(parent, key)) {
+      mergeField(key);
+    }
+  }
+  function mergeField (key) {
+    var strat = strats[key] || defaultStrat;
+    options[key] = strat(parent[key], child[key], vm, key);
+  }
+  return options
+}
+
+/**
+ * Resolve an asset.
+ * This function is used because child instances need access
+ * to assets defined in its ancestor chain.
+ */
+function resolveAsset (
+  options,
+  type,
+  id,
+  warnMissing
+) {
+  /* istanbul ignore if */
+  if (typeof id !== 'string') {
+    return
+  }
+  var assets = options[type];
+  // check local registration variations first
+  if (hasOwn(assets, id)) { return assets[id] }
+  var camelizedId = camelize(id);
+  if (hasOwn(assets, camelizedId)) { return assets[camelizedId] }
+  var PascalCaseId = capitalize(camelizedId);
+  if (hasOwn(assets, PascalCaseId)) { return assets[PascalCaseId] }
+  // fallback to prototype chain
+  var res = assets[id] || assets[camelizedId] || assets[PascalCaseId];
+  if ( true && warnMissing && !res) {
+    warn(
+      'Failed to resolve ' + type.slice(0, -1) + ': ' + id,
+      options
+    );
+  }
+  return res
+}
+
+/*  */
+
+
+
+function validateProp (
+  key,
+  propOptions,
+  propsData,
+  vm
+) {
+  var prop = propOptions[key];
+  var absent = !hasOwn(propsData, key);
+  var value = propsData[key];
+  // boolean casting
+  var booleanIndex = getTypeIndex(Boolean, prop.type);
+  if (booleanIndex > -1) {
+    if (absent && !hasOwn(prop, 'default')) {
+      value = false;
+    } else if (value === '' || value === hyphenate(key)) {
+      // only cast empty string / same name to boolean if
+      // boolean has higher priority
+      var stringIndex = getTypeIndex(String, prop.type);
+      if (stringIndex < 0 || booleanIndex < stringIndex) {
+        value = true;
+      }
+    }
+  }
+  // check default value
+  if (value === undefined) {
+    value = getPropDefaultValue(vm, prop, key);
+    // since the default value is a fresh copy,
+    // make sure to observe it.
+    var prevShouldObserve = shouldObserve;
+    toggleObserving(true);
+    observe(value);
+    toggleObserving(prevShouldObserve);
+  }
+  if (
+    true
+  ) {
+    assertProp(prop, key, value, vm, absent);
+  }
+  return value
+}
+
+/**
+ * Get the default value of a prop.
+ */
+function getPropDefaultValue (vm, prop, key) {
+  // no default, return undefined
+  if (!hasOwn(prop, 'default')) {
+    return undefined
+  }
+  var def = prop.default;
+  // warn against non-factory defaults for Object & Array
+  if ( true && isObject(def)) {
+    warn(
+      'Invalid default value for prop "' + key + '": ' +
+      'Props with type Object/Array must use a factory function ' +
+      'to return the default value.',
+      vm
+    );
+  }
+  // the raw prop value was also undefined from previous render,
+  // return previous default value to avoid unnecessary watcher trigger
+  if (vm && vm.$options.propsData &&
+    vm.$options.propsData[key] === undefined &&
+    vm._props[key] !== undefined
+  ) {
+    return vm._props[key]
+  }
+  // call factory function for non-Function types
+  // a value is Function if its prototype is function even across different execution context
+  return typeof def === 'function' && getType(prop.type) !== 'Function'
+    ? def.call(vm)
+    : def
+}
+
+/**
+ * Assert whether a prop is valid.
+ */
+function assertProp (
+  prop,
+  name,
+  value,
+  vm,
+  absent
+) {
+  if (prop.required && absent) {
+    warn(
+      'Missing required prop: "' + name + '"',
+      vm
+    );
+    return
+  }
+  if (value == null && !prop.required) {
+    return
+  }
+  var type = prop.type;
+  var valid = !type || type === true;
+  var expectedTypes = [];
+  if (type) {
+    if (!Array.isArray(type)) {
+      type = [type];
+    }
+    for (var i = 0; i < type.length && !valid; i++) {
+      var assertedType = assertType(value, type[i]);
+      expectedTypes.push(assertedType.expectedType || '');
+      valid = assertedType.valid;
+    }
+  }
+
+  if (!valid) {
+    warn(
+      getInvalidTypeMessage(name, value, expectedTypes),
+      vm
+    );
+    return
+  }
+  var validator = prop.validator;
+  if (validator) {
+    if (!validator(value)) {
+      warn(
+        'Invalid prop: custom validator check failed for prop "' + name + '".',
+        vm
+      );
+    }
+  }
+}
+
+var simpleCheckRE = /^(String|Number|Boolean|Function|Symbol)$/;
+
+function assertType (value, type) {
+  var valid;
+  var expectedType = getType(type);
+  if (simpleCheckRE.test(expectedType)) {
+    var t = typeof value;
+    valid = t === expectedType.toLowerCase();
+    // for primitive wrapper objects
+    if (!valid && t === 'object') {
+      valid = value instanceof type;
+    }
+  } else if (expectedType === 'Object') {
+    valid = isPlainObject(value);
+  } else if (expectedType === 'Array') {
+    valid = Array.isArray(value);
+  } else {
+    valid = value instanceof type;
+  }
+  return {
+    valid: valid,
+    expectedType: expectedType
+  }
+}
+
+/**
+ * Use function string name to check built-in types,
+ * because a simple equality check will fail when running
+ * across different vms / iframes.
+ */
+function getType (fn) {
+  var match = fn && fn.toString().match(/^\s*function (\w+)/);
+  return match ? match[1] : ''
+}
+
+function isSameType (a, b) {
+  return getType(a) === getType(b)
+}
+
+function getTypeIndex (type, expectedTypes) {
+  if (!Array.isArray(expectedTypes)) {
+    return isSameType(expectedTypes, type) ? 0 : -1
+  }
+  for (var i = 0, len = expectedTypes.length; i < len; i++) {
+    if (isSameType(expectedTypes[i], type)) {
+      return i
+    }
+  }
+  return -1
+}
+
+function getInvalidTypeMessage (name, value, expectedTypes) {
+  var message = "Invalid prop: type check failed for prop \"" + name + "\"." +
+    " Expected " + (expectedTypes.map(capitalize).join(', '));
+  var expectedType = expectedTypes[0];
+  var receivedType = toRawType(value);
+  var expectedValue = styleValue(value, expectedType);
+  var receivedValue = styleValue(value, receivedType);
+  // check if we need to specify expected value
+  if (expectedTypes.length === 1 &&
+      isExplicable(expectedType) &&
+      !isBoolean(expectedType, receivedType)) {
+    message += " with value " + expectedValue;
+  }
+  message += ", got " + receivedType + " ";
+  // check if we need to specify received value
+  if (isExplicable(receivedType)) {
+    message += "with value " + receivedValue + ".";
+  }
+  return message
+}
+
+function styleValue (value, type) {
+  if (type === 'String') {
+    return ("\"" + value + "\"")
+  } else if (type === 'Number') {
+    return ("" + (Number(value)))
+  } else {
+    return ("" + value)
+  }
+}
+
+function isExplicable (value) {
+  var explicitTypes = ['string', 'number', 'boolean'];
+  return explicitTypes.some(function (elem) { return value.toLowerCase() === elem; })
+}
+
+function isBoolean () {
+  var args = [], len = arguments.length;
+  while ( len-- ) args[ len ] = arguments[ len ];
+
+  return args.some(function (elem) { return elem.toLowerCase() === 'boolean'; })
+}
+
+/*  */
+
+function handleError (err, vm, info) {
+  // Deactivate deps tracking while processing error handler to avoid possible infinite rendering.
+  // See: https://github.com/vuejs/vuex/issues/1505
+  pushTarget();
+  try {
+    if (vm) {
+      var cur = vm;
+      while ((cur = cur.$parent)) {
+        var hooks = cur.$options.errorCaptured;
+        if (hooks) {
+          for (var i = 0; i < hooks.length; i++) {
+            try {
+              var capture = hooks[i].call(cur, err, vm, info) === false;
+              if (capture) { return }
+            } catch (e) {
+              globalHandleError(e, cur, 'errorCaptured hook');
+            }
+          }
+        }
+      }
+    }
+    globalHandleError(err, vm, info);
+  } finally {
+    popTarget();
+  }
+}
+
+function invokeWithErrorHandling (
+  handler,
+  context,
+  args,
+  vm,
+  info
+) {
+  var res;
+  try {
+    res = args ? handler.apply(context, args) : handler.call(context);
+    if (res && !res._isVue && isPromise(res) && !res._handled) {
+      res.catch(function (e) { return handleError(e, vm, info + " (Promise/async)"); });
+      // issue #9511
+      // avoid catch triggering multiple times when nested calls
+      res._handled = true;
+    }
+  } catch (e) {
+    handleError(e, vm, info);
+  }
+  return res
+}
+
+function globalHandleError (err, vm, info) {
+  if (config.errorHandler) {
+    try {
+      return config.errorHandler.call(null, err, vm, info)
+    } catch (e) {
+      // if the user intentionally throws the original error in the handler,
+      // do not log it twice
+      if (e !== err) {
+        logError(e, null, 'config.errorHandler');
+      }
+    }
+  }
+  logError(err, vm, info);
+}
+
+function logError (err, vm, info) {
+  if (true) {
+    warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
+  }
+  /* istanbul ignore else */
+  if ((inBrowser || inWeex) && typeof console !== 'undefined') {
+    console.error(err);
+  } else {
+    throw err
+  }
+}
+
+/*  */
+
+var callbacks = [];
+var pending = false;
+
+function flushCallbacks () {
+  pending = false;
+  var copies = callbacks.slice(0);
+  callbacks.length = 0;
+  for (var i = 0; i < copies.length; i++) {
+    copies[i]();
+  }
+}
+
+// Here we have async deferring wrappers using microtasks.
+// In 2.5 we used (macro) tasks (in combination with microtasks).
+// However, it has subtle problems when state is changed right before repaint
+// (e.g. #6813, out-in transitions).
+// Also, using (macro) tasks in event handler would cause some weird behaviors
+// that cannot be circumvented (e.g. #7109, #7153, #7546, #7834, #8109).
+// So we now use microtasks everywhere, again.
+// A major drawback of this tradeoff is that there are some scenarios
+// where microtasks have too high a priority and fire in between supposedly
+// sequential events (e.g. #4521, #6690, which have workarounds)
+// or even between bubbling of the same event (#6566).
+var timerFunc;
+
+// The nextTick behavior leverages the microtask queue, which can be accessed
+// via either native Promise.then or MutationObserver.
+// MutationObserver has wider support, however it is seriously bugged in
+// UIWebView in iOS >= 9.3.3 when triggered in touch event handlers. It
+// completely stops working after triggering a few times... so, if native
+// Promise is available, we will use it:
+/* istanbul ignore next, $flow-disable-line */
+if (typeof Promise !== 'undefined' && isNative(Promise)) {
+  var p = Promise.resolve();
+  timerFunc = function () {
+    p.then(flushCallbacks);
+    // In problematic UIWebViews, Promise.then doesn't completely break, but
+    // it can get stuck in a weird state where callbacks are pushed into the
+    // microtask queue but the queue isn't being flushed, until the browser
+    // needs to do some other work, e.g. handle a timer. Therefore we can
+    // "force" the microtask queue to be flushed by adding an empty timer.
+    if (isIOS) { setTimeout(noop); }
+  };
+} else if (!isIE && typeof MutationObserver !== 'undefined' && (
+  isNative(MutationObserver) ||
+  // PhantomJS and iOS 7.x
+  MutationObserver.toString() === '[object MutationObserverConstructor]'
+)) {
+  // Use MutationObserver where native Promise is not available,
+  // e.g. PhantomJS, iOS7, Android 4.4
+  // (#6466 MutationObserver is unreliable in IE11)
+  var counter = 1;
+  var observer = new MutationObserver(flushCallbacks);
+  var textNode = document.createTextNode(String(counter));
+  observer.observe(textNode, {
+    characterData: true
+  });
+  timerFunc = function () {
+    counter = (counter + 1) % 2;
+    textNode.data = String(counter);
+  };
+} else if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
+  // Fallback to setImmediate.
+  // Techinically it leverages the (macro) task queue,
+  // but it is still a better choice than setTimeout.
+  timerFunc = function () {
+    setImmediate(flushCallbacks);
+  };
+} else {
+  // Fallback to setTimeout.
+  timerFunc = function () {
+    setTimeout(flushCallbacks, 0);
+  };
+}
+
+function nextTick (cb, ctx) {
+  var _resolve;
+  callbacks.push(function () {
+    if (cb) {
+      try {
+        cb.call(ctx);
+      } catch (e) {
+        handleError(e, ctx, 'nextTick');
+      }
+    } else if (_resolve) {
+      _resolve(ctx);
+    }
+  });
+  if (!pending) {
+    pending = true;
+    timerFunc();
+  }
+  // $flow-disable-line
+  if (!cb && typeof Promise !== 'undefined') {
+    return new Promise(function (resolve) {
+      _resolve = resolve;
+    })
+  }
+}
+
+/*  */
+
+/* not type checking this file because flow doesn't play well with Proxy */
+
+var initProxy;
+
+if (true) {
+  var allowedGlobals = makeMap(
+    'Infinity,undefined,NaN,isFinite,isNaN,' +
+    'parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,' +
+    'Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,' +
+    'require' // for Webpack/Browserify
+  );
+
+  var warnNonPresent = function (target, key) {
+    warn(
+      "Property or method \"" + key + "\" is not defined on the instance but " +
+      'referenced during render. Make sure that this property is reactive, ' +
+      'either in the data option, or for class-based components, by ' +
+      'initializing the property. ' +
+      'See: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.',
+      target
+    );
+  };
+
+  var warnReservedPrefix = function (target, key) {
+    warn(
+      "Property \"" + key + "\" must be accessed with \"$data." + key + "\" because " +
+      'properties starting with "$" or "_" are not proxied in the Vue instance to ' +
+      'prevent conflicts with Vue internals' +
+      'See: https://vuejs.org/v2/api/#data',
+      target
+    );
+  };
+
+  var hasProxy =
+    typeof Proxy !== 'undefined' && isNative(Proxy);
+
+  if (hasProxy) {
+    var isBuiltInModifier = makeMap('stop,prevent,self,ctrl,shift,alt,meta,exact');
+    config.keyCodes = new Proxy(config.keyCodes, {
+      set: function set (target, key, value) {
+        if (isBuiltInModifier(key)) {
+          warn(("Avoid overwriting built-in modifier in config.keyCodes: ." + key));
+          return false
+        } else {
+          target[key] = value;
+          return true
+        }
+      }
+    });
+  }
+
+  var hasHandler = {
+    has: function has (target, key) {
+      var has = key in target;
+      var isAllowed = allowedGlobals(key) ||
+        (typeof key === 'string' && key.charAt(0) === '_' && !(key in target.$data));
+      if (!has && !isAllowed) {
+        if (key in target.$data) { warnReservedPrefix(target, key); }
+        else { warnNonPresent(target, key); }
+      }
+      return has || !isAllowed
+    }
+  };
+
+  var getHandler = {
+    get: function get (target, key) {
+      if (typeof key === 'string' && !(key in target)) {
+        if (key in target.$data) { warnReservedPrefix(target, key); }
+        else { warnNonPresent(target, key); }
+      }
+      return target[key]
+    }
+  };
+
+  initProxy = function initProxy (vm) {
+    if (hasProxy) {
+      // determine which proxy handler to use
+      var options = vm.$options;
+      var handlers = options.render && options.render._withStripped
+        ? getHandler
+        : hasHandler;
+      vm._renderProxy = new Proxy(vm, handlers);
+    } else {
+      vm._renderProxy = vm;
+    }
+  };
+}
+
+/*  */
+
+var seenObjects = new _Set();
+
+/**
+ * Recursively traverse an object to evoke all converted
+ * getters, so that every nested property inside the object
+ * is collected as a "deep" dependency.
+ */
+function traverse (val) {
+  _traverse(val, seenObjects);
+  seenObjects.clear();
+}
+
+function _traverse (val, seen) {
+  var i, keys;
+  var isA = Array.isArray(val);
+  if ((!isA && !isObject(val)) || Object.isFrozen(val) || val instanceof VNode) {
+    return
+  }
+  if (val.__ob__) {
+    var depId = val.__ob__.dep.id;
+    if (seen.has(depId)) {
+      return
+    }
+    seen.add(depId);
+  }
+  if (isA) {
+    i = val.length;
+    while (i--) { _traverse(val[i], seen); }
+  } else {
+    keys = Object.keys(val);
+    i = keys.length;
+    while (i--) { _traverse(val[keys[i]], seen); }
+  }
+}
+
+var mark;
+var measure;
+
+if (true) {
+  var perf = inBrowser && window.performance;
+  /* istanbul ignore if */
+  if (
+    perf &&
+    perf.mark &&
+    perf.measure &&
+    perf.clearMarks &&
+    perf.clearMeasures
+  ) {
+    mark = function (tag) { return perf.mark(tag); };
+    measure = function (name, startTag, endTag) {
+      perf.measure(name, startTag, endTag);
+      perf.clearMarks(startTag);
+      perf.clearMarks(endTag);
+      // perf.clearMeasures(name)
+    };
+  }
+}
+
+/*  */
+
+var normalizeEvent = cached(function (name) {
+  var passive = name.charAt(0) === '&';
+  name = passive ? name.slice(1) : name;
+  var once$$1 = name.charAt(0) === '~'; // Prefixed last, checked first
+  name = once$$1 ? name.slice(1) : name;
+  var capture = name.charAt(0) === '!';
+  name = capture ? name.slice(1) : name;
+  return {
+    name: name,
+    once: once$$1,
+    capture: capture,
+    passive: passive
+  }
+});
+
+function createFnInvoker (fns, vm) {
+  function invoker () {
+    var arguments$1 = arguments;
+
+    var fns = invoker.fns;
+    if (Array.isArray(fns)) {
+      var cloned = fns.slice();
+      for (var i = 0; i < cloned.length; i++) {
+        invokeWithErrorHandling(cloned[i], null, arguments$1, vm, "v-on handler");
+      }
+    } else {
+      // return handler return value for single handlers
+      return invokeWithErrorHandling(fns, null, arguments, vm, "v-on handler")
+    }
+  }
+  invoker.fns = fns;
+  return invoker
+}
+
+function updateListeners (
+  on,
+  oldOn,
+  add,
+  remove$$1,
+  createOnceHandler,
+  vm
+) {
+  var name, def$$1, cur, old, event;
+  for (name in on) {
+    def$$1 = cur = on[name];
+    old = oldOn[name];
+    event = normalizeEvent(name);
+    if (isUndef(cur)) {
+       true && warn(
+        "Invalid handler for event \"" + (event.name) + "\": got " + String(cur),
+        vm
+      );
+    } else if (isUndef(old)) {
+      if (isUndef(cur.fns)) {
+        cur = on[name] = createFnInvoker(cur, vm);
+      }
+      if (isTrue(event.once)) {
+        cur = on[name] = createOnceHandler(event.name, cur, event.capture);
+      }
+      add(event.name, cur, event.capture, event.passive, event.params);
+    } else if (cur !== old) {
+      old.fns = cur;
+      on[name] = old;
+    }
+  }
+  for (name in oldOn) {
+    if (isUndef(on[name])) {
+      event = normalizeEvent(name);
+      remove$$1(event.name, oldOn[name], event.capture);
+    }
+  }
+}
+
+/*  */
+
+/*  */
+
+function extractPropsFromVNodeData (
+  data,
+  Ctor,
+  tag
+) {
+  // we are only extracting raw values here.
+  // validation and default values are handled in the child
+  // component itself.
+  var propOptions = Ctor.options.props;
+  if (isUndef(propOptions)) {
+    return
+  }
+  var res = {};
+  var attrs = data.attrs;
+  var props = data.props;
+  if (isDef(attrs) || isDef(props)) {
+    for (var key in propOptions) {
+      var altKey = hyphenate(key);
+      if (true) {
+        var keyInLowerCase = key.toLowerCase();
+        if (
+          key !== keyInLowerCase &&
+          attrs && hasOwn(attrs, keyInLowerCase)
+        ) {
+          tip(
+            "Prop \"" + keyInLowerCase + "\" is passed to component " +
+            (formatComponentName(tag || Ctor)) + ", but the declared prop name is" +
+            " \"" + key + "\". " +
+            "Note that HTML attributes are case-insensitive and camelCased " +
+            "props need to use their kebab-case equivalents when using in-DOM " +
+            "templates. You should probably use \"" + altKey + "\" instead of \"" + key + "\"."
+          );
+        }
+      }
+      checkProp(res, props, key, altKey, true) ||
+      checkProp(res, attrs, key, altKey, false);
+    }
+  }
+  return res
+}
+
+function checkProp (
+  res,
+  hash,
+  key,
+  altKey,
+  preserve
+) {
+  if (isDef(hash)) {
+    if (hasOwn(hash, key)) {
+      res[key] = hash[key];
+      if (!preserve) {
+        delete hash[key];
+      }
+      return true
+    } else if (hasOwn(hash, altKey)) {
+      res[key] = hash[altKey];
+      if (!preserve) {
+        delete hash[altKey];
+      }
+      return true
+    }
+  }
+  return false
+}
+
+/*  */
+
+// The template compiler attempts to minimize the need for normalization by
+// statically analyzing the template at compile time.
+//
+// For plain HTML markup, normalization can be completely skipped because the
+// generated render function is guaranteed to return Array<VNode>. There are
+// two cases where extra normalization is needed:
+
+// 1. When the children contains components - because a functional component
+// may return an Array instead of a single root. In this case, just a simple
+// normalization is needed - if any child is an Array, we flatten the whole
+// thing with Array.prototype.concat. It is guaranteed to be only 1-level deep
+// because functional components already normalize their own children.
+function simpleNormalizeChildren (children) {
+  for (var i = 0; i < children.length; i++) {
+    if (Array.isArray(children[i])) {
+      return Array.prototype.concat.apply([], children)
+    }
+  }
+  return children
+}
+
+// 2. When the children contains constructs that always generated nested Arrays,
+// e.g. <template>, <slot>, v-for, or when the children is provided by user
+// with hand-written render functions / JSX. In such cases a full normalization
+// is needed to cater to all possible types of children values.
+function normalizeChildren (children) {
+  return isPrimitive(children)
+    ? [createTextVNode(children)]
+    : Array.isArray(children)
+      ? normalizeArrayChildren(children)
+      : undefined
+}
+
+function isTextNode (node) {
+  return isDef(node) && isDef(node.text) && isFalse(node.isComment)
+}
+
+function normalizeArrayChildren (children, nestedIndex) {
+  var res = [];
+  var i, c, lastIndex, last;
+  for (i = 0; i < children.length; i++) {
+    c = children[i];
+    if (isUndef(c) || typeof c === 'boolean') { continue }
+    lastIndex = res.length - 1;
+    last = res[lastIndex];
+    //  nested
+    if (Array.isArray(c)) {
+      if (c.length > 0) {
+        c = normalizeArrayChildren(c, ((nestedIndex || '') + "_" + i));
+        // merge adjacent text nodes
+        if (isTextNode(c[0]) && isTextNode(last)) {
+          res[lastIndex] = createTextVNode(last.text + (c[0]).text);
+          c.shift();
+        }
+        res.push.apply(res, c);
+      }
+    } else if (isPrimitive(c)) {
+      if (isTextNode(last)) {
+        // merge adjacent text nodes
+        // this is necessary for SSR hydration because text nodes are
+        // essentially merged when rendered to HTML strings
+        res[lastIndex] = createTextVNode(last.text + c);
+      } else if (c !== '') {
+        // convert primitive to vnode
+        res.push(createTextVNode(c));
+      }
+    } else {
+      if (isTextNode(c) && isTextNode(last)) {
+        // merge adjacent text nodes
+        res[lastIndex] = createTextVNode(last.text + c.text);
+      } else {
+        // default key for nested array children (likely generated by v-for)
+        if (isTrue(children._isVList) &&
+          isDef(c.tag) &&
+          isUndef(c.key) &&
+          isDef(nestedIndex)) {
+          c.key = "__vlist" + nestedIndex + "_" + i + "__";
+        }
+        res.push(c);
+      }
+    }
+  }
+  return res
+}
+
+/*  */
+
+function initProvide (vm) {
+  var provide = vm.$options.provide;
+  if (provide) {
+    vm._provided = typeof provide === 'function'
+      ? provide.call(vm)
+      : provide;
+  }
+}
+
+function initInjections (vm) {
+  var result = resolveInject(vm.$options.inject, vm);
+  if (result) {
+    toggleObserving(false);
+    Object.keys(result).forEach(function (key) {
+      /* istanbul ignore else */
+      if (true) {
+        defineReactive$$1(vm, key, result[key], function () {
+          warn(
+            "Avoid mutating an injected value directly since the changes will be " +
+            "overwritten whenever the provided component re-renders. " +
+            "injection being mutated: \"" + key + "\"",
+            vm
+          );
+        });
+      } else {}
+    });
+    toggleObserving(true);
+  }
+}
+
+function resolveInject (inject, vm) {
+  if (inject) {
+    // inject is :any because flow is not smart enough to figure out cached
+    var result = Object.create(null);
+    var keys = hasSymbol
+      ? Reflect.ownKeys(inject)
+      : Object.keys(inject);
+
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+      // #6574 in case the inject object is observed...
+      if (key === '__ob__') { continue }
+      var provideKey = inject[key].from;
+      var source = vm;
+      while (source) {
+        if (source._provided && hasOwn(source._provided, provideKey)) {
+          result[key] = source._provided[provideKey];
+          break
+        }
+        source = source.$parent;
+      }
+      if (!source) {
+        if ('default' in inject[key]) {
+          var provideDefault = inject[key].default;
+          result[key] = typeof provideDefault === 'function'
+            ? provideDefault.call(vm)
+            : provideDefault;
+        } else if (true) {
+          warn(("Injection \"" + key + "\" not found"), vm);
+        }
+      }
+    }
+    return result
+  }
+}
+
+/*  */
+
+
+
+/**
+ * Runtime helper for resolving raw children VNodes into a slot object.
+ */
+function resolveSlots (
+  children,
+  context
+) {
+  if (!children || !children.length) {
+    return {}
+  }
+  var slots = {};
+  for (var i = 0, l = children.length; i < l; i++) {
+    var child = children[i];
+    var data = child.data;
+    // remove slot attribute if the node is resolved as a Vue slot node
+    if (data && data.attrs && data.attrs.slot) {
+      delete data.attrs.slot;
+    }
+    // named slots should only be respected if the vnode was rendered in the
+    // same context.
+    if ((child.context === context || child.fnContext === context) &&
+      data && data.slot != null
+    ) {
+      var name = data.slot;
+      var slot = (slots[name] || (slots[name] = []));
+      if (child.tag === 'template') {
+        slot.push.apply(slot, child.children || []);
+      } else {
+        slot.push(child);
+      }
+    } else {
+      (slots.default || (slots.default = [])).push(child);
+    }
+  }
+  // ignore slots that contains only whitespace
+  for (var name$1 in slots) {
+    if (slots[name$1].every(isWhitespace)) {
+      delete slots[name$1];
+    }
+  }
+  return slots
+}
+
+function isWhitespace (node) {
+  return (node.isComment && !node.asyncFactory) || node.text === ' '
+}
+
+/*  */
+
+function normalizeScopedSlots (
+  slots,
+  normalSlots,
+  prevSlots
+) {
+  var res;
+  var hasNormalSlots = Object.keys(normalSlots).length > 0;
+  var isStable = slots ? !!slots.$stable : !hasNormalSlots;
+  var key = slots && slots.$key;
+  if (!slots) {
+    res = {};
+  } else if (slots._normalized) {
+    // fast path 1: child component re-render only, parent did not change
+    return slots._normalized
+  } else if (
+    isStable &&
+    prevSlots &&
+    prevSlots !== emptyObject &&
+    key === prevSlots.$key &&
+    !hasNormalSlots &&
+    !prevSlots.$hasNormal
+  ) {
+    // fast path 2: stable scoped slots w/ no normal slots to proxy,
+    // only need to normalize once
+    return prevSlots
+  } else {
+    res = {};
+    for (var key$1 in slots) {
+      if (slots[key$1] && key$1[0] !== '$') {
+        res[key$1] = normalizeScopedSlot(normalSlots, key$1, slots[key$1]);
+      }
+    }
+  }
+  // expose normal slots on scopedSlots
+  for (var key$2 in normalSlots) {
+    if (!(key$2 in res)) {
+      res[key$2] = proxyNormalSlot(normalSlots, key$2);
+    }
+  }
+  // avoriaz seems to mock a non-extensible $scopedSlots object
+  // and when that is passed down this would cause an error
+  if (slots && Object.isExtensible(slots)) {
+    (slots)._normalized = res;
+  }
+  def(res, '$stable', isStable);
+  def(res, '$key', key);
+  def(res, '$hasNormal', hasNormalSlots);
+  return res
+}
+
+function normalizeScopedSlot(normalSlots, key, fn) {
+  var normalized = function () {
+    var res = arguments.length ? fn.apply(null, arguments) : fn({});
+    res = res && typeof res === 'object' && !Array.isArray(res)
+      ? [res] // single vnode
+      : normalizeChildren(res);
+    return res && (
+      res.length === 0 ||
+      (res.length === 1 && res[0].isComment) // #9658
+    ) ? undefined
+      : res
+  };
+  // this is a slot using the new v-slot syntax without scope. although it is
+  // compiled as a scoped slot, render fn users would expect it to be present
+  // on this.$slots because the usage is semantically a normal slot.
+  if (fn.proxy) {
+    Object.defineProperty(normalSlots, key, {
+      get: normalized,
+      enumerable: true,
+      configurable: true
+    });
+  }
+  return normalized
+}
+
+function proxyNormalSlot(slots, key) {
+  return function () { return slots[key]; }
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering v-for lists.
+ */
+function renderList (
+  val,
+  render
+) {
+  var ret, i, l, keys, key;
+  if (Array.isArray(val) || typeof val === 'string') {
+    ret = new Array(val.length);
+    for (i = 0, l = val.length; i < l; i++) {
+      ret[i] = render(val[i], i);
+    }
+  } else if (typeof val === 'number') {
+    ret = new Array(val);
+    for (i = 0; i < val; i++) {
+      ret[i] = render(i + 1, i);
+    }
+  } else if (isObject(val)) {
+    if (hasSymbol && val[Symbol.iterator]) {
+      ret = [];
+      var iterator = val[Symbol.iterator]();
+      var result = iterator.next();
+      while (!result.done) {
+        ret.push(render(result.value, ret.length));
+        result = iterator.next();
+      }
+    } else {
+      keys = Object.keys(val);
+      ret = new Array(keys.length);
+      for (i = 0, l = keys.length; i < l; i++) {
+        key = keys[i];
+        ret[i] = render(val[key], key, i);
+      }
+    }
+  }
+  if (!isDef(ret)) {
+    ret = [];
+  }
+  (ret)._isVList = true;
+  return ret
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering <slot>
+ */
+function renderSlot (
+  name,
+  fallback,
+  props,
+  bindObject
+) {
+  var scopedSlotFn = this.$scopedSlots[name];
+  var nodes;
+  if (scopedSlotFn) { // scoped slot
+    props = props || {};
+    if (bindObject) {
+      if ( true && !isObject(bindObject)) {
+        warn(
+          'slot v-bind without argument expects an Object',
+          this
+        );
+      }
+      props = extend(extend({}, bindObject), props);
+    }
+    nodes = scopedSlotFn(props) || fallback;
+  } else {
+    nodes = this.$slots[name] || fallback;
+  }
+
+  var target = props && props.slot;
+  if (target) {
+    return this.$createElement('template', { slot: target }, nodes)
+  } else {
+    return nodes
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for resolving filters
+ */
+function resolveFilter (id) {
+  return resolveAsset(this.$options, 'filters', id, true) || identity
+}
+
+/*  */
+
+function isKeyNotMatch (expect, actual) {
+  if (Array.isArray(expect)) {
+    return expect.indexOf(actual) === -1
+  } else {
+    return expect !== actual
+  }
+}
+
+/**
+ * Runtime helper for checking keyCodes from config.
+ * exposed as Vue.prototype._k
+ * passing in eventKeyName as last argument separately for backwards compat
+ */
+function checkKeyCodes (
+  eventKeyCode,
+  key,
+  builtInKeyCode,
+  eventKeyName,
+  builtInKeyName
+) {
+  var mappedKeyCode = config.keyCodes[key] || builtInKeyCode;
+  if (builtInKeyName && eventKeyName && !config.keyCodes[key]) {
+    return isKeyNotMatch(builtInKeyName, eventKeyName)
+  } else if (mappedKeyCode) {
+    return isKeyNotMatch(mappedKeyCode, eventKeyCode)
+  } else if (eventKeyName) {
+    return hyphenate(eventKeyName) !== key
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for merging v-bind="object" into a VNode's data.
+ */
+function bindObjectProps (
+  data,
+  tag,
+  value,
+  asProp,
+  isSync
+) {
+  if (value) {
+    if (!isObject(value)) {
+       true && warn(
+        'v-bind without argument expects an Object or Array value',
+        this
+      );
+    } else {
+      if (Array.isArray(value)) {
+        value = toObject(value);
+      }
+      var hash;
+      var loop = function ( key ) {
+        if (
+          key === 'class' ||
+          key === 'style' ||
+          isReservedAttribute(key)
+        ) {
+          hash = data;
+        } else {
+          var type = data.attrs && data.attrs.type;
+          hash = asProp || config.mustUseProp(tag, type, key)
+            ? data.domProps || (data.domProps = {})
+            : data.attrs || (data.attrs = {});
+        }
+        var camelizedKey = camelize(key);
+        var hyphenatedKey = hyphenate(key);
+        if (!(camelizedKey in hash) && !(hyphenatedKey in hash)) {
+          hash[key] = value[key];
+
+          if (isSync) {
+            var on = data.on || (data.on = {});
+            on[("update:" + key)] = function ($event) {
+              value[key] = $event;
+            };
+          }
+        }
+      };
+
+      for (var key in value) loop( key );
+    }
+  }
+  return data
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering static trees.
+ */
+function renderStatic (
+  index,
+  isInFor
+) {
+  var cached = this._staticTrees || (this._staticTrees = []);
+  var tree = cached[index];
+  // if has already-rendered static tree and not inside v-for,
+  // we can reuse the same tree.
+  if (tree && !isInFor) {
+    return tree
+  }
+  // otherwise, render a fresh tree.
+  tree = cached[index] = this.$options.staticRenderFns[index].call(
+    this._renderProxy,
+    null,
+    this // for render fns generated for functional component templates
+  );
+  markStatic(tree, ("__static__" + index), false);
+  return tree
+}
+
+/**
+ * Runtime helper for v-once.
+ * Effectively it means marking the node as static with a unique key.
+ */
+function markOnce (
+  tree,
+  index,
+  key
+) {
+  markStatic(tree, ("__once__" + index + (key ? ("_" + key) : "")), true);
+  return tree
+}
+
+function markStatic (
+  tree,
+  key,
+  isOnce
+) {
+  if (Array.isArray(tree)) {
+    for (var i = 0; i < tree.length; i++) {
+      if (tree[i] && typeof tree[i] !== 'string') {
+        markStaticNode(tree[i], (key + "_" + i), isOnce);
+      }
+    }
+  } else {
+    markStaticNode(tree, key, isOnce);
+  }
+}
+
+function markStaticNode (node, key, isOnce) {
+  node.isStatic = true;
+  node.key = key;
+  node.isOnce = isOnce;
+}
+
+/*  */
+
+function bindObjectListeners (data, value) {
+  if (value) {
+    if (!isPlainObject(value)) {
+       true && warn(
+        'v-on without argument expects an Object value',
+        this
+      );
+    } else {
+      var on = data.on = data.on ? extend({}, data.on) : {};
+      for (var key in value) {
+        var existing = on[key];
+        var ours = value[key];
+        on[key] = existing ? [].concat(existing, ours) : ours;
+      }
+    }
+  }
+  return data
+}
+
+/*  */
+
+function resolveScopedSlots (
+  fns, // see flow/vnode
+  res,
+  // the following are added in 2.6
+  hasDynamicKeys,
+  contentHashKey
+) {
+  res = res || { $stable: !hasDynamicKeys };
+  for (var i = 0; i < fns.length; i++) {
+    var slot = fns[i];
+    if (Array.isArray(slot)) {
+      resolveScopedSlots(slot, res, hasDynamicKeys);
+    } else if (slot) {
+      // marker for reverse proxying v-slot without scope on this.$slots
+      if (slot.proxy) {
+        slot.fn.proxy = true;
+      }
+      res[slot.key] = slot.fn;
+    }
+  }
+  if (contentHashKey) {
+    (res).$key = contentHashKey;
+  }
+  return res
+}
+
+/*  */
+
+function bindDynamicKeys (baseObj, values) {
+  for (var i = 0; i < values.length; i += 2) {
+    var key = values[i];
+    if (typeof key === 'string' && key) {
+      baseObj[values[i]] = values[i + 1];
+    } else if ( true && key !== '' && key !== null) {
+      // null is a speical value for explicitly removing a binding
+      warn(
+        ("Invalid value for dynamic directive argument (expected string or null): " + key),
+        this
+      );
+    }
+  }
+  return baseObj
+}
+
+// helper to dynamically append modifier runtime markers to event names.
+// ensure only append when value is already string, otherwise it will be cast
+// to string and cause the type check to miss.
+function prependModifier (value, symbol) {
+  return typeof value === 'string' ? symbol + value : value
+}
+
+/*  */
+
+function installRenderHelpers (target) {
+  target._o = markOnce;
+  target._n = toNumber;
+  target._s = toString;
+  target._l = renderList;
+  target._t = renderSlot;
+  target._q = looseEqual;
+  target._i = looseIndexOf;
+  target._m = renderStatic;
+  target._f = resolveFilter;
+  target._k = checkKeyCodes;
+  target._b = bindObjectProps;
+  target._v = createTextVNode;
+  target._e = createEmptyVNode;
+  target._u = resolveScopedSlots;
+  target._g = bindObjectListeners;
+  target._d = bindDynamicKeys;
+  target._p = prependModifier;
+}
+
+/*  */
+
+function FunctionalRenderContext (
+  data,
+  props,
+  children,
+  parent,
+  Ctor
+) {
+  var this$1 = this;
+
+  var options = Ctor.options;
+  // ensure the createElement function in functional components
+  // gets a unique context - this is necessary for correct named slot check
+  var contextVm;
+  if (hasOwn(parent, '_uid')) {
+    contextVm = Object.create(parent);
+    // $flow-disable-line
+    contextVm._original = parent;
+  } else {
+    // the context vm passed in is a functional context as well.
+    // in this case we want to make sure we are able to get a hold to the
+    // real context instance.
+    contextVm = parent;
+    // $flow-disable-line
+    parent = parent._original;
+  }
+  var isCompiled = isTrue(options._compiled);
+  var needNormalization = !isCompiled;
+
+  this.data = data;
+  this.props = props;
+  this.children = children;
+  this.parent = parent;
+  this.listeners = data.on || emptyObject;
+  this.injections = resolveInject(options.inject, parent);
+  this.slots = function () {
+    if (!this$1.$slots) {
+      normalizeScopedSlots(
+        data.scopedSlots,
+        this$1.$slots = resolveSlots(children, parent)
+      );
+    }
+    return this$1.$slots
+  };
+
+  Object.defineProperty(this, 'scopedSlots', ({
+    enumerable: true,
+    get: function get () {
+      return normalizeScopedSlots(data.scopedSlots, this.slots())
+    }
+  }));
+
+  // support for compiled functional template
+  if (isCompiled) {
+    // exposing $options for renderStatic()
+    this.$options = options;
+    // pre-resolve slots for renderSlot()
+    this.$slots = this.slots();
+    this.$scopedSlots = normalizeScopedSlots(data.scopedSlots, this.$slots);
+  }
+
+  if (options._scopeId) {
+    this._c = function (a, b, c, d) {
+      var vnode = createElement(contextVm, a, b, c, d, needNormalization);
+      if (vnode && !Array.isArray(vnode)) {
+        vnode.fnScopeId = options._scopeId;
+        vnode.fnContext = parent;
+      }
+      return vnode
+    };
+  } else {
+    this._c = function (a, b, c, d) { return createElement(contextVm, a, b, c, d, needNormalization); };
+  }
+}
+
+installRenderHelpers(FunctionalRenderContext.prototype);
+
+function createFunctionalComponent (
+  Ctor,
+  propsData,
+  data,
+  contextVm,
+  children
+) {
+  var options = Ctor.options;
+  var props = {};
+  var propOptions = options.props;
+  if (isDef(propOptions)) {
+    for (var key in propOptions) {
+      props[key] = validateProp(key, propOptions, propsData || emptyObject);
+    }
+  } else {
+    if (isDef(data.attrs)) { mergeProps(props, data.attrs); }
+    if (isDef(data.props)) { mergeProps(props, data.props); }
+  }
+
+  var renderContext = new FunctionalRenderContext(
+    data,
+    props,
+    children,
+    contextVm,
+    Ctor
+  );
+
+  var vnode = options.render.call(null, renderContext._c, renderContext);
+
+  if (vnode instanceof VNode) {
+    return cloneAndMarkFunctionalResult(vnode, data, renderContext.parent, options, renderContext)
+  } else if (Array.isArray(vnode)) {
+    var vnodes = normalizeChildren(vnode) || [];
+    var res = new Array(vnodes.length);
+    for (var i = 0; i < vnodes.length; i++) {
+      res[i] = cloneAndMarkFunctionalResult(vnodes[i], data, renderContext.parent, options, renderContext);
+    }
+    return res
+  }
+}
+
+function cloneAndMarkFunctionalResult (vnode, data, contextVm, options, renderContext) {
+  // #7817 clone node before setting fnContext, otherwise if the node is reused
+  // (e.g. it was from a cached normal slot) the fnContext causes named slots
+  // that should not be matched to match.
+  var clone = cloneVNode(vnode);
+  clone.fnContext = contextVm;
+  clone.fnOptions = options;
+  if (true) {
+    (clone.devtoolsMeta = clone.devtoolsMeta || {}).renderContext = renderContext;
+  }
+  if (data.slot) {
+    (clone.data || (clone.data = {})).slot = data.slot;
+  }
+  return clone
+}
+
+function mergeProps (to, from) {
+  for (var key in from) {
+    to[camelize(key)] = from[key];
+  }
+}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/*  */
+
+// inline hooks to be invoked on component VNodes during patch
+var componentVNodeHooks = {
+  init: function init (vnode, hydrating) {
+    if (
+      vnode.componentInstance &&
+      !vnode.componentInstance._isDestroyed &&
+      vnode.data.keepAlive
+    ) {
+      // kept-alive components, treat as a patch
+      var mountedNode = vnode; // work around flow
+      componentVNodeHooks.prepatch(mountedNode, mountedNode);
+    } else {
+      var child = vnode.componentInstance = createComponentInstanceForVnode(
+        vnode,
+        activeInstance
+      );
+      child.$mount(hydrating ? vnode.elm : undefined, hydrating);
+    }
+  },
+
+  prepatch: function prepatch (oldVnode, vnode) {
+    var options = vnode.componentOptions;
+    var child = vnode.componentInstance = oldVnode.componentInstance;
+    updateChildComponent(
+      child,
+      options.propsData, // updated props
+      options.listeners, // updated listeners
+      vnode, // new parent vnode
+      options.children // new children
+    );
+  },
+
+  insert: function insert (vnode) {
+    var context = vnode.context;
+    var componentInstance = vnode.componentInstance;
+    if (!componentInstance._isMounted) {
+      componentInstance._isMounted = true;
+      callHook(componentInstance, 'mounted');
+    }
+    if (vnode.data.keepAlive) {
+      if (context._isMounted) {
+        // vue-router#1212
+        // During updates, a kept-alive component's child components may
+        // change, so directly walking the tree here may call activated hooks
+        // on incorrect children. Instead we push them into a queue which will
+        // be processed after the whole patch process ended.
+        queueActivatedComponent(componentInstance);
+      } else {
+        activateChildComponent(componentInstance, true /* direct */);
+      }
+    }
+  },
+
+  destroy: function destroy (vnode) {
+    var componentInstance = vnode.componentInstance;
+    if (!componentInstance._isDestroyed) {
+      if (!vnode.data.keepAlive) {
+        componentInstance.$destroy();
+      } else {
+        deactivateChildComponent(componentInstance, true /* direct */);
+      }
+    }
+  }
+};
+
+var hooksToMerge = Object.keys(componentVNodeHooks);
+
+function createComponent (
+  Ctor,
+  data,
+  context,
+  children,
+  tag
+) {
+  if (isUndef(Ctor)) {
+    return
+  }
+
+  var baseCtor = context.$options._base;
+
+  // plain options object: turn it into a constructor
+  if (isObject(Ctor)) {
+    Ctor = baseCtor.extend(Ctor);
+  }
+
+  // if at this stage it's not a constructor or an async component factory,
+  // reject.
+  if (typeof Ctor !== 'function') {
+    if (true) {
+      warn(("Invalid Component definition: " + (String(Ctor))), context);
+    }
+    return
+  }
+
+  // async component
+  var asyncFactory;
+  if (isUndef(Ctor.cid)) {
+    asyncFactory = Ctor;
+    Ctor = resolveAsyncComponent(asyncFactory, baseCtor);
+    if (Ctor === undefined) {
+      // return a placeholder node for async component, which is rendered
+      // as a comment node but preserves all the raw information for the node.
+      // the information will be used for async server-rendering and hydration.
+      return createAsyncPlaceholder(
+        asyncFactory,
+        data,
+        context,
+        children,
+        tag
+      )
+    }
+  }
+
+  data = data || {};
+
+  // resolve constructor options in case global mixins are applied after
+  // component constructor creation
+  resolveConstructorOptions(Ctor);
+
+  // transform component v-model data into props & events
+  if (isDef(data.model)) {
+    transformModel(Ctor.options, data);
+  }
+
+  // extract props
+  var propsData = extractPropsFromVNodeData(data, Ctor, tag);
+
+  // functional component
+  if (isTrue(Ctor.options.functional)) {
+    return createFunctionalComponent(Ctor, propsData, data, context, children)
+  }
+
+  // extract listeners, since these needs to be treated as
+  // child component listeners instead of DOM listeners
+  var listeners = data.on;
+  // replace with listeners with .native modifier
+  // so it gets processed during parent component patch.
+  data.on = data.nativeOn;
+
+  if (isTrue(Ctor.options.abstract)) {
+    // abstract components do not keep anything
+    // other than props & listeners & slot
+
+    // work around flow
+    var slot = data.slot;
+    data = {};
+    if (slot) {
+      data.slot = slot;
+    }
+  }
+
+  // install component management hooks onto the placeholder node
+  installComponentHooks(data);
+
+  // return a placeholder vnode
+  var name = Ctor.options.name || tag;
+  var vnode = new VNode(
+    ("vue-component-" + (Ctor.cid) + (name ? ("-" + name) : '')),
+    data, undefined, undefined, undefined, context,
+    { Ctor: Ctor, propsData: propsData, listeners: listeners, tag: tag, children: children },
+    asyncFactory
+  );
+
+  return vnode
+}
+
+function createComponentInstanceForVnode (
+  vnode, // we know it's MountedComponentVNode but flow doesn't
+  parent // activeInstance in lifecycle state
+) {
+  var options = {
+    _isComponent: true,
+    _parentVnode: vnode,
+    parent: parent
+  };
+  // check inline-template render functions
+  var inlineTemplate = vnode.data.inlineTemplate;
+  if (isDef(inlineTemplate)) {
+    options.render = inlineTemplate.render;
+    options.staticRenderFns = inlineTemplate.staticRenderFns;
+  }
+  return new vnode.componentOptions.Ctor(options)
+}
+
+function installComponentHooks (data) {
+  var hooks = data.hook || (data.hook = {});
+  for (var i = 0; i < hooksToMerge.length; i++) {
+    var key = hooksToMerge[i];
+    var existing = hooks[key];
+    var toMerge = componentVNodeHooks[key];
+    if (existing !== toMerge && !(existing && existing._merged)) {
+      hooks[key] = existing ? mergeHook$1(toMerge, existing) : toMerge;
+    }
+  }
+}
+
+function mergeHook$1 (f1, f2) {
+  var merged = function (a, b) {
+    // flow complains about extra args which is why we use any
+    f1(a, b);
+    f2(a, b);
+  };
+  merged._merged = true;
+  return merged
+}
+
+// transform component v-model info (value and callback) into
+// prop and event handler respectively.
+function transformModel (options, data) {
+  var prop = (options.model && options.model.prop) || 'value';
+  var event = (options.model && options.model.event) || 'input'
+  ;(data.attrs || (data.attrs = {}))[prop] = data.model.value;
+  var on = data.on || (data.on = {});
+  var existing = on[event];
+  var callback = data.model.callback;
+  if (isDef(existing)) {
+    if (
+      Array.isArray(existing)
+        ? existing.indexOf(callback) === -1
+        : existing !== callback
+    ) {
+      on[event] = [callback].concat(existing);
+    }
+  } else {
+    on[event] = callback;
+  }
+}
+
+/*  */
+
+var SIMPLE_NORMALIZE = 1;
+var ALWAYS_NORMALIZE = 2;
+
+// wrapper function for providing a more flexible interface
+// without getting yelled at by flow
+function createElement (
+  context,
+  tag,
+  data,
+  children,
+  normalizationType,
+  alwaysNormalize
+) {
+  if (Array.isArray(data) || isPrimitive(data)) {
+    normalizationType = children;
+    children = data;
+    data = undefined;
+  }
+  if (isTrue(alwaysNormalize)) {
+    normalizationType = ALWAYS_NORMALIZE;
+  }
+  return _createElement(context, tag, data, children, normalizationType)
+}
+
+function _createElement (
+  context,
+  tag,
+  data,
+  children,
+  normalizationType
+) {
+  if (isDef(data) && isDef((data).__ob__)) {
+     true && warn(
+      "Avoid using observed data object as vnode data: " + (JSON.stringify(data)) + "\n" +
+      'Always create fresh vnode data objects in each render!',
+      context
+    );
+    return createEmptyVNode()
+  }
+  // object syntax in v-bind
+  if (isDef(data) && isDef(data.is)) {
+    tag = data.is;
+  }
+  if (!tag) {
+    // in case of component :is set to falsy value
+    return createEmptyVNode()
+  }
+  // warn against non-primitive key
+  if ( true &&
+    isDef(data) && isDef(data.key) && !isPrimitive(data.key)
+  ) {
+    {
+      warn(
+        'Avoid using non-primitive value as key, ' +
+        'use string/number value instead.',
+        context
+      );
+    }
+  }
+  // support single function children as default scoped slot
+  if (Array.isArray(children) &&
+    typeof children[0] === 'function'
+  ) {
+    data = data || {};
+    data.scopedSlots = { default: children[0] };
+    children.length = 0;
+  }
+  if (normalizationType === ALWAYS_NORMALIZE) {
+    children = normalizeChildren(children);
+  } else if (normalizationType === SIMPLE_NORMALIZE) {
+    children = simpleNormalizeChildren(children);
+  }
+  var vnode, ns;
+  if (typeof tag === 'string') {
+    var Ctor;
+    ns = (context.$vnode && context.$vnode.ns) || config.getTagNamespace(tag);
+    if (config.isReservedTag(tag)) {
+      // platform built-in elements
+      vnode = new VNode(
+        config.parsePlatformTagName(tag), data, children,
+        undefined, undefined, context
+      );
+    } else if ((!data || !data.pre) && isDef(Ctor = resolveAsset(context.$options, 'components', tag))) {
+      // component
+      vnode = createComponent(Ctor, data, context, children, tag);
+    } else {
+      // unknown or unlisted namespaced elements
+      // check at runtime because it may get assigned a namespace when its
+      // parent normalizes children
+      vnode = new VNode(
+        tag, data, children,
+        undefined, undefined, context
+      );
+    }
+  } else {
+    // direct component options / constructor
+    vnode = createComponent(tag, data, context, children);
+  }
+  if (Array.isArray(vnode)) {
+    return vnode
+  } else if (isDef(vnode)) {
+    if (isDef(ns)) { applyNS(vnode, ns); }
+    if (isDef(data)) { registerDeepBindings(data); }
+    return vnode
+  } else {
+    return createEmptyVNode()
+  }
+}
+
+function applyNS (vnode, ns, force) {
+  vnode.ns = ns;
+  if (vnode.tag === 'foreignObject') {
+    // use default namespace inside foreignObject
+    ns = undefined;
+    force = true;
+  }
+  if (isDef(vnode.children)) {
+    for (var i = 0, l = vnode.children.length; i < l; i++) {
+      var child = vnode.children[i];
+      if (isDef(child.tag) && (
+        isUndef(child.ns) || (isTrue(force) && child.tag !== 'svg'))) {
+        applyNS(child, ns, force);
+      }
+    }
+  }
+}
+
+// ref #5318
+// necessary to ensure parent re-render when deep bindings like :style and
+// :class are used on slot nodes
+function registerDeepBindings (data) {
+  if (isObject(data.style)) {
+    traverse(data.style);
+  }
+  if (isObject(data.class)) {
+    traverse(data.class);
+  }
+}
+
+/*  */
+
+function initRender (vm) {
+  vm._vnode = null; // the root of the child tree
+  vm._staticTrees = null; // v-once cached trees
+  var options = vm.$options;
+  var parentVnode = vm.$vnode = options._parentVnode; // the placeholder node in parent tree
+  var renderContext = parentVnode && parentVnode.context;
+  vm.$slots = resolveSlots(options._renderChildren, renderContext);
+  vm.$scopedSlots = emptyObject;
+  // bind the createElement fn to this instance
+  // so that we get proper render context inside it.
+  // args order: tag, data, children, normalizationType, alwaysNormalize
+  // internal version is used by render functions compiled from templates
+  vm._c = function (a, b, c, d) { return createElement(vm, a, b, c, d, false); };
+  // normalization is always applied for the public version, used in
+  // user-written render functions.
+  vm.$createElement = function (a, b, c, d) { return createElement(vm, a, b, c, d, true); };
+
+  // $attrs & $listeners are exposed for easier HOC creation.
+  // they need to be reactive so that HOCs using them are always updated
+  var parentData = parentVnode && parentVnode.data;
+
+  /* istanbul ignore else */
+  if (true) {
+    defineReactive$$1(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
+      !isUpdatingChildComponent && warn("$attrs is readonly.", vm);
+    }, true);
+    defineReactive$$1(vm, '$listeners', options._parentListeners || emptyObject, function () {
+      !isUpdatingChildComponent && warn("$listeners is readonly.", vm);
+    }, true);
+  } else {}
+}
+
+var currentRenderingInstance = null;
+
+function renderMixin (Vue) {
+  // install runtime convenience helpers
+  installRenderHelpers(Vue.prototype);
+
+  Vue.prototype.$nextTick = function (fn) {
+    return nextTick(fn, this)
+  };
+
+  Vue.prototype._render = function () {
+    var vm = this;
+    var ref = vm.$options;
+    var render = ref.render;
+    var _parentVnode = ref._parentVnode;
+
+    if (_parentVnode) {
+      vm.$scopedSlots = normalizeScopedSlots(
+        _parentVnode.data.scopedSlots,
+        vm.$slots,
+        vm.$scopedSlots
+      );
+    }
+
+    // set parent vnode. this allows render functions to have access
+    // to the data on the placeholder node.
+    vm.$vnode = _parentVnode;
+    // render self
+    var vnode;
+    try {
+      // There's no need to maintain a stack becaues all render fns are called
+      // separately from one another. Nested component's render fns are called
+      // when parent component is patched.
+      currentRenderingInstance = vm;
+      vnode = render.call(vm._renderProxy, vm.$createElement);
+    } catch (e) {
+      handleError(e, vm, "render");
+      // return error render result,
+      // or previous vnode to prevent render error causing blank component
+      /* istanbul ignore else */
+      if ( true && vm.$options.renderError) {
+        try {
+          vnode = vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e);
+        } catch (e) {
+          handleError(e, vm, "renderError");
+          vnode = vm._vnode;
+        }
+      } else {
+        vnode = vm._vnode;
+      }
+    } finally {
+      currentRenderingInstance = null;
+    }
+    // if the returned array contains only a single node, allow it
+    if (Array.isArray(vnode) && vnode.length === 1) {
+      vnode = vnode[0];
+    }
+    // return empty vnode in case the render function errored out
+    if (!(vnode instanceof VNode)) {
+      if ( true && Array.isArray(vnode)) {
+        warn(
+          'Multiple root nodes returned from render function. Render function ' +
+          'should return a single root node.',
+          vm
+        );
+      }
+      vnode = createEmptyVNode();
+    }
+    // set parent
+    vnode.parent = _parentVnode;
+    return vnode
+  };
+}
+
+/*  */
+
+function ensureCtor (comp, base) {
+  if (
+    comp.__esModule ||
+    (hasSymbol && comp[Symbol.toStringTag] === 'Module')
+  ) {
+    comp = comp.default;
+  }
+  return isObject(comp)
+    ? base.extend(comp)
+    : comp
+}
+
+function createAsyncPlaceholder (
+  factory,
+  data,
+  context,
+  children,
+  tag
+) {
+  var node = createEmptyVNode();
+  node.asyncFactory = factory;
+  node.asyncMeta = { data: data, context: context, children: children, tag: tag };
+  return node
+}
+
+function resolveAsyncComponent (
+  factory,
+  baseCtor
+) {
+  if (isTrue(factory.error) && isDef(factory.errorComp)) {
+    return factory.errorComp
+  }
+
+  if (isDef(factory.resolved)) {
+    return factory.resolved
+  }
+
+  var owner = currentRenderingInstance;
+  if (owner && isDef(factory.owners) && factory.owners.indexOf(owner) === -1) {
+    // already pending
+    factory.owners.push(owner);
+  }
+
+  if (isTrue(factory.loading) && isDef(factory.loadingComp)) {
+    return factory.loadingComp
+  }
+
+  if (owner && !isDef(factory.owners)) {
+    var owners = factory.owners = [owner];
+    var sync = true;
+    var timerLoading = null;
+    var timerTimeout = null
+
+    ;(owner).$on('hook:destroyed', function () { return remove(owners, owner); });
+
+    var forceRender = function (renderCompleted) {
+      for (var i = 0, l = owners.length; i < l; i++) {
+        (owners[i]).$forceUpdate();
+      }
+
+      if (renderCompleted) {
+        owners.length = 0;
+        if (timerLoading !== null) {
+          clearTimeout(timerLoading);
+          timerLoading = null;
+        }
+        if (timerTimeout !== null) {
+          clearTimeout(timerTimeout);
+          timerTimeout = null;
+        }
+      }
+    };
+
+    var resolve = once(function (res) {
+      // cache resolved
+      factory.resolved = ensureCtor(res, baseCtor);
+      // invoke callbacks only if this is not a synchronous resolve
+      // (async resolves are shimmed as synchronous during SSR)
+      if (!sync) {
+        forceRender(true);
+      } else {
+        owners.length = 0;
+      }
+    });
+
+    var reject = once(function (reason) {
+       true && warn(
+        "Failed to resolve async component: " + (String(factory)) +
+        (reason ? ("\nReason: " + reason) : '')
+      );
+      if (isDef(factory.errorComp)) {
+        factory.error = true;
+        forceRender(true);
+      }
+    });
+
+    var res = factory(resolve, reject);
+
+    if (isObject(res)) {
+      if (isPromise(res)) {
+        // () => Promise
+        if (isUndef(factory.resolved)) {
+          res.then(resolve, reject);
+        }
+      } else if (isPromise(res.component)) {
+        res.component.then(resolve, reject);
+
+        if (isDef(res.error)) {
+          factory.errorComp = ensureCtor(res.error, baseCtor);
+        }
+
+        if (isDef(res.loading)) {
+          factory.loadingComp = ensureCtor(res.loading, baseCtor);
+          if (res.delay === 0) {
+            factory.loading = true;
+          } else {
+            timerLoading = setTimeout(function () {
+              timerLoading = null;
+              if (isUndef(factory.resolved) && isUndef(factory.error)) {
+                factory.loading = true;
+                forceRender(false);
+              }
+            }, res.delay || 200);
+          }
+        }
+
+        if (isDef(res.timeout)) {
+          timerTimeout = setTimeout(function () {
+            timerTimeout = null;
+            if (isUndef(factory.resolved)) {
+              reject(
+                 true
+                  ? ("timeout (" + (res.timeout) + "ms)")
+                  : undefined
+              );
+            }
+          }, res.timeout);
+        }
+      }
+    }
+
+    sync = false;
+    // return in case resolved synchronously
+    return factory.loading
+      ? factory.loadingComp
+      : factory.resolved
+  }
+}
+
+/*  */
+
+function isAsyncPlaceholder (node) {
+  return node.isComment && node.asyncFactory
+}
+
+/*  */
+
+function getFirstComponentChild (children) {
+  if (Array.isArray(children)) {
+    for (var i = 0; i < children.length; i++) {
+      var c = children[i];
+      if (isDef(c) && (isDef(c.componentOptions) || isAsyncPlaceholder(c))) {
+        return c
+      }
+    }
+  }
+}
+
+/*  */
+
+/*  */
+
+function initEvents (vm) {
+  vm._events = Object.create(null);
+  vm._hasHookEvent = false;
+  // init parent attached events
+  var listeners = vm.$options._parentListeners;
+  if (listeners) {
+    updateComponentListeners(vm, listeners);
+  }
+}
+
+var target;
+
+function add (event, fn) {
+  target.$on(event, fn);
+}
+
+function remove$1 (event, fn) {
+  target.$off(event, fn);
+}
+
+function createOnceHandler (event, fn) {
+  var _target = target;
+  return function onceHandler () {
+    var res = fn.apply(null, arguments);
+    if (res !== null) {
+      _target.$off(event, onceHandler);
+    }
+  }
+}
+
+function updateComponentListeners (
+  vm,
+  listeners,
+  oldListeners
+) {
+  target = vm;
+  updateListeners(listeners, oldListeners || {}, add, remove$1, createOnceHandler, vm);
+  target = undefined;
+}
+
+function eventsMixin (Vue) {
+  var hookRE = /^hook:/;
+  Vue.prototype.$on = function (event, fn) {
+    var vm = this;
+    if (Array.isArray(event)) {
+      for (var i = 0, l = event.length; i < l; i++) {
+        vm.$on(event[i], fn);
+      }
+    } else {
+      (vm._events[event] || (vm._events[event] = [])).push(fn);
+      // optimize hook:event cost by using a boolean flag marked at registration
+      // instead of a hash lookup
+      if (hookRE.test(event)) {
+        vm._hasHookEvent = true;
+      }
+    }
+    return vm
+  };
+
+  Vue.prototype.$once = function (event, fn) {
+    var vm = this;
+    function on () {
+      vm.$off(event, on);
+      fn.apply(vm, arguments);
+    }
+    on.fn = fn;
+    vm.$on(event, on);
+    return vm
+  };
+
+  Vue.prototype.$off = function (event, fn) {
+    var vm = this;
+    // all
+    if (!arguments.length) {
+      vm._events = Object.create(null);
+      return vm
+    }
+    // array of events
+    if (Array.isArray(event)) {
+      for (var i$1 = 0, l = event.length; i$1 < l; i$1++) {
+        vm.$off(event[i$1], fn);
+      }
+      return vm
+    }
+    // specific event
+    var cbs = vm._events[event];
+    if (!cbs) {
+      return vm
+    }
+    if (!fn) {
+      vm._events[event] = null;
+      return vm
+    }
+    // specific handler
+    var cb;
+    var i = cbs.length;
+    while (i--) {
+      cb = cbs[i];
+      if (cb === fn || cb.fn === fn) {
+        cbs.splice(i, 1);
+        break
+      }
+    }
+    return vm
+  };
+
+  Vue.prototype.$emit = function (event) {
+    var vm = this;
+    if (true) {
+      var lowerCaseEvent = event.toLowerCase();
+      if (lowerCaseEvent !== event && vm._events[lowerCaseEvent]) {
+        tip(
+          "Event \"" + lowerCaseEvent + "\" is emitted in component " +
+          (formatComponentName(vm)) + " but the handler is registered for \"" + event + "\". " +
+          "Note that HTML attributes are case-insensitive and you cannot use " +
+          "v-on to listen to camelCase events when using in-DOM templates. " +
+          "You should probably use \"" + (hyphenate(event)) + "\" instead of \"" + event + "\"."
+        );
+      }
+    }
+    var cbs = vm._events[event];
+    if (cbs) {
+      cbs = cbs.length > 1 ? toArray(cbs) : cbs;
+      var args = toArray(arguments, 1);
+      var info = "event handler for \"" + event + "\"";
+      for (var i = 0, l = cbs.length; i < l; i++) {
+        invokeWithErrorHandling(cbs[i], vm, args, vm, info);
+      }
+    }
+    return vm
+  };
+}
+
+/*  */
+
+var activeInstance = null;
+var isUpdatingChildComponent = false;
+
+function setActiveInstance(vm) {
+  var prevActiveInstance = activeInstance;
+  activeInstance = vm;
+  return function () {
+    activeInstance = prevActiveInstance;
+  }
+}
+
+function initLifecycle (vm) {
+  var options = vm.$options;
+
+  // locate first non-abstract parent
+  var parent = options.parent;
+  if (parent && !options.abstract) {
+    while (parent.$options.abstract && parent.$parent) {
+      parent = parent.$parent;
+    }
+    parent.$children.push(vm);
+  }
+
+  vm.$parent = parent;
+  vm.$root = parent ? parent.$root : vm;
+
+  vm.$children = [];
+  vm.$refs = {};
+
+  vm._watcher = null;
+  vm._inactive = null;
+  vm._directInactive = false;
+  vm._isMounted = false;
+  vm._isDestroyed = false;
+  vm._isBeingDestroyed = false;
+}
+
+function lifecycleMixin (Vue) {
+  Vue.prototype._update = function (vnode, hydrating) {
+    var vm = this;
+    var prevEl = vm.$el;
+    var prevVnode = vm._vnode;
+    var restoreActiveInstance = setActiveInstance(vm);
+    vm._vnode = vnode;
+    // Vue.prototype.__patch__ is injected in entry points
+    // based on the rendering backend used.
+    if (!prevVnode) {
+      // initial render
+      vm.$el = vm.__patch__(vm.$el, vnode, hydrating, false /* removeOnly */);
+    } else {
+      // updates
+      vm.$el = vm.__patch__(prevVnode, vnode);
+    }
+    restoreActiveInstance();
+    // update __vue__ reference
+    if (prevEl) {
+      prevEl.__vue__ = null;
+    }
+    if (vm.$el) {
+      vm.$el.__vue__ = vm;
+    }
+    // if parent is an HOC, update its $el as well
+    if (vm.$vnode && vm.$parent && vm.$vnode === vm.$parent._vnode) {
+      vm.$parent.$el = vm.$el;
+    }
+    // updated hook is called by the scheduler to ensure that children are
+    // updated in a parent's updated hook.
+  };
+
+  Vue.prototype.$forceUpdate = function () {
+    var vm = this;
+    if (vm._watcher) {
+      vm._watcher.update();
+    }
+  };
+
+  Vue.prototype.$destroy = function () {
+    var vm = this;
+    if (vm._isBeingDestroyed) {
+      return
+    }
+    callHook(vm, 'beforeDestroy');
+    vm._isBeingDestroyed = true;
+    // remove self from parent
+    var parent = vm.$parent;
+    if (parent && !parent._isBeingDestroyed && !vm.$options.abstract) {
+      remove(parent.$children, vm);
+    }
+    // teardown watchers
+    if (vm._watcher) {
+      vm._watcher.teardown();
+    }
+    var i = vm._watchers.length;
+    while (i--) {
+      vm._watchers[i].teardown();
+    }
+    // remove reference from data ob
+    // frozen object may not have observer.
+    if (vm._data.__ob__) {
+      vm._data.__ob__.vmCount--;
+    }
+    // call the last hook...
+    vm._isDestroyed = true;
+    // invoke destroy hooks on current rendered tree
+    vm.__patch__(vm._vnode, null);
+    // fire destroyed hook
+    callHook(vm, 'destroyed');
+    // turn off all instance listeners.
+    vm.$off();
+    // remove __vue__ reference
+    if (vm.$el) {
+      vm.$el.__vue__ = null;
+    }
+    // release circular reference (#6759)
+    if (vm.$vnode) {
+      vm.$vnode.parent = null;
+    }
+  };
+}
+
+function updateChildComponent (
+  vm,
+  propsData,
+  listeners,
+  parentVnode,
+  renderChildren
+) {
+  if (true) {
+    isUpdatingChildComponent = true;
+  }
+
+  // determine whether component has slot children
+  // we need to do this before overwriting $options._renderChildren.
+
+  // check if there are dynamic scopedSlots (hand-written or compiled but with
+  // dynamic slot names). Static scoped slots compiled from template has the
+  // "$stable" marker.
+  var newScopedSlots = parentVnode.data.scopedSlots;
+  var oldScopedSlots = vm.$scopedSlots;
+  var hasDynamicScopedSlot = !!(
+    (newScopedSlots && !newScopedSlots.$stable) ||
+    (oldScopedSlots !== emptyObject && !oldScopedSlots.$stable) ||
+    (newScopedSlots && vm.$scopedSlots.$key !== newScopedSlots.$key)
+  );
+
+  // Any static slot children from the parent may have changed during parent's
+  // update. Dynamic scoped slots may also have changed. In such cases, a forced
+  // update is necessary to ensure correctness.
+  var needsForceUpdate = !!(
+    renderChildren ||               // has new static slots
+    vm.$options._renderChildren ||  // has old static slots
+    hasDynamicScopedSlot
+  );
+
+  vm.$options._parentVnode = parentVnode;
+  vm.$vnode = parentVnode; // update vm's placeholder node without re-render
+
+  if (vm._vnode) { // update child tree's parent
+    vm._vnode.parent = parentVnode;
+  }
+  vm.$options._renderChildren = renderChildren;
+
+  // update $attrs and $listeners hash
+  // these are also reactive so they may trigger child update if the child
+  // used them during render
+  vm.$attrs = parentVnode.data.attrs || emptyObject;
+  vm.$listeners = listeners || emptyObject;
+
+  // update props
+  if (propsData && vm.$options.props) {
+    toggleObserving(false);
+    var props = vm._props;
+    var propKeys = vm.$options._propKeys || [];
+    for (var i = 0; i < propKeys.length; i++) {
+      var key = propKeys[i];
+      var propOptions = vm.$options.props; // wtf flow?
+      props[key] = validateProp(key, propOptions, propsData, vm);
+    }
+    toggleObserving(true);
+    // keep a copy of raw propsData
+    vm.$options.propsData = propsData;
+  }
+
+  // update listeners
+  listeners = listeners || emptyObject;
+  var oldListeners = vm.$options._parentListeners;
+  vm.$options._parentListeners = listeners;
+  updateComponentListeners(vm, listeners, oldListeners);
+
+  // resolve slots + force update if has children
+  if (needsForceUpdate) {
+    vm.$slots = resolveSlots(renderChildren, parentVnode.context);
+    vm.$forceUpdate();
+  }
+
+  if (true) {
+    isUpdatingChildComponent = false;
+  }
+}
+
+function isInInactiveTree (vm) {
+  while (vm && (vm = vm.$parent)) {
+    if (vm._inactive) { return true }
+  }
+  return false
+}
+
+function activateChildComponent (vm, direct) {
+  if (direct) {
+    vm._directInactive = false;
+    if (isInInactiveTree(vm)) {
+      return
+    }
+  } else if (vm._directInactive) {
+    return
+  }
+  if (vm._inactive || vm._inactive === null) {
+    vm._inactive = false;
+    for (var i = 0; i < vm.$children.length; i++) {
+      activateChildComponent(vm.$children[i]);
+    }
+    callHook(vm, 'activated');
+  }
+}
+
+function deactivateChildComponent (vm, direct) {
+  if (direct) {
+    vm._directInactive = true;
+    if (isInInactiveTree(vm)) {
+      return
+    }
+  }
+  if (!vm._inactive) {
+    vm._inactive = true;
+    for (var i = 0; i < vm.$children.length; i++) {
+      deactivateChildComponent(vm.$children[i]);
+    }
+    callHook(vm, 'deactivated');
+  }
+}
+
+function callHook (vm, hook) {
+  // #7573 disable dep collection when invoking lifecycle hooks
+  pushTarget();
+  var handlers = vm.$options[hook];
+  var info = hook + " hook";
+  if (handlers) {
+    for (var i = 0, j = handlers.length; i < j; i++) {
+      invokeWithErrorHandling(handlers[i], vm, null, vm, info);
+    }
+  }
+  if (vm._hasHookEvent) {
+    vm.$emit('hook:' + hook);
+  }
+  popTarget();
+}
+
+/*  */
+
+var MAX_UPDATE_COUNT = 100;
+
+var queue = [];
+var activatedChildren = [];
+var has = {};
+var circular = {};
+var waiting = false;
+var flushing = false;
+var index = 0;
+
+/**
+ * Reset the scheduler's state.
+ */
+function resetSchedulerState () {
+  index = queue.length = activatedChildren.length = 0;
+  has = {};
+  if (true) {
+    circular = {};
+  }
+  waiting = flushing = false;
+}
+
+// Async edge case #6566 requires saving the timestamp when event listeners are
+// attached. However, calling performance.now() has a perf overhead especially
+// if the page has thousands of event listeners. Instead, we take a timestamp
+// every time the scheduler flushes and use that for all event listeners
+// attached during that flush.
+var currentFlushTimestamp = 0;
+
+// Async edge case fix requires storing an event listener's attach timestamp.
+var getNow = Date.now;
+
+// Determine what event timestamp the browser is using. Annoyingly, the
+// timestamp can either be hi-res (relative to page load) or low-res
+// (relative to UNIX epoch), so in order to compare time we have to use the
+// same timestamp type when saving the flush timestamp.
+// All IE versions use low-res event timestamps, and have problematic clock
+// implementations (#9632)
+if (inBrowser && !isIE) {
+  var performance = window.performance;
+  if (
+    performance &&
+    typeof performance.now === 'function' &&
+    getNow() > document.createEvent('Event').timeStamp
+  ) {
+    // if the event timestamp, although evaluated AFTER the Date.now(), is
+    // smaller than it, it means the event is using a hi-res timestamp,
+    // and we need to use the hi-res version for event listener timestamps as
+    // well.
+    getNow = function () { return performance.now(); };
+  }
+}
+
+/**
+ * Flush both queues and run the watchers.
+ */
+function flushSchedulerQueue () {
+  currentFlushTimestamp = getNow();
+  flushing = true;
+  var watcher, id;
+
+  // Sort queue before flush.
+  // This ensures that:
+  // 1. Components are updated from parent to child. (because parent is always
+  //    created before the child)
+  // 2. A component's user watchers are run before its render watcher (because
+  //    user watchers are created before the render watcher)
+  // 3. If a component is destroyed during a parent component's watcher run,
+  //    its watchers can be skipped.
+  queue.sort(function (a, b) { return a.id - b.id; });
+
+  // do not cache length because more watchers might be pushed
+  // as we run existing watchers
+  for (index = 0; index < queue.length; index++) {
+    watcher = queue[index];
+    if (watcher.before) {
+      watcher.before();
+    }
+    id = watcher.id;
+    has[id] = null;
+    watcher.run();
+    // in dev build, check and stop circular updates.
+    if ( true && has[id] != null) {
+      circular[id] = (circular[id] || 0) + 1;
+      if (circular[id] > MAX_UPDATE_COUNT) {
+        warn(
+          'You may have an infinite update loop ' + (
+            watcher.user
+              ? ("in watcher with expression \"" + (watcher.expression) + "\"")
+              : "in a component render function."
+          ),
+          watcher.vm
+        );
+        break
+      }
+    }
+  }
+
+  // keep copies of post queues before resetting state
+  var activatedQueue = activatedChildren.slice();
+  var updatedQueue = queue.slice();
+
+  resetSchedulerState();
+
+  // call component updated and activated hooks
+  callActivatedHooks(activatedQueue);
+  callUpdatedHooks(updatedQueue);
+
+  // devtool hook
+  /* istanbul ignore if */
+  if (devtools && config.devtools) {
+    devtools.emit('flush');
+  }
+}
+
+function callUpdatedHooks (queue) {
+  var i = queue.length;
+  while (i--) {
+    var watcher = queue[i];
+    var vm = watcher.vm;
+    if (vm._watcher === watcher && vm._isMounted && !vm._isDestroyed) {
+      callHook(vm, 'updated');
+    }
+  }
+}
+
+/**
+ * Queue a kept-alive component that was activated during patch.
+ * The queue will be processed after the entire tree has been patched.
+ */
+function queueActivatedComponent (vm) {
+  // setting _inactive to false here so that a render function can
+  // rely on checking whether it's in an inactive tree (e.g. router-view)
+  vm._inactive = false;
+  activatedChildren.push(vm);
+}
+
+function callActivatedHooks (queue) {
+  for (var i = 0; i < queue.length; i++) {
+    queue[i]._inactive = true;
+    activateChildComponent(queue[i], true /* true */);
+  }
+}
+
+/**
+ * Push a watcher into the watcher queue.
+ * Jobs with duplicate IDs will be skipped unless it's
+ * pushed when the queue is being flushed.
+ */
+function queueWatcher (watcher) {
+  var id = watcher.id;
+  if (has[id] == null) {
+    has[id] = true;
+    if (!flushing) {
+      queue.push(watcher);
+    } else {
+      // if already flushing, splice the watcher based on its id
+      // if already past its id, it will be run next immediately.
+      var i = queue.length - 1;
+      while (i > index && queue[i].id > watcher.id) {
+        i--;
+      }
+      queue.splice(i + 1, 0, watcher);
+    }
+    // queue the flush
+    if (!waiting) {
+      waiting = true;
+
+      if ( true && !config.async) {
+        flushSchedulerQueue();
+        return
+      }
+      nextTick(flushSchedulerQueue);
+    }
+  }
+}
+
+/*  */
+
+
+
+var uid$2 = 0;
+
+/**
+ * A watcher parses an expression, collects dependencies,
+ * and fires callback when the expression value changes.
+ * This is used for both the $watch() api and directives.
+ */
+var Watcher = function Watcher (
+  vm,
+  expOrFn,
+  cb,
+  options,
+  isRenderWatcher
+) {
+  this.vm = vm;
+  if (isRenderWatcher) {
+    vm._watcher = this;
+  }
+  vm._watchers.push(this);
+  // options
+  if (options) {
+    this.deep = !!options.deep;
+    this.user = !!options.user;
+    this.lazy = !!options.lazy;
+    this.sync = !!options.sync;
+    this.before = options.before;
+  } else {
+    this.deep = this.user = this.lazy = this.sync = false;
+  }
+  this.cb = cb;
+  this.id = ++uid$2; // uid for batching
+  this.active = true;
+  this.dirty = this.lazy; // for lazy watchers
+  this.deps = [];
+  this.newDeps = [];
+  this.depIds = new _Set();
+  this.newDepIds = new _Set();
+  this.expression =  true
+    ? expOrFn.toString()
+    : undefined;
+  // parse expression for getter
+  if (typeof expOrFn === 'function') {
+    this.getter = expOrFn;
+  } else {
+    this.getter = parsePath(expOrFn);
+    if (!this.getter) {
+      this.getter = noop;
+       true && warn(
+        "Failed watching path: \"" + expOrFn + "\" " +
+        'Watcher only accepts simple dot-delimited paths. ' +
+        'For full control, use a function instead.',
+        vm
+      );
+    }
+  }
+  this.value = this.lazy
+    ? undefined
+    : this.get();
+};
+
+/**
+ * Evaluate the getter, and re-collect dependencies.
+ */
+Watcher.prototype.get = function get () {
+  pushTarget(this);
+  var value;
+  var vm = this.vm;
+  try {
+    value = this.getter.call(vm, vm);
+  } catch (e) {
+    if (this.user) {
+      handleError(e, vm, ("getter for watcher \"" + (this.expression) + "\""));
+    } else {
+      throw e
+    }
+  } finally {
+    // "touch" every property so they are all tracked as
+    // dependencies for deep watching
+    if (this.deep) {
+      traverse(value);
+    }
+    popTarget();
+    this.cleanupDeps();
+  }
+  return value
+};
+
+/**
+ * Add a dependency to this directive.
+ */
+Watcher.prototype.addDep = function addDep (dep) {
+  var id = dep.id;
+  if (!this.newDepIds.has(id)) {
+    this.newDepIds.add(id);
+    this.newDeps.push(dep);
+    if (!this.depIds.has(id)) {
+      dep.addSub(this);
+    }
+  }
+};
+
+/**
+ * Clean up for dependency collection.
+ */
+Watcher.prototype.cleanupDeps = function cleanupDeps () {
+  var i = this.deps.length;
+  while (i--) {
+    var dep = this.deps[i];
+    if (!this.newDepIds.has(dep.id)) {
+      dep.removeSub(this);
+    }
+  }
+  var tmp = this.depIds;
+  this.depIds = this.newDepIds;
+  this.newDepIds = tmp;
+  this.newDepIds.clear();
+  tmp = this.deps;
+  this.deps = this.newDeps;
+  this.newDeps = tmp;
+  this.newDeps.length = 0;
+};
+
+/**
+ * Subscriber interface.
+ * Will be called when a dependency changes.
+ */
+Watcher.prototype.update = function update () {
+  /* istanbul ignore else */
+  if (this.lazy) {
+    this.dirty = true;
+  } else if (this.sync) {
+    this.run();
+  } else {
+    queueWatcher(this);
+  }
+};
+
+/**
+ * Scheduler job interface.
+ * Will be called by the scheduler.
+ */
+Watcher.prototype.run = function run () {
+  if (this.active) {
+    var value = this.get();
+    if (
+      value !== this.value ||
+      // Deep watchers and watchers on Object/Arrays should fire even
+      // when the value is the same, because the value may
+      // have mutated.
+      isObject(value) ||
+      this.deep
+    ) {
+      // set new value
+      var oldValue = this.value;
+      this.value = value;
+      if (this.user) {
+        try {
+          this.cb.call(this.vm, value, oldValue);
+        } catch (e) {
+          handleError(e, this.vm, ("callback for watcher \"" + (this.expression) + "\""));
+        }
+      } else {
+        this.cb.call(this.vm, value, oldValue);
+      }
+    }
+  }
+};
+
+/**
+ * Evaluate the value of the watcher.
+ * This only gets called for lazy watchers.
+ */
+Watcher.prototype.evaluate = function evaluate () {
+  this.value = this.get();
+  this.dirty = false;
+};
+
+/**
+ * Depend on all deps collected by this watcher.
+ */
+Watcher.prototype.depend = function depend () {
+  var i = this.deps.length;
+  while (i--) {
+    this.deps[i].depend();
+  }
+};
+
+/**
+ * Remove self from all dependencies' subscriber list.
+ */
+Watcher.prototype.teardown = function teardown () {
+  if (this.active) {
+    // remove self from vm's watcher list
+    // this is a somewhat expensive operation so we skip it
+    // if the vm is being destroyed.
+    if (!this.vm._isBeingDestroyed) {
+      remove(this.vm._watchers, this);
+    }
+    var i = this.deps.length;
+    while (i--) {
+      this.deps[i].removeSub(this);
+    }
+    this.active = false;
+  }
+};
+
+/*  */
+
+var sharedPropertyDefinition = {
+  enumerable: true,
+  configurable: true,
+  get: noop,
+  set: noop
+};
+
+function proxy (target, sourceKey, key) {
+  sharedPropertyDefinition.get = function proxyGetter () {
+    return this[sourceKey][key]
+  };
+  sharedPropertyDefinition.set = function proxySetter (val) {
+    this[sourceKey][key] = val;
+  };
+  Object.defineProperty(target, key, sharedPropertyDefinition);
+}
+
+function initState (vm) {
+  vm._watchers = [];
+  var opts = vm.$options;
+  if (opts.props) { initProps(vm, opts.props); }
+  if (opts.methods) { initMethods(vm, opts.methods); }
+  if (opts.data) {
+    initData(vm);
+  } else {
+    observe(vm._data = {}, true /* asRootData */);
+  }
+  if (opts.computed) { initComputed(vm, opts.computed); }
+  if (opts.watch && opts.watch !== nativeWatch) {
+    initWatch(vm, opts.watch);
+  }
+}
+
+function initProps (vm, propsOptions) {
+  var propsData = vm.$options.propsData || {};
+  var props = vm._props = {};
+  // cache prop keys so that future props updates can iterate using Array
+  // instead of dynamic object key enumeration.
+  var keys = vm.$options._propKeys = [];
+  var isRoot = !vm.$parent;
+  // root instance props should be converted
+  if (!isRoot) {
+    toggleObserving(false);
+  }
+  var loop = function ( key ) {
+    keys.push(key);
+    var value = validateProp(key, propsOptions, propsData, vm);
+    /* istanbul ignore else */
+    if (true) {
+      var hyphenatedKey = hyphenate(key);
+      if (isReservedAttribute(hyphenatedKey) ||
+          config.isReservedAttr(hyphenatedKey)) {
+        warn(
+          ("\"" + hyphenatedKey + "\" is a reserved attribute and cannot be used as component prop."),
+          vm
+        );
+      }
+      defineReactive$$1(props, key, value, function () {
+        if (!isRoot && !isUpdatingChildComponent) {
+          {
+            if(vm.mpHost === 'mp-baidu'){//百度 observer 在 setData callback 之后触发，直接忽略该 warn
+                return
+            }
+            //fixed by xxxxxx __next_tick_pending,uni://form-field 时不告警
+            if(
+                key === 'value' && 
+                Array.isArray(vm.$options.behaviors) &&
+                vm.$options.behaviors.indexOf('uni://form-field') !== -1
+              ){
+              return
+            }
+            if(vm._getFormData){
+              return
+            }
+            var $parent = vm.$parent;
+            while($parent){
+              if($parent.__next_tick_pending){
+                return  
+              }
+              $parent = $parent.$parent;
+            }
+          }
+          warn(
+            "Avoid mutating a prop directly since the value will be " +
+            "overwritten whenever the parent component re-renders. " +
+            "Instead, use a data or computed property based on the prop's " +
+            "value. Prop being mutated: \"" + key + "\"",
+            vm
+          );
+        }
+      });
+    } else {}
+    // static props are already proxied on the component's prototype
+    // during Vue.extend(). We only need to proxy props defined at
+    // instantiation here.
+    if (!(key in vm)) {
+      proxy(vm, "_props", key);
+    }
+  };
+
+  for (var key in propsOptions) loop( key );
+  toggleObserving(true);
+}
+
+function initData (vm) {
+  var data = vm.$options.data;
+  data = vm._data = typeof data === 'function'
+    ? getData(data, vm)
+    : data || {};
+  if (!isPlainObject(data)) {
+    data = {};
+     true && warn(
+      'data functions should return an object:\n' +
+      'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
+      vm
+    );
+  }
+  // proxy data on instance
+  var keys = Object.keys(data);
+  var props = vm.$options.props;
+  var methods = vm.$options.methods;
+  var i = keys.length;
+  while (i--) {
+    var key = keys[i];
+    if (true) {
+      if (methods && hasOwn(methods, key)) {
+        warn(
+          ("Method \"" + key + "\" has already been defined as a data property."),
+          vm
+        );
+      }
+    }
+    if (props && hasOwn(props, key)) {
+       true && warn(
+        "The data property \"" + key + "\" is already declared as a prop. " +
+        "Use prop default value instead.",
+        vm
+      );
+    } else if (!isReserved(key)) {
+      proxy(vm, "_data", key);
+    }
+  }
+  // observe data
+  observe(data, true /* asRootData */);
+}
+
+function getData (data, vm) {
+  // #7573 disable dep collection when invoking data getters
+  pushTarget();
+  try {
+    return data.call(vm, vm)
+  } catch (e) {
+    handleError(e, vm, "data()");
+    return {}
+  } finally {
+    popTarget();
+  }
+}
+
+var computedWatcherOptions = { lazy: true };
+
+function initComputed (vm, computed) {
+  // $flow-disable-line
+  var watchers = vm._computedWatchers = Object.create(null);
+  // computed properties are just getters during SSR
+  var isSSR = isServerRendering();
+
+  for (var key in computed) {
+    var userDef = computed[key];
+    var getter = typeof userDef === 'function' ? userDef : userDef.get;
+    if ( true && getter == null) {
+      warn(
+        ("Getter is missing for computed property \"" + key + "\"."),
+        vm
+      );
+    }
+
+    if (!isSSR) {
+      // create internal watcher for the computed property.
+      watchers[key] = new Watcher(
+        vm,
+        getter || noop,
+        noop,
+        computedWatcherOptions
+      );
+    }
+
+    // component-defined computed properties are already defined on the
+    // component prototype. We only need to define computed properties defined
+    // at instantiation here.
+    if (!(key in vm)) {
+      defineComputed(vm, key, userDef);
+    } else if (true) {
+      if (key in vm.$data) {
+        warn(("The computed property \"" + key + "\" is already defined in data."), vm);
+      } else if (vm.$options.props && key in vm.$options.props) {
+        warn(("The computed property \"" + key + "\" is already defined as a prop."), vm);
+      }
+    }
+  }
+}
+
+function defineComputed (
+  target,
+  key,
+  userDef
+) {
+  var shouldCache = !isServerRendering();
+  if (typeof userDef === 'function') {
+    sharedPropertyDefinition.get = shouldCache
+      ? createComputedGetter(key)
+      : createGetterInvoker(userDef);
+    sharedPropertyDefinition.set = noop;
+  } else {
+    sharedPropertyDefinition.get = userDef.get
+      ? shouldCache && userDef.cache !== false
+        ? createComputedGetter(key)
+        : createGetterInvoker(userDef.get)
+      : noop;
+    sharedPropertyDefinition.set = userDef.set || noop;
+  }
+  if ( true &&
+      sharedPropertyDefinition.set === noop) {
+    sharedPropertyDefinition.set = function () {
+      warn(
+        ("Computed property \"" + key + "\" was assigned to but it has no setter."),
+        this
+      );
+    };
+  }
+  Object.defineProperty(target, key, sharedPropertyDefinition);
+}
+
+function createComputedGetter (key) {
+  return function computedGetter () {
+    var watcher = this._computedWatchers && this._computedWatchers[key];
+    if (watcher) {
+      if (watcher.dirty) {
+        watcher.evaluate();
+      }
+      if (Dep.target) {
+        watcher.depend();
+      }
+      return watcher.value
+    }
+  }
+}
+
+function createGetterInvoker(fn) {
+  return function computedGetter () {
+    return fn.call(this, this)
+  }
+}
+
+function initMethods (vm, methods) {
+  var props = vm.$options.props;
+  for (var key in methods) {
+    if (true) {
+      if (typeof methods[key] !== 'function') {
+        warn(
+          "Method \"" + key + "\" has type \"" + (typeof methods[key]) + "\" in the component definition. " +
+          "Did you reference the function correctly?",
+          vm
+        );
+      }
+      if (props && hasOwn(props, key)) {
+        warn(
+          ("Method \"" + key + "\" has already been defined as a prop."),
+          vm
+        );
+      }
+      if ((key in vm) && isReserved(key)) {
+        warn(
+          "Method \"" + key + "\" conflicts with an existing Vue instance method. " +
+          "Avoid defining component methods that start with _ or $."
+        );
+      }
+    }
+    vm[key] = typeof methods[key] !== 'function' ? noop : bind(methods[key], vm);
+  }
+}
+
+function initWatch (vm, watch) {
+  for (var key in watch) {
+    var handler = watch[key];
+    if (Array.isArray(handler)) {
+      for (var i = 0; i < handler.length; i++) {
+        createWatcher(vm, key, handler[i]);
+      }
+    } else {
+      createWatcher(vm, key, handler);
+    }
+  }
+}
+
+function createWatcher (
+  vm,
+  expOrFn,
+  handler,
+  options
+) {
+  if (isPlainObject(handler)) {
+    options = handler;
+    handler = handler.handler;
+  }
+  if (typeof handler === 'string') {
+    handler = vm[handler];
+  }
+  return vm.$watch(expOrFn, handler, options)
+}
+
+function stateMixin (Vue) {
+  // flow somehow has problems with directly declared definition object
+  // when using Object.defineProperty, so we have to procedurally build up
+  // the object here.
+  var dataDef = {};
+  dataDef.get = function () { return this._data };
+  var propsDef = {};
+  propsDef.get = function () { return this._props };
+  if (true) {
+    dataDef.set = function () {
+      warn(
+        'Avoid replacing instance root $data. ' +
+        'Use nested data properties instead.',
+        this
+      );
+    };
+    propsDef.set = function () {
+      warn("$props is readonly.", this);
+    };
+  }
+  Object.defineProperty(Vue.prototype, '$data', dataDef);
+  Object.defineProperty(Vue.prototype, '$props', propsDef);
+
+  Vue.prototype.$set = set;
+  Vue.prototype.$delete = del;
+
+  Vue.prototype.$watch = function (
+    expOrFn,
+    cb,
+    options
+  ) {
+    var vm = this;
+    if (isPlainObject(cb)) {
+      return createWatcher(vm, expOrFn, cb, options)
+    }
+    options = options || {};
+    options.user = true;
+    var watcher = new Watcher(vm, expOrFn, cb, options);
+    if (options.immediate) {
+      try {
+        cb.call(vm, watcher.value);
+      } catch (error) {
+        handleError(error, vm, ("callback for immediate watcher \"" + (watcher.expression) + "\""));
+      }
+    }
+    return function unwatchFn () {
+      watcher.teardown();
+    }
+  };
+}
+
+/*  */
+
+var uid$3 = 0;
+
+function initMixin (Vue) {
+  Vue.prototype._init = function (options) {
+    var vm = this;
+    // a uid
+    vm._uid = uid$3++;
+
+    var startTag, endTag;
+    /* istanbul ignore if */
+    if ( true && config.performance && mark) {
+      startTag = "vue-perf-start:" + (vm._uid);
+      endTag = "vue-perf-end:" + (vm._uid);
+      mark(startTag);
+    }
+
+    // a flag to avoid this being observed
+    vm._isVue = true;
+    // merge options
+    if (options && options._isComponent) {
+      // optimize internal component instantiation
+      // since dynamic options merging is pretty slow, and none of the
+      // internal component options needs special treatment.
+      initInternalComponent(vm, options);
+    } else {
+      vm.$options = mergeOptions(
+        resolveConstructorOptions(vm.constructor),
+        options || {},
+        vm
+      );
+    }
+    /* istanbul ignore else */
+    if (true) {
+      initProxy(vm);
+    } else {}
+    // expose real self
+    vm._self = vm;
+    initLifecycle(vm);
+    initEvents(vm);
+    initRender(vm);
+    callHook(vm, 'beforeCreate');
+    vm.mpHost !== 'mp-toutiao' && initInjections(vm); // resolve injections before data/props  
+    initState(vm);
+    vm.mpHost !== 'mp-toutiao' && initProvide(vm); // resolve provide after data/props
+    vm.mpHost !== 'mp-toutiao' && callHook(vm, 'created');      
+
+    /* istanbul ignore if */
+    if ( true && config.performance && mark) {
+      vm._name = formatComponentName(vm, false);
+      mark(endTag);
+      measure(("vue " + (vm._name) + " init"), startTag, endTag);
+    }
+
+    if (vm.$options.el) {
+      vm.$mount(vm.$options.el);
+    }
+  };
+}
+
+function initInternalComponent (vm, options) {
+  var opts = vm.$options = Object.create(vm.constructor.options);
+  // doing this because it's faster than dynamic enumeration.
+  var parentVnode = options._parentVnode;
+  opts.parent = options.parent;
+  opts._parentVnode = parentVnode;
+
+  var vnodeComponentOptions = parentVnode.componentOptions;
+  opts.propsData = vnodeComponentOptions.propsData;
+  opts._parentListeners = vnodeComponentOptions.listeners;
+  opts._renderChildren = vnodeComponentOptions.children;
+  opts._componentTag = vnodeComponentOptions.tag;
+
+  if (options.render) {
+    opts.render = options.render;
+    opts.staticRenderFns = options.staticRenderFns;
+  }
+}
+
+function resolveConstructorOptions (Ctor) {
+  var options = Ctor.options;
+  if (Ctor.super) {
+    var superOptions = resolveConstructorOptions(Ctor.super);
+    var cachedSuperOptions = Ctor.superOptions;
+    if (superOptions !== cachedSuperOptions) {
+      // super option changed,
+      // need to resolve new options.
+      Ctor.superOptions = superOptions;
+      // check if there are any late-modified/attached options (#4976)
+      var modifiedOptions = resolveModifiedOptions(Ctor);
+      // update base extend options
+      if (modifiedOptions) {
+        extend(Ctor.extendOptions, modifiedOptions);
+      }
+      options = Ctor.options = mergeOptions(superOptions, Ctor.extendOptions);
+      if (options.name) {
+        options.components[options.name] = Ctor;
+      }
+    }
+  }
+  return options
+}
+
+function resolveModifiedOptions (Ctor) {
+  var modified;
+  var latest = Ctor.options;
+  var sealed = Ctor.sealedOptions;
+  for (var key in latest) {
+    if (latest[key] !== sealed[key]) {
+      if (!modified) { modified = {}; }
+      modified[key] = latest[key];
+    }
+  }
+  return modified
+}
+
+function Vue (options) {
+  if ( true &&
+    !(this instanceof Vue)
+  ) {
+    warn('Vue is a constructor and should be called with the `new` keyword');
+  }
+  this._init(options);
+}
+
+initMixin(Vue);
+stateMixin(Vue);
+eventsMixin(Vue);
+lifecycleMixin(Vue);
+renderMixin(Vue);
+
+/*  */
+
+function initUse (Vue) {
+  Vue.use = function (plugin) {
+    var installedPlugins = (this._installedPlugins || (this._installedPlugins = []));
+    if (installedPlugins.indexOf(plugin) > -1) {
+      return this
+    }
+
+    // additional parameters
+    var args = toArray(arguments, 1);
+    args.unshift(this);
+    if (typeof plugin.install === 'function') {
+      plugin.install.apply(plugin, args);
+    } else if (typeof plugin === 'function') {
+      plugin.apply(null, args);
+    }
+    installedPlugins.push(plugin);
+    return this
+  };
+}
+
+/*  */
+
+function initMixin$1 (Vue) {
+  Vue.mixin = function (mixin) {
+    this.options = mergeOptions(this.options, mixin);
+    return this
+  };
+}
+
+/*  */
+
+function initExtend (Vue) {
+  /**
+   * Each instance constructor, including Vue, has a unique
+   * cid. This enables us to create wrapped "child
+   * constructors" for prototypal inheritance and cache them.
+   */
+  Vue.cid = 0;
+  var cid = 1;
+
+  /**
+   * Class inheritance
+   */
+  Vue.extend = function (extendOptions) {
+    extendOptions = extendOptions || {};
+    var Super = this;
+    var SuperId = Super.cid;
+    var cachedCtors = extendOptions._Ctor || (extendOptions._Ctor = {});
+    if (cachedCtors[SuperId]) {
+      return cachedCtors[SuperId]
+    }
+
+    var name = extendOptions.name || Super.options.name;
+    if ( true && name) {
+      validateComponentName(name);
+    }
+
+    var Sub = function VueComponent (options) {
+      this._init(options);
+    };
+    Sub.prototype = Object.create(Super.prototype);
+    Sub.prototype.constructor = Sub;
+    Sub.cid = cid++;
+    Sub.options = mergeOptions(
+      Super.options,
+      extendOptions
+    );
+    Sub['super'] = Super;
+
+    // For props and computed properties, we define the proxy getters on
+    // the Vue instances at extension time, on the extended prototype. This
+    // avoids Object.defineProperty calls for each instance created.
+    if (Sub.options.props) {
+      initProps$1(Sub);
+    }
+    if (Sub.options.computed) {
+      initComputed$1(Sub);
+    }
+
+    // allow further extension/mixin/plugin usage
+    Sub.extend = Super.extend;
+    Sub.mixin = Super.mixin;
+    Sub.use = Super.use;
+
+    // create asset registers, so extended classes
+    // can have their private assets too.
+    ASSET_TYPES.forEach(function (type) {
+      Sub[type] = Super[type];
+    });
+    // enable recursive self-lookup
+    if (name) {
+      Sub.options.components[name] = Sub;
+    }
+
+    // keep a reference to the super options at extension time.
+    // later at instantiation we can check if Super's options have
+    // been updated.
+    Sub.superOptions = Super.options;
+    Sub.extendOptions = extendOptions;
+    Sub.sealedOptions = extend({}, Sub.options);
+
+    // cache constructor
+    cachedCtors[SuperId] = Sub;
+    return Sub
+  };
+}
+
+function initProps$1 (Comp) {
+  var props = Comp.options.props;
+  for (var key in props) {
+    proxy(Comp.prototype, "_props", key);
+  }
+}
+
+function initComputed$1 (Comp) {
+  var computed = Comp.options.computed;
+  for (var key in computed) {
+    defineComputed(Comp.prototype, key, computed[key]);
+  }
+}
+
+/*  */
+
+function initAssetRegisters (Vue) {
+  /**
+   * Create asset registration methods.
+   */
+  ASSET_TYPES.forEach(function (type) {
+    Vue[type] = function (
+      id,
+      definition
+    ) {
+      if (!definition) {
+        return this.options[type + 's'][id]
+      } else {
+        /* istanbul ignore if */
+        if ( true && type === 'component') {
+          validateComponentName(id);
+        }
+        if (type === 'component' && isPlainObject(definition)) {
+          definition.name = definition.name || id;
+          definition = this.options._base.extend(definition);
+        }
+        if (type === 'directive' && typeof definition === 'function') {
+          definition = { bind: definition, update: definition };
+        }
+        this.options[type + 's'][id] = definition;
+        return definition
+      }
+    };
+  });
+}
+
+/*  */
+
+
+
+function getComponentName (opts) {
+  return opts && (opts.Ctor.options.name || opts.tag)
+}
+
+function matches (pattern, name) {
+  if (Array.isArray(pattern)) {
+    return pattern.indexOf(name) > -1
+  } else if (typeof pattern === 'string') {
+    return pattern.split(',').indexOf(name) > -1
+  } else if (isRegExp(pattern)) {
+    return pattern.test(name)
+  }
+  /* istanbul ignore next */
+  return false
+}
+
+function pruneCache (keepAliveInstance, filter) {
+  var cache = keepAliveInstance.cache;
+  var keys = keepAliveInstance.keys;
+  var _vnode = keepAliveInstance._vnode;
+  for (var key in cache) {
+    var cachedNode = cache[key];
+    if (cachedNode) {
+      var name = getComponentName(cachedNode.componentOptions);
+      if (name && !filter(name)) {
+        pruneCacheEntry(cache, key, keys, _vnode);
+      }
+    }
+  }
+}
+
+function pruneCacheEntry (
+  cache,
+  key,
+  keys,
+  current
+) {
+  var cached$$1 = cache[key];
+  if (cached$$1 && (!current || cached$$1.tag !== current.tag)) {
+    cached$$1.componentInstance.$destroy();
+  }
+  cache[key] = null;
+  remove(keys, key);
+}
+
+var patternTypes = [String, RegExp, Array];
+
+var KeepAlive = {
+  name: 'keep-alive',
+  abstract: true,
+
+  props: {
+    include: patternTypes,
+    exclude: patternTypes,
+    max: [String, Number]
+  },
+
+  created: function created () {
+    this.cache = Object.create(null);
+    this.keys = [];
+  },
+
+  destroyed: function destroyed () {
+    for (var key in this.cache) {
+      pruneCacheEntry(this.cache, key, this.keys);
+    }
+  },
+
+  mounted: function mounted () {
+    var this$1 = this;
+
+    this.$watch('include', function (val) {
+      pruneCache(this$1, function (name) { return matches(val, name); });
+    });
+    this.$watch('exclude', function (val) {
+      pruneCache(this$1, function (name) { return !matches(val, name); });
+    });
+  },
+
+  render: function render () {
+    var slot = this.$slots.default;
+    var vnode = getFirstComponentChild(slot);
+    var componentOptions = vnode && vnode.componentOptions;
+    if (componentOptions) {
+      // check pattern
+      var name = getComponentName(componentOptions);
+      var ref = this;
+      var include = ref.include;
+      var exclude = ref.exclude;
+      if (
+        // not included
+        (include && (!name || !matches(include, name))) ||
+        // excluded
+        (exclude && name && matches(exclude, name))
+      ) {
+        return vnode
+      }
+
+      var ref$1 = this;
+      var cache = ref$1.cache;
+      var keys = ref$1.keys;
+      var key = vnode.key == null
+        // same constructor may get registered as different local components
+        // so cid alone is not enough (#3269)
+        ? componentOptions.Ctor.cid + (componentOptions.tag ? ("::" + (componentOptions.tag)) : '')
+        : vnode.key;
+      if (cache[key]) {
+        vnode.componentInstance = cache[key].componentInstance;
+        // make current key freshest
+        remove(keys, key);
+        keys.push(key);
+      } else {
+        cache[key] = vnode;
+        keys.push(key);
+        // prune oldest entry
+        if (this.max && keys.length > parseInt(this.max)) {
+          pruneCacheEntry(cache, keys[0], keys, this._vnode);
+        }
+      }
+
+      vnode.data.keepAlive = true;
+    }
+    return vnode || (slot && slot[0])
+  }
+};
+
+var builtInComponents = {
+  KeepAlive: KeepAlive
+};
+
+/*  */
+
+function initGlobalAPI (Vue) {
+  // config
+  var configDef = {};
+  configDef.get = function () { return config; };
+  if (true) {
+    configDef.set = function () {
+      warn(
+        'Do not replace the Vue.config object, set individual fields instead.'
+      );
+    };
+  }
+  Object.defineProperty(Vue, 'config', configDef);
+
+  // exposed util methods.
+  // NOTE: these are not considered part of the public API - avoid relying on
+  // them unless you are aware of the risk.
+  Vue.util = {
+    warn: warn,
+    extend: extend,
+    mergeOptions: mergeOptions,
+    defineReactive: defineReactive$$1
+  };
+
+  Vue.set = set;
+  Vue.delete = del;
+  Vue.nextTick = nextTick;
+
+  // 2.6 explicit observable API
+  Vue.observable = function (obj) {
+    observe(obj);
+    return obj
+  };
+
+  Vue.options = Object.create(null);
+  ASSET_TYPES.forEach(function (type) {
+    Vue.options[type + 's'] = Object.create(null);
+  });
+
+  // this is used to identify the "base" constructor to extend all plain-object
+  // components with in Weex's multi-instance scenarios.
+  Vue.options._base = Vue;
+
+  extend(Vue.options.components, builtInComponents);
+
+  initUse(Vue);
+  initMixin$1(Vue);
+  initExtend(Vue);
+  initAssetRegisters(Vue);
+}
+
+initGlobalAPI(Vue);
+
+Object.defineProperty(Vue.prototype, '$isServer', {
+  get: isServerRendering
+});
+
+Object.defineProperty(Vue.prototype, '$ssrContext', {
+  get: function get () {
+    /* istanbul ignore next */
+    return this.$vnode && this.$vnode.ssrContext
+  }
+});
+
+// expose FunctionalRenderContext for ssr runtime helper installation
+Object.defineProperty(Vue, 'FunctionalRenderContext', {
+  value: FunctionalRenderContext
+});
+
+Vue.version = '2.6.10';
+
+/**
+ * https://raw.githubusercontent.com/Tencent/westore/master/packages/westore/utils/diff.js
+ */
+var ARRAYTYPE = '[object Array]';
+var OBJECTTYPE = '[object Object]';
+// const FUNCTIONTYPE = '[object Function]'
+
+function diff(current, pre) {
+    var result = {};
+    syncKeys(current, pre);
+    _diff(current, pre, '', result);
+    return result
+}
+
+function syncKeys(current, pre) {
+    if (current === pre) { return }
+    var rootCurrentType = type(current);
+    var rootPreType = type(pre);
+    if (rootCurrentType == OBJECTTYPE && rootPreType == OBJECTTYPE) {
+        if(Object.keys(current).length >= Object.keys(pre).length){
+            for (var key in pre) {
+                var currentValue = current[key];
+                if (currentValue === undefined) {
+                    current[key] = null;
+                } else {
+                    syncKeys(currentValue, pre[key]);
+                }
+            }
+        }
+    } else if (rootCurrentType == ARRAYTYPE && rootPreType == ARRAYTYPE) {
+        if (current.length >= pre.length) {
+            pre.forEach(function (item, index) {
+                syncKeys(current[index], item);
+            });
+        }
+    }
+}
+
+function _diff(current, pre, path, result) {
+    if (current === pre) { return }
+    var rootCurrentType = type(current);
+    var rootPreType = type(pre);
+    if (rootCurrentType == OBJECTTYPE) {
+        if (rootPreType != OBJECTTYPE || Object.keys(current).length < Object.keys(pre).length) {
+            setResult(result, path, current);
+        } else {
+            var loop = function ( key ) {
+                var currentValue = current[key];
+                var preValue = pre[key];
+                var currentType = type(currentValue);
+                var preType = type(preValue);
+                if (currentType != ARRAYTYPE && currentType != OBJECTTYPE) {
+                    if (currentValue != pre[key]) {
+                        setResult(result, (path == '' ? '' : path + ".") + key, currentValue);
+                    }
+                } else if (currentType == ARRAYTYPE) {
+                    if (preType != ARRAYTYPE) {
+                        setResult(result, (path == '' ? '' : path + ".") + key, currentValue);
+                    } else {
+                        if (currentValue.length < preValue.length) {
+                            setResult(result, (path == '' ? '' : path + ".") + key, currentValue);
+                        } else {
+                            currentValue.forEach(function (item, index) {
+                                _diff(item, preValue[index], (path == '' ? '' : path + ".") + key + '[' + index + ']', result);
+                            });
+                        }
+                    }
+                } else if (currentType == OBJECTTYPE) {
+                    if (preType != OBJECTTYPE || Object.keys(currentValue).length < Object.keys(preValue).length) {
+                        setResult(result, (path == '' ? '' : path + ".") + key, currentValue);
+                    } else {
+                        for (var subKey in currentValue) {
+                            _diff(currentValue[subKey], preValue[subKey], (path == '' ? '' : path + ".") + key + '.' + subKey, result);
+                        }
+                    }
+                }
+            };
+
+            for (var key in current) loop( key );
+        }
+    } else if (rootCurrentType == ARRAYTYPE) {
+        if (rootPreType != ARRAYTYPE) {
+            setResult(result, path, current);
+        } else {
+            if (current.length < pre.length) {
+                setResult(result, path, current);
+            } else {
+                current.forEach(function (item, index) {
+                    _diff(item, pre[index], path + '[' + index + ']', result);
+                });
+            }
+        }
+    } else {
+        setResult(result, path, current);
+    }
+}
+
+function setResult(result, k, v) {
+    // if (type(v) != FUNCTIONTYPE) {
+        result[k] = v;
+    // }
+}
+
+function type(obj) {
+    return Object.prototype.toString.call(obj)
+}
+
+/*  */
+
+function flushCallbacks$1(vm) {
+    if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            var mpInstance = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
+                ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
+        }
+        var copies = vm.__next_tick_callbacks.slice(0);
+        vm.__next_tick_callbacks.length = 0;
+        for (var i = 0; i < copies.length; i++) {
+            copies[i]();
+        }
+    }
+}
+
+function hasRenderWatcher(vm) {
+    return queue.find(function (watcher) { return vm._watcher === watcher; })
+}
+
+function nextTick$1(vm, cb) {
+    //1.nextTick 之前 已 setData 且 setData 还未回调完成
+    //2.nextTick 之前存在 render watcher
+    if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+            var mpInstance = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
+                ']:nextVueTick');
+        }
+        return nextTick(cb, vm)
+    }else{
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+            var mpInstance$1 = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
+                ']:nextMPTick');
+        }
+    }
+    var _resolve;
+    if (!vm.__next_tick_callbacks) {
+        vm.__next_tick_callbacks = [];
+    }
+    vm.__next_tick_callbacks.push(function () {
+        if (cb) {
+            try {
+                cb.call(vm);
+            } catch (e) {
+                handleError(e, vm, 'nextTick');
+            }
+        } else if (_resolve) {
+            _resolve(vm);
+        }
+    });
+    // $flow-disable-line
+    if (!cb && typeof Promise !== 'undefined') {
+        return new Promise(function (resolve) {
+            _resolve = resolve;
+        })
+    }
+}
+
+/*  */
+
+function cloneWithData(vm) {
+  // 确保当前 vm 所有数据被同步
+  var ret = Object.create(null);
+  var dataKeys = [].concat(
+    Object.keys(vm._data || {}),
+    Object.keys(vm._computedWatchers || {}));
+
+  dataKeys.reduce(function(ret, key) {
+    ret[key] = vm[key];
+    return ret
+  }, ret);
+  //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
+  Object.assign(ret, vm.$mp.data || {});
+  if (
+    Array.isArray(vm.$options.behaviors) &&
+    vm.$options.behaviors.indexOf('uni://form-field') !== -1
+  ) { //form-field
+    ret['name'] = vm.name;
+    ret['value'] = vm.value;
+  }
+
+  return JSON.parse(JSON.stringify(ret))
+}
+
+var patch = function(oldVnode, vnode) {
+  var this$1 = this;
+
+  if (vnode === null) { //destroy
+    return
+  }
+  if (this.mpType === 'page' || this.mpType === 'component') {
+    var mpInstance = this.$scope;
+    var data = Object.create(null);
+    try {
+      data = cloneWithData(this);
+    } catch (err) {
+      console.error(err);
+    }
+    data.__webviewId__ = mpInstance.data.__webviewId__;
+    var mpData = Object.create(null);
+    Object.keys(data).forEach(function (key) { //仅同步 data 中有的数据
+      mpData[key] = mpInstance.data[key];
+    });
+    var diffData = diff(data, mpData);
+    if (Object.keys(diffData).length) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
+          ']差量更新',
+          JSON.stringify(diffData));
+      }
+      this.__next_tick_pending = true;
+      mpInstance.setData(diffData, function () {
+        this$1.__next_tick_pending = false;
+        flushCallbacks$1(this$1);
+      });
+    } else {
+      flushCallbacks$1(this);
+    }
+  }
+};
+
+/*  */
+
+function createEmptyRender() {
+
+}
+
+function mountComponent$1(
+  vm,
+  el,
+  hydrating
+) {
+  if (!vm.mpType) {//main.js 中的 new Vue
+    return vm
+  }
+  if (vm.mpType === 'app') {
+    vm.$options.render = createEmptyRender;
+  }
+  if (!vm.$options.render) {
+    vm.$options.render = createEmptyRender;
+    if (true) {
+      /* istanbul ignore if */
+      if ((vm.$options.template && vm.$options.template.charAt(0) !== '#') ||
+        vm.$options.el || el) {
+        warn(
+          'You are using the runtime-only build of Vue where the template ' +
+          'compiler is not available. Either pre-compile the templates into ' +
+          'render functions, or use the compiler-included build.',
+          vm
+        );
+      } else {
+        warn(
+          'Failed to mount component: template or render function not defined.',
+          vm
+        );
+      }
+    }
+  }
+  
+  vm.mpHost !== 'mp-toutiao' && callHook(vm, 'beforeMount');
+
+  var updateComponent = function () {
+    vm._update(vm._render(), hydrating);
+  };
+
+  // we set this to vm._watcher inside the watcher's constructor
+  // since the watcher's initial patch may call $forceUpdate (e.g. inside child
+  // component's mounted hook), which relies on vm._watcher being already defined
+  new Watcher(vm, updateComponent, noop, {
+    before: function before() {
+      if (vm._isMounted && !vm._isDestroyed) {
+        callHook(vm, 'beforeUpdate');
+      }
+    }
+  }, true /* isRenderWatcher */);
+  hydrating = false;
+  return vm
+}
+
+/*  */
+
+function renderClass (
+  staticClass,
+  dynamicClass
+) {
+  if (isDef(staticClass) || isDef(dynamicClass)) {
+    return concat(staticClass, stringifyClass(dynamicClass))
+  }
+  /* istanbul ignore next */
+  return ''
+}
+
+function concat (a, b) {
+  return a ? b ? (a + ' ' + b) : a : (b || '')
+}
+
+function stringifyClass (value) {
+  if (Array.isArray(value)) {
+    return stringifyArray(value)
+  }
+  if (isObject(value)) {
+    return stringifyObject(value)
+  }
+  if (typeof value === 'string') {
+    return value
+  }
+  /* istanbul ignore next */
+  return ''
+}
+
+function stringifyArray (value) {
+  var res = '';
+  var stringified;
+  for (var i = 0, l = value.length; i < l; i++) {
+    if (isDef(stringified = stringifyClass(value[i])) && stringified !== '') {
+      if (res) { res += ' '; }
+      res += stringified;
+    }
+  }
+  return res
+}
+
+function stringifyObject (value) {
+  var res = '';
+  for (var key in value) {
+    if (value[key]) {
+      if (res) { res += ' '; }
+      res += key;
+    }
+  }
+  return res
+}
+
+/*  */
+
+var parseStyleText = cached(function (cssText) {
+  var res = {};
+  var listDelimiter = /;(?![^(]*\))/g;
+  var propertyDelimiter = /:(.+)/;
+  cssText.split(listDelimiter).forEach(function (item) {
+    if (item) {
+      var tmp = item.split(propertyDelimiter);
+      tmp.length > 1 && (res[tmp[0].trim()] = tmp[1].trim());
+    }
+  });
+  return res
+});
+
+// normalize possible array / string values into Object
+function normalizeStyleBinding (bindingStyle) {
+  if (Array.isArray(bindingStyle)) {
+    return toObject(bindingStyle)
+  }
+  if (typeof bindingStyle === 'string') {
+    return parseStyleText(bindingStyle)
+  }
+  return bindingStyle
+}
+
+/*  */
+
+var MP_METHODS = ['createSelectorQuery', 'createIntersectionObserver', 'selectAllComponents', 'selectComponent'];
+
+function getTarget(obj, path) {
+  var parts = path.split('.');
+  var key = parts[0];
+  if (key.indexOf('__$n') === 0) { //number index
+    key = parseInt(key.replace('__$n', ''));
+  }
+  if (parts.length === 1) {
+    return obj[key]
+  }
+  return getTarget(obj[key], parts.slice(1).join('.'))
+}
+
+function internalMixin(Vue) {
+
+  Vue.config.errorHandler = function(err) {
+    console.error(err);
+  };
+
+  var oldEmit = Vue.prototype.$emit;
+
+  Vue.prototype.$emit = function(event) {
+    if (this.$scope && event) {
+      this.$scope['triggerEvent'](event, {
+        __args__: toArray(arguments, 1)
+      });
+    }
+    return oldEmit.apply(this, arguments)
+  };
+
+  Vue.prototype.$nextTick = function(fn) {
+    return nextTick$1(this, fn)
+  };
+
+  MP_METHODS.forEach(function (method) {
+    Vue.prototype[method] = function(args) {
+      if (this.$scope) {
+        return this.$scope[method](args)
+      }
+    };
+  });
+
+  Vue.prototype.__init_provide = initProvide;
+
+  Vue.prototype.__init_injections = initInjections;
+
+  Vue.prototype.__call_hook = function(hook, args) {
+    var vm = this;
+    // #7573 disable dep collection when invoking lifecycle hooks
+    pushTarget();
+    var handlers = vm.$options[hook];
+    var info = hook + " hook";
+    var ret;
+    if (handlers) {
+      for (var i = 0, j = handlers.length; i < j; i++) {
+        ret = invokeWithErrorHandling(handlers[i], vm, args ? [args] : null, vm, info);
+      }
+    }
+    if (vm._hasHookEvent) {
+      vm.$emit('hook:' + hook);
+    }
+    popTarget();
+    return ret
+  };
+
+  Vue.prototype.__set_model = function(target, key, value, modifiers) {
+    if (Array.isArray(modifiers)) {
+      if (modifiers.indexOf('trim') !== -1) {
+        value = value.trim();
+      }
+      if (modifiers.indexOf('number') !== -1) {
+        value = this._n(value);
+      }
+    }
+    if (!target) {
+      target = this;
+    }
+    target[key] = value;
+  };
+
+  Vue.prototype.__set_sync = function(target, key, value) {
+    if (!target) {
+      target = this;
+    }
+    target[key] = value;
+  };
+
+  Vue.prototype.__get_orig = function(item) {
+    if (isPlainObject(item)) {
+      return item['$orig'] || item
+    }
+    return item
+  };
+
+  Vue.prototype.__get_value = function(dataPath, target) {
+    return getTarget(target || this, dataPath)
+  };
+
+
+  Vue.prototype.__get_class = function(dynamicClass, staticClass) {
+    return renderClass(staticClass, dynamicClass)
+  };
+
+  Vue.prototype.__get_style = function(dynamicStyle, staticStyle) {
+    if (!dynamicStyle && !staticStyle) {
+      return ''
+    }
+    var dynamicStyleObj = normalizeStyleBinding(dynamicStyle);
+    var styleObj = staticStyle ? extend(staticStyle, dynamicStyleObj) : dynamicStyleObj;
+    return Object.keys(styleObj).map(function (name) { return ((hyphenate(name)) + ":" + (styleObj[name])); }).join(';')
+  };
+
+  Vue.prototype.__map = function(val, iteratee) {
+    //TODO 暂不考虑 string,number
+    var ret, i, l, keys, key;
+    if (Array.isArray(val)) {
+      ret = new Array(val.length);
+      for (i = 0, l = val.length; i < l; i++) {
+        ret[i] = iteratee(val[i], i);
+      }
+      return ret
+    } else if (isObject(val)) {
+      keys = Object.keys(val);
+      ret = Object.create(null);
+      for (i = 0, l = keys.length; i < l; i++) {
+        key = keys[i];
+        ret[key] = iteratee(val[key], key, i);
+      }
+      return ret
+    }
+    return []
+  };
+
+}
+
+/*  */
+
+var LIFECYCLE_HOOKS$1 = [
+    //App
+    'onLaunch',
+    'onShow',
+    'onHide',
+    'onUniNViewMessage',
+    'onError',
+    //Page
+    'onLoad',
+    // 'onShow',
+    'onReady',
+    // 'onHide',
+    'onUnload',
+    'onPullDownRefresh',
+    'onReachBottom',
+    'onTabItemTap',
+    'onShareAppMessage',
+    'onResize',
+    'onPageScroll',
+    'onNavigationBarButtonTap',
+    'onBackPress',
+    'onNavigationBarSearchInputChanged',
+    'onNavigationBarSearchInputConfirmed',
+    'onNavigationBarSearchInputClicked',
+    //Component
+    // 'onReady', // 兼容旧版本，应该移除该事件
+    'onPageShow',
+    'onPageHide',
+    'onPageResize'
+];
+function lifecycleMixin$1(Vue) {
+
+    //fixed vue-class-component
+    var oldExtend = Vue.extend;
+    Vue.extend = function(extendOptions) {
+        extendOptions = extendOptions || {};
+
+        var methods = extendOptions.methods;
+        if (methods) {
+            Object.keys(methods).forEach(function (methodName) {
+                if (LIFECYCLE_HOOKS$1.indexOf(methodName)!==-1) {
+                    extendOptions[methodName] = methods[methodName];
+                    delete methods[methodName];
+                }
+            });
+        }
+
+        return oldExtend.call(this, extendOptions)
+    };
+
+    var strategies = Vue.config.optionMergeStrategies;
+    var mergeHook = strategies.created;
+    LIFECYCLE_HOOKS$1.forEach(function (hook) {
+        strategies[hook] = mergeHook;
+    });
+
+    Vue.prototype.__lifecycle_hooks__ = LIFECYCLE_HOOKS$1;
+}
+
+/*  */
+
+// install platform patch function
+Vue.prototype.__patch__ = patch;
+
+// public mount method
+Vue.prototype.$mount = function(
+    el ,
+    hydrating 
+) {
+    return mountComponent$1(this, el, hydrating)
+};
+
+lifecycleMixin$1(Vue);
+internalMixin(Vue);
+
+/*  */
+
+/* harmony default export */ __webpack_exports__["default"] = (Vue);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
+
+/***/ }),
+
+/***/ 206:
+/*!**************************************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbusiness%2Fbusiness-orderstatus%2Fbusiness-orderstatus"} ***!
+  \**************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessOrderstatus = _interopRequireDefault(__webpack_require__(/*! ./pages/business/business-orderstatus/business-orderstatus.vue */ 207));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessOrderstatus.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 214:
+/*!**********************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderdetail%2Forder-cancel"} ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _orderCancel = _interopRequireDefault(__webpack_require__(/*! ./pages/orderdetail/order-cancel.vue */ 215));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_orderCancel.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 222:
+/*!************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fbusiness-in"} ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessIn = _interopRequireDefault(__webpack_require__(/*! ./pages/my/business-in.vue */ 223));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessIn.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 230:
+/*!*************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fupload-photo"} ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _uploadPhoto = _interopRequireDefault(__webpack_require__(/*! ./pages/my/upload-photo.vue */ 231));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_uploadPhoto.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 238:
+/*!****************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fbusiness-verify"} ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _businessVerify = _interopRequireDefault(__webpack_require__(/*! ./pages/my/business-verify.vue */ 239));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_businessVerify.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 246:
+/*!**************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fverify-result"} ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _verifyResult = _interopRequireDefault(__webpack_require__(/*! ./pages/my/verify-result.vue */ 247));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_verifyResult.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 254:
+/*!************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fsetting-key"} ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _settingKey = _interopRequireDefault(__webpack_require__(/*! ./pages/my/setting-key.vue */ 255));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_settingKey.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 262:
+/*!***************************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Farrival-repair%2Farrival-repair"} ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _arrivalRepair = _interopRequireDefault(__webpack_require__(/*! ./pages/arrival-repair/arrival-repair.vue */ 263));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_arrivalRepair.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 27:
+/*!*********************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbevip%2Fbevip"} ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _bevip = _interopRequireDefault(__webpack_require__(/*! ./pages/bevip/bevip.vue */ 28));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_bevip.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 270:
+/*!***********************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fmy-friends"} ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _myFriends = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my-friends.vue */ 271));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_myFriends.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 278:
+/*!****************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fconnect-friends"} ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _connectFriends = _interopRequireDefault(__webpack_require__(/*! ./pages/my/connect-friends.vue */ 279));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_connectFriends.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 286:
+/*!*********************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fprize%2Fprize"} ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _prize = _interopRequireDefault(__webpack_require__(/*! ./pages/prize/prize.vue */ 287));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_prize.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 294:
+/*!************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fprize%2Fmy-prize"} ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _myPrize = _interopRequireDefault(__webpack_require__(/*! ./pages/prize/my-prize.vue */ 295));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_myPrize.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
   \***********************************/
-/*! no static exports found */function(e,t){var n;n=function(){return this}();try{n=n||new Function("return this")()}catch(e){"object"==typeof window&&(n=window)}e.exports=n},302:
-/*!***************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fcards"} ***!
-  \***************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/cards.vue */303)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},310:
-/*!*******************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fonline-kf"} ***!
-  \*******************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/online-kf.vue */311)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},316:
-/*!**************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fsign"} ***!
-  \**************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/sign.vue */317)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},324:
-/*!******************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fcontract"} ***!
-  \******************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/my/contract.vue */325)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},35:
-/*!*********************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbevip%2Fvip-type"} ***!
-  \*********************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/bevip/vip-type.vue */36)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},4:
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 302:
+/*!******************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fcards"} ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _cards = _interopRequireDefault(__webpack_require__(/*! ./pages/my/cards.vue */ 303));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_cards.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 310:
+/*!**********************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fonline-kf"} ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _onlineKf = _interopRequireDefault(__webpack_require__(/*! ./pages/my/online-kf.vue */ 311));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_onlineKf.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 316:
+/*!*****************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fsign"} ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _sign = _interopRequireDefault(__webpack_require__(/*! ./pages/my/sign.vue */ 317));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_sign.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 324:
+/*!*********************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmy%2Fcontract"} ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _contract = _interopRequireDefault(__webpack_require__(/*! ./pages/my/contract.vue */ 325));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_contract.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 35:
 /*!************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/pages.json ***!
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fbevip%2Fvip-type"} ***!
   \************************************************************************************************************/
-/*! no static exports found */function(e,t,n){},43:
-/*!********************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fpayvip%2Fpayvip"} ***!
-  \********************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/payvip/payvip.vue */44)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},470:
-/*!*******************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/components/rattenking-dtpicker/GetDate.js ***!
-  \*******************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";function r(e){return function(e){if(Array.isArray(e)){for(var t=0,n=new Array(e.length);t<e.length;t++)n[t]=e[t];return n}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}var o={withData:function(e){var t=parseInt(e);return t<10?"0"+t:""+t},getTimes:function(e){return new Date(e.replace(/-/g,"/")).getTime()},getCurrentTimes:function(){var e=new Date;return{detail:{year:e.getFullYear(),month:e.getMonth()+1,day:e.getDate(),hour:e.getHours(),minute:e.getMinutes(),second:e.getSeconds()}}},format:function(e){var t=[],n=[];return e.forEach(function(e,r){var i=o.withData(e);r>2?t.push(i):n.push(i)}),e.length<4?n.join("-"):n.join("-")+" "+t.join(":")},getCurrentStringValue:function(e){var t=e.split(" ");return t&&t[1]?[].concat(r(t[0].split("-")),r(t[1].split(":"))):t[0].split("-")},getCompare:function(e,t,n,r){var i=o.getTimes(e),a=o.getTimes(t),s=o.getTimes(n);return i<a?o.getTimeIndex(r,o.getCurrentStringValue(t)):i>s?o.getTimeIndex(r,o.getCurrentStringValue(n)):o.getTimeIndex(r,o.getCurrentStringValue(e))},getChooseArr:function(e,t){var n=[];return e.forEach(function(e,r){return n.push(e[t[r]])}),n},getNewArray:function(e){var t=[];return e.forEach(function(e){return t.push(e)}),t},getLoopArray:function(e,t){t=t||1;for(var n=[],r=e=e||0;r<=t;r++)n.push(o.withData(r));return n},getMonthDay:function(e,t){var n=e%400==0||e%4==0&&e%100!=0,r=null;switch(t){case"01":case"03":case"05":case"07":case"08":case"10":case"12":r=o.getLoopArray(1,31);break;case"04":case"06":case"09":case"11":r=o.getLoopArray(1,30);break;case"02":r=n?o.getLoopArray(1,29):o.getLoopArray(1,28);break;default:r="月份格式不正确，请重新输入！"}return r},getDateTimes:function(e){var t=o.getLoopArray(e.start,e.end),n=o.getLoopArray(1,12),r=o.getMonthDay(e.curyear,e.curmonth),i=o.getLoopArray(0,23),a=o.getLoopArray(0,59),s=o.getLoopArray(0,59),u=null;switch(e.fields){case"year":u=[t];break;case"month":u=[t,n];break;case"day":u=[t,n,r];break;case"hour":u=[t,n,r,i];break;case"minute":u=[t,n,r,i,a];break;case"second":u=[t,n,r,i,a,s];break;default:u=[t,n,r,i,a,s]}return u},getIndex:function(e,t){for(var n=e.length,r=0;r<n;r++)if(e[r]==t)return r},getTimeIndex:function(e,t){for(var n=e.length,r=[],i=0;i<n;i++)r.push(o.getIndex(e[i],t[i]));return r},error:function(e){console.error(e)}};e.exports=o},51:
-/*!**************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderlist%2Forderlist"} ***!
-  \**************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/orderlist/orderlist.vue */52)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},57:
-/*!****************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/common/http.js ***!
-  \****************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n={urlRequest:function(t,n,r){return function(t,n,r){var o="https://120.24.180.246/xmRepair/"+t;e.request({url:o,data:r,method:n,success:function(e){console.log(e)},fail:function(e){console.log(e)}})}(t,n,r)}};t.default=n}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).default)},60:
-/*!************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmywallet%2Fmywallet"} ***!
-  \************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/mywallet/mywallet.vue */61)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},68:
-/*!******************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Faddresslist%2Faddresslist"} ***!
-  \******************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/addresslist/addresslist.vue */69)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},76:
-/*!****************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Faddressadd%2Faddressadd"} ***!
-  \****************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/addressadd/addressadd.vue */77)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},84:
-/*!******************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fselectmodel%2Fselectmodel"} ***!
-  \******************************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/selectmodel/selectmodel.vue */85)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)},90:
-/*!***********************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/components/pocky-request/index.js ***!
-  \***********************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r,o=(r=n(/*! ./request */91))&&r.__esModule?r:{default:r};o.default.prototype.setConfig({url:"https://www.finetwm.com/xmRepair/",header:{}}),o.default.prototype.addGlobalInterce({request:function(e){return e},response:function(e){var t=String(e.statusCode).substr(0,1);return"2"===t?e:"3"===t?e:"4"===t||"5"===t?Promise.reject("nooooo"):'{"errMsg":"request:fail abort"}'!==JSON.stringify(e)&&e}});var i=o.default;t.default=i},91:
-/*!*************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/components/pocky-request/request.js ***!
-  \*************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){function n(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=[],r=!0,o=!1,i=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){o=!0,i=e}finally{try{r||null==s.return||s.return()}finally{if(o)throw i}}return n}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance")}()}function r(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{},r=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(r=r.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),r.forEach(function(t){i(e,t,n[t])})}return e}function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function i(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var a=function(){function e(){var t=this;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),i(this,"addInterceptors",{request:function(e){t.scopedInterceptors.request=e},response:function(e){t.scopedInterceptors.response=e}}),this.scopedInterceptors={}}var t,n,r;return t=e,(n=[{key:"addGlobalInterce",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.request,n=e.response;s.interceptors.global.request=t,s.interceptors.global.response=n}},{key:"getConfig",value:function(){return s.config}},{key:"setConfig",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};s.config=s.merge.globalConfig({url:"",dataType:"json",responseType:"text"},e)}},{key:"get",value:function(e){var t=s.merge.config(e,"get");return s.request.call(this,t)}},{key:"post",value:function(e){var t=s.merge.config(e,"post");return s.request.call(this,t)}},{key:"put",value:function(e){var t=s.merge.config(e,"put");return s.request.call(this,t)}},{key:"delete",value:function(e){var t=s.merge.config(e,"delete");return s.request.call(this,t)}},{key:"connect",value:function(e){var t=s.merge.config(e,"connect");return s.request.call(this,t)}},{key:"head",value:function(e){var t=s.merge.config(e,"head");return s.request.call(this,t)}},{key:"trace",value:function(e){var t=s.merge.config(e,"trace");return s.request.call(this,t)}},{key:"options",value:function(e){var t=s.merge.config(e,"post");return s.request.call(this,t)}},{key:"stop",value:function(e){try{"function"==typeof e.example.abort&&e.example.abort()}catch(e){s._error("参数错误, 无法停止发送请求{errmsg: ".concat(JOSN.stringify(e),"}"))}}},{key:"upload",value:function(e){var t=s.merge.config(e,"post");return s.upload.call(this,t)}},{key:"download",value:function(e){var t=s.merge.config(e,"get");return s.download.call(this,t)}}])&&o(t.prototype,n),r&&o(t,r),e}(),s={config:{url:"",dataType:"",responseType:"",header:{},data:{},contentType:"form"},interceptors:{global:{request:null,response:null},req:function(e,t){var n=1===t?s.interceptors.global.request:this.scopedInterceptors.request;if("function"==typeof n){var r=n(e);return!1!==r&&void 0!==r&&(2===t?r:s.interceptors.req.call(this,r,2))}return 2===t?e:s.interceptors.req.call(this,e,2)},rep:function(e,t){var n=1===t?s.interceptors.global.response:this.scopedInterceptors.response;if("function"==typeof n){var r=n(e);return"[object Promise]"===Object.prototype.toString.call(r)?r:!1!==r&&void 0!==r&&(2===t?r:s.interceptors.rep.call(this,r,2))}return 2===t?e:s.interceptors.rep.call(this,e,2)}},merge:{globalConfig:function(e,t){return r({},e,t)},config:function(e,t){var n=s.merge.url(s.config.url,e.url);n+=s.merge.params(e.params);var o=r({"content-type":s.merge.contentType(s.config,e)},e.header,s.config.header);return r({},e,s.config,{url:n,method:t,header:o})},url:function(e,t){var n=e.length,r=t.length,o=e.lastIndexOf("/")+1===n,i=0===t.indexOf("/");return(0===r||0!==n&&!s.isCompleteUrl(e))&&s.error("url参数不完整或者错误"),s.isCompleteUrl(t)?t:o&&i?e+t.substr(1):o||i?e+t:o||i?void 0:e+"/"+t},contentType:function(e,t){var r={form:"application/x-www-form-urlencoded;charset=UTF-8",json:"application/json;charset=UTF-8",file:"multipart/form-data;charset=UTF-8"},o={val:!1};function i(e,t){var n=Object.keys(r),o=e.contentType;t.val||(void 0!==o&&!n.includes(o)&&s.error("contentType参数错误: "+o),delete e.contentType,t.val=r[o])}function a(e,t){for(var r=["content-type","content-Type","Content-Type","contentType","ContentType"],o=Object.entries(e.header||{}),i=0;i<o.length;i++){var a=n(o[i],2),s=a[0],u=a[1];if(-1!==r.indexOf(s)&&(delete e.header[s],!t.val)){t.val=u;break}}}return a(t,o),i(t,o),a(e,o),i(e,o),o.val||r.form},params:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(e==={})return"";for(var t="",r=Object.entries(e),o=0;o<r.length;o++){var i=n(r[o],2),a=i[0],s=i[1];t+="".concat(a,"=").concat(s,"&")}return""!==t&&(t="?"+t),t=t.substring(0,t.length-1)}},xhr:{success:function(e,t,n,r,o){var i=s.interceptors.rep.call(this,e,1);if(!1===s.xhr.commonIntercept(i,t,n,o))return!1;t.success?t.success(i):r(i)},fail:function(e,t,n,r){var o=s.interceptors.rep.call(this,e,1);if(!1===s.xhr.commonIntercept(o,t,n,r))return!1;t.fail?t.fail(o):r(o)},complete:function(e,t,n){if(!t.complete||!n.status)return!1;t.complete(e)},commonIntercept:function(e,t,n,r){var o=t.fail;return!1===e?(n.status=!1,!1):"[object Promise]"===Object.prototype.toString.call(e)?(e.catch(o||r),!1):void 0}},isCompleteUrl:function(e){return/(http|https):\/\/([\w.]+\/?)\S*/.test(e)},getObjPathVal:function(e){var t=e.split("."),n=s;return t.forEach(function(e){n=n[e]}),n},request:function(t){var n,o,i=this,a={status:!0},u=s.interceptors.req.call(this,t,1);return!1===u?s.myPromise():((o=new Promise(function(t,o){n=e.request(r({},u,{success:function(e){s.xhr.success.call(i,e,u,a,t,o)},fail:function(e){s.xhr.fail.call(i,e,u,a,o)},complete:function(e){s.xhr.complete(e,u,a)}}))})).__proto__.example=n,o)},upload:function(t){var n=this,o={status:!0},i=s.interceptors.req.call(this,t,1);return!1===i?s.myPromise():(delete i.header["content-type"],delete i.method,new Promise(function(t,a){e.uploadFile(r({},i,{success:function(e){e.data=JSON.parse(e.data),s.xhr.success.call(n,e,i,o,t,a)},fail:function(e){s.xhr.fail.call(n,e,i,o,a)},complete:function(e){s.xhr.complete(e,i,o)}}))}))},download:function(t){var n=this,o={status:!0},i=s.interceptors.req.call(this,t,1);return!1===i?s.myPromise():(delete i.header["content-type"],delete i.method,new Promise(function(t,a){e.downloadFile(r({},i,{success:function(e){s.xhr.success.call(n,e,i,o,t,a)},fail:function(e){s.xhr.fail.call(n,e,i,o,a)},complete:function(e){s.xhr.complete(e,i,o)}}))}))},myPromise:function(){var e={then:function(){return e},catch:function(){return e},finally:function(){return e}};return e},error:function(e){throw new Error("[request error]: "+e)}},u=a;t.default=u}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).default)},94:
-/*!********************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/GitHub/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Ffaults%2Ffaults"} ***!
-  \********************************************************************************************************************************************/
-/*! no static exports found */function(e,t,n){"use strict";(function(e){n(/*! uni-pages */4);t(n(/*! vue */2));function t(e){return e&&e.__esModule?e:{default:e}}e(t(n(/*! ./pages/faults/faults.vue */95)).default)}).call(this,n(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */1).createPage)}}]);
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _vipType = _interopRequireDefault(__webpack_require__(/*! ./pages/bevip/vip-type.vue */ 36));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_vipType.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 4:
+/*!***************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/pages.json ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/***/ }),
+
+/***/ 43:
+/*!***********************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fpayvip%2Fpayvip"} ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _payvip = _interopRequireDefault(__webpack_require__(/*! ./pages/payvip/payvip.vue */ 44));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_payvip.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 470:
+/*!**********************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/components/rattenking-dtpicker/GetDate.js ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}var GetDate = {
+  withData: function withData(num) {
+    var param = parseInt(num);
+    return param < 10 ? '0' + param : '' + param;
+  },
+  getTimes: function getTimes(str) {
+    return new Date(str.replace(/-/g, '/')).getTime();
+  },
+  getCurrentTimes: function getCurrentTimes() {
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    return {
+      detail: {
+        year: year,
+        month: month,
+        day: day,
+        hour: hour,
+        minute: minute,
+        second: second } };
+
+
+  },
+  format: function format(arr) {
+    var curarr = [];
+    var curarr0 = [];
+    var str = '';
+    arr.forEach(function (cur, index) {
+      var o = GetDate.withData(cur);
+      if (index > 2) {
+        curarr.push(o);
+      } else {
+        curarr0.push(o);
+      }
+    });
+    if (arr.length < 4) {
+      str = curarr0.join('-');
+    } else {
+      str = curarr0.join('-') + ' ' + curarr.join(':');
+    }
+    return str;
+  },
+  getCurrentStringValue: function getCurrentStringValue(str) {
+    var newstr = str.split(' ');
+    if (newstr && newstr[1]) {
+      var arr = [].concat(_toConsumableArray(newstr[0].split('-')), _toConsumableArray(newstr[1].split(':')));
+      return arr;
+    }
+    return newstr[0].split('-');
+  },
+  getCompare: function getCompare(curp, startp, endp, timesp) {
+    var cur = GetDate.getTimes(curp);
+    var start = GetDate.getTimes(startp);
+    var end = GetDate.getTimes(endp);
+    if (cur < start) {
+      return GetDate.getTimeIndex(timesp, GetDate.getCurrentStringValue(startp));
+    } else if (cur > end) {
+      return GetDate.getTimeIndex(timesp, GetDate.getCurrentStringValue(endp));
+    } else {
+      return GetDate.getTimeIndex(timesp, GetDate.getCurrentStringValue(curp));
+    }
+  },
+  getChooseArr: function getChooseArr(times, indexs) {
+    var arr = [];
+    times.forEach(function (cur, index) {return arr.push(cur[indexs[index]]);});
+    return arr;
+  },
+  getNewArray: function getNewArray(arr) {
+    var newarr = [];
+    arr.forEach(function (cur) {return newarr.push(cur);});
+    return newarr;
+  },
+  getLoopArray: function getLoopArray(start, end) {
+    var start = start || 0;
+    var end = end || 1;
+    var array = [];
+    for (var i = start; i <= end; i++) {
+      array.push(GetDate.withData(i));
+    }
+    return array;
+  },
+  getMonthDay: function getMonthDay(year, month) {
+    var flag = year % 400 == 0 || year % 4 == 0 && year % 100 != 0,array = null;
+
+    switch (month) {
+      case '01':
+      case '03':
+      case '05':
+      case '07':
+      case '08':
+      case '10':
+      case '12':
+        array = GetDate.getLoopArray(1, 31);
+        break;
+      case '04':
+      case '06':
+      case '09':
+      case '11':
+        array = GetDate.getLoopArray(1, 30);
+        break;
+      case '02':
+        array = flag ? GetDate.getLoopArray(1, 29) : GetDate.getLoopArray(1, 28);
+        break;
+      default:
+        array = '月份格式不正确，请重新输入！';}
+
+    return array;
+  },
+  getDateTimes: function getDateTimes(opts) {
+    var years = GetDate.getLoopArray(opts.start, opts.end);
+    var months = GetDate.getLoopArray(1, 12);
+    var days = GetDate.getMonthDay(opts.curyear, opts.curmonth);
+    var hours = GetDate.getLoopArray(0, 23);
+    var minutes = GetDate.getLoopArray(0, 59);
+    var seconds = GetDate.getLoopArray(0, 59);
+    var times = null;
+
+    switch (opts.fields) {
+      case 'year':
+        times = [years];
+        break;
+      case 'month':
+        times = [years, months];
+        break;
+      case 'day':
+        times = [years, months, days];
+        break;
+      case 'hour':
+        times = [years, months, days, hours];
+        break;
+      case 'minute':
+        times = [years, months, days, hours, minutes];
+        break;
+      case 'second':
+        times = [years, months, days, hours, minutes, seconds];
+        break;
+      default:
+        times = [years, months, days, hours, minutes, seconds];}
+
+    return times;
+  },
+  getIndex: function getIndex(arr, target) {
+    var len = arr.length;
+    for (var i = 0; i < len; i++) {
+      if (arr[i] == target) {
+        return i;
+      }
+    }
+  },
+  getTimeIndex: function getTimeIndex(arrs, targets) {
+    var len = arrs.length;
+    var arr = [];
+    for (var i = 0; i < len; i++) {
+      arr.push(GetDate.getIndex(arrs[i], targets[i]));
+    }
+    return arr;
+  },
+  error: function error(str) {
+    console.error(str);
+  } };
+
+
+module.exports = GetDate;
+
+/***/ }),
+
+/***/ 51:
+/*!*****************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Forderlist%2Forderlist"} ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _orderlist = _interopRequireDefault(__webpack_require__(/*! ./pages/orderlist/orderlist.vue */ 52));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_orderlist.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 57:
+/*!*******************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/common/http.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _urlRequest(url, method, param) {
+  var baseUrl = 'https://120.24.180.246/xmRepair/' + url;
+  uni.request({
+    url: baseUrl,
+    data: param,
+    method: method,
+    success: function success(res) {
+      console.log(res);
+    },
+    fail: function fail(err) {
+      console.log(err);
+    } });
+
+}var _default =
+
+{
+  urlRequest: function urlRequest(url, param, method) {
+    return _urlRequest(url, param, method);
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 60:
+/*!***************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fmywallet%2Fmywallet"} ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _mywallet = _interopRequireDefault(__webpack_require__(/*! ./pages/mywallet/mywallet.vue */ 61));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_mywallet.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 68:
+/*!*********************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Faddresslist%2Faddresslist"} ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _addresslist = _interopRequireDefault(__webpack_require__(/*! ./pages/addresslist/addresslist.vue */ 69));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_addresslist.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 76:
+/*!*******************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Faddressadd%2Faddressadd"} ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _addressadd = _interopRequireDefault(__webpack_require__(/*! ./pages/addressadd/addressadd.vue */ 77));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_addressadd.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 84:
+/*!*********************************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Fselectmodel%2Fselectmodel"} ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _selectmodel = _interopRequireDefault(__webpack_require__(/*! ./pages/selectmodel/selectmodel.vue */ 85));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_selectmodel.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 90:
+/*!**************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/components/pocky-request/index.js ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ./request */ 91));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 设置全局配置, 只能配置静态数据
+_request.default.prototype.setConfig({
+  url: 'https://www.finetwm.com/xmRepair/', // 基地址
+  // contentType: 'json',
+  header: {
+    // uid: 'xxxx'
+  } });
+
+
+// 全局拦截器
+_request.default.prototype.addGlobalInterce({
+  // 请求拦截器 (例如配置token)
+  // return false或者不return值, 都不会发送请求
+  request: function request(config) {
+    // console.log('📖 is global request interceptors', config)
+    // config.header.token = 'xxxxx';
+
+    return config;
+    // return false;
+  },
+
+  // 响应拦截器 (例如根据状态码拦截数据或者过滤数据)
+  // return false或者不return值 则都不会返回值
+  // return Promise.reject('xxxxx')，主动抛出错误
+  response: function response(res) {
+    var firstCodeNum = String(res.statusCode).substr(0, 1);
+    // console.log('📫 is global response interceptors', res)
+
+    // return false;
+
+    // 2xx
+    if (firstCodeNum === '2') {
+      // do something
+      // res.data.data.text = 'addGlobalInterce response'
+
+      return res;
+    }
+
+    // 3xx
+    if (firstCodeNum === '3') {
+      // do something
+      return res;
+    }
+
+    // 4xx or 5xx
+    if (firstCodeNum === '4' || firstCodeNum === '5') {
+      // do something
+      // console.log('is 4xx or 5xx')
+
+      return Promise.reject('nooooo');
+    }
+
+    // 停止发送请求 request.stop()
+    if (JSON.stringify(res) === '{"errMsg":"request:fail abort"}') {
+      // do something
+      // return Promise.reject('xxxxxxxxx');
+      return false;
+    }
+
+    // return Promise.reject(res)
+    return res;
+  } });var _default =
+
+
+_request.default;exports.default = _default;
+
+/***/ }),
+
+/***/ 91:
+/*!****************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/components/pocky-request/request.js ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @Description: uniapp request请求库 v1.3.9
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @Author: pocky
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @Email 2460392754@qq.com
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @Date: 2019-05-31 19:18:48
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @LastEditTime: 2019-09-09 11:16:09
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @instruction: https://www.yuque.com/pocky/aaeyux/pdik23
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @github: https://github.com/2460392754/uniapp-tools/tree/master/request
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @dcloud: https://ext.dcloud.net.cn/plugin?id=468
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */var
+MyRequest = /*#__PURE__*/function () {
+  function MyRequest() {var _this = this;_classCallCheck(this, MyRequest);_defineProperty(this, "addInterceptors",
+
+
+
+
+    {
+      request: function request(fn) {
+        _this.scopedInterceptors.request = fn;
+      },
+      response: function response(fn) {
+        _this.scopedInterceptors.response = fn;
+      } });this.scopedInterceptors = {};} // 添加局部拦截器
+  _createClass(MyRequest, [{ key: "addGlobalInterce",
+
+    /**
+                                                       * 添加全局拦截器
+                                                       * @param {Object} obj [{}] - 全局拦截器
+                                                       * @param {function} obj.request - 全局请求拦截器
+                                                       * @param {function} obj.response - 全局响应拦截器
+                                                       */value: function addGlobalInterce()
+    {var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},request = _ref.request,response = _ref.response;
+      _.interceptors.global.request = request;
+      _.interceptors.global.response = response;
+    }
+
+    /**
+       * 获取 全局配置
+       */ }, { key: "getConfig", value: function getConfig()
+    {
+      return _.config;
+    }
+
+    /**
+       * 设置 全局配置
+       * @param {Object} config - 配置数据
+       */ }, { key: "setConfig", value: function setConfig()
+    {var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var defaultConfig = {
+        url: '',
+        dataType: 'json',
+        responseType: 'text' };
+
+
+      _.config = _.merge.globalConfig(defaultConfig, config);
+    }
+
+    /**
+       * get 请求
+       * @param {Object} config - 局部配置数据
+       * @return {Object|undefined} 
+       */ }, { key: "get", value: function get(
+    config) {
+      var newConfig = _.merge.config(config, 'get');
+
+      return _.request.call(this, newConfig);
+    }
+
+    /**
+       * post 请求
+       * @param {Object} config - 局部配置数据
+       * @return {Object|undefined} 
+       */ }, { key: "post", value: function post(
+    config) {
+      var newConfig = _.merge.config(config, 'post');
+
+      return _.request.call(this, newConfig);
+    }
+
+    /**
+       * put 请求
+       * @param {Object} config - 局部配置数据
+       * @return {Object|undefined} 
+       */ }, { key: "put", value: function put(
+    config) {
+      var newConfig = _.merge.config(config, 'put');
+
+      return _.request.call(this, newConfig);
+    }
+
+    /**
+       * delete 请求
+       * @param {Object} config - 局部配置数据
+       * @return {Object|undefined} 
+       */ }, { key: "delete", value: function _delete(
+    config) {
+      var newConfig = _.merge.config(config, 'delete');
+
+      return _.request.call(this, newConfig);
+    }
+
+    /**
+       * connect 请求
+       * @param {Object} config - 局部配置数据
+       * @return {Object|undefined} 
+       */ }, { key: "connect", value: function connect(
+    config) {
+      var newConfig = _.merge.config(config, 'connect');
+
+      return _.request.call(this, newConfig);
+    }
+
+    /**
+       * head 请求
+       * @param {Object} config - 局部配置数据
+       * @return {Object|undefined} 
+       */ }, { key: "head", value: function head(
+    config) {
+      var newConfig = _.merge.config(config, 'head');
+
+      return _.request.call(this, newConfig);
+    }
+
+    /**
+       * trace 请求
+       * @param {Object} config - 局部配置数据
+       * @return {Object|undefined} 
+       */ }, { key: "trace", value: function trace(
+    config) {
+      var newConfig = _.merge.config(config, 'trace');
+
+      return _.request.call(this, newConfig);
+    }
+
+    /**
+       * options 请求
+       * @param {Object} config - 局部配置数据
+       * @return {Object|undefined} 
+       */ }, { key: "options", value: function options(
+    config) {
+      var newConfig = _.merge.config(config, 'post');
+
+      return _.request.call(this, newConfig);
+    }
+
+    /**
+       * 停止发送请求
+       * @param {Object} obj - request实例对象
+       */ }, { key: "stop", value: function stop(
+    obj) {
+      try {
+        typeof obj.example.abort === 'function' && obj.example.abort();
+      } catch (err) {
+        _._error("\u53C2\u6570\u9519\u8BEF, \u65E0\u6CD5\u505C\u6B62\u53D1\u9001\u8BF7\u6C42{errmsg: ".concat(JOSN.stringify(err), "}"));
+      }
+    }
+
+    /**
+       * 上传 文件
+       * @param {Object} config 
+       */ }, { key: "upload", value: function upload(
+    config) {
+      var newConfig = _.merge.config(config, 'post');
+
+      return _.upload.call(this, newConfig);
+    }
+
+    /**
+       * 下载 文件
+       * @param {Object} config 
+       */ }, { key: "download", value: function download(
+    config) {
+      var newConfig = _.merge.config(config, 'get');
+
+      return _.download.call(this, newConfig);
+    } }]);return MyRequest;}();
+
+
+var _ = {
+  // 全局配置
+  config: {
+    url: '',
+    dataType: '',
+    responseType: '',
+    header: {},
+    data: {},
+    contentType: 'form' },
+
+
+  // 拦截器
+  interceptors: {
+    global: {
+      request: null,
+      response: null },
+
+
+    /**
+                         * 请求拦截器(全局、局部)
+                         * @param {Object} config 
+                         * @param {number} count - 运行次数，用于递归的统计
+                         */
+    req: function req(config, count) {
+      var fn = count === 1 ? _.interceptors.global.request : this.scopedInterceptors.request;
+
+      if (typeof fn === 'function') {
+        var ret = fn(config);
+
+        if (ret === false || typeof ret === 'undefined') {
+          return false;
+        }
+
+        return count === 2 ? ret : _.interceptors.req.call(this, ret, 2);
+      }
+
+      if (count === 2) return config;
+      return _.interceptors.req.call(this, config, 2);
+    },
+
+    /**
+        * 响应拦截器(全局、局部)
+        * @param {Object} res 
+        * @param {number} count - 运行次数，用于递归的统计
+        */
+    rep: function rep(res, count) {
+      var fn = count === 1 ? _.interceptors.global.response : this.scopedInterceptors.response;
+
+      if (typeof fn === 'function') {
+        var ret = fn(res);
+
+        // 返回promise中reject的值
+        if (Object.prototype.toString.call(ret) === '[object Promise]') {
+          return ret;
+        }
+
+        if (ret === false || typeof ret === 'undefined') {
+          return false;
+        }
+
+        return count === 2 ? ret : _.interceptors.rep.call(this, ret, 2);
+      }
+
+      if (count === 2) return res;
+      return _.interceptors.rep.call(this, res, 2);
+    } },
+
+
+  // 合并
+  merge: {
+    /**
+            * 合并 全局配置
+            * @param {Object} defaultC - 默认配置
+            * @param {Object} newC - 新配置
+            */
+    globalConfig: function globalConfig(defaultC, newC) {
+      return _objectSpread({},
+      defaultC,
+      newC);
+
+    },
+
+    /**
+        * 合并配置（全局配置+实例中的配置,实例中的优先级更高）
+        * @param {Object} config 
+        * @param {string} method 
+        */
+    config: function config(_config, method) {
+      var url = _.merge.url(_.config.url, _config.url);
+      url += _.merge.params(_config.params);
+
+      var contentType = _.merge.contentType(_.config, _config);
+      var header = _objectSpread({
+        'content-type': contentType },
+      _config.header,
+      _.config.header);
+
+      var newConfig = _objectSpread({},
+      _config,
+      _.config, {
+        url: url,
+        method: method,
+        header: header });
+
+
+      return newConfig;
+    },
+
+    /**
+        * 合并url，返回完整的资源定位符
+        * @param {string} beforeUrl - 全局配置中设置的基地址
+        * @param {string} afterUrl - request实例中设置的url
+        */
+    url: function url(beforeUrl, afterUrl) {
+      var bLen = beforeUrl.length;
+      var aLen = afterUrl.length;
+      var beforeHasSlash = beforeUrl.lastIndexOf('/') + 1 === bLen;
+      var afterHasSlash = afterUrl.indexOf('/') === 0;
+
+      if (aLen === 0 || bLen !== 0 && !_.isCompleteUrl(beforeUrl)) {
+        _.error('url参数不完整或者错误');
+      }
+
+      if (_.isCompleteUrl(afterUrl)) {
+        return afterUrl;
+      }
+
+      if (beforeHasSlash && afterHasSlash) {
+        return beforeUrl + afterUrl.substr(1);
+      }
+
+      if (beforeHasSlash || afterHasSlash) {
+        return beforeUrl + afterUrl;
+      }
+
+      if (!beforeHasSlash && !afterHasSlash) {
+        return beforeUrl + '/' + afterUrl;
+      }
+    },
+
+    /**
+        * 合并header中content-type参数, 默认添加utf-8
+        * instance.header.contenType -> instance.contentType -> global.header.contenType -> global.contentType
+        * @param {Object} config 
+        * @param {Object} newConfig 
+        * @return {String}
+        */
+    contentType: function contentType(config, newConfig) {
+      var defaultList = {
+        form: 'application/x-www-form-urlencoded;charset=UTF-8',
+        json: 'application/json;charset=UTF-8',
+        file: 'multipart/form-data;charset=UTF-8' };
+
+      var retObj = { val: false };
+
+      loop(newConfig, retObj);
+      f(newConfig, retObj);
+      loop(config, retObj);
+      f(config, retObj);
+
+      function f(c, o) {
+        var defaultKeys = Object.keys(defaultList);
+        var type = c.contentType;
+
+        if (o.val) return;
+
+        if (typeof type !== 'undefined') {
+          !defaultKeys.includes(type) && _.error("contentType参数错误: " + type);
+        }
+
+        delete c.contentType;
+
+        o.val = defaultList[type];
+      }
+
+      function loop(c, o) {
+        var hasList = ['content-type', 'content-Type', 'Content-Type', 'contentType', 'ContentType'];var _arr =
+
+        Object.entries(c.header || {});for (var _i = 0; _i < _arr.length; _i++) {var _arr$_i = _slicedToArray(_arr[_i], 2),key = _arr$_i[0],val = _arr$_i[1];
+          var pos = hasList.indexOf(key);
+
+          if (pos === -1) {
+            continue;
+          };
+
+          delete c.header[key];
+
+          if (!o.val) {
+            o.val = val;
+            break;
+          }
+        }
+      }
+
+      return retObj.val || defaultList.form;
+    },
+
+    /**
+        * 合并params，并转字符串
+        * @param {Object} obj params对象
+        * @return {String}
+        */
+    params: function params() {var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      if (obj === {}) return '';
+
+      var tmpStr = '';var _arr2 =
+
+      Object.entries(obj);for (var _i2 = 0; _i2 < _arr2.length; _i2++) {var _arr2$_i = _slicedToArray(_arr2[_i2], 2),key = _arr2$_i[0],val = _arr2$_i[1];
+        tmpStr += "".concat(key, "=").concat(val, "&");
+      }
+
+      tmpStr !== '' && (tmpStr = '?' + tmpStr);
+      tmpStr = tmpStr.substring(0, tmpStr.length - 1);
+
+      return tmpStr;
+    } },
+
+
+  xhr: {
+    // 数据回传 成功
+    success: function success(res, config, canRetRep, resolve, reject) {
+      var newRes = _.interceptors.rep.call(this, res, 1);
+      var bool = _.xhr.commonIntercept(newRes, config, canRetRep, reject);
+
+      if (bool === false) return false;
+      config.success ? config.success(newRes) : resolve(newRes);
+    },
+
+    // 数据回传 失败
+    fail: function fail(err, config, canRetRep, reject) {
+      var newErr = _.interceptors.rep.call(this, err, 1);
+      var bool = _.xhr.commonIntercept(newErr, config, canRetRep, reject);
+
+      if (bool === false) return false;
+      config.fail ? config.fail(newErr) : reject(newErr);
+    },
+
+    // 数据回传 完成
+    complete: function complete(res, config, canRetRep) {
+      if (!config.complete || !canRetRep.status) return false;
+
+      config.complete(res);
+    },
+
+    // 公共拦截部分
+    commonIntercept: function commonIntercept(obj, _ref2, type, reject) {var fail = _ref2.fail;
+      // 数据被拦截, 没有返回值
+      if (obj === false) {
+        type.status = false;
+        return false;
+      }
+
+      // 数据被拦截, 主动抛出错误
+      if (Object.prototype.toString.call(obj) === '[object Promise]') {
+        obj.catch(fail || reject);
+        return false;
+      }
+    } },
+
+
+  /**
+          * 是否是完整的 url 
+          * @param {string} url - 统一资源定位符
+          */
+  isCompleteUrl: function isCompleteUrl(url) {
+    return /(http|https):\/\/([\w.]+\/?)\S*/.test(url);
+  },
+
+  /**
+      * 获取 根据对象的属性路径的值
+      * @param {string} objPath - 对象的属性路径
+      */
+  getObjPathVal: function getObjPathVal(objPath) {
+    var splitList = objPath.split('.');
+    var tmpObj = _;
+
+    splitList.forEach(function (key) {
+      tmpObj = tmpObj[key];
+    });
+
+    return tmpObj;
+  },
+
+  /**
+      * 公共请求方法, 支持对象中callback或Promise
+      * @param {Object} config - 完整的配置数据
+      */
+  request: function request(config) {
+    var ctx = this;
+    var canRetRep = { status: true };
+    var newConfig = _.interceptors.req.call(this, config, 1);
+    var example, ret;
+
+    if (newConfig === false) return _.myPromise();
+
+    ret = new Promise(function (resolve, reject) {
+      example = uni.request(_objectSpread({},
+      newConfig, {
+        success: function success(res) {
+          _.xhr.success.call(ctx, res, newConfig, canRetRep, resolve, reject);
+        },
+        fail: function fail(err) {
+          _.xhr.fail.call(ctx, err, newConfig, canRetRep, reject);
+        },
+        complete: function complete(res) {
+          _.xhr.complete(res, newConfig, canRetRep);
+        } }));
+
+    });
+
+    // @TODO: 隐式修改原型
+    ret.__proto__.example = example;
+
+    return ret;
+  },
+
+  // 上传
+  upload: function upload(config) {
+    var ctx = this;
+    var canRetRep = { status: true };
+    var newConfig = _.interceptors.req.call(this, config, 1);
+
+    if (newConfig === false) return _.myPromise();
+
+    delete newConfig.header['content-type'];
+    delete newConfig.method;
+
+    return new Promise(function (resolve, reject) {
+      uni.uploadFile(_objectSpread({},
+      newConfig, {
+        success: function success(res) {
+          res.data = JSON.parse(res.data);
+          _.xhr.success.call(ctx, res, newConfig, canRetRep, resolve, reject);
+        },
+        fail: function fail(err) {
+          _.xhr.fail.call(ctx, err, newConfig, canRetRep, reject);
+        },
+        complete: function complete(res) {
+          _.xhr.complete(res, newConfig, canRetRep);
+        } }));
+
+    });
+  },
+
+  // 下载
+  download: function download(config) {
+    var ctx = this;
+    var canRetRep = { status: true };
+    var newConfig = _.interceptors.req.call(this, config, 1);
+
+    if (newConfig === false) return _.myPromise();
+
+    delete newConfig.header['content-type'];
+    delete newConfig.method;
+
+    return new Promise(function (resolve, reject) {
+      uni.downloadFile(_objectSpread({},
+      newConfig, {
+        success: function success(res) {
+          _.xhr.success.call(ctx, res, newConfig, canRetRep, resolve, reject);
+        },
+        fail: function fail(err) {
+          _.xhr.fail.call(ctx, err, newConfig, canRetRep, reject);
+        },
+        complete: function complete(res) {
+          _.xhr.complete(res, newConfig, canRetRep);
+        } }));
+
+    });
+  },
+
+  myPromise: function myPromise() {
+    var that = {};
+
+    that.then = function () {return that;};
+    that.catch = function () {return that;};
+    that.finally = function () {return that;};
+
+    return that;
+  },
+
+  /**
+      * 抛出错误
+      * @param {string} msg 错误信息
+      */
+  error: function error(msg) {
+    throw new Error('[request error]: ' + msg);
+  } };var _default =
+
+
+MyRequest;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 94:
+/*!***********************************************************************************************************!*\
+  !*** D:/git/xmxproject/xmxproject/HBuilderProjects/uniproject/main.js?{"page":"pages%2Ffaults%2Ffaults"} ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _faults = _interopRequireDefault(__webpack_require__(/*! ./pages/faults/faults.vue */ 95));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_faults.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ })
+
+}]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

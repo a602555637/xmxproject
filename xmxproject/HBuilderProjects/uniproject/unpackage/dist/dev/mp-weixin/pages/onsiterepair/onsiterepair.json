@@ -9,7 +9,6 @@
     "uni-number-box": "/components/uni-number-box/uni-number-box",
     "getcode": "/wxcomponents/getcode/getcode",
     "xlocation": "/wxcomponents/xlocation/xlocation",
-    "xlist-price": "/wxcomponents/xlist/xlistPrice",
-    "request": "/components/pocky-request/index"
+    "xlist-price": "/wxcomponents/xlist/xlistPrice"
   }
 }

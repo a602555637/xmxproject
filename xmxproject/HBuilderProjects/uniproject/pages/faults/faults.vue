@@ -81,7 +81,27 @@
         },
         data() {
             return {
-				faulesId:[],
+				ftitle:[],
+				fprice:[],
+				fid:[],
+				faulesPrice5:[],
+				faulesPrice4:[],
+				faulesPrice3:[],
+				faulesPrice2:[],
+				faulesPrice1:[],
+				faulesPrice:[],
+				faulesTitle5:[],
+				faulesTitle4:[],
+				faulesTitle3:[],
+				faulesTitle2:[],
+				faulesTitle1:[],
+				faulesTitle:[],
+				faulesIdList5:[],
+				faulesIdList4:[],
+				faulesIdList3:[],
+				faulesIdList2:[],
+				faulesIdList1:[],
+				faulesIdList:[],
                 ftype:'',
                 faulesItemPrice:[],
                 currentPrice:0,
@@ -157,18 +177,64 @@
                     },
                     success: res=>{
                         this.faulesItem = res.data.data
+						this.fid = [...this.faulesIdList1,...this.faulesIdList2,...this.faulesIdList3,...this.faulesIdList4,...this.faulesIdList5,...this.faulesIdList]
+						this.fid = [[...new Set(this.fid)]]
+						//判断是否默认选中项 this.fid
+						for (let i = 0; i < this.faulesItem.length; i++) {
+							let sid = this.faulesItem[i].id
+							let fid = this.fid[0]
+							let item = this.faulesItem[i]
+							if(fid.indexOf(sid) == -1){
+								this.$set(item,'checked',false)
+							}else{
+								this.$set(item,'checked',true)
+							}
+						}
+						if(this.faulesIdList1.length == 0){
+                            this.faulesIdList1 = this.faulesIdList
+                            this.faulesTitle1 = this.faulesTitle
+                            this.faulesPrice1 = this.faulesPrice
+                        } else if(this.faulesIdList2.length == 0){
+                            this.faulesIdList2 = this.faulesIdList
+                            this.faulesTitle2 = this.faulesTitle
+                            this.faulesPrice2 = this.faulesPrice
+                        } else if(this.faulesIdList3.length == 0){
+                            this.faulesIdList3 = this.faulesIdList
+                            this.faulesTitle3 = this.faulesTitle
+                            this.faulesPrice3 = this.faulesPrice
+                        } else if (this.faulesIdList4.length == 0){
+                            this.faulesIdList4 = this.faulesIdList
+                            this.faulesTitle4 = this.faulesTitle
+                             this.faulesPrice4 = this.faulesPrice
+                        } else {
+                            this.faulesIdList5 = this.faulesIdList
+                            this.faulesTitle5 = this.faulesTitle
+                            this.faulesPrice5 = this.faulesPrice
+                        }
 						
                     }
                 })
+				
+				
             },
             closePopup() {
                 this.$refs.popup.close()
             },
             onsiteRepair(e) {
-                console.log(e)
-                uni.navigateTo({
-                    url: '../onsiterepair/onsiterepair'
-                })
+                this.fprice = [...this.faulesPrice1,...this.faulesPrice2,...this.faulesPrice3,...this.faulesPrice4,...this.faulesPrice5,...this.faulesPrice]
+				// console.log(e)
+				this.ftitle = [...this.faulesTitle1,...this.faulesTitle2,...this.faulesTitle3,...this.faulesTitle4,...this.faulesTitle5,...this.faulesTitle]				
+				uni.setStorage({
+					key:'faulesTitle',
+					data:this.ftitle
+				})
+				uni.setStorage({
+					key:'sprice',
+					data:this.fprice
+				})
+                // uni.navigateTo({
+                //     url: '../onsiterepair/onsiterepair'
+                // })
             },
             onsiteArrival(){
                 uni.navigateTo({
@@ -176,34 +242,45 @@
                 })
             },
             onEventChange(e){
-				console.log(e.detail.value)
-				this.faulesId = e.detail.value
-				let s = 0
-				let t = []
-				let u = []
-				for (let i = 0; i < this.faulesId.length; i++) {
-					let price = this.faulesItem[this.faulesId[i]].price
-					let title = this.faulesItem[this.faulesId[i]].title
-					s = s + price
-					t.push(title)
-					u.push(price)
-					uni.setStorage({
-						key: 'totalPrice',
-						data: s,
-						success:res=>{
-							this.totalPrice = s
+				let idList = e.detail.value
+				this.faulesTitle = []
+				this.faulesPrice = []
+				let ts = []
+				this.faulesIdList = []
+				for (let i = 0; i < idList.length; i++) {
+					// console.log(idList[i])
+					for (let i = 0; i < this.faulesItem.length; i++) {
+						if(this.faulesItem[idList[i]] !== undefined){
+							// console.log(this.faulesItem[idList[i]].title)
+							let t = this.faulesItem[idList[i]].title
+							this.faulesTitle.push(t)
+							// console.log(this.faulesItem[idList[i]].price)
+							let s = this.faulesItem[idList[i]].price
+							ts.push(s)
+							if(idList[i] == 2 ||idList[i] == 3||idList[i] == 4||idList[i] == 5){
+								ts.splice(idList[i] + 1, idList[i] * idList[i])
+								console.log(idList[i])
+							} else{
+								// console.log(idList[i])
+							}
+							
+							
+							// console.log(this.faulesItem[idList[i]].id)
+							let id = this.faulesItem[idList[i]].id
+							this.faulesIdList.push(id)
 						}
-					})
-					uni.setStorage({
-						key:'faulesTitle',
-						data:t
-					})
-					uni.setStorage({
-						key:'sprice',
-						data:u
-					})
+					}
 				}
+				
+				let arr = this.faulesPrice
+				let sum = 0
+				for (let i = 0; i < arr.length; i++) {
+					sum += arr[i]
+					// console.log(sum)
+				}
+				
 			}
+
         },
         components: {
             uniPopup
