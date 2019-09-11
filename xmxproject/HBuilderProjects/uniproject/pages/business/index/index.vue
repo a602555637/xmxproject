@@ -264,11 +264,13 @@
 	
 	.bottom-left text{
 		font-size: 24upx;
+		margin-bottom: 4upx;
 	}
 	
 	.bottom-left image{
 		width: 50upx;
 		height: 50upx;
+		margin-bottom: 4upx;
 	}
 	
 	.search{

@@ -126,7 +126,7 @@
 	}
 	
 	.avatar{
-		width: 160upx;
+		width: 140upx;
 		height: 140upx;
 		position: absolute;
 		top: 60upx;

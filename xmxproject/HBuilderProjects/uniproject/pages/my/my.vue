@@ -108,7 +108,7 @@
 	}
 
 	.avatar {
-		width: 160upx;
+		width: 140upx;
 		height: 140upx;
 		margin-top: 26upx;
 		border-radius: 100upx;

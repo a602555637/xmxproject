@@ -4,6 +4,7 @@
 		<view class="xswiper">
 		<xswiper></xswiper>
 		</view>
+		<image @click="onBusiness" class="fixed2" src="../../static/index/store@2x.png"></image>
 		<testype></testype>
 		<bbutton></bbutton>
 		<quick-select></quick-select>
@@ -127,12 +128,31 @@
 				})
 			},
 			
+			onBusiness(){
+				uni.navigateTo({
+					url: '../../pages/business/business-login/business-login'
+				})
+			}	
+			
 			
 		}
 	}
 </script>
 
 <style>
+	.fixed1{
+		margin-bottom: 60upx;
+	}
+	
+	
+	.fixed2{
+		width: 76upx;
+		height: 76upx;
+		position: absolute;
+		top: 20upx;
+		right: 44upx;
+	}
+	
 	.vacol{
 		height: 98upx;
 		background: #FFFFFF;

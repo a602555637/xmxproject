@@ -119,6 +119,9 @@ export default {
 	/* 		padding-left: 136upx;
 		padding-right: 134upx; */
 	background: #fff;
+	padding-top: 10upx;
+	padding-bottom: 10upx;
+	border-top: 1px solid #F3F3F3;
 }
 
 .container-left {

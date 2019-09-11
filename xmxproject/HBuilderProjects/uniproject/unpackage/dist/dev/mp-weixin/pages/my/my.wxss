@@ -5,7 +5,7 @@
 	background: #F3F3F3;
 }
 .avatar {
-	width: 160rpx;
+	width: 140rpx;
 	height: 140rpx;
 	margin-top: 26rpx;
 	border-radius: 100rpx;

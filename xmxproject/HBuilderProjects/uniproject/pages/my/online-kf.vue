@@ -4,14 +4,16 @@
 	:musicflg='musicflg' :fastJuedin='fastJuedin' :repeat='repeat' 
 	:zhuanpanArr='xiaojuedingArr' :awardsConfig='awardsConfig'>
 	</zhuanpan> -->
-	<view>123</view>
+	<GetOpenId></GetOpenId>
+	<!-- <view>123</view> -->
 </template>
 <script>
 	// import zhuanpan from '/components/prize/zhuanpan.vue'
-
+	import GetOpenId from '../../components/ccg-getOpenID/ccg-wxAppOpenid.vue';
+	
 	export default {
 		onLoad() {
-			console.log(this.requestmodel)
+			// console.log(this.requestmodel)
 		},
 		data() {
 			return {
@@ -51,6 +53,9 @@
 				this.zhuanflg = e.detail ? true : false
 			},
 			
+		},
+		components:{
+			GetOpenId
 		}
 	}
 </script>

@@ -2,22 +2,43 @@
 	<view>
 		<view class="container">
 			<text class="item-title">姓名：</text>
-			<input class="item-input" type="text" value="" placeholder="请输入您的姓名" />
+			<input @input="bindName" class="item-input" type="text" placeholder="请输入您的姓名" placeholder-class="placeholder-class" />
 		</view>
 		<view class="container">
 			<text class="item-title">手机号：</text>
-			<input class="item-input" type="number" value="" placeholder="请输入您的手机号" />
+			<input @input="bindNum" class="item-input" type="number" placeholder="请输入您的手机号" placeholder-class="placeholder-class" />
 		</view>
 	</view>
 </template>
 
 <script>
 	export default {
-		name:'xlist-input'
+		name:'xlist-input',
+		methods:{
+			bindName(e){
+				let name = e.detail.value
+				uni.setStorage({
+					key:'orderName',
+					data: name
+				})
+			},
+			bindNum(e){
+				let num = e.detail.value
+				uni.setStorage({
+					key:'orderNum',
+					data: num
+				})
+			}
+		}
 	}
 </script>
 
 <style>
+	.placeholder-class{
+		font-size: 24upx;
+		color: #888F97;
+	}
+	
 	.container{
 		display: flex;
 		align-items: center;
@@ -33,8 +54,6 @@
 	}
 	
 	.item-input{
-		font-size: 24upx;
-		color: #888F97;
 		margin-left: 20upx;
 	}
 	

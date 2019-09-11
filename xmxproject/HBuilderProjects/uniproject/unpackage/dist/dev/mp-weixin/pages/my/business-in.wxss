@@ -1,4 +1,7 @@
 
+.fixed{
+	height: 160rpx;
+}
 .business-item {
 	display: -webkit-box;
 	display: -webkit-flex;

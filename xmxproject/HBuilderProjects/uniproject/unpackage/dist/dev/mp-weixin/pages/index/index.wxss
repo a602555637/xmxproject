@@ -1,4 +1,14 @@
 
+.fixed1{
+	margin-bottom: 60rpx;
+}
+.fixed2{
+	width: 76rpx;
+	height: 76rpx;
+	position: absolute;
+	top: 20rpx;
+	right: 44rpx;
+}
 .vacol{
 	height: 98rpx;
 	background: #FFFFFF;

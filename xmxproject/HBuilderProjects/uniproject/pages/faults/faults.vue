@@ -15,7 +15,7 @@
                     <checkbox-group @change="onEventChange">
                         <view v-for="(item, index) in faulesItem" :id="index" :key="index">
                             <label class="checkbox">
-                                <checkbox :value="index" >
+                                <checkbox :value="index" :checked="item.checked" >
                                     <view class="popup-content">
                                         <view class="popup-content-left">
                                             <view class="item-title">{{item.title}}</view>
@@ -81,6 +81,7 @@
         },
         data() {
             return {
+				faulesId:[],
                 ftype:'',
                 faulesItemPrice:[],
                 currentPrice:0,
@@ -155,8 +156,8 @@
                         type:xtypeId
                     },
                     success: res=>{
-                        // console.log(res.data.data)
                         this.faulesItem = res.data.data
+						
                     }
                 })
             },
@@ -174,22 +175,35 @@
                     url:'../arrival-repair/arrival-repair'
                 })
             },
-            // 多选框判断选取项
             onEventChange(e){
-                let eventChange = e.detail.value
-                console.log(e.detail.value)
-                let s = 0   
-                for (var i = 0; i < eventChange.length; i++) {
-                    let currentPrice = parseInt(this.faulesItem[eventChange[i]].price)
-                    s = s+ currentPrice
-                    console.log(s)
-                    this.totalPrice = s
-                    uni.setStorage({
-                        key:'totalPrice',
-                        data:s
-                    })
-                }
-            }
+				console.log(e.detail.value)
+				this.faulesId = e.detail.value
+				let s = 0
+				let t = []
+				let u = []
+				for (let i = 0; i < this.faulesId.length; i++) {
+					let price = this.faulesItem[this.faulesId[i]].price
+					let title = this.faulesItem[this.faulesId[i]].title
+					s = s + price
+					t.push(title)
+					u.push(price)
+					uni.setStorage({
+						key: 'totalPrice',
+						data: s,
+						success:res=>{
+							this.totalPrice = s
+						}
+					})
+					uni.setStorage({
+						key:'faulesTitle',
+						data:t
+					})
+					uni.setStorage({
+						key:'sprice',
+						data:u
+					})
+				}
+			}
         },
         components: {
             uniPopup

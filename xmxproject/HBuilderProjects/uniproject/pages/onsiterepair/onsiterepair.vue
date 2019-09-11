@@ -1,8 +1,10 @@
 <template>
 	<view class="container">
 		<text class="container-title">苹果 iPhone7 玫瑰金</text>
-		<xlist title="屏幕损坏" price="499"></xlist>
-		<xlist title="电池不续航" price="499"></xlist>
+		<xlist :title="repairList[0]" :price="sprice[0]"></xlist>
+		<xlist v-if="repairList[1]" :title="repairList[1]" :price="sprice[1]"></xlist>
+		<xlist v-if="repairList[2]" :title="repairList[2]" :price="sprice[2]"></xlist>
+		<xlist v-if="repairList[3]" :title="repairList[3]" :price="sprice[3]"></xlist>
 		<!-- 服务费用计算 -->
 		<view class="service">
 			<text class="service-title">上门服务费：</text>
@@ -28,7 +30,7 @@
 		<xlist-input></xlist-input>
 		<getcode timer="timer" :title="title"></getcode>
 		<!-- 地区 -->
-		<xlocation></xlocation>
+		<xlocation @district="bindDistrict"></xlocation>
 		<view class="order-setting">
 			<text>设置抢单范围</text>
 			<view class="order-setting-right">
@@ -74,6 +76,8 @@
 	import xlistPrice from '../../wxcomponents/xlist/xlistPrice.vue'
 	import uniNumberBox from '../../components/uni-number-box/uni-number-box.vue'
 	import getcode from '../../wxcomponents/getcode/getcode.vue'
+	import request from '../../components/pocky-request/index.js'
+	
 	const formatDate = require('../../util/util.js')
 	export default {
 		data() {
@@ -81,6 +85,14 @@
 			var currentTime = dateObj.getTime()
 			var timer = formatDate.formatDateTime((currentTime + 1000 * 2000))
 			return {
+				date:'',
+				orderNum:'',
+				orderName:'',
+				sprice:[],
+				brand:'',
+				model:'',
+				colorName:'',
+				repairList: [],
 				orderInfo:'orderInfo',
 				timer:timer,
 				title:'验证码：',
@@ -99,14 +111,7 @@
 				isConfirm:false,
 				kiloPrice: '5',
 				isAgreement: true,
-				totalPrice: 0,
-				repairList: [{
-					title: '屏幕损坏',
-					price: '￥499'
-				}, {
-					title: '电池不续航',
-					price: '￥499'
-				}]
+				totalPrice: 0
 			}
 		},
 		components: {
@@ -118,7 +123,8 @@
 			uniNumberBox,
 			getcode,
 			xlocation,
-			xlistPrice
+			xlistPrice,
+			request
 		},
 		methods: {
 			onOrderDetail() {
@@ -141,20 +147,44 @@
 				return
 			},
 			onOrder(){
-				if (this.isConfirm){
-					uni.reLaunch({
-						url: '../orderdetail/orderdetail',
-						success:res =>{
-							console.log('success')
+					const instance = new request()
+					const r = instance.post({
+						url:'order/saveUserOrder',
+						data:{
+							distance : this.kiloValue,
+							price: this.totalPrice,
+							userId: openid,
+							userName: this.orderName,
+							userPhone: this.orderNum,
+							userAddress: this.district,
+							serviceMode: 0,
+							serviceTime: this.date,
+							phone:{     
+					            brand: this.brand,
+					            model: this.model,
+					            colour: this.colorName
+					        },
+							faults: [
+					            {
+					                faults: this.repairList[0],
+					                price: this.sprice[0]
+					            },
+					            {
+					                faults: this.repairList[1],
+					                price: this.sprice[1]
+					            }
+					        ]
+						},
+						success:res=>{
+							console.log(res)
+							// uni.reLaunch({
+							// 	url: '../orderdetail/orderdetail',
+							// 	success:res =>{
+							// 		console.log('success')
+							// 	}
+							// })
 						}
 					})
-				}
-				// uni.getProvider({
-				// 	service:'payment',
-				// 	success:res=>{
-				// 		console.log(res)
-				// 	}
-				// })
 			},
 			onNumber(kiloValue){
 				this.kiloValue = kiloValue
@@ -204,6 +234,9 @@
 				this.currentDate = day
 				this.currentHour = hour
 				this.currentMinutes = minutes
+				
+				let  newdate = date.toLocaleString('chinese', { hour12: false })
+				this.date = newdate
 			},
 			onDateItem(){
 				let abRtc = this.dateItem[0].splice(0,1) + ',' + this.dateItem[0].splice(this.currentDate - 2,29)
@@ -220,9 +253,54 @@
 						this.totalPrice = res.data + 5
 					}
 				})
+			},
+			bindDistrict(e){
+				this.district = e.district + e.township + e.detailAddress
 			}
 		},
 		onLoad() {
+			uni.getStorage({
+				key:'brand',
+				success:res=>{
+					this.brand = res.data
+				}
+			})
+			uni.getStorage({
+				key:'model',
+				success:res=>{
+					this.model = res.data
+				}
+			})
+			uni.getStorage({
+				key:'colorName',
+				success:res=>{
+					this.colorName = res.data
+				}
+			})
+			uni.getStorage({
+				key:'faulesTitle',
+				success:res=>{
+					this.repairList = res.data
+				}
+			})
+			uni.getStorage({
+				key:'sprice',
+				success:res=>{
+					this.sprice = res.data
+				}
+			})
+			uni.getStorage({
+				key:'orderName',
+				success:res=>{
+					this.orderName = res.data
+				}
+			})
+			uni.getStorage({
+				key:'orderNum',
+				success:res=>{
+					this.orderNum = res.data
+				}
+			})
 			this.onNumber()
 			this.getDate()
 			this.onDateItem()

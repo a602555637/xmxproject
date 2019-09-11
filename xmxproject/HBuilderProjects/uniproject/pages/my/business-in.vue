@@ -1,5 +1,5 @@
 <template>
-	<view class="">
+	<view class="container">
 		<!-- name -->
 		<view class="container-input">
 			<text>店铺名称：</text>
@@ -45,7 +45,9 @@
 
 		</view>
 
-		<view @click="onSave" class="container-button">保存</view>
+		<view class="fixed">
+			<view @click="onSave" class="container-button">保存</view>
+		</view>
 
 	</view>
 </template>
@@ -196,7 +198,9 @@
 </script>
 
 <style>
-	
+	.fixed{
+		height: 160upx;
+	}
 
 	.business-item {
 		display: flex;
