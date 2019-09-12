@@ -40,13 +40,15 @@
 			}
 		},
 		onLoad() {
-			uni.getUserInfo({
-				success:res=>{
-					this.avatarUrl = res.userInfo.avatarUrl
-					this.name = res.userInfo.nickName
-					console.log(res.userInfo)
-				}
-			})
+			if(!this.name){
+				uni.getUserInfo({
+					success:res=>{
+						this.avatarUrl = res.userInfo.avatarUrl
+						this.name = res.userInfo.nickName
+					}
+				})
+			}
+			return
 		},
 		methods:{
 			onBeVip(){

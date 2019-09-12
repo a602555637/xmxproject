@@ -40,7 +40,7 @@
 					</view>
 				</scroll-view>
 				<view @click="onNext" class="content-button">
-					<image src="../../wxcomponents/popupcon/next@2x.png"></image>
+					<getOpenId></getOpenId>
 				</view>
 			</view>
 		</uniPopup>
@@ -51,9 +51,15 @@
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 	import xselect from '../../wxcomponents/xselect/xselect.vue'
 	import request from '../../components/pocky-request/index.js'
+	import getOpenId from '../../components/ccg-getOpenID/ccg-wxAppOpenid.vue'
 	
 	export default {
 		onLoad(sid) {
+			uni.setStorage({
+				key:'brand',
+				data:'苹果'
+			})
+			
 			this.requestUrl()
 			uni.request({
 				url: 'https://www.finetwm.com/xmRepair/phoneBrand/getBrandDetail',
@@ -205,7 +211,8 @@
 		},
 		components: {
 			uniPopup,
-			xselect
+			xselect,
+			getOpenId
 		}
 	}
 </script>

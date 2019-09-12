@@ -1,10 +1,11 @@
 <template>
 	<view class="container">
-		<text class="container-title">苹果 iPhone7 玫瑰金</text>
+		<text class="container-title">{{brand + ' ' + model + ' ' + colorName}}</text>
 		<xlist :title="repairList[0]" :price="sprice[0]"></xlist>
 		<xlist v-if="repairList[1]" :title="repairList[1]" :price="sprice[1]"></xlist>
 		<xlist v-if="repairList[2]" :title="repairList[2]" :price="sprice[2]"></xlist>
 		<xlist v-if="repairList[3]" :title="repairList[3]" :price="sprice[3]"></xlist>
+		<xlist v-if="repairList[4]" :title="repairList[4]" :price="sprice[4]"></xlist>
 		<!-- 服务费用计算 -->
 		<view class="service">
 			<text class="service-title">上门服务费：</text>
@@ -42,7 +43,7 @@
 		<view class="line-thick"></view>
 		<view class="text-area">
 			<text>故障详情（选填）：</text>
-			<textarea value="" />
+			<textarea @input="bindText" />
 		</view>
 		<view class="line-thick"></view>
 		<view @click="onConfirm" class="container-deal">
@@ -84,6 +85,8 @@
 			var currentTime = dateObj.getTime()
 			var timer = formatDate.formatDateTime((currentTime + 1000 * 2000))
 			return {
+				detail:'',
+				openId:'',
 				date:'',
 				orderNum:'',
 				orderName:'',
@@ -146,41 +149,76 @@
 				return
 			},
 			onOrder(){
-				uni.uni.request({
-					url: 'https://www.finetwm.com/xmRepair/order/saveUserOrder',
-					method: 'POST',
-					data:{
-						distance : this.kiloValue,
-						price: this.totalPrice,
-						userId: openid,
-						userName: this.orderName,
-						userPhone: this.orderNum,
-						userAddress: this.district,
-						serviceMode: 0,
-						serviceTime: this.date,
-						phone:{     
-					        brand: this.brand,
-					        model: this.model,
-					        colour: this.colorName
-					    },
-						faults: [
-					        {
-					            faults: this.repairList[0],
-					            price: this.sprice[0]
-					        },
-					        {
-					            faults: this.repairList[1],
-					            price: this.sprice[1]
-					        }
-					    ]
-					},
-					success: res => {
-						console.log(res)
-					},
-					fail: err => {
-						console.log(err)
-					}
-				})
+				// if(!this.orderName){
+				// 	uni.showToast({
+				// 		title: '请输入姓名',
+				// 		icon: 'none'
+				// 	})
+				// } else if(!this.orderNum){
+				// 	uni.showToast({
+				// 		title: '请输入手机号码',
+				// 		icon: 'none'
+				// 	})
+				// } else if(!this.district){
+				// 	uni.showToast({
+				// 		title: '请输入详细地址',
+				// 		icon: 'none'
+				// 	})
+				// }else 
+				if(!this.isConfirm){
+					uni.showToast({
+						title: '请同意协议',
+						icon: 'none'
+					})
+				} else{
+					uni.request({
+						url: 'https://www.finetwm.com/xmRepair/order/saveUserOrder',
+						method: 'POST',
+						header: {
+						    'content-type': 'application/json'
+						  },
+						data:{
+							// detail: this.detail,
+							distance : this.kiloValue,
+							price: this.totalPrice,
+							userId: this.openId,
+							userName: this.orderName,
+							userPhone: this.orderNum,
+							userAddress: this.district,
+							serviceMode: 0,
+							serviceTime: this.date,
+							phone:{     
+						        brand: this.brand,
+						        model: this.model,
+						        colour: this.colorName
+						    },
+							faults: [
+						        {
+						            faults: this.repairList[0],
+						            price: this.sprice[0]
+						        },
+						        {
+						            faults: this.repairList[1],
+						            price: this.sprice[1]
+						        }
+						    ]
+						},
+						success: res => {
+							// uni.requestPayment({
+							// })
+							console.log(res)
+							uni.reLaunch({
+								url: '../orderdetail/orderdetail',
+								success:res =>{
+									console.log('success')
+								}
+							})
+						},
+						fail: err => {
+							console.log(err)
+						}
+					})
+				}
 			},
 			onNumber(kiloValue){
 				this.kiloValue = kiloValue
@@ -221,6 +259,7 @@
 					let minutesItem = this.dateItem[2]
 					this.currentMinutes = minutesItem[nums[2]]
 				}
+				this.dateFmt(this.date)
 			},
 			getDate(){
 				const date = new Date()
@@ -231,8 +270,28 @@
 				this.currentHour = hour
 				this.currentMinutes = minutes
 				
-				let  newdate = date.toLocaleString('chinese', { hour12: false })
-				this.date = newdate
+				let newdate = date.toLocaleString('chinese', { hour12: false })
+				this.dateFmt(newdate)
+			},
+			dateFmt(value){
+				if(null !== value && '' != value){
+					let date = new Date(value)
+					let y = date.getFullYear()
+					let m = date.getMonth() + 1
+					// let hour = date.getHours()
+					// let minutes = date.getMinutes()
+					if(m < 10){
+						m = '0' + m
+					}
+					let d = date.getDate()
+					if(d < 10){
+						d = '0' + d
+					}
+					let abs =  y + '.' + m + '.' + d + ' ' + this.currentHour + ':' + this.currentMinutes
+					this.date = abs
+				} else {
+					console.log('fail')
+				}
 			},
 			onDateItem(){
 				let abRtc = this.dateItem[0].splice(0,1) + ',' + this.dateItem[0].splice(this.currentDate - 2,29)
@@ -252,6 +311,9 @@
 			},
 			bindDistrict(e){
 				this.district = e.district + e.township + e.detailAddress
+			},
+			bindText(e){
+				this.detail = e.detail.value
 			}
 		},
 		onLoad() {
@@ -295,6 +357,12 @@
 				key:'orderNum',
 				success:res=>{
 					this.orderNum = res.data
+				}
+			})
+			uni.getStorage({
+				key:'openId',
+				success:res=>{
+					this.openId = res.data
 				}
 			})
 			this.onNumber()

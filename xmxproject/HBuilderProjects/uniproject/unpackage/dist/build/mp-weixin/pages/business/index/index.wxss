@@ -184,10 +184,12 @@
 }
 .bottom-left text{
 	font-size: 24rpx;
+	margin-bottom: 4rpx;
 }
 .bottom-left image{
 	width: 50rpx;
 	height: 50rpx;
+	margin-bottom: 4rpx;
 }
 .search{
 	margin-left: 26rpx;

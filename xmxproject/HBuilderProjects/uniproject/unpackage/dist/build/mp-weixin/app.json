@@ -35,7 +35,11 @@
     "pages/my/my-friends",
     "pages/my/connect-friends",
     "pages/prize/prize",
-    "pages/my/cards"
+    "pages/prize/my-prize",
+    "pages/my/cards",
+    "pages/my/online-kf",
+    "pages/my/sign",
+    "pages/my/contract"
   ],
   "subPackages": [],
   "window": {

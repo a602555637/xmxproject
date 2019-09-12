@@ -13,7 +13,7 @@
 					<view class="hot-text">终身会员免费修</view>
 				</swiper-item>
 			</swiper>
-			<image @click="onBusiness" class="icon" src="../../static/index/store@2x.png"></image>
+			<!-- <image @click="onBusiness" class="icon" src="../../static/index/store@2x.png"></image> -->
 		</view>
 	</view>
 </template>
@@ -22,11 +22,7 @@
 	export default{
 		name:"headads",
 		methods:{
-			onBusiness(){
-				uni.navigateTo({
-					url: '../../pages/business/business-login/business-login'
-				})
-			}
+			
 		}
 	}
 </script>
@@ -52,8 +48,8 @@
 	}
 	
 	.icon {
-		width: 44rpx;
-		height: 44rpx;
+		width: 76rpx;
+		height: 76rpx;
 		position: absolute;
 		right: 26rpx;
 	}

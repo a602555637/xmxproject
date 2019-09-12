@@ -81,7 +81,7 @@ https://www.finetwm.com/xmRepair/
         },
 		
 		
-订单详情
+获取订单详情
 		/order/findOrder
 		post
 	参数	orderId  Long
@@ -132,25 +132,39 @@ https://www.finetwm.com/xmRepair/
 }
 		
 		
+提交订单 请求增加 经纬度 距离 故障详情（选填） 
+   返回增加抢单信息
+
+/order/saveUserOrder
+
+
+ "latitude":10.1111111, 纬度
+ "longitude":103.1111111  经度
+"distance":  距离1-5 （到店不填）
+
+"details"："" 故障详情（选填）		
+	
 		
 用户下单
-		/order/saveUserOrder
-		POST
-	参数"data": {
+  /order/saveUserOrder
+  POST
+ 参数"data": {
         
-        "price": 123.0,				价格
-        "userId": 1,				用户id
-        "userName": "迪丽热巴",		用户名
-        "userPhone": "13500000001",	电话
-        "userAddress": "成都",		用户地址
-        "serviceMode": 0,			服务类型		下单时间
-        "serviceTime": "2019.08.12 15:10",		上门/到店时间（按此格式提交）
-        "phone": {					手机信息
+        "distance": 1
+        "details":'detail',
+        "price": 123.0,    价格
+        "userOpenId": 1,    用户id
+        "userName": "迪丽热巴",  用户名
+        "userPhone": "13500000001", 电话
+        "userAddress": "成都",  用户地址
+        "serviceMode": 0,   服务类型  下单时间
+        "serviceTime": "2019.08.12 15:10",  上门/到店时间（按此格式提交）
+        "phone": {     手机信息
             "brand": "苹果",
             "model": "iPhone XR",
             "colour": "黑色"
         },
-        "faults": [					维修信息
+        "faults": [     维修信息
             {
                 "faults": "屏幕损坏",
                 "price": 499
@@ -160,21 +174,66 @@ https://www.finetwm.com/xmRepair/
                 "price": 499
             }
         ]
-	返回
-	{
+ 返回
+ {
     "code": 200,
     "message": "ok",
-    "data": false		false失败/true成功
+    "data": orderId  订单id
 }
-		
-		
-		
+  
+
+查询用户订单
+ /order/findAllUserOrder
+ POST
+ 参数 userID
+ 
+ {
+    "code": 200,
+    "message": "ok",
+    "data": [
+        {
+            "orderId": 1000000000001, 订单id
+            "price": 123.0,  金额
+            
+            "serviceMode": 0, 服务类型
+            "orderStatus": 1, 订单状态
+            
+            "phone": {     机型
+                "brand": "苹果",
+                "model": "iPhone XR",
+                "colour": "黑色"
+            },
+            
+        }, 	
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 获取故障类型
     /faults/getTypes
 	GET
 		
-		
+
+获取所有故障详情列表
+    faults/getDetailList
+	GET
+
+
  获取故障类型对应的具体故障
     /faults/getDetail
     方式：post
@@ -183,6 +242,15 @@ https://www.finetwm.com/xmRepair/
         
     
 
+
+
+    商家入驻 增加经纬度属性
+
+/shopInfo/add
+
+
+ "latitude":10.1111111, 纬度
+ "longitude":103.1111111  经度
 
 
     1、店铺信息新增（参数以对象方式提交）

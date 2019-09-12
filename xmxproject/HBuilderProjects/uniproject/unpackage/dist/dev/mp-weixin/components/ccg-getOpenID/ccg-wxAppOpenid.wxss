@@ -1,0 +1,10 @@
+
+.button-class{
+	width: 698rpx;
+	height: 80rpx;
+	background: #FFFFFF;
+	font-size: 30rpx;
+	border: 1px solid #333;
+}
+
+

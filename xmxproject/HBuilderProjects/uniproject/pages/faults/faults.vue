@@ -28,7 +28,6 @@
                         </view>
                     </checkbox-group>
                 </scroll-view>
-                
                 <view class="popup-bottom">
                     <view class="popup-bottom-left">
                         <text class="total-price-text">合计：</text>
@@ -57,10 +56,16 @@
 
     export default {
         onLoad(e) {
+			// uni.request({
+			// 	url:'https://www.finetwm.com/xmRepair/faults/getDetailList',
+			// 	success: res=>{
+			// 		this.faulesIdList = res.data.data
+			// 	}
+			// })
             //判断是否快捷维修入口
             let sid = e.id
-            console.log(e)
-            console.log(e.id)
+            // console.log(e)
+            // console.log(e.id)
             if(sid == ''){
                 return
             }else{
@@ -73,7 +78,6 @@
                         type:xtypeId
                     },
                     success: res=>{
-                        console.log(res.data.data)
                         this.faulesItem = res.data.data
                     }
                 })
@@ -81,28 +85,11 @@
         },
         data() {
             return {
-				ftitle:[],
-				fprice:[],
-				fid:[],
-				faulesPrice5:[],
-				faulesPrice4:[],
-				faulesPrice3:[],
-				faulesPrice2:[],
-				faulesPrice1:[],
 				faulesPrice:[],
-				faulesTitle5:[],
-				faulesTitle4:[],
-				faulesTitle3:[],
-				faulesTitle2:[],
-				faulesTitle1:[],
 				faulesTitle:[],
-				faulesIdList5:[],
-				faulesIdList4:[],
-				faulesIdList3:[],
-				faulesIdList2:[],
-				faulesIdList1:[],
 				faulesIdList:[],
-                ftype:'',
+				flist1:[],
+                flist:[],
                 faulesItemPrice:[],
                 currentPrice:0,
                 totalPrice: 0,
@@ -167,6 +154,7 @@
                 this.isSelectedId = e.currentTarget.id
             },
             openPopup(sid) {
+				// console.log(sid)
                 this.$refs.popup.open()
                 let xtypeId = this.faulesList[sid].type
                 uni.request({
@@ -177,64 +165,55 @@
                     },
                     success: res=>{
                         this.faulesItem = res.data.data
-						this.fid = [...this.faulesIdList1,...this.faulesIdList2,...this.faulesIdList3,...this.faulesIdList4,...this.faulesIdList5,...this.faulesIdList]
-						this.fid = [[...new Set(this.fid)]]
-						//判断是否默认选中项 this.fid
-						for (let i = 0; i < this.faulesItem.length; i++) {
-							let sid = this.faulesItem[i].id
-							let fid = this.fid[0]
-							let item = this.faulesItem[i]
-							if(fid.indexOf(sid) == -1){
-								this.$set(item,'checked',false)
-							}else{
-								this.$set(item,'checked',true)
-							}
-						}
-						if(this.faulesIdList1.length == 0){
-                            this.faulesIdList1 = this.faulesIdList
-                            this.faulesTitle1 = this.faulesTitle
-                            this.faulesPrice1 = this.faulesPrice
-                        } else if(this.faulesIdList2.length == 0){
-                            this.faulesIdList2 = this.faulesIdList
-                            this.faulesTitle2 = this.faulesTitle
-                            this.faulesPrice2 = this.faulesPrice
-                        } else if(this.faulesIdList3.length == 0){
-                            this.faulesIdList3 = this.faulesIdList
-                            this.faulesTitle3 = this.faulesTitle
-                            this.faulesPrice3 = this.faulesPrice
-                        } else if (this.faulesIdList4.length == 0){
-                            this.faulesIdList4 = this.faulesIdList
-                            this.faulesTitle4 = this.faulesTitle
-                             this.faulesPrice4 = this.faulesPrice
-                        } else {
-                            this.faulesIdList5 = this.faulesIdList
-                            this.faulesTitle5 = this.faulesTitle
-                            this.faulesPrice5 = this.faulesPrice
-                        }
-						
+						// for (let i = 0; i < this.flist.length; i++) {
+						// 	this.flist1.push(this.flist[i])
+						// 	this.flist1 = [...new Set(this.flist1)]
+						// 	// console.log(this.flist1)
+						// }
+						// 判断是否默认选中
+						// for (let i = 0; i < this.faulesItem.length; i++) {
+						// 	let item = this.faulesItem[i]
+						// 	// for (let i = 0; i < this.flist1.length; i++) {
+						// 	// 	let s = this.flist1[i]
+						// 	// 	let sin = item.id.toString()
+						// 	// 	if(sin == s){
+						// 	// 		this.$set(item,'checked',true)
+						// 	// 		console.log('se')
+						// 	// 	} else{
+						// 	// 		this.$set(item,'checked',false)
+						// 	// 		console.log('fail')
+						// 	// 	}
+						// 	// }
+						// 	
+						// }
                     }
                 })
-				
-				
+				// for (let i = 0; i < this.flist1.length; i++) {
+				// 	let s = this.faulesIdList[this.flist1[i]]
+				// 	let t = s.id - 2
+				// 	// console.log(this.faulesIdList[t].title)
+				// 	//获取缓存title
+				// 	// this.faulesTitle.push(this.faulesIdList[t].title)
+				// 	this.faulesPrice.push(this.faulesIdList[t].price)
+				// 	
+					// if
+				// }
             },
             closePopup() {
                 this.$refs.popup.close()
             },
             onsiteRepair(e) {
-                this.fprice = [...this.faulesPrice1,...this.faulesPrice2,...this.faulesPrice3,...this.faulesPrice4,...this.faulesPrice5,...this.faulesPrice]
-				// console.log(e)
-				this.ftitle = [...this.faulesTitle1,...this.faulesTitle2,...this.faulesTitle3,...this.faulesTitle4,...this.faulesTitle5,...this.faulesTitle]				
-				uni.setStorage({
-					key:'faulesTitle',
-					data:this.ftitle
-				})
-				uni.setStorage({
-					key:'sprice',
-					data:this.fprice
-				})
-                // uni.navigateTo({
-                //     url: '../onsiterepair/onsiterepair'
-                // })
+				// uni.setStorage({
+				// 	key:'faulesTitle',
+				// 	data:this.ftitle
+				// })
+				// uni.setStorage({
+				// 	key:'sprice',
+				// 	data:this.fprice
+				// })
+                uni.navigateTo({
+                    url: '../onsiterepair/onsiterepair'
+                })
             },
             onsiteArrival(){
                 uni.navigateTo({
@@ -242,44 +221,34 @@
                 })
             },
             onEventChange(e){
-				let idList = e.detail.value
-				this.faulesTitle = []
-				this.faulesPrice = []
-				let ts = []
-				this.faulesIdList = []
-				for (let i = 0; i < idList.length; i++) {
-					// console.log(idList[i])
-					for (let i = 0; i < this.faulesItem.length; i++) {
-						if(this.faulesItem[idList[i]] !== undefined){
-							// console.log(this.faulesItem[idList[i]].title)
-							let t = this.faulesItem[idList[i]].title
-							this.faulesTitle.push(t)
-							// console.log(this.faulesItem[idList[i]].price)
-							let s = this.faulesItem[idList[i]].price
-							ts.push(s)
-							if(idList[i] == 2 ||idList[i] == 3||idList[i] == 4||idList[i] == 5){
-								ts.splice(idList[i] + 1, idList[i] * idList[i])
-								console.log(idList[i])
-							} else{
-								// console.log(idList[i])
-							}
-							
-							
-							// console.log(this.faulesItem[idList[i]].id)
-							let id = this.faulesItem[idList[i]].id
-							this.faulesIdList.push(id)
-						}
-					}
+				let ind = e.detail.value
+				let s= 0
+				let t = []
+				let sin = []
+				for (let i = 0; i < ind.length; i++) {
+					let price = this.faulesItem[ind[i]].price
+					let title = this.faulesItem[ind[i]].title
+					sin.push(price)
+					t.push(title)
+					s = s+ price
+					this.totalPrice = s
+					uni.setStorage({
+						key:'faulesTitle',
+						data:t
+					})
+					uni.setStorage({
+						key:'totalPrice',
+						data:this.totalPrice
+					})
+					uni.setStorage({
+						key:'sprice',
+						data:sin
+					})
 				}
-				
-				let arr = this.faulesPrice
-				let sum = 0
-				for (let i = 0; i < arr.length; i++) {
-					sum += arr[i]
-					// console.log(sum)
-				}
-				
+				// console.log(this.faulesPrice)
 			}
+
+
 
         },
         components: {

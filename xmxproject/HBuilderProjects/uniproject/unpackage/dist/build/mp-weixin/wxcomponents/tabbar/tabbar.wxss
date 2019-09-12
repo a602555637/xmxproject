@@ -51,6 +51,9 @@
 	/* 		padding-left: 136upx;
 		padding-right: 134upx; */
 	background: #fff;
+	padding-top: 10rpx;
+	padding-bottom: 10rpx;
+	border-top: 1px solid #F3F3F3;
 }
 .container-left {
 	display: -webkit-box;

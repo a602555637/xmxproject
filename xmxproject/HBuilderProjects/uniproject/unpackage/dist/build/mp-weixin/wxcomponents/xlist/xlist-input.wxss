@@ -1,4 +1,8 @@
 
+.placeholder-class{
+	font-size: 24rpx;
+	color: #888F97;
+}
 .container{
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -17,8 +21,6 @@
 	font-size: 30rpx;
 }
 .item-input{
-	font-size: 24rpx;
-	color: #888F97;
 	margin-left: 20rpx;
 }
 .identify-code{

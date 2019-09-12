@@ -55,7 +55,7 @@
 	z-index: 99;
 }
 .avatar{
-	width: 160rpx;
+	width: 140rpx;
 	height: 140rpx;
 	position: absolute;
 	top: 60rpx;

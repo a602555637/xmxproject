@@ -11,12 +11,6 @@
 				<text>个人中心</text>
 			</button>
 		</view>
-<!-- 		<wx-app-openid>openid</wx-app-openid> -->
-
-<!-- 		<view @click="onNext" class="container-left container-right">
-			<image src="../../static/wxcomponentimg/my@2x.png"></image>
-			<text class="container-left-text">个人中心</text>
-		</view> -->
 	</view>
 </template>
 
@@ -42,35 +36,18 @@ export default {
 				url: '../../pages/my/my'
 			});
 		},
-
 		onGetUserInfo(){
-			uni.getUserInfo({
-				success: res =>{
-					this.userInfo = res.userInfo
-					if(this.userInfo){
-						this.onNext()
+			uni.getSetting({
+				success: res=>{
+					if(res.authSetting['scope.userInfo']){
+						console.log('已授权')
+						uni.navigateTo({
+							url: '../../pages/my/my',
+						})
 					}
-					return
-					// console.log(this.userInfo.avatarUrl)
 				}
 			})
-			
 		}
-	},
-	created() {
-		// uni.login({
-		//   provider: 'weixin',
-		//   success: res=> {
-		//     console.log(res)
-		//     // 获取用户信息
-		//     uni.getUserInfo({
-		//       provider: 'weixin',
-		//       success: res=> {
-		//         console.log(res)
-		//       }
-		//     })
-		//   }
-		// })
 	}
 }
 </script>
@@ -119,6 +96,9 @@ export default {
 	/* 		padding-left: 136upx;
 		padding-right: 134upx; */
 	background: #fff;
+	padding-top: 10upx;
+	padding-bottom: 10upx;
+	border-top: 1px solid #F3F3F3;
 }
 
 .container-left {

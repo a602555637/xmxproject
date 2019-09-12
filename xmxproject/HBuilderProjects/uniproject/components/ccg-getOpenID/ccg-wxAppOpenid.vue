@@ -1,5 +1,5 @@
 <template>
-	<view><button type="primary" @click="getOpenId()">获取OpeId</button></view>
+	<view><button class="button-class" @click="getOpenId()">下一步</button></view>
 </template>
 
 <script>
@@ -34,6 +34,10 @@ export default {
 								var obj = {};
 								obj.openid = res.data.openid;
 								console.log('openid: ' + res.data.openid);
+								uni.setStorage({
+									key:'openId',
+									data:obj.openid
+								})
 								obj.expires_in = Date.now() + res.data.expires_in;
 							}
 						});
@@ -41,10 +45,19 @@ export default {
 						console.log('获取用户登录态失败！' + res.errMsg);
 					}
 				}
-			});
+			})
 		}
 	}
-};
+}
 </script>
 
-<style></style>
+<style>
+	.button-class{
+		width: 698upx;
+		height: 80upx;
+		background: #FFFFFF;
+		font-size: 30upx;
+		border: 1px solid #333;
+	}
+	
+</style>
