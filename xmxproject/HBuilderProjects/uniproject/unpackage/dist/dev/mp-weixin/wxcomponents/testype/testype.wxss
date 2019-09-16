@@ -4,7 +4,7 @@
 	color: #888F97;
 }
 .repair-info-phone {
-	font-size: 36rpx;
+	font-size: 32rpx;
 	margin-bottom: 16rpx;
 }
 .repair-info {

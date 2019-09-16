@@ -25,22 +25,26 @@
 			uni.getSystemInfo({
 				success: res =>{
 					let s = res.model
-					let num = s.indexOf('(')
-					if(num < 0){
-						num = s.indexOf('<')
-						console.log(num)
-						s = s.substring(0,num)
+					let t = s.indexOf('<')
+					if(t > 0 && t < 15){
+						s = s.substring(0, t)
+						console.log('1')
+						console.log(t)
 						this.phoneType = s
+						this.smodel = s
+					} else {
+						let r = s.indexOf('(')
+						if( r > 0 ){
+							s = s.substring(0, r)
+							console.log(s)
+							this.phoneType = s
+							this.smodel = s
+						} else {
+							console.log('3')
+							this.phoneType = s
+							this.smodel = s
+						}
 					}
-					else{
-						console.log(num)
-						s = s.substring(0,num)
-						this.phoneType = s
-					}
-					
-					console.log(res)
-					this.smodel = res.model
-					
 				}
 			})
 		},
@@ -67,7 +71,7 @@
 	}
 	
 	.repair-info-phone {
-		font-size: 36upx;
+		font-size: 32upx;
 		margin-bottom: 16upx;
 	}
 	

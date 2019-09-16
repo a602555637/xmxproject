@@ -10,6 +10,9 @@
 		<quick-select></quick-select>
 		<servebutton></servebutton>
 		<vipserve></vipserve>
+		
+		<nearby></nearby>
+		
 		<comment></comment>
 		<view class="bottom">
 			<view class="left">
@@ -56,6 +59,7 @@
 	import tabbar from '../../wxcomponents/tabbar/tabbar.vue'
 	import xswiper from '../../wxcomponents/xswiper/xswiper.vue'
 	import quickSelect from '../../wxcomponents/index/quick-select.vue'
+	import nearby from '../../wxcomponents/index/nearby.vue'
 	
 	export default {
 		data() {
@@ -119,7 +123,8 @@
 			comment,
 			tabbar,
 			xswiper,
-			quickSelect
+			quickSelect,
+			nearby
 		},
 		methods:{
 			onCode(){

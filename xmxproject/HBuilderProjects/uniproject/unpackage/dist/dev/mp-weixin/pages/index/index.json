@@ -10,6 +10,7 @@
     "comment": "/wxcomponents/comment/comment",
     "tabbar": "/wxcomponents/tabbar/tabbar",
     "xswiper": "/wxcomponents/xswiper/xswiper",
-    "quick-select": "/wxcomponents/index/quick-select"
+    "quick-select": "/wxcomponents/index/quick-select",
+    "nearby": "/wxcomponents/index/nearby"
   }
 }

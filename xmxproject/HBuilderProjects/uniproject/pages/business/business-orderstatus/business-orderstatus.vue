@@ -9,6 +9,11 @@
 			<text v-else-if="!isFinished">已完成</text>
 			<text v-else>待接单</text>
 			
+			<view v-if="isAleadyTaken" class="video-class" @click="bindVideo">
+				<image src="../../../static/business/record@2x.png"></image>
+				<text>开始录制</text>
+			</view>
+			
 		</view>
 		<view class="container-middle" >
 			<text>{{phoneType}}</text>
@@ -81,6 +86,11 @@
 			}
 		},
 		methods:{
+			bindVideo(){
+				uni.navigateTo({
+					url: '../business-finished/business-finished'
+				})
+			},
 			bindAleadyTaken(){
 				this.isAleadyTaken = true
 			},
@@ -114,6 +124,25 @@
 </script>
 
 <style>
+	.video-class{
+		display: flex;
+		flex-direction: row;
+		position: absolute;
+		right: 26upx;
+		top: 56upx;
+	}
+	
+	.video-class text {
+		font-size: 26upx !important;
+		font-weight: 400 !important;
+		margin-left: 12rpx !important;
+	}
+	
+	.video-class image {
+		width: 36upx;
+		height: 36upx;
+	}
+	
 	.fixed{
 		background: #888F97 !important;
 	}

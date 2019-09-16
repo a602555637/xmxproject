@@ -147,7 +147,7 @@
 			},
 			interval:{ // 自动切换时间间隔
 				type:Number,
-				default:2500
+				default:3500
 			},
 			current:{ // 当前所在滑块的 index
 				type:Number,

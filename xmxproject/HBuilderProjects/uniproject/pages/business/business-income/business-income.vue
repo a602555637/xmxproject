@@ -12,8 +12,9 @@
 		<view class="container-bottom">
 			<view class="content" v-for="(item, index) in content" :key="index" >
 				<view class="container-item">
-					<text>{{item.title}}</text>
-					<text class="item-desc">{{item.desc}}</text>
+					<text>{{item.phone.brand + ' ' + item.phone.model}}</text>
+					<text v-if="item.serviceModel == '1'" class="item-desc">到店维修</text>
+					<text v-else class="item-desc">上门维修</text>
 				</view>
 				<text class="item-price">+￥{{item.price}}</text>
 			</view>
@@ -23,20 +24,33 @@
 
 <script>
 	export default {
+		onLoad() {
+			this.requestUrl()
+		},
 		data() {
 			return {
-				totalIncome:900,
-				content: [{
-					title:'华为 P30 Pro',
-					desc:'到店维修',
-					price:'400'
-				},{
-					title:'三星 Galaxy S10 5G版',
-					desc:'上门维修',
-					price:'500'
-				}]
+				totalIncome:998,
+				content: []
 			}
 		},
+		methods: {
+			requestUrl() {
+				uni.request({
+					url:'https://www.finetwm.com/xmRepair/order/findShopOrderByStatus',
+					method:"POST",
+					header:{
+						"content-Type": "application/x-www-form-urlencoded"
+					},
+					data:{
+						shopId: 1,
+						orderStatus:4
+					},
+					success:res=>{
+						this.content = res.data.data
+					}
+				})
+			}
+		}
 	}
 </script>
 
@@ -50,6 +64,7 @@
 	.item-desc{
 		color: #888F97;
 		font-size: 26upx;
+		margin-top: 6upx;
 	}
 	
 	.container-item{

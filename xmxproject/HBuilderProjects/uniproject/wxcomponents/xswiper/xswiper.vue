@@ -23,7 +23,7 @@
 		name:'xswiper',
 		data() {
 			return {
-				interval: 2000,
+				interval: 3000,
 				screenHeight: 0,
 				animationData: {
 					0: {},

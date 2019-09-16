@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "附近商家",
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "uni-rate": "/components/uni-rate/uni-rate"
+  }
+}

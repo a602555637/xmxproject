@@ -1,21 +1,27 @@
 <template>
 	<view class="container">
 		<view class="container-title">工作人员30分钟内与您联系</view>
-		<view>
-			<!-- <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" /> -->
-		</view>
+		<map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" />
 		<view class="order-background">
 			<view class="order-detail">
-				<text>{{phoneType}}</text>
-				<view class="order-repair" v-for="(item, index) in repaireList" :key="index">
+				<text>{{brand + ' ' + model + ' ' + colourName}}</text>
+				<view class="order-repair">
 					<view class="order-repair-item">
-						<text class="item-title">{{item.title}}</text>
-						<text class="item-price">{{item.price}}</text>
+						<text class="item-title">{{title}}</text>
+						<text class="item-price">{{price}}元</text>
+					</view>
+					<view v-if="" class="order-repair-item">
+						<text class="item-title">{{title}}</text>
+						<text class="item-price">{{price}}元</text>
+					</view>
+					<view v-if="" class="order-repair-item">
+						<text class="item-title">{{title}}</text>
+						<text class="item-price">{{price}}元</text>
 					</view>
 				</view>
 				<view class="total">
 					<text class="total-price-text">合计：</text>
-					<text class="total-price">{{totalPrice}}</text>
+					<text class="total-price">{{totalPrice}}元</text>
 				</view>
 				<view class="order-button">
 					<view @click="bindIndex" class="order-button-right">回到首页</view>
@@ -51,68 +57,98 @@
 <script>
 	import uniPopup from '../../components/uni-popup/uni-popup.vue'
 	export default {
+		onLoad() {
+			this.getStorage()
+		},
 		data() {
 			return {
 				title: 'map',
 				latitude: 39.909,
 				longitude: 116.39742,
-				isSelectedId:0,
-				canelInfo:[{
-					info:'信息填写错误'
-				},{
-					info:'重复下单'
-				},{
-					info:'时间来不及'
-				},{
-					info:'不想修了'
-				},{
-					info:'其他原因'
+				isSelectedId: 0,
+				canelInfo: [{
+					info: '信息填写错误'
+				}, {
+					info: '重复下单'
+				}, {
+					info: '时间来不及'
+				}, {
+					info: '不想修了'
+				}, {
+					info: '其他原因'
 				}],
-				orderContent:{
-					num:'1545545489646',
-					orderTime:'2019.08.12 12:34:32',
-					type:'上门维修',
-					onTime:'8月12日 15：30',
-					address:'郫都区望丛中路13号7栋203号'
-				},
-				totalPrice:'￥245',
-				repaireList:[{
-					title:'屏幕损坏',
-					price:'￥499'
-				},{
-					title:'电池不续航',
-					price:'￥599'
+				orderNum: '1545545489646',
+				orderTime: '2019.08.12 12:34:32',
+				type: '上门维修',
+				onTime: '8月12日 15：30',
+				address: '郫都区望丛中路13号7栋203号',
+				totalPrice: '245',
+				repaireList: [{
+					title: '屏幕损坏',
+					price: '499'
+				}, {
+					title: '电池不续航',
+					price: '599'
 				}],
-				phoneType:'苹果 iPhone7 玫瑰金'
+				brand: '',
+				model: '',
+				colourName: ''
 			}
 		},
 		methods: {
-			openPopup(){
-            this.$refs.popup.open()
+			openPopup() {
+				this.$refs.popup.open()
 			},
-        closePopup(){
-            this.$refs.popup.close()
+			closePopup() {
+				this.$refs.popup.close()
 			},
-			onCancel(){
+			onCancel() {
 				uni.showToast({
 					title: '取消成功'
 				})
-				setTimeout(()=>{
+				setTimeout(() => {
 					uni.reLaunch({
 						url: 'order-cancel'
 					})
-				},1000)
+				}, 1000)
 			},
-			onSelectedId(e){
+			onSelectedId(e) {
 				this.isSelectedId = e.currentTarget.id
 			},
-			bindIndex(){
+			bindIndex() {
 				uni.reLaunch({
-					url:'../index/index'
+					url: '../index/index'
+				})
+			},
+			getStorage() {
+				uni.getStorage({
+					key: 'brand',
+					success: res => {
+						console.log(res.data)
+						this.brand = res.data
+					}
+				})
+				uni.getStorage({
+					key: 'model',
+					success:res=>{
+						this.model = res.data
+					}
+				})
+				uni.getStorage({
+					key: 'colourName',
+					success:res=>{
+						this.colourName = res.data
+					}
+				})
+				uni.getStorage({
+					key: 'colourName',
+					success:res=>{
+						this.colourName = res.data
+					}
 				})
 			}
 		},
-		components:{
+		components: {
 			uniPopup
 		}
 
@@ -120,7 +156,7 @@
 </script>
 
 <style>
-	.popup-button{
+	.popup-button {
 		background: #09BA51;
 		width: 400upx;
 		height: 70upx;
@@ -133,26 +169,26 @@
 		margin-left: 60upx;
 		margin-top: 16upx;
 	}
-	
-	.popup-info-item{
+
+	.popup-info-item {
 		margin-left: 60upx;
 		margin-bottom: 20upx;
 	}
-	
-	.popup-info-item text{
+
+	.popup-info-item text {
 		font-size: 26upx;
 		margin-left: 20upx;
 	}
-	
-	.popup-container>text{
+
+	.popup-container>text {
 		font-size: 30upx;
 		font-weight: bold;
 		margin-top: 40upx;
 		margin-left: 170upx;
 		margin-bottom: 40upx;
 	}
-	
-	.popup-container{
+
+	.popup-container {
 		display: flex;
 		flex-direction: column;
 		background: #FFFFFF;
@@ -160,31 +196,31 @@
 		height: 600upx;
 		border-radius: 20upx;
 	}
-	
-	.popup-info-item image{
+
+	.popup-info-item image {
 		width: 26upx;
 		height: 26upx;
 	}
-	
-	.order-content text{
+
+	.order-content text {
 		font-size: 26upx;
 		margin-bottom: 10upx;
 		margin-top: 30upx;
 		margin-left: 40upx;
 	}
-	
-	.order-content{
+
+	.order-content {
 		display: flex;
 		flex-direction: column;
 		margin-bottom: 40upx;
 	}
-	
-	.line{
+
+	.line {
 		border-bottom: 1px solid #EEEEEE;
 	}
-	
+
 	.order-button-left,
-	.order-button-right{
+	.order-button-right {
 		font-size: 26upx;
 		border-radius: 12upx;
 		width: 300upx;
@@ -193,84 +229,87 @@
 		justify-content: center;
 		align-items: center;
 	}
-	
-	.order-button-left{
+
+	.order-button-left {
 		border: 1px solid #EEEEEE;
 	}
-	.order-button-right{
+
+	.order-button-right {
 		background: #09BA51;
 		color: #FFFFFF;
 	}
-	
-	.order-button view{
+
+	.order-button view {
 		margin-right: 22upx;
 	}
-	
-	.order-button{
+
+	.order-button {
 		display: flex;
 		justify-content: space-between;
 		margin-left: 40upx;
 		margin-right: 40upx;
 		margin-bottom: 40upx;
 	}
-	
-	.total{
+
+	.total {
 		margin-left: 40upx;
 		margin-bottom: 36upx;
 	}
-	
-	.total-price{
+
+	.total-price {
 		font-size: 30upx;
 		font-weight: bold;
 		color: #09BA51;
 	}
-	
-	.total-price-text{
+
+	.total-price-text {
 		font-size: 26upx;
 		color: #09BA51;
 	}
-	
-	.order-repair-item{
+
+	.order-repair-item {
 		display: flex;
 		justify-content: space-between;
 		padding-left: 40upx;
 		padding-right: 40upx;
 		margin-bottom: 20upx;
-	},
+	}
+
+	,
 	.item-title,
-	.item-price{
+	.item-price {
 		font-size: 26upx;
 	}
-	
-	.order-detail>text{
+
+	.order-detail>text {
 		font-size: 32upx;
 		font-weight: bold;
 		margin-top: 30upx;
 		margin-left: 40upx;
 		margin-bottom: 20upx;
 	}
-	
-	.order-detail{
+
+	.order-detail {
 		background: #fff;
 		width: 698upx;
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		top:-20upx;
+		top: -20upx;
 		margin-left: 26upx;
-		border-radius: 20upx 20upx  0 0;
+		border-radius: 20upx 20upx 0 0;
 	}
-	
-	.order-background{
+
+	.order-background {
 		background: #F3F3F3;
 	}
-	
-	.map{
+
+	.map {
 		height: 516upx;
 		width: 750upx;
 	}
-	
-	.container-title{
+
+	.container-title {
 		font-size: 40upx;
 		font-weight: bold;
 		height: 140upx;

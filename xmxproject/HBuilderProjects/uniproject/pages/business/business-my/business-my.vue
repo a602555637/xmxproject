@@ -22,10 +22,15 @@
 <script>
 	export default {
 		onLoad() {
-			uni.getSavedFileList({
-			  success: function (res) {
-			    console.log(res.fileList);
-			  }
+			uni.request({
+				url: 'https://www.finetwm.com/xmRepair/shopInfo/getHeadPortrait',
+				method: 'GET',
+				data: {
+					id: 1
+				},
+				success: res => {
+					console.log(res.data)
+				}
 			})
 		},
 		data() {
@@ -68,6 +73,20 @@
 						let tempFilePaths = res.tempFilePaths[0]
 						this.avatarUrl = tempFilePaths
 						this.isDefaultAvatar = false
+						uni.request({
+							url: 'https://www.finetwm.com/xmRepair/shopInfo/saveHeadPortrait',
+							method: 'POST',
+							data: {
+								imgUrl:this.avatarUrl,
+								id: 1
+							},
+							success: res => {
+								console.log(res)
+							},
+							fail:err=>{
+								console.log(err)
+							}
+						})
 					}
 				})
 			}
@@ -78,7 +97,7 @@
 
 <style>
 	.camera{
-		width: 150upx;
+		width: 130upx;
 		height: 46upx;
 		position: absolute;
 		top: 154upx;

@@ -1,5 +1,5 @@
 
-.popup-button{
+.popup-button {
 	background: #09BA51;
 	width: 400rpx;
 	height: 70rpx;
@@ -21,22 +21,22 @@
 	margin-left: 60rpx;
 	margin-top: 16rpx;
 }
-.popup-info-item{
+.popup-info-item {
 	margin-left: 60rpx;
 	margin-bottom: 20rpx;
 }
-.popup-info-item text{
+.popup-info-item text {
 	font-size: 26rpx;
 	margin-left: 20rpx;
 }
-.popup-container>text{
+.popup-container>text {
 	font-size: 30rpx;
 	font-weight: bold;
 	margin-top: 40rpx;
 	margin-left: 170rpx;
 	margin-bottom: 40rpx;
 }
-.popup-container{
+.popup-container {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -51,17 +51,17 @@
 	height: 600rpx;
 	border-radius: 20rpx;
 }
-.popup-info-item image{
+.popup-info-item image {
 	width: 26rpx;
 	height: 26rpx;
 }
-.order-content text{
+.order-content text {
 	font-size: 26rpx;
 	margin-bottom: 10rpx;
 	margin-top: 30rpx;
 	margin-left: 40rpx;
 }
-.order-content{
+.order-content {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -73,11 +73,11 @@
 	        flex-direction: column;
 	margin-bottom: 40rpx;
 }
-.line{
+.line {
 	border-bottom: 1px solid #EEEEEE;
 }
 .order-button-left,
-.order-button-right{
+.order-button-right {
 	font-size: 26rpx;
 	border-radius: 12rpx;
 	width: 300rpx;
@@ -95,17 +95,17 @@
 	    -ms-flex-align: center;
 	        align-items: center;
 }
-.order-button-left{
+.order-button-left {
 	border: 1px solid #EEEEEE;
 }
-.order-button-right{
+.order-button-right {
 	background: #09BA51;
 	color: #FFFFFF;
 }
-.order-button view{
+.order-button view {
 	margin-right: 22rpx;
 }
-.order-button{
+.order-button {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -118,20 +118,20 @@
 	margin-right: 40rpx;
 	margin-bottom: 40rpx;
 }
-.total{
+.total {
 	margin-left: 40rpx;
 	margin-bottom: 36rpx;
 }
-.total-price{
+.total-price {
 	font-size: 30rpx;
 	font-weight: bold;
 	color: #09BA51;
 }
-.total-price-text{
+.total-price-text {
 	font-size: 26rpx;
 	color: #09BA51;
 }
-.order-repair-item{
+.order-repair-item {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -145,17 +145,17 @@
 	margin-bottom: 20rpx;
 }
 .item-title,
-.item-price{
+.item-price {
 	font-size: 26rpx;
 }
-.order-detail>text{
+.order-detail>text {
 	font-size: 32rpx;
 	font-weight: bold;
 	margin-top: 30rpx;
 	margin-left: 40rpx;
 	margin-bottom: 20rpx;
 }
-.order-detail{
+.order-detail {
 	background: #fff;
 	width: 698rpx;
 	display: -webkit-box;
@@ -168,18 +168,18 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 	position: relative;
-	top:-20rpx;
+	top: -20rpx;
 	margin-left: 26rpx;
-	border-radius: 20rpx 20rpx  0 0;
+	border-radius: 20rpx 20rpx 0 0;
 }
-.order-background{
+.order-background {
 	background: #F3F3F3;
 }
-.map{
+.map {
 	height: 516rpx;
 	width: 750rpx;
 }
-.container-title{
+.container-title {
 	font-size: 40rpx;
 	font-weight: bold;
 	height: 140rpx;

@@ -39,7 +39,8 @@
     "pages/my/cards",
     "pages/my/online-kf",
     "pages/my/sign",
-    "pages/my/contract"
+    "pages/my/contract",
+    "pages/index/map"
   ],
   "subPackages": [],
   "window": {
@@ -53,5 +54,6 @@
       "desc": "定位服务"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

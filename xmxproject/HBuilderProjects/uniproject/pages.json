@@ -204,6 +204,12 @@
 			"style": {
 				"navigationBarTitleText": "合作协议"
 			}
+		},
+		{
+			"path": "pages/index/map",
+			"style": {
+				"navigationBarTitleText": "附近商家"
+			}
 		}
 	],
 	"globalStyle": {

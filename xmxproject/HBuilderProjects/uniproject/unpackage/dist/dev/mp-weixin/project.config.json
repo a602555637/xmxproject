@@ -33,26 +33,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/faults/faults",
-					"pathName": "pages/faults/faults",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/onsiterepair/onsiterepair",
-					"pathName": "pages/onsiterepair/onsiterepair",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/arrival-repair/arrival-repair",
-					"pathName": "pages/arrival-repair/arrival-repair",
+					"name": "pages/index/map",
+					"pathName": "pages/index/map",
 					"query": "",
 					"scene": null
 				},
@@ -65,15 +51,8 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/onsiterepair/onsiterepair",
-					"pathName": "pages/onsiterepair/onsiterepair",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/arrival-repair/arrival-repair",
-					"pathName": "pages/arrival-repair/arrival-repair",
+					"name": "pages/business/business-orderstatus/business-orderstatus",
+					"pathName": "pages/business/business-orderstatus/business-orderstatus",
 					"scene": null
 				}
 			]

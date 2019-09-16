@@ -1,61 +1,102 @@
 <template>
 	<view>
-		<view class="page-body">
-			<view class="page-section page-section-gap">
-				<map id="myMap" style="width: 100%; height: 300px;" 
-				:latitude="latitude" :longitude="longitude" :markers="markers"
-				show-location></map>
+		<view class="container">
+			<camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
+			<view class="btn-area">
+				<view class="start-record" @click="startRecord">开始录像</view>
+				<view class="stop-record" @click="stopRecord">结束录像</view>
 			</view>
+			<view class="line-thick"></view>
+			<text class="preview">预览</text>
+			<!-- <image v-if="src" mode="widthFix" :src="src"></image> -->
+			<video v-if="videoSrc" class="video" :src="videoSrc"></video>
 		</view>
 	</view>
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            title: 'map',
-            latitude: 30.795890000000025,
-            longitude: 103.90256,
-			markers: [{
-				id: 1,
-				latitude: 30.795890000000030,
-				longitude: 103.90260,
-				name: 'ate',
-				iconPath:'../../../static/wxcomponentimg/dw@2x.png',
-				width:60,
-				height:60,
-				label:{
-					content:'小刘手机维修'
-				}
-			},{
-				id: 2,
-				latitude: 30.795890001000020,
-				longitude: 103.90150,
-				name: 'atc',
-				iconPath:'../../../static/wxcomponentimg/dw@2x.png',
-				width:60,
-				height:60,
-				label:{
-					content:'小王手机维修',
-					fontSize:13,
-					color:'#333333',
-				},
-				callout:{
-					content:'小王手机维修',
-					fontSize:13,
-					color:'#ffffff',
-					bgColor:'#51D587'
-				}
-			}],
-        }
-    },
-    methods: {
-
-    }
-}
+	export default {
+		onLoad() {
+			this.ctx = uni.createCameraContext()
+		},
+		data() {
+			return {
+				videoSrc: '',
+				src: ''
+			}
+		},
+		methods: {
+			startRecord() {
+				this.ctx.startRecord({
+					success: (res) => {
+						console.log(res)
+					}
+				})
+			},
+			stopRecord() {
+				this.ctx.stopRecord({
+					success: (res) => {
+						console.log(res)
+						this.src = res.tempThumbPath
+						this.videoSrc = res.tempVideoPath
+						uni.request({
+							url: 'https://www.finetwm.com/xmRepair/order/uploadVideo',
+							method: 'POST',
+							data: {
+								videoUrl: this.videoSrc,
+								orderId: 1000000000001
+							},
+							success: res => {
+								console.log(res)
+							}
+						})
+					}
+				})
+			},
+		}
+	}
 </script>
 
 <style>
+	.preview{
+		color: #888F97;
+		font-size: 26upx;
+		margin-top: 60upx;
+		margin-left: 60upx;
+	}
+	
+	.btn-area {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		margin-top: 20upx;
+		margin-bottom: 20upx;
+	}
 
+	.start-record,
+	.stop-record {
+		width: 230upx;
+		height: 80upx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		border-radius: 12upx;
+		font-size: 26upx;
+	}
+
+	.start-record {
+		background: #09BA51;
+		color: #FFFFFF;
+	}
+
+	.stop-record {
+		border: 1px solid #EEEEEE;
+	}
+
+	.video {
+		margin: 50px auto;
+		width: 100%;
+		height: 300px;
+	}
 </style>

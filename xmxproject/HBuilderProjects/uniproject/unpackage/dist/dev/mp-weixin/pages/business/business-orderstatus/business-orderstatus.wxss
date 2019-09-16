@@ -1,4 +1,27 @@
 
+.video-class{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	position: absolute;
+	right: 26rpx;
+	top: 56rpx;
+}
+.video-class text {
+	font-size: 26rpx !important;
+	font-weight: 400 !important;
+	margin-left: 12rpx !important;
+}
+.video-class image {
+	width: 36rpx;
+	height: 36rpx;
+}
 .fixed{
 	background: #888F97 !important;
 }

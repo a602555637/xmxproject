@@ -1,6 +1,6 @@
 
 .camera{
-	width: 150rpx;
+	width: 130rpx;
 	height: 46rpx;
 	position: absolute;
 	top: 154rpx;
