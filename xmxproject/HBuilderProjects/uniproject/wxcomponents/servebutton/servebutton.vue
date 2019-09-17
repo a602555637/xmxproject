@@ -1,37 +1,37 @@
 <template name="servebutton">
-	<view @click="onNext" class="container">
+	<view class="container">
 		<view class="container-title">
 			<text class="container-title-head">服务区</text>
 			<text class="container-title-more">更多服务</text>
 		</view>
 		<view class="container-top">
-			<view class="container-top-item">
+			<view @click="quickSelect" class="container-top-item">
 				<image src="../../static/service-icon/kjwx@2x.png"></image>
 				<text>快捷维修</text>
 			</view>
-			<view class="container-top-item">
+			<view @click="careSelect" class="container-top-item">
 				<image src="../../static/service-icon/ncsj@2x.png"></image>
 				<text>内存升级</text>
 			</view>
-			<view class="container-top-item">
+			<view @click="installSelect" class="container-top-item">
 				<image src="../../static/service-icon/ghpj@2x.png"></image>
 				<text>更换配件</text>
 			</view>
-			<view class="container-top-item">
+			<view @click="careSelect" class="container-top-item">
 				<image src="../../static/service-icon/sjdc@2x.png"></image>
 				<text>数据导出</text>
 			</view>
 		</view>
 		<view class="container-top">
-			<view class="container-top-item">
+			<view @click="careSelect" class="container-top-item">
 				<image src="../../static/service-icon/qjby@2x.png"></image>
 				<text>清洁保养</text>
 			</view>
-			<view class="container-top-item">
+			<view @click="careSelect" class="container-top-item">
 				<image src="../../static/service-icon/xtsj@2x.png"></image>
 				<text>系统刷机</text>
 			</view>
-			<view class="container-top-item">
+			<view @click="careSelect" class="container-top-item">
 				<image src="../../static/service-icon/sjtm@2x.png"></image>
 				<text>手机贴膜</text>
 			</view>
@@ -47,11 +47,26 @@
 	export default {
 		name: 'servebutton',
 		methods:{
-			onNext(){
+			quickSelect(){
 				uni.navigateTo({
 					url:'../../pages/selectmodel/selectmodel'
 				})
-			}
+			},
+			careSelect(){
+				uni.navigateTo({
+					url:'../../pages/faults/faults?id=9'
+				})
+			},
+			installSelect(){
+				uni.navigateTo({
+					url:'../../pages/faults/faults?id=10'
+				})
+			},
+			// dataSelect(){
+			// 	uni.navigateTo({
+			// 		url:'../../pages/faults/faults?id=10'
+			// 	})
+			// }
 		}
 	}
 </script>

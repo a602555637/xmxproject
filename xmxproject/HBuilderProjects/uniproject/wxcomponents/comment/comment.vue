@@ -15,6 +15,7 @@
 							<uniRate class="rate" disabled="true" value="5" size="18"></uniRate>
 						</view>
 						<text class="content">服务态度很好，处理得很迅速，一天不到就通知我修好了，很满意。</text>
+						<text class="repair-item">iPhone X  换电池/换主板/换内外屏</text>
 						<image class="container-bg" src="../../static/index/pl-bg@2x.png"></image>
 					</view>
 				</swiper-item>
@@ -29,6 +30,7 @@
 							<uniRate class="rate" disabled="true" value="5" size="18"></uniRate>
 						</view>
 						<text class="content">技术非常精湛，服务也很周到，已经介绍了很多客户来小美修，真的值这个价钱。</text>
+						<text class="repair-item">小米9  维修基带电源/信号功放</text>
 						<image class="container-bg" src="../../static/index/pl-bg@2x.png"></image>
 					</view>
 				</swiper-item>
@@ -42,7 +44,8 @@
 							</view>
 							<uniRate disabled="true" class="rate" value="5" size="18"></uniRate>
 						</view>
-						<text class="content">电池更换速度还是不错的，原本说一个半小时，结果只用了不到一个小时，第一次来更换硬件，服务也很不错，值得再来</text>
+						<text class="content">电池更换速度还是不错的，只用了不到一个小时，服务也很不错，值得再来</text>
+						<text class="repair-item">华为 Mate 20X  更换电池</text>
 						<image class="container-bg" src="../../static/index/pl-bg@2x.png"></image>
 					</view>
 				</swiper-item>
@@ -67,6 +70,14 @@
 </script>
 
 <style>
+	.repair-item{
+		color: #888F97;
+		font-size: 20upx;
+		position: relative;
+		bottom: 24upx;
+		left: 164upx;
+	}
+	
 	.swiper{
 		height: 300upx;
 		margin-bottom: 30upx;

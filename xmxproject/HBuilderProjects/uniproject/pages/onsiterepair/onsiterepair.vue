@@ -28,7 +28,8 @@
 		</view>
 		<view class="info">上门范围：线下门店5km范围内，收费标准为5元/km</view>
 		<!-- code input -->
-		<xlist-input></xlist-input>
+		<xlist-input @inputValue="bindInputName"></xlist-input>
+		<xlist-input @inputValue="bindInputNumber" title="手机号：" placeholder="请输入您的手机号" typeStyle="number"></xlist-input>
 		<getcode timer="timer" :title="title"></getcode>
 		<!-- 地区 -->
 		<xlocation @district="bindDistrict"></xlocation>
@@ -129,6 +130,12 @@
 
 		},
 		methods: {
+			bindInputName(e){
+				this.orderName = e
+			},
+			bindInputNumber(e){
+				this.orderNum = e
+			},
 			onOrderDetail() {
 				if (this.isAgreement) {
 					uni.navigateTo({

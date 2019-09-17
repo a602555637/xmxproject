@@ -1,9 +1,9 @@
 
-.placeholder-class{
+.placeholder-class {
 	font-size: 24rpx;
 	color: #888F97;
 }
-.container{
+.container {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -17,13 +17,13 @@
 	margin-right: 26rpx;
 	border-bottom: 1px solid #F3F3F3;
 }
-.item-title{
+.item-title {
 	font-size: 30rpx;
 }
-.item-input{
+.item-input {
 	margin-left: 20rpx;
 }
-.identify-code{
+.identify-code {
 	font-size: 30rpx;
 	color: #09BA51;
 	display: -webkit-box;

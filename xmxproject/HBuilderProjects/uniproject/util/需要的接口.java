@@ -1,14 +1,5 @@
 // 所需要接口
 
-上传视频 POST 
-
-  videoUrl:''
-  orderId:''
-
-
-店铺头像上传 POST 
-	imgUrl:''
-	店铺id:''
 
 设置密码  POST 
 	手机号码：
@@ -49,5 +40,21 @@ POST
 	亲友电话
 	会员类型： 平板/手机
 }
+
+
+
+
+商家入驻 增加经纬度属性
+
+/shopInfo/add
+参数
+"location":{
+ "latitude":10.1111111, 纬度
+ "longitude":103.1111111  经度
+   }
+   
+
+   
+
 
 

@@ -54,6 +54,5 @@
       "desc": "定位服务"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

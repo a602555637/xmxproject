@@ -1,6 +1,5 @@
 
-.fixed{
-	height: 160rpx;
+.container-input{
 }
 .business-item {
 	display: -webkit-box;
@@ -69,31 +68,8 @@
 	height: 20rpx;
 	background: #F3F3F3;
 }
-.container-input>view {
-	font-size: 30rpx;
-	color: #09BA51;
-	position: absolute;
-	right: 26rpx;
-}
 .placeholder-class {
 	font-size: 24rpx;
 	color: #888F97;
-}
-.container-input>text {
-	font-size: 30rpx;
-}
-.container-input {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	height: 120rpx;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	margin-left: 26rpx;
-	margin-right: 26rpx;
-	border-bottom: 1px solid #F3F3F3;
 }
 

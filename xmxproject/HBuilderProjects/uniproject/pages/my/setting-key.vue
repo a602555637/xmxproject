@@ -1,61 +1,95 @@
 <template>
 	<view class="container">
-		<text>输入密码</text>
-		<input @input="bindKey" type="text" placeholder="请输入6位密码" placeholder-class="placeholder-class" />
-		<text>确认密码</text>
-		<input @input="bindSkey" type="text" placeholder="请再次输入6位密码" placeholder-class="placeholder-class" />
+		<text class="fixed">必须数字和英文字母组合</text>
+		<xinput @inputValue="bindKey" title="输入密码" :xtype="xtype" placeHolderText="请输入6位密码" />
+		<xinput @inputValue="bindSkey" :xtype="xtype" title="确认密码" placeHolderText="请再次输入6位密码" />
 		<view @click="bindSubmit" class="container-button">保存</view>
 	</view>
 </template>
 
 <script>
+	import xinput from '../../wxcomponents/common/xinput.vue'
+	
 	export default {
 		data() {
 			return {
-				fkey: '',
-				skey:''
+				fkey:'',
+				skey:'',
+				xtype: 'text'
 			}
 		},
 		methods:{
 			bindKey(e){
-				this.fkey = e.detail.value
+				this.fkey = e
 			},
 			bindSkey(e){
-				this.skey = e.detail.value
+				this.skey = e
 			},
-			bindSubmit(){
-				if(this.fkey == '' || this.skey == ''){
+			onReg(e){
+				let reg =/^(?!([a-zA-Z]+|\d+)$)[a-zA-Z\d]{6}$/
+				let str = e.inputValue
+				if(str.match(reg) == null){
 					uni.showToast({
-						title: '请正确输入密码',
-						icon:'none'
-					})
-				} else if(this.fkey < 6 || this.fkey > 7 || this.skey < 6 || this.skey > 7){
-					uni.showToast({
-						title: '密码长度不对，请重新输入',
-						icon:'none'
-					})
-				} else if(this.fkey !== this.skey){
-					uni.showToast({
-						title:'两次密码输入不一致',
+						title: '密码格式不正确',
 						icon:'none'
 					})
 				} else{
-					uni.showToast({
-						title:'设置成功'
+					uni.reLaunch({
+						url: '../index/index'
 					})
-					setTimeout(()=>{
-						uni.reLaunch({
-							url:'../index/index'
-						})
-					},1000)
 				}
+			},
+			bindSubmit(){
+				let skey = this.skey
+				let fkey = this.fkey
+				console.log(skey)
+				console.log(fkey)
+				// if( skey == fkey){
+				// 	this.onReg(this.fkey)
+				// 	this.onReg(this.skey)
+				// } else{
+				// 	uni.showToast({
+				// 		title: '两次密码输入不一致',
+				// 		icon:'none'
+				// 	})
+				// }
+				
+				
 			}
-		}
+		},
+		components: {
+			xinput
+		},
+		onLoad() {
+			// uni.request({
+			// 	url: 'https://www.finetwm.com/xmRepair/shopInfo/login',
+			// 	method: 'POST',
+			// 	"content-Type": "x-www-form-urlencoded",
+			// 	data: {
+			// 		phone: 12345678910,
+			// 		pass:123456
+			// 	},
+			// 	success: res => {
+			// 		console.log(res)
+			// 	},
+			// 	fail: err => {
+			// 		console.log(err)
+			// 	}
+			// })
+		}	
 	}
 	
 </script>
 
 <style>
+	.fixed{
+		font-size: 22upx;
+		position: absolute;
+		left: 184upx;
+		top: 64upx;
+		color: #888F97;
+	}
+	
 	.container-button{
 		display: flex;
 		flex-direction: row;
@@ -68,31 +102,11 @@
 		width: 698upx;
 		height: 80upx;
 		margin-top: 234upx;
+		margin-left: 26upx;
 	}
 	
 	.container{
-		display: flex;
-		flex-direction: column;
-		margin-left: 26upx;
-		margin-top: 20upx;
+		margin-top: 60upx;
 	}
-	
-	.placeholder-class{
-		font-size: 26upx;
-		color: #888F97;
-		margin-left: 20upx;
-	}
-	
-	.container text{
-		display: block;
-		font-size: 30upx;
-		margin-top: 40upx;
-		margin-bottom: 20upx;
-	}
-	
-	.container input{
-		width: 698upx;
-		height: 100upx;
-		border: 1px solid #EEEEEE;
-	}
+
 </style>

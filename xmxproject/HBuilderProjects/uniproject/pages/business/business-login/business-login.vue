@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
-		<xinput @inputValue="onNumber" :type="xtype" title="手机号" placeHolderText="请输入手机号" />
-		<xinput @inputValue="onCode" :xpassword="xpassword" title="密码" placeHolderText="请输入密码" />
+		<xinput @inputValue="onNumber" :xtype="xtype" title="手机号" placeHolderText="请输入手机号" />
+		<xinput @inputValue="onCode" :xtype="xtype" :xpassword="xpassword" title="密码" placeHolderText="请输入密码" />
 		<view @click="onNext" class="button">{{buttonTitle}}</view>
 	</view>
 
@@ -9,6 +9,7 @@
 
 <script>
 	import xinput from '../../../wxcomponents/common/xinput.vue'
+	import xlistInput from '../../../wxcomponents/xlist/xlist-input.vue'
 	export default {
 		data() {
 			return {
@@ -50,7 +51,8 @@
 			}
 		},
 		components: {
-			xinput
+			xinput,
+			xlistInput
 		}
 	};
 </script>

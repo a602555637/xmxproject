@@ -1,51 +1,23 @@
 <template>
-	<view class="container">
-		<!-- name -->
-		<view class="container-input">
-			<text>店铺名称：</text>
-			<input @input="onName" type="text" placeholder="请输入店铺名称" placeholder-class="placeholder-class" />
+	<view>
+		<view>
+			<xlist-input @inputValue="bindInputName" title="店铺名称：" placeholder="请输入店铺名称"></xlist-input>
+			<xlist-input @inputValue="bindInputManager" title="负责人：" placeholder="请输入负责人姓名"></xlist-input>
+			<xlist-input @inputValue="bindInputPhone" title="手机号：" placeholder="请输入负责人手机号" typeStyle="number"></xlist-input>
+			
+			<!-- getcode -->
+			<!-- <getcode @codeText="bindCode" timer="timer" :title="title"></getcode> -->
 		</view>
-		<!-- manager -->
-		<view class="container-input">
-			<text>负责人：</text>
-			<input @input="onManager" type="text" placeholder="请输入负责人姓名" placeholder-class="placeholder-class" />
-		</view>
-		<!-- phone -->
-		<view class="container-input">
-			<text>手机号：</text>
-			<input @input="onPhone" type="text" placeholder="请输入负责人手机号" placeholder-class="placeholder-class" />
-		</view>
-		<!-- getcode -->
-		<!-- <getcode @codeText="bindCode" timer="timer" :title="title"></getcode> -->
 		<view class="line-thick"></view>
 		<!-- 地区  街道  detail_address-->
 		<xlocation @district="onArea"></xlocation>
 		
 		<view class="line-thick"></view>
 		
-		<!-- 企业类型 -->
-		<view class="container-input">
-			<picker class="business-picker" mode="selector" value="index" :range="businessType" @change="onType">
-				<view class="business-title">企业类型</view>
-				<view class="business-item">
-					<text class="list-item-desc">{{businessTypeItem}}</text>
-					<image class="right-arrow" src="../../static/wxcomponentimg/arrow@2x.png"></image>
-				</view>
-			</picker>
-		</view>
-		<!-- 服务类型 -->
-		<view class="container-input">
-			<picker class="business-picker" mode="selector" value="index" :range="repairType" @change="onRepairType">
-				<view class="business-title">服务类型</view>
-				<view class="business-item">
-					<text class="list-item-desc">{{repairTypeItem}}</text>
-					<image class="right-arrow" src="../../static/wxcomponentimg/arrow@2x.png"></image>
-				</view>
-			</picker>
+		<xlist-picker @selectedIndex="selectedIndex" :selectedItem="selectedItem" :range="businessType"></xlist-picker>
+		<xlist-picker @selectedIndex="selectedIndexType" title="服务类型" :selectedItem="selectedItemType" :range="repairType"></xlist-picker>
 
-		</view>
-
-		<view class="fixed">
+		<view>
 			<view @click="onSave" class="container-button">保存</view>
 		</view>
 
@@ -53,18 +25,26 @@
 </template>
 
 <script>
-	import uniList from '../../components/uni-list-c/uni-list.vue'
-	import uniListItem from '../../components/uni-list-item-c/uni-list-item.vue'
+	import xlistInput from '../../wxcomponents/xlist/xlist-input.vue'
+	import xlistPicker from '../../wxcomponents/xlist/xlist-picker.vue'
+	
 	import amap from '../../common/amap-wx.js'
 	import getcode from '../../wxcomponents/getcode/getcode.vue'
 	import xlocation from '../../wxcomponents/xlocation/xlocation.vue'
 	const formatDate = require('../../util/util.js')
 	export default {
+		onLoad() {
+			this.selectedIndex()
+			this.selectedIndexType()
+		},
 		data() {
 			var dateObj = new Date()
 			var currentTime = dateObj.getTime()
 			var timer = formatDate.formatDateTime((currentTime + 1000 * 2000))
 			return {
+				selectedItemTypeIndex:'',
+				selectedItemType:'',
+				selectedItem:'',
 				province:'',
 				city:'',
 				district:'',
@@ -78,8 +58,6 @@
 				area: '',
 				street: '',
 				detail_address: '',
-				businessTypeItem: '个人',
-				repairTypeItem: '上门维修',
 				businessType: [
 					'个人', '公司'
 				],
@@ -90,6 +68,27 @@
 			}
 		},
 		methods: {
+			bindInputName(e){
+				this.name = e
+				uni.setStorage({
+					key:'partyName',
+					data: e
+				})
+			},
+			bindInputManager(e){
+				this.manager = e
+				uni.setStorage({
+					key:'partyManager',
+					data: e
+				})
+			},
+			bindInputPhone(e){
+				this.phone = e
+				uni.setStorage({
+					key:'partyPhone',
+					data: e
+				})
+			},
 			onSave() {
 				if(this.name == ''){
 					uni.showToast({
@@ -124,40 +123,17 @@
 					}, 2000)
 				}
 			},
-			onType(e) {
-				let num = e.detail.value
-				this.businessTypeItem = this.businessType[num]
+			selectedIndex(e) {
+				this.selectedItem = e ? this.businessType[e] :this.businessType[0]
 			},
-			onRepairType(e) {
-				let num = e.detail.value
-				this.repairTypeItem = this.repairType[num]
-			},
-			onName(e) {
-				this.name = e.detail.value
-				uni.setStorage({
-					key:'partyTitle',
-					data:this.name
-				})
-			},
-			onManager(e) {
-				this.manager = e.detail.value
-				uni.setStorage({
-					key:'manager',
-					data:this.manager
-				})
-			},
-			onPhone(e) {
-				this.phone = e.detail.value
-				uni.setStorage({
-					key:'managerPhone',
-					data:this.phone
-				})
+			selectedIndexType(e){
+				this.selectedItemTypeIndex = e
+				this.selectedItemType = e ? this.repairType[e] :this.repairType[0]
 			},
 			onArea(e) {
 				this.area = e.district
 				this.street = e.township,
 				this.detail_address = e.detailAddress
-				console.log(e)
 				uni.setStorage({
 					key:'partyAddress',
 					data:this.area + this.street + this.detail_address
@@ -178,8 +154,8 @@
 						area:this.area,
 						street:this.street,
 						detail_address:this.detail_address,
-						type:this.businessTypeItem,
-						service_mode:this.repairTypeItem,
+						type:this.selectedItem,
+						service_mode:this.selectedItemTypeIndex,
 						stat:0
 					},
 					success: res=>{
@@ -190,16 +166,16 @@
 		},
 		components: {
 			getcode,
-			uniList,
-			uniListItem,
-			xlocation
+			xlocation,
+			xlistInput,
+			xlistPicker
 		}
 	}
 </script>
 
 <style>
-	.fixed{
-		height: 160upx;
+	.container-input{
+		
 	}
 
 	.business-item {
@@ -259,29 +235,9 @@
 		height: 20upx;
 		background: #F3F3F3;
 	}
-
-	.container-input>view {
-		font-size: 30upx;
-		color: #09BA51;
-		position: absolute;
-		right: 26upx;
-	}
-
+	
 	.placeholder-class {
 		font-size: 24upx;
 		color: #888F97;
-	}
-
-	.container-input>text {
-		font-size: 30upx;
-	}
-
-	.container-input {
-		display: flex;
-		height: 120upx;
-		align-items: center;
-		margin-left: 26upx;
-		margin-right: 26upx;
-		border-bottom: 1px solid #F3F3F3;
 	}
 </style>

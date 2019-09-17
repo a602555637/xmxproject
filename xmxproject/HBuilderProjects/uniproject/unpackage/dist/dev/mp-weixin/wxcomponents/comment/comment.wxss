@@ -1,4 +1,11 @@
 
+.repair-item{
+		color: #888F97;
+		font-size: 20rpx;
+		position: relative;
+		bottom: 24rpx;
+		left: 164rpx;
+}
 .swiper{
 		height: 300rpx;
 		margin-bottom: 30rpx;

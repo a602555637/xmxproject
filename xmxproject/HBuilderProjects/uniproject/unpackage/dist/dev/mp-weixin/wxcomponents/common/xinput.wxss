@@ -10,22 +10,22 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.container-text{
+.container-text {
 	font-size: 30rpx;
 	margin-left: 46rpx;
 	margin-bottom: 20rpx;
 }
-.placeholder-class{
+.placeholder-class {
 	font-size: 26rpx;
 	color: #888F97;
-	padding-left: 20rpx;
+	/* padding-left: 20upx; */
 }
-.container-item{
+.container-item {
 	height: 100rpx;
 	width: 698rpx;
 	border: 1px solid #EEEEEE;
 	margin-left: 26rpx;
-	margin-bottom: 60rpx;
+	padding-left: 20rpx;
+	/* margin-bottom: 60upx; */
 }
-
 

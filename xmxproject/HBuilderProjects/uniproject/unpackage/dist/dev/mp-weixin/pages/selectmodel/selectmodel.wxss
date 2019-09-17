@@ -1,4 +1,8 @@
 
+.top-type{
+	font-size: 32rpx !important;
+	margin-bottom: 60rpx;
+}
 .active-text{
 	color: #09BA51;
 }

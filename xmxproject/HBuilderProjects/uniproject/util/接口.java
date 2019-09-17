@@ -133,17 +133,24 @@ https://www.finetwm.com/xmRepair/
 		
 		
 提交订单 请求增加 经纬度 距离 故障详情（选填） 
-   返回增加抢单信息
-
+   返回增加抢单信息  
 /order/saveUserOrder
+参数
 
-
- "latitude":10.1111111, 纬度
- "longitude":103.1111111  经度
+"latitude":10.1111111,  纬度
+"longitude":103.1111111  经度
+   
 "distance":  距离1-5 （到店不填）
 
-"details"："" 故障详情（选填）		
-	
+"details"："" 故障详情（选填）
+
+返回 
+{
+ "订单id"，
+ [
+  "符合抢单条件的商家识别phone？"
+ ]
+}
 		
 用户下单
   /order/saveUserOrder
@@ -169,6 +176,7 @@ https://www.finetwm.com/xmRepair/
                 "faults": "屏幕损坏",
                 "price": 499
             },
+
             {
                 "faults": "电池不续航",
                 "price": 499
@@ -207,8 +215,92 @@ https://www.finetwm.com/xmRepair/
         }, 	
 
 
+附近商家
+ 附近5公里商家20条数据
+/shopInfo/nearbyShops
+参数
+    // 用户所在地
+  latitude 纬度
+  longitude 经度
+返回
+ [
+  {
+   latitude 纬度
+   longitude 经度
+   name  商家名称
+   area  地区
+   street  街道
+   detailAddress 详细地址
+   phone  电话
+   headPortrait 头像地址
+   star  评价
+   distance 距离
+  },
+  ......
+ ]
 
-   
+
+
+上传视频 POST 
+order/uploadVideo
+
+  videoUrl:''
+  orderId:''
+  
+ 返回
+ String "上传成功"
+ 
+ 
+ 
+店铺头像上传 POST 
+    shopInfo/saveHeadPortrait
+
+ imgUrl:''
+ id:''
+
+返回
+ String "上传成功"
+
+
+获取头像
+shopInfo/getHeadPortrait
+GET
+data：{
+    id：1
+}
+
+登录  POST
+shopInfo/login 
+ phone:
+ pass:
+返回  成功  失败
+ String "SESSIONID"/"登录失败"
+
+
+获取注册验证码
+/shopInfo/getNumber
+参数
+ "phone":"电话号码"
+返回
+ "code":"6位验证码"
+
+获取修改密码验证码
+/shopInfo/getResetNumber
+参数
+ "phone":"电话号码"
+返回
+ "code"验证码 / "0"不存在手机号请输入正确的手机号
+
+ 
+修改密码
+/shopInfo/resetPassword
+参数
+ "phone":"电话号码"
+ "password":"新密码"
+返回  成功 失败
+ String ："1" "0"
+
+
 
 
 

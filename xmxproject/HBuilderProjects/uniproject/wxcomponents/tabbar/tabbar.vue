@@ -37,12 +37,19 @@
 				});
 			},
 			onGetUserInfo() {
+				uni.showLoading({
+					title: '正在加载',
+					mask: false
+				})
 				uni.getSetting({
 					success: res => {
 						if (res.authSetting['scope.userInfo']) {
 							console.log('已授权')
 							uni.navigateTo({
 								url: '../../pages/my/my',
+								success:res=>{
+									uni.hideLoading()
+								}
 							})
 						}
 					}

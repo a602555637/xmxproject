@@ -17,6 +17,7 @@
 			<!-- 右侧获取数据 -->
 			<scroll-view scroll-y style="height: 990upx;">
 				<view class="slide-right">
+					<view v-if="phonetype" class="top-type">{{phonetype}}</view>
 					<view @click="openPopup(index)" class="right-item" v-for="(item, index) in phoneType" :key="index">
 						<text>{{item.model}}</text>
 					</view>
@@ -55,9 +56,24 @@
 	
 	export default {
 		onLoad(sid) {
+			uni.getStorage({
+				key:'phonetype',
+				success:res=>{
+					this.phonetype = res.data
+				}
+			})
+			
 			uni.setStorage({
 				key:'brand',
 				data:'苹果'
+			})
+			
+			uni.getStorage({
+				key: 'sid',
+				success: res=> {
+					let s = res.data
+					this.quickId = s
+				}
 			})
 			
 			this.requestUrl()
@@ -71,8 +87,6 @@
 					this.phoneType = res.data.data
 				}
 			})
-
-			// console.log(sid)
 			
 			if(sid.id){
 				this.quickId = sid.id
@@ -85,7 +99,7 @@
 						uni.request({
 							url:'https://www.finetwm.com/xmRepair/phoneBrand/getBrandColour',
 							data:{
-								name:smodel
+								name: smodel
 							},
 							method:'POST',
 							success:res=>{
@@ -103,6 +117,7 @@
 		},
 		data() {
 			return {
+				phonetype:'',
 				quickId:'',
 				valueId:1,
 				colorId:null,
@@ -218,6 +233,11 @@
 </script>
 
 <style>
+	.top-type{
+		font-size: 32upx !important;
+		margin-bottom: 60upx;
+	}
+	
 	.active-text{
 		color: #09BA51;
 	}

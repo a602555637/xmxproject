@@ -97,19 +97,19 @@
 					}
 				})
 				uni.getStorage({
-					key:'partyTitle',
+					key:'partyName',
 					success:res=>{
 						this.partyTitle = res.data
 					}
 				})
 				uni.getStorage({
-					key:'manager',
+					key:'partyManager',
 					success:res=>{
 						this.manager = res.data
 					}
 				})
 				uni.getStorage({
-					key:'managerPhone',
+					key:'partyPhone',
 					success:res=>{
 						this.managerPhone = res.data
 					}

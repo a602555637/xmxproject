@@ -113,6 +113,14 @@
 			}
 
 		},
+		onLoad() {
+			uni.removeStorage({
+			    key: 'sid',
+			    success:res => {
+			        console.log('clear success')
+			    }
+			})
+		},
 		components: {
 			headads,
 			bwSwiper,

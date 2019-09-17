@@ -32,7 +32,8 @@
 		
 		<view class="line-thick"></view>
 		
-		<xlist-input></xlist-input>
+		<xlist-input @inputValue="bindInputName"></xlist-input>
+		<xlist-input @inputValue="bindInputNumber" title="手机号：" placeholder="请输入您的手机号" typeStyle="number"></xlist-input>
 
 		<view class="line-thick"></view>
 		<view class="text-area">
@@ -97,6 +98,12 @@
 			}
 		},
 		methods: {
+			bindInputName(e){
+				this.orderName = e
+			},
+			bindInputNumber(e){
+				this.orderNum = e
+			},
 			getDate(){
 				const date = new Date()
 				let day = date.getDate()
@@ -253,18 +260,6 @@
 				key:'sprice',
 				success:res=>{
 					this.sprice = res.data
-				}
-			})
-			uni.getStorage({
-				key:'orderName',
-				success:res=>{
-					this.orderName = res.data
-				}
-			})
-			uni.getStorage({
-				key:'orderNum',
-				success:res=>{
-					this.orderNum = res.data
 				}
 			})
 			uni.getStorage({

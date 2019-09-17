@@ -28,10 +28,10 @@
 					let t = s.indexOf('<')
 					if(t > 0 && t < 15){
 						s = s.substring(0, t)
-						console.log('1')
-						console.log(t)
+						console.log('1' + s + '*')
 						this.phoneType = s
 						this.smodel = s
+						this.setStorage()
 					} else {
 						let r = s.indexOf('(')
 						if( r > 0 ){
@@ -39,10 +39,12 @@
 							console.log(s)
 							this.phoneType = s
 							this.smodel = s
+							this.setStorage()
 						} else {
-							console.log('3')
+							console.log('3' + s)
 							this.phoneType = s
 							this.smodel = s
+							this.setStorage()
 						}
 					}
 				}
@@ -57,6 +59,16 @@
 			bindRepair(){
 				uni.navigateTo({
 					url:'../../pages/selectmodel/selectmodel?model=' + this.smodel
+				})
+			},
+			setStorage(){
+				uni.setStorage({
+					key:'model',
+					data: this.smodel
+				})
+				uni.setStorage({
+					key:'phonetype',
+					data: this.smodel
 				})
 			}
 		}

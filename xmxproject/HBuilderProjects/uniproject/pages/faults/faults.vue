@@ -8,7 +8,13 @@
         <uniPopup custom="true" ref="popup" type="bottom">
             <view class="container-popup">
                 <view class="popup-title">
-                    <text>故障选择</text>
+                    <view class="title-quick">
+                    	<text>故障选择</text>
+                    	<view class="title-quick-top">
+                    		当前机型：{{model}}
+                    		<text @click="changeType" class="title-quick-button">更换机型</text>
+                    	</view>
+                    </view>
                     <image @click="closePopup" src="../../static/faults/close@2x.png"></image>
                 </view>             
                 <scroll-view scroll-y class="scroll-view">
@@ -56,6 +62,13 @@
 
     export default {
         onLoad(e) {
+			uni.getStorage({
+				key:'model',
+				success:res=>{
+					this.model = res.data
+				}
+			})
+			
 			// uni.request({
 			// 	url:'https://www.finetwm.com/xmRepair/faults/getDetailList',
 			// 	success: res=>{
@@ -64,8 +77,6 @@
 			// })
             //判断是否快捷维修入口
             let sid = e.id
-            // console.log(e)
-            // console.log(e.id)
             if(sid == ''){
                 return
             }else{
@@ -85,6 +96,7 @@
         },
         data() {
             return {
+				model:'',
 				faulesPrice:[],
 				faulesTitle:[],
 				faulesIdList:[],
@@ -150,11 +162,15 @@
             }
         },
         methods: {
+			changeType(){
+				uni.navigateTo({
+					url: '../selectmodel/selectmodel'
+				})
+			},
             onSelected(e) {
                 this.isSelectedId = e.currentTarget.id
             },
             openPopup(sid) {
-				// console.log(sid)
                 this.$refs.popup.open()
                 let xtypeId = this.faulesList[sid].type
                 uni.request({
@@ -165,59 +181,38 @@
                     },
                     success: res=>{
                         this.faulesItem = res.data.data
-						// for (let i = 0; i < this.flist.length; i++) {
-						// 	this.flist1.push(this.flist[i])
-						// 	this.flist1 = [...new Set(this.flist1)]
-						// 	// console.log(this.flist1)
-						// }
-						// 判断是否默认选中
-						// for (let i = 0; i < this.faulesItem.length; i++) {
-						// 	let item = this.faulesItem[i]
-						// 	// for (let i = 0; i < this.flist1.length; i++) {
-						// 	// 	let s = this.flist1[i]
-						// 	// 	let sin = item.id.toString()
-						// 	// 	if(sin == s){
-						// 	// 		this.$set(item,'checked',true)
-						// 	// 		console.log('se')
-						// 	// 	} else{
-						// 	// 		this.$set(item,'checked',false)
-						// 	// 		console.log('fail')
-						// 	// 	}
-						// 	// }
-						// 	
-						// }
                     }
                 })
-				// for (let i = 0; i < this.flist1.length; i++) {
-				// 	let s = this.faulesIdList[this.flist1[i]]
-				// 	let t = s.id - 2
-				// 	// console.log(this.faulesIdList[t].title)
-				// 	//获取缓存title
-				// 	// this.faulesTitle.push(this.faulesIdList[t].title)
-				// 	this.faulesPrice.push(this.faulesIdList[t].price)
-				// 	
-					// if
-				// }
+
             },
             closePopup() {
                 this.$refs.popup.close()
             },
             onsiteRepair(e) {
-				// uni.setStorage({
-				// 	key:'faulesTitle',
-				// 	data:this.ftitle
-				// })
-				// uni.setStorage({
-				// 	key:'sprice',
-				// 	data:this.fprice
-				// })
+
                 uni.navigateTo({
-                    url: '../onsiterepair/onsiterepair'
+                    url: '../onsiterepair/onsiterepair',
+					success:res=>{
+						uni.removeStorage({
+						    key: 'sid',
+						    success:res => {
+						        console.log('clear success')
+						    }
+						})
+					}
                 })
             },
             onsiteArrival(){
                 uni.navigateTo({
-                    url:'../arrival-repair/arrival-repair'
+                    url:'../arrival-repair/arrival-repair',
+					success:res=>{
+						uni.removeStorage({
+						    key: 'sid',
+						    success:res => {
+						        console.log('clear success')
+						    }
+						})
+					}
                 })
             },
             onEventChange(e){
@@ -258,6 +253,22 @@
 </script>
 
 <style>
+	.title-quick-button{
+		margin-left: 10upx;
+		color: #09BA51;
+		font-size: 26upx !important;
+	}
+	
+	.title-quick-top {
+		font-size: 30upx;
+		margin-top: 30upx;
+	}
+	
+	.title-quick{
+		display: flex;
+		flex-direction: column;
+	}
+	
     .scroll-view{
         margin-top: 36upx;
         max-height: 540upx;

@@ -37,7 +37,13 @@
 			onRepair(sid){
 				console.log(sid)
 				uni.navigateTo({
-					url: '../../pages/selectmodel/selectmodel?id=' + sid
+					url: '../../pages/faults/faults?id=' + sid,
+					success:res=>{
+						uni.setStorage({
+							key:'sid',
+							data:sid
+						})
+					}
 				})
 			}
 		}
