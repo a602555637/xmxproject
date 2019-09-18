@@ -4,8 +4,8 @@
 }
 .rule{
 	color: #09BA51;
-	text-align: center;
-	margin-bottom: 64rpx;
+	margin-top: 60rpx;
+	margin-bottom: 60rpx;
 }
 .container-submit{
 	width: 698rpx;
@@ -31,7 +31,6 @@
 	    -ms-flex-align: center;
 	        align-items: center;
 	text-align: center;
-	margin-top: 100rpx;
 	margin-bottom: 56rpx;
 }
 .sign{

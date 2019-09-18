@@ -3,7 +3,7 @@
 		<view @click="bindSelected" class="container" v-for="(item,index) in content" :key="index" :id="index">
 			<image :src="selectedId == index ? selectedImg : defaultImg" />
 			<text class="item-title">{{item.title}}</text>
-			<text class="item-price">{{item.price}}</text>
+			<text class="item-price">{{price + ' '}}元</text>
 		</view>
 		<view @click="bindSubmit" class="button">确认</view>
 	</view>
@@ -11,17 +11,24 @@
 
 <script>
 	export default {
+		onLoad(e) {
+			// id == 0 99 ||  id == 1 9.9
+			console.log(e.id)
+			if( e.id == 1){
+				this.price = 9.9
+			}
+			return
+		},
 		data() {
 			return {
+				price:99,
 				selectedId: 0,
 				selectedImg: '../../static/faults/xz@2x.png',
 				defaultImg: '../../static/faults/wxz@2x.png',
 				content: [{
-					title: '手机会员',
-					price: '9.9元'
+					title: '手机会员'
 				}, {
-					title: '平板会员',
-					price: '9.9元'
+					title: '平板会员'
 				}]
 			}
 		},
@@ -31,9 +38,17 @@
 				this.selectedId = e.currentTarget.id
 			},
 			bindSubmit(){
-				uni.navigateTo({
-					url:'../payvip/payvip'
+				uni.navigateBack({
+					delta: 1
 				})
+				// 跳转支付
+				// uni.requestPayment({
+				// 	provider: '',
+				// 	orderInfo: '',
+				// 	success: res => {},
+				// 	fail: () => {},
+				// 	complete: () => {}
+				// })
 			}
 		}
 	}

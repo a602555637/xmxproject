@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<!-- banner -->
 		<swiper class="swiper" circular :indicator-dots="false" :autoplay="true" :interval="3000" :duration="1000">
 			<swiper-item>
 				<image class="banner-img" src="../../static/banner/banner5@2x.png"></image>
@@ -59,18 +60,34 @@
 		
 		<text class="container-deal">小美修《用户协议》</text>
 
-		<view @click="onPay" v-if="isVip" class="isbutton">
+		<view v-if="isVip" class="isbutton">
 			<view>您已是会员</view>
 			<view class="time-number">享免费修特权等待期倒计时<text class="aldate">{{aldate}}</text>天</view>
 		</view>
-		<view v-else @click="onPay" class="button">成为会员</view>
+		<view v-else @click="onPay" class="button">立即成为会员</view>
 	</view>
 </template>
 
 <script>
 	export default {
+		onShow() {
+			console.log('onshow')
+			// 调取判断会员接口
+		},
+		onLoad() {
+			uni.getStorage({
+				key:'openId',
+				success:res=>{
+					this.openId = res.data
+					this.requestUrl()
+				}
+			})
+		},
 		data() {
 			return {
+				isNext:false,
+				openId:'',
+				superiorId:'',
 				selectedId: 0,
 				topTitle: [{
 					title: '终身会员',
@@ -122,7 +139,7 @@
 			},
 			onPay() {
 				uni.navigateTo({
-					url: 'vip-type',
+					url: 'vip-type?id=' + this.selectedId,
 					success: res => {
 						console.log('success')
 					}
@@ -136,12 +153,41 @@
 			},
 			bindChange(e){
 				this.selectedId = e.detail.current
+			},
+			requestUrl(){
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/userInfo/isvip',
+					method: 'GET',
+					data: {
+						openId: this.openId,
+						superiorId: this.superiorId
+					},
+					success: res => {
+						console.log(res)
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
 			}
 		}
 	}
 </script>
 
 <style>
+	.button {
+			width: 698upx;
+			height: 100upx;
+			background: #09BA51;
+			font-size: 40upx;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 12upx;
+			margin-left: 26upx;
+		}
+	
 	.swiper-selected{
 		width: 100%;
 		height: 600upx;
@@ -197,9 +243,9 @@
 		display: block;
 		color: #09BA51;
 		font-size: 24upx;
-		margin-top: 32upx;
+		margin-top: 20upx;
 		margin-left: 280upx;
-		margin-bottom: 40upx;
+		margin-bottom: 20upx;
 	}
 
 	.container-info {
@@ -308,17 +354,6 @@
 
 	.select-class {
 		color: #09BA51;
-	}
-
-	.button {
-		width: 750upx;
-		height: 100upx;
-		background: #09BA51;
-		font-size: 40upx;
-		color: #fff;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 
 	.isbutton {

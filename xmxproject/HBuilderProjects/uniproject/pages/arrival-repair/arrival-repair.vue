@@ -34,7 +34,9 @@
 		
 		<xlist-input @inputValue="bindInputName"></xlist-input>
 		<xlist-input @inputValue="bindInputNumber" title="手机号：" placeholder="请输入您的手机号" typeStyle="number"></xlist-input>
-
+		
+		<getcode @phoneCode="bindPhoneCode" @scode="bindScode" :orderNum="orderNum"></getcode>
+		
 		<view class="line-thick"></view>
 		<view class="text-area">
 			<text>故障详情（选填）：</text>
@@ -68,9 +70,13 @@
 	import uniListItem from '../../components/uni-list-item-c/uni-list-item.vue'
 	import xlistInput from '../../wxcomponents/xlist/xlist-input.vue'
 	import xlocation from '../../wxcomponents/xlocation/xlocation.vue'
+	import getcode from '../../wxcomponents/getcode/getcode.vue'
+	
 	export default {
 		data() {
 			return {
+				scode:'',
+				phoneCode:'',
 				isChange:true,
 				dateItem:[['日期','01','02','03','04','05','06','07','09',10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
 							['小时','08','09',10,11,12,13,14,15,16,17,18,19,20],
@@ -98,6 +104,12 @@
 			}
 		},
 		methods: {
+			bindScode(e){
+				this.scode = e.scode
+			},
+			bindPhoneCode(e){
+				this.phoneCode = e.phoneCode
+			},
 			bindInputName(e){
 				this.orderName = e
 			},
@@ -161,7 +173,27 @@
 				return
 			},
 			onOrder(){
-				if (this.isConfirm){
+				if(!this.orderName){
+					uni.showToast({
+						title: '请输入姓名',
+						icon: 'none'
+					})
+				} else if(!this.orderNum){
+					uni.showToast({
+						title: '请输入手机号码',
+						icon: 'none'
+					})
+				} else if(!this.isConfirm){
+					uni.showToast({
+						title: '请同意协议',
+						icon: 'none'
+					})
+				} else if(this.phoneCode !== this.scode){
+					uni.showToast({
+						title: '验证码不正确',
+						icon:'none'
+					})
+				} else {
 					uni.request({
 						url: 'https://www.finetwm.com/xmRepair/order/saveUserOrder',
 						method: 'POST',
@@ -281,7 +313,8 @@
 			uniList,
 			uniListItem,
 			xlistInput,
-			xlocation
+			xlocation,
+			getcode
 		}
 	}
 </script>

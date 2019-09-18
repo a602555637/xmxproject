@@ -36,8 +36,9 @@
 			<text @click="onSign" v-else class="sign">点击签字</text>
 		</view>
 		<text>日期：&nbsp{{date}}</text>
+		<text @click="onRule" class="rule">服务商运营规范>></text>
 		<view @click="onSubmit" class="container-submit">确认提交</view>
-		<text class="rule">服务商运营规范>></text>
+		
 	</view>
 </template>
 
@@ -67,6 +68,11 @@
 			this.getStorage()
 		},
 		methods:{
+			onRule(){
+				uni.navigateTo({
+					url: 'rule'
+				})
+			},
 			onSign(){
 				uni.navigateTo({
 					url:'sign'
@@ -132,8 +138,8 @@
 	
 	.rule{
 		color: #09BA51;
-		text-align: center;
-		margin-bottom: 64upx;
+		margin-top: 60upx;
+		margin-bottom: 60upx;
 	}
 	
 	.container-submit{
@@ -147,7 +153,6 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		margin-top: 100upx;
 		margin-bottom: 56upx;
 	}
 	

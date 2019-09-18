@@ -1,4 +1,11 @@
 
+.desc{
+	font-size: 22rpx;
+	position: absolute;
+	left: 184rpx;
+	top: 452rpx;
+	color: #888F97;
+}
 .xinput{
 	margin-top: 80rpx;
 }

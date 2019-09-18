@@ -13,6 +13,7 @@
 	export default {
 		data() {
 			return {
+				accessToken:'',
 				fkey:'',
 				skey:'',
 				xtype: 'text'
@@ -20,14 +21,14 @@
 		},
 		methods:{
 			bindKey(e){
-				this.fkey = e
+				this.fkey = e.inputValue
 			},
 			bindSkey(e){
-				this.skey = e
+				this.skey = e.inputValue
 			},
 			onReg(e){
 				let reg =/^(?!([a-zA-Z]+|\d+)$)[a-zA-Z\d]{6}$/
-				let str = e.inputValue
+				let str = e
 				if(str.match(reg) == null){
 					uni.showToast({
 						title: '密码格式不正确',
@@ -42,41 +43,20 @@
 			bindSubmit(){
 				let skey = this.skey
 				let fkey = this.fkey
-				console.log(skey)
-				console.log(fkey)
-				// if( skey == fkey){
-				// 	this.onReg(this.fkey)
-				// 	this.onReg(this.skey)
-				// } else{
-				// 	uni.showToast({
-				// 		title: '两次密码输入不一致',
-				// 		icon:'none'
-				// 	})
-				// }
-				
-				
+				if( skey == fkey){
+					this.onReg(fkey)
+					this.onReg(skey)
+				} else{
+					uni.showToast({
+						title: '两次密码输入不一致',
+						icon:'none'
+					})
+				}
 			}
 		},
 		components: {
 			xinput
 		},
-		onLoad() {
-			// uni.request({
-			// 	url: 'https://www.finetwm.com/xmRepair/shopInfo/login',
-			// 	method: 'POST',
-			// 	"content-Type": "x-www-form-urlencoded",
-			// 	data: {
-			// 		phone: 12345678910,
-			// 		pass:123456
-			// 	},
-			// 	success: res => {
-			// 		console.log(res)
-			// 	},
-			// 	fail: err => {
-			// 		console.log(err)
-			// 	}
-			// })
-		}	
 	}
 	
 </script>

@@ -1,15 +1,6 @@
 // 所需要接口
 
 
-设置密码  POST 
-	手机号码：
-	密码：
-
- 根据手机号码 获取密码 / 用做登录验证 /修改密码
-
-
-
-
 抢单
 	当前用户所在经纬度: {
 		'',
@@ -24,37 +15,46 @@
 		评价
 		电话号码
 
+https://www.finetwm.com/xmRepair/
 
-// VIP Model
-
-GET
-根据openid 判断是否会员 (非会员/普通会员/终身会员) 
-								会员等待期
-
-
-POST
-改变会员状态 {
-	普通会员/终身会员,
-	IMEI:'',
-	img:''
-	亲友电话
-	会员类型： 平板/手机
-}
+content-Type: "x-www-form-urlencoded"
 
 
 
-
-商家入驻 增加经纬度属性
-
-/shopInfo/add
-参数
-"location":{
- "latitude":10.1111111, 纬度
- "longitude":103.1111111  经度
-   }
-   
-
-   
-
-
-
+getQrcode(){
+				uni.request({
+					url: 'https://api.weixin.qq.com/cgi-bin/token',
+					method: 'GET',
+					data: {
+						grant_type: 'client_credential',
+						appid: 'wx5a7e48b2d2c7cc4b',
+						secret: '9fdc700fef21bb7d3141a50f3fc82591'
+					},
+					success: res => {
+						this.accessToken = res.data.access_token
+						this.getCode()
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
+			},
+			getCode(){
+				uni.request({
+					url: 'https://api.weixin.qq.com/wxa/getwxacodeunlimit',
+					method: 'POST',
+					access_token: this.accessToken,
+					dataType: 'json',
+					data: {
+						page:'pages/index',
+						scene:'12&34',
+						width:300
+					},
+					success: res => {
+						console.log(res)
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
+			}

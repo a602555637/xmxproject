@@ -2,7 +2,10 @@
 	<view class="container">
 		<view class="container-title">
 			<text class="container-title-head">会员特权</text>
-			<view class="vip-class">成为会员</view>
+			<view @click="onVip">
+				<GetOpenId :isNext="isNext"></GetOpenId>
+			</view>
+			<!-- <view @click="onVip" class="vip-class">成为会员</view> -->
 			<view @click="onPrize" class="container-subtitle">
 				<image src="../../static/cj@2x.png"></image>
 				<text class="container-title-more">每日一抽</text>
@@ -31,9 +34,12 @@
 </template>
 
 <script>
+	import GetOpenId from '../../components/ccg-getOpenID/ccg-wxAppOpenid.vue'
+	
 	export default {
 		data() {
 			return {
+				isNext:false,
 				circular: true,
 				previous: 54,
 				next: 54
@@ -44,27 +50,22 @@
 			onPrize() {
 				uni.navigateTo({
 					url: '../../pages/prize/prize'
-				});
+				})
+			},
+			onVip(){
+				uni.navigateTo({
+					url: '../../pages/bevip/bevip'
+				})
 			}
+		},
+		components: {
+			GetOpenId
 		}
 	}
 </script>
 
 <style>
-	.vip-class {
-		width: 116upx;
-		height: 32upx;
-		font-size: 22upx;
-		color: #FFFFFF;
-		background: #09BA51;
-		border-radius: 18upx 18upx 18upx 0upx;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		position: absolute;
-		left: 160upx;
-	}
+
 
 	.container-subtitle {
 		display: flex;

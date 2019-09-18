@@ -41,6 +41,7 @@
 	.container {
 		display: flex;
 		flex-direction: column;
+		margin-top: 20upx;
 	}
 
 	.container-text {
@@ -57,7 +58,7 @@
 
 	.container-item {
 		height: 100upx;
-		width: 698upx;
+		width: 678upx;
 		border: 1px solid #EEEEEE;
 		margin-left: 26upx;
 		padding-left: 20upx;

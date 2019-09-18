@@ -6,6 +6,7 @@
     "uni-list": "/components/uni-list-c/uni-list",
     "uni-list-item": "/components/uni-list-item-c/uni-list-item",
     "xlist-input": "/wxcomponents/xlist/xlist-input",
-    "xlocation": "/wxcomponents/xlocation/xlocation"
+    "xlocation": "/wxcomponents/xlocation/xlocation",
+    "getcode": "/wxcomponents/getcode/getcode"
   }
 }

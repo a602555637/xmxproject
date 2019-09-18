@@ -9,6 +9,7 @@
 	-webkit-flex-direction: column;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
+	margin-top: 20rpx;
 }
 .container-text {
 	font-size: 30rpx;
@@ -22,7 +23,7 @@
 }
 .container-item {
 	height: 100rpx;
-	width: 698rpx;
+	width: 678rpx;
 	border: 1px solid #EEEEEE;
 	margin-left: 26rpx;
 	padding-left: 20rpx;

@@ -272,19 +272,21 @@ data：{
 登录  POST
 shopInfo/login 
  phone:
- pass:
+ password:
 返回  成功  失败
  String "SESSIONID"/"登录失败"
 
 
-获取注册验证码
+获取注册验证码   POST 
 /shopInfo/getNumber
 参数
- "phone":"电话号码"
+ "phone":"电话号码" string 
 返回
  "code":"6位验证码"
 
-获取修改密码验证码
+
+
+获取修改密码验证码  POST 
 /shopInfo/getResetNumber
 参数
  "phone":"电话号码"
@@ -292,13 +294,50 @@ shopInfo/login
  "code"验证码 / "0"不存在手机号请输入正确的手机号
 
  
-修改密码
+修改密码  POST 
 /shopInfo/resetPassword
 参数
  "phone":"电话号码"
  "password":"新密码"
 返回  成功 失败
  String ："1" "0"
+
+
+
+GET
+根据openid 判断是否会员 (非会员/普通会员/终身会员/会员等待期) 
+/userInfo/isvip
+参数
+ "openid":
+ "superiorId":
+返回
+ String : "0"不是,"1"普通,"2"终身 
+
+
+
+改变会员状态 {
+ 普通会员/终身会员,
+ 电话
+ 会员类型：平板/手机
+}
+/userInfo/becomeVip
+POST
+参数
+{
+ "isvip" : 0不是、1普通、2终身,
+ "viptype" : 0手机、1平板,
+ "phone" : "手机号",
+ "openid" : "openid",
+ "statid" : 1状态有效,
+}
+返回
+ String "0"成功、"1"失败
+
+
+
+
+
+
 
 
 

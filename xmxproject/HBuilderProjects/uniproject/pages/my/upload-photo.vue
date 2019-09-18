@@ -33,7 +33,8 @@
 			onSubmit(){
 				if (this.imgUrl1 == '' || this.imgUrl2 == '') {
 					uni.showToast({
-						title: '请上传身份证照片'
+						title: '请上传身份证照片',
+						icon:'none'
 					})
 				} else if (this.imgUrl3 == ''){
 					uni.showToast({

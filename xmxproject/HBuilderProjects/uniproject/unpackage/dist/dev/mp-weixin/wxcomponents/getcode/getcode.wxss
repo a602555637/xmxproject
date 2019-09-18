@@ -1,5 +1,61 @@
 
-.container-code{
+.fixed1{
+	margin-right: 34rpx;
+}
+.fixed{
+	padding-left: 20rpx;
+}
+.title-sin{
+	font-size: 30rpx;
+	margin-left: 46rpx;
+	margin-bottom: 20rpx;
+}
+.scontainer-item{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	width: 698rpx;
+	height: 100rpx;
+	border: 1px solid #EEEEEE;
+	margin-left: 26rpx;
+}
+.scontainer{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-top: 20rpx;
+}
+.container-code1{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	position: absolute;
+	right: 26rpx;
+	font-size: 30rpx;
+	color: #BCBCBC;
+}
+.container-code {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -9,11 +65,11 @@
 	font-size: 30rpx;
 	color: #09BA51;
 }
-.placeholder-class{
+.placeholder-class {
 	font-size: 26rpx;
 	color: #888F97;
 }
-.container{
+.container {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -24,11 +80,11 @@
 	        align-items: center;
 	height: 120rpx;
 }
-.container text{
+.container>text {
 	font-size: 30rpx;
 	margin-left: 26rpx;
 }
-.container input{
+.container input {
 	width: 200rpx;
 }
 

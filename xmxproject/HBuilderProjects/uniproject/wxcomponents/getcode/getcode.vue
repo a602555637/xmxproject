@@ -1,74 +1,99 @@
 <template>
-		<view class="container">
+	<view>
+		<view v-if="isDefault" class="container">
 			<text>{{title}}</text>
-			<input class="input-class" type="number" value="" @input="onCode"
-			placeholder-class="placeholder-class" :placeholder="placeholder" />
-			<view class="container-code" @click="click" :id="id" >{{text}} {{s}}</view>
+			<input class="input-class" type="number" @input="onCode" placeholder-class="placeholder-class" :placeholder="placeholder" />
+			<view v-if="isShowTime" class="container-code1" :id="id">{{text}} {{s}}</view>
+			<view v-else class="container-code" @click="click" :id="id">{{text}}</view>
 		</view>
+		<view v-else class="scontainer">
+			<text class="title-sin">{{titleSin}}</text>
+			<view class="scontainer-item">
+				<input class="input-class fixed" type="number" @input="onCode" placeholder-class="placeholder-class" :placeholder="placeholder" />
+				<view v-if="isShowTime" class="container-code1 fixed1" :id="id">{{text}} {{s}}</view>
+				<view v-else class="container-code fixed1" @click="click" :id="id">{{text}}</view>
+			</view>
+		</view>
+	</view>
 </template>
 
 <script>
 	export default {
-		name:'getcode',
+		name: 'getcode',
 		props:{
-			timer:String,
-			title:String
+			orderNum: String,
+			isDefault:{
+				type: Boolean,
+				default:true
+			}
 		},
 		data() {
 			return {
-				codeText:'',
-				placeholder:'请输入验证码',
+				isShowTime: false,
+				disable: false,
+				title: '验证码：',
+				titleSin: '验证码',
+				timer: '60',
+				codeText: '',
+				placeholder: '请输入验证码',
 				text: '获取验证码',
-				s:'',
-				id:1,
-				lifeTime:0,
-				setTime:null
+				s: '',
+				id: 1,
+				setTime: null
 			}
 		},
 		created(e) {
-			var reg = /^([0-9]{4})-([0-9]{2})-([0-9]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2})$/
-			var res = this.timer
-			if(res == null){
-				console.log('时间格式错误1')
-				return false
-			} else{
-				var s = parseInt(res)
-				if(s < 0 || s > 60){
-					console.log('时间格式错误2')
-					return false
-				}
-				this.lifeTime = 60
-				this.countDown(this)
-				this.setInterValFunc(this)
-			}
+			this.countDown(this)
+			this.setInterValFunc(this)
 		},
 		beforeDestroy() {
 			clearInterval(this.setTime)
 		},
-		methods:{
-			setInterValFunc(obj){
-				this.setTime = setInterval(()=>{
+		methods: {
+			setInterValFunc(obj) {
+				this.setTime = setInterval(() => {
 					obj.countDown(obj)
-				},1000)
+				}, 1000)
 			},
-			click(){
+			click() {
+				this.requsetUrl()
+				this.isShowTime = true
 				this.text = '重新获取'
 				this.s = 60
 			},
-			countDown(self){
-				if(self.text ==  '重新获取'){
-					if(self.s > 0){
-						self.s -=1
-					} else if(self.s == 0){
-						self.s = 60
+			countDown(self) {
+				if (self.text == '重新获取') {
+					if (self.s > 0) {
+						self.s -= 1
+					} else if (self.s == 0) {
+						this.isShowTime = false
+						self.s = 0
 						self.text = '获取验证码'
 					}
 				}
 			},
 			onCode(e){
-				this.codeText = e.detail.value
-				this.$emit('codeText',{
-					codeText:this.codeText
+				let scode = e.detail.value
+				this.$emit('scode', {scode})
+			},
+			requsetUrl(){
+				let orderNum = this.orderNum.toString()
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/shopInfo/getNumber',
+					method: 'POST',
+					header:{
+						"content-Type": "text/plain"
+					},
+					data: {
+						phone: orderNum
+					},
+					success: res => {
+						let phoneCode = res.data.data
+						this.$emit('phoneCode', {phoneCode})
+					},
+					fail:err=>{
+						console.log(err)
+					}
 				})
 			}
 		}
@@ -76,31 +101,70 @@
 </script>
 
 <style>
-	.container-code{
+	.fixed1{
+		margin-right: 34upx;
+	}
+	
+	.fixed{
+		padding-left: 20upx;
+	}
+	
+	.title-sin{
+		font-size: 30upx;
+		margin-left: 46upx;
+		margin-bottom: 20upx;
+	}
+	
+	.scontainer-item{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 698upx;
+		height: 100upx;
+		border: 1px solid #EEEEEE;
+		margin-left: 26upx;
+	}
+	
+	.scontainer{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-top: 20upx;
+	}
+	
+	.container-code1{
+		display: flex;
+		position: absolute;
+		right: 26upx;
+		font-size: 30upx;
+		color: #BCBCBC;
+	}
+	
+	.container-code {
 		display: flex;
 		position: absolute;
 		right: 26upx;
 		font-size: 30upx;
 		color: #09BA51;
 	}
-	
-	.placeholder-class{
+
+	.placeholder-class {
 		font-size: 26upx;
 		color: #888F97;
 	}
-	
-	.container{
+
+	.container {
 		display: flex;
 		align-items: center;
 		height: 120upx;
 	}
-	
-	.container text{
+
+	.container>text {
 		font-size: 30upx;
 		margin-left: 26upx;
 	}
-	
-	.container input{
+
+	.container input {
 		width: 200upx;
 	}
 </style>

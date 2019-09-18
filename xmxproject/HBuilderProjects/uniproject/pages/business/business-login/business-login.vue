@@ -28,26 +28,42 @@
 				this.scode = e.inputValue
 			},
 			onNext() {
-				if (!this.phonenum || this.phonenum.length < 11 || this.phonenum.length > 12) {
-					uni.showToast({
-						title: '请输入正确的手机号码',
-						icon: 'none'
-					})
-				} else if (!this.scode || this.scode < 6 || this.scode > 7) {
-					uni.showToast({
-						title: '请输入正确的密码',
-						icon: 'none'
-					})
-				} else {
-					uni.showToast({
-						title: '登陆成功'
-					})
-					setTimeout(() => {
-						uni.navigateTo({
-							url: '../index/index'
-						})
-					}, 1000)
-				}
+				this.bindValidate()
+			},
+			bindValidate(){
+				let phonenum = this.phonenum.toString()
+				let scode = this.scode.toString()
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/shopInfo/login ',
+					method: 'POST',
+					header:{
+						"content-Type": "application/x-www-form-urlencoded"
+					},
+					data: {
+						phone: phonenum,
+						password: scode
+					},
+					success: res => {
+						if(res.data.data === '1'){
+							uni.showToast({
+								title: '登录成功'
+							})
+							setTimeout(()=>{
+								uni.navigateTo({
+									url: '../index/index'
+								})
+							},1000)
+						} else{
+							uni.showToast({
+								title: '手机号码或密码错误',
+								icon:'none'
+							})
+						}
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
 			}
 		},
 		components: {

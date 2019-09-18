@@ -30,7 +30,11 @@
 		<!-- code input -->
 		<xlist-input @inputValue="bindInputName"></xlist-input>
 		<xlist-input @inputValue="bindInputNumber" title="手机号：" placeholder="请输入您的手机号" typeStyle="number"></xlist-input>
-		<getcode timer="timer" :title="title"></getcode>
+		
+		
+		<getcode @phoneCode="bindPhoneCode" @scode="bindScode" :orderNum="orderNum"></getcode>
+		
+		
 		<!-- 地区 -->
 		<xlocation @district="bindDistrict"></xlocation>
 		<view class="order-setting">
@@ -82,10 +86,9 @@
 	const formatDate = require('../../util/util.js')
 	export default {
 		data() {
-			var dateObj = new Date()
-			var currentTime = dateObj.getTime()
-			var timer = formatDate.formatDateTime((currentTime + 1000 * 2000))
 			return {
+				scode:'',
+				phoneCode:'',
 				detail:'',
 				openId:'',
 				date:'',
@@ -97,8 +100,6 @@
 				colorName:'',
 				repairList: [],
 				orderInfo:'orderInfo',
-				timer:timer,
-				title:'验证码：',
 				province:'',
 				city:'',
 				district:'',
@@ -130,6 +131,12 @@
 
 		},
 		methods: {
+			bindScode(e){
+				this.scode = e.scode
+			},
+			bindPhoneCode(e){
+				this.phoneCode = e.phoneCode
+			},
 			bindInputName(e){
 				this.orderName = e
 			},
@@ -148,7 +155,7 @@
 				this.isConfirm = !this.isConfirm
 			},
 			onNext(){
-				if ( this.isConfirm){
+				if (this.isConfirm){
 					uni.navigateTo({
 						url: '../bevip/bevip'
 					})
@@ -156,28 +163,32 @@
 				return
 			},
 			onOrder(){
-				// if(!this.orderName){
-				// 	uni.showToast({
-				// 		title: '请输入姓名',
-				// 		icon: 'none'
-				// 	})
-				// } else if(!this.orderNum){
-				// 	uni.showToast({
-				// 		title: '请输入手机号码',
-				// 		icon: 'none'
-				// 	})
-				// } else if(!this.district){
-				// 	uni.showToast({
-				// 		title: '请输入详细地址',
-				// 		icon: 'none'
-				// 	})
-				// }else 
-				if(!this.isConfirm){
+				if(!this.orderName){
+					uni.showToast({
+						title: '请输入姓名',
+						icon: 'none'
+					})
+				} else if(!this.orderNum){
+					uni.showToast({
+						title: '请输入手机号码',
+						icon: 'none'
+					})
+				} else if(!this.district){
+					uni.showToast({
+						title: '请输入详细地址',
+						icon: 'none'
+					})
+				}else if(!this.isConfirm){
 					uni.showToast({
 						title: '请同意协议',
 						icon: 'none'
 					})
-				} else{
+				} else if(this.phoneCode !== this.scode){
+					uni.showToast({
+						title: '验证码不正确',
+						icon:'none'
+					})
+				} else {
 					uni.request({
 						url: 'https://www.finetwm.com/xmRepair/order/saveUserOrder',
 						method: 'POST',
@@ -185,7 +196,7 @@
 						    'content-type': 'application/json'
 						  },
 						data:{
-							// detail: this.detail,
+							detail: this.detail,
 							distance : this.kiloValue,
 							price: this.totalPrice,
 							userId: this.openId,

@@ -1,4 +1,25 @@
 
+.button {
+		width: 698rpx;
+		height: 100rpx;
+		background: #09BA51;
+		font-size: 40rpx;
+		color: #fff;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		border-radius: 12rpx;
+		margin-left: 26rpx;
+}
 .swiper-selected{
 	width: 100%;
 	height: 600rpx;
@@ -68,9 +89,9 @@
 	display: block;
 	color: #09BA51;
 	font-size: 24rpx;
-	margin-top: 32rpx;
+	margin-top: 20rpx;
 	margin-left: 280rpx;
-	margin-bottom: 40rpx;
+	margin-bottom: 20rpx;
 }
 .container-info {
 	display: -webkit-box;
@@ -205,25 +226,6 @@
 }
 .select-class {
 	color: #09BA51;
-}
-.button {
-	width: 750rpx;
-	height: 100rpx;
-	background: #09BA51;
-	font-size: 40rpx;
-	color: #fff;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
 }
 .isbutton {
 	width: 750rpx;

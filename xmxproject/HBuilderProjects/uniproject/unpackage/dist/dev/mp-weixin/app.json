@@ -40,7 +40,8 @@
     "pages/my/online-kf",
     "pages/my/sign",
     "pages/my/contract",
-    "pages/index/map"
+    "pages/index/map",
+    "pages/my/rule"
   ],
   "subPackages": [],
   "window": {

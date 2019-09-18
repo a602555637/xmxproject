@@ -210,6 +210,12 @@
 			"style": {
 				"navigationBarTitleText": "附近商家"
 			}
+		},
+		{
+			"path": "pages/my/rule",
+			"style": {
+				"navigationBarTitleText": "服务运营商规范"
+			}
 		}
 	],
 	"globalStyle": {

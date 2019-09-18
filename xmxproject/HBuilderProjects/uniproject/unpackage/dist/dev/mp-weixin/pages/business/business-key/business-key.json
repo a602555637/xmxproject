@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "修改密码",
   "usingComponents": {
-    "xinput": "/wxcomponents/common/xinput"
+    "xinput": "/wxcomponents/common/xinput",
+    "getcode": "/wxcomponents/getcode/getcode"
   }
 }
