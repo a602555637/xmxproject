@@ -22,11 +22,20 @@
 
 <script>
 	export default {
+		onLoad() {
+			uni.getStorage({
+				key:'openId',
+				success:res=>{
+					this.openId = res.data
+				}
+			})
+		},
 		data() {
 			return {
 				imgUrl1: '',
 				imgUrl2: '',
-				imgUrl3: ''
+				imgUrl3: '',
+				openId:''
 			}
 		},
 		methods:{
@@ -62,7 +71,9 @@
 						uni.request({
 							url:'https://120.24.180.246/xmRepair/shopInfo/upload',
 							data:{
-								address:this.imgUrl1
+								file:this.imgUrl1,
+								openid: this.openId,
+								type: 1
 							},
 							success: res=>{
 								console.log('success')
@@ -80,7 +91,9 @@
 						uni.request({
 							url:'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
 							data:{
-								address:this.imgUrl2
+								file:this.imgUrl2,
+								openid: this.openId,
+								type: 2
 							},
 							success: res=>{
 								console.log('success')
@@ -98,7 +111,9 @@
 						uni.request({
 							url:'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
 							data:{
-								address:this.imgUrl3
+								file:this.imgUrl3,
+								openid: this.openId,
+								type: 3
 							},
 							success: res=>{
 								console.log('success')

@@ -1,1 +1,0 @@
-<view class="search"><image src="../../static/business/search@2x.png"></image><text>{{title}}</text></view>

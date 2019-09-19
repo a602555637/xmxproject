@@ -1,8 +1,14 @@
 <template>
 	<view>
-		<button v-if="isNext" class="button-class" @click="getOpenId()">下一步</button>
-		<view v-else class="vip-container">
+		<button v-if="isNext == '0'" class="button-class" @click="getOpenId()">下一步</button>
+		<view v-else-if="isNext == '1'" class="vip-container">
 			<button class="vip-class" @click="getOpenId()">成为会员</button>
+		</view>
+		<view v-else class="my-container">
+			<button class="my-button" style="background-color: #FFFFFF;border-radius: 0;" @click="getOpenId()">
+				<image src="../../static/wxcomponentimg/my@2x.png"></image>
+				<text>个人中心</text>
+			</button>
 		</view>
 	</view>
 </template>
@@ -12,8 +18,8 @@
 		name: 'GetOpenId',
 		props:{
 			isNext:{
-				type:Boolean,
-				default: true
+				type: String,
+				default: 0
 			}
 		},
 		data() {
@@ -48,7 +54,24 @@
 									console.log('openid: ' + res.data.openid);
 									uni.setStorage({
 										key: 'openId',
-										data: obj.openid
+										data: obj.openid,
+										success:res=>{
+											if(self.isNext == '1'){
+												uni.navigateTo({
+													url: '../../pages/bevip/bevip'
+												})
+											} else if( self.isNext == '2'){
+												uni.showLoading({
+													title: '正在获取数据...',
+												})
+												uni.navigateTo({
+													url:'../../pages/my/my',
+													success:res=>{
+														uni.hideLoading()
+													}
+												})
+											}
+										}
 									})
 									obj.expires_in = Date.now() + res.data.expires_in;
 								}
@@ -64,6 +87,29 @@
 </script>
 
 <style>
+	.my-button{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+	}
+	
+	
+	.my-button image {
+		width: 50upx;
+		height: 50upx;
+	}
+	
+	.my-button text {
+		font-size: 24upx;
+		color: #000;
+		position: relative;
+		bottom: 14upx;
+	}
+	
+	.my-button::after {
+		border: none;
+	}
+	
 	.vip-container{
 		position: relative;
 	}

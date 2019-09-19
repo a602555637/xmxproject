@@ -1,1 +1,0 @@
-<view class="container"><image src="../../static/my/verify@2x.png"></image><text class="container-title">审核中，请耐心等待</text><view data-event-opts="{{[['tap',[['onBack',['$event']]]]]}}" class="submit-button" bindtap="__e">我知道了</view></view>

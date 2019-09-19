@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "商家入驻",
-  "usingComponents": {
-    "getcode": "/wxcomponents/getcode/getcode",
-    "xlocation": "/wxcomponents/xlocation/xlocation",
-    "xlist-input": "/wxcomponents/xlist/xlist-input",
-    "xlist-picker": "/wxcomponents/xlist/xlist-picker"
-  }
-}

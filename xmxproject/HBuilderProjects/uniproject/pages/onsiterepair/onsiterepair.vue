@@ -60,13 +60,22 @@
 			</text>
 		</view>
 		<view class="xbutton">
-			<view class="xbutton-left">
+			<view v-if=" isVip === '1' || '2'" class="vip-class-left">
+				<text v-if="isVip === '2'">会员享5折</text>
+				<text v-else>普通会员8折</text>
+				<view class="vip-class-item">
+					<text class="present-price">{{presentPrice}}元</text>
+					<text class="cost-price">{{costPrice}}元</text>
+				</view>
+			</view>
+			<view v-else @click="onNext" class="xbutton-left">
 				会员免费修
 			</view>
-			<view @click="onOrder" class="xbutton-right">
+			<view v-if="isVip === '0'" @click="onOrder" class="xbutton-right">
 				<text class="xbutton-right-text">用户特惠修</text>
 				<text class="xbutton-right-price">￥400</text>
 			</view>
+			<view v-else class="vip-class-right">确认支付</view>
 		</view>
 	</view>
 </template>
@@ -85,8 +94,19 @@
 	
 	const formatDate = require('../../util/util.js')
 	export default {
+		onShow() {
+			uni.getStorage({
+				key:'openId',
+				success:res=>{
+					let uid = res.data
+					// this.requestVip(uid)
+				}
+			})
+		},
 		data() {
 			return {
+				isVip:'2',
+				superiorId:'',
 				scode:'',
 				phoneCode:'',
 				detail:'',
@@ -111,11 +131,13 @@
 				dateItem:[['日期','01','02','03','04','05','06','07','09',10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
 							['小时','08','09',10,11,12,13,14,15,16,17,18,19,20],
 							['分钟',10,20,30,40,50]],
-				kiloValue:'1',
+				kiloValue: 1,
 				isConfirm:false,
-				kiloPrice: '5',
+				kiloPrice: 5,
 				isAgreement: true,
-				totalPrice: 0
+				totalPrice: 0,
+				costPrice:0,
+				presentPrice:0
 			}
 		},
 		components: {
@@ -131,6 +153,22 @@
 
 		},
 		methods: {
+			requestVip(e){
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/userInfo/isvip',
+					method: 'GET',
+					data: {
+						openId: e,
+						superiorId: this.superiorId
+					},
+					success: res => {
+						this.isVip = res.data.data
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
+			},
 			bindScode(e){
 				this.scode = e.scode
 			},
@@ -248,7 +286,18 @@
 					key:'totalPrice',
 					success:res=>{
 						this.totalPrice = res.data 
+						let s = res.data
 						this.totalPrice = this.totalPrice + this.kiloPrice
+						this.costPrice = res.data + 5
+						this.costPrice = this.costPrice + this.kiloPrice
+						if(this.isVip === '1'){
+							this.presentPrice = s * 0.8 + this.kiloPrice
+						} else if(this.isVip === '2'){
+							this.presentPrice = s * 0.5 + this.kiloPrice
+						} else {
+							return
+						}
+						
 					}
 				})
 				
@@ -324,6 +373,7 @@
 					success: res=>{
 						console.log(res.data)
 						this.totalPrice = res.data + 5
+						this.costPrice = res.data
 					}
 				})
 			},
@@ -335,6 +385,20 @@
 			}
 		},
 		onLoad() {
+			uni.getStorage({
+				key:'totalPrice',
+				success:res=>{
+					this.totalPrice = res.data
+					this.kiloPrice = 5
+					if(this.isVip === '1'){
+						this.presentPrice = res.data * 0.8 + this.kiloPrice
+					} else if (this.isVip === '2'){
+						this.presentPrice = res.data * 0.5 + this.kiloPrice
+					} else{
+						return
+					}
+				}
+			})
 			uni.getStorage({
 				key:'brand',
 				success:res=>{
@@ -392,6 +456,47 @@
 </script>
 
 <style>
+	.cost-price{
+		text-decoration: line-through;
+		font-size: 24upx;
+		color: #888F97;
+		margin-left: 10upx;
+	}
+	
+	.present-price{
+		color: #09BA51;
+		font-weight: bold;
+	}
+	
+	.vip-class-item{
+		display: flex;
+		flex-direction: column;
+		margin-left: 16upx;
+	}
+	
+	.vip-class-left{
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: center;
+		padding-top: 12upx;
+	}
+	
+	.vip-class-right{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: #09BA51;
+		color: #FFFFFF;
+		font-weight: bold;
+	}
+	
+	.vip-class-left,
+	.vip-class-right{
+		width: 374upx;
+		display: flex;
+		font-size: 32upx;
+	}
+	
 	.uni-number-box{
 		width: 180upx;
 		height: 44upx;
@@ -400,8 +505,8 @@
 	
 	
 	.xbutton-right-price{
-			font-size: 24upx;
-			color: #09BA51;
+		font-size: 24upx;
+		color: #09BA51;
 	}
 		
 	.xbutton-left,

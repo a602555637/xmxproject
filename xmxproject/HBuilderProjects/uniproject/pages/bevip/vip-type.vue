@@ -5,7 +5,7 @@
 			<text class="item-title">{{item.title}}</text>
 			<text class="item-price">{{price + ' '}}元</text>
 		</view>
-		<view @click="bindSubmit" class="button">确认</view>
+		<view @click="bindSubmit" class="button">立即支付</view>
 	</view>
 </template>
 
@@ -42,6 +42,8 @@
 					delta: 1
 				})
 				// 跳转支付
+				//调取改变会员状态接口
+				//返回到会员页面 onshow刷新
 				// uni.requestPayment({
 				// 	provider: '',
 				// 	orderInfo: '',

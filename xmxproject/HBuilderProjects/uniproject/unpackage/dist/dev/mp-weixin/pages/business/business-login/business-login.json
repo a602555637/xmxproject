@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "商家入口",
-  "usingComponents": {
-    "xinput": "/wxcomponents/common/xinput",
-    "xlist-input": "/wxcomponents/xlist/xlist-input"
-  }
-}

@@ -38,91 +38,105 @@
 		<text>日期：&nbsp{{date}}</text>
 		<text @click="onRule" class="rule">服务商运营规范>></text>
 		<view @click="onSubmit" class="container-submit">确认提交</view>
-		
+
 	</view>
 </template>
 
 <script>
 	export default {
-		data(){
-			return{
-				partyAddress:'',
-				managerPhone:'',
-				manager:'',
-				partyTitle:'',
-				signUrl:'',
-				date:'2019年9月5日',
-				titleContent:[{
-					title:'甲方：',
-					content:'成都凡果科技有限公司'
-				},{
-					title:'法人：',
-					content:'龚果'
-				},{
-					title:'地址：',
-					content:'成都市郫都区金融中心B栋11楼10号'
+		data() {
+			return {
+				partyAddress: '',
+				managerPhone: '',
+				manager: '',
+				partyTitle: '',
+				signUrl: '',
+				date: '2019年9月5日',
+				titleContent: [{
+					title: '甲方：',
+					content: '成都凡果科技有限公司'
+				}, {
+					title: '法人：',
+					content: '龚果'
+				}, {
+					title: '地址：',
+					content: '成都市郫都区金融中心B栋11楼10号'
 				}]
 			}
 		},
 		onLoad() {
 			this.getStorage()
 		},
-		methods:{
-			onRule(){
+		methods: {
+			onRule() {
 				uni.navigateTo({
 					url: 'rule'
 				})
 			},
-			onSign(){
+			onSign() {
 				uni.navigateTo({
-					url:'sign'
+					url: 'sign'
 				})
 			},
-			onSubmit(){
+			requestUrl() {
+				uni.request({
+					url: 'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
+					data: {
+						file: this.signUrl,
+						openid: this.openId,
+						type: 4
+					},
+					success: res => {
+						console.log('success')
+						uni.showToast({
+							title: '提交成功',
+						})
+						setTimeout(() => {
+							uni.navigateTo({
+								url: 'setting-key'
+							})
+						}, 1000)
+					}
+				})
+			},
+			onSubmit() {
 				if (this.signUrl == '') {
 					uni.showToast({
-						title:'请签名',
-						icon:'none'
+						title: '请签名',
+						icon: 'none'
 					})
-				} else{
-					uni.showToast({
-						title: '提交成功',
-					})
-					setTimeout(()=>{
-						uni.navigateTo({
-							url:'setting-key'
-						})
-					}, 1000)
+				} else {
+					this.requestUrl()
 				}
 			},
-			getStorage(){
+			getStorage() {
 				uni.getStorage({
-					key:'signUrl',
-					success:res=>{
+					key: 'signUrl',
+					success: res => {
 						this.signUrl = res.data
 					}
 				})
 				uni.getStorage({
-					key:'partyName',
-					success:res=>{
+					key: 'partyName',
+					success: res => {
 						this.partyTitle = res.data
 					}
 				})
 				uni.getStorage({
-					key:'partyManager',
-					success:res=>{
+					key: 'partyManager',
+					success: res => {
 						this.manager = res.data
 					}
 				})
 				uni.getStorage({
-					key:'partyPhone',
-					success:res=>{
+					key: 'partyPhone',
+					success: res => {
 						this.managerPhone = res.data
 					}
 				})
 				uni.getStorage({
-					key:'partyAddress',
-					success:res=>{
+					key: 'partyAddress',
+					success: res => {
 						this.partyAddress = res.data
 					}
 				})
@@ -132,17 +146,17 @@
 </script>
 
 <style>
-	.img-content{
+	.img-content {
 		width: 698upx;
 	}
-	
-	.rule{
+
+	.rule {
 		color: #09BA51;
 		margin-top: 60upx;
 		margin-bottom: 60upx;
 	}
-	
-	.container-submit{
+
+	.container-submit {
 		width: 698upx;
 		height: 80upx;
 		border-radius: 12upx;
@@ -155,77 +169,77 @@
 		text-align: center;
 		margin-bottom: 56upx;
 	}
-	
-	.sign{
+
+	.sign {
 		color: #09BA51;
 		margin-left: 30upx;
 	}
-	
-	.party-b-title{
+
+	.party-b-title {
 		margin-bottom: 30upx;
 	}
-	
-	.party-b{
+
+	.party-b {
 		display: flex;
 		flex-direction: row;
 		margin-top: 80upx;
-		
+
 	}
-	
-	.party-a{
+
+	.party-a {
 		margin-top: 76upx;
 		margin-bottom: 30upx;
 	}
-	
-	page{
+
+	page {
 		font-size: 26upx;
 	}
-	
-	.fixed{
+
+	.fixed {
 		font-weight: bold;
 	}
-	
-	.container{
+
+	.container {
 		display: flex;
 		flex-direction: column;
 		margin-top: 30upx;
 		margin-left: 26upx;
 		margin-right: 26upx;
 	}
-	
-	.container-title{
+
+	.container-title {
 		font-size: 32upx;
 		font-weight: bold;
 		text-align: center;
 		margin-bottom: 10upx;
 	}
-	
-	.container-header{
+
+	.container-header {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		margin-top: 20upx;
 	}
-	
-	.container-header-content{
+
+	.container-header-content {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		margin-left: 10upx;
 	}
-	
-	.container-desc{
+
+	.container-desc {
 		margin-top: 46upx;
 	}
-	
-	.container-desc-item{
+
+	.container-desc-item {
 		margin-bottom: 20upx;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 	}
-	
-	.container-desc-content{
+
+	.container-desc-content {
 		width: 610upx;
 		height: 90upx;
 		border: 1px solid #F3F3F3;
@@ -233,8 +247,8 @@
 		align-items: center;
 		padding-left: 30upx;
 	}
-	
-	.container-desc-title{
+
+	.container-desc-title {
 		width: 90upx;
 	}
 </style>

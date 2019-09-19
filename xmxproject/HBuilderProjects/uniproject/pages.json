@@ -216,6 +216,12 @@
 			"style": {
 				"navigationBarTitleText": "服务运营商规范"
 			}
+		},
+		{
+			"path": "pages/business/business-code/business-code",
+			"style": {
+				"navigationBarTitleText": "我的二维码"
+			}
 		}
 	],
 	"globalStyle": {

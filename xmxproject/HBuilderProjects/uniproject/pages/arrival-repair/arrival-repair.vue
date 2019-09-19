@@ -52,13 +52,22 @@
 			</text>
 		</view>
 		<view class="xbutton">
-			<view class="xbutton-left">
+			<view v-if=" isVip === '1' || '2'" class="vip-class-left">
+				<text v-if="isVip === '2'">会员享5折</text>
+				<text v-else>普通会员8折</text>
+				<view class="vip-class-item">
+					<text class="present-price">{{presentPrice}}元</text>
+					<text class="cost-price">{{totalPrice}}元</text>
+				</view>
+			</view>
+			<view v-else @click="onNext" class="xbutton-left">
 				会员免费修
 			</view>
-			<view @click="onOrder" class="xbutton-right">
+			<view v-if="isVip === '0'" @click="onOrder" class="xbutton-right">
 				<text class="xbutton-right-text">用户特惠修</text>
 				<text class="xbutton-rightprice">￥400</text>
 			</view>
+			<view v-else class="vip-class-right">确认支付</view>
 		</view>
 	</view>
 </template>
@@ -73,8 +82,20 @@
 	import getcode from '../../wxcomponents/getcode/getcode.vue'
 	
 	export default {
+		onShow() {
+			uni.getStorage({
+				key:'openId',
+				success:res=>{
+					let uid = res.data
+					// this.requestVip(uid)
+				}
+			})
+		},
 		data() {
 			return {
+				presentPrice:'',
+				isVip:'2',
+				superiorId:'',
 				scode:'',
 				phoneCode:'',
 				isChange:true,
@@ -295,15 +316,17 @@
 				}
 			})
 			uni.getStorage({
-				key:'openId',
-				success:res=>{
-					this.openId = res.data
-				}
-			})
-			uni.getStorage({
 				key:'totalPrice',
 				success:res=>{
 					this.totalPrice = res.data 
+					let s = res.data
+					if(this.isVip === '1'){
+						this.presentPrice = s * 0.8
+					} else if(this.isVip === '2'){
+						this.presentPrice = s * 0.5
+					} else{
+						return
+					}
 				}
 			})
 		},
@@ -320,6 +343,47 @@
 </script>
 
 <style>
+	.cost-price{
+		text-decoration: line-through;
+		font-size: 24upx;
+		color: #888F97;
+		margin-left: 10upx;
+	}
+	
+	.present-price{
+		color: #09BA51;
+		font-weight: bold;
+	}
+	
+	.vip-class-item{
+		display: flex;
+		flex-direction: column;
+		margin-left: 16upx;
+	}
+	
+	.vip-class-left{
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: center;
+		padding-top: 12upx;
+	}
+	
+	.vip-class-right{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: #09BA51;
+		color: #FFFFFF;
+		font-weight: bold;
+	}
+	
+	.vip-class-left,
+	.vip-class-right{
+		width: 374upx;
+		display: flex;
+		font-size: 32upx;
+	}
+	
 	.onsittime{
 		display: flex;
 		align-items: center;
@@ -375,11 +439,11 @@
 	
 	.xbutton-left,
 	.xbutton-right{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		font-size: 32upx;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-size: 32upx;
 	}
 	
 	.xbutton-right{

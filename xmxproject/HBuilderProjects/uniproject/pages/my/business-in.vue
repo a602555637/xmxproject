@@ -6,11 +6,11 @@
 			<xlist-input @inputValue="bindInputPhone" title="手机号：" placeholder="请输入负责人手机号" typeStyle="number"></xlist-input>
 			
 			<!-- getcode -->
-			<!-- <getcode @codeText="bindCode" timer="timer" :title="title"></getcode> -->
+			<getcode @scode="bindScode" @phoneCode="bindPhoneCode"></getcode>
 		</view>
 		<view class="line-thick"></view>
 		<!-- 地区  街道  detail_address-->
-		<xlocation @district="onArea"></xlocation>
+		<xlocation @detailAddress="onDetail" @district="onArea"></xlocation>
 		
 		<view class="line-thick"></view>
 		
@@ -38,10 +38,9 @@
 			this.selectedIndexType()
 		},
 		data() {
-			var dateObj = new Date()
-			var currentTime = dateObj.getTime()
-			var timer = formatDate.formatDateTime((currentTime + 1000 * 2000))
 			return {
+				scode:'',
+				phoneCode:'',
 				selectedItemTypeIndex:'',
 				selectedItemType:'',
 				selectedItem:'',
@@ -49,7 +48,6 @@
 				city:'',
 				district:'',
 				township:'',
-				timer: timer,
 				title: '验证码：',
 				name: '',
 				manager: '',
@@ -68,6 +66,12 @@
 			}
 		},
 		methods: {
+			bindScode(e){
+				this.scode = e.scode
+			},
+			bindPhoneCode(e){
+				this.phoneCode = e.phoneCode
+			},
 			bindInputName(e){
 				this.name = e
 				uni.setStorage({
@@ -90,6 +94,8 @@
 				})
 			},
 			onSave() {
+				let scode = this.scode.toString()
+				let phoneCode = this.phoneCode.toString()
 				if(this.name == ''){
 					uni.showToast({
 						title: '请填写商家名称',
@@ -110,7 +116,17 @@
 						title: '请填写详细地址',
 						icon:'none'
 					})
-				}else{
+				}else if(this.scode == ''){
+					uni.showToast({
+						title: '请填写验证码',
+						icon:'none'
+					});
+				}else if( scode !== phoneCode){
+					uni.showToast({
+						title: '请输入正确的验证码',
+						icon:'none'
+					})
+				}else {
 					this.onPost()
 					uni.showToast({
 						title: '保存成功'
@@ -132,7 +148,9 @@
 			},
 			onArea(e) {
 				this.area = e.district
-				this.street = e.township,
+				this.street = e.township
+			},
+			onDetail(e){
 				this.detail_address = e.detailAddress
 				uni.setStorage({
 					key:'partyAddress',
@@ -174,10 +192,7 @@
 </script>
 
 <style>
-	.container-input{
-		
-	}
-
+	
 	.business-item {
 		display: flex;
 		position: absolute;

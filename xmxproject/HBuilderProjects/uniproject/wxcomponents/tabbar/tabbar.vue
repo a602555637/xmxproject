@@ -5,25 +5,22 @@
 			<text>一键下单</text>
 		</view>
 		<view class="container-right">
-			<button class="button-class" style="background-color: #FFFFFF;border-radius: 0;" @click="onGetUserInfo" type="primary"
-			 open-type="getUserInfo">
-				<image src="../../static/wxcomponentimg/my@2x.png"></image>
-				<text>个人中心</text>
-			</button>
+			<GetOpenId :isNext="isNext"></GetOpenId>
 		</view>
 	</view>
 </template>
 
 <script>
-	import wxAppOpenid from '../../components/ccg-getOpenID/ccg-wxAppOpenid.vue'
+	import GetOpenId from '../../components/ccg-getOpenID/ccg-wxAppOpenid.vue'
 	export default {
 		data() {
 			return {
-				userInfo: {}
+				userInfo: {},
+				isNext: '2'
 			}
 		},
 		components: {
-			wxAppOpenid
+			GetOpenId
 		},
 		methods: {
 			onOrder() {

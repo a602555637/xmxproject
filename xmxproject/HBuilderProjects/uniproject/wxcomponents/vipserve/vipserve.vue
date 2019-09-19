@@ -2,9 +2,9 @@
 	<view class="container">
 		<view class="container-title">
 			<text class="container-title-head">会员特权</text>
-			<view @click="onVip">
+			
 				<GetOpenId :isNext="isNext"></GetOpenId>
-			</view>
+				
 			<!-- <view @click="onVip" class="vip-class">成为会员</view> -->
 			<view @click="onPrize" class="container-subtitle">
 				<image src="../../static/cj@2x.png"></image>
@@ -39,7 +39,7 @@
 	export default {
 		data() {
 			return {
-				isNext:false,
+				isNext:1,
 				circular: true,
 				previous: 54,
 				next: 54

@@ -9,11 +9,11 @@
 				<image class="avatar-bg" mode="aspectFill" :src="avatarUrl"></image>
 			</view>
 		</view>
-					<!-- list -->
+		<!-- list -->
 		<view class="container-list">
 			<view @click="onDetail(index)" class="list-item" v-for="(item, index) in listTitle" :key="index">
 					<text>{{item.title}}</text>
-					<!-- <image src="" mode=""></image> -->
+		<!-- <image src="" mode=""></image> -->
 			</view>
 		</view>
 	</view>
@@ -45,6 +45,8 @@
 						title:'我的收益'
 				},{
 						title:'在线客服'
+				},{
+						title:'推广二维码'
 				}]
 			}
 		},
@@ -62,6 +64,10 @@
 				} else if(index == 2){
 					uni.navigateTo({
 						url: '../business-income/business-income'
+					})
+				} else if(index == 4){
+					uni.navigateTo({
+						url:'../business-code/business-code'
 					})
 				}
 			},

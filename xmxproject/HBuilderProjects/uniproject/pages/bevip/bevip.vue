@@ -60,9 +60,10 @@
 		
 		<text class="container-deal">小美修《用户协议》</text>
 
-		<view v-if="isVip" class="isbutton">
+		<view v-if="isVip === '1'" class="isbutton">
 			<view>您已是会员</view>
-			<view class="time-number">享免费修特权等待期倒计时<text class="aldate">{{aldate}}</text>天</view>
+			<view v-if="waitTime" class="time-number">享免费修特权等待期倒计时<text class="aldate">{{waitTime}}</text>天</view>
+		
 		</view>
 		<view v-else @click="onPay" class="button">立即成为会员</view>
 	</view>
@@ -73,8 +74,6 @@
 		onShow() {
 			console.log('onshow')
 			// 调取判断会员接口
-		},
-		onLoad() {
 			uni.getStorage({
 				key:'openId',
 				success:res=>{
@@ -97,8 +96,8 @@
 					imgUrl: '../../static/vip/9.9@2x.png'
 				}],
 				isShow: false,
-				aldate: 32,
-				isVip: false,
+				isVip: '0',
+				waitTime:'',
 				TabCur: 0,
 				tabList: [{
 					title: '享免费更换外屏',
@@ -163,7 +162,9 @@
 						superiorId: this.superiorId
 					},
 					success: res => {
+						this.isVip = res.data.data
 						console.log(res)
+						this.waitTime = res.data.wait
 					},
 					fail: err => {
 						console.log(err)

@@ -85,12 +85,14 @@
 			onProvince(){
 				this.$emit('district',{
 					district:this.district,
-					township:this.township,
-					detailAddress:this.detailAddress
+					township:this.township
 				})
 			},
 			onAddress(e){
 				this.detailAddress = e.detail.value
+				this.$emit('detailAddress',{
+					detailAddress:this.detailAddress
+				})
 			}
 		}
 	}

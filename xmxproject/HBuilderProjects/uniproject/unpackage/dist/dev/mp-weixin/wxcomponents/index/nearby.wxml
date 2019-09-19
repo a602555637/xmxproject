@@ -1,1 +1,0 @@
-<view class="container"><text>您的附近</text><image src="../../static/vipserve/mfwx@2x.png" data-event-opts="{{[['tap',[['bindMap',['$event']]]]]}}" bindtap="__e"></image></view>

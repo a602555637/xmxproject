@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "get-open-id": "/components/ccg-getOpenID/ccg-wxAppOpenid"
-  },
-  "component": true
-}

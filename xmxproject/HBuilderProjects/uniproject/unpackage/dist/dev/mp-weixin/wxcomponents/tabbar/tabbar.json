@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "weixin-app-openid": "/components/ccg-getOpenID/ccg-wxAppOpenid"
-  },
-  "component": true
-}

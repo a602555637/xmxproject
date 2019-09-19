@@ -41,7 +41,8 @@
     "pages/my/sign",
     "pages/my/contract",
     "pages/index/map",
-    "pages/my/rule"
+    "pages/my/rule",
+    "pages/business/business-code/business-code"
   ],
   "subPackages": [],
   "window": {

@@ -303,15 +303,18 @@ shopInfo/login
  String ："1" "0"
 
 
-
 GET
 根据openid 判断是否会员 (非会员/普通会员/终身会员/会员等待期) 
 /userInfo/isvip
-参数
+参数  如果没有superiorId传空值
  "openid":
  "superiorId":
 返回
- String : "0"不是,"1"普通,"2"终身 
+ 
+ {
+  "isvip":"0"不是,"1"普通,"2"终身
+  "wait": 数字 等待天数 （非必须）
+ }
 
 
 
@@ -332,6 +335,7 @@ POST
 }
 返回
  String "0"成功、"1"失败
+
 
 
 
