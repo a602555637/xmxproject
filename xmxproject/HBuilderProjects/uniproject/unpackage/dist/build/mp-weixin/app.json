@@ -39,7 +39,11 @@
     "pages/my/cards",
     "pages/my/online-kf",
     "pages/my/sign",
-    "pages/my/contract"
+    "pages/my/contract",
+    "pages/index/map",
+    "pages/my/rule",
+    "pages/business/business-code/business-code",
+    "pages/index/about-us"
   ],
   "subPackages": [],
   "window": {

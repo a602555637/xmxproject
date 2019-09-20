@@ -22,19 +22,20 @@
 <script>
 	export default {
 		onLoad() {
-			uni.request({
-				url: 'https://www.finetwm.com/xmRepair/shopInfo/getHeadPortrait',
-				method: 'GET',
-				data: {
-					id: 1
-				},
-				success: res => {
-					console.log(res.data)
+			uni.getStorage({
+				key: 'openId',
+				success: res=>{
+					this.openId = res.data
+					this.requestUrl()
+					// 获取shopid 获取avatar&name
+					this.onShopId()
 				}
 			})
+			
 		},
 		data() {
 			return {
+				openId:'',
 				isDefaultAvatar:true,
 				avatarUrl:'../../../static/wxcomponentimg/avatar@2x.png',
 				listTitle: [{
@@ -51,6 +52,34 @@
 			}
 		},
 		methods:{
+			onShopId(){
+				uni.request({
+					url:'https://www.finetwm.com/xmRepair/shopinfo/findIdByOpenid',
+					method: 'GET',
+					header:{
+						"content-Type": "application/x-www-form-urlencoded"
+					},
+					data: {
+						openid: this.openId
+					},
+					success: res=>{
+						console.log(res)
+					}
+				})
+			},
+			requestUrl(){
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/shopInfo/getHeadPortraitAndName',
+					method: 'GET',
+					data: {
+						openid:this.openId
+					},
+					success: res => {
+						this.isDefaultAvatar = false
+						console.log(res.data)
+					}
+				})
+			},
 			onDetail(index){
 				console.log(index)
 				if(index == 0){

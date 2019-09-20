@@ -222,6 +222,12 @@
 			"style": {
 				"navigationBarTitleText": "我的二维码"
 			}
+		},
+		{
+			"path": "pages/index/about-us",
+			"style": {
+				"navigationBarTitleText": "关于我们"
+			}
 		}
 	],
 	"globalStyle": {

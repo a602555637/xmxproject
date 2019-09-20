@@ -5,10 +5,12 @@
 			<text class="name">{{name}}</text>
 			<view class="waittime" v-if="waitTime">等待期还剩45天</view>
 			<view class="content">
-				<image class="phone-vip" v-if="!isVip" src="../../static/my/un-phoneVIP@2x.png"></image>
-				<image class="phone-vip" v-else src="../../static/my/phoneVIP@2x.png"></image>
-				<image v-if="!isVip" src="../../static/my/un-padVIP@2x.png"></image>
-				<image v-else src="../../static/my/padvip@2x.png"></image>
+				<image v-if="isVip==='2'" class="phone-vip" src="../../static/my/phoneVIP@2x.png"></image>
+				<image v-else-if="isVip==='1'" class="phone-vip"src="../../static/my/pthy-sj@2x.png"></image>
+				<image v-else class="phone-vip" src="../../static/my/un-phoneVIP@2x.png"></image>
+				<image v-if="isVip==='2'" src="../../static/my/padVIP@2x.png"></image>
+				<image v-else-if="isVip==='1'" src="../../static/my/pthy-pb@2x.png"></image>
+				<image v-else src="../../static/my/un-padVIP@2x.png"></image>
 			</view>
 		</view>
 		<view v-else class="unlogin">
@@ -42,30 +44,12 @@
 				waitTime:'',
 				avatarUrl: '',
 				name: '',
-				isVip: 0,
+				isVip: '2',
 				superiorId: '',
 				openId: ''
 			}
 		},
 		onShow() {
-			uni.getStorage({
-				key: 'openId',
-				success: res => {
-					this.openId = res.data
-					uni.request({
-						url: 'https://www.finetwm.com/xmRepair/userInfo/isvip',
-						data: {
-							openid: this.openId,
-							superiorId: this.superiorId
-						},
-						success: res => {
-							console.log(res)
-						}
-					})
-				}
-			})
-		},
-		onLoad() {
 			uni.getSetting({
 				success:res=>{
 					if (res.authSetting['scope.userInfo']){
@@ -73,12 +57,32 @@
 					}
 				}
 			})
+			uni.getStorage({
+				key: 'openId',
+				success: res => {
+					this.openId = res.data
+					// uni.request({
+					// 	url: 'https://www.finetwm.com/xmRepair/userInfo/isvip',
+					// 	data: {
+					// 		openid: 'o4__y5Cy6VPWrggg_YCQX81qvdAU',
+					// 		superiorId: this.superiorId
+					// 	},
+					// 	success: res => {
+					// 		console.log(res)
+					// 		this.isVip = res.data.data.isvip
+					// 		this.waitTime = res.data.data.wait
+					// 	}
+					// })
+				}
+			})
+		},
+		onLoad() {
+			
 		},
 		methods: {
 			getUserInfo(){
 				uni.getUserInfo({
 					success:res=>{
-						console.log(res)
 						this.avatarUrl = res.userInfo.avatarUrl
 						this.name = res.userInfo.nickName
 					}

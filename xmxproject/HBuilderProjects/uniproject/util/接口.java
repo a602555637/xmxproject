@@ -1,6 +1,19 @@
 /*
 https://www.finetwm.com/xmRepair/
 */
+如果传的参数是{} header：json
+
+
+根据商家openid获取shopid 
+/shopinfo/findIdByOpenid
+GET
+参数：
+ "openid"
+返回
+{"shopid":
+}
+
+
 获取商家所有订单
 	/order/findAllShopOrder
 	post
@@ -216,12 +229,13 @@ https://www.finetwm.com/xmRepair/
 
 
 附近商家
+GET 
  附近5公里商家20条数据
 /shopInfo/nearbyShops
 参数
     // 用户所在地
-  latitude 纬度
-  longitude 经度
+  latitude 纬度  30.79278   （数字）
+  longitude 经度  103.899402
 返回
  [
   {
@@ -262,12 +276,14 @@ order/uploadVideo
  String "上传成功"
 
 
-获取头像
-shopInfo/getHeadPortrait
+获取商家头像
+shopInfo/getHeadPortraitAndName
 GET
 data：{
-    id：1
+    openid
 }
+
+
 
 登录  POST
 shopInfo/login 
@@ -307,31 +323,34 @@ GET
 根据openid 判断是否会员 (非会员/普通会员/终身会员/会员等待期) 
 /userInfo/isvip
 参数  如果没有superiorId传空值
- "openid":
- "superiorId":
+ "openid":""
+ "superiorId":"" (非扫码进入的为空字符串)
+
 返回
- 
  {
   "isvip":"0"不是,"1"普通,"2"终身
   "wait": 数字 等待天数 （非必须）
+  viptype: 0 (phone); 1(pad)
+  "superior_id": "上级id" （非必须）
+  "erro":"发生异常" (异常时)
  }
 
 
-
+POST
 改变会员状态 {
  普通会员/终身会员,
  电话
  会员类型：平板/手机
 }
 /userInfo/becomeVip
-POST
 参数
 {
  "isvip" : 0不是、1普通、2终身,
- "viptype" : 0手机、1平板,
+ "viptype" : 0手机、1平板、2都有
  "phone" : "手机号",
  "openid" : "openid",
  "statid" : 1状态有效,
+ "superior_id":"上级id" （如有）
 }
 返回
  String "0"成功、"1"失败
@@ -339,21 +358,29 @@ POST
 
 
 
+获取小程序码
+POST
+common/getQRcode
+参数
+ "openid":
+返回
+{
+ "success":"二维码地址"
+ "erro":"获取失败"
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+获取用户余额 
+GET
+/userInfo/findMoney
+参数：
+ "openid":
+返回：
+{
+ "money":余额
+}
+ 
 
 
 
@@ -420,9 +447,17 @@ POST
     /shopInfo/upload
     方式：Post
     参数：
-    file：文件
+    file：'',
+    type:{ 1 身份证1
+            ,2 身份证2
+            ,3 营业执照,
+            4 签名，}，
+    openid:''
+
+
     返回：{
-        address：图片存放位置
+        address：图片存放位置,
+
     }
 
 

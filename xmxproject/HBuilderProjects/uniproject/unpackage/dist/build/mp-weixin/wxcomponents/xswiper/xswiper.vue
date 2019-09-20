@@ -7,7 +7,7 @@
 			 :previous-margin="previousMargin" :next-margin="nextMargin"
 			 :interval="interval" :circular="circular" @change="change" :current="swiperCurrentIndex">
 				<swiper-item class="swiper-container" v-for="(img,index) in imgs" :key="index" 
-				:item-id="index" :data-year="index">
+				:item-id="index" :data-year="index" @click="bindSwiperTap(index)">
 <!-- 					<view class="swiper-item" :style="{background:img?('url('+ img +') center no-repeat'):'',backgroundSize:'cover'}"
 					 :animation="animationData[index]">
 					</view> -->
@@ -23,7 +23,7 @@
 		name:'xswiper',
 		data() {
 			return {
-				interval: 2000,
+				interval: 3000,
 				screenHeight: 0,
 				animationData: {
 					0: {},
@@ -65,6 +65,19 @@
 			this.animationData[0] = this.animation.export();
 		},
 		methods: {
+			bindSwiperTap(id){
+				// console.log(typeof(id))
+				if(id === 1){
+					uni.navigateTo({
+						url: '../../pages/bevip/bevip'
+					})
+				} return
+				// else if( id === 3){
+				// 	uni.navigateTo({
+				// 		url:'../../pages/prize/prize'
+				// 	})
+				// }
+			},
 			change(e) {
 				this.swiperCurrentIndex = e.detail.current;
 				this.title = e.detail.currentItemId;

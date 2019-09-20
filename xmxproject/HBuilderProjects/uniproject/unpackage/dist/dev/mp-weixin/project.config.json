@@ -33,34 +33,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/my/business-in",
-					"pathName": "pages/my/business-in",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/my/upload-photo",
-					"pathName": "pages/my/upload-photo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/my/contract",
-					"pathName": "pages/my/contract",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/my/my",
-					"pathName": "pages/my/my",
-					"query": "",
+					"name": "pages/business/business-detail/business-detail",
+					"pathName": "pages/business/business-detail/business-detail",
 					"scene": null
 				}
 			]

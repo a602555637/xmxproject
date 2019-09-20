@@ -21,25 +21,50 @@
 			return {
 				content: {},
 				shopTypeId: 0,
-				shopServicemodeId: 0
+				shopServicemodeId: 0,
+				openId:''
 			}
 		},
 		onLoad() {
-			this.requestUrl()
+			uni.getStorage({
+				key: 'openId',
+				success:res=>{
+					this.openId = res.data
+					this.onShopid()
+				}
+			})
 		},
 		methods:{
-			requestUrl(){
+			onShopid(){
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/shopInfo/findIdByOpenid',
+					method: 'GET',
+					data: {
+						openid: this.openId
+					},
+					success:res=>{
+						let id = res.data.data.shopid
+						this.requestUrl(id)
+					}
+				})
+			},
+			requestUrl(e){
+				console.log(e)
 				uni.request({
 					url: 'https://www.finetwm.com/xmRepair/shopInfo/get',
 					method: 'GET',
+					header:{
+						"content-Type": "application/x-www-form-urlencoded"
+					},
 					data: {
 						id: 1
 					},
 					success: res => {
-						console.log(res.data.data[0])
-						this.content = res.data.data[0]
-						this.shopTypeId = res.data.data[0].shopType.id
-						this.shopServicemodeId = res.data.data[0].shopServicemode.id
+						console.log(res.data.data)
+						// console.log(res.data.data[0])
+						this.content = res.data.data
+						this.shopTypeId = res.data.data.shopType
+						this.shopServicemodeId = res.data.data.shopServicemode
 					}
 				})
 			}

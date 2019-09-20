@@ -1,0 +1,1 @@
+<view class="container"><text>绑定亲友号</text><input type="text" placeholder="请输入亲友手机号" placeholder-class="placeholder-class"/><text>验证码</text><input type="text" placeholder="请输入收到的验证码" placeholder-class="placeholder-class"/><view data-event-opts="{{[['tap',[['onSuccess',['$event']]]]]}}" class="button" bindtap="__e">确认绑定</view></view>

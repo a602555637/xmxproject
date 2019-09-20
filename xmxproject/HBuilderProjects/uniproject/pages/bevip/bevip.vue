@@ -163,8 +163,12 @@
 					},
 					success: res => {
 						this.isVip = res.data.data
-						console.log(res)
 						this.waitTime = res.data.wait
+						this.superiorId = res.data.superior_id
+						uni.setStorage({
+							key: 'superiorId',
+							data: this.superiorId
+						})
 					},
 					fail: err => {
 						console.log(err)

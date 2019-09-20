@@ -70,11 +70,25 @@ showloading功能?
 
 // 商家注册上传证明接口调整
 
-个人中心获取用户会员状态 {
-	将授权button放到个人中心内部，获取授权放到内部onload判定
-	index 个人中心button获取 openid
+// 个人中心获取用户会员状态 {
+// 	将授权button放到个人中心内部，获取授权放到内部onload判定
+// 	index 个人中心button获取 openid
 
-}
+// }
+
+
+index成为会员button 更改组件
+
+选择颜色 下一步button 更改组件
+
+
+
+
+
+附近商家功能
+
+isvip 接口调整 添加superiorId 
+
 
 
 多选id问题

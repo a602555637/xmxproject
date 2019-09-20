@@ -1,13 +1,13 @@
 <template>
 	<view class="container">
 		<view class="container-top">
-			<image src="../../static/my/qb-bg@2x.png"></image>
 			<text class="container-top-text">余额</text>
 			<text class="signal-number">￥<text class="bold-number">15.5</text></text>
 			<view class="button">
 				<image class="button-tx" src="../../static/my/tx-btn@2x.png"></image>
-				<image src="../../static/my/ewm-btn@2x.png"></image>
+				<image @click="bindCode" src="../../static/my/ewm-btn@2x.png"></image>
 			</view>
+			<image src="../../static/my/qb-bg@2x.png"></image>
 		</view>
 		<view class="note">
 			*分享我的二维码，用户注册会员可获得现金红包奖励
@@ -22,7 +22,13 @@
 
 <script>
 	export default {
-
+		methods:{
+			bindCode(){
+				uni.navigateTo({
+					url: '../business/business-code/business-code?id=' + '1'
+				})
+			}
+		}
 	}
 </script>
 
@@ -90,6 +96,7 @@
 		height: 386upx;
 		position: absolute;
 		top: 0upx;
+		z-index: -99;
 	}
 
 	.button {

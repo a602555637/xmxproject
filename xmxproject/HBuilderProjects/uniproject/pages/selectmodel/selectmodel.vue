@@ -40,9 +40,7 @@
 						</view>
 					</view>
 				</scroll-view>
-				<view @click="onNext" class="content-button">
-					<getOpenId></getOpenId>
-				</view>
+				<view @click="onNext" class="content-button">下一步</view>
 			</view>
 		</uniPopup>
 	</view>
@@ -52,7 +50,6 @@
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 	import xselect from '../../wxcomponents/xselect/xselect.vue'
 	import request from '../../components/pocky-request/index.js'
-	import getOpenId from '../../components/ccg-getOpenID/ccg-wxAppOpenid.vue'
 	
 	export default {
 		onLoad(sid) {
@@ -227,7 +224,6 @@
 		components: {
 			uniPopup,
 			xselect,
-			getOpenId
 		}
 	}
 </script>
@@ -248,9 +244,19 @@
 			margin: 30upx 26upx 60upx 26upx;
 		}
 	.content-button {
-			position: absolute;
-			bottom: 30upx;
-			left: 26upx;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		bottom: 30upx;
+		left: 26upx;
+		width: 698upx;
+		height: 80upx;
+		background: #FFFFFF;
+		font-size: 30upx;
+		border: 1px solid #333;
+		border-radius: 12upx;
 	}
 	.popup-content {
 			display: flex;

@@ -1,22 +1,23 @@
 <template>
 	<view class="container">
-		<map @click="changeIsShow" @callouttap="bindOpenPopup" id="myMap" :latitude="latitude" :longitude="longitude" :markers="markers"
+		<map @click="bindClose" @callouttap="bindOpenPopup" id="myMap" :latitude="latitude" 
+		:longitude="longitude" :markers="content" @markertap="bindMarker"
 		 show-location></map>
 		<!-- <uni-popup msg="123" ref="popup" :show="true" type="bottom"></uni-popup> -->
 		<view v-if="isShow" class="popup-class">
 			<view class="popup-top">
 				<image class="avatar" src="../../static/wxcomponentimg/avatar@2x.png"></image>
 				<view class="popup-title">
-					<text class="title">小马维修中心</text>
-					<text class="desc">距您约40米&nbsp&nbsp&nbsp郫筒镇文新路78号1层</text>
+					<text class="title">{{storeName}}</text>
+					<text class="desc">距您约{{distance}}米&nbsp&nbsp&nbsp{{area + street + detail_address}}</text>
 				</view>
 			</view>
 			<view class="rate">
-				<uni-rate value="5"></uni-rate>
+				<uni-rate disabled :value="star"></uni-rate>
 			</view>
 			<view class="button">
 				<view class="button-left">联系商家</view>
-				<view class="button-right">去维修</view>
+				<view @click="bindRepair" class="button-right">去维修</view>
 			</view>
 		</view>
 	</view>
@@ -37,67 +38,77 @@
 				}
 			})
 		},
+		onLoad() {
+			uni.request({
+				url: 'https://www.finetwm.com/xmRepair/shopInfo/nearbyShops',
+				method: 'GET',
+				data: {
+					latitude: 30.79278,
+					longitude: 103.899402
+				},
+				success: res => {
+					console.log(res.data.data)
+					this.content = res.data.data
+					for (let i = 0; i < this.content.length; i++) {
+						this.$set(this.content[i], 'id', i)
+						this.$set(this.content[i], 'iconPath', '../../static/wxcomponentimg/dw@2x.png')
+						this.$set(this.content[i], 'width', 60)
+						this.$set(this.content[i], 'height', 60)
+						this.$set(this.content[i], 'label',{
+							content: this.content[i].name,
+							fontSize: 16
+						})
+						this.$set(this.content[i], 'callout', {
+							padding: 12,
+							borderRadius: 12,
+							content: this.content[i].name,
+							fontSize: 16,
+							color: '#ffffff',
+							bgColor: '#51D587'
+						})
+					}
+				},
+				fail: err => {
+					console.log(err)
+				}
+			})
+		},
 		data() {
 			return {
+				star:'',
+				area:'',
+				street:'',
+				detail_address:'',
+				distance:'',
+				storeName:'',
+				content:[],
 				isShow:false,
-				latitude: 30.795890000000025,
+				latitude: 30.79278,
 				longitude: 103.90256,
-				markers: [{
-					id: 1,
-					latitude: 30.795890000000030,
-					longitude: 103.90260,
-					name: 'ate',
-					iconPath: '../../static/wxcomponentimg/dw@2x.png',
-					width: 60,
-					height: 60,
-					label: {
-						// content: '小label手机维修',
-						fontSize: 16,
-						color: '#000000',
-						bgColor: '#ffffff',
-
-					},
-					callout: {
-						padding: 12,
-						borderRadius: 12,
-						content: '小callout手机维修',
-						fontSize: 16,
-						color: '#ffffff',
-						bgColor: '#51D587'
-					}
-				}, {
-					id: 2,
-					latitude: 30.795890001000020,
-					longitude: 103.90150,
-					name: 'atc',
-					iconPath: '../../static/wxcomponentimg/dw@2x.png',
-					width: 60,
-					height: 60,
-					label: {
-						content: '小label手机维修',
-						fontSize: 20,
-						color: '#333333',
-						// bgColor: '#ffffff',
-
-					},
-					callout: {
-						padding: 12,
-						borderRadius: 12,
-						content: '小callout手机维修',
-						fontSize: 16,
-						color: '#ffffff',
-						bgColor: '#51D587'
-					}
-				}],
 			}
 		},
 		methods: {
+			bindRepair(){
+				uni.navigateTo({
+					url: '../selectmodel/selectmodel'
+				})
+			},
+			bindClose(){
+				this.isShow = false
+			},
 			bindOpenPopup() {
 				// this.$refs.popup.open()
 				this.isShow = true
 			},
-			changeIsShow(){
-				this.isShow = false
+			bindMarker(e){
+				this.isShow = true
+				let s = e.markerId
+				this.star = this.content[s].star
+				this.area = this.content[s].area
+				this.street = this.content[s].street
+				this.detail_address = this.content[s].detail_address
+				this.distance = this.content[s].distance
+				this.storeName = this.content[s].name
 			}
 		},
 		components: {

@@ -1,0 +1,1 @@
+<view class="container"><image class="avatar" src="{{avatarUrl}}"></image><text class="name">{{name}}</text><image class="code" src="{{imgUrl}}"></image><text class="content">成为小美修代言人</text><text class="content1">分享二维码 领取奖励金</text><text class="desc">保存后分享至朋友圈</text><view data-event-opts="{{[['tap',[['photoSave',['$event']]]]]}}" class="save" bindtap="__e">保存图片</view></view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "全部订单",
+  "usingComponents": {
+    "business-order-list": "/wxcomponents/business/business-order-list"
+  }
+}

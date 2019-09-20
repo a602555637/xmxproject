@@ -1,0 +1,1 @@
+<view><text class="container-title">选择故障</text><view class="container"><block wx:for="{{repairList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="container-item" id="{{index}}" data-event-opts="{{[['tap',[['onRepair',[index]]]]]}}" bindtap="__e"><image src="{{item.imgUrl}}"></image></view></block></view></view>

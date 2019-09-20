@@ -1,0 +1,80 @@
+
+.button-class{
+	background: #FFFFFF;
+}
+.button-class::after {
+	border: none;
+}
+.unlogin {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-top: 26rpx;
+	margin-bottom: 76rpx;
+}
+.unlogin image {
+	width: 140rpx;
+	height: 140rpx;
+}
+.line {
+	width: 750rpx;
+	height: 20rpx;
+	background: #F3F3F3;
+}
+.avatar {
+	width: 140rpx;
+	height: 140rpx;
+	margin-top: 26rpx;
+	border-radius: 100rpx;
+}
+.name {
+	font-size: 32rpx;
+	font-weight: bold;
+	margin-top: 14rpx;
+}
+.waittime {
+	font-size: 24rpx;
+	color: #EB5555;
+	margin-top: 20rpx;
+}
+.content image {
+	width: 128rpx;
+	height: 36rpx;
+	margin-bottom: 50rpx;
+	margin-top: 20rpx;
+}
+.container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.phone-vip {
+	margin-right: 16rpx;
+}
+.info-text {
+	font-size: 26rpx;
+	position: absolute;
+	right: 74rpx;
+	top: 48rpx;
+}
+

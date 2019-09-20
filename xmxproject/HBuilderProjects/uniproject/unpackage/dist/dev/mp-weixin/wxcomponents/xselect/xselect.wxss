@@ -1,0 +1,75 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 	.active-line {
+		width: 120upx;
+		height: 10upx;
+		background: #09BA51;
+	}
+ */
+.container view {
+		font-size: 32rpx;
+		color: #888F97;
+		font-weight: bold;
+}
+.container {
+		height: 102rpx;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: row;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
+		-webkit-justify-content: space-around;
+		    -ms-flex-pack: distribute;
+		        justify-content: space-around;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		border-bottom: 1px solid #F3F3F3;
+}
+.active{
+		padding-bottom: 20rpx;
+		border-bottom: 10rpx solid #09BA51;
+		color: #333333;
+}
+

@@ -1,0 +1,99 @@
+
+.button-left{
+	border: 1px solid #EEEEEE;
+}
+.button-right{
+	background: #09BA51;
+	color: #FFFFFF;
+}
+.button-left,
+.button-right{
+	width: 320rpx;
+	height: 80rpx;
+	font-size: 26rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	border-radius: 12rpx;
+}
+.button{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-justify-content: space-around;
+	    -ms-flex-pack: distribute;
+	        justify-content: space-around;
+	margin-top: 60rpx;
+	margin-bottom: 60rpx;
+}
+.rate{
+	margin-left: 126rpx;
+}
+.popup-top{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	margin-left: 26rpx;
+	margin-top: 34rpx;
+}
+.popup-title{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.title{
+	font-size: 32rpx;
+	font-weight: bold;
+	margin-bottom: 6rpx;
+}
+.desc{
+	font-size: 26rpx;
+}
+.avatar {
+	width: 80rpx;
+	height: 80rpx;
+	margin-right: 20rpx;
+}
+.popup-class {
+	width: 100%;
+	background: #FFFFFF;
+	position: fixed;
+	bottom: 0;
+}
+map {
+	width: 100%;
+	height: 1206rpx;
+}
+
