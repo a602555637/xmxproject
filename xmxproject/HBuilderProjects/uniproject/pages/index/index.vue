@@ -47,7 +47,7 @@
 		</view>
 		<view v-else class="container-login">
 			<image src="../../static/index/logo@2x.png"></image>
-			<button class="login-button" open-type="getUserInfo" @click="getOpenId()">微信授权登录</button>
+			<button class="login-button" open-type="getUserInfo" @getuserinfo="getUserInfo">微信授权登录</button>
 		</view>
 	</view>
 </template>
@@ -70,6 +70,7 @@
 				success:res=>{
 					if (res.authSetting['scope.userInfo']){
 						this.isLogin = true
+						this.getOpenId()
 					} else {
 						this.isLogin = false
 					}
@@ -77,6 +78,7 @@
 			})
 		},
 		onLoad(options) {
+			this.getOpenId()
 			if(options){
 				console.log(options.scene)
 				uni.setStorage({
@@ -111,6 +113,14 @@
 			nearby
 		},
 		methods: {
+			getUserInfo(){
+				uni.getUserInfo({
+					success:res=>{
+						console.log(res)
+						this.isLogin = true
+					}
+				})
+			},
 			bindAboutUs(){
 				uni.navigateTo({
 					url: 'about-us'
@@ -146,6 +156,7 @@
 								data: {},
 								method: 'GET',
 								success: function(res) {
+									console.log(res)
 									var obj = {};
 									obj.openid = res.data.openid;
 									console.log('openid: ' + res.data.openid);
@@ -153,16 +164,16 @@
 										key: 'openId',
 										data: obj.openid,
 										success:res=>{
-											uni.getSetting({
-												success:res=>{
-													if (res.authSetting['scope.userInfo']){
-														self.isLogin = true
-													}
-												}
-											})
+											// uni.getSetting({
+											// 	success:res=>{
+											// 		if (res.authSetting['scope.userInfo']){
+											// 			self.isLogin = true
+											// 		}
+											// 	}
+											// })
 										}
 									})
-									obj.expires_in = Date.now() + res.data.expires_in;
+									// obj.expires_in = Date.now() + res.data.expires_in
 								}
 							});
 						} else {

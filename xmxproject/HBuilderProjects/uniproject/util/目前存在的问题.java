@@ -31,7 +31,7 @@
 
 // 用户订单信息验证  验证码获取18
 
-index 附近商家 UI调整
+// index 附近商家 UI调整20
 
 // s上传商家图片 showloading18
 
@@ -43,20 +43,20 @@ index 附近商家 UI调整
 
 // 会员接口对接 
 
-手机会员和平板会员状态同时存在
+// 手机会员和平板会员状态同时存在20
 
 商家入口 -个人中心-总收益 总价计算修改模式
 
-首页个人中心按钮 锁定读取数据 防止多次数据加载
+// 首页个人中心按钮 锁定读取数据 防止多次数据加载20
 
 
 
 支付接口待完成
 
-index 强制 onload 刷新 :放到onshow中执行func
+// index 强制 onload 刷新 :放到onshow中执行func 20
 
 
-商家入驻 提交按钮 position：fixed
+// 商家入驻 提交按钮 position：fixed
 
 机型列表本机置顶 
 
@@ -77,24 +77,53 @@ showloading功能?
 // }
 
 
-index成为会员button 更改组件
+// index成为会员button 更改组件 20
 
-选择颜色 下一步button 更改组件
-
-
+// 选择颜色 下一步button 更改组件 20
 
 
 
-附近商家功能
 
-isvip 接口调整 添加superiorId 
 
+// 附近商家功能
+
+// isvip 接口调整 添加superiorId  20
+
+
+// index vip naviTo 20
 
 
 多选id问题
 
 华为手机index自动获取型号适配问题
 
+// 商家二维码 20
+
+页面分享设置
+
+
+// 个人二维码
+
+
+商家详情 调整
+
+
+用户余额 
+
+
+
+// 登录授权按钮跳转调整
+
+获取用户openid失败问题
+
+ https://api.weixin.qq.com 域名添加信任
+
+ 二维码页面保存问题
+
+// 会员页面banner 高度问题
+
+
+ 获取用户余额
 
 
 

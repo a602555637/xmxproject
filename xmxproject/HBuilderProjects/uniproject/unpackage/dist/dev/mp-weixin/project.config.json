@@ -37,8 +37,8 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/business/business-detail/business-detail",
-					"pathName": "pages/business/business-detail/business-detail",
+					"name": "pages/index/about-us",
+					"pathName": "pages/index/about-us",
 					"scene": null
 				}
 			]

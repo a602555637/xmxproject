@@ -1,4 +1,7 @@
 
+.margin-fixed{
+	height: 58rpx;
+}
 .business-item {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -22,7 +25,7 @@
 .container-button {
 	margin-top: 80rpx;
 	margin-left: 26rpx;
-	margin-bottom: 56rpx;
+	/* margin-bottom: 56upx; */
 	width: 698rpx;
 	height: 80rpx;
 	display: -webkit-box;

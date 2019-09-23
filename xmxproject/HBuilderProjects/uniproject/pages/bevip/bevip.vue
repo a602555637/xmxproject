@@ -66,6 +66,7 @@
 		
 		</view>
 		<view v-else @click="onPay" class="button">立即成为会员</view>
+		<view class="margin-fixed"></view>
 	</view>
 </template>
 
@@ -180,6 +181,14 @@
 </script>
 
 <style>
+	.margin-fixed{
+		height: 56upx;
+	}
+	
+	.swiper{
+		height: 340upx;
+	}
+	
 	.button {
 			width: 698upx;
 			height: 100upx;

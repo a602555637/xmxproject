@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="container-top">
 			<text class="container-top-text">余额</text>
-			<text class="signal-number">￥<text class="bold-number">15.5</text></text>
+			<text class="signal-number"><text class="bold-number">{{price}}</text>元</text></text>
 			<view class="button">
 				<image class="button-tx" src="../../static/my/tx-btn@2x.png"></image>
 				<image @click="bindCode" src="../../static/my/ewm-btn@2x.png"></image>
@@ -12,21 +12,57 @@
 		<view class="note">
 			*分享我的二维码，用户注册会员可获得现金红包奖励
 		</view>
-		<view class="info">
+		<!-- <view class="info">
 			<text class="info-text">分享给好友</text>
 			<text class="info-number">+￥1.5</text>
 		</view>
-		<view class="line"></view>
+		<view class="line"></view> -->
 	</view>
 </template>
 
 <script>
 	export default {
+		onLoad() {
+			this.requestUrl()
+		},
+		data() {
+			return {
+				price: ''
+			}
+		},
 		methods:{
 			bindCode(){
 				uni.navigateTo({
 					url: '../business/business-code/business-code?id=' + '1'
 				})
+			},
+			requestUrl(){
+				uni.getStorage({
+					key: 'openId',
+					success:res=>{
+						let openId = res.data
+						uni.request({
+							url: 'https://www.finetwm.com/xmRepair/userInfo/findMoney',
+							method: 'GET',
+							header:{
+								'content-Type': "application/x-www-form-urlencoded"
+							},
+							data: {
+								openId:openId
+							},
+							success: res => {
+								this.price = res.data.data.money
+								if(this.price == null){
+									this.price = '0'
+								}
+							},
+							fail: err => {
+								console.log(err)
+							}
+						})
+					}
+				})
+				
 			}
 		}
 	}
@@ -64,7 +100,7 @@
 	}
 
 	.signal-number {
-		font-size: 40upx;
+		font-size: 30upx;
 	}
 
 	.bold-number {

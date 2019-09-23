@@ -19,6 +19,7 @@
 
 		<view>
 			<view @click="onSave" class="container-button">保存</view>
+			<view class="margin-fixed"></view>
 		</view>
 
 	</view>
@@ -192,6 +193,9 @@
 </script>
 
 <style>
+	.margin-fixed{
+		height: 58upx;
+	}
 	
 	.business-item {
 		display: flex;
@@ -213,7 +217,7 @@
 	.container-button {
 		margin-top: 80upx;
 		margin-left: 26upx;
-		margin-bottom: 56upx;
+		/* margin-bottom: 56upx; */
 		width: 698upx;
 		height: 80upx;
 		display: flex;

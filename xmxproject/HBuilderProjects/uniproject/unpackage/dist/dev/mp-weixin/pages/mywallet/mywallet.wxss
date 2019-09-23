@@ -31,7 +31,7 @@
 	padding-left: 24rpx;
 }
 .signal-number {
-	font-size: 40rpx;
+	font-size: 30rpx;
 }
 .bold-number {
 	font-size: 80rpx;

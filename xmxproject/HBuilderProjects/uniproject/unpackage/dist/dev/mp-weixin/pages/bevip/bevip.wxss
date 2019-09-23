@@ -1,4 +1,10 @@
 
+.margin-fixed{
+	height: 56rpx;
+}
+.swiper{
+	height: 340rpx;
+}
 .button {
 		width: 698rpx;
 		height: 100rpx;
