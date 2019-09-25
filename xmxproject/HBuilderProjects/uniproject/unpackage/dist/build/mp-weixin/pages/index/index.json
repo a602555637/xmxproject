@@ -10,6 +10,7 @@
     "tabbar": "/wxcomponents/tabbar/tabbar",
     "xswiper": "/wxcomponents/xswiper/xswiper",
     "quick-select": "/wxcomponents/index/quick-select",
-    "nearby": "/wxcomponents/index/nearby"
+    "nearby": "/wxcomponents/index/nearby",
+    "uni-popup": "/components/uni-popup/uni-popup"
   }
 }

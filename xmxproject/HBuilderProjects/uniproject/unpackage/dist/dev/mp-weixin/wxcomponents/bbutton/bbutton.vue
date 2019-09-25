@@ -1,6 +1,6 @@
 <template name="bbutton">
 	<view class="container-middle">
-		<image @click="onPhoneRepair" src="../../static/wxcomponentimg/phone-re@2x.png"></image>
+		<image @click="onPhoneRepair" class="container-middle-iphone" src="../../static/wxcomponentimg/phone-re@2x.png"></image>
 		<image class="container-middle-ipad" src="../../static/wxcomponentimg/pad-re@2x.png"></image>
 	</view>
 </template>
@@ -19,18 +19,24 @@
 </script>
 
 <style>
+	.container-middle-iphone{
+		box-shadow:0upx 0upx 40upx rgba(0,0,0,0.16);
+		margin-left: 62upx;
+		margin-right: 28upx;
+	}
+	
 	.container-middle-ipad {
-		position: absolute;
-		right: 0upx;
+		box-shadow:0upx 0upx 40upx rgba(0,0,0,0.16);
 	}
 	
 	.container-middle image {
-		width: 394upx;
-		height: 200upx;
+		width: 298upx;
+		height: 124upx;
 	}
 	
 	.container-middle {
 		display: flex;
+		margin-bottom: 42upx;
 	}
 	
 </style>

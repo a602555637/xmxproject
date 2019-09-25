@@ -1,4 +1,65 @@
 
+.popup-close{
+	width: 42rpx;
+	height: 42rpx;
+	position: absolute;
+	top: 30rpx;
+	right: 28rpx;
+}
+.popup-button{
+	width: 400rpx;
+	height: 80rpx;
+	font-size: 30rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	color: #FFFFFF;
+	background: #09BA51;
+	border-radius: 12rpx;
+}
+.popup-desc{
+	font-size: 40rpx;
+	margin-bottom: 20rpx;
+}
+.popup-icon{
+	width: 136rpx;
+	height: 136rpx;
+	margin-top: 60rpx;
+	margin-bottom: 20rpx;
+}
+.popup{
+	width: 600rpx;
+	height: 400rpx;
+	background: #FFFFFF;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	border-radius: 20rpx;
+}
 .login-button{
 	width: 698rpx;
 	height: 80rpx;

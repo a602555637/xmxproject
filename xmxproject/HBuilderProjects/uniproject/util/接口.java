@@ -296,7 +296,7 @@ shopInfo/login
 获取注册验证码   POST 
 /shopInfo/getNumber
 参数
- "phone":"电话号码" string 
+ "phone":"电话号码" Number 
 返回
  "code":"6位验证码"
 
@@ -319,19 +319,39 @@ shopInfo/login
  String ："1" "0"
 
 
+设置密码
+/userInfo/setPassword
+POST
+参数：
+ "openid"
+ "password"
+返回：
+ true成功
+ false失败
+
+
+
+
+
+
 GET
 根据openid 判断是否会员 (非会员/普通会员/终身会员/会员等待期) 
 /userInfo/isvip
 参数  如果没有superiorId传空值
  "openid":""
  "superiorId":"" (非扫码进入的为空字符串)
-
 返回
+ 
  {
-  "isvip":"0"不是,"1"普通,"2"终身
-  "wait": 数字 等待天数 （非必须）
-  viptype: 0 (phone); 1(pad)
-  "superior_id": "上级id" （非必须）
+  "superior_id":"上级id" （非必须）作用是成为vip时可携带使用
+  [
+   "isvip":0普通,1终身 
+   "lottery_number":剩余抽奖次数
+   "waitday": 数字 等待天数 （非必须）
+   "viptype": 0 手机, 1 平板
+  ]
+  如果是双会员此处会有两个集合，如果不是会员无此集合
+  
   "erro":"发生异常" (异常时)
  }
 
@@ -345,7 +365,7 @@ POST
 /userInfo/becomeVip
 参数
 {
- "isvip" : 0不是、1普通、2终身,
+ "isvip" : 0不是、1普通、2终身, Number
  "viptype" : 0手机、1平板、2都有
  "phone" : "手机号",
  "openid" : "openid",
@@ -385,6 +405,12 @@ GET
 
 
 
+
+
+
+
+
+
 		
 获取故障类型
     /faults/getTypes
@@ -403,6 +429,34 @@ GET
     {"type":"screen"}		
         
     
+判断是否通过
+/userInfo/selectPass
+GET
+参数：
+ openid
+返回
+{
+ "stat":状态，，，增加状态3审核通过未完成注册
+ 状态为3时提示初始密码888888
+}
+
+
+抽奖
+奖品名字，时间 
+/common/luckyWheel
+
+GET
+参数：
+   openid
+  
+返回：
+ "id":1-7随机数
+
+
+
+
+
+
 
 
 
@@ -426,18 +480,10 @@ GET
     street：街道
     detail_address：详细地址
     openid：微信用户id
-    type：店铺/企业类型(1个体 2公司)
-    service_mode：服务方式（1上门维修 2到店维修 3全部）
+    type：店铺/企业类型(0个体 1公司)
+    service_mode：服务方式（0上门维修 1到店维修 2全部）
     stat（选传，默认为1）：店铺审核状态（0审核中，1审核通过）
-    business_status（选传，默认为1）：营业状态（1营业中 2休息 3注销）
-    shopPictureList：[		//图片列表：营业执照，身份证
-                {
-                name（不传）：图片名
-                shop_id（不传）：关联店铺id
-                address：店铺图片上传返回地址
-                type：图片类型（1营业执照2身份证正面3身份证背面）
-            }
-    ]
+    business_status（选传，默认为1）：营业状态（0营业中 1休息 2注销）
     }
     返回：{
         true

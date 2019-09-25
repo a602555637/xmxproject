@@ -10,7 +10,8 @@
 			<text class="title-sin">{{titleSin}}</text>
 			<view class="scontainer-item">
 				<input class="input-class fixed" type="number" @input="onCode" placeholder-class="placeholder-class" :placeholder="placeholder" />
-				<view v-if="isShowTime" class="container-code1 fixed1" :id="id">{{text}} {{s}}</view>
+				<view v-if="orderNum" @click="bindToast" class="container-code1 fixed2" :id="id">{{text}} {{s}}</view>
+				<view v-else-if="isShowTime" class="container-code1 fixed1" :id="id">{{text}} {{s}}</view>
 				<view v-else class="container-code fixed1" @click="click" :id="id">{{text}}</view>
 			</view>
 		</view>
@@ -21,7 +22,7 @@
 	export default {
 		name: 'getcode',
 		props:{
-			orderNum: String,
+			orderNum: Number,
 			isDefault:{
 				type: Boolean,
 				default:true
@@ -50,6 +51,9 @@
 			clearInterval(this.setTime)
 		},
 		methods: {
+			// bindToast(){
+				
+			// },
 			setInterValFunc(obj) {
 				this.setTime = setInterval(() => {
 					obj.countDown(obj)
@@ -77,17 +81,18 @@
 				this.$emit('scode', {scode})
 			},
 			requsetUrl(){
-				let orderNum = this.orderNum.toString()
+				let orderNum = this.orderNum
 				uni.request({
 					url: 'https://www.finetwm.com/xmRepair/shopInfo/getNumber',
 					method: 'POST',
 					header:{
-						"content-Type": "text/plain"
+						"content-Type": "application/x-www-form-urlencoded"
 					},
 					data: {
 						phone: orderNum
 					},
 					success: res => {
+						console.log(res)
 						let phoneCode = res.data.data
 						this.$emit('phoneCode', {phoneCode})
 					},
@@ -101,6 +106,11 @@
 </script>
 
 <style>
+	.fixed2{
+		margin-right: 34upx;
+		color: #666666;
+	}
+	
 	.fixed1{
 		margin-right: 34upx;
 	}

@@ -10,7 +10,7 @@
 			<bbutton></bbutton>
 			<quick-select></quick-select>
 			<servebutton></servebutton>
-			<vipserve></vipserve>
+			<vipserve :onIsvip="onIsvip"></vipserve>
 			<nearby></nearby>
 			<comment></comment>
 			<view class="bottom">
@@ -36,7 +36,7 @@
 					<text>暂未公布</text>
 				</view>
 			</view>
-			<view class="kf-phone">
+			<view @click="openPopup" class="kf-phone">
 				<text>客服热线</text>
 				<text>关于我们</text>
 				<text>联系我们</text>
@@ -49,6 +49,14 @@
 			<image src="../../static/index/logo@2x.png"></image>
 			<button class="login-button" open-type="getUserInfo" @getuserinfo="getUserInfo">微信授权登录</button>
 		</view>
+		<uni-popup custom ref="popup" type="center">
+			<view class="popup">
+				<image class="popup-close" src="../../static/faults/close@2x.png" mode=""></image>
+				<image class="popup-icon" src="../../static/my/pass@2x.png"></image>
+				<text class="popup-desc">恭喜您，审核通过</text>
+				<view class="popup-button">签订入驻协议</view>
+			</view>
+		</uni-popup>
 	</view>
 </template>
 
@@ -63,7 +71,8 @@
 	import xswiper from '../../wxcomponents/xswiper/xswiper.vue'
 	import quickSelect from '../../wxcomponents/index/quick-select.vue'
 	import nearby from '../../wxcomponents/index/nearby.vue'
-
+	import uniPopup from '../../components/uni-popup/uni-popup.vue'
+	
 	export default {
 		onShow() {
 			uni.getSetting({
@@ -77,7 +86,7 @@
 				}
 			})
 		},
-		onLoad(options) {
+		onload(options) {
 			this.getOpenId()
 			if(options){
 				console.log(options.scene)
@@ -95,6 +104,8 @@
 		},
 		data() {
 			return {
+				onIsvip: 2,
+				openId:'',
 				isLogin: true,
 				appid: 'wx5a7e48b2d2c7cc4b',
 				secret: '9fdc700fef21bb7d3141a50f3fc82591'
@@ -110,13 +121,60 @@
 			tabbar,
 			xswiper,
 			quickSelect,
-			nearby
+			nearby,
+			uniPopup
 		},
 		methods: {
+			isVip(){
+				console.log(this.openId)
+				console.log(typeof(this.openId))
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/userInfo/isvip',
+					method: 'GET',
+					header:{
+						"content-Type": "application/x-www-form-urlencoded"
+					},
+					data: {
+						openid: this.openId,
+						superiorId:''
+					},
+					success: res => {
+						console.log(res.data.data.vipList[0])
+						this.onIsvip = res.data.data.vipList[0].isvip
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
+			},
+			requestVerify(){
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/shopInfo/selectPass',
+					method: 'GET',
+					data: {
+						openid: this.openId
+					},
+					success: res => {
+						let stat = res.data.data.stat
+						if(stat == 3){
+							this.openPopup()
+						} 
+						return
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
+			},
+			openPopup(){
+				this.$refs.popup.open()
+			},
+			closePopup(){
+				this.$refs.popup.close()
+			},
 			getUserInfo(){
 				uni.getUserInfo({
 					success:res=>{
-						console.log(res)
 						this.isLogin = true
 					}
 				})
@@ -137,40 +195,32 @@
 				})
 			},
 			getOpenId() {
-				const self = this;
 				uni.login({
-					success: function(res) {
+					success: res => {
 						if (res.code) {
 							uni.getUserInfo({
-								success: function(res) {
-									console.log('存在code');
+								success: res => {
+									console.log('存在code')
 								}
-							});
-							var appid = self.appid; //这里是我的appid，需要改成你自己的
-							var secret = self.secret; //密钥也要改成你自己的
-							var openid = '';
-							var url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&js_code=' +
-								res.code + '&grant_type=authorization_code';
+							})
+							let appid = this.appid //这里是我的appid，需要改成你自己的
+							let secret = this.secret //密钥也要改成你自己的
+							let url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&js_code=' +
+								res.code + '&grant_type=authorization_code'
 							uni.request({
 								url: url,
 								data: {},
 								method: 'GET',
-								success: function(res) {
-									console.log(res)
-									var obj = {};
-									obj.openid = res.data.openid;
-									console.log('openid: ' + res.data.openid);
+								success: res => {
+									this.openId = res.data.openid
+									// console.log('openid: ' + res.data.openid);
 									uni.setStorage({
 										key: 'openId',
-										data: obj.openid,
+										data: this.openId,
 										success:res=>{
-											// uni.getSetting({
-											// 	success:res=>{
-											// 		if (res.authSetting['scope.userInfo']){
-											// 			self.isLogin = true
-											// 		}
-											// 	}
-											// })
+											console.log('success storage')
+											this.requestVerify()
+											this.isVip()
 										}
 									})
 									// obj.expires_in = Date.now() + res.data.expires_in
@@ -187,6 +237,49 @@
 </script>
 
 <style>
+	.popup-close{
+		width: 42upx;
+		height: 42upx;
+		position: absolute;
+		top: 30upx;
+		right: 28upx;
+	}
+	
+	.popup-button{
+		width: 400upx;
+		height: 80upx;
+		font-size: 30upx;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		color: #FFFFFF;
+		background: #09BA51;
+		border-radius: 12upx;
+	}
+	
+	.popup-desc{
+		font-size: 40upx;
+		margin-bottom: 20upx;
+	}
+	
+	.popup-icon{
+		width: 136upx;
+		height: 136upx;
+		margin-top: 60upx;
+		margin-bottom: 20upx;
+	}
+	
+	.popup{
+		width: 600upx;
+		height: 400upx;
+		background: #FFFFFF;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 20upx;
+	}
+	
 	.login-button{
 		width: 698upx;
 		height: 80upx;

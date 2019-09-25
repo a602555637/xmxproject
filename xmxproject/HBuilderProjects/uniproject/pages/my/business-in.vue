@@ -6,11 +6,11 @@
 			<xlist-input @inputValue="bindInputPhone" title="手机号：" placeholder="请输入负责人手机号" typeStyle="number"></xlist-input>
 			
 			<!-- getcode -->
-			<getcode @scode="bindScode" @phoneCode="bindPhoneCode"></getcode>
+			<getcode :orderNum="phone" @scode="bindScode" @phoneCode="bindPhoneCode"></getcode>
 		</view>
 		<view class="line-thick"></view>
 		<!-- 地区  街道  detail_address-->
-		<xlocation @detailAddress="onDetail" @district="onArea"></xlocation>
+		<xlocation @detailAddress="onDetail" @district="onArea" @township="onTownship"></xlocation>
 		
 		<view class="line-thick"></view>
 		
@@ -32,19 +32,42 @@
 	import amap from '../../common/amap-wx.js'
 	import getcode from '../../wxcomponents/getcode/getcode.vue'
 	import xlocation from '../../wxcomponents/xlocation/xlocation.vue'
+	var amapFile = require('../../common/amap-wx.js')
+	
 	const formatDate = require('../../util/util.js')
 	export default {
 		onLoad() {
+			// var myAmapFun = new amapFile.AMapWX({
+			// 	key:'f97ec3f47e09d39567de678870baa690',
+			// })
+			// myAmapFun.getRegeo({
+			//       success: res =>{
+			//         console.log(res)
+			//       },
+			//       fail: err =>{
+			//         console.log(err)
+			//       }
+			// })
+			uni.getStorage({
+				key: 'openId',
+				success: res=>{
+					this.openId = res.data
+				}
+			})
 			this.selectedIndex()
 			this.selectedIndexType()
 		},
 		data() {
 			return {
+				latitude:null,
+				longitude:null,
+				openId:'',
 				scode:'',
 				phoneCode:'',
-				selectedItemTypeIndex:'',
+				selectedItemTypeIndex: 0,
 				selectedItemType:'',
 				selectedItem:'',
+				selectedItemIndex: 0,
 				province:'',
 				city:'',
 				district:'',
@@ -61,12 +84,33 @@
 					'个人', '公司'
 				],
 				repairType: [
-					'上门维修', '到店维修'
+					'上门维修', '驻店维修','上门维修、驻店维修'
 				],
 				index: 0
 			}
 		},
 		methods: {
+			onLocation(){
+				uni.request({
+					url: 'https://restapi.amap.com/v3/geocode/geo',
+					method: 'GET',
+					data: {
+						key:'e89c18d61751e3611db784ccf3e975fa',
+						address: this.city + this.street + this.detail_address
+					},
+					success: res => {
+						let loca = res.data.geocodes[0].location
+						let locaIndex = loca.indexOf(',')
+						this.longitude = loca.slice(0,locaIndex)
+						this.latitude = loca.slice(locaIndex + 1, loca.length)
+						this.longitude *= 1
+						this.latitude *= 1
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
+			},
 			bindScode(e){
 				this.scode = e.scode
 			},
@@ -95,6 +139,7 @@
 				})
 			},
 			onSave() {
+				this.onLocation()
 				let scode = this.scode.toString()
 				let phoneCode = this.phoneCode.toString()
 				if(this.name == ''){
@@ -122,7 +167,7 @@
 						title: '请填写验证码',
 						icon:'none'
 					});
-				}else if( scode !== phoneCode){
+				}else if(!scode){
 					uni.showToast({
 						title: '请输入正确的验证码',
 						icon:'none'
@@ -142,13 +187,19 @@
 			},
 			selectedIndex(e) {
 				this.selectedItem = e ? this.businessType[e] :this.businessType[0]
+				this.selectedItemIndex = e
 			},
 			selectedIndexType(e){
 				this.selectedItemTypeIndex = e
 				this.selectedItemType = e ? this.repairType[e] :this.repairType[0]
 			},
 			onArea(e) {
+				this.city = e.city
 				this.area = e.district
+				this.street = e.township
+			},
+			onTownship(e){
+				console.log(e)
 				this.street = e.township
 			},
 			onDetail(e){
@@ -163,22 +214,28 @@
 				this.getCode = e.codeText
 			},
 			onPost() {
+				let phone = this.phone.toString()
 				uni.request({
-					url:'https://120.24.180.246/xmRepair/shopInfo/add',
+					url:'https://www.finetwm.com/xmRepair/shopInfo/add',
 					method:'POST',
+					header:{
+						"content-Type": "application/json"
+					},
 					data:{
+						openid:this.openId,
 						name: this.name,
 						manager:this.manager,
 						phone:this.phone,
 						area:this.area,
 						street:this.street,
 						detail_address:this.detail_address,
-						type:this.selectedItem,
+						type:this.selectedItemIndex,
 						service_mode:this.selectedItemTypeIndex,
-						stat:0
+						longitude: this.longitude,
+						latitude: this.latitude
 					},
 					success: res=>{
-						console.log('success')
+						console.log(res)
 					}
 				})
 			}

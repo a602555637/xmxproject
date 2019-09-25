@@ -6,7 +6,14 @@
 		</view>
 		<!-- 选项卡 -->
 		<xselect></xselect>
+		<!-- 本机数据 -->
+		<view class="my-phone">
+			<text class="my-phone-desc">本机</text>
+			<view @click="bindMyPhoneColor" v-if="phonetype" class="top-type">{{phonetype}}</view>
+			<view class="my-phone-icon">本机</view>
+		</view>
 		<view class="container">
+			
 			<!-- 左侧本地数据 -->
 			<view class="slide-left">
 				<view @click="onSelectedId" :class="index == selectedId ? 'active' :''" class="left-item" v-for="(item,index) in slideList"
@@ -15,9 +22,8 @@
 				</view>
 			</view>
 			<!-- 右侧获取数据 -->
-			<scroll-view scroll-y style="height: 990upx;">
+			<scroll-view scroll-y class="scroll-class">
 				<view class="slide-right">
-					<view v-if="phonetype" class="top-type">{{phonetype}}</view>
 					<view @click="openPopup(index)" class="right-item" v-for="(item, index) in phoneType" :key="index">
 						<text>{{item.model}}</text>
 					</view>
@@ -57,13 +63,11 @@
 				key:'phonetype',
 				success:res=>{
 					this.phonetype = res.data
+					this.setStorageBrand()
 				}
 			})
 			
-			uni.setStorage({
-				key:'brand',
-				data:'苹果'
-			})
+			
 			
 			uni.getStorage({
 				key: 'sid',
@@ -137,6 +141,52 @@
 			}
 		},
 		methods: {
+			bindMyPhoneColor(){
+				if(this.phonetype){
+					uni.request({
+						url:'https://www.finetwm.com/xmRepair/phoneBrand/getBrandColour',
+						data:{
+							name: this.phonetype
+						},
+						method:'POST',
+						success:res=>{
+							this.popupContent = res.data.data
+							this.$refs.popup.open()
+						}
+					})
+				}
+			},
+			setStorageSync(info){
+				uni.setStorage({
+					key: 'brand',
+					data: info
+				})
+			},
+			setStorageBrand(){
+					let s = this.phonetype.slice(0,2)
+					if(s == 'iP') {
+						this.setStorageSync('苹果')
+					} else if(s == 'Ma' || s == 'P3' || s == 'P2' || s == 'P1' || s == 'P9' 
+					|| s == 'P8' || s == 'P7' || s == 'No' || s == '荣耀' || s == '畅玩' || s == '畅享'){
+						this.setStorageSync('华为')
+					} else if(s == '红米' || s == '小米'){
+						this.setStorageSync('小米')
+					} else if(s == 'iQ' || s == 'vi'){
+						this.setStorageSync('VIVO')
+					} else if(s == 'OP'){
+						this.setStorageSync('OPPO')
+					} else if(s == '魅族' || s == '魅蓝'){
+						this.setStorageSync('魅族')
+					} else if(s == 'No' || s == 'S1' || s == 'S9' || s == 'S8' || s == 'S7' 
+					|| s == 'S6' || s == 'S5' || s == 'S4' || s == 'C9' || s == 'C8' || s == 'C7' || s == 'A8'
+					|| s == 'A7' || s == 'A6' || s == 'A4' || s == 'A9' || s == 'W2' ){
+						this.setStorageSync('三星')
+					}
+					
+				
+						
+				
+			},
 			onNext() {
 				if(this.colorId !== null){
 					uni.navigateTo({
@@ -145,28 +195,31 @@
 				}
 			},
 			openPopup(e) {
-				let modelSelected = this.phoneType[e].model
-				uni.setStorage({
-					key:'model',
-					data:modelSelected
-				})
-				this.$refs.popup.open()
-				
-				//获取颜色色值
-				uni.request({
-					url: 'https://www.finetwm.com/xmRepair/phoneBrand/getBrandColour',
-					method: 'POST',
-					data: {
-						name: modelSelected
-					},
-					success: res => {
-						this.popupContent = res.data.data
-						// uni.setStorage({
-						// 	key:'color',
-						// 	data:svalue
-						// })
-					}
-				})
+				if(e){
+					let modelSelected = this.phoneType[e].model
+					uni.setStorage({
+						key:'model',
+						data: modelSelected
+					})
+					this.$refs.popup.open()
+					//获取颜色色值
+					uni.request({
+						url: 'https://www.finetwm.com/xmRepair/phoneBrand/getBrandColour',
+						method: 'POST',
+						data: {
+							name: modelSelected
+						},
+						success: res => {
+							this.popupContent = res.data.data
+							// uni.setStorage({
+							// 	key:'color',
+							// 	data:svalue
+							// })
+						}
+					})
+				} else {
+					this.$refs.popup.open()
+				}
 			},
 			closePopup() {
 				this.$refs.popup.close()
@@ -229,9 +282,43 @@
 </script>
 
 <style>
+	.scroll-class{
+		height: 900upx;
+	}
+	
+	.my-phone-desc{
+		color: #888F97;
+		font-size: 32upx;
+		margin-left: 72upx;
+	}
+	
+	.my-phone-icon{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 70upx;
+		height: 32upx;
+		background: #09BA51;
+		color: #FFFFFF;
+		font-size: 22upx;
+		border-radius: 18upx;
+		margin-left: 20upx;
+	}
+	
+	.my-phone{
+		width: 750upx;
+		height: 100upx;
+		display: flex;
+		flex-direction: row;
+		background: #F3F3F3;
+		align-items: center;
+	}
+	
 	.top-type{
-		font-size: 32upx !important;
-		margin-bottom: 60upx;
+		font-size: 32upx;
+		color: #09BA51;
+		margin-left: 184upx;
 	}
 	
 	.active-text{

@@ -13,6 +13,7 @@
 	export default {
 		data() {
 			return {
+				openId:'',
 				accessToken:'',
 				fkey:'',
 				skey:'',
@@ -35,8 +36,12 @@
 						icon:'none'
 					})
 				} else{
-					uni.reLaunch({
-						url: '../index/index'
+					uni.getStorage({
+						key: 'openId',
+						success:res=>{
+							this.openId = res.data
+							this.requestUrl()
+						}
 					})
 				}
 			},
@@ -52,6 +57,25 @@
 						icon:'none'
 					})
 				}
+			},
+			requestUrl(){
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/userInfo/setPassword',
+					method: 'POST',
+					data: {
+						openid: this.openId,
+						password: this.skey
+					},
+					success: res => {
+						console.log(res)
+						uni.reLaunch({
+							url: 'verify-result'
+						})
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
 			}
 		},
 		components: {

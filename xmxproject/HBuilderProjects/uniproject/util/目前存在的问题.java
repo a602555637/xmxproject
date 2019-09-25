@@ -111,24 +111,29 @@ showloading功能?
 用户余额 
 
 
+商家入驻： 上门维修、到店维修  多选
+
+
 
 // 登录授权按钮跳转调整
 
 获取用户openid失败问题
 
- https://api.weixin.qq.com 域名添加信任
+ // https://api.weixin.qq.com 域名添加信任
 
  二维码页面保存问题
 
 // 会员页面banner 高度问题
 
 
- 获取用户余额
+ // 获取用户余额
 
 
 
+vip隐藏
 
 
+prize 1-7 随机数
 
 
 
@@ -137,3 +142,14 @@ showloading功能?
 	输入框  xlist-input,
 	滚动选择器 xlist-picker
 }
+
+
+
+
+
+
+0925
+
+抽奖完成
+首页修改bbutton按钮
+修复首页banner 疯狂轮播的问题

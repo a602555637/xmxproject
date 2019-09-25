@@ -1,4 +1,8 @@
 
+.verify{
+	width: 114rpx !important;
+	height: 126rpx !important;
+}
 .container-button{
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -21,7 +25,7 @@
 	font-size: 30rpx;
 	background: #09BA51;
 	border-radius: 12rpx;
-	width: 698rpx;
+	width: 460rpx;
 	height: 80rpx;
 	margin-top: 168rpx;
 }

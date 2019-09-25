@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"path": "pages/payvip/payvip",
+			"path": "pages/bevip/payvip",
 			"style": {
 				"navigationBarTitleText": "会员支付"
 			}

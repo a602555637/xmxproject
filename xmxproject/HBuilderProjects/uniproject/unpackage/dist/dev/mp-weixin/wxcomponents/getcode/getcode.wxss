@@ -1,4 +1,8 @@
 
+.fixed2{
+	margin-right: 34rpx;
+	color: #666666;
+}
 .fixed1{
 	margin-right: 34rpx;
 }

@@ -28,7 +28,7 @@
 	import uniRate from '../../components/uni-rate/uni-rate.vue'
 
 	export default {
-		created() {
+		onReady() {
 			uni.getLocation({
 				type: 'wgs84',
 				success: res => {

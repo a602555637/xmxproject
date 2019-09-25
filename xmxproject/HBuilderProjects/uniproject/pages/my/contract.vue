@@ -51,7 +51,7 @@
 				manager: '',
 				partyTitle: '',
 				signUrl: '',
-				date: '2019年9月5日',
+				date: '',
 				titleContent: [{
 					title: '甲方：',
 					content: '成都凡果科技有限公司'
@@ -66,8 +66,16 @@
 		},
 		onLoad() {
 			this.getStorage()
+			this.getDate()
 		},
 		methods: {
+			getDate(){
+				let date = new Date()
+				let year = date.getFullYear()
+				let month = date.getMonth() + 1
+				let day = date.getDate()
+				this.date = year + '年' + month + '月' + day + '日'
+			},
 			onRule() {
 				uni.navigateTo({
 					url: 'rule'

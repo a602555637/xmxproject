@@ -12,7 +12,7 @@
 		<view v-if="isAddress" class="content-street">
 			<view class="content-street-left">街道</view>
 			<view class="content-street-right">
-				<input type="text" :value="township" />
+				<input type="text" :value="township" @input="bindTownShip" />
 				<image src="../../static/wxcomponentimg/arrow@2x.png"></image>
 			</view>
 		</view>
@@ -84,6 +84,7 @@
 			},
 			onProvince(){
 				this.$emit('district',{
+					city: this.city,
 					district:this.district,
 					township:this.township
 				})
@@ -92,6 +93,12 @@
 				this.detailAddress = e.detail.value
 				this.$emit('detailAddress',{
 					detailAddress:this.detailAddress
+				})
+			},
+			bindTownShip(e){
+				this.township = e.detail.value
+				this.$emit('township',{
+					township: this.township
 				})
 			}
 		}

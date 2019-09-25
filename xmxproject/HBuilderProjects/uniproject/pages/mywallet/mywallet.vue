@@ -22,24 +22,28 @@
 
 <script>
 	export default {
-		onLoad() {
+		onReady() {
 			this.requestUrl()
 		},
 		data() {
 			return {
-				price: ''
+				price: '0'
 			}
 		},
 		methods:{
 			bindCode(){
 				uni.navigateTo({
-					url: '../business/business-code/business-code?id=' + '1'
+					url: '../business/business-code/business-code?id=' + 1
 				})
 			},
 			requestUrl(){
 				uni.getStorage({
 					key: 'openId',
 					success:res=>{
+						uni.showLoading({
+							title: '读取数据中...',
+							mask: false
+						})
 						let openId = res.data
 						uni.request({
 							url: 'https://www.finetwm.com/xmRepair/userInfo/findMoney',
@@ -48,9 +52,11 @@
 								'content-Type': "application/x-www-form-urlencoded"
 							},
 							data: {
-								openId:openId
+								openId: openId
 							},
 							success: res => {
+								console.log(res)
+								uni.hideLoading()
 								this.price = res.data.data.money
 								if(this.price == null){
 									this.price = '0'

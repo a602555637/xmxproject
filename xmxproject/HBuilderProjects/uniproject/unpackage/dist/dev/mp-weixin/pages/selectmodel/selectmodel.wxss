@@ -1,7 +1,60 @@
 
+.scroll-class{
+	height: 900rpx;
+}
+.my-phone-desc{
+	color: #888F97;
+	font-size: 32rpx;
+	margin-left: 72rpx;
+}
+.my-phone-icon{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	width: 70rpx;
+	height: 32rpx;
+	background: #09BA51;
+	color: #FFFFFF;
+	font-size: 22rpx;
+	border-radius: 18rpx;
+	margin-left: 20rpx;
+}
+.my-phone{
+	width: 750rpx;
+	height: 100rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	background: #F3F3F3;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
 .top-type{
-	font-size: 32rpx !important;
-	margin-bottom: 60rpx;
+	font-size: 32rpx;
+	color: #09BA51;
+	margin-left: 184rpx;
 }
 .active-text{
 	color: #09BA51;

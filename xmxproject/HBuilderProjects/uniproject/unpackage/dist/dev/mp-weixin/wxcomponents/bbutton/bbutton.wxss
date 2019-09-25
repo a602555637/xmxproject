@@ -1,17 +1,24 @@
 
+.container-middle-iphone{
+	-webkit-box-shadow:0rpx 0rpx 40rpx rgba(0,0,0,0.16);
+	        box-shadow:0rpx 0rpx 40rpx rgba(0,0,0,0.16);
+	margin-left: 62rpx;
+	margin-right: 28rpx;
+}
 .container-middle-ipad {
-	position: absolute;
-	right: 0rpx;
+	-webkit-box-shadow:0rpx 0rpx 40rpx rgba(0,0,0,0.16);
+	        box-shadow:0rpx 0rpx 40rpx rgba(0,0,0,0.16);
 }
 .container-middle image {
-	width: 394rpx;
-	height: 200rpx;
+	width: 298rpx;
+	height: 124rpx;
 }
 .container-middle {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	margin-bottom: 42rpx;
 }
 
 

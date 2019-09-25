@@ -79,17 +79,20 @@
 				// }
 			},
 			change(e) {
-				this.swiperCurrentIndex = e.detail.current;
-				this.title = e.detail.currentItemId;
-				for (let key in this.animationData) {
-					if (e.detail.currentItemId == key) {
-						this.animation.scale(this.zoomParam).step();
-						this.animationData[key] = this.animation.export();
-					} else {
-						this.animation.scale(1.0).step();
-						this.animationData[key] = this.animation.export();
+				if (e.target.source == 'autoplay' || e.target.source == 'touch'){
+					this.swiperCurrentIndex = e.detail.current
+					this.title = e.detail.currentItemId
+					for (let key in this.animationData) {
+						if (e.detail.currentItemId == key) {
+							this.animation.scale(this.zoomParam).step()
+							this.animationData[key] = this.animation.export()
+						} else {
+							this.animation.scale(1.0).step()
+							this.animationData[key] = this.animation.export()
+						}
 					}
 				}
+				return
 			}
 		}
 	}
