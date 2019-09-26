@@ -18,47 +18,19 @@
 				<image class="vip-signal" :src="item.imgUrl"></image>
 			</view>
 		</view>
-		
+	
 		<!-- content -->
+	
 		<swiper @change="bindChange" class="swiper-selected" :current="selectedId" >
 			<swiper-item>
-				<scroll-view class="scroll-class" scroll-y>
-					<view class="content">
-						<text class="content-desc">会员特权</text>
-						<text @click="onChangeStatus" class="content-title">
-							<text class="text-signal">*</text>
-							专享终生免费维修服务
-						</text>
-						<view v-show="isShow">
-							<view class="content-subtitle">
-								<text class="content-subtitle-left">免费维修详情</text>
-								<text class="content-subtitle-right">每年</text>
-							</view>
-							<view class="content-item" v-for="(item, index) in tabList" :key="index">
-								<view class="item-title">{{item.title}}</view>
-								<view class="item-yeartimes">{{item.yearTimes}}</view>
-							</view>
-							<view class="line-vertical"></view>
-						</view>
-					</view>
-					<view class="container-info">
-						<text><text class="text-signal">*</text> 注册会员马上领小美商城通用购机券100元</text>
-						<text><text class="text-signal">*</text> 专享配件升级6折、免费特权外维修6折/更换6折</text>
-						<text><text class="text-signal">*</text>旧手机回收价同比提升20%</text>
-						<text><text class="text-signal">*</text>专享免费检测、数据迁移、刷机、安装配件（用户自带配件）四项升级服务</text>
-					</view>
-				</scroll-view>
+				<image class="content" src="../../static/vip/bxtq@2x.png"></image>
 			</swiper-item>
 			<swiper-item>
-				<text class="content-desc fixed1">会员特权</text>
-				<view class="container-info">
-					<text><text class="text-signal">*</text>所有维修项目享受8折</text>
-					<text><text class="text-signal">*</text>专享配件升级8折、免费特权外维修8折/更换8折</text>
-				</view>
+				<image class="content-copy" src="../../static/vip/sxtq@2x.png"></image>
 			</swiper-item>
 		</swiper>
-		
-		<text class="container-deal">小美修《用户协议》</text>
+	
+		<text class="container-deal">小美修《会员说明书》&《用户协议》</text>
 
 		<view v-if="isVip === '1'" class="isbutton">
 			<view>您已是会员</view>
@@ -96,7 +68,6 @@
 					title: '普通会员',
 					imgUrl: '../../static/vip/9.9@2x.png'
 				}],
-				isShow: false,
 				isVip: '0',
 				waitTime:'',
 				TabCur: 0,
@@ -134,9 +105,6 @@
 			}
 		},
 		methods: {
-			tabChange(index) {
-				this.TabCur = index;
-			},
 			onPay() {
 				uni.navigateTo({
 					url: 'vip-type?id=' + this.selectedId,
@@ -144,9 +112,6 @@
 						console.log('success')
 					}
 				});
-			},
-			onChangeStatus() {
-				this.isShow = !this.isShow
 			},
 			onSelected(e) {
 				this.selectedId = e.currentTarget.id
@@ -181,14 +146,27 @@
 </script>
 
 <style>
+	.swiper-selected{
+		height: 556upx;
+		margin-top: 40upx;
+		margin-left: 26upx;
+		margin-bottom: 68upx;
+	}
+	
+	.content-copy{
+		width: 692upx;
+		height: 288upx;
+	}
+	
+	.content{
+		width: 698upx;
+		height: 556upx;
+	}
+	
 	.margin-fixed{
 		height: 56upx;
 	}
-	
-	.swiper{
-		height: 340upx;
-	}
-	
+		
 	.button {
 			width: 698upx;
 			height: 100upx;
@@ -202,14 +180,6 @@
 			margin-left: 26upx;
 		}
 	
-	.swiper-selected{
-		width: 100%;
-		height: 600upx;
-	}
-	
-	.scroll-class{
-		height:580upx;
-	}
 	
 	.vip-signal {
 		width: 92upx;
@@ -227,7 +197,8 @@
 		font-size: 32upx;
 		font-weight: bold;
 		color: #51D587;
-		background: #F3F3F3;
+		background: url(../../static/vip/hy-bg@2x.png) no-repeat;
+		background-size: cover;
 		height: 100upx;
 		width: 375upx;
 		display: flex;
@@ -244,33 +215,12 @@
 		justify-content: space-around;
 	}
 
-	.line-vertical {
-		width: 1upx;
-		height: 894upx;
-		position: absolute;
-		background: #EEEEEE;
-		right: 222upx;
-		top: 270upx;
-	}
-
 	.container-deal {
 		display: block;
 		color: #09BA51;
 		font-size: 24upx;
 		margin-top: 20upx;
-		margin-left: 280upx;
-		margin-bottom: 20upx;
-	}
-
-	.container-info {
-		display: flex;
-		flex-direction: column;
-		margin-left: 26upx;
-		margin-top: 42upx;
-	}
-
-	.container-info text {
-		font-size: 30upx;
+		margin-left: 198upx;
 		margin-bottom: 20upx;
 	}
 
@@ -287,74 +237,6 @@
 		justify-content: center;
 		align-items: center;
 		width: 180upx;
-	}
-
-	.content-item>view {
-		font-size: 24upx;
-	}
-
-	.content-item {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		padding-top: 24upx;
-		padding-bottom: 22upx;
-		padding-left: 40upx;
-		border-top: 1px solid #EEEEEE;
-		border-right: 1px solid #EEEEEE;
-		border-left: 1px solid #EEEEEE;
-	}
-
-	.content-subtitle-left {
-		padding: 20upx 164upx 16upx 154upx;
-		border-left: 1px solid #EEEEEE;
-	}
-
-	.content-subtitle-right {
-		border-left: 1px solid #EEEEEE;
-		border-right: 1px solid #EEEEEE;
-		padding: 20upx 64upx 16upx 70upx;
-	}
-
-	.content-subtitle {
-		display: flex;
-	}
-
-	.content {
-		margin-left: 26upx;
-		width: 698upx;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.content-title {
-		border: 1px solid #EEEEEE;
-		/* padding: 24upx 214upx 20upx 160upx; */
-		padding-top: 24upx;
-		padding-bottom: 20upx;
-
-	}
-	
-	.fixed1{
-		margin-left: 26upx;
-	}
-	
-	.content-desc {
-		display: block;
-		font-size: 30upx;
-		margin-top: 40upx;
-		margin-bottom: 22upx;
-	}
-
-	.text-signal {
-		font-size: 30upx;
-		color: #09BA51;
-		margin-right: 6upx;
-	}
-
-	.content-subtitle text {
-		font-size: 26upx;
-		color: #888F97;
 	}
 
 	.aldate {
@@ -396,10 +278,5 @@
 	.isbutton image {
 		position: absolute;
 		z-index: -99;
-	}
-
-	.content text {
-		font-size: 30upx;
-		display: inline-block;
 	}
 </style>

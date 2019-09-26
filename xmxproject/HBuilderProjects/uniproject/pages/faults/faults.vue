@@ -4,8 +4,8 @@
             <image :src="item.imgSrc"></image>
             <text>{{item.text}}</text>
         </view>
-        
-        <uniPopup custom="true" ref="popup" type="bottom">
+		<!-- <view class="disable"></view> -->
+        <uniPopup custom="true" ref="popup" type="bottom" @change="onChangeValue" >
             <view class="container-popup">
                 <view class="popup-title">
                     <view class="title-quick">
@@ -61,26 +61,23 @@
     import uniPopup from '../../components/uni-popup/uni-popup.vue'
 
     export default {
-        onLoad(e) {
+		//获取当前手机型号
+		onReady() {
 			uni.getStorage({
 				key:'model',
 				success:res=>{
 					this.model = res.data
 				}
 			})
-			
-			// uni.request({
-			// 	url:'https://www.finetwm.com/xmRepair/faults/getDetailList',
-			// 	success: res=>{
-			// 		this.faulesIdList = res.data.data
-			// 	}
-			// })
-            //判断是否快捷维修入口
-            let sid = e.id
-            if(sid == ''){
-                return
-            }else{
-                this.$refs.popup.open()
+		},
+		//判断是否快捷维修入口
+        onLoad(e) {
+			this.getFaultsItem()
+			let sid = e.id
+			if(sid == ''){
+				return
+			}else{
+				this.$refs.popup.open()
                 let xtypeId = this.faulesList[sid].type
                 uni.request({
                     url:'https://www.finetwm.com/xmRepair/faults/getDetail',
@@ -96,19 +93,10 @@
         },
         data() {
             return {
+				faulesItemCopy:[],
 				model:'',
-				faulesPrice:[],
 				faulesTitle:[],
-				faulesIdList:[],
-				flist1:[],
-                flist:[],
-                faulesItemPrice:[],
-                currentPrice:0,
                 totalPrice: 0,
-                isSelectedId: '',
-                isSelected: false,
-                unSelectedImg: '../../static/faults/wxz@2x.png',
-                selectedImg: '../../static/faults/wxz@2x.png',
                 faulesItem: [],
                 faulesList: [{
                     imgSrc: '../../static/faults/screen@2x.png',
@@ -158,38 +146,27 @@
                     imgSrc: '../../static/faults/other@2x.png',
                     text: '其他故障',
                     type: "others"
-                }]
+                }],
+				// selectedTitle:[],
+				// selectedTitle1:[],
+				// selectedTitle2:[],
+				// selectedPrice:[],
+				// selectedPrice1:[],
+				// selectedPrice2:[],
+				selectedId:[],
+				selectedId1:[],
+				selectedId2:[]
             }
         },
         methods: {
+			// 变更当前机型
 			changeType(){
 				uni.navigateTo({
 					url: '../selectmodel/selectmodel'
 				})
 			},
-            onSelected(e) {
-                this.isSelectedId = e.currentTarget.id
-            },
-            openPopup(sid) {
-                this.$refs.popup.open()
-                let xtypeId = this.faulesList[sid].type
-                uni.request({
-                    url:'https://www.finetwm.com/xmRepair/faults/getDetail',
-                    method:'POST',
-                    data:{
-                        type:xtypeId
-                    },
-                    success: res=>{
-                        this.faulesItem = res.data.data
-                    }
-                })
-
-            },
-            closePopup() {
-                this.$refs.popup.close()
-            },
+			// 上门维修跳转
             onsiteRepair(e) {
-
                 uni.navigateTo({
                     url: '../onsiterepair/onsiterepair',
 					success:res=>{
@@ -202,6 +179,7 @@
 					}
                 })
             },
+			// 到店维修跳转
             onsiteArrival(){
                 uni.navigateTo({
                     url:'../arrival-repair/arrival-repair',
@@ -216,33 +194,125 @@
                 })
             },
             onEventChange(e){
-				let ind = e.detail.value
-				let s= 0
-				let t = []
-				let sin = []
+				let ind = e.detail.value  //当前已选项id
+				console.log(ind)
+				// this.selectedTitle = []			//当前已选	数组
+				// this.selectedPrice = []
+				this.selectedId = []
 				for (let i = 0; i < ind.length; i++) {
-					let price = this.faulesItem[ind[i]].price
-					let title = this.faulesItem[ind[i]].title
-					sin.push(price)
-					t.push(title)
-					s = s+ price
-					this.totalPrice = s
-					uni.setStorage({
-						key:'faulesTitle',
-						data:t
-					})
-					uni.setStorage({
-						key:'totalPrice',
-						data:this.totalPrice
-					})
-					uni.setStorage({
-						key:'sprice',
-						data:sin
-					})
+					// let itemTitle = this.faulesItem[ind[i]].title
+					// let itemPrice = this.faulesItem[ind[i]].price
+					let itemId = this.faulesItem[ind[i]].id
+					// this.selectedTitle.push(itemTitle)
+					// this.selectedPrice.push(itemPrice)
+					this.selectedId.push(itemId)
 				}
-				// console.log(this.faulesPrice)
+				
+			},
+			getFaultsItem(){
+				uni.request({
+				    url:'https://www.finetwm.com/xmRepair/faults/getDetailList',
+				    success: res=>{
+						this.faulesItem = res.data.data
+						this.faulesItemCopy = res.data.data
+				    }
+				})
+			},
+			// open uni-popup
+			openPopup(sid) {
+				console.log(sid)
+                this.$refs.popup.open()
+				let faulesItem = this.faulesItem
+				if(sid === 0){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(0, 5)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 1){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(5, 11)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 2){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(11, 16)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 3){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(16, 20)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 4){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(20, 25)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 5){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(25, 28)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 6){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(28, 29)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 7){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(29, 38)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 8){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(38, 39)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 9){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(39, 46)
+					this.faulesItem = faulesItemCurrent
+				} else if(sid === 10){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(46,55)
+					this.faulesItem = faulesItemCurrent
+				} else if( sid === 11){
+					faulesItem = this.faulesItemCopy
+					let faulesItemCurrent = faulesItem.slice(55)
+					this.faulesItem = faulesItemCurrent
+				}
+				this.change1()
+            },
+            // close uni-pop
+			closePopup() {
+				this.$refs.popup.close()
+				// title存储为新数组
+				// this.selectedTitle1.push(this.selectedTitle)
+				// this.selectedTitle2 = this.selectedTitle1.flat()
+				// let s = [...new Set(this.selectedTitle2)]
+				// this.selectedTitle2 = s
+				
+				// price存储为新数组
+				// this.selectedPrice1.push(this.selectedPrice)
+				// this.selectedPrice2 = this.selectedPrice1.flat()
+				// let t = [...new Set(this.selectedPrice2)]
+				// this.selectedPrice2 = t
+				
+			},
+			onChangeValue(){
+				// id存储为新数组
+				this.selectedId1.push(this.selectedId)
+				this.selectedId2 = this.selectedId1.flat()
+				let u = [...new Set(this.selectedId2)]
+				this.selectedId2 = u
+			},
+			change1(){
+				for (let i = 0; i < this.faulesItem.length; i++) {
+					let id = this.faulesItem[i].id
+					let u = this.selectedId2.includes(id)
+					// console.log(u)
+					if (u){
+						this.$set(this.faulesItem[i], 'checked', true)
+						// let price = []
+						// price.push(this.faulesItem[i].price *= 1)
+						// price.join('+')
+						// console.log(price)
+					} else{
+						this.$set(this.faulesItem[i], 'checked', false)
+					}
+				}
 			}
-
 
 
         },
@@ -253,6 +323,15 @@
 </script>
 
 <style>
+	.disable{
+		width: 750upx;
+		height: 400upx;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: #09BB07;
+	}
+	
 	.title-quick-button{
 		margin-left: 10upx;
 		color: #09BA51;

@@ -15,9 +15,11 @@
 		评价
 		电话号码
 
-https://www.finetwm.com/xmRepair/
+https://www.finetwm.com/xmRepair
 
-content-Type: "x-www-form-urlencoded"
+header:{
+	"content-Type": "application/x-www-form-urlencoded"
+}
 
 
 

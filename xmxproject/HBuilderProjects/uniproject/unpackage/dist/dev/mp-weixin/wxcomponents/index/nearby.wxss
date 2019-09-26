@@ -1,4 +1,13 @@
 
+.disable{
+	background: #0081FF;
+	opacity: 0;
+	width: 698rpx;
+	height: 160rpx;
+	position: absolute;
+	top: 80rpx;
+	left: 0;
+}
 .container {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -14,6 +23,7 @@
 	    -ms-flex-pack: start;
 	        justify-content: flex-start;
 	margin-left: 26rpx;
+	position: relative;
 }
 .container map {
 	width: 698rpx;

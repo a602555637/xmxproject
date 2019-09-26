@@ -1,4 +1,12 @@
 
+.disable{
+		width: 750rpx;
+		height: 400rpx;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: #09BB07;
+}
 .title-quick-button{
 		margin-left: 10rpx;
 		color: #09BA51;

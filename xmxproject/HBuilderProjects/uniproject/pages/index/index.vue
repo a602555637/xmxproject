@@ -108,7 +108,7 @@
 				openId:'',
 				isLogin: true,
 				appid: 'wx5a7e48b2d2c7cc4b',
-				secret: '9fdc700fef21bb7d3141a50f3fc82591'
+				secret: '9fdc700fef21bb7d3141a50f3fc82591',
 			}
 		},
 		components: {

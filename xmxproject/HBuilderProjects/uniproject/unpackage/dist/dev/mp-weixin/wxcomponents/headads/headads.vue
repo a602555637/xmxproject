@@ -2,7 +2,7 @@
 	<view class="">
 		<view class="container-head">
 			<image class="hot" src="../../static/hot@2x.png"></image>
-			<swiper class="swiper" vertical="true" :indicator-dots="false" :autoplay="true" :interval="3000" :duration="1000">
+			<swiper circular class="swiper" vertical="true" :indicator-dots="false" :autoplay="true" :interval="3000" :duration="1000">
 				<swiper-item >
 					<view class="hot-text">今日换屏5折起</view>
 				</swiper-item>

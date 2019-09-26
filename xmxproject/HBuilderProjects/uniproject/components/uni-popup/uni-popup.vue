@@ -67,7 +67,7 @@ export default {
   methods: {
     clear () {},
     open () {
-      this.$emit('change', {
+      this.$emit('change1', {
         show: true
       })
       this.showPopup = true
