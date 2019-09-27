@@ -70,6 +70,39 @@
 					key:'phonetype',
 					data: this.smodel
 				})
+			},
+			hwTypeTest(e){
+				let s = e.slice(0,3)
+				switch (s){
+					case 'SCL' : s = '荣耀4A'
+						break;
+					case 'KIW' : s = '荣耀5X'
+						break;
+					case 'TAG' : s = '畅玩5S'
+						break;
+					case 'TIT' : s = '畅玩5'
+						break;
+					case 'H60' : s = '荣耀6'
+						break;
+					case 'PE ' : s = '荣耀6 Plus'
+						break;
+					case 'PLK' : s = '荣耀7'
+						break;
+					case 'ATH' : s = '荣耀7i'
+						break;
+					case 'KIW' : s = '荣耀5X'
+						break;
+					case 'MT7' : s = 'Mate 7'
+						break;
+					case 'TIT' : s = '畅玩5'
+						break;
+					case 'H60' : s = '荣耀6'
+						break;
+					case 'PE ' : s = '荣耀6 Plus'
+						break;
+					case 'PLK' : s = '荣耀7'
+						break;
+				}
 			}
 		}
 	}

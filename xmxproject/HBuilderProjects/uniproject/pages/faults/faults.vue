@@ -199,10 +199,16 @@
 				// this.selectedTitle = []			//当前已选	数组
 				// this.selectedPrice = []
 				this.selectedId = []
+				let priceArray = []
 				for (let i = 0; i < ind.length; i++) {
 					// let itemTitle = this.faulesItem[ind[i]].title
-					// let itemPrice = this.faulesItem[ind[i]].price
 					let itemId = this.faulesItem[ind[i]].id
+					
+					let itemPrice = this.faulesItem[ind[i]].price
+					priceArray.push(itemPrice)
+					
+					console.log(typeof(itemPrice))
+					console.log(priceArray)
 					// this.selectedTitle.push(itemTitle)
 					// this.selectedPrice.push(itemPrice)
 					this.selectedId.push(itemId)
