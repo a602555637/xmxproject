@@ -51,10 +51,12 @@
 		</view>
 		<uni-popup custom ref="popup" type="center">
 			<view class="popup">
-				<image class="popup-close" src="../../static/faults/close@2x.png" mode=""></image>
-				<image class="popup-icon" src="../../static/my/pass@2x.png"></image>
-				<text class="popup-desc">恭喜您，审核通过</text>
-				<view class="popup-button">签订入驻协议</view>
+				<image @click="closePopup" class="popup-close" src="../../static/faults/close@2x.png"></image>
+				<image v-if="opinion" class="popup-icon" src="../../static/my/nopass@2x.png"></image>
+				<image v-else class="popup-icon" src="../../static/my/pass@2x.png"></image>
+				<text v-if="opinion" class="popup-desc">{{opinion}}</text>
+				<text v-else class="popup-desc">恭喜您，审核通过</text>
+				<view @click="bindContract" class="popup-button">签订入驻协议</view>
 			</view>
 		</uni-popup>
 	</view>
@@ -104,6 +106,7 @@
 		},
 		data() {
 			return {
+				opinion:'',
 				onIsvip: 2,
 				openId:'',
 				isLogin: true,
@@ -125,6 +128,11 @@
 			uniPopup
 		},
 		methods: {
+			bindContract(){
+				uni.navigateTo({
+					url: '../my/contract'
+				})
+			},
 			isVip(){
 				console.log(this.openId)
 				console.log(typeof(this.openId))
@@ -156,7 +164,10 @@
 					},
 					success: res => {
 						let stat = res.data.data.stat
-						if(stat == 3){
+						if(stat == 3 || 5){
+							if(this.opinion){
+								this.opinion = res.data.data.opinion
+							}
 							this.openPopup()
 						} 
 						return
@@ -238,8 +249,8 @@
 
 <style>
 	.popup-close{
-		width: 42upx;
-		height: 42upx;
+		width: 40upx;
+		height: 40upx;
 		position: absolute;
 		top: 30upx;
 		right: 28upx;
@@ -260,19 +271,19 @@
 	
 	.popup-desc{
 		font-size: 40upx;
-		margin-bottom: 20upx;
+		margin-bottom: 68upx;
 	}
 	
 	.popup-icon{
-		width: 136upx;
-		height: 136upx;
-		margin-top: 60upx;
-		margin-bottom: 20upx;
+		width: 84upx;
+		height: 84upx;
+		margin-top: 48upx;
+		margin-bottom: 48upx;
 	}
 	
 	.popup{
-		width: 600upx;
-		height: 400upx;
+		width: 560upx;
+		height: 440upx;
 		background: #FFFFFF;
 		display: flex;
 		flex-direction: column;

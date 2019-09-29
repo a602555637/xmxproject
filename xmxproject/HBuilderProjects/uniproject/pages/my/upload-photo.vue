@@ -16,6 +16,19 @@
 		<text>营业执照</text>
 		<image v-if="imgUrl3 == ''" @click="onChooseImg3" src="../../static/my/yyzz@2x.png"></image>
 		<image v-else @click="onChooseImg3" :src="imgUrl3"></image>
+
+		<text>工作台照</text>
+		<image v-if="imgUrl4 == ''" @click="onChooseImg4" src="../../static/my/yyzz@2x.png"></image>
+		<image v-else @click="onChooseImg4" :src="imgUrl4"></image>
+		
+		<text>店外景照</text>
+		<image v-if="imgUrl5 == ''" @click="onChooseImg5" src="../../static/my/yyzz@2x.png"></image>
+		<image v-else @click="onChooseImg5" :src="imgUrl5"></image>
+		
+		<text>店内景照</text>
+		<image v-if="imgUrl6 == ''" @click="onChooseImg6" src="../../static/my/yyzz@2x.png"></image>
+		<image v-else @click="onChooseImg6" :src="imgUrl6"></image>
+		
 		<view @click="onSubmit" class="container-button">提交</view>
 	</view>
 </template>
@@ -35,6 +48,9 @@ export default {
 			imgUrl1: '',
 			imgUrl2: '',
 			imgUrl3: '',
+			imgUrl4: '',
+			imgUrl5: '',
+			imgUrl6: '',
 			openId: ''
 		};
 	},
@@ -72,9 +88,13 @@ export default {
 						url: 'https://www.finetwm.com/xmRepair/shopInfo/upload', //仅为示例，非真实的接口地址
 						filePath: this.imgUrl1,
 						header: {
-								'content-Type': 'multipart/form-data'
-							},
-						name: 'file'
+							'content-Type': 'multipart/form-data'
+						},
+						name: 'file',
+						formData:{
+							type: 1,
+							openid:this.openId
+						}
 					})
 				}
 			})
@@ -90,9 +110,13 @@ export default {
 						url: 'https://www.finetwm.com/xmRepair/shopInfo/upload', //仅为示例，非真实的接口地址
 						filePath: this.imgUrl2,
 						header: {
-								'content-Type': 'multipart/form-data'
-							},
-						name: 'file'
+							'content-Type': 'multipart/form-data'
+						},
+						name: 'file',
+						formData:{
+							type: 2,
+							openid:this.openId
+						}
 					})
 				}
 			})
@@ -108,9 +132,79 @@ export default {
 						url: 'https://www.finetwm.com/xmRepair/shopInfo/upload', //仅为示例，非真实的接口地址
 						filePath: this.imgUrl3,
 						header: {
-								'content-Type': 'multipart/form-data'
-							},
-						name: 'file'
+							'content-Type': 'multipart/form-data'
+						},
+						name: 'file',
+						formData:{
+							type: 3,
+							openid:this.openId
+						}
+					})
+				}
+			})
+		},
+		onChooseImg4() {
+			uni.chooseImage({
+				count: 1,
+				sizeType: ['original', 'compressed'],
+				sourceType: ['album'],
+				success: res => {
+					this.imgUrl4 = res.tempFilePaths[0]
+					uni.uploadFile({
+						url: 'https://www.finetwm.com/xmRepair/shopInfo/upload', //仅为示例，非真实的接口地址
+						filePath: this.imgUrl4,
+						header: {
+							'content-Type': 'multipart/form-data'
+						},
+						name: 'file',
+						formData:{
+							type: 7,
+							openid:this.openId
+						}
+					})
+				}
+			})
+		},
+		onChooseImg5() {
+			uni.chooseImage({
+				count: 1,
+				sizeType: ['original', 'compressed'],
+				sourceType: ['album'],
+				success: res => {
+					this.imgUrl5 = res.tempFilePaths[0]
+					uni.uploadFile({
+						url: 'https://www.finetwm.com/xmRepair/shopInfo/upload', //仅为示例，非真实的接口地址
+						filePath: this.imgUrl5,
+						header: {
+							'content-Type': 'multipart/form-data'
+						},
+						name: 'file',
+						formData:{
+							type: 5,
+							openid:this.openId
+						}
+					})
+				}
+			})
+		},
+		onChooseImg6() {
+			uni.chooseImage({
+				count: 1,
+				sizeType: ['original', 'compressed'],
+				sourceType: ['album'],
+				success: res => {
+					this.imgUrl6 = res.tempFilePaths[0]
+					uni.uploadFile({
+						url: 'https://www.finetwm.com/xmRepair/shopInfo/upload', //仅为示例，非真实的接口地址
+						filePath: this.imgUrl6,
+						header: {
+							'content-Type': 'multipart/form-data'
+						},
+						name: 'file',
+						formData:{
+							type: 6,
+							openid:this.openId
+						}
 					})
 				}
 			})
@@ -124,7 +218,7 @@ export default {
 	width: 698upx;
 	height: 80upx;
 	border-radius: 12upx;
-	margin-top: 308upx;
+	margin-top: 117upx;
 	margin-left: 26upx;
 	font-size: 30upx;
 	color: #ffffff;

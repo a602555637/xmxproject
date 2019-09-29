@@ -11,6 +11,14 @@
 	import xinput from '../../wxcomponents/common/xinput.vue'
 	
 	export default {
+		created() {
+			uni.getStorage({
+				key: 'openId',
+				success:res=>{
+					this.openId = res.data
+				}
+			})
+		},
 		data() {
 			return {
 				openId:'',
@@ -35,14 +43,8 @@
 						title: '密码格式不正确',
 						icon:'none'
 					})
-				} else{
-					uni.getStorage({
-						key: 'openId',
-						success:res=>{
-							this.openId = res.data
-							this.requestUrl()
-						}
-					})
+				} else {
+					this.requestUrl()
 				}
 			},
 			bindSubmit(){
@@ -60,7 +62,7 @@
 			},
 			requestUrl(){
 				uni.request({
-					url: 'https://www.finetwm.com/xmRepair/userInfo/setPassword',
+					url: 'https://www.finetwm.com/xmRepair/shopInfo/setPassword',
 					method: 'POST',
 					data: {
 						openid: this.openId,
@@ -68,9 +70,14 @@
 					},
 					success: res => {
 						console.log(res)
-						uni.reLaunch({
-							url: 'verify-result'
+						uni.showToast({
+							title: '设置成功'
 						})
+						setTimeout(()=>{
+							uni.reLaunch({
+								url: '../index/index'
+							})
+						},1000)
 					},
 					fail: err => {
 						console.log(err)

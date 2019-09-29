@@ -88,11 +88,12 @@
 			},
 			requestUrl() {
 				uni.request({
-					url: 'https://120.24.180.246:8080/xmRepair/shopInfo/upload',
+					url: 'https://www.finetwm.com/xmRepair/shopInfo/upload',
 					data: {
 						file: this.signUrl,
 						openid: this.openId,
-						type: 4
+						type: 4,
+						stat: 4
 					},
 					success: res => {
 						console.log('success')

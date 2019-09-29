@@ -20,7 +20,7 @@
 		</view>
 		<view class="line"></view>
 		<uniList>
-			<uniItem @click="onBeVip" title="我的会员" thumb='../../static/my/icon/vip@2x.png'></uniItem>
+			<uniItem title="我的会员" thumb='../../static/my/icon/vip@2x.png'></uniItem>
 			<text class="info-text">了解详情</text>
 			<uniItem @click="onOrderList" title="我的订单" thumb='../../static/my/icon/orders@2x.png'></uniItem>
 			<uniItem @click="onMyWallet" title="我的钱包" thumb='../../static/my/icon/wallet@2x.png'></uniItem>
@@ -61,18 +61,6 @@
 				key: 'openId',
 				success: res => {
 					this.openId = res.data
-					// uni.request({
-					// 	url: 'https://www.finetwm.com/xmRepair/userInfo/isvip',
-					// 	data: {
-					// 		openid: 'o4__y5Cy6VPWrggg_YCQX81qvdAU',
-					// 		superiorId: this.superiorId
-					// 	},
-					// 	success: res => {
-					// 		console.log(res)
-					// 		this.isVip = res.data.data.isvip
-					// 		this.waitTime = res.data.data.wait
-					// 	}
-					// })
 				}
 			})
 		},

@@ -94,13 +94,23 @@
 						break;
 					case 'MT7' : s = 'Mate 7'
 						break;
-					case 'TIT' : s = '畅玩5'
+					case 'P7-' : s = '畅玩5'
 						break;
-					case 'H60' : s = '荣耀6'
+					case 'KNT' : s = '荣耀V8'
 						break;
-					case 'PE ' : s = '荣耀6 Plus'
+					case 'FRD' : s = '荣耀8'
 						break;
-					case 'PLK' : s = '荣耀7'
+					case 'NXT' : s = 'Mate 8'
+						break;
+					case 'EDI' : s = 'Note 8'
+						break;
+					case 'MHA' : s = 'Mate 9'
+						break;
+					case 'ALE' : s = 'P8 青春版'
+						break;
+					case 'GRA' : s = 'P8'
+						break;
+					case 'NEM' : s = '荣耀5c'
 						break;
 				}
 			}

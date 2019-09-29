@@ -11,13 +11,22 @@
 	import xinput from '../../../wxcomponents/common/xinput.vue'
 	import xlistInput from '../../../wxcomponents/xlist/xlist-input.vue'
 	export default {
+		onLoad() {
+			uni.getStorage({
+				key: 'openId',
+				success: res => {
+					this.openId = res.data
+				}
+			})
+		},
 		data() {
 			return {
 				buttonTitle: '登录',
 				phonenum: '',
 				scode: '',
 				xpassword: true,
-				xtype: 'number'
+				xtype: 'number',
+				openId:''
 			}
 		},
 		methods: {
@@ -41,10 +50,12 @@
 					},
 					data: {
 						phone: phonenum,
-						password: scode
+						password: scode,
+						openid: this.openId
 					},
 					success: res => {
-						if(res.data.data === '1'){
+						let stat = res.data.data.status
+						if(res.data.data.success === 0){
 							uni.showToast({
 								title: '登录成功'
 							})

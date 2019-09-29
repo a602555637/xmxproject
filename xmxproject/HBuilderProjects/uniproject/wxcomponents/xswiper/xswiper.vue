@@ -67,11 +67,11 @@
 		methods: {
 			bindSwiperTap(id){
 				// console.log(typeof(id))
-				if(id === 1){
-					uni.navigateTo({
-						url: '../../pages/bevip/bevip'
-					})
-				} return
+				// if(id === 1){
+				// 	uni.navigateTo({
+				// 		url: '../../pages/bevip/bevip'
+				// 	})
+				// } return
 				// else if( id === 3){
 				// 	uni.navigateTo({
 				// 		url:'../../pages/prize/prize'

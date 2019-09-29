@@ -105,6 +105,7 @@
 						this.latitude = loca.slice(locaIndex + 1, loca.length)
 						this.longitude *= 1
 						this.latitude *= 1
+						this.onPost()
 					},
 					fail: err => {
 						console.log(err)
@@ -139,7 +140,6 @@
 				})
 			},
 			onSave() {
-				this.onLocation()
 				let scode = this.scode.toString()
 				let phoneCode = this.phoneCode.toString()
 				if(this.name == ''){
@@ -173,7 +173,7 @@
 						icon:'none'
 					})
 				}else {
-					this.onPost()
+					this.onLocation()
 					uni.showToast({
 						title: '保存成功'
 					})
