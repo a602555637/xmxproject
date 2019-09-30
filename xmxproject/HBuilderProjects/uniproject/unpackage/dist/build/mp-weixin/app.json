@@ -4,7 +4,7 @@
     "pages/my/my",
     "pages/bevip/bevip",
     "pages/bevip/vip-type",
-    "pages/payvip/payvip",
+    "pages/bevip/payvip",
     "pages/orderlist/orderlist",
     "pages/mywallet/mywallet",
     "pages/addresslist/addresslist",

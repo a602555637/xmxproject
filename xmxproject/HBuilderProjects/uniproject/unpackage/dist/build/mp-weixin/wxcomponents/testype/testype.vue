@@ -70,6 +70,49 @@
 					key:'phonetype',
 					data: this.smodel
 				})
+			},
+			hwTypeTest(e){
+				let s = e.slice(0,3)
+				switch (s){
+					case 'SCL' : s = '荣耀4A'
+						break;
+					case 'KIW' : s = '荣耀5X'
+						break;
+					case 'TAG' : s = '畅玩5S'
+						break;
+					case 'TIT' : s = '畅玩5'
+						break;
+					case 'H60' : s = '荣耀6'
+						break;
+					case 'PE ' : s = '荣耀6 Plus'
+						break;
+					case 'PLK' : s = '荣耀7'
+						break;
+					case 'ATH' : s = '荣耀7i'
+						break;
+					case 'KIW' : s = '荣耀5X'
+						break;
+					case 'MT7' : s = 'Mate 7'
+						break;
+					case 'P7-' : s = '畅玩5'
+						break;
+					case 'KNT' : s = '荣耀V8'
+						break;
+					case 'FRD' : s = '荣耀8'
+						break;
+					case 'NXT' : s = 'Mate 8'
+						break;
+					case 'EDI' : s = 'Note 8'
+						break;
+					case 'MHA' : s = 'Mate 9'
+						break;
+					case 'ALE' : s = 'P8 青春版'
+						break;
+					case 'GRA' : s = 'P8'
+						break;
+					case 'NEM' : s = '荣耀5c'
+						break;
+				}
 			}
 		}
 	}

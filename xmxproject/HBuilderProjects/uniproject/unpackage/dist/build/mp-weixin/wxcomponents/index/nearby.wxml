@@ -1,1 +1,1 @@
-<view class="container"><text>您的附近</text><map latitude="{{latitude}}" longitude="{{longitude}}" data-event-opts="{{[['tap',[['bindMap',['$event']]]]]}}" bindtap="__e"></map></view>
+<view class="container"><text>您的附近</text><map latitude="{{latitude}}" longitude="{{longitude}}"></map><view class="disable" markers="{{markers}}" show-location data-event-opts="{{[['tap',[['bindMap',['$event']]]]]}}" bindtap="__e"></view></view>

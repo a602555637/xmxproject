@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="container-title">
 			<text class="container-title-head">会员特权</text>
-				<view @click="onVip" class="bevip-button">成为会员</view>
+				<view v-if="onIsvip == 2" class="bevip-button">成为会员</view>
 			<view class="container-subtitle">
 				<image src="../../static/cj@2x.png"></image>
 				<text class="container-title-more">每日一抽</text>
@@ -41,6 +41,12 @@
 			}
 		},
 		name: 'vipserve',
+		props:{
+			onIsvip:{
+				type:Number,
+				default: 2
+			}
+		},
 		methods: {
 			onPrize() {
 				uni.navigateTo({

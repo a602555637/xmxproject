@@ -251,7 +251,6 @@
 	.container-desc-content {
 		width: 610upx;
 		height: 90upx;
-		border: 1px solid #F3F3F3;
 		display: flex;
 		align-items: center;
 		padding-left: 30upx;

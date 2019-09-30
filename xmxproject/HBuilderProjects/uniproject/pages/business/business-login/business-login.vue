@@ -37,7 +37,19 @@
 				this.scode = e.inputValue
 			},
 			onNext() {
-				this.bindValidate()
+				if(!this.phonenum){
+					uni.showToast({
+						title: '请输入手机号码',
+						icon:'none'
+					})
+				} else if(!this.scode){
+					uni.showToast({
+						title: '请输入密码',
+						icon:'none'
+					})
+				} else{
+					this.bindValidate()
+				}
 			},
 			bindValidate(){
 				let phonenum = this.phonenum.toString()
@@ -54,8 +66,13 @@
 						openid: this.openId
 					},
 					success: res => {
-						let stat = res.data.data.status
-						if(res.data.data.success === 0){
+						console.log(res)
+						if(res.data.code === 400){
+							uni.showToast({
+								title: '请先入驻',
+								icon:'none'
+							})
+						} else if(res.data.data.success === 0){
 							uni.showToast({
 								title: '登录成功'
 							})

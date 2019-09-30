@@ -36,7 +36,7 @@
 					<text>暂未公布</text>
 				</view>
 			</view>
-			<view @click="openPopup" class="kf-phone">
+			<view class="kf-phone">
 				<text>客服热线</text>
 				<text>关于我们</text>
 				<text>联系我们</text>
