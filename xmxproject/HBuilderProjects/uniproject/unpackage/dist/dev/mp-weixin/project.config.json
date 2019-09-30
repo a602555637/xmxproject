@@ -33,33 +33,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
 					"name": "pages/business/business-login/business-login",
 					"pathName": "pages/business/business-login/business-login",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/business/index/index",
-					"pathName": "pages/business/index/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/faults/faults",
-					"pathName": "pages/faults/faults",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/index/more-serve",
-					"pathName": "pages/index/more-serve",
 					"scene": null
 				}
 			]

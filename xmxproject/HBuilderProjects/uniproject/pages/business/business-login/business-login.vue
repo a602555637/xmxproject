@@ -55,7 +55,7 @@
 				let phonenum = this.phonenum.toString()
 				let scode = this.scode.toString()
 				uni.request({
-					url: 'https://www.finetwm.com/xmRepair/shopInfo/login ',
+					url: 'https://www.finetwm.com/xmRepair/shopInfo/login',
 					method: 'POST',
 					header:{
 						"content-Type": "application/x-www-form-urlencoded"
