@@ -4,6 +4,16 @@ https://www.finetwm.com/xmRepair/
 如果传的参数是{} header：json
 
 
+微信登录
+/userInfo/login
+参数："code"
+返回：
+ {
+ "openid":"o4__y5Cy6VPWrXLX_YCQX81qvdAU",
+ "session_key":"VIPirvLXLt7XGiwcAFlLWQ=="
+ }
+
+
 根据商家openid获取shopid 
 /shopinfo/findIdByOpenid
 GET
@@ -289,7 +299,12 @@ data：{
 shopInfo/login 
  phone:
  password:
-返回  成功  失败
+ openid:
+返回  {
+    success: true(0)/ false(1)
+    status:0
+}
+
  String "SESSIONID"/"登录失败"
 
 
@@ -373,7 +388,7 @@ POST
  "superior_id":"上级id" （如有）
 }
 返回
- String "0"成功、"1"失败
+ String "0"成功、"1"失败 
 
 
 
@@ -497,7 +512,11 @@ GET
     type:{ 1 身份证1
             ,2 身份证2
             ,3 营业执照,
-            4 签名，}，
+            4 签名，
+            5店铺外景,
+            6店铺内景,
+            7工作台
+        }，
     openid:''
 
 
