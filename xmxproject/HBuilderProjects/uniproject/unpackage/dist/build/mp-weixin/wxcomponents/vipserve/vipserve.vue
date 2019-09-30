@@ -5,7 +5,7 @@
 				<view v-if="onIsvip == 2" class="bevip-button">成为会员</view>
 			<view class="container-subtitle">
 				<image src="../../static/cj@2x.png"></image>
-				<text class="container-title-more">每日一抽</text>
+				<text @click="onPrize" class="container-title-more">每日一抽</text>
 			</view>
 		</view>
 		<swiper class="swiper" :indicator-dots="false" :previous-margin="previous" :next-margin="next" :circular="circular">

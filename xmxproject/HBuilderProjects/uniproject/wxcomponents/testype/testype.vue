@@ -28,7 +28,7 @@
 					let t = s.indexOf('<')
 					if(t > 0 && t < 15){
 						s = s.substring(0, t)
-						console.log('1' + s + '*')
+						// console.log('1' + s + '*')
 						this.phoneType = s
 						this.smodel = s
 						this.setStorage()
@@ -36,12 +36,12 @@
 						let r = s.indexOf('(')
 						if( r > 0 ){
 							s = s.substring(0, r)
-							console.log(s)
+							// console.log(s)
 							this.phoneType = s
 							this.smodel = s
 							this.setStorage()
 						} else {
-							console.log('3' + s)
+							// console.log('3' + s)
 							this.phoneType = s
 							this.smodel = s
 							this.setStorage()

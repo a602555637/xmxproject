@@ -1,4 +1,14 @@
 
+.swiper-container{
+	width: 750rpx;
+	height: 140rpx;
+	position: fixed;
+	bottom: 0;
+}
+.swiper-img{
+	width: 750rpx;
+	height: 140rpx;
+}
 .button-class{
 	background: #FFFFFF;
 }

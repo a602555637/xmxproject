@@ -43,7 +43,8 @@
     "pages/index/map",
     "pages/my/rule",
     "pages/business/business-code/business-code",
-    "pages/index/about-us"
+    "pages/index/about-us",
+    "pages/index/more-serve"
   ],
   "subPackages": [],
   "window": {
@@ -57,6 +58,5 @@
       "desc": "定位服务"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap32.json"
+  "usingComponents": {}
 }

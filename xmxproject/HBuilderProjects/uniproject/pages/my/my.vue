@@ -31,6 +31,14 @@
 			<uniItem @click="onlineKf" title="在线客服" thumb='../../static/my/icon/ser@2x.png'></uniItem>
 			<uniItem title="意见反馈" thumb='../../static/my/icon/yjfk@2x.png'></uniItem>
 		</uniList>
+		<swiper class="swiper-container" circular indicator-dots autoplay :interval="2000" :duration="1000" indicator-active-color="#fff">
+			<swiper-item>
+				<image class="swiper-img" src="../../static/my/cwhhr@2x.png"></image>
+			</swiper-item>
+			<swiper-item>
+				<image class="swiper-img" src="../../static/my/fxyl@2x.png"></image>
+			</swiper-item>
+		</swiper>
 	</view>
 
 </template>
@@ -65,9 +73,45 @@
 			})
 		},
 		onLoad() {
-			
+			this.getOpenId()
 		},
 		methods: {
+			getOpenId() {
+				uni.login({
+					success: res => {
+						if (res.code) {
+							uni.getUserInfo({
+								success: res => {
+									// console.log('存在code')
+								}
+							})
+							let code = res.code
+							uni.request({
+								url: 'https://www.finetwm.com/xmRepair/userInfo/login',
+								data: {
+									code: code
+								},
+								method: 'GET',
+								success: res => {
+									// this.openId = res.data.openid
+									console.log(res.data.data.openid)
+									this.openId = res.data.data.openid
+									uni.setStorage({
+										key: 'openId',
+										data: this.openId,
+										success:res=>{
+											console.log('success storage')
+										}
+									})
+									// obj.expires_in = Date.now() + res.data.expires_in
+								}
+							});
+						} else {
+							console.log('获取用户登录态失败！' + res.errMsg);
+						}
+					}
+				})
+			},
 			getUserInfo(){
 				uni.getUserInfo({
 					success:res=>{
@@ -129,6 +173,18 @@
 </script>
 
 <style>
+	.swiper-container{
+		width: 750upx;
+		height: 140upx;
+		position: fixed;
+		bottom: 0;
+	}
+	
+	.swiper-img{
+		width: 750upx;
+		height: 140upx;
+	}
+	
 	.button-class{
 		background: #FFFFFF;
 	}

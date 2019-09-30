@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="container-title">
 			<text class="container-title-head">服务区</text>
-			<text class="container-title-more">更多服务</text>
+			<text @click="bindMore" class="container-title-more">更多服务</text>
 		</view>
 		<view class="container-top">
 			<view @click="quickSelect" class="container-top-item">
@@ -62,6 +62,11 @@
 					url:'../../pages/faults/faults?id=10'
 				})
 			},
+			bindMore(){
+				uni.navigateTo({
+					url: '../../pages/index/more-serve'
+				})
+			}
 			// dataSelect(){
 			// 	uni.navigateTo({
 			// 		url:'../../pages/faults/faults?id=10'

@@ -1,4 +1,7 @@
 
+.margin-fixed {
+	height: 56rpx;
+}
 .container-button {
 	width: 698rpx;
 	height: 80rpx;

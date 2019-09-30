@@ -14,7 +14,7 @@
 	-webkit-justify-content: space-between;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
-	margin: 0rpx 0rpx 60rpx 32rpx;
+	margin: 0rpx 0rpx 30rpx 32rpx;
 	width: 698rpx;
 }
 .container-item {

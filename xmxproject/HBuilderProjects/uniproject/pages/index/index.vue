@@ -76,6 +76,9 @@
 	import uniPopup from '../../components/uni-popup/uni-popup.vue'
 	
 	export default {
+		created() {
+			this.getOpenId()
+		},
 		onShow() {
 			uni.getSetting({
 				success:res=>{
@@ -100,7 +103,7 @@
 			uni.removeStorage({
 				key: 'sid',
 				success: res => {
-					console.log('clear success')
+					// console.log('clear success')
 				}
 			})
 		},
@@ -109,9 +112,7 @@
 				opinion:'',
 				onIsvip: 2,
 				openId:'',
-				isLogin: true,
-				appid: 'wx5a7e48b2d2c7cc4b',
-				secret: '9fdc700fef21bb7d3141a50f3fc82591',
+				isLogin: true
 			}
 		},
 		components: {
@@ -134,8 +135,6 @@
 				})
 			},
 			isVip(){
-				console.log(this.openId)
-				console.log(typeof(this.openId))
 				uni.request({
 					url: 'https://www.finetwm.com/xmRepair/userInfo/isvip',
 					method: 'GET',
@@ -147,7 +146,6 @@
 						superiorId:''
 					},
 					success: res => {
-						console.log(res.data.data.vipList[0])
 						this.onIsvip = res.data.data.vipList[0].isvip
 					},
 					fail: err => {
@@ -164,7 +162,7 @@
 					},
 					success: res => {
 						let stat = res.data.data.stat
-						if(stat == 3 || 5){
+						if(stat == 1 || stat == 5){
 							if(this.opinion){
 								this.opinion = res.data.data.opinion
 							}
@@ -211,25 +209,25 @@
 						if (res.code) {
 							uni.getUserInfo({
 								success: res => {
-									console.log('存在code')
+									// console.log('存在code')
 								}
 							})
-							let appid = this.appid //这里是我的appid，需要改成你自己的
-							let secret = this.secret //密钥也要改成你自己的
-							let url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appid + '&secret=' + secret + '&js_code=' +
-								res.code + '&grant_type=authorization_code'
+							let code = res.code
 							uni.request({
-								url: url,
-								data: {},
+								url: 'https://www.finetwm.com/xmRepair/userInfo/login',
+								data: {
+									code: code
+								},
 								method: 'GET',
 								success: res => {
-									this.openId = res.data.openid
-									// console.log('openid: ' + res.data.openid);
+									// this.openId = res.data.openid
+									console.log(res.data.data.openid)
+									this.openId = res.data.data.openid
 									uni.setStorage({
 										key: 'openId',
 										data: this.openId,
 										success:res=>{
-											console.log('success storage')
+											// console.log('success storage')
 											this.requestVerify()
 											this.isVip()
 										}

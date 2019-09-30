@@ -61,7 +61,7 @@
 	.container{
 		display: flex;
 		justify-content: space-between;
-		margin: 0upx 0upx 60upx 32upx;
+		margin: 0upx 0upx 30upx 32upx;
 		width: 698upx;
 	}
 	

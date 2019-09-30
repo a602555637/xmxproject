@@ -2,12 +2,14 @@
 .container-middle-iphone{
 	-webkit-box-shadow:0rpx 0rpx 40rpx rgba(0,0,0,0.16);
 	        box-shadow:0rpx 0rpx 40rpx rgba(0,0,0,0.16);
+	border-radius:12rpx;
 	margin-left: 62rpx;
 	margin-right: 28rpx;
 }
 .container-middle-ipad {
 	-webkit-box-shadow:0rpx 0rpx 40rpx rgba(0,0,0,0.16);
 	        box-shadow:0rpx 0rpx 40rpx rgba(0,0,0,0.16);
+	border-radius:12rpx;
 }
 .container-middle image {
 	width: 298rpx;

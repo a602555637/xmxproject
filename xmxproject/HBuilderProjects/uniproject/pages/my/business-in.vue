@@ -222,15 +222,15 @@
 						"content-Type": "application/json"
 					},
 					data:{
-						openid:this.openId,
+						openid: this.openId,
 						name: this.name,
-						manager:this.manager,
-						phone:this.phone,
-						area:this.area,
-						street:this.street,
-						detail_address:this.detail_address,
-						type:this.selectedItemIndex,
-						service_mode:this.selectedItemTypeIndex,
+						manager: this.manager,
+						phone: this.phone,
+						area: this.area,
+						street: this.street,
+						detail_address: this.detail_address,
+						type: this.selectedItemIndex,
+						service_mode: this.selectedItemTypeIndex,
 						longitude: this.longitude,
 						latitude: this.latitude
 					},

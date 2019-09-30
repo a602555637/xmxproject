@@ -228,6 +228,12 @@
 			"style": {
 				"navigationBarTitleText": "关于我们"
 			}
+		},
+		{
+			"path": "pages/index/more-serve",
+			"style": {
+				"navigationBarTitleText": "更多服务"
+			}
 		}
 	],
 	"globalStyle": {

@@ -35,7 +35,7 @@
 				uni.getLocation({
 				    type: 'wgs84',
 				    success: res=> {
-						console.log(res)
+						// console.log(res)
 						this.latitude = res.latitude
 						this.longitude = res.longitude
 					}

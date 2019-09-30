@@ -21,12 +21,14 @@
 <style>
 	.container-middle-iphone{
 		box-shadow:0upx 0upx 40upx rgba(0,0,0,0.16);
+		border-radius:12upx;
 		margin-left: 62upx;
 		margin-right: 28upx;
 	}
 	
 	.container-middle-ipad {
 		box-shadow:0upx 0upx 40upx rgba(0,0,0,0.16);
+		border-radius:12upx;
 	}
 	
 	.container-middle image {
