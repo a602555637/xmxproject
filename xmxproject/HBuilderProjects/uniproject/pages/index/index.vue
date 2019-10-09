@@ -1,96 +1,64 @@
 <template>
 	<view>
-		<view v-if="isLogin">
-			<headads></headads>
-			<view class="xswiper">
-				<xswiper></xswiper>
-			</view>
-			<image @click="onBusiness" class="fixed2" src="../../static/index/store@2x.png"></image>
-			<testype></testype>
-			<bbutton></bbutton>
-			<quick-select></quick-select>
-			<servebutton></servebutton>
-			<vipserve :onIsvip="onIsvip"></vipserve>
-			<nearby></nearby>
-			<comment></comment>
-			<view class="bottom">
-				<view class="left">
-					<view class="left-text">
-						<text>服务用户</text>
-						<image src="../../static/wxcomponentimg/up@2x.png"></image>
-					</view>
-					<text>暂未公布</text>
-				</view>
-				<view class="left">
-					<view class="left-text">
-						<text>维修设备</text>
-						<image src="../../static/wxcomponentimg/up@2x.png"></image>
-					</view>
-					<text>暂未公布</text>
-				</view>
-				<view class="left">
-					<view class="left-text">
-						<text>好评度</text>
-						<image src="../../static/wxcomponentimg/up@2x.png"></image>
-					</view>
-					<text>暂未公布</text>
-				</view>
-			</view>
-			<view class="kf-phone">
-				<text>客服热线</text>
-				<text>关于我们</text>
-				<text>联系我们</text>
-				<text>服务流程</text>
-			</view>
-			<view class="vacol"></view>
-			<tabbar></tabbar>
+		<headads></headads>
+		<view class="xswiper">
+			<xswiper></xswiper>
 		</view>
-		<view v-else class="container-login">
-			<image src="../../static/index/logo@2x.png"></image>
-			<button class="login-button" open-type="getUserInfo" @getuserinfo="getUserInfo">微信授权登录</button>
-		</view>
-		<uni-popup custom ref="popup" type="center">
-			<view class="popup">
-				<image @click="closePopup" class="popup-close" src="../../static/faults/close@2x.png"></image>
-				<image v-if="opinion" class="popup-icon" src="../../static/my/nopass@2x.png"></image>
-				<image v-else class="popup-icon" src="../../static/my/pass@2x.png"></image>
-				<text v-if="opinion" class="popup-desc">{{opinion}}</text>
-				<text v-else class="popup-desc">恭喜您，审核通过</text>
-				<view @click="bindContract" class="popup-button">签订入驻协议</view>
+		<image @click="onBusiness" class="fixed2" src="../../static/index/store@2x.png"></image>
+		<testype></testype>
+		<bbutton></bbutton>
+		<quick-select></quick-select>
+		<servebutton></servebutton>
+		<vipserve></vipserve>
+		<nearby></nearby>
+		<comment></comment>
+		<view class="bottom">
+			<view class="left">
+				<view class="left-text">
+					<text>服务用户</text>
+					<image src="../../static/wxcomponentimg/up@2x.png"></image>
+				</view>
+				<text>暂未公布</text>
 			</view>
-		</uni-popup>
+			<view class="left">
+				<view class="left-text">
+					<text>维修设备</text>
+					<image src="../../static/wxcomponentimg/up@2x.png"></image>
+				</view>
+				<text>暂未公布</text>
+			</view>
+			<view class="left">
+				<view class="left-text">
+					<text>好评度</text>
+					<image src="../../static/wxcomponentimg/up@2x.png"></image>
+				</view>
+				<text>暂未公布</text>
+			</view>
+		</view>
+		<view class="kf-phone">
+			<text>客服热线</text>
+			<text>关于我们</text>
+			<text>联系我们</text>
+			<text>服务流程</text>
+		</view>
+		<view class="vacol"></view>
+		<tabbar></tabbar>
 	</view>
 </template>
 
 <script>
-	import headads from '../../wxcomponents/headads/headads.vue'
-	import testype from '../../wxcomponents/testype/testype.vue'
-	import bbutton from '../../wxcomponents/bbutton/bbutton.vue'
-	import servebutton from '../../wxcomponents/servebutton/servebutton.vue'
-	import vipserve from '../../wxcomponents/vipserve/vipserve.vue'
-	import comment from '../../wxcomponents/comment/comment.vue'
-	import tabbar from '../../wxcomponents/tabbar/tabbar.vue'
-	import xswiper from '../../wxcomponents/xswiper/xswiper.vue'
+	import headads from '../../wxcomponents/index/headads.vue'
+	import xswiper from '../../wxcomponents/index/xswiper.vue'
+	import testype from '../../wxcomponents/index/testype.vue'
+	import bbutton from '../../wxcomponents/index/bbutton.vue'
+	import servebutton from '../../wxcomponents/index/servebutton.vue'
+	import vipserve from '../../wxcomponents/index/vipserve.vue'
+	import comment from '../../wxcomponents/index/comment.vue'
+	import tabbar from '../../wxcomponents/index/tabbar.vue'
 	import quickSelect from '../../wxcomponents/index/quick-select.vue'
 	import nearby from '../../wxcomponents/index/nearby.vue'
-	import uniPopup from '../../components/uni-popup/uni-popup.vue'
 	
 	export default {
-		created() {
-			this.getOpenId()
-		},
-		onShow() {
-			uni.getSetting({
-				success:res=>{
-					if (res.authSetting['scope.userInfo']){
-						this.isLogin = true
-						this.getOpenId()
-					} else {
-						this.isLogin = false
-					}
-				}
-			})
-		},
 		onload(options) {
 			this.getOpenId()
 			if(options){
@@ -111,8 +79,7 @@
 			return {
 				opinion:'',
 				onIsvip: 2,
-				openId:'',
-				isLogin: true
+				openId:''
 			}
 		},
 		components: {
@@ -125,34 +92,9 @@
 			tabbar,
 			xswiper,
 			quickSelect,
-			nearby,
-			uniPopup
+			nearby
 		},
 		methods: {
-			bindContract(){
-				uni.navigateTo({
-					url: '../my/contract'
-				})
-			},
-			isVip(){
-				uni.request({
-					url: 'https://www.finetwm.com/xmRepair/userInfo/isvip',
-					method: 'GET',
-					header:{
-						"content-Type": "application/x-www-form-urlencoded"
-					},
-					data: {
-						openid: this.openId,
-						superiorId:''
-					},
-					success: res => {
-						this.onIsvip = res.data.data.vipList[0].isvip
-					},
-					fail: err => {
-						console.log(err)
-					}
-				})
-			},
 			requestVerify(){
 				uni.request({
 					url: 'https://www.finetwm.com/xmRepair/shopInfo/selectPass',
@@ -175,29 +117,13 @@
 					}
 				})
 			},
-			openPopup(){
-				this.$refs.popup.open()
-			},
-			closePopup(){
-				this.$refs.popup.close()
-			},
-			getUserInfo(){
-				uni.getUserInfo({
-					success:res=>{
-						this.isLogin = true
-					}
-				})
-			},
+			
 			bindAboutUs(){
 				uni.navigateTo({
 					url: 'about-us'
 				})
 			},
-			onCode() {
-				uni.navigateTo({
-					url: '../phone-code/index-code'
-				})
-			},
+			
 			onBusiness() {
 				uni.navigateTo({
 					url: '../../pages/business/business-login/business-login'
@@ -228,7 +154,6 @@
 										data: this.openId,
 										success:res=>{
 											// console.log('success storage')
-											this.requestVerify()
 											this.isVip()
 										}
 									})
@@ -246,48 +171,6 @@
 </script>
 
 <style>
-	.popup-close{
-		width: 40upx;
-		height: 40upx;
-		position: absolute;
-		top: 30upx;
-		right: 28upx;
-	}
-	
-	.popup-button{
-		width: 400upx;
-		height: 80upx;
-		font-size: 30upx;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		color: #FFFFFF;
-		background: #09BA51;
-		border-radius: 12upx;
-	}
-	
-	.popup-desc{
-		font-size: 40upx;
-		margin-bottom: 68upx;
-	}
-	
-	.popup-icon{
-		width: 84upx;
-		height: 84upx;
-		margin-top: 48upx;
-		margin-bottom: 48upx;
-	}
-	
-	.popup{
-		width: 560upx;
-		height: 440upx;
-		background: #FFFFFF;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		border-radius: 20upx;
-	}
 	
 	.login-button{
 		width: 698upx;

@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "订单列表",
-  "usingComponents": {
-    "wuc-tabc": "/components/wuc-tab-c/wuc-tabc",
-    "s-tabs": "/components/s-tabs/index"
-  }
-}

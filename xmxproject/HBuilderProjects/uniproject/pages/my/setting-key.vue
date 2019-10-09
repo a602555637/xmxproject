@@ -50,8 +50,9 @@
 			bindSubmit(){
 				let skey = this.skey
 				let fkey = this.fkey
-				if( skey == fkey){
-					this.onReg(fkey)
+				console.log(skey)
+				console.log(fkey)
+				if( skey === fkey){
 					this.onReg(skey)
 				} else{
 					uni.showToast({
@@ -60,16 +61,39 @@
 					})
 				}
 			},
+			statRequest(){
+				uni.request({
+					url: 'https://www.finetwm.com/xmRepair/shopM/updateStat',
+					method: 'POST',
+					header:{
+						"content-Type": "application/x-www-form-urlencoded"
+					},
+					data: {
+						stat: 4,
+						openid: this.openId,
+						opinion: ''
+					},
+					success: res => {
+						console.log(res)
+					},
+					fail: err => {
+						console.log(err)
+					}
+				})
+			},
 			requestUrl(){
 				uni.request({
 					url: 'https://www.finetwm.com/xmRepair/shopInfo/setPassword',
 					method: 'POST',
+					header:{
+						"content-Type": "application/x-www-form-urlencoded"
+					},
 					data: {
 						openid: this.openId,
 						password: this.skey
 					},
 					success: res => {
-						console.log(res)
+						this.statRequest()
 						uni.showToast({
 							title: '设置成功'
 						})

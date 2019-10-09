@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "选择机型",
-  "usingComponents": {
-    "uni-popup": "/components/uni-popup/uni-popup",
-    "xselect": "/wxcomponents/xselect/xselect"
-  }
-}

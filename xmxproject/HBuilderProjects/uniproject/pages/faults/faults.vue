@@ -72,6 +72,18 @@
 		},
 		//判断是否快捷维修入口
         onLoad(e) {
+			uni.getStorage({
+				key:'openId',
+				success:res=>{
+					this.openId = res.data
+					console.log(res)
+				},
+				fail: err=>{
+					uni.navigateTo({
+						url: '../index/index-login'
+					})
+				}
+			})
 			this.getFaultsItem()
 			let sid = e.id
 			if(sid == ''){
@@ -195,7 +207,6 @@
             },
             onEventChange(e){
 				let ind = e.detail.value  //当前已选项id
-				console.log(ind)
 				// this.selectedTitle = []			//当前已选	数组
 				// this.selectedPrice = []
 				this.selectedId = []
@@ -206,15 +217,15 @@
 					
 					let itemPrice = this.faulesItem[ind[i]].price
 					priceArray.push(itemPrice)
-					
-					console.log(typeof(itemPrice))
-					console.log(priceArray)
+					let sum = 0
+					// console.log(priceArray.join("+"))
 					// this.selectedTitle.push(itemTitle)
 					// this.selectedPrice.push(itemPrice)
 					this.selectedId.push(itemId)
 				}
 				
 			},
+			//所有子故障列表
 			getFaultsItem(){
 				uni.request({
 				    url:'https://www.finetwm.com/xmRepair/faults/getDetailList',
@@ -233,52 +244,64 @@
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(0, 5)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 1){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(5, 11)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 2){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(11, 16)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 3){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(16, 20)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 4){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(20, 25)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 5){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(25, 28)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 6){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(28, 29)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 7){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(29, 38)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 8){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(38, 39)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 9){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(39, 46)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if(sid === 10){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(46,55)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				} else if( sid === 11){
 					faulesItem = this.faulesItemCopy
 					let faulesItemCurrent = faulesItem.slice(55)
 					this.faulesItem = faulesItemCurrent
+					this.change1()
 				}
-				this.change1()
+				// this.change1()
             },
             // close uni-pop
 			closePopup() {
@@ -310,13 +333,15 @@
 					// console.log(u)
 					if (u){
 						this.$set(this.faulesItem[i], 'checked', true)
-						// let price = []
-						// price.push(this.faulesItem[i].price *= 1)
-						// price.join('+')
-						// console.log(price)
 					} else{
 						this.$set(this.faulesItem[i], 'checked', false)
 					}
+				}
+			},
+			priceChange(){
+				let selectedId = this.selectedId2
+				for (var i = 0; i < selectedId.length; i++) {
+					console.log(selectedId[i])
 				}
 			}
 

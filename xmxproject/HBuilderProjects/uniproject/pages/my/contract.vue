@@ -65,10 +65,53 @@
 			}
 		},
 		onLoad() {
+			this.shopRequest()
 			this.getStorage()
 			this.getDate()
 		},
 		methods: {
+			shopRequest(){
+				uni.getStorage({
+					key: 'openId',
+					success:res => {
+						this.openId = res.data
+						uni.request({
+							url: 'https://www.finetwm.com/xmRepair/shopInfo/findIdByOpenid',
+							method: 'GET',
+							data: {
+								openid: this.openId
+							},
+							success: res => {
+								console.log(res.data.data.shopid)
+								let id = res.data.data.shopid
+								uni.request({
+									url: 'https://www.finetwm.com/xmRepair/shopInfo/get',
+									method: 'GET',
+									data: {
+										id: id
+									},
+									success: res => {
+										console.log(res.data.data)
+										this.partyTitle = res.data.data.name
+										this.manager = res.data.data.manager
+										this.managerPhone = res.data.data.phone
+										let area = res.data.data.area
+										let street = res.data.data.street
+										let address = res.data.data.detail_address
+										this.partyAddress = area + street + address
+									},
+									fail: err => {
+										console.log(err)
+									}
+								})
+							},
+							fail: err => {
+								console.log(err)
+							}
+						})
+					}
+				})
+			},
 			getDate(){
 				let date = new Date()
 				let year = date.getFullYear()
@@ -87,16 +130,20 @@
 				})
 			},
 			requestUrl() {
-				uni.request({
-					url: 'https://www.finetwm.com/xmRepair/shopInfo/upload',
-					data: {
-						file: this.signUrl,
-						openid: this.openId,
-						type: 4,
-						stat: 4
+				uni.uploadFile({
+					url: 'https://www.finetwm.com/xmRepair/shopInfo/upload', //仅为示例，非真实的接口地址
+					filePath: this.signUrl,
+					header: {
+						'content-Type': 'multipart/form-data'
 					},
-					success: res => {
-						console.log('success')
+					name: 'file',
+					formData: {
+						type: 4,
+						stat: 4,
+						openid: this.openId
+					},
+					success:res => {
+						console.log(res)
 						uni.showToast({
 							title: '提交成功',
 						})

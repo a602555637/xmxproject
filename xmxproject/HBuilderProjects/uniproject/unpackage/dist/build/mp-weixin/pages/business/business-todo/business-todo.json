@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": " ",
-  "usingComponents": {
-    "business-order-list": "/wxcomponents/business/business-order-list"
-  }
-}

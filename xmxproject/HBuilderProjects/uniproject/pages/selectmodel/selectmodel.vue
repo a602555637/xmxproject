@@ -60,15 +60,24 @@
 	export default {
 		onLoad(sid) {
 			uni.getStorage({
+				key:'openId',
+				success:res=>{
+					this.openId = res.data
+					console.log(res)
+				},
+				fail: err=>{
+					uni.navigateTo({
+						url: '../index/index-login'
+					})
+				}
+			})
+			uni.getStorage({
 				key:'phonetype',
 				success:res=>{
 					this.phonetype = res.data
 					this.setStorageBrand()
 				}
 			})
-			
-			
-			
 			uni.getStorage({
 				key: 'sid',
 				success: res=> {
@@ -76,7 +85,6 @@
 					this.quickId = s
 				}
 			})
-			
 			this.requestUrl()
 			uni.request({
 				url: 'https://www.finetwm.com/xmRepair/phoneBrand/getBrandDetail',
@@ -118,6 +126,7 @@
 		},
 		data() {
 			return {
+				openId: '',
 				phonetype:'',
 				quickId:'',
 				valueId:1,

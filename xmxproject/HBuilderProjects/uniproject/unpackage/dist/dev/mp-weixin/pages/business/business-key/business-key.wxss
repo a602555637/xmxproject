@@ -1,13 +1,28 @@
 
+.line{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	width: 698rpx;
+	height: 1rpx;
+	background: #eee;
+	margin-left: 26rpx;
+}
 .desc{
 	font-size: 22rpx;
 	position: absolute;
-	left: 184rpx;
-	top: 452rpx;
+	left: 26rpx;
+	top: 590rpx;
 	color: #888F97;
 }
 .xinput{
-	margin-top: 80rpx;
+	margin-top: 20rpx;
 }
 .button{
 	width: 698rpx;

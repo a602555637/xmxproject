@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<xinput @inputValue="onNumber" :xtype="xtype" title="手机号" placeHolderText="请输入手机号" />
-		<xinput @inputValue="onCode" :xtype="xtype" :xpassword="xpassword" title="密码" placeHolderText="请输入密码" />
+		<xinput @inputValue="onCode" :xtype="xtypet" :xpassword="xpassword" title="密码" placeHolderText="请输入密码" />
 		<view @click="onNext" class="button">{{buttonTitle}}</view>
 	</view>
 
@@ -26,7 +26,8 @@
 				scode: '',
 				xpassword: true,
 				xtype: 'number',
-				openId:''
+				openId: '',
+				xtypet: 'text'
 			}
 		},
 		methods: {

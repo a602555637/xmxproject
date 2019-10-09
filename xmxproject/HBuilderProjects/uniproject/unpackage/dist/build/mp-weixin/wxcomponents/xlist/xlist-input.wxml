@@ -1,1 +1,0 @@
-<view class="container"><text class="item-title">{{title}}</text><input class="item-input" type="{{typeStyle}}" placeholder="{{placeholder}}" placeholder-class="placeholder-class" data-event-opts="{{[['input',[['bindInputValue',['$event']]]]]}}" bindinput="__e"/></view>

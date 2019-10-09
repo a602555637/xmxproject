@@ -2,6 +2,7 @@
   "navigationBarTitleText": "我的",
   "usingComponents": {
     "uni-list": "/components/uni-list/uni-list",
-    "uni-item": "/components/uni-list-item/uni-list-item"
+    "uni-item": "/components/uni-list-item/uni-list-item",
+    "uni-popup": "/components/uni-popup/uni-popup"
   }
 }

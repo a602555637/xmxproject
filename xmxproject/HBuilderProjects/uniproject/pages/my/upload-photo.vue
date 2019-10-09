@@ -85,7 +85,7 @@ export default {
 				success: res => {
 					this.imgUrl1 = res.tempFilePaths[0];
 					uni.uploadFile({
-						url: 'https://www.finetwm.com/xmRepair/shopInfo/upload', //仅为示例，非真实的接口地址
+						url: 'https://www.finetwm.com/xmRepair/shopInfo/upload',
 						filePath: this.imgUrl1,
 						header: {
 							'content-Type': 'multipart/form-data'
@@ -116,9 +116,9 @@ export default {
 							type: 2,
 							openid: this.openId
 						}
-					});
+					})
 				}
-			});
+			})
 		},
 		onChooseImg3() {
 			uni.chooseImage({

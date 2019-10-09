@@ -1,16 +1,15 @@
 {
   "navigationBarTitleText": "小美修",
   "usingComponents": {
-    "headads": "/wxcomponents/headads/headads",
-    "testype": "/wxcomponents/testype/testype",
-    "bbutton": "/wxcomponents/bbutton/bbutton",
-    "servebutton": "/wxcomponents/servebutton/servebutton",
-    "vipserve": "/wxcomponents/vipserve/vipserve",
-    "comment": "/wxcomponents/comment/comment",
-    "tabbar": "/wxcomponents/tabbar/tabbar",
-    "xswiper": "/wxcomponents/xswiper/xswiper",
+    "headads": "/wxcomponents/index/headads",
+    "testype": "/wxcomponents/index/testype",
+    "bbutton": "/wxcomponents/index/bbutton",
+    "servebutton": "/wxcomponents/index/servebutton",
+    "vipserve": "/wxcomponents/index/vipserve",
+    "comment": "/wxcomponents/index/comment",
+    "tabbar": "/wxcomponents/index/tabbar",
+    "xswiper": "/wxcomponents/index/xswiper",
     "quick-select": "/wxcomponents/index/quick-select",
-    "nearby": "/wxcomponents/index/nearby",
-    "uni-popup": "/components/uni-popup/uni-popup"
+    "nearby": "/wxcomponents/index/nearby"
   }
 }

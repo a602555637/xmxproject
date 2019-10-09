@@ -39,14 +39,14 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.item-default{
 		margin-right: 20upx;
 	}
 	
 	.item{
 		position: absolute;
-		right: 28upx;
+		right: 0;
 	}
 	
 	.title,
@@ -55,21 +55,17 @@
 	}
 	
 	.picker-class{
+		position: relative;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		height: 120upx;
+		width: 698upx;
 		margin-left: 26upx;
-		margin-right: 28upx;
+		margin-right: 26upx;
+		border-bottom: 1px solid #EEEEEE;
 	}
 	
-	.container{
-		width: 750upx;
-		height: 120upx;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		border-bottom: 1px solid #F3F3F3;
-	}
 	
 	.arrow{
 		width: 18upx;

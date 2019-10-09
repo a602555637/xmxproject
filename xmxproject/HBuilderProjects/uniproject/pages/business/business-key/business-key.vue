@@ -1,58 +1,63 @@
 <template>
 	<view class="xinput">
-			<xinput @inputValue="bindDefault" title="手机号码" placeHolderText="请输入手机号码"/>
-			<getcode :isDefault="isDefault" @scode="bindScode" @phoneCode="bindPhoneCode" :orderNum="orderNum"></getcode>
-			<text class="desc">必须数字和英文字母组合</text>
-			<xinput @inputValue="bindInput" title="新密码" placeHolderText="请输入新密码"/>
-			<xinput @inputValue="bindSecond" title="确认密码" placeHolderText="请再次输入密码"/>
-			<view @click="onNext" class="button">{{buttonTitle}}</view>
+		<xlist-input @inputValue="bindDefault" title="手机号码：" placeholder="请输入手机号码"></xlist-input>
+		<getcodec :orderNum="phone" @scode="bindScode" @phoneCode="bindPhoneCode"></getcodec>
+		<view class="line"></view>
+		<text class="desc">* 必须数字和英文字母组合</text>
+		<xlist-input @inputValue="bindInput" title="新密码：" placeholder="请输入新密码"></xlist-input>
+		<xlist-input @inputValue="bindSecond" title="确认密码：" placeholder="请再次输入新密码" ></xlist-input>
+		<view @click="onNext" class="button">{{buttonTitle}}</view>
 	</view>
 </template>
 
 <script>
-	import xinput from '../../../wxcomponents/common/xinput.vue'
-	import getcode from '../../../wxcomponents/getcode/getcode.vue'
+	import xlistInput from '../../../wxcomponents/xlist/xlist-input.vue'
+	import getcodec from '../../../wxcomponents/getcode/getcodec.vue'
 	
 	export default {
 		data() {
 			return {
-				isDefault:false,
+				isDefault: false,
 				phoneCode:'',
 				scode:'',
 				orderNum:'',
 				buttonTitle: '保存',
 				fkey:'',
-				skey:''
+				skey:'',
+				phone: ''
 			}
 		},
 		methods: {
-			bindPhoneCode(e){
-				console.log(e)
-				this.phoneCode = e.phoneCode
-			},
 			bindScode(e){
 				this.scode = e.scode
 			},
+			bindPhoneCode(e){
+				this.phoneCode = e.phoneCode
+			},
 			bindDefault(e){
-				this.orderNum = e.inputValue
+				this.phone = e
 			},
 			bindInput(e){
-				this.fkey = e.inputValue
+				this.fkey = e
 			},
 			bindSecond(e){
-				this.skey = e.inputValue
+				this.skey = e
 			},
 			onNext() {
 				let skey = this.skey
 				let fkey = this.fkey
-				if( skey == fkey){
-					this.onReg(fkey)
-					this.onReg(skey)
-				} else{
+				if( skey !== fkey){
 					uni.showToast({
 						title: '两次密码输入不一致',
 						icon:'none'
 					})
+				}else if(this.phoneCode !== this.scode){
+					uni.showToast({
+						title: '验证码不正确',
+						icon: 'none'
+					})
+				} else {
+					this.onReg(skey)
 				}
 			},
 			onReg(e){
@@ -69,21 +74,31 @@
 			},
 			bindSubmit(){
 				let phoneCode = this.phoneCode.toString()
-				let scode = this.scode.toString()
-				if(phoneCode == scode){
-					let orderNum = this.orderNum.toString()
+				let fkey = this.fkey.toString()
+				if(fkey == this.skey){
+					let phone = this.phone.toString()
 					uni.request({
 						url: 'https://www.finetwm.com/xmRepair/shopInfo/resetPassword',
 						method: 'POST',
+						header:{
+							"content-Type": "application/x-www-form-urlencoded"
+						},
 						data: {
-							phone: orderNum,
-							password: scode
+							phone: phone,
+							password: fkey
 						},
 						success: res => {
 							console.log(res)
-							uni.navigateBack({
-								delta: 1
+							uni.showToast({
+								title: '保存成功'
 							})
+							setTimeout(() => {
+								uni.hideToast()
+								uni.navigateBack({
+									delta: 1
+								})
+							}, 1000)
+							
 						},
 						fail: err => {
 							console.log(err)
@@ -98,23 +113,31 @@
 			}
 		},
 		components:{
-			xinput,
-			getcode
+			xlistInput,
+			getcodec
 		}
 	}
 </script>
 
 <style>
+	.line{
+		display: flex;
+		flex-direction: row;
+		width: 698upx;
+		height: 1upx;
+		background: #eee;
+		margin-left: 26upx;
+	}
 	.desc{
 		font-size: 22upx;
 		position: absolute;
-		left: 184upx;
-		top: 452upx;
+		left: 26upx;
+		top: 590upx;
 		color: #888F97;
 	}
 	
 	.xinput{
-		margin-top: 80upx;
+		margin-top: 20upx;
 	}
 	.button{
 		width: 698upx;

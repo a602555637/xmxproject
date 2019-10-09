@@ -14,8 +14,6 @@ var formatDateTime = function(inputTime) { //时间戳 转 YY-mm-dd HH:ii:ss
 				return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
 			}
 			
-
-
 module.exports = {
 	formatDateTime
 }

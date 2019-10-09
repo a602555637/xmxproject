@@ -1,17 +1,21 @@
 
-.container-input-address text {
+.text-area-class.data-v-7395da18{
+	width: 506rpx;
+	height: 130rpx;
+}
+.container-input-address text.data-v-7395da18 {
 	font-size: 30rpx;
 }
-.container-input-address {
+.container-input-address.data-v-7395da18 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 	margin-left: 26rpx;
 	margin-top: 40rpx;
-	margin-bottom: 120rpx;
+	margin-bottom: 40rpx;
 }
-.container{
+.container.data-v-7395da18{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -22,7 +26,7 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.picker{
+.picker.data-v-7395da18{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -39,20 +43,20 @@
 	        align-items: center;
 	margin-left: 26rpx;
 	margin-right: 26rpx;
-	border-bottom: 2px solid #EEEEEE;
+	border-bottom: 1px solid #EEEEEE;
 }
-.picker view{
+.picker view.data-v-7395da18{
 	font-size: 30rpx;
 }
-.picker image{
+.picker image.data-v-7395da18{
 	width:18rpx;
 	height: 30rpx;
 	margin-left: 26rpx;
 }
-.picker-right view{
+.picker-right view.data-v-7395da18{
 	font-size: 30rpx;
 }
-.picker-right{
+.picker-right.data-v-7395da18{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -64,7 +68,7 @@
 	position: absolute;
 	right: 26rpx;
 }
-.content-street{
+.content-street.data-v-7395da18{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -81,9 +85,9 @@
 	height: 120rpx;
 	width: 698rpx;
 	margin-left: 26rpx;
-	border-bottom: 2px solid #EEEEEE;
+	border-bottom: 1px solid #EEEEEE;
 }
-.content-street-right{
+.content-street-right.data-v-7395da18{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -100,18 +104,19 @@
 	position: absolute;
 	right: 26rpx;
 }
-.content-street-left,
-.content-street-right input{
+.content-street-left.data-v-7395da18,
+.content-street-right input.data-v-7395da18{
 	font-size: 30rpx;
-	width: 360rpx;
+	width: 500rpx;
+	height: 50rpx;
 	position: relative;
 	right: 0rpx;
 }
-.content-street-right input{
+.content-street-right input.data-v-7395da18{
 	direction: rtl;
 	margin-right: 26rpx;
 }
-.content-street-right image{
+.content-street-right image.data-v-7395da18{
 	width: 18rpx;
 	height: 30rpx;
 }

@@ -18,7 +18,8 @@
 		</view>
 		<view v-if="isAddress" class="container-input-address">
 			<text>详细地址：</text>
-			<input @input="onAddress" type="text" class="input-address" />
+			<!-- <input  type="text" class="input-address" /> -->
+			<textarea class="text-area-class" @input="onAddress" />
 		</view>
 		<view v-if="isAddress" class="line-thick"></view>
 	</view>
@@ -105,7 +106,14 @@
 	}
 </script>
 		
-<style>
+<style scoped>
+	
+	
+	.text-area-class{
+		width: 506upx;
+		height: 130upx;
+	}
+	
 	.container-input-address text {
 		font-size: 30upx;
 	}
@@ -114,7 +122,7 @@
 		display: flex;
 		margin-left: 26upx;
 		margin-top: 40upx;
-		margin-bottom: 120upx;
+		margin-bottom: 40upx;
 	}
 	
 	.container{
@@ -129,7 +137,7 @@
 		align-items: center;
 		margin-left: 26upx;
 		margin-right: 26upx;
-		border-bottom: 2px solid #EEEEEE;
+		border-bottom: 1px solid #EEEEEE;
 	}
 	
 	.picker view{
@@ -160,7 +168,7 @@
 		height: 120upx;
 		width: 698upx;
 		margin-left: 26upx;
-		border-bottom: 2px solid #EEEEEE;
+		border-bottom: 1px solid #EEEEEE;
 	}
 	
 	.content-street-right{
@@ -174,7 +182,8 @@
 	.content-street-left,
 	.content-street-right input{
 		font-size: 30upx;
-		width: 360upx;
+		width: 500upx;
+		height: 50upx;
 		position: relative;
 		right: 0upx;
 	}

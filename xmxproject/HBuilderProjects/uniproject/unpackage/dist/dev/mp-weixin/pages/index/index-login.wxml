@@ -1,0 +1,1 @@
+<view class="container-login"><image src="../../static/index/logo@2x.png"></image><button class="login-button" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['getOpenId',['$event']]]]]}}" bindgetuserinfo="__e">微信授权登录</button></view>

@@ -1,0 +1,1 @@
+<view class="container-middle"><image class="container-middle-iphone" src="../../static/index/phone-re@2x.png" data-event-opts="{{[['tap',[['onPhoneRepair',['$event']]]]]}}" bindtap="__e"></image><image class="container-middle-ipad" src="../../static/index/pad-re@2x.png"></image></view>

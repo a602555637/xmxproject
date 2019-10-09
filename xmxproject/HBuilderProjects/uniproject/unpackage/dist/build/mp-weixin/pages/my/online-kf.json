@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "在线客服",
-  "usingComponents": {
-    "get-open-id": "/components/ccg-getOpenID/ccg-wxAppOpenid"
-  }
-}

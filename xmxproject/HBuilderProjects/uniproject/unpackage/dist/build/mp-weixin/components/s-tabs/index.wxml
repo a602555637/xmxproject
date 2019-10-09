@@ -1,1 +1,0 @@
-<view class="s-tabs _div"><scroll-view scroll-with-animation scroll-x scroll-left="{{scrollLeft}}"><slot></slot></scroll-view><block wx:if="{{showBar}}"><view class="line-bar _div" style="{{('left:'+barLeft+'px;width:'+barWidth+'px')}}"></view></block></view>

@@ -1,1 +1,0 @@
-<view class="container"><block wx:for="{{titleList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view data-event-opts="{{[['tap',[['bindTap',[index]]]]]}}" class="container-item" bindtap="__e"><text>{{item.title}}</text><image src="../../static/wxcomponentimg/arrow@2x.png"></image></view></block></view>

@@ -167,7 +167,7 @@
 						title: '请填写验证码',
 						icon:'none'
 					});
-				}else if(!scode){
+				}else if(scode !== phoneCode){
 					uni.showToast({
 						title: '请输入正确的验证码',
 						icon:'none'
